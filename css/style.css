@@ -1,6 +1,6 @@
 html
 {
-	overflow: scroll;	/*vertikalni posuvnik vzdy zapnut, aby stranka neposkakovala, kdyz se posuvnik zobrazuje nebo mizi*/
+	overflow: scroll;
 	overflow-x: auto;
 }
 
@@ -33,18 +33,6 @@ body
 .nofl
 {
 	clear: both;
-}
-
-.err
-{
-	color: red;
-	font-weight: bold;
-}
-
-.signal
-{
-	color: red;
-	font-weight: bold;
 }
 
 h1	{color: #000040; font-size: 20px; font-family: arial; font-weight: bold; padding-bottom: 5px; border-bottom: 1px solid #808080;}
