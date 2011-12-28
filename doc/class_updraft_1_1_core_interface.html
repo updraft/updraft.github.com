@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -99,74 +98,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Updraft::CoreInterface Class Reference</div>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Updraft::CoreInterface" -->
 <p><code>#include &lt;<a class="el" href="coreinterface_8h_source.html">coreinterface.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Updraft::CoreInterface:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_updraft_1_1_core_interface.png" usemap="#Updraft::CoreInterface_map" alt=""/>
+  <map id="Updraft::CoreInterface_map" name="Updraft::CoreInterface_map">
+<area href="class_updraft_1_1_core_1_1_core_implementation.html" alt="Updraft::Core::CoreImplementation" shape="rect" coords="0,56,203,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a8e1c0b0410789fc4c8e0bd330af9100c">CoreInterface</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#adfdba27f15f98b2fd09a116c38fc8d3a">CoreInterface</a> (<a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html">Core::UpdraftParent</a> *par, <a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *pl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a760f5dc78696082ef65f13b797e6de89">getMainWindow</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns main window pointer. Used for example for modal dialogs.  <a href="#a760f5dc78696082ef65f13b797e6de89"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#aeccc34a37e1b0fca67798c1984aa80b1">valid</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks, whether the class was correctly constructed.  <a href="#aeccc34a37e1b0fca67798c1984aa80b1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ab51bc10f0767b9bf906073ef213f516e">createMenu</a> (QString title)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an entry in the main menu.  <a href="#ab51bc10f0767b9bf906073ef213f516e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ad183e86280ba4fe0fe6c29ab822f351e">removeMenu</a> (<a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> *menu)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an entry from the main menu.  <a href="#ad183e86280ba4fe0fe6c29ab822f351e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ac5867383e4856d166e4d7e014728f213">getSystemMenu</a> (<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a> menu)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Core::Tab</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a2fc6d0a01826a125c7bbbf708ffede39">createTab</a> (QWidget *content, QString title)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a Tab with any widget.  <a href="#a2fc6d0a01826a125c7bbbf708ffede39"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ab9d33982afaf7e589d6d2167fb5b92bf">removeTab</a> (<a class="el" href="class_updraft_1_1_core_1_1_tab.html">Core::Tab</a> *tab)</td></tr>
-<tr><td colspan="2"><h2><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ab17bc4b15c078fa98e4ef5833e6ccf84">plugin</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html">Core::UpdraftParent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a1bda9bbe836fb0ffacc365d641bb6759">parent</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a97d10fd34d35314bc1625ffd58843b5c">~CoreInterface</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#acc4d5438c2f18af000cbd265a7d3abeb">getMainWindow</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns main window pointer. Used for example for modal dialogs.  <a href="#acc4d5438c2f18af000cbd265a7d3abeb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#abd03913b36779f0912863d79a921ae17">createMenu</a> (QString title)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an entry in the main menu.  <a href="#abd03913b36779f0912863d79a921ae17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#adfbf758e1ca93f2f4e331babc3daafbc">getSystemMenu</a> (<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a> menu)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">createMapLayerGroup</a> (const QString &amp;title)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#afae5048bf9e7d3c892329ae59bdd83fb">createTab</a> (QWidget *content, QString title)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a21083a7d28fc511c9e81a8033045fac7">removeTab</a> (<a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *tab)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ab17deed92a0c57a569233eccb89adcd1">registerFiletype</a> (QString extension, QString description, <a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9">FileCategory</a> category)=0</td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8e1c0b0410789fc4c8e0bd330af9100c"></a><!-- doxytag: member="Updraft::CoreInterface::CoreInterface" ref="a8e1c0b0410789fc4c8e0bd330af9100c" args="()" -->
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Exposes core functionalities to plugins. A call to methods of this interface automagically contains a pointer to calling plugin (this is ensured in <a class="el" href="coreimplementation_8cpp.html">core/coreimplementation.cpp</a>) </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a97d10fd34d35314bc1625ffd58843b5c"></a><!-- doxytag: member="Updraft::CoreInterface::~CoreInterface" ref="a97d10fd34d35314bc1625ffd58843b5c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_interface.html#a8e1c0b0410789fc4c8e0bd330af9100c">Updraft::CoreInterface::CoreInterface</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_core_interface.html#a97d10fd34d35314bc1625ffd58843b5c">Updraft::CoreInterface::~CoreInterface</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Fill this once plugin API is finished </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="adfdba27f15f98b2fd09a116c38fc8d3a"></a><!-- doxytag: member="Updraft::CoreInterface::CoreInterface" ref="adfdba27f15f98b2fd09a116c38fc8d3a" args="(Core::UpdraftParent *par, IPlugin *pl)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_interface.html#a8e1c0b0410789fc4c8e0bd330af9100c">Updraft::CoreInterface::CoreInterface</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html">Core::UpdraftParent</a> *&#160;</td>
-          <td class="paramname"><em>par</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *&#160;</td>
-          <td class="paramname"><em>pl</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -175,16 +148,43 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ab51bc10f0767b9bf906073ef213f516e"></a><!-- doxytag: member="Updraft::CoreInterface::createMenu" ref="ab51bc10f0767b9bf906073ef213f516e" args="(QString title)" -->
+<a class="anchor" id="a6d458210ae7985a49ea2fc8209e2eccd"></a><!-- doxytag: member="Updraft::CoreInterface::createMapLayerGroup" ref="a6d458210ae7985a49ea2fc8209e2eccd" args="(const QString &amp;title)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> * <a class="el" href="class_updraft_1_1_core_interface.html#ab51bc10f0767b9bf906073ef213f516e">Updraft::CoreInterface::createMenu</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a>* <a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">Updraft::CoreInterface::createMapLayerGroup</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates map layer group and adds it to the tree view in the left pane. To remove <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> use C++ delete. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>label for the item in the tree view </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the new <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#af241ab64eab17ce2538889d81293c8ff">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd03913b36779f0912863d79a921ae17"></a><!-- doxytag: member="Updraft::CoreInterface::createMenu" ref="abd03913b36779f0912863d79a921ae17" args="(QString title)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a>* <a class="el" href="class_updraft_1_1_core_interface.html#abd03913b36779f0912863d79a921ae17">Updraft::CoreInterface::createMenu</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>title</em></td><td>)</td>
-          <td></td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -192,14 +192,16 @@ Private Attributes</h2></td></tr>
 
 <p>Create an entry in the main menu. </p>
 
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#afabebf3da86093bec16fd1007b69bcb1">Updraft::Core::CoreImplementation</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a2fc6d0a01826a125c7bbbf708ffede39"></a><!-- doxytag: member="Updraft::CoreInterface::createTab" ref="a2fc6d0a01826a125c7bbbf708ffede39" args="(QWidget *content, QString title)" -->
+<a class="anchor" id="afae5048bf9e7d3c892329ae59bdd83fb"></a><!-- doxytag: member="Updraft::CoreInterface::createTab" ref="afae5048bf9e7d3c892329ae59bdd83fb" args="(QWidget *content, QString title)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Core::Tab</a> * <a class="el" href="class_updraft_1_1_core_interface.html#a2fc6d0a01826a125c7bbbf708ffede39">Updraft::CoreInterface::createTab</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a>* <a class="el" href="class_updraft_1_1_core_interface.html#afae5048bf9e7d3c892329ae59bdd83fb">Updraft::CoreInterface::createTab</a> </td>
           <td>(</td>
           <td class="paramtype">QWidget *&#160;</td>
           <td class="paramname"><em>content</em>, </td>
@@ -213,26 +215,26 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Open a Tab with any widget. Takes ownership of content. </p>
 
-<p>Open a Tab with any widget. </p>
-<p>Create a new tab in the bottom pane. Takes ownership of content. </p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a24dde3f1b0a4d704daf2db9decc71d20">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a760f5dc78696082ef65f13b797e6de89"></a><!-- doxytag: member="Updraft::CoreInterface::getMainWindow" ref="a760f5dc78696082ef65f13b797e6de89" args="()" -->
+<a class="anchor" id="acc4d5438c2f18af000cbd265a7d3abeb"></a><!-- doxytag: member="Updraft::CoreInterface::getMainWindow" ref="acc4d5438c2f18af000cbd265a7d3abeb" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QMainWindow * <a class="el" href="class_updraft_1_1_core_interface.html#a760f5dc78696082ef65f13b797e6de89">Updraft::CoreInterface::getMainWindow</a> </td>
+          <td class="memname">virtual QMainWindow* <a class="el" href="class_updraft_1_1_core_interface.html#acc4d5438c2f18af000cbd265a7d3abeb">Updraft::CoreInterface::getMainWindow</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -240,18 +242,20 @@ Private Attributes</h2></td></tr>
 
 <p>Returns main window pointer. Used for example for modal dialogs. </p>
 
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ac80791158340df16f2653e98076b68c8">Updraft::Core::CoreImplementation</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ac5867383e4856d166e4d7e014728f213"></a><!-- doxytag: member="Updraft::CoreInterface::getSystemMenu" ref="ac5867383e4856d166e4d7e014728f213" args="(SystemMenu menu)" -->
+<a class="anchor" id="adfbf758e1ca93f2f4e331babc3daafbc"></a><!-- doxytag: member="Updraft::CoreInterface::getSystemMenu" ref="adfbf758e1ca93f2f4e331babc3daafbc" args="(SystemMenu menu)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> * <a class="el" href="class_updraft_1_1_core_interface.html#ac5867383e4856d166e4d7e014728f213">Updraft::CoreInterface::getSystemMenu</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a>* <a class="el" href="class_updraft_1_1_core_interface.html#adfbf758e1ca93f2f4e331babc3daafbc">Updraft::CoreInterface::getSystemMenu</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a>&#160;</td>
           <td class="paramname"><em>menu</em></td><td>)</td>
-          <td></td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -264,93 +268,69 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a3be6acc9d82bb9eb97e81b3052166940">Updraft::Core::CoreImplementation</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad183e86280ba4fe0fe6c29ab822f351e"></a><!-- doxytag: member="Updraft::CoreInterface::removeMenu" ref="ad183e86280ba4fe0fe6c29ab822f351e" args="(Core::Menu *menu)" -->
+<a class="anchor" id="ab17deed92a0c57a569233eccb89adcd1"></a><!-- doxytag: member="Updraft::CoreInterface::registerFiletype" ref="ab17deed92a0c57a569233eccb89adcd1" args="(QString extension, QString description, FileCategory category)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_interface.html#ad183e86280ba4fe0fe6c29ab822f351e">Updraft::CoreInterface::removeMenu</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#ab17deed92a0c57a569233eccb89adcd1">Updraft::CoreInterface::registerFiletype</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Core::Menu</a> *&#160;</td>
-          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>extension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9">FileCategory</a>&#160;</td>
+          <td class="paramname"><em>category</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This plugin knows how to open the file! </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Identifier of the newly registered filetype </dd></dl>
 
-<p>Remove an entry from the main menu. </p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#aa1bc6244b7c2bb4cbf235a6a100777e0">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab9d33982afaf7e589d6d2167fb5b92bf"></a><!-- doxytag: member="Updraft::CoreInterface::removeTab" ref="ab9d33982afaf7e589d6d2167fb5b92bf" args="(Core::Tab *tab)" -->
+<a class="anchor" id="a21083a7d28fc511c9e81a8033045fac7"></a><!-- doxytag: member="Updraft::CoreInterface::removeTab" ref="a21083a7d28fc511c9e81a8033045fac7" args="(TabInterface *tab)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_interface.html#ab9d33982afaf7e589d6d2167fb5b92bf">Updraft::CoreInterface::removeTab</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#a21083a7d28fc511c9e81a8033045fac7">Updraft::CoreInterface::removeTab</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Core::Tab</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *&#160;</td>
           <td class="paramname"><em>tab</em></td><td>)</td>
-          <td></td>
+          <td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Removes tab from the bottom pane The tab class given to this function is deleted! </p>
+<p>Removes tab from the bottom pane The tab class given to this function is deleted! Equivalent to tab-&gt;close() </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a2300b1a3453a9167a9e3df90d1a1660a">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aeccc34a37e1b0fca67798c1984aa80b1"></a><!-- doxytag: member="Updraft::CoreInterface::valid" ref="aeccc34a37e1b0fca67798c1984aa80b1" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_interface.html#aeccc34a37e1b0fca67798c1984aa80b1">Updraft::CoreInterface::valid</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Checks, whether the class was correctly constructed. </p>
-
-</div>
-</div>
-<hr/><h2>Field Documentation</h2>
-<a class="anchor" id="a1bda9bbe836fb0ffacc365d641bb6759"></a><!-- doxytag: member="Updraft::CoreInterface::parent" ref="a1bda9bbe836fb0ffacc365d641bb6759" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html">Core::UpdraftParent</a>* <a class="el" href="class_updraft_1_1_core_interface.html#a1bda9bbe836fb0ffacc365d641bb6759">Updraft::CoreInterface::parent</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab17bc4b15c078fa98e4ef5833e6ccf84"></a><!-- doxytag: member="Updraft::CoreInterface::plugin" ref="ab17bc4b15c078fa98e4ef5833e6ccf84" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a>* <a class="el" href="class_updraft_1_1_core_interface.html#ab17bc4b15c078fa98e4ef5833e6ccf84">Updraft::CoreInterface::plugin</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="coreinterface_8h_source.html">coreinterface.h</a></li>
-<li>src/core/<a class="el" href="coreinterface_8cpp.html">coreinterface.cpp</a></li>
 </ul>
 </div>
 </div>
@@ -359,7 +339,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -373,7 +353,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_interface.html">CoreInterface</a>      </li>
 
-    <li class="footer">Generated on Thu Dec 15 2011 13:17:29 for Updraft project by
+    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

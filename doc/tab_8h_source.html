@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -106,43 +105,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QString&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QWidget&gt;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">class </span>QTabWidget;
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;../../tabinterface.h&quot;</span>
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="keyword">namespace </span>Updraft {
+<a name="l00009"></a>00009 <span class="keyword">class </span>QTabWidget;
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">class </span>IPlugin;
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>Updraft {
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>Core {
+<a name="l00013"></a>00013 <span class="keyword">class </span>PluginBase;
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">class </span>MainWindow;
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>Core {
 <a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html">00017</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a> : <span class="keyword">public</span> QWidget {
-<a name="l00018"></a>00018   Q_OBJECT
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020  <span class="keyword">public</span>:
-<a name="l00021"></a>00021   <a class="code" href="class_updraft_1_1_core_1_1_tab.html#af05d7a42c8470cc7c7989f1cab61ca14">Tab</a>(QWidget* content, QString title, QTabWidget* parent, <a class="code" href="class_updraft_1_1_i_plugin.html">IPlugin</a>* owner);
-<a name="l00022"></a>00022 
-<a name="l00023"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">00023</a>   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">getWidget</a>() { <span class="keywordflow">return</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">widget</a>; }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025  <span class="keyword">public</span> slots:
-<a name="l00026"></a>00026   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">close</a>();
+<a name="l00017"></a>00017 <span class="keyword">class </span>MainWindow;
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html">00019</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a> : <span class="keyword">public</span> QWidget, <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_tab_interface.html" title="An interface wrapping a single tab in bottom pane.">TabInterface</a> {
+<a name="l00020"></a>00020   Q_OBJECT
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022  <span class="keyword">public</span>:
+<a name="l00023"></a>00023   <a class="code" href="class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22">Tab</a>(QWidget* content, QString title, QTabWidget* parent);
+<a name="l00024"></a>00024   <a class="code" href="class_updraft_1_1_core_1_1_tab.html#af73b19407385e75fc55470095526b4f0">~Tab</a>();
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">00026</a>   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">getWidget</a>() { <span class="keywordflow">return</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">widget</a>; }
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028  <span class="keyword">private</span>:
-<a name="l00029"></a>00029   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">deselected</a>();
-<a name="l00030"></a>00030   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected</a>();
-<a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">00032</a>   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">widget</a>;
-<a name="l00033"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a2bbc69dbb2adaf6d4587db1fc3923fcf">00033</a>   QTabWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a2bbc69dbb2adaf6d4587db1fc3923fcf">tabWidget</a>;
-<a name="l00034"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a3f1aad5b500d356ad92703d0aaa44722">00034</a>   <a class="code" href="class_updraft_1_1_i_plugin.html">IPlugin</a>* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a3f1aad5b500d356ad92703d0aaa44722">plugin</a>;
+<a name="l00028"></a>00028   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a1979f5ea34fd9a5ae030f6598067a0d9">connectSlotClose</a>(<span class="keyword">const</span> QObject* sender, <span class="keyword">const</span> <span class="keywordtype">char</span> *signal);
+<a name="l00029"></a>00029   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a4f5b2ca0909394d09b955e43ff771990">connectSignalClosed</a>(<span class="keyword">const</span> QObject* receiver, <span class="keyword">const</span> <span class="keywordtype">char</span> *method);
+<a name="l00030"></a>00030   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a5553367dbcd40234afe1f6691b772ffe">connectSignalSelected</a>(<span class="keyword">const</span> QObject* receiver, <span class="keyword">const</span> <span class="keywordtype">char</span> *method);
+<a name="l00031"></a>00031   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a3c6839d346f303a5f7fcba98545f57c6">connectSignalDeselected</a>(<span class="keyword">const</span> QObject* receiver, <span class="keyword">const</span> <span class="keywordtype">char</span> *method);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033  <span class="keyword">public</span> slots:
+<a name="l00034"></a>00034   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">close</a>();
 <a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#af9db4b672c4d3104f5541893e08e1809">00036</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a>;
-<a name="l00037"></a>00037 };
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 }  <span class="comment">// End namespace Core</span>
-<a name="l00040"></a>00040 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_TAB_H_</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span>
+<a name="l00036"></a>00036  signals:
+<a name="l00037"></a>00037   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#acaffd96bccc7d3811fe5c99d87c9354b">closed</a>();
+<a name="l00038"></a>00038   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected</a>();
+<a name="l00039"></a>00039   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">deselected</a>();
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041  <span class="keyword">private</span>:
+<a name="l00042"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">00042</a>   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">widget</a>;
+<a name="l00043"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#a2bbc69dbb2adaf6d4587db1fc3923fcf">00043</a>   QTabWidget* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#a2bbc69dbb2adaf6d4587db1fc3923fcf">tabWidget</a>;
+<a name="l00044"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#aa40b27d5b1b1e1595e8cae56cdb54bd6">00044</a>   <a class="code" href="class_updraft_1_1_plugin_base.html">PluginBase</a>* <a class="code" href="class_updraft_1_1_core_1_1_tab.html#aa40b27d5b1b1e1595e8cae56cdb54bd6">plugin</a>;
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="class_updraft_1_1_core_1_1_tab.html#af9db4b672c4d3104f5541893e08e1809">00046</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a>;
+<a name="l00047"></a>00047 };
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 }  <span class="comment">// End namespace Core</span>
+<a name="l00050"></a>00050 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_TAB_H_</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -150,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -163,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="tab_8h.html">tab.h</a>      </li>
 
-    <li class="footer">Generated on Thu Dec 15 2011 13:17:29 for Updraft project by
+    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -104,8 +103,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">coreinterface.h File Reference</div>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="menu_8h_source.html">core/ui/menu.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="tab_8h_source.html">core/ui/tab.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &lt;QString&gt;</code><br/>
+<code>#include &quot;<a class="el" href="menuinterface_8h_source.html">menuinterface.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="tabinterface_8h_source.html">tabinterface.h</a>&quot;</code><br/>
 </div>
 <p><a href="coreinterface_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -115,17 +115,11 @@ Data Structures</h2></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_updraft.html">Updraft</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_updraft_1_1_core.html">Updraft::Core</a></td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">Updraft::SystemMenu</a> { <br/>
-&#160;&#160;<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2a319e54ce4c392821279b0f90face1cb2">Updraft::MENU_FILE</a>, 
-<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2aec15c4d3721b6ab5f5ae1eddc455baca">Updraft::MENU_EDIT</a>, 
-<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2aa0f7fbc0f18887cfbfab29e3dc0e8000">Updraft::MENU_TOOLS</a>, 
-<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2af3c1e1b23894f374aaad992e90aeb53d">Updraft::MENU_HELP</a>, 
-<br/>
-&#160;&#160;<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2a7f83a89b06a58cfb6d117314dc23a86c">Updraft::MENU_CONTEXT</a>
-<br/>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9">Updraft::FileCategory</a> { <a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9a36e03c6c8d16143434ab7ab1a03770ed">Updraft::CATEGORY_ANY</a> =  0xff, 
+<a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9afe8cef71f95210c17714a771c1e65dd9">Updraft::CATEGORY_PERSISTENT</a> =  1, 
+<a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9a94491d8c493deff342d7edd4521678e0">Updraft::CATEGORY_TEMPORARY</a> =  2
  }</td></tr>
 </table>
 </div>
@@ -135,7 +129,7 @@ Enumerations</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -148,7 +142,7 @@ Enumerations</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="coreinterface_8h.html">coreinterface.h</a>      </li>
 
-    <li class="footer">Generated on Thu Dec 15 2011 13:17:29 for Updraft project by
+    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

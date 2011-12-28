@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -88,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
@@ -141,25 +142,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>camera
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a125252fbffe85d44408b23405fee270e">Updraft::Core::SceneManager</a>
+</li>
+<li>category
+: <a class="el" href="struct_updraft_1_1_core_1_1_file_type.html#a930c9a6e5b3d8dc5f5d61c2d5a7cb1c2">Updraft::Core::FileType</a>
+</li>
 <li>close()
-: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">Updraft::Core::Tab</a>
+: <a class="el" href="class_updraft_1_1_tab_interface.html#aca2e6976d21ac4315c657a3321298fc8">Updraft::TabInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">Updraft::Core::Tab</a>
+</li>
+<li>closed()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#acaffd96bccc7d3811fe5c99d87c9354b">Updraft::Core::Tab</a>
+</li>
+<li>connectSignalClosed()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a4f5b2ca0909394d09b955e43ff771990">Updraft::Core::Tab</a>
+, <a class="el" href="class_updraft_1_1_tab_interface.html#a81e68c72649992f20d9b5a01595a7fc2">Updraft::TabInterface</a>
+</li>
+<li>connectSignalDeselected()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3c6839d346f303a5f7fcba98545f57c6">Updraft::Core::Tab</a>
+, <a class="el" href="class_updraft_1_1_tab_interface.html#a351364d89b27e22aae0c0f3073266891">Updraft::TabInterface</a>
+</li>
+<li>connectSignalSelected()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a5553367dbcd40234afe1f6691b772ffe">Updraft::Core::Tab</a>
+, <a class="el" href="class_updraft_1_1_tab_interface.html#a93df0cb9f0440ebcc32923bf880a3b60">Updraft::TabInterface</a>
+</li>
+<li>connectSlotClose()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a1979f5ea34fd9a5ae030f6598067a0d9">Updraft::Core::Tab</a>
+, <a class="el" href="class_updraft_1_1_tab_interface.html#a2533ae483845b4d070f4a04226210631">Updraft::TabInterface</a>
 </li>
 <li>contextMenuEvent()
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1ef8965a54868046b7a611bf63849451">Updraft::Core::MainWindow</a>
 </li>
 <li>core
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a60b0ac823f74b2216f6f81b5982d70fa">Updraft::IPlugin</a>
+: <a class="el" href="class_updraft_1_1_plugin_base.html#af5b7cabf35e492947c21224343a02b05">Updraft::PluginBase</a>
 </li>
-<li>CoreInterface()
-: <a class="el" href="class_updraft_1_1_core_interface.html#a8e1c0b0410789fc4c8e0bd330af9100c">Updraft::CoreInterface</a>
+<li>CoreImplementation()
+: <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a2a4a31d73c4b78c98b8a137700308295">Updraft::Core::CoreImplementation</a>
+</li>
+<li>createCamera()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a6cba8afa78fe5bba4bab248ce25f6212">Updraft::Core::SceneManager</a>
+</li>
+<li>createGraphicsTraits()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#abf900b0124276d569265b3a8717ba729">Updraft::Core::SceneManager</a>
+</li>
+<li>createGraphicsWindow()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#aac59d879566c7cb8fa9fe32f8239554a">Updraft::Core::SceneManager</a>
+</li>
+<li>createInitialScene()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae1167b91e1c2aac96fe10bd66bc9c5b3">Updraft::Core::SceneManager</a>
+</li>
+<li>createMap()
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a6eea3454b43fe16e14cd8bf801fc8c43">Updraft::Core::MapManager</a>
+</li>
+<li>createMapLayerGroup()
+: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a26188d4e95709fc944a3ac4cb75b757d">Updraft::Core::MainWindow</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#af241ab64eab17ce2538889d81293c8ff">Updraft::Core::CoreImplementation</a>
+, <a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">Updraft::CoreInterface</a>
 </li>
 <li>createMenu()
-: <a class="el" href="class_updraft_1_1_core_interface.html#ab51bc10f0767b9bf906073ef213f516e">Updraft::CoreInterface</a>
+: <a class="el" href="class_updraft_1_1_core_interface.html#abd03913b36779f0912863d79a921ae17">Updraft::CoreInterface</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a288686c4e44f167b1a5fa957815ef210">Updraft::Core::MainWindow</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#afabebf3da86093bec16fd1007b69bcb1">Updraft::Core::CoreImplementation</a>
 </li>
 <li>createTab()
-: <a class="el" href="class_updraft_1_1_core_interface.html#a2fc6d0a01826a125c7bbbf708ffede39">Updraft::CoreInterface</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a32b550fb3173f4de0c787329b2db3bb4">Updraft::Core::MainWindow</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a24dde3f1b0a4d704daf2db9decc71d20">Updraft::Core::CoreImplementation</a>
+, <a class="el" href="class_updraft_1_1_core_interface.html#afae5048bf9e7d3c892329ae59bdd83fb">Updraft::CoreInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#adabbad21b3e453d8e61ef95120ae018a">Updraft::Core::MainWindow</a>
 , <a class="el" href="class_updraft_1_1_test_plugin.html#ad76d6f806d2c5954733b8f00fdded1ba">Updraft::TestPlugin</a>
 </li>
 <li>customMenus
@@ -170,12 +219,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>deinitialize()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a4c62128ed1d067e92bd2edb5a6a50556">Updraft::IPlugin</a>
+: <a class="el" href="class_updraft_1_1_plugin_base.html#af555d2d971809ada3f1e539a83252de4">Updraft::PluginBase</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#acf5f60e6c737290188c2b13089e31501">Updraft::Core::Airfields</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#a8551179ffe85d668f41bed2fb13772ec">Updraft::Core::IgcViewer</a>
 , <a class="el" href="class_updraft_1_1_test_plugin.html#ac934dfe9f6cd85441fcb0961b45ffc04">Updraft::TestPlugin</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#ac9cad330fd687017ec98650431ffab0e">Updraft::Core::TaskDeclaration</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#a8551179ffe85d668f41bed2fb13772ec">Updraft::Core::IgcViewer</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_airspaces.html#ae08c5aba6892e398c6a4d5f333409921">Updraft::Core::Airspaces</a>
+</li>
+<li>description
+: <a class="el" href="struct_updraft_1_1_core_1_1_file_type.html#a062fd9d691842f5ad71eded4d40035a1">Updraft::Core::FileType</a>
 </li>
 <li>deselected()
 : <a class="el" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">Updraft::Core::Tab</a>
@@ -183,55 +235,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>elevationLayers
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a640d16044ac48f1522f367826016ca4b">Updraft::Core::MapManager</a>
+</li>
+<li>exec()
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#ac3561266074e2c48a6efd00b9f4e1cb1">Updraft::Core::Updraft</a>
+</li>
+<li>extension
+: <a class="el" href="struct_updraft_1_1_core_1_1_file_type.html#a610f70b50fd58c23e80626b64e2f45ba">Updraft::Core::FileType</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>fileIdentification()
+: <a class="el" href="class_updraft_1_1_plugin_base.html#a3d8f605b018a67240ee3c0560b74badc">Updraft::PluginBase</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#a4d6cf1279332fc6deb08e4eab28d353e">Updraft::TestPlugin</a>
+</li>
+<li>fileOpen()
+: <a class="el" href="class_updraft_1_1_test_plugin.html#a098b01f93f52d8edf93248b445c959ed">Updraft::TestPlugin</a>
+, <a class="el" href="class_updraft_1_1_plugin_base.html#a21d9b08e0fd1b7ab1dcd514e7bdf496e">Updraft::PluginBase</a>
+</li>
+<li>FileOpenOption()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_open_option.html#a137d89ed7886a5e62b5e314bf6ed085c">Updraft::Core::FileOpenOption</a>
+</li>
+<li>FileRolesDialog()
+: <a class="el" href="class_file_roles_dialog.html#a394af827d0335fadddb9ad72a3a7707a">FileRolesDialog</a>
+</li>
+<li>fileTypeManager
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#a546e3d086d54b20261c594247de1adaf">Updraft::Core::Updraft</a>
+</li>
 <li>findByPointer()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ace347a09fc6f64ae5f0ca12e8f36916c">Updraft::Core::PluginManager</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ab3342febe9b91a5fc1ccd33b23e87659">Updraft::Core::PluginManager</a>
 </li>
 <li>finishLoading()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a051d0b09607417b8c44b21edae13f8d0">Updraft::Core::PluginManager</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af0cff5f280ed442c82fc1dc5a9438224">Updraft::Core::PluginManager</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>getAllPlugins()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2eb1b4441c0c47cc4089c366bbf7ff22">Updraft::Core::PluginManager</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a643dfc2411d3ec6d57b9b43238efb297">Updraft::Core::PluginManager</a>
+</li>
+<li>getFilters()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_type_manager.html#a46f413094071a67b5b0beb32f496da10">Updraft::Core::FileTypeManager</a>
 </li>
 <li>getMainWindow()
-: <a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html#af91c348d5104e64cddd48273f2f4992c">Updraft::Core::UpdraftParent</a>
-, <a class="el" href="class_updraft_1_1_core_interface.html#a760f5dc78696082ef65f13b797e6de89">Updraft::CoreInterface</a>
+: <a class="el" href="class_updraft_1_1_core_interface.html#acc4d5438c2f18af000cbd265a7d3abeb">Updraft::CoreInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ac80791158340df16f2653e98076b68c8">Updraft::Core::CoreImplementation</a>
+</li>
+<li>getMapManager()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a2c61836e148852f6b28ff7e41be9b8d1">Updraft::Core::SceneManager</a>
+</li>
+<li>getMapNode()
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#aa84be844cf8b737921ed97da32007c35">Updraft::Core::MapManager</a>
 </li>
 <li>getName()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a877b6e38ce007c4849a5c234e1599644">Updraft::IPlugin</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#a19fbae6603635794d1f77c170aa71e69">Updraft::Core::TaskDeclaration</a>
-, <a class="el" href="class_updraft_1_1_test_plugin.html#a8a75e7767dc7b9088fbbf0a82cb1a63e">Updraft::TestPlugin</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a8d7cff84c85a935d39d1e0aa110e8d5f">Updraft::Core::Airfields</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a8d7cff84c85a935d39d1e0aa110e8d5f">Updraft::Core::Airfields</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_airspaces.html#a651746f2b4032175d4cc2970b5530e2f">Updraft::Core::Airspaces</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#a4cf16b000cb37080290879df4aaaff6e">Updraft::Core::IgcViewer</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#a19fbae6603635794d1f77c170aa71e69">Updraft::Core::TaskDeclaration</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#a8a75e7767dc7b9088fbbf0a82cb1a63e">Updraft::TestPlugin</a>
+, <a class="el" href="class_updraft_1_1_plugin_base.html#ac901cc857e52ab8f937e680d81502402">Updraft::PluginBase</a>
 </li>
 <li>getPlugin()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aad0d738e374060374a33e0a86eb0386a">Updraft::Core::PluginManager</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a1d3a07f47b59acc33016dda1429eb313">Updraft::Core::PluginManager</a>
 </li>
 <li>getPluginApiVersion()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a96fa3c02407ece1863cd4bd66fed494c">Updraft::IPlugin</a>
+: <a class="el" href="class_updraft_1_1_plugin_base.html#a9f6b7f6ffbc584b8c3d70644fd2732b7">Updraft::PluginBase</a>
 </li>
 <li>getPriority()
-: <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#aa947573cb82e948b67829ca0e3a5fbf7">Updraft::Core::TaskDeclaration</a>
-, <a class="el" href="class_updraft_1_1_test_plugin.html#a0668cab568e738118788967fdf2badfd">Updraft::TestPlugin</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a47f1ae96b11856ecb80faeaafc91dc69">Updraft::Core::Airfields</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a47f1ae96b11856ecb80faeaafc91dc69">Updraft::Core::Airfields</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_airspaces.html#a05489f35c4c326228e016371cfdb6972">Updraft::Core::Airspaces</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#af33a2741636e84e5c4642444ccdc1abc">Updraft::Core::IgcViewer</a>
-, <a class="el" href="class_updraft_1_1_i_plugin.html#acb2dd8403b62370ea337132c08bb31d9">Updraft::IPlugin</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#a0668cab568e738118788967fdf2badfd">Updraft::TestPlugin</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#aa947573cb82e948b67829ca0e3a5fbf7">Updraft::Core::TaskDeclaration</a>
+, <a class="el" href="class_updraft_1_1_plugin_base.html#ac2bec17cb73bc7fac0c58f4daabe1a3e">Updraft::PluginBase</a>
 </li>
 <li>getQMenu()
 : <a class="el" href="class_updraft_1_1_core_1_1_menu.html#aa651593dff65a8b828901897c881c707">Updraft::Core::Menu</a>
 </li>
+<li>getRoot()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#aa223f3d736142491f2eaeba56ce4fc4a">Updraft::Core::SceneManager</a>
+</li>
 <li>getSystemMenu()
-: <a class="el" href="class_updraft_1_1_core_interface.html#ac5867383e4856d166e4d7e014728f213">Updraft::CoreInterface</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a6e87dadcb44490fb7340dafa356d011f">Updraft::Core::MainWindow</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a6e87dadcb44490fb7340dafa356d011f">Updraft::Core::MainWindow</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a3be6acc9d82bb9eb97e81b3052166940">Updraft::Core::CoreImplementation</a>
+, <a class="el" href="class_updraft_1_1_core_interface.html#adfbf758e1ca93f2f4e331babc3daafbc">Updraft::CoreInterface</a>
 </li>
 <li>getWidget()
 : <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">Updraft::Core::Tab</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a587a4eb807620adb94c62fa27671cc5e">Updraft::Core::SceneManager</a>
+</li>
+<li>graphicsWindow
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a5860ca488f2bf194204e0361e403e3a4">Updraft::Core::SceneManager</a>
 </li>
 </ul>
 
@@ -250,32 +349,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>initialize()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#af5c0d1101d05f5a3452e03ec6d707c12">Updraft::IPlugin</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a2088b8dd6eea113adcee64dcd34f442e">Updraft::Core::Airfields</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#a441fc2f1f61348203bd517d82a94718f">Updraft::Core::IgcViewer</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#ae0c5f8d587f780c586e81124aee7b097">Updraft::Core::TaskDeclaration</a>
-, <a class="el" href="class_updraft_1_1_core_1_1_airspaces.html#a6fca20df521661161bdd5339712d1414">Updraft::Core::Airspaces</a>
-, <a class="el" href="class_updraft_1_1_test_plugin.html#a8dbfefc2d2f2ec3cac9f210c473e0dbc">Updraft::TestPlugin</a>
+<li>imageLayers
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a1ba86ba67ca4eeda6496b2e7ec97c370">Updraft::Core::MapManager</a>
 </li>
-<li>initializeCoreInterface()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#adaa4286c019e11cd7c310882551be24e">Updraft::IPlugin</a>
+<li>importFile()
+: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a433351fed2325660e1c2e83a82030e2a">Updraft::Core::MainWindow</a>
+</li>
+<li>initialize()
+: <a class="el" href="class_updraft_1_1_core_1_1_airfields.html#a2088b8dd6eea113adcee64dcd34f442e">Updraft::Core::Airfields</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#a8dbfefc2d2f2ec3cac9f210c473e0dbc">Updraft::TestPlugin</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_airspaces.html#a6fca20df521661161bdd5339712d1414">Updraft::Core::Airspaces</a>
+, <a class="el" href="class_updraft_1_1_plugin_base.html#a2da6c3e20fb656f6ec2cc7d43274e790">Updraft::PluginBase</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_task_declaration.html#ae0c5f8d587f780c586e81124aee7b097">Updraft::Core::TaskDeclaration</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_igc_viewer.html#a441fc2f1f61348203bd517d82a94718f">Updraft::Core::IgcViewer</a>
 </li>
 <li>insertAction()
-: <a class="el" href="class_updraft_1_1_core_1_1_menu.html#aed827c86b9a221d0252585cc3ac86624">Updraft::Core::Menu</a>
+: <a class="el" href="class_updraft_1_1_menu_interface.html#a697cf2e86ef0a60617df5bd927f910bd">Updraft::MenuInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_menu.html#aed827c86b9a221d0252585cc3ac86624">Updraft::Core::Menu</a>
 </li>
-<li>IPlugin()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a66a63b687797dc4dbfc2df51f1ea546b">Updraft::IPlugin</a>
+<li>insertMapLayer()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#ac2d05237c4b80cdf2d988f08bb65c6cf">Updraft::MapLayerGroup</a>
+</li>
+<li>itemChanged()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#a326b97394552549afc48b653df4d0024">Updraft::MapLayerGroup</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>load()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a6cced7412252bbe92d8fd0ea50aec305">Updraft::Core::PluginManager</a>
-</li>
-<li>loader
-: <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html#a36c7a74c4bc76d6c17c96f213b24ce76">Updraft::Core::PluginManager::LoadedPlugin</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa1ae04c45c2cbf5588f26527f6586970">Updraft::Core::PluginManager</a>
 </li>
 </ul>
 
@@ -285,11 +388,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_updraft_1_1_core_1_1_tab.html#af9db4b672c4d3104f5541893e08e1809">Updraft::Core::Tab</a>
 , <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aba166ac6c87173a25c6744827a34017d">Updraft::Core::MainWindow</a>
 </li>
-<li>Menu()
-: <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a76125b44b549a3b1989cc4b898a56ee7">Updraft::Core::Menu</a>
+<li>mainWindow
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#a86dde68de8d2b8f17f6b766404e71c8d">Updraft::Core::Updraft</a>
+</li>
+<li>map
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#adfb29bb56d18063ecc421685495559f3">Updraft::Core::MapManager</a>
+</li>
+<li>mapLayerDisplayed()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#ad666168bdb010300a8dd5fbac06e5149">Updraft::MapLayerGroup</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#acde317789a70bd7036cae8714eb67401">Updraft::TestPlugin</a>
+</li>
+<li>MapLayerGroup()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#ac60c74575e1d6e28681d733f65b16fc4">Updraft::MapLayerGroup</a>
+</li>
+<li>mapLayerGroup
+: <a class="el" href="class_updraft_1_1_test_plugin.html#a0912425b6aa8ca67a370f134efca08f2">Updraft::TestPlugin</a>
+</li>
+<li>mapLayerHidden()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#afda9b96a8d92306fc2f4d7572bc52a25">Updraft::MapLayerGroup</a>
+, <a class="el" href="class_updraft_1_1_test_plugin.html#ac21f327ce6463b6d22012aa4f9fb0da8">Updraft::TestPlugin</a>
+</li>
+<li>mapLayers
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#a8cc1456acc00a963b69b31e92525d3f1">Updraft::MapLayerGroup</a>
+</li>
+<li>mapManager
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ad519adc59d3aa732725aa4b6fc4573af">Updraft::Core::SceneManager</a>
+</li>
+<li>MapManager()
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#acd051267775b0b91ceb3009c2a4811bd">Updraft::Core::MapManager</a>
+</li>
+<li>MapManipulator()
+: <a class="el" href="class_map_manipulator.html#acfc2e9b40ed5f3c79af6b74b29c428c3">MapManipulator</a>
+</li>
+<li>mapNode
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a7070302031cc1524e6d27a72640909d4">Updraft::Core::MapManager</a>
 </li>
 <li>menu
 : <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a4dee353c9dd8cb2a0a67ffb2ec79f12b">Updraft::Core::Menu</a>
+</li>
+<li>Menu()
+: <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a916809b981930e317254c30b7cae9785">Updraft::Core::Menu</a>
 </li>
 <li>menuContext
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">Updraft::Core::MainWindow</a>
@@ -307,12 +445,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">Updraft::Core::MainWindow</a>
 </li>
 <li>myMenu
-: <a class="el" href="class_updraft_1_1_test_plugin.html#a9e68e02feca36973e9c42f1a6e942020">Updraft::TestPlugin</a>
+: <a class="el" href="class_updraft_1_1_test_plugin.html#a28e0a95adbf1c7911efd6c3c2c76266d">Updraft::TestPlugin</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>openFile()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_type_manager.html#ab346a6d66a414cad22ec936d60ad67b3">Updraft::Core::FileTypeManager</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#afe3b1406db3b75eaff6a09e7d0e5cf22">Updraft::Core::MainWindow</a>
+</li>
+<li>openFileDialog()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_type_manager.html#ac43242b9f921a199d63ee21df88c936b">Updraft::Core::FileTypeManager</a>
+</li>
 <li>ownsMenu
 : <a class="el" href="class_updraft_1_1_core_1_1_menu.html#aab40b38064c94c8f73a34d77cffded85">Updraft::Core::Menu</a>
 </li>
@@ -320,20 +465,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>parent
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a1e153f1ae383d738e658005e996be69b">Updraft::Core::PluginManager</a>
-, <a class="el" href="class_updraft_1_1_core_interface.html#a1bda9bbe836fb0ffacc365d641bb6759">Updraft::CoreInterface</a>
-</li>
 <li>plugin
-: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3f1aad5b500d356ad92703d0aaa44722">Updraft::Core::Tab</a>
-, <a class="el" href="class_updraft_1_1_core_interface.html#ab17bc4b15c078fa98e4ef5833e6ccf84">Updraft::CoreInterface</a>
-, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html#aa284f6f1f434343959ead6c01d324bd1">Updraft::Core::PluginManager::LoadedPlugin</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a908edee221b8f71b89405ebc99180f73">Updraft::Core::CoreImplementation</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_file_open_option.html#aa579926137b4171b73e5067be2f21a51">Updraft::Core::FileOpenOption</a>
+, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html#a23d9fa107c4cdcfade3f6690622a9293">Updraft::Core::PluginManager::LoadedPlugin</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa40b27d5b1b1e1595e8cae56cdb54bd6">Updraft::Core::Tab</a>
+, <a class="el" href="struct_updraft_1_1_core_1_1_file_type.html#a2a0366220fe2582c24e53b67dfa94ace">Updraft::Core::FileType</a>
 </li>
-<li>pluginManager
-: <a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html#ab33828e374d2940961d9ffd4899f90f9">Updraft::Core::UpdraftParent</a>
+<li>PluginBase()
+: <a class="el" href="class_updraft_1_1_plugin_base.html#a1645db1787b159b641a1f4592317b4f1">Updraft::PluginBase</a>
 </li>
 <li>PluginManager()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a1998e2eefb0ae28295cde19535a0c658">Updraft::Core::PluginManager</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a3e0c0b1a504c1b6b5510ca60ac3a76b9">Updraft::Core::PluginManager</a>
+</li>
+<li>pluginManager
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#ad6345bb9c6d644394ba7104fbd224487">Updraft::Core::Updraft</a>
 </li>
 <li>plugins
 : <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a9ce8855bc73d1d813dcca68307b76097">Updraft::Core::PluginManager</a>
@@ -342,44 +488,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>redrawScene()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a2a8325d5289d5c6b3cf933ea49aa23b1">Updraft::Core::SceneManager</a>
+</li>
+<li>registered
+: <a class="el" href="class_updraft_1_1_core_1_1_file_type_manager.html#aa3fc6a2e2054e30565df7456586a159c">Updraft::Core::FileTypeManager</a>
+</li>
+<li>registerFiletype()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_type_manager.html#a6814ca018946f3a38842ac0a23ca3849">Updraft::Core::FileTypeManager</a>
+, <a class="el" href="class_updraft_1_1_core_interface.html#ab17deed92a0c57a569233eccb89adcd1">Updraft::CoreInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#aa1bc6244b7c2bb4cbf235a6a100777e0">Updraft::Core::CoreImplementation</a>
+</li>
+<li>removeMapLayer()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#aa73dc389ebcb5146d60742859b9d605b">Updraft::MapLayerGroup</a>
+</li>
 <li>removeMenu()
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#acdaab38a848d3b405820add3003adcb6">Updraft::Core::MainWindow</a>
-, <a class="el" href="class_updraft_1_1_core_interface.html#ad183e86280ba4fe0fe6c29ab822f351e">Updraft::CoreInterface</a>
 </li>
 <li>removeTab()
-: <a class="el" href="class_updraft_1_1_core_interface.html#ab9d33982afaf7e589d6d2167fb5b92bf">Updraft::CoreInterface</a>
+: <a class="el" href="class_updraft_1_1_core_interface.html#a21083a7d28fc511c9e81a8033045fac7">Updraft::CoreInterface</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a2300b1a3453a9167a9e3df90d1a1660a">Updraft::Core::CoreImplementation</a>
 </li>
 <li>reorganizeMenu()
 : <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a49849abf5a6abc79199a5034f27c486a">Updraft::Core::Menu</a>
+</li>
+<li>role
+: <a class="el" href="class_updraft_1_1_core_1_1_file_open_option.html#aebd52c55686a8954b7a8e553b1423cbb">Updraft::Core::FileOpenOption</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>SceneManager()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a407f0b272cc283d497e5e073ade49dc2">Updraft::Core::SceneManager</a>
+</li>
+<li>sceneManager
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#a215c82a51b3ee27c58d28787e3d0e620">Updraft::Core::Updraft</a>
+</li>
+<li>sceneRoot
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a830f27a1fa45fb84cfc721237458c389">Updraft::Core::SceneManager</a>
+</li>
 <li>selected()
 : <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">Updraft::Core::Tab</a>
 </li>
+<li>setCoreInterface()
+: <a class="el" href="class_updraft_1_1_plugin_base.html#abed6cfc75f8c15ebcd7698df2b8ec643">Updraft::PluginBase</a>
+</li>
+<li>setList()
+: <a class="el" href="class_file_roles_dialog.html#a0dacf809750020691d47de9acfcdc181">FileRolesDialog</a>
+</li>
+<li>setMapWidget()
+: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a5ca874055f4ef223023287c90dfad55b">Updraft::Core::MainWindow</a>
+</li>
 <li>showHelp()
 : <a class="el" href="class_updraft_1_1_test_plugin.html#afe79aefd8c719231702df3660f3fd25c">Updraft::TestPlugin</a>
+</li>
+<li>standardMenuItems()
+: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a24f8183598fa35271a87fab689815348">Updraft::Core::MainWindow</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>Tab()
-: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#af05d7a42c8470cc7c7989f1cab61ca14">Updraft::Core::Tab</a>
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22">Updraft::Core::Tab</a>
 </li>
 <li>tabClose()
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac086f5368419bfbcecee334da846314f">Updraft::Core::MainWindow</a>
-</li>
-<li>tabClosed()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a8bd47b38b90cd492a3198ef3b8325192">Updraft::IPlugin</a>
-</li>
-<li>tabDeselected()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a1f9c79308642cd035a049ae0730357ed">Updraft::IPlugin</a>
-</li>
-<li>tabSelected()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a472312fe268acda3b8ef6c07c6a9bcc0">Updraft::IPlugin</a>
 </li>
 <li>tabSwitch()
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab7d382b6cc7a59ee3015b90bff965fea">Updraft::Core::MainWindow</a>
@@ -390,25 +565,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>TestPlugin()
 : <a class="el" href="class_updraft_1_1_test_plugin.html#a9853e6775e3fc88b5f38079d6b3b911c">Updraft::TestPlugin</a>
 </li>
+<li>timer
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ac4437a534b938fc3dbd80855bad89ff7">Updraft::Core::SceneManager</a>
+</li>
+<li>TMapLayers
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#ae292917ef7240d5743f7b8713db37400">Updraft::MapLayerGroup</a>
+</li>
+<li>treeItem
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#a687b3560606607c5f504c99178471328">Updraft::MapLayerGroup</a>
+</li>
+<li>type()
+: <a class="el" href="class_updraft_1_1_core_1_1_file_open_option.html#a922751b097b68f8470d8e7dcd4710ad5">Updraft::Core::FileOpenOption</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>ui
-: <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">Updraft::Core::MainWindow</a>
+: <a class="el" href="class_file_roles_dialog.html#afa5b89e4d8b3a707fa1c9529fc2ad774">FileRolesDialog</a>
+, <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">Updraft::Core::MainWindow</a>
 </li>
-<li>unload()
-: <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a74ea9a53957cff74fac5f766c2963e28">Updraft::Core::PluginManager</a>
-</li>
-<li>UpdraftParent()
-: <a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html#af655f3d1e1b31761d8db23e89f11613a">Updraft::Core::UpdraftParent</a>
+<li>Updraft()
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#a62f55d815dcf83bc08cc3390aa7a8284">Updraft::Core::Updraft</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>valid()
-: <a class="el" href="class_updraft_1_1_core_interface.html#aeccc34a37e1b0fca67798c1984aa80b1">Updraft::CoreInterface</a>
+<li>viewer
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a9b4517fcf9df8504573127d0766bccf3">Updraft::Core::SceneManager</a>
 </li>
 </ul>
 
@@ -417,27 +602,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>widget
 : <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">Updraft::Core::Tab</a>
 </li>
-<li>win
-: <a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html#a1e52c2d4a07c26a87e7b13890fe57a33">Updraft::Core::UpdraftParent</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
-<li>~IPlugin()
-: <a class="el" href="class_updraft_1_1_i_plugin.html#a7fe7c99740a5aca189c8ca7230638800">Updraft::IPlugin</a>
+<li>~CoreInterface()
+: <a class="el" href="class_updraft_1_1_core_interface.html#a97d10fd34d35314bc1625ffd58843b5c">Updraft::CoreInterface</a>
+</li>
+<li>~FileRolesDialog()
+: <a class="el" href="class_file_roles_dialog.html#a0d5973521adeb2370ce08f297afd61da">FileRolesDialog</a>
 </li>
 <li>~MainWindow()
 : <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a60442453b0c203b9a9643deb797f1cf7">Updraft::Core::MainWindow</a>
 </li>
+<li>~MapLayerGroup()
+: <a class="el" href="class_updraft_1_1_map_layer_group.html#a25366276c8b616b9b2cd4df2b4280698">Updraft::MapLayerGroup</a>
+</li>
+<li>~MapManager()
+: <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a563e2ef7e90495b6aedb30ad2ec72349">Updraft::Core::MapManager</a>
+</li>
 <li>~Menu()
 : <a class="el" href="class_updraft_1_1_core_1_1_menu.html#afc9ea783df83d76b0cf357c23493b1e3">Updraft::Core::Menu</a>
+</li>
+<li>~MenuInterface()
+: <a class="el" href="class_updraft_1_1_menu_interface.html#a212491c42aaea6fcfe2a36777818a5ca">Updraft::MenuInterface</a>
+</li>
+<li>~PluginBase()
+: <a class="el" href="class_updraft_1_1_plugin_base.html#ad622cb1bafafe751c00402ab140c549a">Updraft::PluginBase</a>
 </li>
 <li>~PluginManager()
 : <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2e5816b5b54a2c265b80c2b79b598238">Updraft::Core::PluginManager</a>
 </li>
-<li>~UpdraftParent()
-: <a class="el" href="class_updraft_1_1_core_1_1_updraft_parent.html#a2796d2b9912f53a52d866b553fe0c31e">Updraft::Core::UpdraftParent</a>
+<li>~SceneManager()
+: <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a0c95edd60e4436187c6c1d9f87e482f6">Updraft::Core::SceneManager</a>
+</li>
+<li>~Tab()
+: <a class="el" href="class_updraft_1_1_core_1_1_tab.html#af73b19407385e75fc55470095526b4f0">Updraft::Core::Tab</a>
+</li>
+<li>~TabInterface()
+: <a class="el" href="class_updraft_1_1_tab_interface.html#aa4881842c685d282209225e9267dd961">Updraft::TabInterface</a>
+</li>
+<li>~TestPlugin()
+: <a class="el" href="class_updraft_1_1_test_plugin.html#ace6934b925eeaed679a69f85bf0771f6">Updraft::TestPlugin</a>
+</li>
+<li>~Updraft()
+: <a class="el" href="class_updraft_1_1_core_1_1_updraft.html#a48207bc882f0f78e9e9cd4d26cfecde6">Updraft::Core::Updraft</a>
 </li>
 </ul>
 </div>
@@ -446,7 +655,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -459,7 +668,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Generated on Thu Dec 15 2011 13:17:30 for Updraft project by
+    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

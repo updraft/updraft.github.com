@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -100,44 +99,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Updraft::Core::Tab Class Reference</div>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Updraft::Core::Tab" -->
+<!-- doxytag: class="Updraft::Core::Tab" --><!-- doxytag: inherits="Updraft::TabInterface" -->
 <p><code>#include &lt;<a class="el" href="tab_8h_source.html">tab.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Updraft::Core::Tab:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_updraft_1_1_core_1_1_tab.png" usemap="#Updraft::Core::Tab_map" alt=""/>
+  <map id="Updraft::Core::Tab_map" name="Updraft::Core::Tab_map">
+<area href="class_updraft_1_1_tab_interface.html" title="An interface wrapping a single tab in bottom pane." alt="Updraft::TabInterface" shape="rect" coords="0,0,130,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">close</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#acaffd96bccc7d3811fe5c99d87c9354b">closed</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">deselected</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#af05d7a42c8470cc7c7989f1cab61ca14">Tab</a> (QWidget *content, QString title, QTabWidget *parent, <a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *owner)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22">Tab</a> (QWidget *content, QString title, QTabWidget *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#af73b19407385e75fc55470095526b4f0">~Tab</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a00847fc6e3afae6a1607add9150c5839">getWidget</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">deselected</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a1979f5ea34fd9a5ae030f6598067a0d9">connectSlotClose</a> (const QObject *sender, const char *signal)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a4f5b2ca0909394d09b955e43ff771990">connectSignalClosed</a> (const QObject *receiver, const char *method)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a5553367dbcd40234afe1f6691b772ffe">connectSignalSelected</a> (const QObject *receiver, const char *method)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3c6839d346f303a5f7fcba98545f57c6">connectSignalDeselected</a> (const QObject *receiver, const char *method)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683">widget</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QTabWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a2bbc69dbb2adaf6d4587db1fc3923fcf">tabWidget</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3f1aad5b500d356ad92703d0aaa44722">plugin</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa40b27d5b1b1e1595e8cae56cdb54bd6">plugin</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#af9db4b672c4d3104f5541893e08e1809">MainWindow</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af05d7a42c8470cc7c7989f1cab61ca14"></a><!-- doxytag: member="Updraft::Core::Tab::Tab" ref="af05d7a42c8470cc7c7989f1cab61ca14" args="(QWidget *content, QString title, QTabWidget *parent, IPlugin *owner)" -->
+<a class="anchor" id="ab87cb5815de64a14a468b0cd7ce3ce22"></a><!-- doxytag: member="Updraft::Core::Tab::Tab" ref="ab87cb5815de64a14a468b0cd7ce3ce22" args="(QWidget *content, QString title, QTabWidget *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#af05d7a42c8470cc7c7989f1cab61ca14">Updraft::Core::Tab::Tab</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22">Updraft::Core::Tab::Tab</a> </td>
           <td>(</td>
           <td class="paramtype">QWidget *&#160;</td>
           <td class="paramname"><em>content</em>, </td>
@@ -152,13 +166,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QTabWidget *&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a> *&#160;</td>
-          <td class="paramname"><em>owner</em>&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -172,6 +180,22 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af73b19407385e75fc55470095526b4f0"></a><!-- doxytag: member="Updraft::Core::Tab::~Tab" ref="af73b19407385e75fc55470095526b4f0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_tab.html#af73b19407385e75fc55470095526b4f0">Updraft::Core::Tab::~Tab</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aa3f892ded927d84e7afd45b6df4393ea"></a><!-- doxytag: member="Updraft::Core::Tab::close" ref="aa3f892ded927d84e7afd45b6df4393ea" args="()" -->
 <div class="memitem">
@@ -180,13 +204,156 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">Updraft::Core::Tab::close</a> </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [slot]</code></td>
+          <td><code> [virtual, slot]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Close this tab. This method deletes the tab and its widget. </p>
+
+<p>Implements <a class="el" href="class_updraft_1_1_tab_interface.html#aca2e6976d21ac4315c657a3321298fc8">Updraft::TabInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acaffd96bccc7d3811fe5c99d87c9354b"></a><!-- doxytag: member="Updraft::Core::Tab::closed" ref="acaffd96bccc7d3811fe5c99d87c9354b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#acaffd96bccc7d3811fe5c99d87c9354b">Updraft::Core::Tab::closed</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f5b2ca0909394d09b955e43ff771990"></a><!-- doxytag: member="Updraft::Core::Tab::connectSignalClosed" ref="a4f5b2ca0909394d09b955e43ff771990" args="(const QObject *receiver, const char *method)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a4f5b2ca0909394d09b955e43ff771990">Updraft::Core::Tab::connectSignalClosed</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QObject *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>method</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Connect to a signal <a class="el" href="class_updraft_1_1_core_1_1_tab.html#acaffd96bccc7d3811fe5c99d87c9354b">closed(void)</a> that is emited before closing the tab. After receiving this signal pointer to this becomes invalid. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_tab_interface.html#a81e68c72649992f20d9b5a01595a7fc2">Updraft::TabInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c6839d346f303a5f7fcba98545f57c6"></a><!-- doxytag: member="Updraft::Core::Tab::connectSignalDeselected" ref="a3c6839d346f303a5f7fcba98545f57c6" args="(const QObject *receiver, const char *method)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3c6839d346f303a5f7fcba98545f57c6">Updraft::Core::Tab::connectSignalDeselected</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QObject *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>method</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Connects to a signal <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected(void)</a> -- tab loses focus. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_tab_interface.html#a351364d89b27e22aae0c0f3073266891">Updraft::TabInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5553367dbcd40234afe1f6691b772ffe"></a><!-- doxytag: member="Updraft::Core::Tab::connectSignalSelected" ref="a5553367dbcd40234afe1f6691b772ffe" args="(const QObject *receiver, const char *method)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a5553367dbcd40234afe1f6691b772ffe">Updraft::Core::Tab::connectSignalSelected</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QObject *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>method</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Connects to a signal <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">selected(void)</a> -- tab gets focus. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_tab_interface.html#a93df0cb9f0440ebcc32923bf880a3b60">Updraft::TabInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1979f5ea34fd9a5ae030f6598067a0d9"></a><!-- doxytag: member="Updraft::Core::Tab::connectSlotClose" ref="a1979f5ea34fd9a5ae030f6598067a0d9" args="(const QObject *sender, const char *signal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a1979f5ea34fd9a5ae030f6598067a0d9">Updraft::Core::Tab::connectSlotClose</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QObject *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>signal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Connect to the <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa3f892ded927d84e7afd45b6df4393ea">close(void)</a> slot of tab. After this slot is called signal closed is emited and pointer to this becomes invalid. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_tab_interface.html#a2533ae483845b4d070f4a04226210631">Updraft::TabInterface</a>.</p>
 
 </div>
 </div>
@@ -198,7 +365,7 @@ Friends</h2></td></tr>
           <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#ae1a7bd9d400186057b1492efb2955b74">Updraft::Core::Tab::deselected</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private]</code></td>
+          <td><code> [signal]</code></td>
         </tr>
       </table>
 </div>
@@ -230,7 +397,7 @@ Friends</h2></td></tr>
           <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a79f221c90526a85bed16452ade064b13">Updraft::Core::Tab::selected</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [private]</code></td>
+          <td><code> [signal]</code></td>
         </tr>
       </table>
 </div>
@@ -253,12 +420,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
-<a class="anchor" id="a3f1aad5b500d356ad92703d0aaa44722"></a><!-- doxytag: member="Updraft::Core::Tab::plugin" ref="a3f1aad5b500d356ad92703d0aaa44722" args="" -->
+<a class="anchor" id="aa40b27d5b1b1e1595e8cae56cdb54bd6"></a><!-- doxytag: member="Updraft::Core::Tab::plugin" ref="aa40b27d5b1b1e1595e8cae56cdb54bd6" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_i_plugin.html">IPlugin</a>* <a class="el" href="class_updraft_1_1_core_1_1_tab.html#a3f1aad5b500d356ad92703d0aaa44722">Updraft::Core::Tab::plugin</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a>* <a class="el" href="class_updraft_1_1_core_1_1_tab.html#aa40b27d5b1b1e1595e8cae56cdb54bd6">Updraft::Core::Tab::plugin</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -303,7 +470,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -318,7 +485,7 @@ Friends</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Tab</a>      </li>
 
-    <li class="footer">Generated on Thu Dec 15 2011 13:17:29 for Updraft project by
+    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>
