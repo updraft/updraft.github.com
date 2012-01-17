@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05" title="TiXmlParsingData::Cursor" alt="" coords="673,5,847,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071" title="TiXmlNode::GetDocument" alt="" coords="219,581,395,611"/>
+<area shape="rect" id="node9" href="$class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e" title="TiXmlBase::IsWhiteSpace" alt="" coords="904,348,1080,377"/>
+<area shape="rect" id="node11" href="$class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda" title="TiXmlAttribute::Parse" alt="" coords="233,189,380,219"/>
+<area shape="rect" id="node30" href="$class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875" title="TiXmlBase::SkipWhiteSpace" alt="" coords="665,323,855,352"/>
+<area shape="rect" id="node33" href="$class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a" title="TiXmlBase::StringEqual" alt="" coords="680,531,840,560"/>
+<area shape="rect" id="node37" href="$class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de" title="TiXmlDocument::SetError" alt="" coords="444,59,615,88"/>
+<area shape="rect" id="node42" href="$class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d" title="TiXmlParsingData::Stamp" alt="" coords="673,269,847,299"/>
+<area shape="rect" id="node50" href="$class_ti_xml_attribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute." alt="" coords="233,635,380,664"/>
+<area shape="rect" id="node7" href="$class_ti_xml_node.html#a8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="444,581,615,611"/>
+<area shape="rect" id="node15" href="$class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3" title="TiXmlBase::ReadName" alt="" coords="449,163,609,192"/>
+<area shape="rect" id="node21" href="$class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e" title="TiXmlBase::ReadText" alt="" coords="455,419,604,448"/>
+<area shape="rect" id="node17" href="$class_ti_xml_base.html#ae22522b2e8e1ac43102d16394f639fc8" title="TiXmlBase::IsAlpha" alt="" coords="691,216,829,245"/>
+<area shape="rect" id="node19" href="$class_ti_xml_base.html#a321919055c115c78ded17f85a793f368" title="TiXmlBase::IsAlphaNum" alt="" coords="677,163,843,192"/>
+<area shape="rect" id="node23" href="$class_ti_xml_base.html#a5b0fde72d6f662ae1fd6303195d2159b" title="TiXmlBase::GetChar" alt="" coords="689,427,831,456"/>
+<area shape="rect" id="node25" href="$class_ti_xml_base.html#ac5c08bf3deffcda0bf8ce2958372b584" title="TiXmlBase::GetEntity" alt="" coords="917,427,1067,456"/>
+<area shape="rect" id="node27" href="$class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b" title="TiXmlBase::ConvertUTF32ToUTF8" alt="" coords="1129,427,1356,456"/>
+<area shape="rect" id="node35" href="$class_ti_xml_base.html#a799f17405a86a5c2029618e85f11a097" title="TiXmlBase::ToLower" alt="" coords="920,531,1064,560"/>
+<area shape="rect" id="node39" href="$struct_ti_xml_cursor.html#a1e6fa622b59dafb71b6efe595105dcdd" title="TiXmlCursor::Clear" alt="" coords="693,59,827,88"/>
+</map>

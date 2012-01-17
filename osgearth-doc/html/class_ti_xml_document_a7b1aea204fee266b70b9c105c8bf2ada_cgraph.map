@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_node.html#a44c8eee26bbe2d1b2762038df9dde2f0" title="The first child of this node. Will be null if there are no children." alt="" coords="212,5,361,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_node.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="205,59,368,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_base.html#a0de56b3f2ef14c65091a3b916437b512" title="TiXmlBase::Print" alt="" coords="227,112,347,141"/>
+</map>

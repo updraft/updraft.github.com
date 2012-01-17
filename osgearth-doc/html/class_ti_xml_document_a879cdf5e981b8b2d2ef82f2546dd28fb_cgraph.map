@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_document.html#a4c852a889c02cf251117fd1d9fe1845f" title="TiXmlDocument::LoadFile" alt="" coords="227,19,400,48"/>
+<area shape="rect" id="node7" href="$class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de" title="TiXmlDocument::SetError" alt="" coords="228,85,399,115"/>
+<area shape="rect" id="node15" href="$tinyxml_8cpp.html#aae316d26cdf72c45de918553b2c61e20" title="TiXmlFOpen" alt="" coords="267,139,360,168"/>
+<area shape="rect" id="node5" href="$class_ti_xml_node.html#a77943eb90d12c2892b1337a9f5918b41" title="TiXmlNode::Value" alt="" coords="472,5,600,35"/>
+<area shape="rect" id="node9" href="$struct_ti_xml_cursor.html#a1e6fa622b59dafb71b6efe595105dcdd" title="TiXmlCursor::Clear" alt="" coords="469,59,603,88"/>
+<area shape="rect" id="node11" href="$class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05" title="TiXmlParsingData::Cursor" alt="" coords="449,112,623,141"/>
+<area shape="rect" id="node13" href="$class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d" title="TiXmlParsingData::Stamp" alt="" coords="449,165,623,195"/>
+</map>

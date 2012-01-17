@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_text.html#ad1a6a6b83fa2271022dd97c072a2b586" title="Queries whether this represents text using a CDATA section." alt="" coords="200,5,336,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_base.html#a32ed202562b58de64c7d799ca3c9db98" title="TiXmlBase::EncodeString" alt="" coords="183,59,353,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_node.html#a77943eb90d12c2892b1337a9f5918b41" title="TiXmlNode::Value" alt="" coords="204,112,332,141"/>
+<area shape="rect" id="node9" href="$class_ti_xml_node.html#a83ece13d2ea66dac66e0b21332229239" title="TiXmlNode::ValueTStr" alt="" coords="192,165,344,195"/>
+</map>

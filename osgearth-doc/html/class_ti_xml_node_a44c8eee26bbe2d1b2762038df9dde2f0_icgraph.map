@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_document.html#a3daab2f472418ef66315750202f762ae" title="TiXmlDocument::Accept" alt="" coords="223,5,388,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_element.html#a31ab28cc3b892a69254391d6bbe08df3" title="TiXmlElement::Accept" alt="" coords="229,59,381,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_handle.html#af9cf6a7d08a5da94a8924425ad0cd5ac" title="TiXmlHandle::Child" alt="" coords="239,112,372,141"/>
+<area shape="rect" id="node9" href="$class_ti_xml_handle.html#acdb1faaf88a700b40ca2c8d9aee21139" title="Return a handle to the first child node." alt="" coords="225,165,385,195"/>
+<area shape="rect" id="node11" href="$class_ti_xml_node.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="207,219,404,248"/>
+<area shape="rect" id="node19" href="$class_ti_xml_element.html#aa6dedd8a146acf3b1bc0903deb2d411a" title="TiXmlElement::GetText" alt="" coords="227,272,384,301"/>
+<area shape="rect" id="node21" href="$class_ti_xml_node.html#aaef7ac3978c4bb1cc8a24ffae7bced75" title="TiXmlNode::IterateChildren" alt="" coords="216,325,395,355"/>
+<area shape="rect" id="node23" href="$class_ti_xml_document.html#a7b1aea204fee266b70b9c105c8bf2ada" title="Print this Document to a FILE stream." alt="" coords="231,379,380,408"/>
+<area shape="rect" id="node25" href="$class_ti_xml_printer.html#a6dccaf5ee4979f13877690afe28721e8" title="Visit an element." alt="" coords="227,432,384,461"/>
+<area shape="rect" id="node27" href="$class_ti_xml_printer.html#ae6a1df8271df4bf62d7873c38e34aa69" title="Visit an element." alt="" coords="231,485,380,515"/>
+<area shape="rect" id="node13" href="$class_ti_xml_handle.html#a8786475b9d1f1518492e3a46704c7ef0" title="TiXmlHandle::ChildElement" alt="" coords="468,165,649,195"/>
+<area shape="rect" id="node15" href="$class_ti_xml_handle.html#a24d1112e995e937e4dddb202d4113d4a" title="Return a handle to the first child element." alt="" coords="455,219,663,248"/>
+<area shape="rect" id="node17" href="$class_ti_xml_document.html#ad09d17927f908f40efb406af2fb873be" title="TiXmlDocument::RootElement" alt="" coords="459,272,659,301"/>
+</map>

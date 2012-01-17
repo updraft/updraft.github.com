@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_element.html#abf0b3bd7f0e4c746a89ec6e7f101fc32" title="TiXmlElement::SetAttribute" alt="" coords="235,59,416,88"/>
+<area shape="rect" id="node13" href="$class_ti_xml_attribute.html#a0316da31373496c4368ad549bf711394" title="Set the value from a double." alt="" coords="223,112,428,141"/>
+<area shape="rect" id="node17" href="$class_ti_xml_attribute.html#a7e065df640116a62ea4f4b7da5449cc8" title="Set the value from an integer." alt="" coords="235,165,416,195"/>
+<area shape="rect" id="node5" href="$class_ti_xml_element.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="511,59,668,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_element.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="773,5,920,35"/>
+<area shape="rect" id="node9" href="$class_ti_xml_element.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="764,59,929,88"/>
+<area shape="rect" id="node11" href="$class_ti_xml_element.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="749,112,944,141"/>
+<area shape="rect" id="node15" href="$class_ti_xml_element.html#a0d1dd975d75496778177e35abfe0ec0b" title="TiXmlElement::SetDoubleAttribute" alt="" coords="479,112,700,141"/>
+<area shape="rect" id="node19" href="$class_ti_xml_element.html#ace6f4be75e373726d4774073d666d1a7" title="TiXmlElement::SetAttribute" alt="" coords="499,165,680,195"/>
+</map>

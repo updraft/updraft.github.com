@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_element.html#a898d7730ecc341f0bffc7a9dadbf1ce7" title="QueryDoubleAttribute examines the attribute &#45; see QueryIntAttribute()." alt="" coords="280,32,517,61"/>
+<area shape="rect" id="node5" href="$class_ti_xml_attribute_set.html#af3675cc2bfd0aea153cda1cfcdd1f77e" title="TiXmlAttributeSet::Find" alt="" coords="599,5,756,35"/>
+<area shape="rect" id="node7" href="$class_ti_xml_attribute.html#ac87b2a8489906a5d7aa2875f20be3513" title="QueryDoubleValue examines the value string. See QueryIntValue()." alt="" coords="567,59,788,88"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classagg_1_1rasterizer.html#a5c88370e58fa89c5e8f83d397fec50bd" title="agg::rasterizer::max_x" alt="" coords="189,5,341,35"/>
+<area shape="rect" id="node5" href="$classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c" title="agg::rasterizer::render" alt="" coords="191,59,340,88"/>
+<area shape="rect" id="node7" href="$class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="389,59,728,88"/>
+</map>

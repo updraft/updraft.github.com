@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_node.html#a274db3292218202805c093f66a964cb5" title="TiXmlNode::InsertAfterChild" alt="" coords="184,5,371,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_node.html#a71e54e393336382bc9875f64aab5cb15" title="TiXmlNode::InsertBeforeChild" alt="" coords="180,59,375,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_node.html#af287a913ce46d8dbf7ef24fec69bbaf0" title="TiXmlNode::InsertEndChild" alt="" coords="424,109,605,139"/>
+<area shape="rect" id="node9" href="$class_ti_xml_node.html#a1a881212554b759865f6cac79a851d38" title="TiXmlNode::LinkEndChild" alt="" coords="192,163,363,192"/>
+<area shape="rect" id="node11" href="$class_ti_xml_element.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="436,163,593,192"/>
+<area shape="rect" id="node20" href="$class_ti_xml_document.html#a789ad2f06f93d52bdb5570b2f3670289" title="TiXmlDocument::Parse" alt="" coords="436,216,593,245"/>
+<area shape="rect" id="node24" href="$class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41" title="TiXmlElement::ReadValue" alt="" coords="427,269,603,299"/>
+<area shape="rect" id="node13" href="$class_ti_xml_element.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="677,56,824,85"/>
+<area shape="rect" id="node15" href="$class_ti_xml_element.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="668,109,833,139"/>
+<area shape="rect" id="node17" href="$class_ti_xml_element.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="653,163,848,192"/>
+<area shape="rect" id="node22" href="$class_ti_xml_document.html#a41f6fe7200864d1dca663d230caf8db6" title="TiXmlDocument::LoadFile" alt="" coords="664,216,837,245"/>
+<area shape="rect" id="node26" href="$class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b" title="TiXmlElement::Parse" alt="" coords="677,269,824,299"/>
+</map>

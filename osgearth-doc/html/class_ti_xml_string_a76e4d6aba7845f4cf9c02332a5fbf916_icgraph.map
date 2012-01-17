@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_string.html#ad44b21700d2ec24a511367b222b643fb" title="TiXmlString::append" alt="" coords="397,59,536,88"/>
+<area shape="rect" id="node9" href="$class_ti_xml_string.html#ac72f3d9149b7812c1e6c59402014d0d5" title="TiXmlString::assign" alt="" coords="203,7,339,36"/>
+<area shape="rect" id="node13" href="$class_ti_xml_string.html#a88ecf9f0f00cb5c67b6b637958d7049c" title="TiXmlString::reserve" alt="" coords="200,111,341,140"/>
+<area shape="rect" id="node5" href="$tinystr_8h.html#ab77ef9617d62643b24e52118db159b7b" title="operator+" alt="" coords="635,32,712,61"/>
+<area shape="rect" id="node7" href="$class_ti_xml_string.html#ab56336ac2aa2a08d24a71eb9a2b502a5" title="TiXmlString::operator+=" alt="" coords="593,85,753,115"/>
+<area shape="rect" id="node11" href="$class_ti_xml_string.html#ae0bc6147afc0ec2aa0da3a3c0a8fcfb0" title="TiXmlString::operator=" alt="" coords="391,5,543,35"/>
+<area shape="rect" id="node16" href="$tinystr_8h.html#a6ee35bce93b3aaf8a2353471c0dd2d58" title="operator+" alt="" coords="428,112,505,141"/>
+</map>

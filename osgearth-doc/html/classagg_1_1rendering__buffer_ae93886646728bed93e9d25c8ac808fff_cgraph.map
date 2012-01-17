@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classagg_1_1rendering__buffer.html#add349fd37249bd619a375faac3c90cc2" title="agg::rendering_buffer::attach" alt="" coords="300,85,487,115"/>
+<area shape="rect" id="node5" href="$classagg_1_1rendering__buffer.html#af416294858d093870627370c66d314ea" title="agg::rendering_buffer::buf" alt="" coords="544,5,715,35"/>
+<area shape="rect" id="node7" href="$classagg_1_1rendering__buffer.html#a62ed0c726c30fdb7422a29fd8eb9d2c4" title="agg::rendering_buffer::height" alt="" coords="536,59,723,88"/>
+<area shape="rect" id="node9" href="$classagg_1_1rendering__buffer.html#a620e12b72906a56169c058d0598d38b1" title="agg::rendering_buffer::stride" alt="" coords="537,112,721,141"/>
+<area shape="rect" id="node11" href="$classagg_1_1rendering__buffer.html#a1feb032c305fb7fcea896c2c25d51d5a" title="agg::rendering_buffer::width" alt="" coords="539,165,720,195"/>
+</map>

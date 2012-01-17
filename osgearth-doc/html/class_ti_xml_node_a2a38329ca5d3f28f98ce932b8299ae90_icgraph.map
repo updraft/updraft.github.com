@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_node.html#ab6056978923ad8350fb5164af32d8038" title="TiXmlNode::CopyTo" alt="" coords="239,5,380,35"/>
+<area shape="rect" id="node5" href="$class_ti_xml_comment.html#a37e7802ef17bc03ebe5ae79bf0713d47" title="Construct a comment from text." alt="" coords="204,59,415,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_text.html#af659e77c6b87d684827f35a8f4895960" title="TiXmlText::TiXmlText" alt="" coords="235,112,384,141"/>
+<area shape="rect" id="node9" href="$class_ti_xml_text.html#adde1869dfb029be50713fbfd8ce4d21f" title="[internal use] Creates a new Element and returns it." alt="" coords="465,112,588,141"/>
+</map>

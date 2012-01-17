@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_attribute_set.html#a745e50ddaae3bee93e4589321e0b9c1a" title="TiXmlAttributeSet::Add" alt="" coords="255,71,409,100"/>
+<area shape="rect" id="node5" href="$class_ti_xml_attribute_set.html#a5e28f5d32f048fba85d04dc317495bdc" title="TiXmlAttributeSet::FindOrCreate" alt="" coords="507,32,717,61"/>
+<area shape="rect" id="node11" href="$class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b" title="TiXmlElement::Parse" alt="" coords="539,111,685,140"/>
+<area shape="rect" id="node13" href="$class_ti_xml_element.html#ac1e4691e9375ba4e665dce7e46a50a9c" title="TiXmlElement::Attribute" alt="" coords="252,175,412,204"/>
+<area shape="rect" id="node17" href="$class_ti_xml_element.html#a898d7730ecc341f0bffc7a9dadbf1ce7" title="QueryDoubleAttribute examines the attribute &#45; see QueryIntAttribute()." alt="" coords="213,228,451,257"/>
+<area shape="rect" id="node21" href="$class_ti_xml_element.html#aea0bfe471380f281c5945770ddbf52b9" title="TiXmlElement::QueryIntAttribute" alt="" coords="227,281,437,311"/>
+<area shape="rect" id="node23" href="$class_ti_xml_element.html#a56979767deca794376b1dfa69a525b2a" title="TiXmlElement::RemoveAttribute" alt="" coords="227,335,437,364"/>
+<area shape="rect" id="node7" href="$class_ti_xml_element.html#ace6f4be75e373726d4774073d666d1a7" title="TiXmlElement::SetAttribute" alt="" coords="795,5,976,35"/>
+<area shape="rect" id="node9" href="$class_ti_xml_element.html#a0d1dd975d75496778177e35abfe0ec0b" title="TiXmlElement::SetDoubleAttribute" alt="" coords="775,59,996,88"/>
+<area shape="rect" id="node19" href="$class_ti_xml_element.html#aa04d3af11601ef5a5f88295203a843be" title="QueryFloatAttribute examines the attribute &#45; see QueryIntAttribute()." alt="" coords="500,228,724,257"/>
+</map>

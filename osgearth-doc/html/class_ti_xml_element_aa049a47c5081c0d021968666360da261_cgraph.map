@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_element.html#a5670933ec2d7d9763b9891acc05d7f7d" title="TiXmlElement::ClearThis" alt="" coords="256,59,424,88"/>
+<area shape="rect" id="node5" href="$class_ti_xml_node.html#a708e7f953df61d4d2d12f73171550a4b" title="Delete all the children of this node. Does not affect &#39;this&#39;." alt="" coords="501,5,627,35"/>
+<area shape="rect" id="node7" href="$class_ti_xml_attribute_set.html#ae0636e88cedd4b09d61c451860f68598" title="TiXmlAttributeSet::First" alt="" coords="485,59,643,88"/>
+<area shape="rect" id="node9" href="$class_ti_xml_attribute_set.html#a924a73d071f2573f9060f0be57879c57" title="TiXmlAttributeSet::Remove" alt="" coords="473,112,655,141"/>
+</map>

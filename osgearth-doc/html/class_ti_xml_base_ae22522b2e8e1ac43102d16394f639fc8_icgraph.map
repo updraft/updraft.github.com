@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb" title="TiXmlNode::Identify" alt="" coords="203,59,341,88"/>
+<area shape="rect" id="node13" href="$class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3" title="TiXmlBase::ReadName" alt="" coords="192,112,352,141"/>
+<area shape="rect" id="node5" href="$class_ti_xml_document.html#a789ad2f06f93d52bdb5570b2f3670289" title="TiXmlDocument::Parse" alt="" coords="409,5,567,35"/>
+<area shape="rect" id="node9" href="$class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41" title="TiXmlElement::ReadValue" alt="" coords="400,59,576,88"/>
+<area shape="rect" id="node7" href="$class_ti_xml_document.html#a41f6fe7200864d1dca663d230caf8db6" title="TiXmlDocument::LoadFile" alt="" coords="624,5,797,35"/>
+<area shape="rect" id="node11" href="$class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b" title="TiXmlElement::Parse" alt="" coords="637,109,784,139"/>
+<area shape="rect" id="node15" href="$class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda" title="TiXmlAttribute::Parse" alt="" coords="415,163,561,192"/>
+<area shape="rect" id="node17" href="$class_ti_xml_declaration.html#a9839ea97ed687a2b7342fd7b0f04361b" title="TiXmlDeclaration::Parse" alt="" coords="629,163,792,192"/>
+</map>

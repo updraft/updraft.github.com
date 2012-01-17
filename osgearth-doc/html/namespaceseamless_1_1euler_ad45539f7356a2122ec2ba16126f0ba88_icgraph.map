@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="263,5,431,35"/>
+<area shape="rect" id="node9" href="$namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00" title="seamless::euler::getNormalToSegment" alt="" coords="223,59,471,88"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d" title="seamless::euler::arcLength" alt="" coords="551,5,729,35"/>
+<area shape="rect" id="node7" href="$namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="521,59,759,88"/>
+</map>
