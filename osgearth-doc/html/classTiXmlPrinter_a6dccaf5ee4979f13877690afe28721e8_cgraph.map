@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlText.html#ad1a6a6b83fa2271022dd97c072a2b586" title="Queries whether this represents text using a CDATA section." alt="" coords="235,5,371,35"/>
+<area shape="rect" id="node5" href="$classTiXmlPrinter.html#a348ad6527b1d43ddeb51454cddeb6a1d" title="TiXmlPrinter::DoIndent" alt="" coords="225,59,380,88"/>
+<area shape="rect" id="node7" href="$classTiXmlPrinter.html#a252a0e13e06def9a06b2eb30a04677a0" title="TiXmlPrinter::DoLineBreak" alt="" coords="215,112,391,141"/>
+<area shape="rect" id="node9" href="$classTiXmlNode.html#a44c8eee26bbe2d1b2762038df9dde2f0" title="The first child of this node. Will be null if there are no children." alt="" coords="228,165,377,195"/>
+<area shape="rect" id="node11" href="$classTiXmlNode.html#a6d671107e00cca1d28cb2d7f3a87a21e" title="TiXmlNode::LastChild" alt="" coords="228,219,377,248"/>
+<area shape="rect" id="node13" href="$classTiXmlAttribute.html#a776478980776a024f7c2846eec640f65" title="Get the next sibling attribute in the DOM. Returns null at end." alt="" coords="232,272,373,301"/>
+<area shape="rect" id="node15" href="$classTiXmlAttribute.html#acc04956c1d5c4c31fe74f7a7528d109a" title="TiXmlAttribute::Print" alt="" coords="233,325,372,355"/>
+<area shape="rect" id="node17" href="$classTiXmlNode.html#a95a46a52c525992d6b4ee08beb14cd69" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="235,379,371,408"/>
+<area shape="rect" id="node19" href="$classTiXmlNode.html#a77943eb90d12c2892b1337a9f5918b41" title="TiXmlNode::Value" alt="" coords="239,432,367,461"/>
+</map>

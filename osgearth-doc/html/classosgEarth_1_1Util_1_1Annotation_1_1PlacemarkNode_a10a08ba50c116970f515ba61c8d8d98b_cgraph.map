@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html#a4f35e5a49d246d81a345a07a6cd9b343" title="osgEarth::Util::Annotation::PlacemarkNode::init" alt="" coords="453,245,752,275"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html#aa1fe425af55b0a64a64c2e1c9eb349e0" title="osgEarth::Util::Annotation::PlacemarkNode::setPosition" alt="" coords="429,299,776,328"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#af4dc10f833fbccf33f138ae9d9ee4ac3" title="osgEarth::Symbology::TextSymbol::content" alt="" coords="837,5,1112,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a8b3ab4ee20a8cc790e45138c44f602b1" title="osgEarth::Symbology::TextSymbol::fill" alt="" coords="852,59,1097,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d" title="osgEarth::Symbology::TextSymbol::font" alt="" coords="848,112,1101,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1MarkerSymbol.html#a7d96128aac7dcc2ee3f9a1698aba46f7" title="osgEarth::Symbology::MarkerSymbol::getImage" alt="" coords="824,165,1125,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a253d33a89e58f5cbb49ebf3ecc815e65" title="osgEarth::Symbology::TextSymbol::halo" alt="" coords="847,219,1103,248"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="892,272,1057,301"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="828,325,1121,355"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="831,379,1119,408"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a3e7ab832c2c56a2094ffe5c97e89937f" title="osgEarth::Symbology::TextSymbol::size" alt="" coords="847,432,1103,461"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Symbology_1_1MarkerSymbol.html#a6c3110c547a922efcdf7ecd5b56f2c08" title="osgEarth::Symbology::MarkerSymbol::url" alt="" coords="844,485,1105,515"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1173,299,1416,328"/>
+<area shape="rect" id="node23" href="$structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1205,352,1384,381"/>
+<area shape="rect" id="node25" href="$structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1212,405,1377,435"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1465,299,1737,328"/>
+</map>

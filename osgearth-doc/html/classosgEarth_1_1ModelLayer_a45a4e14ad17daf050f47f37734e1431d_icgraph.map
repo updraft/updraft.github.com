@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MapNode.html#a92fdff86742787d200a678610d4409b6" title="osgEarth::MapNode::onModelLayerRemoved" alt="" coords="341,5,624,35"/>
+<area shape="rect" id="node7" href="$classEarthFileSerializer2.html#a276faeb62aacdd59653b527d4fdab154" title="EarthFileSerializer2::serialize" alt="" coords="388,59,577,88"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1MapNode.html#a380098b662362882a2d5ca3bd5004fc1" title="osgEarth::MapNode::~MapNode" alt="" coords="672,5,883,35"/>
+<area shape="rect" id="node9" href="$classReaderWriterEarth.html#a6cf10dbc47aa3c627e51f6f3d76536ed" title="ReaderWriterEarth::writeNode" alt="" coords="679,59,876,88"/>
+</map>

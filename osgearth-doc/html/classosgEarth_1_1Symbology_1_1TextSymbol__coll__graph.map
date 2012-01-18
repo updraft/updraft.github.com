@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Symbology_1_1Symbol.html" title="osgEarth::Symbology::Symbol" alt="" coords="396,47,593,77"/>
+<area shape="rect" id="node4" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="80,17,168,46"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="48,86,200,115"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Symbology_1_1StringExpression.html" title="osgEarth::Symbology::StringExpression" alt="" coords="368,102,621,131"/>
+<area shape="rect" id="node8" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Fill \&gt;" alt="" coords="807,155,975,185"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1Symbology_1_1Fill.html" title="osgEarth::Symbology::Fill" alt="" coords="409,167,580,197"/>
+<area shape="rect" id="node12" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; SizeMode \&gt;" alt="" coords="787,209,995,238"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LinePlacement \&gt;" alt="" coords="772,262,1009,291"/>
+<area shape="rect" id="node16" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="804,315,977,345"/>
+<area shape="rect" id="node18" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="36,382,212,411"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Symbology_1_1Stroke.html" title="osgEarth::Symbology::Stroke" alt="" coords="399,453,591,482"/>
+<area shape="rect" id="node20" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LineOrientation \&gt;" alt="" coords="772,473,1009,502"/>
+<area shape="rect" id="node22" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; StringExpression \&gt;" alt="" coords="765,102,1016,131"/>
+<area shape="rect" id="node27" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Stroke \&gt;" alt="" coords="796,419,985,449"/>
+<area shape="rect" id="node31" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; unsigned short \&gt;" alt="" coords="7,450,241,479"/>
+<area shape="rect" id="node34" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LineJoinStyle \&gt;" alt="" coords="9,503,239,533"/>
+<area shape="rect" id="node36" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LineCapStyle \&gt;" alt="" coords="9,557,239,586"/>
+<area shape="rect" id="node38" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; std::string \&gt;" alt="" coords="787,534,995,563"/>
+<area shape="rect" id="node40" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; NumericExpression \&gt;" alt="" coords="759,587,1023,617"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1Symbology_1_1NumericExpression.html" title="osgEarth::Symbology::NumericExpression" alt="" coords="360,587,629,617"/>
+<area shape="rect" id="node44" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; osg::Vec2s \&gt;" alt="" coords="783,641,999,670"/>
+</map>

@@ -1,5 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="232,32,400,61"/>
-<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64" title="seamless::euler::face2qrs" alt="" coords="449,5,620,35"/>
-<area shape="rect" id="node7" href="$namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="451,59,619,88"/>
+<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79" title="seamless::euler::face2dc" alt="" coords="232,5,400,35"/>
 </map>

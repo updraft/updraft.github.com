@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1974dd60d9b5f18a7b2b818ca46b8cdf" title="osgEarth::Util::ImageOverlay::getCenter" alt="" coords="313,5,569,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1d76f89b54b53bf55b6d340f4511e4f1" title="osgEarth::Util::ImageOverlay::setCorners" alt="" coords="311,59,572,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#aa1342815f29500bd4bb04e07a8f98bda" title="osgEarth::Util::ImageOverlay::clampLatitudes" alt="" coords="623,32,908,61"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a8a37a28a585516a25e0acfa22627c926" title="osgEarth::Util::ImageOverlay::dirty" alt="" coords="653,85,877,115"/>
+<area shape="rect" id="node9" href="$ImageOverlay_8cpp.html#aecbb8021dd1e0cb5001a70195eef7dae" title="clampLatitude" alt="" coords="959,32,1060,61"/>
+</map>

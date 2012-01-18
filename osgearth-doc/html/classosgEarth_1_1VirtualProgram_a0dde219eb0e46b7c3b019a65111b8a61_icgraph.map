@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1VirtualProgram.html#a797904d6d63dc1efb87db7a8e967d87f" title="osgEarth::VirtualProgram::apply" alt="" coords="387,8,592,37"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a613af9307fe12cd0b36a7a860286a29d" title="osgEarth::Util::OceanSurfaceNode::rebuildShaders" alt="" coords="740,59,1057,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e" title="osgEarth::VirtualProgram::setFunction" alt="" coords="368,112,611,141"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1TextureCompositorMultiTexture.html#a09f36589d31ae7d0a274186a0c76dbb9" title="osgEarth::TextureCompositorMultiTexture::updateMasterStateSet" alt="" coords="288,165,691,195"/>
+<area shape="rect" id="node38" href="$classOSGTerrainEngineNode.html#aff93c95786628db43ad9d7608cffc4ad" title="OSGTerrainEngineNode::updateTextureCombining" alt="" coords="332,272,647,301"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#acd42c165a1302efe57722d3622f8abc7" title="osgEarth::Util::OceanSurfaceNode::OceanSurfaceNode" alt="" coords="1107,5,1453,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a97cd9249592048e46346b39da4178110" title="osgEarth::Util::OceanSurfaceNode::traverse" alt="" coords="1141,59,1419,88"/>
+<area shape="rect" id="node13" href="$osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c" title="createHaze" alt="" coords="855,112,943,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1OverlayDecorator.html#af521bc095b4ca1ecfb187370cf1b70d1" title="osgEarth::OverlayDecorator::initSubgraphShaders" alt="" coords="743,165,1055,195"/>
+<area shape="rect" id="node15" href="$osgearth__shadercomp_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1255,112,1305,141"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1OverlayDecorator.html#a65321fc7dc7a2ba1277b6b65a38344ad" title="osgEarth::OverlayDecorator::reinit" alt="" coords="1171,165,1389,195"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1OverlayDecorator.html#a09cce99ca2428ba54e4dd3d88c82eace" title="osgEarth::OverlayDecorator::onInstall" alt="" coords="1535,5,1775,35"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1OverlayDecorator.html#a2d94eb6b9b28ffd129025e14cb869c91" title="osgEarth::OverlayDecorator::setMipmapping" alt="" coords="1515,59,1795,88"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1OverlayDecorator.html#a54200fa4ab69d206d25064c3a6a5c4c7" title="osgEarth::OverlayDecorator::setOverlayBlending" alt="" coords="1503,112,1807,141"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1OverlayDecorator.html#a93dce0a2a37a19eba33217c9086b99bc" title="osgEarth::OverlayDecorator::setOverlayGraph" alt="" coords="1509,165,1800,195"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1OverlayDecorator.html#a44844cff4ad6d8865697a25276b0237d" title="osgEarth::OverlayDecorator::setTextureSize" alt="" coords="1515,219,1795,248"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1OverlayDecorator.html#a4cfb28a7c83dda0a390de1c50be677c0" title="osgEarth::OverlayDecorator::setTextureUnit" alt="" coords="1516,272,1793,301"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1OverlayDecorator.html#aef2375c1e1d802785b2efe041f12ed09" title="osgEarth::OverlayDecorator::setVertexWarping" alt="" coords="1507,325,1803,355"/>
+<area shape="rect" id="node40" href="$classOSGTerrainEngineNode.html#a3324fbb70b931691acfaedaf2f616b3c" title="OSGTerrainEngineNode::addImageLayer" alt="" coords="769,219,1028,248"/>
+<area shape="rect" id="node44" href="$classOSGTerrainEngineNode.html#a382558267fdbafeab1a7124c3c3dd7a9" title="OSGTerrainEngineNode::moveImageLayer" alt="" coords="764,272,1033,301"/>
+<area shape="rect" id="node47" href="$classOSGTerrainEngineNode.html#ade031eeced1cd505df571e1d8cc4fb2f" title="OSGTerrainEngineNode::postInitialize" alt="" coords="777,325,1020,355"/>
+<area shape="rect" id="node49" href="$classOSGTerrainEngineNode.html#a745d226641b360cd927ba6e0c93e425f" title="OSGTerrainEngineNode::removeImageLayer" alt="" coords="759,379,1039,408"/>
+<area shape="rect" id="node42" href="$classOSGTerrainEngineNode.html#a7f38c5716c207f45a7ae84fb5a2cacdf" title="OSGTerrainEngineNode::onMapModelChanged" alt="" coords="1132,272,1428,301"/>
+</map>

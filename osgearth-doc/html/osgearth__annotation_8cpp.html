@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__annotation_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -94,9 +111,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgViewer/Viewer&gt;</code><br/>
 <code>#include &lt;osgViewer/ViewerEventHandlers&gt;</code><br/>
 <code>#include &lt;osgGA/StateSetManipulator&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_annotation.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_annotation.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__annotation_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__annotation_2osgearth__annotation_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__annotation_2osgearth__annotation_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__annotation_2osgearth__annotation_8cpp">
 </map>
@@ -106,7 +125,7 @@ Include dependency graph for osgearth_annotation.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_toggle_node.html">ToggleNode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToggleNode.html">ToggleNode</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a> (char **argv)</td></tr>
@@ -139,19 +158,184 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__annotation_8cpp_source.html#l00052">52</a> of file <a class="el" href="osgearth__annotation_8cpp_source.html">osgearth_annotation.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">// try to load an earth file.</span>
+    osg::ArgumentParser arguments(&amp;argc,argv);
+    osg::Node* node = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> ( !node )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(argv);
+
+    <span class="comment">// find the map node that we loaded.</span>
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode(node);
+    <span class="keywordflow">if</span> ( !mapNode )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(argv);
+
+    root-&gt;addChild( mapNode );
+
+    <span class="comment">// make some annotations.</span>
+    osg::Group* annoGroup = <span class="keyword">new</span> osg::Group();
+    root-&gt;addChild( annoGroup );
+
+    <span class="comment">// a Placemark combines a 2D icon with a text label.</span>
+    annoGroup-&gt;addChild( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html">PlacemarkNode</a>(
+        mapNode, 
+        osg::Vec3d(-74, 40.714, 0), 
+        <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
+        <span class="stringliteral">&quot;New York&quot;</span>) );
+
+    <span class="comment">// a Placemark combines a 2D icon with a text label.</span>
+    annoGroup-&gt;addChild( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html">PlacemarkNode</a>(
+        mapNode, 
+        osg::Vec3d(139.75, 35.685, 0), 
+        <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
+        <span class="stringliteral">&quot;Tokyo&quot;</span> ) );
+
+    <span class="comment">// a box that follows lines of latitude (rhumb line interpolation, the default)</span>
+    <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* geom = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1Ring.html">Ring</a>();
+    geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(0,   40, 0) );
+    geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 40, 0) );
+    geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 60, 0) );
+    geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(0,   60, 0) );
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> geomStyle;
+
+    geomStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = Color::Yellow;
+    geomStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;width() = 5.0f;
+
+    <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* gnode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(geom, geomStyle), <span class="keyword">true</span>);
+    annoGroup-&gt;addChild( gnode );
+
+    <span class="comment">// another line, this time using great-circle interpolation (flight path from New York to Tokyo)</span>
+    <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* path = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1LineString.html">LineString</a>();
+    path-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-74, 40.714, 0) );    <span class="comment">// New York</span>
+    path-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(139.75, 35.685, 0) ); <span class="comment">// Tokyo</span>
+
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> pathStyle;
+    pathStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = Color::Red;
+    pathStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;width() = 10.0f;
+
+    <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* pathFeature = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(path, pathStyle);
+    pathFeature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#aa080785489ea5971eebd18053e411ce3">geoInterp</a>() = <a class="code" href="namespaceosgEarth.html#ac8769c4bff433281e6dd9744acfedf7babb74ef2806a2541207be3e513ab2ad60">GEOINTERP_GREAT_CIRCLE</a>;
+    <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* pathNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, pathFeature, <span class="keyword">true</span>);
+    annoGroup-&gt;addChild( pathNode );
+
+    <span class="comment">// a circle around New Orleans</span>
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> circleStyle;
+    circleStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Cyan, 0.5);
+    <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html">CircleNode</a>* circle = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html">CircleNode</a>( 
+        mapNode, 
+        osg::Vec3d(-90.25, 29.98, 0), 
+        <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(600, Units::KILOMETERS), 
+        circleStyle );
+    annoGroup-&gt;addChild( circle );
+
+    <span class="comment">// an ellipse around Miami</span>
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> ellipseStyle;
+    ellipseStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Orange, 0.75);
+    <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html">EllipseNode</a>* ellipse = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html">EllipseNode</a>(
+        mapNode, 
+        osg::Vec3d(-80.28,25.82,0), 
+        <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(200, Units::MILES),
+        <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(100, Units::MILES),
+        <a class="code" href="structosgEarth_1_1Angular.html">Angular</a>(45, Units::DEGREES),
+        ellipseStyle,
+        <span class="keyword">true</span>);
+    annoGroup-&gt;addChild( ellipse );
+
+    <span class="comment">// an extruded polygon roughly the shape of Utah</span>
+    <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* utah = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1Polygon.html">Polygon</a>();
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-114.052, 37, 0) );
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-109.054, 37, 0) );
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-109.054, 41, 0) );
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-111.04, 41, 0) );
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-111.08, 42.059, 0) );
+    utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-114.08, 42.024, 0) );
+
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> utahStyle;
+    utahStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html">ExtrusionSymbol</a>&gt;()-&gt;height() = 250000.0; <span class="comment">// meters MSL</span>
+    utahStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::White, 0.8);
+
+    <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* utahFeature = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(utah, utahStyle);
+    <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* utahNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, utahFeature, <span class="keyword">false</span>);
+    annoGroup-&gt;addChild( utahNode );
+
+    <span class="comment">// an image overlay</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html">ImageOverlay</a>* imageOverlay = 0L;
+    osg::Image* image = osgDB::readImageFile( <span class="stringliteral">&quot;../data/USFLAG.TGA&quot;</span> );
+    <span class="keywordflow">if</span> ( image ) {
+        imageOverlay = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html">ImageOverlay</a>(mapNode, image);
+        imageOverlay-&gt;<a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a6db1aa19292a1020cfa08b4abb0e4b49">setBounds</a>( <a class="code" href="classosgEarth_1_1Bounds.html">Bounds</a>( -100.0, 50.0, -90.0, 55.0) );
+
+        <span class="comment">//Add an editor            </span>
+        annoGroup-&gt;addChild( imageOverlay );
+        
+        osg::Node* editor = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlayEditor.html">ImageOverlayEditor</a>( imageOverlay, mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48">getProfile</a>()-&gt;<a class="code" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f">getEllipsoid</a>(), mapNode );
+        root-&gt;addChild( editor );
+
+
+
+    }
+
+
+
+
+    <span class="comment">// initialize a viewer:</span>
+    osgViewer::Viewer viewer(arguments);
+    viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>() );
+    viewer.setSceneData( root );
+
+    <span class="comment">// make a little HUD to toggle stuff:</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* vbox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+    vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Black, 0.5) );
+    vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_TOP );
+    vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Annotation Example&quot;</span>, 22.0f, Color::Yellow) );
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+    vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( grid );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 5 );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a25144e9d12a23524f4bf609f21fcd265">setChildHorizAlign</a>( Control::ALIGN_LEFT );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( Control::ALIGN_CENTER );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 0, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(gnode)) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 0, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Line geoemtry&quot;</span>) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(pathNode)) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Red flight path&quot;</span>) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(circle)) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Blue circle&quot;</span>) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 3, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(ellipse)) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 3, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Orange ellipse&quot;</span>) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 4, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(utahNode)) );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 4, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Extruded state&quot;</span>) );
+    <span class="keywordflow">if</span> ( imageOverlay ) {
+        grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 5, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(imageOverlay)) );
+        grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 5, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Image overlay&quot;</span>) );
+    }
+    ControlCanvas::get(&amp;viewer,<span class="keyword">true</span>)-&gt;addControl(vbox);
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.getDatabasePager()-&gt;setDoPreCompile( <span class="keyword">true</span> );
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="105,5,161,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="139,330,408,359"/><area shape="rect" id="node24" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="888,31,1176,60"/><area shape="rect" id="node34" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="163,555,384,584"/><area shape="rect" id="node36" href="classosgEarth_1_1Features_1_1Feature.html#aa080785489ea5971eebd18053e411ce3" title="osgEarth::Features::Feature::geoInterp" alt="" coords="151,608,396,638"/><area shape="rect" id="node38" href="classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="145,662,401,691"/><area shape="rect" id="node46" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="179,715,368,744"/><area shape="rect" id="node48" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48" title="osgEarth::Map::getProfile" alt="" coords="188,768,359,798"/><area shape="rect" id="node50" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b" title="osgEarth::Profile::getSRS" alt="" coords="187,822,360,851"/><area shape="rect" id="node54" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb" title="osgEarth::MixinVector::push_back" alt="" coords="163,875,384,904"/><area shape="rect" id="node56" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="125,502,421,531"/><area shape="rect" id="node61" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a6db1aa19292a1020cfa08b4abb0e4b49" title="osgEarth::Util::ImageOverlay::setBounds" alt="" coords="143,928,404,958"/><area shape="rect" id="node71" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a25144e9d12a23524f4bf609f21fcd265" title="osgEarth::Util::Controls::Container::setChildHorizAlign" alt="" coords="104,251,443,280"/><area shape="rect" id="node75" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566" title="osgEarth::Util::Controls::Container::setChildSpacing" alt="" coords="492,396,817,426"/><area shape="rect" id="node78" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="108,198,439,227"/><area shape="rect" id="node82" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="144,448,403,478"/><area shape="rect" id="node92" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="245,982,301,1011"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="491,239,819,268"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1329,400,1572,430"/><area shape="rect" id="node32" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="519,343,791,372"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="895,138,1169,167"/><area shape="rect" id="node13" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="949,84,1115,114"/><area shape="rect" id="node15" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="868,191,1196,220"/><area shape="rect" id="node17" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="885,244,1179,274"/><area shape="rect" id="node29" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="899,298,1165,327"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1705,400,1977,430"/><area shape="rect" id="node20" href="structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1361,204,1540,234"/><area shape="rect" id="node22" href="structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1368,71,1533,100"/><area shape="rect" id="node40" href="classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="552,711,757,740"/><area shape="rect" id="node42" href="classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="925,711,1139,740"/><area shape="rect" id="node44" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1245,711,1656,740"/><area shape="rect" id="node52" href="classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="556,822,753,851"/><area shape="rect" id="node59" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="572,607,737,636"/><area shape="rect" id="node63" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a1d76f89b54b53bf55b6d340f4511e4f1" title="osgEarth::Util::ImageOverlay::setCorners" alt="" coords="524,928,785,958"/><area shape="rect" id="node65" href="classosgEarth_1_1Util_1_1ImageOverlay.html#aa1342815f29500bd4bb04e07a8f98bda" title="osgEarth::Util::ImageOverlay::clampLatitudes" alt="" coords="889,902,1175,931"/><area shape="rect" id="node69" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a8a37a28a585516a25e0acfa22627c926" title="osgEarth::Util::ImageOverlay::dirty" alt="" coords="920,955,1144,984"/><area shape="rect" id="node67" href="ImageOverlay_8cpp.html#aecbb8021dd1e0cb5001a70195eef7dae" title="clampLatitude" alt="" coords="1400,902,1501,931"/><area shape="rect" id="node85" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a032f9d082c210ab3be4b2d689f038a50" title="osgEarth::Util::Controls::Grid::cell" alt="" coords="545,554,764,583"/><area shape="rect" id="node88" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a8a69a4dbebaf67dca4c6cf0276aca812" title="osgEarth::Util::Controls::Grid::expandToInclude" alt="" coords="505,450,804,479"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_icgraph.png" border="0" usemap="#osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_icgraph" alt=""/></div>
 <map name="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_icgraph" id="osgearth__annotation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_icgraph">
 <area shape="rect" id="node3" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="104,5,237,35"/></map>
@@ -176,28 +360,25 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__annotation_8cpp_source.html#l00036">36</a> of file <a class="el" href="osgearth__annotation_8cpp_source.html">osgearth_annotation.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl;
+    <span class="keywordflow">return</span> -1;
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__annotation_8cpp_a0c2ae8a349dcb4ee981a199a687bf549_icgraph.png" border="0" usemap="#osgearth__annotation_8cpp_a0c2ae8a349dcb4ee981a199a687bf549_icgraph" alt=""/></div>
 <map name="osgearth__annotation_8cpp_a0c2ae8a349dcb4ee981a199a687bf549_icgraph" id="osgearth__annotation_8cpp_a0c2ae8a349dcb4ee981a199a687bf549_icgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="121,5,159,35"/><area shape="rect" id="node7" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="115,179,165,208"/><area shape="rect" id="node11" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="113,112,167,141"/><area shape="rect" id="node21" href="osgearth__seed_8cpp.html#ab778b2c4948eabbbdb75cb4f3f92b9ca" title="seed" alt="" coords="115,59,165,88"/><area shape="rect" id="node5" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="311,45,361,75"/><area shape="rect" id="node9" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="269,205,403,235"/><area shape="rect" id="node13" href="struct_layer_table.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="217,99,455,128"/><area shape="rect" id="node18" href="struct_layer_table.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="273,152,399,181"/><area shape="rect" id="node15" href="class_sqlite3_cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="505,125,644,155"/></map>
+<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="121,112,159,141"/><area shape="rect" id="node13" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="115,325,165,355"/><area shape="rect" id="node17" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="113,219,167,248"/><area shape="rect" id="node29" href="osgearth__seed_8cpp.html#ab778b2c4948eabbbdb75cb4f3f92b9ca" title="seed" alt="" coords="115,165,165,195"/><area shape="rect" id="node5" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="251,5,541,35"/><area shape="rect" id="node7" href="classosgEarth_1_1Features_1_1FeatureTileSource.html#a80af978c5495abab5ab9779479162a07" title="osgEarth::Features::FeatureTileSource::createImage" alt="" coords="233,59,559,88"/><area shape="rect" id="node9" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="371,165,421,195"/><area shape="rect" id="node11" href="classosgEarth_1_1Features_1_1GeometryFeatureCursor.html#a8e1bbfce699cf352c8b984b1f84032c4" title="osgEarth::Features::GeometryFeatureCursor::nextFeature" alt="" coords="217,112,575,141"/><area shape="rect" id="node15" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="329,379,463,408"/><area shape="rect" id="node19" href="structLayerTable.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="277,219,515,248"/><area shape="rect" id="node24" href="structLayerTable.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="333,272,459,301"/><area shape="rect" id="node27" href="classSqlite3Cache.html#a90410529af647e1e89b7f538226bda8d" title="Sqlite3Cache::setImageSync" alt="" coords="300,325,492,355"/><area shape="rect" id="node21" href="classSqlite3Cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="625,245,764,275"/></map>
 </div>
 </p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__annotation_8cpp.html">osgearth_annotation.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:19 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -212,6 +393,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

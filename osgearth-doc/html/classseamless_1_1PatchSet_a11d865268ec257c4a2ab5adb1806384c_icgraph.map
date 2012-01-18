@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html#abe6bf389a040399a8e90312a4f33f354" title="seamless::anonymous_namespace\{Patch::cpp\}::getEdge" alt="" coords="267,32,621,61"/>
+<area shape="rect" id="node11" href="$classseamless_1_1PatchSet.html#a79ee6ba3b2fd6e86e5403c78f6fec119" title="seamless::PatchSet::initPrimitiveSets" alt="" coords="669,189,912,219"/>
+<area shape="rect" id="node15" href="$classseamless_1_1PatchSet.html#a2b3136d52fa2f78a93026f371cafe4e0" title="seamless::PatchSet::makeBasicTrile" alt="" coords="325,136,563,165"/>
+<area shape="rect" id="node18" href="$classseamless_1_1PatchSet.html#a82c72f6aa339213d933027003edd4c6a" title="seamless::PatchSet::makeDualStrip" alt="" coords="327,189,561,219"/>
+<area shape="rect" id="node21" href="$classseamless_1_1PatchSet.html#aab6bca23313105c7f889cf93b512b927" title="seamless::PatchSet::makeSingleStrip" alt="" coords="323,243,565,272"/>
+<area shape="rect" id="node24" href="$classseamless_1_1PatchSet.html#a712348ff6fdd83480973b6d1df84b371" title="seamless::PatchSet::rotateIndex" alt="" coords="337,296,551,325"/>
+<area shape="rect" id="node5" href="$classseamless_1_1Patch.html#af25c15cc173e6324e8cf65a00c9b942f" title="seamless::Patch::getEdgeError" alt="" coords="689,32,892,61"/>
+<area shape="rect" id="node7" href="$classseamless_1_1Patch.html#ad5612101be8918d6a3fba1ab29019bf4" title="seamless::Patch::getPatchError" alt="" coords="963,5,1171,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1GeoCell.html#a038943dff9f9181d2aa8fefb241111eb" title="osgEarth::Util::GeoCell::traverse" alt="" coords="961,59,1172,88"/>
+<area shape="rect" id="node13" href="$classseamless_1_1PatchSet.html#a53ebbf15b6ce4bd0bec9b11c4860c083" title="seamless::PatchSet::PatchSet" alt="" coords="965,189,1168,219"/>
+</map>

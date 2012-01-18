@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classArcGISSource.html#a561c1d4a0aba150f47c250a3ea4616f8" title="ArcGISSource::ArcGISSource" alt="" coords="233,5,431,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1ResourceLibrary.html#a1ea54e3c6acbd44c77d639cc06ad3b71" title="osgEarth::Symbology::ResourceLibrary::create" alt="" coords="185,59,479,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1XmlDocument.html#aeeef723a62eb1660959655eefd1ff67e" title="osgEarth::XmlDocument::getConfig" alt="" coords="217,112,447,141"/>
+<area shape="rect" id="node11" href="$classWMSSource.html#aed8dad95e1fc24ed51b87116fa006bf7" title="WMSSource::initialize" alt="" coords="257,165,407,195"/>
+<area shape="rect" id="node13" href="$classTMSSource.html#a49e9c9f0ff0e7b0754772f63ddcdb869" title="TMSSource::initialize" alt="" coords="259,219,405,248"/>
+<area shape="rect" id="node15" href="$classOSGTileSource.html#a1536ee47f47b02642123ceb33f0f5d85" title="OSGTileSource::initialize" alt="" coords="248,272,416,301"/>
+<area shape="rect" id="node17" href="$classGDALTileSource.html#a9fb5b232e7c2158f53938fe08d55d3a6" title="GDALTileSource::initialize" alt="" coords="245,325,419,355"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1XmlDocument.html#aea393f488cd8b378813cab1e6897d500" title="osgEarth::XmlDocument::load" alt="" coords="233,379,431,408"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1URIStream.html#abcd588e4f902998c577ace66c3086b89" title="osgEarth::URIStream::URIStream" alt="" coords="221,432,443,461"/>
+<area shape="rect" id="node9" href="$osgearth__resources_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="528,112,579,141"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a412d371d6e1b0181a9a019868a1e52b5" title="osgEarth::Util::IntersectingDragger::handle" alt="" coords="436,5,705,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#afdbf9f7635aeb0101521fe21bf53fabc" title="osgEarth::Util::IntersectingDragger::setupDefaultGeometry" alt="" coords="389,59,752,88"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a16e017cae5836ec1aecccedcdfcc35ff" title="osgEarth::Util::IntersectingDragger::handle" alt="" coords="816,5,1085,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a2c43e9fb92d127b847a03298c1508730" title="osgEarth::Util::ImageOverlayEditor::addDragger" alt="" coords="801,59,1100,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1FeatureEditor.html#a7d7754cb3e30eaa80cacff1c31cdb790" title="osgEarth::Util::FeatureEditor::init" alt="" coords="844,139,1057,168"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a8c9eb72ad8e42807f289676e41212def" title="osgEarth::Util::ImageOverlayEditor::ImageOverlayEditor" alt="" coords="1151,45,1497,75"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1FeatureEditor.html#aea728d8d302779074984ff679e8419a6" title="osgEarth::Util::FeatureEditor::FeatureEditor" alt="" coords="1187,99,1461,128"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1FeatureEditor.html#a7f15903c210154ef01fbc69b46d1c6e7" title="osgEarth::Util::FeatureEditor::setPickColor" alt="" coords="1189,152,1459,181"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1FeatureEditor.html#adae4e75bd7aa81fafa3cf30d9bb1459e" title="osgEarth::Util::FeatureEditor::setSize" alt="" coords="1204,205,1444,235"/>
+</map>

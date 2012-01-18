@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a417073d4aacb3fddaea96158d1efdc65" title="osgEarth::Util::Controls::ControlCanvas::handle" alt="" coords="433,59,732,88"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a5a9a5552dc806f4142a2545c9428bd8a" title="osgEarth::Util::Controls::Control::handle" alt="" coords="792,5,1045,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a15c296a61cb81ce30ba02ef5583f1c93" title="osgEarth::Util::Controls::Control::intersects" alt="" coords="781,59,1056,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59b5f20129f866d005798e0d105987f2" title="osgEarth::Util::Controls::Control::isDirty" alt="" coords="792,112,1045,141"/>
+<area shape="rect" id="node9" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#a265f2dee32ac550ad68a6ad093134449" title="osgEarth::Util::Controls::Gutter::left" alt="" coords="1121,5,1351,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a363fe4321d8150a4e31d2e6e2456a1d7" title="osgEarth::Util::Controls::Control::padding" alt="" coords="1105,59,1367,88"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#a25ea85d2c76f448eee4bc76540d88f38" title="osgEarth::Util::Controls::Gutter::top" alt="" coords="1121,112,1351,141"/>
+</map>

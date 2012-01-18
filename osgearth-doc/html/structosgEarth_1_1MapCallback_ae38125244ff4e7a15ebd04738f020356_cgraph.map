@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structosgEarth_1_1MapModelChange.html#aecc2908ba420f4637e1c1722951dc557" title="osgEarth::MapModelChange::getAction" alt="" coords="371,5,621,35"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1MapModelChange.html#a207774319c5cccc433106f717a6674fa" title="osgEarth::MapModelChange::getElevationLayer" alt="" coords="347,59,645,88"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1MapModelChange.html#ac127fc2fd4fc724766c92f90400c161c" title="osgEarth::MapModelChange::getFirstIndex" alt="" coords="361,112,631,141"/>
+<area shape="rect" id="node9" href="$structosgEarth_1_1MapModelChange.html#a86b32d2cc0706d1911950035ada4adf5" title="osgEarth::MapModelChange::getImageLayer" alt="" coords="356,165,636,195"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1MapModelChange.html#a816e539033337fdae373aa0961ee0108" title="osgEarth::MapModelChange::getMaskLayer" alt="" coords="357,219,635,248"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1MapModelChange.html#ad294f5c5325cc6c7ed6a423a2820d737" title="osgEarth::MapModelChange::getModelLayer" alt="" coords="356,272,636,301"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1MapModelChange.html#a89efec564cdf893d254bf1501f6c5e46" title="osgEarth::MapModelChange::getSecondIndex" alt="" coords="352,325,640,355"/>
+</map>

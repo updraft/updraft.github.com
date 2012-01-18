@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$Projected.html" title="Projected" alt="" coords="265,83,343,112"/>
+<area shape="rect" id="node7" href="$PatchSet.html" title="PatchSet" alt="" coords="375,160,449,189"/>
+<area shape="rect" id="node22" href="$Patch.html" title="Patch" alt="" coords="181,237,237,267"/>
+<area shape="rect" id="node30" href="$PatchGroup.html" title="PatchGroup" alt="" coords="659,237,749,267"/>
+<area shape="rect" id="node44" href="$SeamlessOptions.html" title="SeamlessOptions" alt="" coords="972,237,1097,267"/>
+<area shape="rect" id="node40" href="$PatchInfo.html" title="PatchInfo" alt="" coords="545,315,623,344"/>
+</map>

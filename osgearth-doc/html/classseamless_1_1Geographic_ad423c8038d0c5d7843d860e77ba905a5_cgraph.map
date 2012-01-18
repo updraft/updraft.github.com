@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceosgEarth.html#a4d3ce597f710473506d2bc6c620ebe66" title="osgEarth::computeLoadingThreads" alt="" coords="300,85,524,115"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="684,5,836,35"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="677,165,843,195"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1TerrainLayerOptions.html#a94728c6a1f4a5e7ec7576623968370db" title="osgEarth::TerrainLayerOptions::maxLevel" alt="" coords="281,189,543,219"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1LoadingPolicy.html#ab13d51639e8c5121a1bcf39023201124" title="osgEarth::LoadingPolicy::numLoadingThreads" alt="" coords="616,59,904,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1LoadingPolicy.html#aa2176cfdbfcb155e57cf2dc3861ecb4d" title="osgEarth::LoadingPolicy::numLoadingThreadsPerCore" alt="" coords="592,112,928,141"/>
+</map>

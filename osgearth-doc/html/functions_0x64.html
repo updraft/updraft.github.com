@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -88,6 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x67.html#index_g"><span>g</span></a></li>
       <li><a href="functions_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_0x6a.html#index_j"><span>j</span></a></li>
       <li><a href="functions_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_0x6d.html#index_m"><span>m</span></a></li>
@@ -103,71 +134,379 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_0x7a.html#index_z"><span>z</span></a></li>
       <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>DarkGray
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#a7f5e9be3f92f839f277578824a1b76e6">osgEarth::Symbology::Color</a>
+</li>
 <li>data()
-: <a class="el" href="class_ti_xml_string.html#a00abc60f135c7ca1951c7334cc2c7993">TiXmlString</a>
+: <a class="el" href="classosgEarth_1_1ImageUtils_1_1PixelReader.html#a9cf799648243b7cf28ed9bcf5f507363">osgEarth::ImageUtils::PixelReader</a>
+, <a class="el" href="classTiXmlString.html#a00abc60f135c7ca1951c7334cc2c7993">TiXmlString</a>
+</li>
+<li>Data()
+: <a class="el" href="structseamless_1_1Patch_1_1Data.html#a62e1e7f658974a69e66112f65e2a0876">seamless::Patch::Data</a>
+</li>
+<li>data()
+: <a class="el" href="classosgEarth_1_1ImageUtils_1_1PixelWriter.html#a926f1abfb127e07b124adc1ce1660cfd">osgEarth::ImageUtils::PixelWriter</a>
+</li>
+<li>Data()
+: <a class="el" href="structseamless_1_1Patch_1_1Data.html#a2f5d039e33b042cbc15a5fca830113fd">seamless::Patch::Data</a>
+</li>
+<li>DATA_MILES
+: <a class="el" href="classosgEarth_1_1Units.html#ad20f7cb703865fd2c5ecec0496837d09">osgEarth::Units</a>
+</li>
+<li>DATA_MILES_PER_HOUR
+: <a class="el" href="classosgEarth_1_1Units.html#a24841e2972e3cee4e13dcd4ebfaf2ff6">osgEarth::Units</a>
+</li>
+<li>DataExtent()
+: <a class="el" href="classosgEarth_1_1DataExtent.html#a5866d7667b3eef2f35224900c6f03b00">osgEarth::DataExtent</a>
+</li>
+<li>dataset()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1TileServiceOptions.html#a83fa9ceddf1ece1fedfe5e3de9fbea67">osgEarth::Drivers::TileServiceOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1YahooOptions.html#a8d03c08e57cd711a4a7b11093fee2814">osgEarth::Drivers::YahooOptions</a>
 </li>
 <li>dataType
-: <a class="el" href="struct_band_property.html#a9e62eca62a800fcff8627f1a33881a55">BandProperty</a>
+: <a class="el" href="structBandProperty.html#a9e62eca62a800fcff8627f1a33881a55">BandProperty</a>
+</li>
+<li>DAYS
+: <a class="el" href="classosgEarth_1_1Units.html#afe77ca61d3589fa4ebd70dc9b98f785d">osgEarth::Units</a>
+</li>
+<li>DebugOptions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1DebugOptions.html#a2a34420c6163bd7f3c530d60b9857085">osgEarth::Drivers::DebugOptions</a>
 </li>
 <li>DebugTileSource()
-: <a class="el" href="class_debug_tile_source.html#a7a8e0f40a06aae6982b28306050fa2d0">DebugTileSource</a>
+: <a class="el" href="classDebugTileSource.html#a7a8e0f40a06aae6982b28306050fa2d0">DebugTileSource</a>
 </li>
 <li>DebugTileSourceDriver()
-: <a class="el" href="class_debug_tile_source_driver.html#a4b7d5610e1915ab4732e7560c23e9da9">DebugTileSourceDriver</a>
+: <a class="el" href="classDebugTileSourceDriver.html#a4b7d5610e1915ab4732e7560c23e9da9">DebugTileSourceDriver</a>
+</li>
+<li>decDelay()
+: <a class="el" href="classCustomTerrain.html#ac94fd41495a436dbe821a79ba9edb08d">CustomTerrain</a>
+, <a class="el" href="classTerrain.html#a6a72e03180981140d59d5408f8ac493d">Terrain</a>
+</li>
+<li>declination
+: <a class="el" href="structosgEarth_1_1Util_1_1SkyNode_1_1StarData.html#ace55351944e29803875b6a384a09eedc">osgEarth::Util::SkyNode::StarData</a>
+</li>
+<li>decodeDouble()
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#a3c1f6ac67b611f066e696f6e651d6197">osgEarth::Json::Reader</a>
+</li>
+<li>decodeMultipartStream()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a0a0cc6d6e9d576920725aca23f8e1f1b">osgEarth::HTTPClient</a>
+</li>
+<li>decodeNumber()
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#a3cf306f45ce2df7d7c83f981fc54a13b">osgEarth::Json::Reader</a>
+</li>
+<li>decodeString()
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#a78ecf09272066ba48eee57133fb5d59f">osgEarth::Json::Reader</a>
+</li>
+<li>decodeUnicodeEscapeSequence()
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#aba4d7f7900165edf2468e7c3ff8c5658">osgEarth::Json::Reader</a>
+</li>
+<li>decrement()
+: <a class="el" href="classosgEarth_1_1Json_1_1ValueIteratorBase.html#ab1a5b6694984a2c53567174126938d8c">osgEarth::Json::ValueIteratorBase</a>
+</li>
+<li>decrementReaderCount()
+: <a class="el" href="classosgEarth_1_1Threading_1_1ReadWriteMutex.html#a3c8d94613ba9354b8e5a15282cf57e04">osgEarth::Threading::ReadWriteMutex</a>
+</li>
+<li>defaultIconImage()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1KMLOptions.html#a2dfd76730de5da216d3bdbaab101e082">osgEarth::Drivers::KMLOptions</a>
+</li>
+<li>defaultIconURI()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1KMLOptions.html#a468802bdc13d5c133cd7cb84887b7757">osgEarth::Drivers::KMLOptions</a>
+</li>
+<li>defaultTextSymbol()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1KMLOptions.html#aa71e94c6ddd72e36c5f710d97ce70ebd">osgEarth::Drivers::KMLOptions</a>
+</li>
+<li>defaultValue()
+: <a class="el" href="structosgEarth_1_1optional.html#ab6d549a85b0bea66eab29423445f4572">osgEarth::optional&lt; T &gt;</a>
+</li>
+<li>defined()
+: <a class="el" href="classosgEarth_1_1GeoExtent.html#a2c5a74be674ee35e56146a335d5238a5">osgEarth::GeoExtent</a>
+, <a class="el" href="classosgEarth_1_1ProfileOptions.html#a2ecb12824038d03b747e4027901f52ac">osgEarth::ProfileOptions</a>
+</li>
+<li>DEGREES
+: <a class="el" href="classosgEarth_1_1Units.html#a16be533006b6254a89fd28a82783e68d">osgEarth::Units</a>
 </li>
 <li>deleteFeature()
-: <a class="el" href="class_o_g_r_feature_source.html#a53127ceffb2de0cab59e19b1600982e5">OGRFeatureSource</a>
-, <a class="el" href="class_w_f_s_feature_source.html#afb218874852cc7e33929d8b23a48888d">WFSFeatureSource</a>
+: <a class="el" href="classOGRFeatureSource.html#a53127ceffb2de0cab59e19b1600982e5">OGRFeatureSource</a>
+, <a class="el" href="classWFSFeatureSource.html#afb218874852cc7e33929d8b23a48888d">WFSFeatureSource</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1FeatureListSource.html#a4d1bce918537567523a197f2605d7311">osgEarth::Features::FeatureListSource</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1FeatureSource.html#ab8d243a9cb09072a9883166243c12df6">osgEarth::Features::FeatureSource</a>
+</li>
+<li>delocalize()
+: <a class="el" href="classosgEarth_1_1Features_1_1FeaturesToNodeFilter.html#a412ee4b1772cba38845a079055c65f1d">osgEarth::Features::FeaturesToNodeFilter</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html#a8faa7687857e1339fef06001db2260c0">osgEarth::Symbology::Geometry</a>
+</li>
+<li>delocalizeAsGroup()
+: <a class="el" href="classosgEarth_1_1Features_1_1FeaturesToNodeFilter.html#aa4979a969cc4fc1732e140040a1c89fd">osgEarth::Features::FeaturesToNodeFilter</a>
+</li>
+<li>densificationThreshold()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureStencilModelOptions.html#a996a43e89a4943400f91b168805fc4cf">osgEarth::Drivers::FeatureStencilModelOptions</a>
+</li>
+<li>density()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1MarkerSymbol.html#a61502e566e207da04263b226fa9d3151">osgEarth::Symbology::MarkerSymbol</a>
+</li>
+<li>depth
+: <a class="el" href="classTiXmlPrinter.html#a7e11330449daea912320c22f84387df7">TiXmlPrinter</a>
+, <a class="el" href="classosgEarth_1_1Bounds.html#aaad503d86daac85518dcbe79830c1a0d">osgEarth::Bounds</a>
+</li>
+<li>depthTestEnabled()
+: <a class="el" href="classosgEarth_1_1ModelSourceOptions.html#a702bf95dbdacdca0e04b57d4f001b711">osgEarth::ModelSourceOptions</a>
+</li>
+<li>deref()
+: <a class="el" href="classosgEarth_1_1Json_1_1ValueIteratorBase.html#a4ca11f1e5a984554b79fc98dd69577c0">osgEarth::Json::ValueIteratorBase</a>
+</li>
+<li>deserialize()
+: <a class="el" href="classEarthFileSerializer1.html#a7c7d88a338ca50972b7009083db89200">EarthFileSerializer1</a>
+, <a class="el" href="classEarthFileSerializer2.html#a768aaf0a191205dd694560c76e295d02">EarthFileSerializer2</a>
+</li>
+<li>destination()
+: <a class="el" href="classosgEarth_1_1GeoMath.html#aeaa1b08851e5c5816bbfbd5b3019bdcd">osgEarth::GeoMath</a>
+</li>
+<li>destruct()
+: <a class="el" href="classosgEarth_1_1Registry.html#a48bd587222e044432e675384f0832d4e">osgEarth::Registry</a>
+</li>
+<li>detach()
+: <a class="el" href="classosgEarth_1_1ArrayUniform.html#ae234ffea833181b82987fb6970d8e13a">osgEarth::ArrayUniform</a>
+</li>
+<li>Diamond()
+: <a class="el" href="structDiamond.html#a0bb775bc54a9a4781586a148f1743b61">Diamond</a>
+</li>
+<li>DiamondJob()
+: <a class="el" href="structDiamondJob.html#a8fdfbc5053762b8fed50a0e45b4c1312">DiamondJob</a>
+</li>
+<li>difference()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html#adffe310866a0009c5b4ae9c7d4464005">osgEarth::Symbology::Geometry</a>
+</li>
+<li>difference_type
+: <a class="el" href="classosgEarth_1_1Json_1_1ValueIteratorBase.html#aa3599cabc79431fd9eb94851d37807f9">osgEarth::Json::ValueIteratorBase</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1ValueConstIterator.html#ac4ca00182e2defdaefa2a474d102a46f">osgEarth::Json::ValueConstIterator</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1ValueIterator.html#a7e71923b3bf38a8c5477fcfcdc680df3">osgEarth::Json::ValueIterator</a>
+, <a class="el" href="classosgEarth_1_1MixinVector.html#af7f0dca47e8ae1118f064861ca9c338f">osgEarth::MixinVector&lt; ValueT, SuperClass &gt;</a>
+</li>
+<li>DIR_DOWN
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298a54466060ce9324d7a3e555e90ea111f3">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>DIR_LEFT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298ac7a35457123baab328b6aa78af149ebf">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>DIR_NA
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298a72cd752fa288b7b20de94a570b42aa7f">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>DIR_RIGHT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298a3d4d4c45b7f8bc3075277ce96c3ce6d0">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>DIR_UP
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298ae9523bc8f2324314434e0399d0eda795">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>Direction
+: <a class="el" href="classosgEarth_1_1TileKey.html#a569ee00126480c6222db1dffef6e6042">osgEarth::TileKey</a>
+, <a class="el" href="structRelative.html#a5a3f3d3fb60974a929f3948600bb3877">Relative</a>
+, <a class="el" href="structStreamingTile_1_1Relative.html#a831d9d01d0506e065df3849c806e7b9f">StreamingTile::Relative</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a4ef9cfc1243cc87c721b30dea4c4d298">osgEarth::Util::EarthManipulator</a>
 </li>
 <li>directory_structure
-: <a class="el" href="class_v_p_b_database.html#ae4316f532c55c7ff13f97b4a7dd4f521">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#ae4316f532c55c7ff13f97b4a7dd4f521">VPBDatabase</a>
+</li>
+<li>directoryStructure()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a8d06cc17b20d1476b09531158cf351e2">osgEarth::Drivers::VPBOptions</a>
 </li>
 <li>DirectoryStructure
-: <a class="el" href="class_v_p_b_database.html#a91bb9c20c06d758d1a0d30d78bd27c47">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#a91bb9c20c06d758d1a0d30d78bd27c47">VPBDatabase</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a2174ca226a200e99f135eb8ce896d1fe">osgEarth::Drivers::VPBOptions</a>
+</li>
+<li>dirty()
+: <a class="el" href="classosgEarth_1_1Revisioned.html#a71299cef872ae3fd5a84e0c2f762fd22">osgEarth::Revisioned&lt; T &gt;</a>
+, <a class="el" href="classosgEarth_1_1PixelAutoTransform.html#a8c67909ba6fa36871fc2a2899d50394f">osgEarth::PixelAutoTransform</a>
+, <a class="el" href="structDiamond.html#aa6782b05916e296943538332d1fe3abc">Diamond</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html#af72c7a1e15d160d9acd4948ee5405c78">osgEarth::Features::FeatureModelGraph</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1">osgEarth::Util::Controls::Control</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a8a37a28a585516a25e0acfa22627c926">osgEarth::Util::ImageOverlay</a>
+</li>
+<li>dirtyVertexData()
+: <a class="el" href="classseamless_1_1Patch.html#a52f59aca089ed2348de0020df9394173">seamless::Patch</a>
+</li>
+<li>disableLODBlending()
+: <a class="el" href="classosgEarth_1_1ImageLayer.html#a58a7156a00a5567b4850d6e5c65a5483">osgEarth::ImageLayer</a>
+</li>
+<li>DiskCache()
+: <a class="el" href="classosgEarth_1_1DiskCache.html#a7993474627421b0647026067a0355936">osgEarth::DiskCache</a>
+</li>
+<li>DiskCacheOptions()
+: <a class="el" href="classosgEarth_1_1DiskCacheOptions.html#ac98f6236dad4fdb06b53cba52df4d95c">osgEarth::DiskCacheOptions</a>
+</li>
+<li>dispatch()
+: <a class="el" href="structanonymous__namespace_02Terrain_8cpp_03_1_1NestingDrawCallback.html#a53e54bdfffb31be2914336b5e7e1b2c9">anonymous_namespace{Terrain.cpp}::NestingDrawCallback</a>
+</li>
+<li>displayPendingOperations()
+: <a class="el" href="classSqlite3Cache.html#a8bc188aa3883fb8f1d2ee80bdf5ddbe6">Sqlite3Cache</a>
 </li>
 <li>displayStats()
-: <a class="el" href="struct_layer_table.html#a8a23cf5157eb990090ef628bc1d94b4d">LayerTable</a>
+: <a class="el" href="structLayerTable.html#a8a23cf5157eb990090ef628bc1d94b4d">LayerTable</a>
+</li>
+<li>distance()
+: <a class="el" href="classosgEarth_1_1GeoMath.html#a96bbe3c5db69ddeedcec13a261798f5d">osgEarth::GeoMath</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1BufferFilter.html#a84b9fa48fe3e407b52d6b1bb81a8f1ca">osgEarth::Features::BufferFilter</a>
+</li>
+<li>DIV
+: <a class="el" href="classosgEarth_1_1Symbology_1_1NumericExpression.html#a4476a1f4da7ca5de41e69dd13b74f198ae7baed057ec816392cc4531c914833e4">osgEarth::Symbology::NumericExpression</a>
+</li>
+<li>Dock
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46b">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_BOTTOM
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46bac4d568fb8f9c268756e949c45b2d6bc4">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_FILL
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46badab2e9d70608294ae5616688fd67a811">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_LEFT
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46ba5bccf40bc902f1f650225cfaf27466b5">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_NONE
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46ba24120ff3786cf4e2e9a06a69445f445d">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_RIGHT
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46ba7c8278f8a44dacbfc82a4f1c3635e66c">osgEarth::Util::Controls::Control</a>
+</li>
+<li>DOCK_TOP
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0ac126e04b07ba2e323a7b7de933a46ba382ff002dd73a05d795af7831b77b828">osgEarth::Util::Controls::Control</a>
+</li>
+<li>document
+: <a class="el" href="classTiXmlAttribute.html#ada41d3cff50cd33a78072806f88d4433">TiXmlAttribute</a>
+</li>
+<li>document_
+: <a class="el" href="classosgEarth_1_1Json_1_1FastWriter.html#a1ef3b44fb1b832d8fe5bc63c090307b3">osgEarth::Json::FastWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a6b7d8564b0fc1b62382c030071835179">osgEarth::Json::StyledStreamWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#ae7efe3fdf86561375c6fc9d71c09a08f">osgEarth::Json::Reader</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a0f204b03570ac6666f247a039770e4d1">osgEarth::Json::StyledWriter</a>
+</li>
+<li>doDownload()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a205703a6769c8b11ae32fe3a8d4469e7">osgEarth::HTTPClient</a>
+</li>
+<li>doGet()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a96eb034cc7d6e5e36ff35acc8e9ab832">osgEarth::HTTPClient</a>
+</li>
+<li>DoIndent()
+: <a class="el" href="classTiXmlPrinter.html#a348ad6527b1d43ddeb51454cddeb6a1d">TiXmlPrinter</a>
+</li>
+<li>DoLineBreak()
+: <a class="el" href="classTiXmlPrinter.html#a252a0e13e06def9a06b2eb30a04677a0">TiXmlPrinter</a>
+</li>
+<li>doReadImageFile()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#ae540764fe1845156e2ad7d64d2c69e4f">osgEarth::HTTPClient</a>
+</li>
+<li>doReadNodeFile()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a0c6211e3dfd0b578539bb8d2929ef842">osgEarth::HTTPClient</a>
+</li>
+<li>doReadObjectFile()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#ae1e99149aefad008fb85ec2633007338">osgEarth::HTTPClient</a>
+</li>
+<li>doReadString()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a997d1ce44370a454ccb667948c1f5a56">osgEarth::HTTPClient</a>
+</li>
+<li>doubleValue
+: <a class="el" href="structosgEarth_1_1Features_1_1AttributeValueUnion.html#aff939fe24f67f4a1f1bb2ffa53f22cc7">osgEarth::Features::AttributeValueUnion</a>
 </li>
 <li>DoubleValue()
-: <a class="el" href="class_ti_xml_attribute.html#a2880ddef53fc7522c99535273954d230">TiXmlAttribute</a>
+: <a class="el" href="classTiXmlAttribute.html#a2880ddef53fc7522c99535273954d230">TiXmlAttribute</a>
+</li>
+<li>doubleValue()
+: <a class="el" href="structosgEarth_1_1Util_1_1EarthManipulator_1_1ActionOption.html#a796c02ca53944667a71f8efcbae55638">osgEarth::Util::EarthManipulator::ActionOption</a>
+</li>
+<li>download()
+: <a class="el" href="classosgEarth_1_1HTTPClient.html#a77f6d388a86029adcbac790e4a6c89b4">osgEarth::HTTPClient</a>
+</li>
+<li>drag()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#aafa5cbf5b47771babd84642ad934630e">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>DrapeableNode()
+: <a class="el" href="classosgEarth_1_1DrapeableNode.html#af00425dabfb1bda2b4f9528f4de63eb2">osgEarth::DrapeableNode</a>
+</li>
+<li>draw()
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#abd08bfae5c906fb6a3ddd7fa401f5425">osgEarth::Util::Controls::VBox</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa1d57e854daa991b63b7fd423791f04f">osgEarth::Util::Controls::Control</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html#a24375473291a27cd6f08cc0a3b313dcd">osgEarth::Util::Controls::ImageControl</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513">osgEarth::Util::Controls::RoundedFrame</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#ab4ce63f6a0673a0dde4983ff22c80e9c">osgEarth::Util::Controls::HBox</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a0c0b40c956ee1a52806e7a243a35ec7d">osgEarth::Util::Controls::Grid</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html#a846468d8cbe1f8891d65fc5c00bddf89">osgEarth::Util::Controls::CheckBoxControl</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524">osgEarth::Util::Controls::Frame</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a31a9160592d90f4227222b50ff491641">osgEarth::Util::Controls::LabelControl</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5">osgEarth::Symbology::GeometryRasterizer</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a06247aeae16efa499d66ae92e2368c00">osgEarth::Util::Controls::Container</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#a5a51e6f90a43adb65bfd8169ea5dd4ea">osgEarth::Util::Controls::HSliderControl</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ControlNodeBin.html#a49775b91773326ebad49f0df71a84bd6">osgEarth::Util::Controls::ControlNodeBin</a>
+</li>
+<li>drawArrays()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1LineFunctor.html#a1cbcc12eb2f03d98eaeb0ea04fcdc81e">osgEarth::Symbology::LineFunctor&lt; T &gt;</a>
+</li>
+<li>drawElements()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1LineFunctor.html#abaf3b2c8928cac56b027060607b60c32">osgEarth::Symbology::LineFunctor&lt; T &gt;</a>
+</li>
+<li>drawImplementation()
+: <a class="el" href="structanonymous__namespace_02SkyNode_8cpp_03_1_1OverrideNearFarValuesCallback.html#a95b7f4b86499342a57ece1ff38a96c65">anonymous_namespace{SkyNode.cpp}::OverrideNearFarValuesCallback</a>
+, <a class="el" href="classAMRGeometry.html#a1c0c1dbc95b1f660c0ab8ab7a2826661">AMRGeometry</a>
+</li>
+<li>driver()
+: <a class="el" href="classosgEarth_1_1MaskLayerOptions.html#a56d86141637644a89dab9dca81bb5d84">osgEarth::MaskLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1ModelLayerOptions.html#a5b7bf0a507cc0acfe4ffb1260b5f01a5">osgEarth::ModelLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1MaskLayerOptions.html#aaa0c518dff8e5f2cf2e9f04e4aa06599">osgEarth::MaskLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">osgEarth::TerrainLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1ModelLayerOptions.html#a0db8860b9fde151576402fa73ba513b8">osgEarth::ModelLayerOptions</a>
+</li>
+<li>DriverConfigOptions()
+: <a class="el" href="classosgEarth_1_1DriverConfigOptions.html#a5fa3dc89733bc7cb78ae141a51c5e045">osgEarth::DriverConfigOptions</a>
 </li>
 <li>DRoamEnginePlugin()
-: <a class="el" href="class_d_roam_engine_plugin.html#a597a12c0920d3a81647ab2a4f158defc">DRoamEnginePlugin</a>
+: <a class="el" href="classDRoamEnginePlugin.html#a597a12c0920d3a81647ab2a4f158defc">DRoamEnginePlugin</a>
+</li>
+<li>DRoamNode()
+: <a class="el" href="classDRoamNode.html#a940639c5dd926011568b10258bbdbd73">DRoamNode</a>
+</li>
+<li>DS_FLAT
+: <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a2174ca226a200e99f135eb8ce896d1fea23df5c39f4179251ef72bda2ea150ee1">osgEarth::Drivers::VPBOptions</a>
+</li>
+<li>DS_NESTED
+: <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a2174ca226a200e99f135eb8ce896d1feace0f4186e5a42279974680ca40ae7817">osgEarth::Drivers::VPBOptions</a>
+</li>
+<li>DS_TASK
+: <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a2174ca226a200e99f135eb8ce896d1fea8f3f5613cd3a7f88b26a2a0994cb8cec">osgEarth::Drivers::VPBOptions</a>
+</li>
+<li>DummyValueAllocatorInitializer()
+: <a class="el" href="structDummyValueAllocatorInitializer.html#a852ece00c55c714863123052adbb03f4">DummyValueAllocatorInitializer</a>
+</li>
+<li>dump()
+: <a class="el" href="structDiamond.html#ab4e21947607715ecb9611c927a402d3e">Diamond</a>
+</li>
+<li>dumpActionInfo()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a21c6700deb7c7e1bdcf8a9c9d7a48099">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>duplicate
+: <a class="el" href="classosgEarth_1_1Json_1_1Value_1_1CZString.html#a9411518bc220cae5814aea68a7b0b05caa631cb2fba0ca5450afc8c93da320e8c">osgEarth::Json::Value::CZString</a>
+</li>
+<li>duplicateOnCopy
+: <a class="el" href="classosgEarth_1_1Json_1_1Value_1_1CZString.html#a9411518bc220cae5814aea68a7b0b05ca1d891467348e7f4ce55a5b03048be3ea">osgEarth::Json::Value::CZString</a>
 </li>
 <li>duplicateStringValue()
-: <a class="el" href="classosg_earth_1_1_json_1_1_default_value_allocator.html#ab608c346cc13a6b5c737bfdd327a944b">osgEarth::Json::DefaultValueAllocator</a>
+: <a class="el" href="classosgEarth_1_1Json_1_1ValueAllocator.html#a07b06976a450475d8316e88be4465c21">osgEarth::Json::ValueAllocator</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1DefaultValueAllocator.html#ab608c346cc13a6b5c737bfdd327a944b">osgEarth::Json::DefaultValueAllocator</a>
+</li>
+<li>DuplicationPolicy
+: <a class="el" href="classosgEarth_1_1Json_1_1Value_1_1CZString.html#a9411518bc220cae5814aea68a7b0b05c">osgEarth::Json::Value::CZString</a>
+</li>
+<li>DynamicLODScaleCallback()
+: <a class="el" href="structDynamicLODScaleCallback.html#a326d6573c5cf02db6a641cea0d145817">DynamicLODScaleCallback</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -182,6 +521,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

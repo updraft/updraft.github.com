@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1MapNode.html" title="osgEarth::MapNode" alt="" coords="2379,216,2517,245"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="307,131,427,160"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="688,97,853,127"/>
+<area shape="rect" id="node19" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Config \&gt;" alt="" coords="883,163,1072,192"/>
+<area shape="rect" id="node6" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,131,152,160"/>
+<area shape="rect" id="node8" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,308,157,337"/>
+<area shape="rect" id="node52" href="$classosgEarth_1_1URI.html" title="osgEarth::URI" alt="" coords="313,633,420,663"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1MapNodeOptions.html" title="osgEarth::MapNodeOptions" alt="" coords="2039,216,2220,245"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="1139,309,1339,339"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProxySettings \&gt;" alt="" coords="1636,111,1868,140"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1ProxySettings.html" title="osgEarth::ProxySettings" alt="" coords="1157,111,1320,140"/>
+<area shape="rect" id="node22" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="1152,228,1325,257"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1TerrainOptions.html" title="osgEarth::TerrainOptions" alt="" coords="1669,391,1835,420"/>
+<area shape="rect" id="node30" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="279,400,455,429"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1LoadingPolicy.html" title="osgEarth::LoadingPolicy" alt="" coords="689,480,852,509"/>
+<area shape="rect" id="node32" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ElevationInterpolation \&gt;" alt="" coords="1101,428,1376,457"/>
+<area shape="rect" id="node34" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LoadingPolicy \&gt;" alt="" coords="1123,481,1355,511"/>
+<area shape="rect" id="node38" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Mode \&gt;" alt="" coords="276,479,457,508"/>
+<area shape="rect" id="node41" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="284,556,449,585"/>
+<area shape="rect" id="node44" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CompositingTechnique \&gt;" alt="" coords="1097,601,1380,631"/>
+<area shape="rect" id="node46" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; unsigned \&gt;" alt="" coords="1651,444,1853,473"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1Drivers_1_1KMLOptions.html" title="osgEarth::Drivers::KMLOptions" alt="" coords="1407,649,1609,679"/>
+<area shape="rect" id="node50" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; URI \&gt;" alt="" coords="684,652,857,681"/>
+</map>

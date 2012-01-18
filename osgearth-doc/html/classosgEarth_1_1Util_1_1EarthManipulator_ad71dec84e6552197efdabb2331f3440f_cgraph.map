@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aafa5cbf5b47771babd84642ad934630e" title="osgEarth::Util::EarthManipulator::drag" alt="" coords="741,245,981,275"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a0e80654c897dcbba66d9001ff6695aba" title="osgEarth::Util::EarthManipulator::rotate" alt="" coords="1471,425,1719,455"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a4148474ddf1149ff52dbf0c0550339b9" title="osgEarth::Util::EarthManipulator::pan" alt="" coords="411,531,648,560"/>
+<area shape="rect" id="node49" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a6f4a95527deaf3691ca42a26e2fdb480" title="osgEarth::Util::EarthManipulator::zoom" alt="" coords="405,663,653,692"/>
+<area shape="rect" id="node5" href="$EarthManipulator_8cpp.html#a0959f5ef4d02a7c323a6284c3ba87705" title="calcTangentPoint" alt="" coords="1184,59,1307,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aa412d8793e031d74860f58a99c860577" title="osgEarth::Util::EarthManipulator::getMyCoordinateFrame" alt="" coords="1069,477,1421,507"/>
+<area shape="rect" id="node11" href="$EarthManipulator_8cpp.html#ab49b57131a36a799c1f59f5552959d2d" title="getWindowPoint" alt="" coords="1187,112,1304,141"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a4d8261349c4969171d6a704148d139d3" title="osgEarth::Util::EarthManipulator::makeCenterRotation" alt="" coords="1077,219,1413,248"/>
+<area shape="rect" id="node15" href="$namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de" title="osgEarth::notify" alt="" coords="1188,165,1303,195"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae8c30588a24f3b70da9e2e88b2b5c1c4" title="osgEarth::Util::EarthManipulator::recalculateLocalPitchAndAzimuth" alt="" coords="1768,425,2179,455"/>
+<area shape="rect" id="node28" href="$EarthManipulator_8cpp.html#a80c81c3e96d0a90015536ef49e221c15" title="rotateAroundPoint" alt="" coords="1183,272,1308,301"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aa2cd6268a3368b67c7fb86a64be87a80" title="osgEarth::Util::EarthManipulator::screenToWorld" alt="" coords="1093,5,1397,35"/>
+<area shape="rect" id="node7" href="$EarthManipulator_8cpp.html#a4d2138863db355e43a9d0d9ea603e69a" title="sphereInterection" alt="" coords="1533,59,1656,88"/>
+<area shape="rect" id="node17" href="$namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="1512,165,1677,195"/>
+<area shape="rect" id="node21" href="$namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#aaf8b4909bb5c6f9e41dc75d48682437a" title="anonymous_namespace\{EarthManipulator::cpp\}::s_getHPRFromQuat" alt="" coords="2228,425,2652,455"/>
+<area shape="rect" id="node23" href="$namespaceanonymous__namespace_02Controls_8cpp_03.html#ad4029349af79513030745a11f9832f72" title="anonymous_namespace\{Controls::cpp\}::rot" alt="" coords="2701,425,2973,455"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a0831edf651c0b5659b01f38d3f6eac93" title="osgEarth::Util::EarthManipulator::getAzimuth" alt="" coords="720,531,1003,560"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a9a181806ea8eb81c478ff7bc243edfab" title="osgEarth::Util::EarthManipulator::recalculateCenter" alt="" coords="703,611,1020,640"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#adf480579ecdadd523eff8cba88ad3fc8" title="osgEarth::Util::EarthManipulator::getMatrix" alt="" coords="1111,531,1380,560"/>
+<area shape="rect" id="node40" href="$EarthManipulator_8cpp.html#ad9a9e389ea200eabb13b1c615e21d079" title="normalizeAzimRad" alt="" coords="1180,584,1311,613"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae2c317913a70c97b8e78e7126fed9318" title="osgEarth::Util::EarthManipulator::intersect" alt="" coords="1112,637,1379,667"/>
+<area shape="rect" id="node51" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a9b966c412b1df02aecfef17ab84c4809" title="osgEarth::Util::EarthManipulator::setDistance" alt="" coords="719,741,1004,771"/>
+</map>

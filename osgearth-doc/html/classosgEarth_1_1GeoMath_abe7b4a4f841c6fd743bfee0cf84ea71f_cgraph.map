@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoMath.html#a96bbe3c5db69ddeedcec13a261798f5d" title="osgEarth::GeoMath::distance" alt="" coords="279,5,471,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="247,59,503,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1SpatialReference.html#a0ce3be1257b24c5f359dd52a7216b2c1" title="osgEarth::SpatialReference::isProjected" alt="" coords="248,112,501,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="553,85,759,115"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="809,85,1023,115"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1072,85,1483,115"/>
+</map>

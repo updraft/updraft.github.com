@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -58,53 +88,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('deprecated.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>Deprecated List </h1>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="_deprecated000002"></a> </p>
+<div class="textblock"><p><a class="anchor" id="_deprecated000007"></a> </p>
 <dl>
-<dt>Member <a class="el" href="class_ti_xml_handle.html#acb5fe8388a526289ea65e817a51e05e7">TiXmlHandle::Element</a> () const  </dt>
-<dd>use ToElement. Return the handle as a <a class="el" href="class_ti_xml_element.html">TiXmlElement</a>. This may return null. </dd>
+<dt>Member <a class="el" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a9235f02731e381bb3e79935f0ab57b83">osgEarth::Features::FeatureModelSourceOptions::_gridding</a>  </dt>
+<dd></dd>
+</dl>
+<p><a class="anchor" id="_deprecated000006"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a0a60a031d22b9149b4519d3e1bb38ce2">osgEarth::Features::FeatureModelSourceOptions::geometryTypeOverride</a> () </dt>
+<dd>- use the ConvertTypeFilter instead </dd>
+</dl>
+<p><a class="anchor" id="_deprecated000005"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a5567aae4dfca9af14f8175056eca0536">osgEarth::Features::FeatureModelSourceOptions::gridding</a> () </dt>
+<dd>- use levels() instead </dd>
+</dl>
+<p><a class="anchor" id="_deprecated000002"></a> </p>
+<dl>
+<dt>Member <a class="el" href="classTiXmlHandle.html#acb5fe8388a526289ea65e817a51e05e7">TiXmlHandle::Element</a> () const  </dt>
+<dd>use ToElement. Return the handle as a <a class="el" href="classTiXmlElement.html">TiXmlElement</a>. This may return null. </dd>
 </dl>
 <p><a class="anchor" id="_deprecated000001"></a> </p>
 <dl>
-<dt>Member <a class="el" href="class_ti_xml_handle.html#ab44b723a8dc9af72838a303c079d0376">TiXmlHandle::Node</a> () const  </dt>
-<dd>use ToNode. Return the handle as a <a class="el" href="class_ti_xml_node.html">TiXmlNode</a>. This may return null. </dd>
+<dt>Member <a class="el" href="classTiXmlHandle.html#ab44b723a8dc9af72838a303c079d0376">TiXmlHandle::Node</a> () const  </dt>
+<dd>use ToNode. Return the handle as a <a class="el" href="classTiXmlNode.html">TiXmlNode</a>. This may return null. </dd>
 </dl>
 <p><a class="anchor" id="_deprecated000003"></a> </p>
 <dl>
-<dt>Member <a class="el" href="class_ti_xml_handle.html#a9fc739c8a18d160006f82572fc143d13">TiXmlHandle::Text</a> () const  </dt>
-<dd>use ToText() Return the handle as a <a class="el" href="class_ti_xml_text.html">TiXmlText</a>. This may return null. </dd>
+<dt>Member <a class="el" href="classTiXmlHandle.html#a9fc739c8a18d160006f82572fc143d13">TiXmlHandle::Text</a> () const  </dt>
+<dd>use ToText() Return the handle as a <a class="el" href="classTiXmlText.html">TiXmlText</a>. This may return null. </dd>
 </dl>
 <p><a class="anchor" id="_deprecated000004"></a> </p>
 <dl>
-<dt>Member <a class="el" href="class_ti_xml_handle.html#a49675b74357ba2aae124657a9a1ef465">TiXmlHandle::Unknown</a> () const  </dt>
-<dd>use ToUnknown() Return the handle as a <a class="el" href="class_ti_xml_unknown.html">TiXmlUnknown</a>. This may return null. </dd>
+<dt>Member <a class="el" href="classTiXmlHandle.html#a49675b74357ba2aae124657a9a1ef465">TiXmlHandle::Unknown</a> () const  </dt>
+<dd>use ToUnknown() Return the handle as a <a class="el" href="classTiXmlUnknown.html">TiXmlUnknown</a>. This may return null. </dd>
 </dl>
 </div></div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,6 +143,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

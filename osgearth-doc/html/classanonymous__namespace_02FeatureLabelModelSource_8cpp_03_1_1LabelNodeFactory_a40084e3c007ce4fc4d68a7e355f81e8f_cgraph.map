@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureCursor.html#a2acffc4ee2f82d18d949d8b1375d5871" title="osgEarth::Features::FeatureCursor::fill" alt="" coords="715,5,960,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1Session.html#a16e3a50dbb1d9dfb51181344a494ab42" title="osgEarth::Features::Session::getMapInfo" alt="" coords="707,59,968,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1MapInfo.html#a69c05dfae1159b34a013658958412655" title="osgEarth::MapInfo::getProfile" alt="" coords="741,112,933,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FilterContext.html#a5f1ea49d7f7b795d8b9e80989a439ba0" title="osgEarth::Features::FilterContext::getSession" alt="" coords="693,165,981,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b" title="osgEarth::Profile::getSRS" alt="" coords="751,219,924,248"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Features_1_1FilterContext.html#a0dca1d9b3e0997c81c4a03cfd472c8ec" title="osgEarth::Features::FilterContext::hasReferenceFrame" alt="" coords="667,272,1008,301"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Features_1_1FilterContext.html#a9e82cf1e5599687e0e4fa96b11632bb2" title="osgEarth::Features::FilterContext::inverseReferenceFrame" alt="" coords="656,325,1019,355"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1MapInfo.html#a9f24d551976461e2c60a6ab32a1beda6" title="osgEarth::MapInfo::isGeocentric" alt="" coords="732,379,943,408"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Features_1_1TransformFilter.html#ab476844a421ae63d5483fa4c11387c0b" title="osgEarth::Features::TransformFilter::setLocalizeCoordinates" alt="" coords="651,432,1024,461"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="1073,219,1271,248"/>
+</map>

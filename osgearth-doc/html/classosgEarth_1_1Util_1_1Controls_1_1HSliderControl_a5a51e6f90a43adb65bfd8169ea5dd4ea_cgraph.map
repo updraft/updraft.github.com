@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af77ca0a575c26c4768ac04a39ded2ec5" title="osgEarth::Util::Controls::Control::foreColor" alt="" coords="343,5,612,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a363fe4321d8150a4e31d2e6e2456a1d7" title="osgEarth::Util::Controls::Control::padding" alt="" coords="347,59,608,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ad0ae1170326deed17ef6502b3475c325" title="osgEarth::Util::Controls::Control::visible" alt="" coords="351,112,604,141"/>
+<area shape="rect" id="node9" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#ad9d8bb215060c53eb35ce3a23836a8de" title="osgEarth::Util::Controls::Gutter::x" alt="" coords="368,165,587,195"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#af5866775b393dcb25e91c4c80235d498" title="osgEarth::Util::Controls::Gutter::y" alt="" coords="368,219,587,248"/>
+</map>

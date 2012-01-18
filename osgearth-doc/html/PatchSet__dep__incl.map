@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$Geographic.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Geographic" alt="" coords="580,83,1068,112"/>
+<area shape="rect" id="node7" href="$GeoPatch_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/GeoPatch.cpp" alt="" coords="5,160,512,189"/>
+<area shape="rect" id="node12" href="$Patch_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Patch.cpp" alt="" coords="2252,83,2735,112"/>
+<area shape="rect" id="node14" href="$PatchGroup_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/PatchGroup.cpp" alt="" coords="2759,83,3276,112"/>
+<area shape="rect" id="node16" href="$PatchSet_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/PatchSet.cpp" alt="" coords="3300,83,3801,112"/>
+<area shape="rect" id="node18" href="$Projected.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Projected" alt="" coords="1124,83,1601,112"/>
+<area shape="rect" id="node23" href="$SeamlessEngineNode.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessEngineNode" alt="" coords="1625,83,2177,112"/>
+<area shape="rect" id="node26" href="$SeamlessPlugin_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessPlugin.cpp" alt="" coords="2200,160,2741,189"/>
+<area shape="rect" id="node5" href="$Geographic_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Geographic.cpp" alt="" coords="536,160,1051,189"/>
+<area shape="rect" id="node9" href="$SeamlessEngineNode_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessEngineNode.cpp" alt="" coords="1075,160,1651,189"/>
+<area shape="rect" id="node20" href="$Projected_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Projected.cpp" alt="" coords="1675,160,2176,189"/>
+</map>

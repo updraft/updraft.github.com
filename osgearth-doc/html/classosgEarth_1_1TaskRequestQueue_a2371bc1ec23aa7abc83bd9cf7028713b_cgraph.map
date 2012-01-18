@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1TaskRequest.html#a93beed8c9f2880d8c14f4a77a64ed7b8" title="osgEarth::TaskRequest::getPriority" alt="" coords="312,5,539,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TaskRequest.html#a352209b0f59ade51d54e39c803eb01fe" title="osgEarth::TaskRequest::getProgressCallback" alt="" coords="281,59,569,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1TaskRequest.html#a5394d626aed5b38fe6e30d132347435c" title="osgEarth::TaskRequest::setProgressCallback" alt="" coords="281,112,569,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1TaskRequest.html#a0b20e3903c468c8dc527add1b85c4742" title="osgEarth::TaskRequest::setState" alt="" coords="317,165,533,195"/>
+</map>

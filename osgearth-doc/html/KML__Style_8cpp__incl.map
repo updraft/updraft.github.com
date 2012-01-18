@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$KML__Style.html" title="KML_Style" alt="" coords="281,83,367,112"/>
+<area shape="rect" id="node29" href="$KML__IconStyle.html" title="KML_IconStyle" alt="" coords="665,160,775,189"/>
+<area shape="rect" id="node32" href="$KML__LabelStyle.html" title="KML_LabelStyle" alt="" coords="417,160,535,189"/>
+<area shape="rect" id="node35" href="$KML__LineStyle.html" title="KML_LineStyle" alt="" coords="441,83,551,112"/>
+<area shape="rect" id="node38" href="$KML__PolyStyle.html" title="KML_PolyStyle" alt="" coords="575,83,687,112"/>
+<area shape="rect" id="node5" href="$KML__Common.html" title="KML_Common" alt="" coords="240,315,349,344"/>
+<area shape="rect" id="node22" href="$KML__StyleSelector.html" title="KML_StyleSelector" alt="" coords="260,160,393,189"/>
+<area shape="rect" id="node15" href="$KMLOptions.html" title="KMLOptions" alt="" coords="248,392,341,421"/>
+<area shape="rect" id="node24" href="$KML__Object.html" title="KML_Object" alt="" coords="477,237,571,267"/>
+</map>

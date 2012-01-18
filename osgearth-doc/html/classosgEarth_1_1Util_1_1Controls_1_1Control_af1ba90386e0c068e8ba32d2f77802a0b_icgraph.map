@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html#a6cc718b73dc302103429bdb648e3f4ee" title="osgEarth::Util::Controls::CheckBoxControl::CheckBoxControl" alt="" coords="323,5,704,35"/>
+<area shape="rect" id="node5" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="872,111,979,140"/>
+<area shape="rect" id="node9" href="$osgearth__toc_8cpp.html#aa71991ef036a5d30b262af0eeb75c09f" title="createLayerItem" alt="" coords="456,59,571,88"/>
+<area shape="rect" id="node15" href="$osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="488,163,539,192"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569" title="osgEarth::Util::Controls::Control::setHorizFill" alt="" coords="372,216,655,245"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a" title="osgEarth::Util::Controls::Control::setSize" alt="" coords="383,297,644,327"/>
+<area shape="rect" id="node7" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1147,111,1197,140"/>
+<area shape="rect" id="node11" href="$osgearth__toc_8cpp.html#a46d27909d39c4375f3cb070f332fe4d1" title="updateControlPanel" alt="" coords="857,57,993,87"/>
+<area shape="rect" id="node13" href="$osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1147,57,1197,87"/>
+<area shape="rect" id="node19" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="859,217,992,247"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#a3ec36386ed21016dd43a695f6c2310a8" title="osgEarth::Util::Controls::HSliderControl::HSliderControl" alt="" coords="753,164,1097,193"/>
+<area shape="rect" id="node26" href="$osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8" title="addMouseCoords" alt="" coords="864,324,987,353"/>
+<area shape="rect" id="node30" href="$structKMLUIBuilder.html#a52a37717c580305c2a8a552d7e28dfd0" title="KMLUIBuilder::apply" alt="" coords="855,377,996,407"/>
+<area shape="rect" id="node32" href="$osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="900,271,951,300"/>
+<area shape="rect" id="node28" href="$osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1147,324,1197,353"/>
+</map>

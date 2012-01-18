@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3" title="osgEarth::Util::Controls::HBox::addControl" alt="" coords="329,70,599,99"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="329,150,599,179"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="335,331,593,361"/>
+<area shape="rect" id="node5" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="1060,202,1193,231"/>
+<area shape="rect" id="node7" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="776,70,883,99"/>
+<area shape="rect" id="node9" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1101,70,1152,99"/>
+<area shape="rect" id="node15" href="$namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114" title="anonymous_namespace\{osgearth_manip::cpp\}::createHelp" alt="" coords="648,123,1011,153"/>
+<area shape="rect" id="node19" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="804,227,855,257"/>
+<area shape="rect" id="node17" href="$osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1101,123,1152,153"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a6481a84518097ca479507ade97b4a770" title="osgEarth::Util::Controls::Grid::addControl" alt="" coords="699,331,960,361"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#aef86ee35f5d7e87270ef27f251952d68" title="osgEarth::Util::Controls::Grid::addControls" alt="" coords="695,385,964,414"/>
+<area shape="rect" id="node29" href="$osgearth__toc_8cpp.html#aa71991ef036a5d30b262af0eeb75c09f" title="createLayerItem" alt="" coords="772,489,887,518"/>
+<area shape="rect" id="node31" href="$osgearth__toc_8cpp.html#a46d27909d39c4375f3cb070f332fe4d1" title="updateControlPanel" alt="" coords="1059,463,1195,493"/>
+<area shape="rect" id="node33" href="$osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1243,463,1293,493"/>
+</map>

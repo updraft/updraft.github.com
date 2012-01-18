@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -75,29 +105,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;<ul>
+<li>ACTIVE
+: <a class="el" href="Diamond.html#a14f2cb6b85d7de86736527d3a14f98b7a33cf1d8ef1d06ee698a7fabf40eb3a7f">Diamond</a>
+</li>
 <li>AVERAGE_RESOLUTION
-: <a class="el" href="_reader_writer_g_d_a_l_8cpp.html#a0b3277d059f15626dce74d70e03e9b3cac081e543d69b1e806acbcd0bb8fa228b">ReaderWriterGDAL.cpp</a>
+: <a class="el" href="ReaderWriterGDAL_8cpp.html#a0b3277d059f15626dce74d70e03e9b3cac081e543d69b1e806acbcd0bb8fa228b">ReaderWriterGDAL.cpp</a>
+</li>
+<li>GDPARENT
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696a6814cf04211862730485bf2975a0be56">Diamond</a>
 </li>
 <li>HIGHEST_RESOLUTION
-: <a class="el" href="_reader_writer_g_d_a_l_8cpp.html#a0b3277d059f15626dce74d70e03e9b3ca0b18dd0a90d3271b1acd9a8a273b1f8b">ReaderWriterGDAL.cpp</a>
+: <a class="el" href="ReaderWriterGDAL_8cpp.html#a0b3277d059f15626dce74d70e03e9b3ca0b18dd0a90d3271b1acd9a8a273b1f8b">ReaderWriterGDAL.cpp</a>
+</li>
+<li>INACTIVE
+: <a class="el" href="Diamond.html#a14f2cb6b85d7de86736527d3a14f98b7a3ff8ba88da6f8947ab7c22b7825c6bb6">Diamond</a>
 </li>
 <li>LOWEST_RESOLUTION
-: <a class="el" href="_reader_writer_g_d_a_l_8cpp.html#a0b3277d059f15626dce74d70e03e9b3cab2d8943db107bc7480880d8b6ac4cbff">ReaderWriterGDAL.cpp</a>
+: <a class="el" href="ReaderWriterGDAL_8cpp.html#a0b3277d059f15626dce74d70e03e9b3cab2d8943db107bc7480880d8b6ac4cbff">ReaderWriterGDAL.cpp</a>
+</li>
+<li>PARENT_L
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696ae86ff5449523a391fcae04e43f7ff6f7">Diamond</a>
+</li>
+<li>PARENT_R
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696a0138b2a9f89e5add2d2a64ced248f343">Diamond</a>
+</li>
+<li>QUADTREE
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696a48aeb588607379b91df5b94a528c2064">Diamond</a>
 </li>
 <li>TIXML_ENCODING_LEGACY
 : <a class="el" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a6baf76361e2641bb52e08d8b4be412b1">tinyxml.h</a>
@@ -109,24 +144,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">tinyxml.h</a>
 </li>
 <li>TIXML_NO_ATTRIBUTE
-: <a class="el" href="tinyxml_8h.html#a06fc87d81c62e9abb8790b6e5713c55bab5d83b77941b021a657f1223e40dc28d">tinyxml.h</a>
+: <a class="el" href="tinyxml_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab5d83b77941b021a657f1223e40dc28d">tinyxml.h</a>
 </li>
 <li>TIXML_SUCCESS
-: <a class="el" href="tinyxml_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa3e89edb94c177db48c4e29f92d737d9">tinyxml.h</a>
+: <a class="el" href="tinyxml_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aa3e89edb94c177db48c4e29f92d737d9">tinyxml.h</a>
 </li>
 <li>TIXML_WRONG_TYPE
-: <a class="el" href="tinyxml_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4444723f0e0f7ba0bc120b172120d479">tinyxml.h</a>
+: <a class="el" href="tinyxml_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a4444723f0e0f7ba0bc120b172120d479">tinyxml.h</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -141,6 +168,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

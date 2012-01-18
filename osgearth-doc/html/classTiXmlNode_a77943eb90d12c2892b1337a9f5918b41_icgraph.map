@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlElement.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="276,5,423,35"/>
+<area shape="rect" id="node5" href="$classTiXmlNode.html#ab5f722624113c8203227de4f56576d31" title="TiXmlNode::FirstChild" alt="" coords="275,59,424,88"/>
+<area shape="rect" id="node7" href="$classTiXmlElement.html#aa6dedd8a146acf3b1bc0903deb2d411a" title="TiXmlElement::GetText" alt="" coords="271,112,428,141"/>
+<area shape="rect" id="node9" href="$classTiXmlNode.html#acdd3fdc436aa7433023310a041e5e63f" title="TiXmlNode::LastChild" alt="" coords="275,165,424,195"/>
+<area shape="rect" id="node11" href="$classTiXmlDocument.html#a4c852a889c02cf251117fd1d9fe1845f" title="TiXmlDocument::LoadFile" alt="" coords="263,219,436,248"/>
+<area shape="rect" id="node15" href="$classTiXmlNode.html#acaf9dc17531ac041f602f9ad579573ea" title="Navigate to a sibling node with the given &#39;value&#39;." alt="" coords="268,272,431,301"/>
+<area shape="rect" id="node17" href="$classTiXmlNode.html#abbb3b8c1f38fa7b9e52d584a4aeca795" title="Navigate to a sibling node." alt="" coords="257,325,441,355"/>
+<area shape="rect" id="node19" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745" title="anonymous_namespace\{XmlUtils::cpp\}::processNode" alt="" coords="183,379,516,408"/>
+<area shape="rect" id="node23" href="$classTiXmlDocument.html#a21c0aeb0d0a720169ad4ac89523ebe93" title="Save a file using the current document value. Returns true if successful." alt="" coords="263,432,436,461"/>
+<area shape="rect" id="node27" href="$classTiXmlPrinter.html#a0857c5d32c59b9a257f9a49cb9411df5" title="Visit a text node." alt="" coords="285,485,413,515"/>
+<area shape="rect" id="node29" href="$classTiXmlPrinter.html#a6dccaf5ee4979f13877690afe28721e8" title="Visit an element." alt="" coords="271,539,428,568"/>
+<area shape="rect" id="node31" href="$classTiXmlPrinter.html#ae6a1df8271df4bf62d7873c38e34aa69" title="Visit an element." alt="" coords="275,592,424,621"/>
+<area shape="rect" id="node13" href="$classTiXmlDocument.html#a879cdf5e981b8b2d2ef82f2546dd28fb" title="Load a file using the given filename. Returns true if successful." alt="" coords="577,219,751,248"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1XmlDocument.html#abe920eb01a1e40874e6689fb64633f9a" title="osgEarth::XmlDocument::load" alt="" coords="565,379,763,408"/>
+<area shape="rect" id="node25" href="$classTiXmlDocument.html#ae869f5ebf7fc54c4a1d737fb4689fd44" title="Save a file using the given filename. Returns true if successful." alt="" coords="577,432,751,461"/>
+</map>

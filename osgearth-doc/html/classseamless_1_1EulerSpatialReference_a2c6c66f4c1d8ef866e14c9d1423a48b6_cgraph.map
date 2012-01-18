@@ -1,0 +1,30 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#ac308eca82b121ca0e15a1835d0137421" title="seamless::euler::cubeToFace" alt="" coords="1099,5,1293,35"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a716d5725e48c780ee396bed196a903bc" title="seamless::euler::faceCoordsToLatLon" alt="" coords="1075,83,1317,112"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="2673,832,2940,861"/>
+<area shape="rect" id="node15" href="$classseamless_1_1EulerSpatialReference.html#aa6a2a563b63f9b3ce2fe8606b1ede863" title="seamless::EulerSpatialReference::transform" alt="" coords="372,175,649,204"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="2993,571,3199,600"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="3249,571,3463,600"/>
+<area shape="rect" id="node13" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="3512,571,3923,600"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1SpatialReference.html#a42fc6ea305be6b94340bf300d7b67dbe" title="osgEarth::SpatialReference::getGeographicSRS" alt="" coords="700,200,1001,229"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1SpatialReference.html#a28d916a87ed2653a5763bf8777cd9cbf" title="osgEarth::SpatialReference::transform" alt="" coords="1389,547,1635,576"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1SpatialReference.html#a398407559e7c170fc44cde6842511548" title="osgEarth::SpatialReference::isEquivalentTo" alt="" coords="2015,547,2289,576"/>
+<area shape="rect" id="node77" href="$classseamless_1_1EulerSpatialReference.html#a2fe582b3bfe6faa7902b04e802423551" title="seamless::EulerSpatialReference::preTransform" alt="" coords="700,96,1001,125"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1SpatialReference.html#ae27903c7c477c9f22b68ee71415888bf" title="osgEarth::SpatialReference::SpatialReference" alt="" coords="1051,299,1341,328"/>
+<area shape="rect" id="node57" href="$classosgEarth_1_1SpatialReference.html#a3c3d798015a48c93c5063182ac177688" title="osgEarth::SpatialReference::transformPoints" alt="" coords="1683,779,1965,808"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1SpatialReference.html#afe559cd555e232b45109fbce72742b02" title="osgEarth::SpatialReference::_isEquivalentTo" alt="" coords="2339,517,2621,547"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="2679,571,2935,600"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333" title="osgEarth::SpatialReference::getWKT" alt="" coords="2688,624,2925,653"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1SpatialReference.html#a7e2212a07fe863d5680b73f1e76cdee2" title="osgEarth::SpatialReference::isContiguous" alt="" coords="2673,304,2940,333"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1SpatialReference.html#a56b924155ab1745c5c9592269c6c147b" title="osgEarth::SpatialReference::isCube" alt="" coords="2692,357,2921,387"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1SpatialReference.html#a8531e5c5cfc660c195ec9a569ba28cab" title="osgEarth::SpatialReference::isLTP" alt="" coords="2695,251,2919,280"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1SpatialReference.html#a7b198b8e4dc79a8c4e04cee6b73c85c4" title="osgEarth::SpatialReference::isMercator" alt="" coords="2681,677,2932,707"/>
+<area shape="rect" id="node47" href="$classosgEarth_1_1SpatialReference.html#a3ac570432fd7345ac3f1fa3c400a5553" title="osgEarth::SpatialReference::isNorthPolar" alt="" coords="2676,411,2937,440"/>
+<area shape="rect" id="node50" href="$classosgEarth_1_1SpatialReference.html#ae913b39821f50acf4662194ef5bcd3c3" title="osgEarth::SpatialReference::isSouthPolar" alt="" coords="2675,464,2939,493"/>
+<area shape="rect" id="node53" href="$classosgEarth_1_1SpatialReference.html#a1cb6bf576e355f9e32b226e43311e359" title="osgEarth::SpatialReference::isUserDefined" alt="" coords="2671,517,2943,547"/>
+<area shape="rect" id="node59" href="$SpatialReference_8cpp.html#a253ee9380896291f2aec77e4868d994c" title="geographicToMercator" alt="" coords="2077,831,2227,860"/>
+<area shape="rect" id="node61" href="$classosgEarth_1_1SpatialReference.html#a2e11d757cd795a81173912054fbb83c9" title="osgEarth::SpatialReference::getName" alt="" coords="2359,1003,2601,1032"/>
+<area shape="rect" id="node69" href="$SpatialReference_8cpp.html#a047d2c7e4580672483d0926a8f694e7e" title="mercatorToGeographic" alt="" coords="2075,884,2229,913"/>
+<area shape="rect" id="node71" href="$classosgEarth_1_1SpatialReference.html#a1f6be4de7c26f8dd31504f10b21d68be" title="osgEarth::SpatialReference::postTransform" alt="" coords="2015,937,2289,967"/>
+<area shape="rect" id="node73" href="$classosgEarth_1_1SpatialReference.html#a9ce72de8ce6def17df6239a136dedb5d" title="osgEarth::SpatialReference::preTransform" alt="" coords="2019,991,2285,1020"/>
+</map>

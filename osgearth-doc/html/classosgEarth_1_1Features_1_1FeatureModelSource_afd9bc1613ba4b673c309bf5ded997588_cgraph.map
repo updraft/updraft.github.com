@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureSourceFactory.html#aeb4d4d28b39972eae24f232f67db9d11" title="osgEarth::Features::FeatureSourceFactory::create" alt="" coords="485,5,800,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a6feb1c36056befcaabdec296d4eb02ef" title="osgEarth::Features::FeatureModelSourceOptions::featureOptions" alt="" coords="444,59,841,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#aaac8c376bcdf88e392753a4cdb46e301" title="osgEarth::Features::FeatureModelSourceOptions::featureSource" alt="" coords="445,112,840,141"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="560,165,725,195"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="560,219,725,248"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="891,5,1152,35"/>
+</map>

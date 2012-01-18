@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__kml_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_kml/osgearth_kml.cpp</h1>  </div>
@@ -116,9 +132,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032 <span class="keywordtype">int</span>
 <a name="l00033"></a><a class="code" href="osgearth__kml_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">00033</a> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="keyword">const</span> std::string&amp; msg )
 <a name="l00034"></a>00034 {
-<a name="l00035"></a>00035     OE_NOTICE &lt;&lt; msg &lt;&lt; std::endl;
-<a name="l00036"></a>00036     OE_NOTICE &lt;&lt; std::endl;
-<a name="l00037"></a>00037     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_kml file.earth file.kml&quot;</span> &lt;&lt; std::endl;
+<a name="l00035"></a>00035     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; msg &lt;&lt; std::endl;
+<a name="l00036"></a>00036     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; std::endl;
+<a name="l00037"></a>00037     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_kml file.earth file.kml&quot;</span> &lt;&lt; std::endl;
 <a name="l00038"></a>00038     <span class="keywordflow">return</span> -1;
 <a name="l00039"></a>00039 }
 <a name="l00040"></a>00040 
@@ -131,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047     osg::Group* root = <span class="keyword">new</span> osg::Group();
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049     <span class="comment">// load the .earth file from the command line.</span>
-<a name="l00050"></a>00050     MapNode* mapNode = MapNode::load( arguments );
+<a name="l00050"></a>00050     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a49315e647112695161b9f859a85f9783">MapNode::load</a>( arguments );
 <a name="l00051"></a>00051     <span class="keywordflow">if</span> (!mapNode)
 <a name="l00052"></a>00052         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> );
 <a name="l00053"></a>00053 
@@ -140,9 +156,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056     <span class="keywordflow">for</span>( <span class="keywordtype">int</span> a = 1; a &lt; argc; ++a )
 <a name="l00057"></a>00057     {
 <a name="l00058"></a>00058         std::string kmlFile( argv[a] );
-<a name="l00059"></a>00059         <span class="keywordflow">if</span> ( endsWith( kmlFile, <span class="stringliteral">&quot;.kml&quot;</span> ) )
+<a name="l00059"></a>00059         <span class="keywordflow">if</span> ( <a class="code" href="namespaceosgEarth.html#aa32a7f7f74f7e64738fa4d86ab212e5a">endsWith</a>( kmlFile, <span class="stringliteral">&quot;.kml&quot;</span> ) )
 <a name="l00060"></a>00060         {
-<a name="l00061"></a>00061             osg::ref_ptr&lt;osgDB::Options&gt; options = <span class="keyword">new</span> osgDB::Options();
+<a name="l00061"></a>00061             osg::ref_ptr&lt;osgDB::Options&gt; options = <span class="keyword">new</span> <a class="code" href="namespaceosgDB.html#a0b89b70899d380c7f1cf5074a1bafaac">osgDB::Options</a>();
 <a name="l00062"></a>00062             options-&gt;setPluginData( <span class="stringliteral">&quot;osgEarth::MapNode&quot;</span>, mapNode );
 <a name="l00063"></a>00063             osg::Node* kml = osgDB::readNodeFile( kmlFile, options.get() );
 <a name="l00064"></a>00064             <span class="keywordflow">if</span> ( kml )
@@ -150,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066         }
 <a name="l00067"></a>00067     }
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069     viewer.setCameraManipulator( <span class="keyword">new</span> EarthManipulator() );
+<a name="l00069"></a>00069     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>() );
 <a name="l00070"></a>00070     viewer.setSceneData( root );
 <a name="l00071"></a>00071     viewer.getDatabasePager()-&gt;setDoPreCompile( <span class="keyword">true</span> );
 <a name="l00072"></a>00072 
@@ -166,14 +182,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00082"></a>00082 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__kml_8cpp.html">osgearth_kml.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -188,6 +196,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

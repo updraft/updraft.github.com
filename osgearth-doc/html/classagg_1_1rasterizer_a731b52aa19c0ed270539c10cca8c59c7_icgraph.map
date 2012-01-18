@@ -1,3 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="232,5,571,35"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="248,85,555,115"/>
+<area shape="rect" id="node13" href="$classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="232,139,571,168"/>
+<area shape="rect" id="node5" href="$classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="664,5,867,35"/>
+<area shape="rect" id="node7" href="$classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="660,59,871,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="620,112,911,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="645,165,885,195"/>
 </map>

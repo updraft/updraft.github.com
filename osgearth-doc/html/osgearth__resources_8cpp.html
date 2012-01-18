@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__resources_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -89,9 +106,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarth/XmlUtils&gt;</code><br/>
 <code>#include &lt;osgEarth/Config&gt;</code><br/>
 <code>#include &lt;fstream&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_resources.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_resources.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__resources_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__resources_2osgearth__resources_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__resources_2osgearth__resources_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__resources_2osgearth__resources_8cpp">
 </map>
@@ -130,19 +149,27 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__resources_8cpp_source.html#l00030">30</a> of file <a class="el" href="osgearth__resources_8cpp_source.html">osgearth_resources.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="classosgEarth_1_1XmlDocument.html">XmlDocument</a>* xml = XmlDocument::load( <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;e:/data/osgearth_resources/US/catalog.xml&quot;</span>) );
+    <a class="code" href="classosgEarth_1_1Config.html">Config</a> conf = xml-&gt;<a class="code" href="classosgEarth_1_1XmlDocument.html#aeeef723a62eb1660959655eefd1ff67e">getConfig</a>();
+
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; conf.<a class="code" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464">toString</a>() &lt;&lt; std::endl;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__resources_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__resources_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__resources_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__resources_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1XmlDocument.html#aeeef723a62eb1660959655eefd1ff67e" title="osgEarth::XmlDocument::getConfig" alt="" coords="104,32,333,61"/><area shape="rect" id="node17" href="classosgEarth_1_1XmlDocument.html#a8342b9bb3dedbdebf1b3d482f475f203" title="osgEarth::XmlDocument::load" alt="" coords="120,85,317,115"/><area shape="rect" id="node19" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464" title="osgEarth::Config::toString" alt="" coords="132,139,305,168"/><area shape="rect" id="node5" href="classosgEarth_1_1URI.html#a68a86c3aca88042994c9f744e14dacab" title="osgEarth::URI::full" alt="" coords="424,5,555,35"/><area shape="rect" id="node7" href="classosgEarth_1_1Config.html#a7ac7a26279bad744c429dd7075724d23" title="osgEarth::Config::setURIContext" alt="" coords="381,59,597,88"/><area shape="rect" id="node9" href="classosgEarth_1_1URIContext.html#a6566fb5b01e79f5181bdbb585e97d118" title="osgEarth::URIContext::add" alt="" coords="645,59,827,88"/><area shape="rect" id="node11" href="namespaceosgEarth.html#ac14af30464b9b0b3791566e99e4a02de" title="osgEarth::getFullPath" alt="" coords="917,32,1064,61"/><area shape="rect" id="node15" href="classosgEarth_1_1URIContext.html#a0405b86e81f5884d2e1736c79ea04282" title="osgEarth::URIContext::URIContext" alt="" coords="876,85,1105,115"/><area shape="rect" id="node13" href="namespaceosgEarth.html#acc0e85b18ae98a28ccbc86d545e19a41" title="osgEarth::isRelativePath" alt="" coords="1156,32,1321,61"/></map>
+</div>
+</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__resources_8cpp.html">osgearth_resources.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -157,6 +184,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoMath.html#ac192a468c0245795bdcae484564c1824" title="osgEarth::GeoMath::bearing" alt="" coords="363,5,547,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector::begin" alt="" coords="360,59,549,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1MixinVector.html#a84ab70a7f6310511310a81149513e3af" title="osgEarth::MixinVector::clear" alt="" coords="361,112,548,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoMath.html#aeaa1b08851e5c5816bbfbd5b3019bdcd" title="osgEarth::GeoMath::destination" alt="" coords="352,165,557,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoMath.html#a96bbe3c5db69ddeedcec13a261798f5d" title="osgEarth::GeoMath::distance" alt="" coords="359,219,551,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector::end" alt="" coords="365,272,544,301"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="321,325,588,355"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1MixinVector.html#a3158e1c6fc7c34cc83c8890712af620d" title="osgEarth::MixinVector::insert" alt="" coords="360,379,549,408"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1MixinVector.html#a07fb3575b7634179acbb8bddda3b750f" title="osgEarth::MixinVector::reserve" alt="" coords="353,432,556,461"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoMath.html#a3ad4ec258a6538a7be5e58d6ec9e3853" title="osgEarth::GeoMath::rhumbBearing" alt="" coords="344,485,565,515"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoMath.html#a96b3d412cd067b457b346a2ec29b9d18" title="osgEarth::GeoMath::rhumbDestination" alt="" coords="332,539,577,568"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1GeoMath.html#a846f674470091ed8006406833d8e677a" title="osgEarth::GeoMath::rhumbDistance" alt="" coords="340,592,569,621"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1MixinVector.html#a29d1318457f75e1e0841d7e20f61dadb" title="osgEarth::MixinVector::size" alt="" coords="364,645,545,675"/>
+<area shape="rect" id="node29" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="372,699,537,728"/>
+</map>

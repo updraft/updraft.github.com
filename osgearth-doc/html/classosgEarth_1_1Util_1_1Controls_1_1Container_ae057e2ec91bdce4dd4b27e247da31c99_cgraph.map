@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="387,191,715,220"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="845,323,1011,352"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1141,164,1384,193"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="791,5,1065,35"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="764,59,1092,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="781,269,1075,299"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="784,216,1072,245"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="795,112,1061,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1433,164,1705,193"/>
+<area shape="rect" id="node18" href="$structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1173,271,1352,300"/>
+<area shape="rect" id="node20" href="$structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1180,217,1345,247"/>
+</map>

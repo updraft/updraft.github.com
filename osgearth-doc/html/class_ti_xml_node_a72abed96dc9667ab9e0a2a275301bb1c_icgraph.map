@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_node.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="220,59,417,88"/>
-<area shape="rect" id="node11" href="$class_ti_xml_node.html#a7667217e269e0da01d1f82aee94d1a3d" title="TiXmlNode::NextSiblingElement" alt="" coords="213,5,424,35"/>
-<area shape="rect" id="node5" href="$class_ti_xml_handle.html#a8786475b9d1f1518492e3a46704c7ef0" title="TiXmlHandle::ChildElement" alt="" coords="487,5,668,35"/>
-<area shape="rect" id="node7" href="$class_ti_xml_handle.html#a24d1112e995e937e4dddb202d4113d4a" title="Return a handle to the first child element." alt="" coords="473,59,681,88"/>
-<area shape="rect" id="node9" href="$class_ti_xml_document.html#ad09d17927f908f40efb406af2fb873be" title="TiXmlDocument::RootElement" alt="" coords="477,112,677,141"/>
-</map>

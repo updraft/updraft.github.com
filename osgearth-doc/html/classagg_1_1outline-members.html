@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,46 +95,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1outline.html">outline</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('classagg_1_1outline.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>agg::outline Member List</h1>  </div>
 </div>
 <div class="contents">
 This is the complete list of members for <a class="el" href="classagg_1_1outline.html">agg::outline</a>, including all inherited members.<table>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7">add_cur_cell</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline, private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a">allocate_block</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a33be0cec0e7d434b840774728aa8af13adb1ac9a1f5dd1aa6f21bf57ec80ca666">cell_block_limit</a> enum value</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a33be0cec0e7d434b840774728aa8af13a26eb73ee11c1876024caeafd384dac74">cell_block_mask</a> enum value</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a33be0cec0e7d434b840774728aa8af13ae0885b96db2b7b538c096fa0198591ae">cell_block_pool</a> enum value</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a33be0cec0e7d434b840774728aa8af13ab2f6ca79eda5b12403e20efd75d7ad12">cell_block_shift</a> enum value</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a33be0cec0e7d434b840774728aa8af13a2b69b8fd3a4b8fe4899126adfdbce2bd">cell_block_size</a> enum value</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a44752016da5a9c3b091a57de5c2ee03d">cells</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d">line_to</a>(int x, int y)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ab8d6bbd642142b1fe6f8d115baffbecb">m_cells</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a27deca183262a4b60b860d970380f32c">m_close_x</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a1a0ed09a0974bc1351de6e8c350c832b">m_close_y</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ade72b351355113c250d678d977b4426c">m_cur_block</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a57a993e702aada8849d5edc11cc12631">m_cur_cell</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a0e803aab5a705d41c269b03aba6c2e57">m_cur_cell_ptr</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a63babd8cfbf10f1dbc918235236fc088">m_cur_x</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a109bb5dbc4b0e1d991dd040851543e02">m_cur_y</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a7f6ed6a66a19a411a3f87250eb6adfe4">m_flags</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a08e9603a98f29f92fcfef62bc3f2c1bf">m_max_blocks</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#afc58d65f68dcaf1960a4e34f66fa0b8e">m_max_x</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a88f5c4f20af1b32850bb7decc3200892">m_max_y</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a64baee1c446c632c8432a91f7b6a814c">m_min_x</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a380d14bf219cb5478b0d731a2d333632">m_min_y</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#aa5926ff43a4705bbec2036b618381a9d">m_num_blocks</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ad28f5865906b526f43f450093e2dad62">m_num_cells</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ada680f6cd41b0f99c6379e319ce4d80c">m_sorted_cells</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a2fe8275c30d2c664f235bbbad487e5c7">m_sorted_size</a></td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a4211b2cac615642ed60bdd471a1ce241">max_x</a>() const </td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a3e038d87c287553461e1b6e0303de602">max_y</a>() const </td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a65070c2ef1e07fa688fb20d4e9b59f31">min_x</a>() const </td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a15f853549e1f5c712bfdba36b4e426f9">min_y</a>() const </td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54">move_to</a>(int x, int y)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ae9de12597ec54d71a5566f5183ca4125">num_cells</a>() const </td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a69f5d3cebd3b171c18e8a0a64b0d4404">operator=</a>(const outline &amp;)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a6e872ce81a994ff434be842eb665faf1">outline</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a45a7c39704b5a66a34c3b31fd6fbdee6">outline</a>(const outline &amp;)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a7a3d96ac419b40b2208607a58efcb077">qsort_cells</a>(cell **start, unsigned num)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private, static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed">render_line</a>(int x1, int y1, int x2, int y2)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea">render_scanline</a>(int ey, int x1, int y1, int x2, int y2)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline, private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f">reset</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618">set_cur_cell</a>(int x, int y)</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [inline, private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#aa23dcda8ba406b8d5faae9f9db9b4a89">sort_cells</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1outline.html#a985c82c07e08a9a2f6c1a5a3e8096ac4">~outline</a>()</td><td><a class="el" href="classagg_1_1outline.html">agg::outline</a></td><td></td></tr>
 </table></div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,6 +166,8 @@ This is the complete list of members for <a class="el" href="classagg_1_1outline
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

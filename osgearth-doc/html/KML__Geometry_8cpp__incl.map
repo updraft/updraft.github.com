@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$KML__Geometry.html" title="KML_Geometry" alt="" coords="427,160,539,189"/>
+<area shape="rect" id="node28" href="$KML__Point.html" title="KML_Point" alt="" coords="603,83,688,112"/>
+<area shape="rect" id="node31" href="$KML__LineString.html" title="KML_LineString" alt="" coords="712,83,827,112"/>
+<area shape="rect" id="node34" href="$KML__LinearRing.html" title="KML_LinearRing" alt="" coords="5,83,123,112"/>
+<area shape="rect" id="node37" href="$KML__Polygon.html" title="KML_Polygon" alt="" coords="147,83,248,112"/>
+<area shape="rect" id="node40" href="$KML__MultiGeometry.html" title="KML_MultiGeometry" alt="" coords="272,83,413,112"/>
+<area shape="rect" id="node43" href="$KML__Model.html" title="KML_Model" alt="" coords="437,83,528,112"/>
+<area shape="rect" id="node5" href="$KML__Object.html" title="KML_Object" alt="" coords="351,237,444,267"/>
+<area shape="rect" id="node7" href="$KML__Common.html" title="KML_Common" alt="" coords="264,315,373,344"/>
+<area shape="rect" id="node17" href="$KMLOptions.html" title="KMLOptions" alt="" coords="272,392,365,421"/>
+</map>

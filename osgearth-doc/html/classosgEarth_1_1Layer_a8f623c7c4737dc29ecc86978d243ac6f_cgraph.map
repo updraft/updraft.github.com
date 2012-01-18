@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Registry.html#ad98401bdb1d7e90191d14c9e39c29104" title="osgEarth::Registry::createUID" alt="" coords="209,32,407,61"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="215,85,401,115"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="457,85,644,115"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="693,5,1021,35"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="745,59,969,88"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="736,112,979,141"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="735,165,980,195"/>
+</map>

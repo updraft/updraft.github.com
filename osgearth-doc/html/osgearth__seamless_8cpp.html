@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__seamless_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -107,9 +124,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthDrivers/engine_seamless/PatchInfo&gt;</code><br/>
 <code>#include &lt;osgEarthDrivers/engine_seamless/SeamlessOptions&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_seamless.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_seamless.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seamless_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seamless_2osgearth__seamless_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seamless_2osgearth__seamless_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seamless_2osgearth__seamless_8cpp">
 </map>
@@ -119,12 +138,69 @@ Include dependency graph for osgearth_seamless.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_query_tile_handler.html">QueryTileHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQueryTileHandler.html">QueryTileHandler</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osg::MatrixTransform *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__seamless_8cpp.html#ad45e95ecb5b1d1bb04e8a22a4357e819">createFlag</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__seamless_8cpp.html#a1dc33cd1fa3529687b0e9de86a65afa3">updateFlag</a> (osg::MatrixTransform *xf, const osg::Matrix &amp;mat, const <a class="el" href="classosgEarth_1_1TileKey.html">osgEarth::TileKey</a> &amp;key)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__seamless_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ad45e95ecb5b1d1bb04e8a22a4357e819"></a><!-- doxytag: member="osgearth_seamless.cpp::createFlag" ref="ad45e95ecb5b1d1bb04e8a22a4357e819" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static osg::MatrixTransform* createFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__seamless_8cpp_source.html#l00049">49</a> of file <a class="el" href="osgearth__seamless_8cpp_source.html">osgearth_seamless.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::Cylinder* c = <span class="keyword">new</span> osg::Cylinder( osg::Vec3d(0,0,0), 2.0f, 250.f );
+    osg::Geode* g = <span class="keyword">new</span> osg::Geode();
+    g-&gt;addDrawable( <span class="keyword">new</span> osg::ShapeDrawable( c ) );
+    osgText::Text* text = <span class="keyword">new</span> osgText::Text();
+    text-&gt;setCharacterSizeMode( osgText::Text::SCREEN_COORDS );
+    text-&gt;setCharacterSize( 72.f );
+    text-&gt;setBackdropType( osgText::Text::OUTLINE );
+    text-&gt;setText( <span class="stringliteral">&quot;00000000000000&quot;</span> );
+    text-&gt;setAutoRotateToScreen( <span class="keyword">true</span> );
+    text-&gt;setPosition( osg::Vec3d( 0, 0, 125 ) );
+    text-&gt;setDataVariance( osg::Object::DYNAMIC );
+    g-&gt;addDrawable( text );
+    osg::StateSet* ss = g-&gt;getOrCreateStateSet();
+    ss-&gt;setAttribute(<span class="keyword">new</span> osg::PolygonMode(osg::PolygonMode::FRONT_AND_BACK,
+                                          osg::PolygonMode::FILL),
+                     osg::StateAttribute::ON | osg::StateAttribute::PROTECTED);
+    osg::AutoTransform* at = <span class="keyword">new</span> osg::AutoTransform();
+    at-&gt;setAutoScaleToScreen( <span class="keyword">true</span> );
+    at-&gt;addChild( g );
+    at-&gt;getOrCreateStateSet()-&gt;setMode( GL_LIGHTING, 0 );
+    osg::MatrixTransform* xf = <span class="keyword">new</span> osg::MatrixTransform();
+    xf-&gt;addChild( at );
+    xf-&gt;setDataVariance( osg::Object::DYNAMIC );
+    <span class="keywordflow">return</span> xf;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__seamless_8cpp_ad45e95ecb5b1d1bb04e8a22a4357e819_icgraph.png" border="0" usemap="#osgearth__seamless_8cpp_ad45e95ecb5b1d1bb04e8a22a4357e819_icgraph" alt=""/></div>
+<map name="osgearth__seamless_8cpp_ad45e95ecb5b1d1bb04e8a22a4357e819_icgraph" id="osgearth__seamless_8cpp_ad45e95ecb5b1d1bb04e8a22a4357e819_icgraph">
+<area shape="rect" id="node3" href="osgearth__seamless_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="136,5,187,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a><!-- doxytag: member="osgearth_seamless.cpp::main" ref="a3c04138a5bfe5d72780bb7e82a18e627" args="(int argc, char **argv)" -->
 <div class="memitem">
 <div class="memproto">
@@ -151,19 +227,162 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seamless_8cpp_source.html#l00159">159</a> of file <a class="el" href="osgearth__seamless_8cpp_source.html">osgearth_seamless.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
+
+    osgViewer::Viewer viewer(arguments);
+
+    <span class="comment">// install the programmable manipulator.</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>* manip = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>();
+    viewer.setCameraManipulator( manip );
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="Export.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+    osg::Node* loadedNode = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> (!loadedNode)
+    {
+        <span class="comment">// load up a map with an elevation layer:</span>
+        <a class="code" href="classosgEarth_1_1Map.html">osgEarth::Map</a> *map = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Map.html">osgEarth::Map</a>();
+
+        <span class="comment">// Add some imagery</span>
+        {
+            <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> tms;
+            tms.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://demo.pelicanmapping.com/rmweb/data/bluemarble-tms/tms.xml&quot;</span>;
+            map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0">addImageLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">osgEarth::ImageLayer</a>( <span class="stringliteral">&quot;BLUEMARBLE&quot;</span>, tms ) );
+        }
+
+        <span class="comment">// Add some elevation</span>
+        {
+            <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> tms;
+            tms.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://demo.pelicanmapping.com/rmweb/data/srtm30_plus_tms/tms.xml&quot;</span>;
+            map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a0b9cb734082b8f3cf9b0d0918690c7bd">addElevationLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ElevationLayer.html">osgEarth::ElevationLayer</a>( <span class="stringliteral">&quot;SRTM&quot;</span>, tms ) );
+        }
+
+        <a class="code" href="classosgEarth_1_1MapNodeOptions.html">MapNodeOptions</a> nodeOptions;
+        nodeOptions.<a class="code" href="classosgEarth_1_1MapNodeOptions.html#a70c99ae0c5411063cdbad93eaf0c472e">setTerrainOptions</a>( <a class="code" href="classosgEarth_1_1Drivers_1_1SeamlessOptions.html">osgEarth::Drivers::SeamlessOptions</a>() );
+
+        mapNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>( map, nodeOptions );
+    }
+    <span class="keywordflow">else</span>
+    {
+        mapNode = findTopMostNodeOfType&lt;osgEarth::MapNode&gt;( loadedNode );
+    }
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+
+    <span class="comment">// The MapNode will render the Map object in the scene graph.</span>
+    mapNode-&gt;setNodeMask( 0x01 );
+    root-&gt;addChild( mapNode );
+
+    manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ac04e4204ab79440f3ea56a6551e55597">setNode</a>(mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb">getTerrainEngine</a>());
+    <span class="keywordflow">if</span> ( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960">isGeocentric</a>() )
+    {
+        manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a008fc79026e795d30735cf19dfc02474">setHomeViewpoint</a>( 
+            <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">osgEarth::Util::Viewpoint</a>( osg::Vec3d( -90, 0, 0 ), 0.0, -90.0, 5e7 ) );
+
+        <span class="comment">// add a handler that will automatically calculate good clipping planes</span>
+        viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneHandler.html">osgEarth::Util::AutoClipPlaneHandler</a>() );
+    }
+    <span class="comment">// A flag so we can see where we clicked</span>
+    osg::MatrixTransform* flag = <a class="code" href="osgearth__seamless_8cpp.html#ad45e95ecb5b1d1bb04e8a22a4357e819">createFlag</a>();
+    flag-&gt;setNodeMask( 0x02 );
+    root-&gt;addChild( flag );
+
+    viewer.setSceneData( root );
+
+    <span class="comment">// An event handler that will respond to mouse clicks:</span>
+    viewer.addEventHandler(
+        <span class="keyword">new</span> <a class="code" href="structQueryTileHandler.html">QueryTileHandler</a>(flag, mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48">getProfile</a>()-&gt;<a class="code" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b">getSRS</a>()));
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__seamless_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__seamless_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__seamless_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__seamless_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Map.html#a0b9cb734082b8f3cf9b0d0918690c7bd" title="osgEarth::Map::addElevationLayer" alt="" coords="141,591,363,620"/><area shape="rect" id="node60" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0" title="osgEarth::Map::addImageLayer" alt="" coords="151,901,353,931"/><area shape="rect" id="node75" href="osgearth__seamless_8cpp.html#ad45e95ecb5b1d1bb04e8a22a4357e819" title="createFlag" alt="" coords="211,1631,293,1660"/><area shape="rect" id="node77" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="157,1684,347,1713"/><area shape="rect" id="node79" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48" title="osgEarth::Map::getProfile" alt="" coords="167,1737,337,1767"/><area shape="rect" id="node81" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b" title="osgEarth::Profile::getSRS" alt="" coords="165,1791,339,1820"/><area shape="rect" id="node85" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb" title="osgEarth::MapNode::getTerrainEngine" alt="" coords="468,1528,711,1557"/><area shape="rect" id="node93" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960" title="osgEarth::Map::isGeocentric" alt="" coords="159,1844,345,1873"/><area shape="rect" id="node97" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a008fc79026e795d30735cf19dfc02474" title="osgEarth::Util::EarthManipulator::setHomeViewpoint" alt="" coords="821,1475,1147,1504"/><area shape="rect" id="node99" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ac04e4204ab79440f3ea56a6551e55597" title="osgEarth::Util::EarthManipulator::setNode" alt="" coords="120,1423,384,1452"/><area shape="rect" id="node113" href="classosgEarth_1_1MapNodeOptions.html#a70c99ae0c5411063cdbad93eaf0c472e" title="osgEarth::MapNodeOptions::setTerrainOptions" alt="" coords="105,1577,399,1607"/><area shape="rect" id="node123" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d" title="osgEarth::Drivers::TMSOptions::url" alt="" coords="139,1897,365,1927"/><area shape="rect" id="node5" href="classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="887,795,1081,824"/><area shape="rect" id="node7" href="classosgEarth_1_1Registry.html#a619b41e8ddbfac14a491edac8b879c1f" title="osgEarth::Registry::clearBlacklist" alt="" coords="481,747,697,776"/><area shape="rect" id="node9" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9" title="osgEarth::Map::getCache" alt="" coords="504,901,675,931"/><area shape="rect" id="node18" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="891,741,1077,771"/><area shape="rect" id="node23" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1275,1215,1440,1244"/><area shape="rect" id="node27" href="classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="1239,901,1476,931"/><area shape="rect" id="node29" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1275,1316,1440,1345"/><area shape="rect" id="node33" href="structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="500,693,679,723"/><area shape="rect" id="node36" href="classosgEarth_1_1TerrainLayer.html#ae98db9ea06d28b953bef666b95c5e9ad" title="osgEarth::TerrainLayer::setCache" alt="" coords="480,504,699,533"/><area shape="rect" id="node57" href="classosgEarth_1_1TerrainLayer.html#a8259fe83544eee15cd68fc739183025e" title="osgEarth::TerrainLayer::setTargetProfileHint" alt="" coords="451,5,728,35"/><area shape="rect" id="node12" href="classosgEarth_1_1CacheFactory.html#a1bac5511c0d97cf20443a7a96ea6e324" title="osgEarth::CacheFactory::create" alt="" coords="880,955,1088,984"/><area shape="rect" id="node14" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="908,1163,1060,1192"/><area shape="rect" id="node16" href="classosgEarth_1_1Registry.html#a061d3903e633b9abfafc38d6faa1590c" title="osgEarth::Registry::getCacheOverride" alt="" coords="863,848,1105,877"/><area shape="rect" id="node25" href="classosgEarth_1_1Map.html#a2340eb04005ed0caf43a554959a88294" title="osgEarth::Map::setCache" alt="" coords="899,901,1069,931"/><area shape="rect" id="node20" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="1264,741,1451,771"/><area shape="rect" id="node38" href="classosgEarth_1_1TerrainLayerOptions.html#a3e25ced92475376f2b5117af076dbb0e" title="osgEarth::TerrainLayerOptions::cacheEnabled" alt="" coords="840,264,1128,293"/><area shape="rect" id="node40" href="classosgEarth_1_1TerrainLayerOptions.html#a8418e1ff33afb76c241144c1e1804992" title="osgEarth::TerrainLayerOptions::cacheFormat" alt="" coords="843,317,1125,347"/><area shape="rect" id="node42" href="classosgEarth_1_1TerrainLayerOptions.html#af32e3cc40e8d9a7b27c305706cd17f5e" title="osgEarth::TerrainLayerOptions::cacheId" alt="" coords="857,371,1111,400"/><area shape="rect" id="node44" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f" title="osgEarth::TerrainLayerOptions::driver" alt="" coords="865,424,1103,453"/><area shape="rect" id="node46" href="structosgEarth_1_1CacheSpec.html#a4253bd68a78e3ae7ec8a6e103c4dd187" title="osgEarth::CacheSpec::format" alt="" coords="887,477,1081,507"/><area shape="rect" id="node48" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="877,531,1091,560"/><area shape="rect" id="node50" href="namespaceosgEarth.html#a73391515286f2830aefc25b521fdc09c" title="osgEarth::hashString" alt="" coords="912,584,1056,613"/><area shape="rect" id="node53" href="classosgEarth_1_1Config.html#a6544fe1a09134161f5bdc451045a1e7f" title="osgEarth::Config::remove" alt="" coords="899,637,1069,667"/><area shape="rect" id="node55" href="classosgEarth_1_1Config.html#ae2b663e7cdb3f6920f4a199024d87b8f" title="osgEarth::Config::toHashString" alt="" coords="883,211,1085,240"/><area shape="rect" id="node70" href="classosgEarth_1_1ImageLayer.html#a08fec3b68feea1922b60bbc8e993aa93" title="osgEarth::ImageLayer::setTargetProfileHint" alt="" coords="452,1109,727,1139"/><area shape="rect" id="node72" href="classosgEarth_1_1ImageLayer.html#a2adf54040ab69ee998f1202cd68198a8" title="osgEarth::ImageLayer::initPreCacheOp" alt="" coords="859,1109,1109,1139"/><area shape="rect" id="node83" href="classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="491,1791,688,1820"/><area shape="rect" id="node87" href="classosgEarth_1_1MapNode.html#a71c5e96ccedec45570122243cd3b5748" title="osgEarth::MapNode::getMapNodeOptions" alt="" coords="852,1581,1116,1611"/><area shape="rect" id="node89" href="classosgEarth_1_1MapNodeOptions.html#a23c25b7a45fc7ac2b5c1301808ddf7a6" title="osgEarth::MapNodeOptions::getTerrainOptions" alt="" coords="837,1528,1131,1557"/><area shape="rect" id="node95" href="classosgEarth_1_1MapOptions.html#aed50a44017f7ed40f56855253cc027d0" title="osgEarth::MapOptions::coordSysType" alt="" coords="468,1844,711,1873"/><area shape="rect" id="node101" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ad9774a7b32221362485e0ba101f2ec07" title="osgEarth::Util::EarthManipulator::established" alt="" coords="448,1369,731,1399"/><area shape="rect" id="node111" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a44171bc4f431b0bbec84b828429f9cfb" title="osgEarth::Util::EarthManipulator::reinitialize" alt="" coords="452,1423,727,1452"/><area shape="rect" id="node105" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ae8c30588a24f3b70da9e2e88b2b5c1c4" title="osgEarth::Util::EarthManipulator::recalculateLocalPitchAndAzimuth" alt="" coords="779,1368,1189,1397"/><area shape="rect" id="node108" href="classosgEarth_1_1Util_1_1EarthManipulator.html#af2d299a4e7a689feeede98cd994a47d1" title="osgEarth::Util::EarthManipulator::setViewpoint" alt="" coords="839,1421,1129,1451"/><area shape="rect" id="node115" href="classosgEarth_1_1TerrainOptions.html#a64f80ff3ada3b6a144661bfcee79b608" title="osgEarth::TerrainOptions::getConfig" alt="" coords="475,1635,704,1664"/><area shape="rect" id="node117" href="classosgEarth_1_1Config.html#a5e8fece976ded6667239209f27139c6c" title="osgEarth::Config::key" alt="" coords="909,1688,1059,1717"/><area shape="rect" id="node119" href="classosgEarth_1_1Config.html#a7634d2c4fc97a686d06265ca071744d7" title="osgEarth::Config::updateIfSet" alt="" coords="887,1635,1081,1664"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dc33cd1fa3529687b0e9de86a65afa3"></a><!-- doxytag: member="osgearth_seamless.cpp::updateFlag" ref="a1dc33cd1fa3529687b0e9de86a65afa3" args="(osg::MatrixTransform *xf, const osg::Matrix &amp;mat, const osgEarth::TileKey &amp;key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void updateFlag </td>
+          <td>(</td>
+          <td class="paramtype">osg::MatrixTransform *&#160;</td>
+          <td class="paramname"><em>xf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Matrix &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1TileKey.html">osgEarth::TileKey</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__seamless_8cpp_source.html#l00078">78</a> of file <a class="el" href="osgearth__seamless_8cpp_source.html">osgearth_seamless.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::Geode* g = <span class="keyword">static_cast&lt;</span>osg::Geode*<span class="keyword">&gt;</span>( xf-&gt;getChild(0)-&gt;asGroup()-&gt;getChild(0) );
+    std::stringstream buf;
+    buf &lt;&lt; key.<a class="code" href="classosgEarth_1_1TileKey.html#a0ee6b25bbae560dda11987ac1e9dc69d">getLevelOfDetail</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; key.<a class="code" href="classosgEarth_1_1TileKey.html#add6a3c7117d189c2d801bc77f0e7b697">getTileX</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span>
+        &lt;&lt; key.<a class="code" href="classosgEarth_1_1TileKey.html#ad1ff38fbd762c0faba5b03b326617628">getTileY</a>();
+    std::string bufStr;
+    bufStr = buf.str();
+    <span class="keyword">static_cast&lt;</span>osgText::Text*<span class="keyword">&gt;</span>( g-&gt;getDrawable(1) )-&gt;setText( bufStr );
+    xf-&gt;setMatrix( mat );
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_cgraph.png" border="0" usemap="#osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_cgraph" alt=""/></div>
+<map name="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_cgraph" id="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1TileKey.html#a0ee6b25bbae560dda11987ac1e9dc69d" title="osgEarth::TileKey::getLevelOfDetail" alt="" coords="143,5,372,35"/><area shape="rect" id="node5" href="classosgEarth_1_1TileKey.html#add6a3c7117d189c2d801bc77f0e7b697" title="osgEarth::TileKey::getTileX" alt="" coords="167,59,348,88"/><area shape="rect" id="node7" href="classosgEarth_1_1TileKey.html#ad1ff38fbd762c0faba5b03b326617628" title="osgEarth::TileKey::getTileY" alt="" coords="167,112,348,141"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_icgraph.png" border="0" usemap="#osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_icgraph" alt=""/></div>
+<map name="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_icgraph" id="osgearth__seamless_8cpp_a1dc33cd1fa3529687b0e9de86a65afa3_icgraph">
+<area shape="rect" id="node3" href="structQueryTileHandler.html#acd4e0219843b3b29c9ec1c7f39205e5d" title="QueryTileHandler::update" alt="" coords="141,5,312,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__seamless_8cpp.html">osgearth_seamless.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -178,6 +397,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

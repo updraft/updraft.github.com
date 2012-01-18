@@ -1,3 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="133,5,280,35"/>
+<area shape="rect" id="node3" href="$osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="229,5,376,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1FeatureSource.html#a1eeb1b74d5ca16d6c6a0a15c6260df35" title="osgEarth::Features::FeatureSource::getFeatureCount" alt="" coords="137,59,468,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1FeatureSource.html#a929f9ab4da3030ceed68e499fea5f2e5" title="osgEarth::Features::FeatureSource::getGeometryType" alt="" coords="133,112,472,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FeatureSource.html#a909a94e6a8806dd27f4acc3058a948d3" title="osgEarth::Features::FeatureSource::getSchema" alt="" coords="153,165,452,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a3c26f20748da289c096bfffbfecc26f3" title="osgEarth::Symbology::Geometry::toString" alt="" coords="171,219,435,248"/>
 </map>

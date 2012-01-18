@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlElement.html#a5670933ec2d7d9763b9891acc05d7f7d" title="TiXmlElement::ClearThis" alt="" coords="191,32,359,61"/>
+<area shape="rect" id="node9" href="$classTiXmlDocument.html#a41f6fe7200864d1dca663d230caf8db6" title="TiXmlDocument::LoadFile" alt="" coords="188,85,361,115"/>
+<area shape="rect" id="node11" href="$classTiXmlDeclaration.html#a0fedc57539af9049be8db2d7d9d9ba33" title="TiXmlDeclaration::operator=" alt="" coords="183,139,367,168"/>
+<area shape="rect" id="node13" href="$classTiXmlComment.html#a46373f99b65cb960637dccb1f126bd49" title="TiXmlComment::operator=" alt="" coords="187,192,363,221"/>
+<area shape="rect" id="node15" href="$classTiXmlDocument.html#aafbfacc3414008f619b1345775ef12a4" title="TiXmlDocument::operator=" alt="" coords="185,245,364,275"/>
+<area shape="rect" id="node5" href="$classTiXmlElement.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="435,5,600,35"/>
+<area shape="rect" id="node7" href="$classTiXmlElement.html#aa049a47c5081c0d021968666360da261" title="TiXmlElement::~TiXmlElement" alt="" coords="416,59,619,88"/>
+</map>

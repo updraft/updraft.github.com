@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1MarkerSymbolizer.html#a6aaeade9949a649d36ec0df3fefcdf83" title="osgEarth::Symbology::MarkerSymbolizer::compile" alt="" coords="469,5,781,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html#a57ed30c95d508972b65efd65f92ef7ab" title="osgEarth::Symbology::GeometryExtrudeSymbolizer::compile" alt="" coords="1076,137,1449,167"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1StencilVolumeFactory.html#a813a4cf92b0b65f9de432285565d8cfe" title="osgEarth::Features::StencilVolumeFactory::createVolume" alt="" coords="447,109,804,139"/>
+<area shape="rect" id="node9" href="$structStencilUtils.html#a104170daa2894911c2809e0f9469233e" title="StencilUtils::createVolume" alt="" coords="537,163,713,192"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a2299e122948a33b07b2e49bd9cd925bb" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::createVolume" alt="" coords="401,376,849,405"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a8faa7687857e1339fef06001db2260c0" title="osgEarth::Symbology::Geometry::delocalize" alt="" coords="487,269,764,299"/>
+<area shape="rect" id="node17" href="$structOgrUtils.html#af172956424da6c3edd28a3713296a841" title="OgrUtils::encodeShape" alt="" coords="547,323,704,352"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html#a5688fa0e28e448d7c8264c5c468946ce" title="osgEarth::Symbology::GeometryExtrudeSymbolizer::extrude" alt="" coords="439,216,812,245"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a1c00a3e1c6d77e5f227b16c2bad92571" title="osgEarth::Symbology::Geometry::localize" alt="" coords="493,429,757,459"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Symbology_1_1GeometrySymbolizer_1_1GeometrySymbolizerOperator.html#adbb78141ae070476505b9ed373d0a56b" title="osgEarth::Symbology::GeometrySymbolizer::GeometrySymbolizerOperator::operator()" alt="" coords="365,483,885,512"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Features_1_1FilterContext.html#ae5a2fd149e48440e1e44a62df7ee2aa3" title="osgEarth::Features::FilterContext::toLocal" alt="" coords="492,536,759,565"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Features_1_1FilterContext.html#a6dfe71f5819a5b0d79f05d6d8d68d3e6" title="osgEarth::Features::FilterContext::toWorld" alt="" coords="491,589,760,619"/>
+<area shape="rect" id="node13" href="$classanonymous__namespace_02FeatureStencilModelSource_8cpp_03_1_1StencilVolumeNodeFactory.html#aea992db2503aa0d5f5683c553dbd320f" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::StencilVolumeNodeFactory::createOrUpdateNode" alt="" coords="933,376,1592,405"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Bounds.html#a94bd85e58be84f746b5ad5d6d07e22df" title="osgEarth::Bounds::expandBy" alt="" coords="305,112,497,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#aba1ec3059e35e8c658444ec25027e6f2" title="osgEarth::Util::ImageOverlay::getBounds" alt="" coords="271,165,532,195"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1MultiGeometry.html#adb727fc18ab8bc47256892c507c504af" title="osgEarth::Symbology::MultiGeometry::getBounds" alt="" coords="247,219,556,248"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390" title="osgEarth::Symbology::Geometry::getBounds" alt="" coords="260,272,543,301"/>
+<area shape="rect" id="node11" href="$structKML__Placemark.html#a17f118ad9527e21e8ed35d6a012ca399" title="KML_Placemark::build" alt="" coords="720,5,872,35"/>
+<area shape="rect" id="node13" href="$osgearth__labels_8cpp.html#a226d4cd4f8495bb51181abdec578e9d9" title="createLabels" alt="" coords="748,59,844,88"/>
+<area shape="rect" id="node17" href="$classOverlayLabelSource.html#a91e07e826bf78741b765b38236b18ee2" title="OverlayLabelSource::createNode" alt="" coords="689,112,903,141"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Features_1_1FeatureGridder.html#a11af25178518ee74ce05703659e1c84b" title="osgEarth::Features::FeatureGridder::cullFeatureListToCell" alt="" coords="617,165,975,195"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Features_1_1ExtrudeGeometryFilter.html#aa34dbf5f27a60bdcf1ff5359aef263c1" title="osgEarth::Features::ExtrudeGeometryFilter::extrudeGeometry" alt="" coords="607,219,985,248"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a1c00a3e1c6d77e5f227b16c2bad92571" title="osgEarth::Symbology::Geometry::localize" alt="" coords="664,272,928,301"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1Features_1_1BuildTextOperator.html#aa6e12cb28a335505aee7c07598e5e847" title="osgEarth::Features::BuildTextOperator::operator()" alt="" coords="641,325,951,355"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1Features_1_1ScatterFilter.html#abe23784d6f606a606544357d99a79e40" title="osgEarth::Features::ScatterFilter::polyScatter" alt="" coords="1081,377,1367,407"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1Features_1_1ScaleFilter.html#a3d9cf9c6c824bd2b60559f01d4861a30" title="osgEarth::Features::ScaleFilter::push" alt="" coords="677,429,915,459"/>
+<area shape="rect" id="node40" href="$classosgEarth_1_1Features_1_1CropFilter.html#a923446bb506c4d669e14ad29e186d3f7" title="osgEarth::Features::CropFilter::push" alt="" coords="679,483,913,512"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1Features_1_1CentroidFilter.html#ad52786e5220ba206fde0237056fdfded" title="osgEarth::Features::CentroidFilter::push" alt="" coords="1489,535,1743,564"/>
+<area shape="rect" id="node15" href="$osgearth__labels_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1199,59,1249,88"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Features_1_1ExtrudeGeometryFilter.html#a1ab35c8c2f65363015608ff5bb834a93" title="osgEarth::Features::ExtrudeGeometryFilter::process" alt="" coords="1061,271,1387,300"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Features_1_1ExtrudeGeometryFilter.html#a032d5abd33836856ac06a0a8799ae08c" title="osgEarth::Features::ExtrudeGeometryFilter::push" alt="" coords="1463,297,1769,327"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Features_1_1GeometryCompiler.html#accc6d2f89d615bdb233ae2e9fbf058b2" title="osgEarth::Features::GeometryCompiler::compile" alt="" coords="1820,377,2121,407"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1Features_1_1ScatterFilter.html#ac73c05c0b2d9934d4ef26cae7a1303aa" title="osgEarth::Features::ScatterFilter::push" alt="" coords="1492,377,1740,407"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac8f840e71d9c21ff16d8dfb5f4aa039b" title="osgEarth::Features::FeatureModelGraph::createNodeForStyle" alt="" coords="1035,483,1413,512"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="1471,481,1761,511"/>
+</map>

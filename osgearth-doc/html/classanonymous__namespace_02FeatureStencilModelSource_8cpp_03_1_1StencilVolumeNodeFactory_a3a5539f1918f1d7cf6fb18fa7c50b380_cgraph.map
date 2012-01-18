@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1StencilVolumeNode.html#af7f34a13471ee3b18f1b833e3e6e9189" title="osgEarth::Features::StencilVolumeNode::addChild" alt="" coords="801,5,1116,35"/>
+<area shape="rect" id="node5" href="$namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a5748b1699616cf3fe7728b5b190e52b5" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::createColorNode" alt="" coords="725,59,1192,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640" title="osgEarth::Symbology::PolygonSymbol::fill" alt="" coords="825,112,1092,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Style.html#adbed735ecd54ff18fc68c124761404ec" title="osgEarth::Style::getName" alt="" coords="872,165,1045,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Features_1_1StencilVolumeNode.html#abc0b7adbee07453daeb42f305c2b71a1" title="osgEarth::Features::StencilVolumeNode::setBaseRenderBin" alt="" coords="772,219,1145,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Symbology_1_1LineSymbol.html#a87c1c62229a5bd3bbe12a187f5522233" title="osgEarth::Symbology::LineSymbol::stroke" alt="" coords="825,272,1092,301"/>
+</map>

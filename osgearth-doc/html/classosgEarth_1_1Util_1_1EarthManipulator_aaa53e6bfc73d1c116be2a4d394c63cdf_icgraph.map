@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae51e752032a892b33b961c99955ecba0" title="osgEarth::Util::EarthManipulator::applySettings" alt="" coords="407,5,700,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ad22ad54ed91d571555e8da7e55bb067a" title="osgEarth::Util::EarthManipulator::init" alt="" coords="437,59,669,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a44f78431b530861c43a744de072a2661" title="osgEarth::Util::EarthManipulator::resetMouse" alt="" coords="412,112,695,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a11a833833f8e0f2f44aec92ad02ac77b" title="osgEarth::Util::EarthManipulator::handle" alt="" coords="751,112,1004,141"/>
+</map>

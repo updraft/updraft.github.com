@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,29 +95,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1scanline.html">scanline</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1scanline_1_1iterator.html">iterator</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('classagg_1_1scanline_1_1iterator.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>agg::scanline::iterator Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="agg::scanline::iterator" -->
-<p><code>#include &lt;<a class="el" href="_a_g_g_8h_source.html">AGG.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="AGG_8h_source.html">AGG.h</a>&gt;</code></p>
 
 <p><a href="classagg_1_1scanline_1_1iterator-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -97,10 +122,15 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#a4bd822748ff648ed74958c1eb18389a2">next</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#af340181dba5beac3f88276ca1f49bed1">num_pix</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#a8afb77cbe51c50515f190cd0f94570dd">covers</a> () const </td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#ad298d27330c6e76a0568b5ccc434b33b">m_covers</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceagg.html#ac11cadd00813cde9ff1ff4b7a0fa5915">int16u</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">m_cur_count</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">m_cur_start_ptr</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00281">281</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00281">281</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a28e8e2af516599797c30476b5c65b564"></a><!-- doxytag: member="agg::scanline::iterator::iterator" ref="a28e8e2af516599797c30476b5c65b564" args="(const scanline &amp;sl)" -->
 <div class="memitem">
@@ -117,8 +147,14 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00284">284</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00284">284</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                         :
+                <a class="code" href="classagg_1_1scanline_1_1iterator.html#ad298d27330c6e76a0568b5ccc434b33b">m_covers</a>(sl.m_covers),
+                <a class="code" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">m_cur_count</a>(sl.m_counts),
+                <a class="code" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">m_cur_start_ptr</a>(sl.m_start_ptrs)
+            {
+            }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -136,11 +172,14 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00299">299</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00299">299</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> *<a class="code" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">m_cur_start_ptr</a>; }
+</pre></div>
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1scanline_1_1iterator_a8afb77cbe51c50515f190cd0f94570dd_icgraph.png" border="0" usemap="#classagg_1_1scanline_1_1iterator_a8afb77cbe51c50515f190cd0f94570dd_icgraph" alt=""/></div>
 <map name="classagg_1_1scanline_1_1iterator_a8afb77cbe51c50515f190cd0f94570dd_icgraph" id="classagg_1_1scanline_1_1iterator_a8afb77cbe51c50515f190cd0f94570dd_icgraph">
 <area shape="rect" id="node3" href="classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87" title="agg::renderer\&lt; agg::span_abgr32 \&gt;::render" alt="" coords="248,5,517,35"/></map>
@@ -163,11 +202,18 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00291">291</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00291">291</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">            {
+                ++<a class="code" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">m_cur_count</a>;
+                ++<a class="code" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">m_cur_start_ptr</a>;
+                <span class="keywordflow">return</span> int(*<a class="code" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">m_cur_start_ptr</a> - <a class="code" href="classagg_1_1scanline_1_1iterator.html#ad298d27330c6e76a0568b5ccc434b33b">m_covers</a>);
+            }
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1scanline_1_1iterator_a4bd822748ff648ed74958c1eb18389a2_icgraph.png" border="0" usemap="#classagg_1_1scanline_1_1iterator_a4bd822748ff648ed74958c1eb18389a2_icgraph" alt=""/></div>
 <map name="classagg_1_1scanline_1_1iterator_a4bd822748ff648ed74958c1eb18389a2_icgraph" id="classagg_1_1scanline_1_1iterator_a4bd822748ff648ed74958c1eb18389a2_icgraph">
 <area shape="rect" id="node3" href="classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87" title="agg::renderer\&lt; agg::span_abgr32 \&gt;::render" alt="" coords="235,5,504,35"/></map>
@@ -190,11 +236,14 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00298">298</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00298">298</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> int(*<a class="code" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">m_cur_count</a>); }
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1scanline_1_1iterator_af340181dba5beac3f88276ca1f49bed1_icgraph.png" border="0" usemap="#classagg_1_1scanline_1_1iterator_af340181dba5beac3f88276ca1f49bed1_icgraph" alt=""/></div>
 <map name="classagg_1_1scanline_1_1iterator_af340181dba5beac3f88276ca1f49bed1_icgraph" id="classagg_1_1scanline_1_1iterator_af340181dba5beac3f88276ca1f49bed1_icgraph">
 <area shape="rect" id="node3" href="classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87" title="agg::renderer\&lt; agg::span_abgr32 \&gt;::render" alt="" coords="259,5,528,35"/></map>
@@ -203,21 +252,56 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ad298d27330c6e76a0568b5ccc434b33b"></a><!-- doxytag: member="agg::scanline::iterator::m_covers" ref="ad298d27330c6e76a0568b5ccc434b33b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>* <a class="el" href="classagg_1_1scanline_1_1iterator.html#ad298d27330c6e76a0568b5ccc434b33b">agg::scanline::iterator::m_covers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00302">302</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a279db49ea7f41f86e5037f02353318bc"></a><!-- doxytag: member="agg::scanline::iterator::m_cur_count" ref="a279db49ea7f41f86e5037f02353318bc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceagg.html#ac11cadd00813cde9ff1ff4b7a0fa5915">int16u</a>* <a class="el" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">agg::scanline::iterator::m_cur_count</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00303">303</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7a37601c38ae766a09e11c7cb089710"></a><!-- doxytag: member="agg::scanline::iterator::m_cur_start_ptr" ref="ab7a37601c38ae766a09e11c7cb089710" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>* const <a class="el" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">agg::scanline::iterator::m_cur_start_ptr</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00304">304</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="_a_g_g_8h_source.html">AGG.h</a></li>
+<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="AGG_8h_source.html">AGG.h</a></li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
-      <li class="navelem"><a class="el" href="classagg_1_1scanline.html">scanline</a>      </li>
-      <li class="navelem"><a class="el" href="classagg_1_1scanline_1_1iterator.html">iterator</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -232,6 +316,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

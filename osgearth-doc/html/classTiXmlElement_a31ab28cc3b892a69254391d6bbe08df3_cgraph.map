@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlAttributeSet.html#ae0636e88cedd4b09d61c451860f68598" title="TiXmlAttributeSet::First" alt="" coords="211,5,368,35"/>
+<area shape="rect" id="node5" href="$classTiXmlNode.html#a44c8eee26bbe2d1b2762038df9dde2f0" title="The first child of this node. Will be null if there are no children." alt="" coords="215,59,364,88"/>
+<area shape="rect" id="node7" href="$classTiXmlNode.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="208,112,371,141"/>
+<area shape="rect" id="node9" href="$classTiXmlVisitor.html#a07baecb52dd7d8716ae2a48ad0956ee0" title="Visit a document." alt="" coords="211,165,368,195"/>
+<area shape="rect" id="node11" href="$classTiXmlVisitor.html#aa0ade4f27087447e93974e975c3246ad" title="Visit a document." alt="" coords="215,219,364,248"/>
+</map>

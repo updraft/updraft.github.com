@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1SpatialReference.html#a73867d1e847276406fa0e6dca03b5bda" title="osgEarth::SpatialReference::transformExtent" alt="" coords="243,45,525,74"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="2177,354,2383,383"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1SpatialReference.html#a28d916a87ed2653a5763bf8777cd9cbf" title="osgEarth::SpatialReference::transform" alt="" coords="573,105,819,134"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="2433,354,2647,383"/>
+<area shape="rect" id="node9" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="2696,354,3107,383"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1SpatialReference.html#a398407559e7c170fc44cde6842511548" title="osgEarth::SpatialReference::isEquivalentTo" alt="" coords="1199,157,1473,186"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1SpatialReference.html#a3c3d798015a48c93c5063182ac177688" title="osgEarth::SpatialReference::transformPoints" alt="" coords="867,698,1149,727"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1SpatialReference.html#afe559cd555e232b45109fbce72742b02" title="osgEarth::SpatialReference::_isEquivalentTo" alt="" coords="1523,381,1805,410"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="1863,221,2119,250"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333" title="osgEarth::SpatialReference::getWKT" alt="" coords="1872,167,2109,197"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1SpatialReference.html#a7e2212a07fe863d5680b73f1e76cdee2" title="osgEarth::SpatialReference::isContiguous" alt="" coords="1857,274,2124,303"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1SpatialReference.html#a56b924155ab1745c5c9592269c6c147b" title="osgEarth::SpatialReference::isCube" alt="" coords="1876,327,2105,357"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="1857,594,2124,623"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1SpatialReference.html#a8531e5c5cfc660c195ec9a569ba28cab" title="osgEarth::SpatialReference::isLTP" alt="" coords="1879,541,2103,570"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1SpatialReference.html#a7b198b8e4dc79a8c4e04cee6b73c85c4" title="osgEarth::SpatialReference::isMercator" alt="" coords="1865,647,2116,677"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1SpatialReference.html#a3ac570432fd7345ac3f1fa3c400a5553" title="osgEarth::SpatialReference::isNorthPolar" alt="" coords="1860,381,2121,410"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1SpatialReference.html#ae913b39821f50acf4662194ef5bcd3c3" title="osgEarth::SpatialReference::isSouthPolar" alt="" coords="1859,434,2123,463"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1SpatialReference.html#a1cb6bf576e355f9e32b226e43311e359" title="osgEarth::SpatialReference::isUserDefined" alt="" coords="1855,487,2127,517"/>
+<area shape="rect" id="node50" href="$SpatialReference_8cpp.html#a253ee9380896291f2aec77e4868d994c" title="geographicToMercator" alt="" coords="1261,801,1411,830"/>
+<area shape="rect" id="node52" href="$classosgEarth_1_1SpatialReference.html#a2e11d757cd795a81173912054fbb83c9" title="osgEarth::SpatialReference::getName" alt="" coords="1543,750,1785,779"/>
+<area shape="rect" id="node60" href="$SpatialReference_8cpp.html#a047d2c7e4580672483d0926a8f694e7e" title="mercatorToGeographic" alt="" coords="1259,854,1413,883"/>
+<area shape="rect" id="node62" href="$classosgEarth_1_1SpatialReference.html#a1f6be4de7c26f8dd31504f10b21d68be" title="osgEarth::SpatialReference::postTransform" alt="" coords="1199,907,1473,937"/>
+<area shape="rect" id="node64" href="$classosgEarth_1_1SpatialReference.html#a9ce72de8ce6def17df6239a136dedb5d" title="osgEarth::SpatialReference::preTransform" alt="" coords="1203,961,1469,990"/>
+</map>

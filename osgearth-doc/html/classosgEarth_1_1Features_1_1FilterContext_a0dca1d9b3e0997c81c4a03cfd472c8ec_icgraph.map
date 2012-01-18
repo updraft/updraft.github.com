@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classanonymous__namespace_02FeatureStencilModelSource_8cpp_03_1_1StencilVolumeNodeFactory.html#aea992db2503aa0d5f5683c553dbd320f" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::StencilVolumeNodeFactory::createOrUpdateNode" alt="" coords="397,5,1056,35"/>
+<area shape="rect" id="node5" href="$classanonymous__namespace_02FeatureLabelModelSource_8cpp_03_1_1LabelNodeFactory.html#a40084e3c007ce4fc4d68a7e355f81e8f" title="anonymous_namespace\{FeatureLabelModelSource::cpp\}::LabelNodeFactory::createOrUpdateNode" alt="" coords="429,59,1024,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1FilterContext.html#ae5a2fd149e48440e1e44a62df7ee2aa3" title="osgEarth::Features::FilterContext::toLocal" alt="" coords="593,112,860,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FilterContext.html#a6dfe71f5819a5b0d79f05d6d8d68d3e6" title="osgEarth::Features::FilterContext::toWorld" alt="" coords="592,165,861,195"/>
+</map>

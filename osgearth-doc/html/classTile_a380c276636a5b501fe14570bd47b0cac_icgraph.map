@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSerialKeyNodeFactory.html#a7f68a4e4a93b53e0bc5c85ebcefa0a3f" title="SerialKeyNodeFactory::addTile" alt="" coords="165,32,368,61"/>
+<area shape="rect" id="node9" href="$classTileFrame.html#a2ea83c1b82b77a658075a56ae2d33387" title="TileFrame::TileFrame" alt="" coords="193,85,340,115"/>
+<area shape="rect" id="node5" href="$classSerialKeyNodeFactory.html#a46792fd57c610f50edcf87499281e274" title="SerialKeyNodeFactory::createNode" alt="" coords="423,5,649,35"/>
+<area shape="rect" id="node7" href="$classParallelKeyNodeFactory.html#af00822341586420fd1e5dd85eeddf496" title="ParallelKeyNodeFactory::createNode" alt="" coords="417,59,655,88"/>
+</map>

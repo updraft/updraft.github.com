@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,23 +94,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__elevation_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_elevation/osgearth_elevation.cpp File Reference</h1>  </div>
 </div>
@@ -105,9 +123,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osg/Depth&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
 <code>#include &lt;iomanip&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_elevation.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_elevation.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__elevation_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__elevation_2osgearth__elevation_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__elevation_2osgearth__elevation_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__elevation_2osgearth__elevation_8cpp">
 </map>
@@ -117,12 +137,68 @@ Include dependency graph for osgearth_elevation.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_query_elevation_handler.html">QueryElevationHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQueryElevationHandler.html">QueryElevationHandler</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__elevation_8cpp.html#a7abadc19d4486d3c75be3fa9f33556c9">createFlag</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__elevation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__elevation_8cpp.html#ab8c9010075f307d132fb3d7ec7470c63">s_flagNode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osgText::Text *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__elevation_8cpp.html#ad0a1f788e96aa8679bd5c0f861ddcbe9">s_flagText</a></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a7abadc19d4486d3c75be3fa9f33556c9"></a><!-- doxytag: member="osgearth_elevation.cpp::createFlag" ref="a7abadc19d4486d3c75be3fa9f33556c9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static osg::Node* createFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__elevation_8cpp_source.html#l00048">48</a> of file <a class="el" href="osgearth__elevation_8cpp_source.html">osgearth_elevation.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::Geode* g = <span class="keyword">new</span> osg::Geode();
+    osgText::Text* text = <span class="keyword">new</span> osgText::Text();
+    text-&gt;setCharacterSizeMode( osgText::Text::SCREEN_COORDS );
+    text-&gt;setCharacterSize( 24.f );
+    text-&gt;setFont( osgText::readFontFile(<span class="stringliteral">&quot;arial.ttf&quot;</span>) );
+    text-&gt;setBackdropType( osgText::Text::OUTLINE );
+    text-&gt;setText( <span class="stringliteral">&quot;00000000000000&quot;</span> );
+    text-&gt;setAutoRotateToScreen( <span class="keyword">true</span> );
+    text-&gt;setPosition( osg::Vec3d( 0, 0, 0 ) );
+    text-&gt;setDataVariance( osg::Object::DYNAMIC );
+    g-&gt;addDrawable( text );
+    g-&gt;getOrCreateStateSet()-&gt;setMode( GL_LIGHTING, 0 );
+    g-&gt;getStateSet()-&gt;setAttribute( <span class="keyword">new</span> osg::Depth(osg::Depth::ALWAYS), 1 );
+    g-&gt;getStateSet()-&gt;setRenderBinDetails( 99, <span class="stringliteral">&quot;RenderBin&quot;</span> );
+    g-&gt;setDataVariance( osg::Object::DYNAMIC );
+    g-&gt;setCullingActive( <span class="keyword">false</span> );
+    g-&gt;setNodeMask( 0 );
+    <a class="code" href="osgearth__elevation_8cpp.html#ad0a1f788e96aa8679bd5c0f861ddcbe9">s_flagText</a> = text;
+    <a class="code" href="osgearth__elevation_8cpp.html#ab8c9010075f307d132fb3d7ec7470c63">s_flagNode</a> = g;
+    <span class="keywordflow">return</span> g;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__elevation_8cpp_a7abadc19d4486d3c75be3fa9f33556c9_icgraph.png" border="0" usemap="#osgearth__elevation_8cpp_a7abadc19d4486d3c75be3fa9f33556c9_icgraph" alt=""/></div>
+<map name="osgearth__elevation_8cpp_a7abadc19d4486d3c75be3fa9f33556c9_icgraph" id="osgearth__elevation_8cpp_a7abadc19d4486d3c75be3fa9f33556c9_icgraph">
+<area shape="rect" id="node3" href="osgearth__elevation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="136,5,187,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a><!-- doxytag: member="osgearth_elevation.cpp::main" ref="a3c04138a5bfe5d72780bb7e82a18e627" args="(int argc, char **argv)" -->
 <div class="memitem">
 <div class="memproto">
@@ -149,19 +225,99 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__elevation_8cpp_source.html#l00157">157</a> of file <a class="el" href="osgearth__elevation_8cpp_source.html">osgearth_elevation.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
+
+    osgViewer::Viewer viewer(arguments);
+
+        <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="Export.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+        osg::Node* loadedNode = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> (loadedNode)
+    {
+                mapNode = findTopMostNodeOfType&lt;osgEarth::MapNode&gt;( loadedNode );
+    }
+
+    <span class="keywordflow">if</span> ( !mapNode )
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load earth file.&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> -1;
+    }
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+
+    <span class="comment">// The MapNode will render the Map object in the scene graph.</span>
+    mapNode-&gt;setNodeMask( 0x01 );
+    root-&gt;addChild( mapNode );
+
+    <span class="comment">// A flag so we can see where we clicked</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1ObjectLocatorNode.html">ObjectLocatorNode</a>* flag = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1ObjectLocatorNode.html">ObjectLocatorNode</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+    flag-&gt;addChild( <a class="code" href="osgearth__elevation_8cpp.html#a7abadc19d4486d3c75be3fa9f33556c9">createFlag</a>() );
+    flag-&gt;setNodeMask( 0x02 );
+    root-&gt;addChild( flag );
+
+    viewer.setSceneData( root );
+
+    <span class="comment">// An event handler that will respond to mouse clicks:</span>
+    viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="structQueryElevationHandler.html">QueryElevationHandler</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>(), flag-&gt;<a class="code" href="classosgEarth_1_1Util_1_1ObjectLocatorNode.html#aa1a25cffdb4dee4d351a17299bfe1887">getLocator</a>() ) );
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+
+    <span class="comment">// install the programmable manipulator.</span>
+    <span class="keywordflow">if</span> ( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960">isGeocentric</a>() )
+        viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>() );
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__elevation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__elevation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__elevation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__elevation_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="osgearth__elevation_8cpp.html#a7abadc19d4486d3c75be3fa9f33556c9" title="createFlag" alt="" coords="208,5,291,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1ObjectLocatorNode.html#aa1a25cffdb4dee4d351a17299bfe1887" title="osgEarth::Util::ObjectLocatorNode::getLocator" alt="" coords="104,59,395,88"/><area shape="rect" id="node7" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="155,112,344,141"/><area shape="rect" id="node9" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960" title="osgEarth::Map::isGeocentric" alt="" coords="156,165,343,195"/><area shape="rect" id="node11" href="classosgEarth_1_1MapOptions.html#aed50a44017f7ed40f56855253cc027d0" title="osgEarth::MapOptions::coordSysType" alt="" coords="444,165,687,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="ab8c9010075f307d132fb3d7ec7470c63"></a><!-- doxytag: member="osgearth_elevation.cpp::s_flagNode" ref="ab8c9010075f307d132fb3d7ec7470c63" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osg::Node* <a class="el" href="osgearth__elevation_8cpp.html#ab8c9010075f307d132fb3d7ec7470c63">s_flagNode</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__elevation_8cpp_source.html#l00044">44</a> of file <a class="el" href="osgearth__elevation_8cpp_source.html">osgearth_elevation.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0a1f788e96aa8679bd5c0f861ddcbe9"></a><!-- doxytag: member="osgearth_elevation.cpp::s_flagText" ref="ad0a1f788e96aa8679bd5c0f861ddcbe9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgText::Text* <a class="el" href="osgearth__elevation_8cpp.html#ad0a1f788e96aa8679bd5c0f861ddcbe9">s_flagText</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__elevation_8cpp_source.html#l00045">45</a> of file <a class="el" href="osgearth__elevation_8cpp_source.html">osgearth_elevation.cpp</a>.</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__elevation_8cpp.html">osgearth_elevation.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -176,6 +332,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

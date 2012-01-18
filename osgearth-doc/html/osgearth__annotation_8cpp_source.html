@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__annotation_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_annotation/osgearth_annotation.cpp</h1>  </div>
@@ -119,17 +135,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 <span class="keywordtype">int</span>
 <a name="l00036"></a><a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">00036</a> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="keywordtype">char</span>** argv )
 <a name="l00037"></a>00037 {
-<a name="l00038"></a>00038     OE_WARN &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00038"></a>00038     <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Usage: &quot;</span> &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl;
 <a name="l00039"></a>00039     <span class="keywordflow">return</span> -1;
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="struct_toggle_node.html">00042</a> <span class="keyword">struct </span><a class="code" href="struct_toggle_node.html">ToggleNode</a> : <span class="keyword">public</span> ControlEventHandler {
-<a name="l00043"></a><a class="code" href="struct_toggle_node.html#a53749ff10fd9fc57e3226e07c2f3a185">00043</a>     <a class="code" href="struct_toggle_node.html#a53749ff10fd9fc57e3226e07c2f3a185">ToggleNode</a>( osg::Node* node ) : _node( node ) { }
-<a name="l00044"></a><a class="code" href="struct_toggle_node.html#a5aafa1cc550aa0c01e2d186f1d728abe">00044</a>     <span class="keywordtype">void</span> <a class="code" href="struct_toggle_node.html#a5aafa1cc550aa0c01e2d186f1d728abe">onValueChanged</a>( Control* src, <span class="keywordtype">bool</span> value ) {
+<a name="l00042"></a><a class="code" href="structToggleNode.html">00042</a> <span class="keyword">struct </span><a class="code" href="structToggleNode.html">ToggleNode</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a> {
+<a name="l00043"></a><a class="code" href="structToggleNode.html#a53749ff10fd9fc57e3226e07c2f3a185">00043</a>     <a class="code" href="structToggleNode.html#a53749ff10fd9fc57e3226e07c2f3a185">ToggleNode</a>( osg::Node* node ) : _node( node ) { }
+<a name="l00044"></a><a class="code" href="structToggleNode.html#a5aafa1cc550aa0c01e2d186f1d728abe">00044</a>     <span class="keywordtype">void</span> <a class="code" href="structToggleNode.html#a5aafa1cc550aa0c01e2d186f1d728abe">onValueChanged</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* src, <span class="keywordtype">bool</span> value ) {
 <a name="l00045"></a>00045         <span class="keywordflow">if</span> ( _node.valid() )
 <a name="l00046"></a>00046             _node-&gt;setNodeMask( value ? ~0 : 0 );
 <a name="l00047"></a>00047     }
-<a name="l00048"></a><a class="code" href="struct_toggle_node.html#a7c1fbd91aec2ab28da5275b65bb9fd5b">00048</a>     osg::observer_ptr&lt;osg::Node&gt; <a class="code" href="struct_toggle_node.html#a7c1fbd91aec2ab28da5275b65bb9fd5b">_node</a>;
+<a name="l00048"></a><a class="code" href="structToggleNode.html#a7c1fbd91aec2ab28da5275b65bb9fd5b">00048</a>     osg::observer_ptr&lt;osg::Node&gt; <a class="code" href="structToggleNode.html#a7c1fbd91aec2ab28da5275b65bb9fd5b">_node</a>;
 <a name="l00049"></a>00049 };
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="keywordtype">int</span>
@@ -144,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(argv);
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062     <span class="comment">// find the map node that we loaded.</span>
-<a name="l00063"></a>00063     MapNode* mapNode = MapNode::findMapNode(node);
+<a name="l00063"></a>00063     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">MapNode::findMapNode</a>(node);
 <a name="l00064"></a>00064     <span class="keywordflow">if</span> ( !mapNode )
 <a name="l00065"></a>00065         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(argv);
 <a name="l00066"></a>00066 
@@ -155,98 +171,98 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00071"></a>00071     root-&gt;addChild( annoGroup );
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073     <span class="comment">// a Placemark combines a 2D icon with a text label.</span>
-<a name="l00074"></a>00074     annoGroup-&gt;addChild( <span class="keyword">new</span> PlacemarkNode(
+<a name="l00074"></a>00074     annoGroup-&gt;addChild( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html">PlacemarkNode</a>(
 <a name="l00075"></a>00075         mapNode, 
 <a name="l00076"></a>00076         osg::Vec3d(-74, 40.714, 0), 
-<a name="l00077"></a>00077         URI(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
+<a name="l00077"></a>00077         <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
 <a name="l00078"></a>00078         <span class="stringliteral">&quot;New York&quot;</span>) );
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080     <span class="comment">// a Placemark combines a 2D icon with a text label.</span>
-<a name="l00081"></a>00081     annoGroup-&gt;addChild( <span class="keyword">new</span> PlacemarkNode(
+<a name="l00081"></a>00081     annoGroup-&gt;addChild( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1PlacemarkNode.html">PlacemarkNode</a>(
 <a name="l00082"></a>00082         mapNode, 
 <a name="l00083"></a>00083         osg::Vec3d(139.75, 35.685, 0), 
-<a name="l00084"></a>00084         URI(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
+<a name="l00084"></a>00084         <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;../data/placemark32.png&quot;</span>).readImage(),
 <a name="l00085"></a>00085         <span class="stringliteral">&quot;Tokyo&quot;</span> ) );
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087     <span class="comment">// a box that follows lines of latitude (rhumb line interpolation, the default)</span>
-<a name="l00088"></a>00088     Geometry* geom = <span class="keyword">new</span> Ring();
-<a name="l00089"></a>00089     geom-&gt;push_back( osg::Vec3d(0,   40, 0) );
-<a name="l00090"></a>00090     geom-&gt;push_back( osg::Vec3d(-60, 40, 0) );
-<a name="l00091"></a>00091     geom-&gt;push_back( osg::Vec3d(-60, 60, 0) );
-<a name="l00092"></a>00092     geom-&gt;push_back( osg::Vec3d(0,   60, 0) );
-<a name="l00093"></a>00093     Style geomStyle;
+<a name="l00088"></a>00088     <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* geom = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1Ring.html">Ring</a>();
+<a name="l00089"></a>00089     geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(0,   40, 0) );
+<a name="l00090"></a>00090     geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 40, 0) );
+<a name="l00091"></a>00091     geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 60, 0) );
+<a name="l00092"></a>00092     geom-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(0,   60, 0) );
+<a name="l00093"></a>00093     <a class="code" href="classosgEarth_1_1Style.html">Style</a> geomStyle;
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095     geomStyle.getOrCreate&lt;LineSymbol&gt;()-&gt;stroke()-&gt;color() = Color::Yellow;
-<a name="l00096"></a>00096     geomStyle.getOrCreate&lt;LineSymbol&gt;()-&gt;stroke()-&gt;width() = 5.0f;
+<a name="l00095"></a>00095     geomStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = Color::Yellow;
+<a name="l00096"></a>00096     geomStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;width() = 5.0f;
 <a name="l00097"></a>00097 
-<a name="l00098"></a>00098     FeatureNode* gnode = <span class="keyword">new</span> FeatureNode(mapNode, <span class="keyword">new</span> Feature(geom, geomStyle), <span class="keyword">true</span>);
+<a name="l00098"></a>00098     <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* gnode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(geom, geomStyle), <span class="keyword">true</span>);
 <a name="l00099"></a>00099     annoGroup-&gt;addChild( gnode );
 <a name="l00100"></a>00100 
 <a name="l00101"></a>00101     <span class="comment">// another line, this time using great-circle interpolation (flight path from New York to Tokyo)</span>
-<a name="l00102"></a>00102     Geometry* path = <span class="keyword">new</span> LineString();
-<a name="l00103"></a>00103     path-&gt;push_back( osg::Vec3d(-74, 40.714, 0) );    <span class="comment">// New York</span>
-<a name="l00104"></a>00104     path-&gt;push_back( osg::Vec3d(139.75, 35.685, 0) ); <span class="comment">// Tokyo</span>
+<a name="l00102"></a>00102     <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* path = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1LineString.html">LineString</a>();
+<a name="l00103"></a>00103     path-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-74, 40.714, 0) );    <span class="comment">// New York</span>
+<a name="l00104"></a>00104     path-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(139.75, 35.685, 0) ); <span class="comment">// Tokyo</span>
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106     Style pathStyle;
-<a name="l00107"></a>00107     pathStyle.getOrCreate&lt;LineSymbol&gt;()-&gt;stroke()-&gt;color() = Color::Red;
-<a name="l00108"></a>00108     pathStyle.getOrCreate&lt;LineSymbol&gt;()-&gt;stroke()-&gt;width() = 10.0f;
+<a name="l00106"></a>00106     <a class="code" href="classosgEarth_1_1Style.html">Style</a> pathStyle;
+<a name="l00107"></a>00107     pathStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = Color::Red;
+<a name="l00108"></a>00108     pathStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;width() = 10.0f;
 <a name="l00109"></a>00109 
-<a name="l00110"></a>00110     Feature* pathFeature = <span class="keyword">new</span> Feature(path, pathStyle);
-<a name="l00111"></a>00111     pathFeature-&gt;geoInterp() = GEOINTERP_GREAT_CIRCLE;
-<a name="l00112"></a>00112     FeatureNode* pathNode = <span class="keyword">new</span> FeatureNode(mapNode, pathFeature, <span class="keyword">true</span>);
+<a name="l00110"></a>00110     <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* pathFeature = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(path, pathStyle);
+<a name="l00111"></a>00111     pathFeature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#aa080785489ea5971eebd18053e411ce3">geoInterp</a>() = <a class="code" href="namespaceosgEarth.html#ac8769c4bff433281e6dd9744acfedf7babb74ef2806a2541207be3e513ab2ad60">GEOINTERP_GREAT_CIRCLE</a>;
+<a name="l00112"></a>00112     <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* pathNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, pathFeature, <span class="keyword">true</span>);
 <a name="l00113"></a>00113     annoGroup-&gt;addChild( pathNode );
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115     <span class="comment">// a circle around New Orleans</span>
-<a name="l00116"></a>00116     Style circleStyle;
-<a name="l00117"></a>00117     circleStyle.getOrCreate&lt;PolygonSymbol&gt;()-&gt;fill()-&gt;color() = Color(Color::Cyan, 0.5);
-<a name="l00118"></a>00118     CircleNode* circle = <span class="keyword">new</span> CircleNode( 
+<a name="l00116"></a>00116     <a class="code" href="classosgEarth_1_1Style.html">Style</a> circleStyle;
+<a name="l00117"></a>00117     circleStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Cyan, 0.5);
+<a name="l00118"></a>00118     <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html">CircleNode</a>* circle = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html">CircleNode</a>( 
 <a name="l00119"></a>00119         mapNode, 
 <a name="l00120"></a>00120         osg::Vec3d(-90.25, 29.98, 0), 
-<a name="l00121"></a>00121         Linear(600, Units::KILOMETERS), 
+<a name="l00121"></a>00121         <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(600, <a class="code" href="classosgEarth_1_1Units.html#adb8feada53586a7c0ac2924bec4b7e0c">Units::KILOMETERS</a>), 
 <a name="l00122"></a>00122         circleStyle );
 <a name="l00123"></a>00123     annoGroup-&gt;addChild( circle );
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125     <span class="comment">// an ellipse around Miami</span>
-<a name="l00126"></a>00126     Style ellipseStyle;
-<a name="l00127"></a>00127     ellipseStyle.getOrCreate&lt;PolygonSymbol&gt;()-&gt;fill()-&gt;color() = Color(Color::Orange, 0.75);
-<a name="l00128"></a>00128     EllipseNode* ellipse = <span class="keyword">new</span> EllipseNode(
+<a name="l00126"></a>00126     <a class="code" href="classosgEarth_1_1Style.html">Style</a> ellipseStyle;
+<a name="l00127"></a>00127     ellipseStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Orange, 0.75);
+<a name="l00128"></a>00128     <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html">EllipseNode</a>* ellipse = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html">EllipseNode</a>(
 <a name="l00129"></a>00129         mapNode, 
 <a name="l00130"></a>00130         osg::Vec3d(-80.28,25.82,0), 
-<a name="l00131"></a>00131         Linear(200, Units::MILES),
-<a name="l00132"></a>00132         Linear(100, Units::MILES),
-<a name="l00133"></a>00133         Angular(45, Units::DEGREES),
+<a name="l00131"></a>00131         <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(200, <a class="code" href="classosgEarth_1_1Units.html#a38ce793848693ae2229804f1255ea72b">Units::MILES</a>),
+<a name="l00132"></a>00132         <a class="code" href="structosgEarth_1_1Linear.html">Linear</a>(100, <a class="code" href="classosgEarth_1_1Units.html#a38ce793848693ae2229804f1255ea72b">Units::MILES</a>),
+<a name="l00133"></a>00133         <a class="code" href="structosgEarth_1_1Angular.html">Angular</a>(45, <a class="code" href="classosgEarth_1_1Units.html#a16be533006b6254a89fd28a82783e68d">Units::DEGREES</a>),
 <a name="l00134"></a>00134         ellipseStyle,
 <a name="l00135"></a>00135         <span class="keyword">true</span>);
 <a name="l00136"></a>00136     annoGroup-&gt;addChild( ellipse );
 <a name="l00137"></a>00137 
 <a name="l00138"></a>00138     <span class="comment">// an extruded polygon roughly the shape of Utah</span>
-<a name="l00139"></a>00139     Geometry* utah = <span class="keyword">new</span> Polygon();
-<a name="l00140"></a>00140     utah-&gt;push_back( osg::Vec3d(-114.052, 37, 0) );
-<a name="l00141"></a>00141     utah-&gt;push_back( osg::Vec3d(-109.054, 37, 0) );
-<a name="l00142"></a>00142     utah-&gt;push_back( osg::Vec3d(-109.054, 41, 0) );
-<a name="l00143"></a>00143     utah-&gt;push_back( osg::Vec3d(-111.04, 41, 0) );
-<a name="l00144"></a>00144     utah-&gt;push_back( osg::Vec3d(-111.08, 42.059, 0) );
-<a name="l00145"></a>00145     utah-&gt;push_back( osg::Vec3d(-114.08, 42.024, 0) );
+<a name="l00139"></a>00139     <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* utah = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1Polygon.html">Polygon</a>();
+<a name="l00140"></a>00140     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-114.052, 37, 0) );
+<a name="l00141"></a>00141     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-109.054, 37, 0) );
+<a name="l00142"></a>00142     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-109.054, 41, 0) );
+<a name="l00143"></a>00143     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-111.04, 41, 0) );
+<a name="l00144"></a>00144     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-111.08, 42.059, 0) );
+<a name="l00145"></a>00145     utah-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-114.08, 42.024, 0) );
 <a name="l00146"></a>00146 
-<a name="l00147"></a>00147     Style utahStyle;
-<a name="l00148"></a>00148     utahStyle.getOrCreate&lt;ExtrusionSymbol&gt;()-&gt;height() = 250000.0; <span class="comment">// meters MSL</span>
-<a name="l00149"></a>00149     utahStyle.getOrCreate&lt;PolygonSymbol&gt;()-&gt;fill()-&gt;color() = Color(Color::White, 0.8);
+<a name="l00147"></a>00147     <a class="code" href="classosgEarth_1_1Style.html">Style</a> utahStyle;
+<a name="l00148"></a>00148     utahStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html">ExtrusionSymbol</a>&gt;()-&gt;height() = 250000.0; <span class="comment">// meters MSL</span>
+<a name="l00149"></a>00149     utahStyle.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>&gt;()-&gt;fill()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::White, 0.8);
 <a name="l00150"></a>00150 
-<a name="l00151"></a>00151     Feature* utahFeature = <span class="keyword">new</span> Feature(utah, utahStyle);
-<a name="l00152"></a>00152     FeatureNode* utahNode = <span class="keyword">new</span> FeatureNode(mapNode, utahFeature, <span class="keyword">false</span>);
+<a name="l00151"></a>00151     <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* utahFeature = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(utah, utahStyle);
+<a name="l00152"></a>00152     <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>* utahNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureNode.html">FeatureNode</a>(mapNode, utahFeature, <span class="keyword">false</span>);
 <a name="l00153"></a>00153     annoGroup-&gt;addChild( utahNode );
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155     <span class="comment">// an image overlay</span>
-<a name="l00156"></a>00156     ImageOverlay* imageOverlay = 0L;
+<a name="l00156"></a>00156     <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html">ImageOverlay</a>* imageOverlay = 0L;
 <a name="l00157"></a>00157     osg::Image* image = osgDB::readImageFile( <span class="stringliteral">&quot;../data/USFLAG.TGA&quot;</span> );
 <a name="l00158"></a>00158     <span class="keywordflow">if</span> ( image ) {
-<a name="l00159"></a>00159         imageOverlay = <span class="keyword">new</span> ImageOverlay(mapNode, image);
-<a name="l00160"></a>00160         imageOverlay-&gt;setBounds( Bounds( -100.0, 50.0, -90.0, 55.0) );
+<a name="l00159"></a>00159         imageOverlay = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html">ImageOverlay</a>(mapNode, image);
+<a name="l00160"></a>00160         imageOverlay-&gt;<a class="code" href="classosgEarth_1_1Util_1_1ImageOverlay.html#a6db1aa19292a1020cfa08b4abb0e4b49">setBounds</a>( <a class="code" href="classosgEarth_1_1Bounds.html">Bounds</a>( -100.0, 50.0, -90.0, 55.0) );
 <a name="l00161"></a>00161 
 <a name="l00162"></a>00162         <span class="comment">//Add an editor            </span>
 <a name="l00163"></a>00163         annoGroup-&gt;addChild( imageOverlay );
 <a name="l00164"></a>00164         
-<a name="l00165"></a>00165         osg::Node* editor = <span class="keyword">new</span> ImageOverlayEditor( imageOverlay, mapNode-&gt;getMap()-&gt;getProfile()-&gt;getSRS()-&gt;getEllipsoid(), mapNode );
+<a name="l00165"></a>00165         osg::Node* editor = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1ImageOverlayEditor.html">ImageOverlayEditor</a>( imageOverlay, mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48">getProfile</a>()-&gt;<a class="code" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f">getEllipsoid</a>(), mapNode );
 <a name="l00166"></a>00166         root-&gt;addChild( editor );
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 
@@ -258,32 +274,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00174"></a>00174 
 <a name="l00175"></a>00175     <span class="comment">// initialize a viewer:</span>
 <a name="l00176"></a>00176     osgViewer::Viewer viewer(arguments);
-<a name="l00177"></a>00177     viewer.setCameraManipulator( <span class="keyword">new</span> EarthManipulator() );
+<a name="l00177"></a>00177     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>() );
 <a name="l00178"></a>00178     viewer.setSceneData( root );
 <a name="l00179"></a>00179 
 <a name="l00180"></a>00180     <span class="comment">// make a little HUD to toggle stuff:</span>
-<a name="l00181"></a>00181     VBox* vbox = <span class="keyword">new</span> VBox();
-<a name="l00182"></a>00182     vbox-&gt;setBackColor( Color(Color::Black, 0.5) );
-<a name="l00183"></a>00183     vbox-&gt;setVertAlign( Control::ALIGN_TOP );
-<a name="l00184"></a>00184     vbox-&gt;addControl( <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Annotation Example&quot;</span>, 22.0f, Color::Yellow) );
-<a name="l00185"></a>00185     Grid* grid = <span class="keyword">new</span> Grid();
-<a name="l00186"></a>00186     vbox-&gt;addControl( grid );
-<a name="l00187"></a>00187     grid-&gt;setChildSpacing( 5 );
-<a name="l00188"></a>00188     grid-&gt;setChildHorizAlign( Control::ALIGN_LEFT );
-<a name="l00189"></a>00189     grid-&gt;setChildVertAlign( Control::ALIGN_CENTER );
-<a name="l00190"></a>00190     grid-&gt;setControl( 0, 0, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(gnode)) );
-<a name="l00191"></a>00191     grid-&gt;setControl( 1, 0, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Line geoemtry&quot;</span>) );
-<a name="l00192"></a>00192     grid-&gt;setControl( 0, 1, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(pathNode)) );
-<a name="l00193"></a>00193     grid-&gt;setControl( 1, 1, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Red flight path&quot;</span>) );
-<a name="l00194"></a>00194     grid-&gt;setControl( 0, 2, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(circle)) );
-<a name="l00195"></a>00195     grid-&gt;setControl( 1, 2, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Blue circle&quot;</span>) );
-<a name="l00196"></a>00196     grid-&gt;setControl( 0, 3, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(ellipse)) );
-<a name="l00197"></a>00197     grid-&gt;setControl( 1, 3, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Orange ellipse&quot;</span>) );
-<a name="l00198"></a>00198     grid-&gt;setControl( 0, 4, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(utahNode)) );
-<a name="l00199"></a>00199     grid-&gt;setControl( 1, 4, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Extruded state&quot;</span>) );
+<a name="l00181"></a>00181     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* vbox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+<a name="l00182"></a>00182     vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(Color::Black, 0.5) );
+<a name="l00183"></a>00183     vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_TOP );
+<a name="l00184"></a>00184     vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Annotation Example&quot;</span>, 22.0f, Color::Yellow) );
+<a name="l00185"></a>00185     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+<a name="l00186"></a>00186     vbox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( grid );
+<a name="l00187"></a>00187     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 5 );
+<a name="l00188"></a>00188     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a25144e9d12a23524f4bf609f21fcd265">setChildHorizAlign</a>( Control::ALIGN_LEFT );
+<a name="l00189"></a>00189     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( Control::ALIGN_CENTER );
+<a name="l00190"></a>00190     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 0, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(gnode)) );
+<a name="l00191"></a>00191     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 0, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Line geoemtry&quot;</span>) );
+<a name="l00192"></a>00192     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(pathNode)) );
+<a name="l00193"></a>00193     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Red flight path&quot;</span>) );
+<a name="l00194"></a>00194     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(circle)) );
+<a name="l00195"></a>00195     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Blue circle&quot;</span>) );
+<a name="l00196"></a>00196     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 3, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(ellipse)) );
+<a name="l00197"></a>00197     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 3, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Orange ellipse&quot;</span>) );
+<a name="l00198"></a>00198     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 4, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(utahNode)) );
+<a name="l00199"></a>00199     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 4, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Extruded state&quot;</span>) );
 <a name="l00200"></a>00200     <span class="keywordflow">if</span> ( imageOverlay ) {
-<a name="l00201"></a>00201         grid-&gt;setControl( 0, 5, <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="struct_toggle_node.html">ToggleNode</a>(imageOverlay)) );
-<a name="l00202"></a>00202         grid-&gt;setControl( 1, 5, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Image overlay&quot;</span>) );
+<a name="l00201"></a>00201         grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 5, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="structToggleNode.html">ToggleNode</a>(imageOverlay)) );
+<a name="l00202"></a>00202         grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 5, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Image overlay&quot;</span>) );
 <a name="l00203"></a>00203     }
 <a name="l00204"></a>00204     ControlCanvas::get(&amp;viewer,<span class="keyword">true</span>)-&gt;addControl(vbox);
 <a name="l00205"></a>00205 
@@ -297,14 +313,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00213"></a>00213 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__annotation_8cpp.html">osgearth_annotation.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -319,6 +327,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

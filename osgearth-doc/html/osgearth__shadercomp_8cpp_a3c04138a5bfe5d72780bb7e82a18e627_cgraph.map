@@ -1,4 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c" title="createHaze" alt="" coords="105,5,193,35"/>
-<area shape="rect" id="node5" href="$osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="121,59,177,88"/>
+<area shape="rect" id="node9" href="$osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="121,59,177,88"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e" title="osgEarth::VirtualProgram::setFunction" alt="" coords="244,5,487,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1VirtualProgram.html#a0dde219eb0e46b7c3b019a65111b8a61" title="osgEarth::VirtualProgram::setShader" alt="" coords="536,5,771,35"/>
 </map>

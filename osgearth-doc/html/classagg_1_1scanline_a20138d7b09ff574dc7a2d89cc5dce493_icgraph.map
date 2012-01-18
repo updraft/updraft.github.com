@@ -1,7 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classagg_1_1scanline.html#aec8e0033da21d69abe903611677c92b7" title="agg::scanline::add_cell" alt="" coords="225,5,380,35"/>
-<area shape="rect" id="node9" href="$classagg_1_1scanline.html#ad232ee623d33b3a5ddb59555879db4b1" title="agg::scanline::add_span" alt="" coords="221,59,384,88"/>
-<area shape="rect" id="node12" href="$classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87" title="agg::renderer\&lt; agg::span_abgr32 \&gt;::render" alt="" coords="168,112,437,141"/>
-<area shape="rect" id="node5" href="$classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c" title="agg::rasterizer::render" alt="" coords="485,32,635,61"/>
-<area shape="rect" id="node7" href="$class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="683,32,1021,61"/>
+<area shape="rect" id="node3" href="$classagg_1_1scanline.html#aec8e0033da21d69abe903611677c92b7" title="agg::scanline::add_cell" alt="" coords="225,85,380,115"/>
+<area shape="rect" id="node19" href="$classagg_1_1scanline.html#ad232ee623d33b3a5ddb59555879db4b1" title="agg::scanline::add_span" alt="" coords="221,139,384,168"/>
+<area shape="rect" id="node22" href="$classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87" title="agg::renderer\&lt; agg::span_abgr32 \&gt;::render" alt="" coords="168,192,437,221"/>
+<area shape="rect" id="node5" href="$classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c" title="agg::rasterizer::render" alt="" coords="485,112,635,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="699,85,1005,115"/>
+<area shape="rect" id="node17" href="$classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="683,139,1021,168"/>
+<area shape="rect" id="node9" href="$classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="1115,5,1317,35"/>
+<area shape="rect" id="node11" href="$classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="1111,59,1321,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="1071,112,1361,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="1096,165,1336,195"/>
 </map>

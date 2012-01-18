@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#a6a0d2ca37535bd71a1aed3d60378fdbc" title="osgEarth::Util::Controls::HSliderControl::setMax" alt="" coords="421,5,723,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#ae4618188a8e9fe764f02ce96926714cb" title="osgEarth::Util::Controls::HSliderControl::setMin" alt="" coords="423,59,721,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#ab4f510613d4fe299faac9ec9df5d0091" title="osgEarth::Util::Controls::HSliderControl::setValue" alt="" coords="417,112,727,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#a9264a5b7451263ac0ba4f3c917e75c2f" title="osgEarth::Util::Controls::HSliderControl::handle" alt="" coords="776,112,1075,141"/>
+</map>

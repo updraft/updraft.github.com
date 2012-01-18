@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1TerrainLayer.html#a02f9aaac89492153b97433acddaaf915" title="osgEarth::TerrainLayer::getEnabled" alt="" coords="424,5,651,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1ImageLayer.html#a6fbc035cfa825c362ed96285cd5d0cb2" title="osgEarth::ImageLayer::getImageLayerOptions" alt="" coords="393,59,681,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ImageLayer.html#a66a16b3bc57ebeeff19acab52f4eae30" title="osgEarth::ImageLayer::getOpacity" alt="" coords="427,112,648,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="444,165,631,195"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1ImageLayerOptions.html#aaa993605564a0c389bb8a4926a3b63f3" title="osgEarth::ImageLayerOptions::maxVisibleRange" alt="" coords="385,219,689,248"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1ImageLayerOptions.html#a92dfbc2dcd43b79e3a8b18915df8b77b" title="osgEarth::ImageLayerOptions::minVisibleRange" alt="" coords="387,272,688,301"/>
+<area shape="rect" id="node26" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="455,325,620,355"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="740,165,927,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="976,85,1304,115"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1028,139,1252,168"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1019,192,1261,221"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1017,245,1263,275"/>
+</map>

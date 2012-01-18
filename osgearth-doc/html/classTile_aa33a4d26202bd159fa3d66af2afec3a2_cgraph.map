@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTerrain.html#a00dae3cd76040e85488b2f6774be3780" title="Terrain::registerTile" alt="" coords="199,5,332,35"/>
+<area shape="rect" id="node5" href="$classTile.html#ad4e24d60ff60526b379cdc83d77474ec" title="Tile::getTileId" alt="" coords="381,5,483,35"/>
+</map>

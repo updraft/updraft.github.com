@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$KML__Placemark.html" title="KML_Placemark" alt="" coords="415,83,532,112"/>
+<area shape="rect" id="node28" href="$KML__Geometry.html" title="KML_Geometry" alt="" coords="573,83,685,112"/>
+<area shape="rect" id="node33" href="$KML__Style.html" title="KML_Style" alt="" coords="273,83,359,112"/>
+<area shape="rect" id="node5" href="$KML__Feature.html" title="KML_Feature" alt="" coords="407,160,505,189"/>
+<area shape="rect" id="node7" href="$KML__Object.html" title="KML_Object" alt="" coords="409,237,503,267"/>
+<area shape="rect" id="node9" href="$KML__Common.html" title="KML_Common" alt="" coords="240,315,349,344"/>
+<area shape="rect" id="node19" href="$KMLOptions.html" title="KMLOptions" alt="" coords="248,392,341,421"/>
+<area shape="rect" id="node36" href="$KML__StyleSelector.html" title="KML_StyleSelector" alt="" coords="249,160,383,189"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$structKML__LinearRing.html" title="KML_LinearRing" alt="" coords="5,160,123,189"/>
+<area shape="rect" id="node7" href="$structKML__LineString.html" title="KML_LineString" alt="" coords="147,160,261,189"/>
+<area shape="rect" id="node9" href="$structKML__Model.html" title="KML_Model" alt="" coords="285,160,376,189"/>
+<area shape="rect" id="node11" href="$structKML__MultiGeometry.html" title="KML_MultiGeometry" alt="" coords="400,160,541,189"/>
+<area shape="rect" id="node13" href="$structKML__Point.html" title="KML_Point" alt="" coords="565,160,651,189"/>
+<area shape="rect" id="node15" href="$structKML__Polygon.html" title="KML_Polygon" alt="" coords="675,160,776,189"/>
+<area shape="rect" id="node2" href="$structKML__Object.html" title="KML_Object" alt="" coords="353,5,447,35"/>
+</map>

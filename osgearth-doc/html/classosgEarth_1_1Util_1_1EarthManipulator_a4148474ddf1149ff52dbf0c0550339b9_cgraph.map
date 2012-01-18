@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a0831edf651c0b5659b01f38d3f6eac93" title="osgEarth::Util::EarthManipulator::getAzimuth" alt="" coords="309,60,592,89"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae8c30588a24f3b70da9e2e88b2b5c1c4" title="osgEarth::Util::EarthManipulator::recalculateLocalPitchAndAzimuth" alt="" coords="1357,112,1768,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aa412d8793e031d74860f58a99c860577" title="osgEarth::Util::EarthManipulator::getMyCoordinateFrame" alt="" coords="659,112,1011,141"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a9a181806ea8eb81c478ff7bc243edfab" title="osgEarth::Util::EarthManipulator::recalculateCenter" alt="" coords="292,216,609,245"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#adf480579ecdadd523eff8cba88ad3fc8" title="osgEarth::Util::EarthManipulator::getMatrix" alt="" coords="700,5,969,35"/>
+<area shape="rect" id="node17" href="$EarthManipulator_8cpp.html#ad9a9e389ea200eabb13b1c615e21d079" title="normalizeAzimRad" alt="" coords="769,59,900,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a0e80654c897dcbba66d9001ff6695aba" title="osgEarth::Util::EarthManipulator::rotate" alt="" coords="1060,59,1308,88"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#aaf8b4909bb5c6f9e41dc75d48682437a" title="anonymous_namespace\{EarthManipulator::cpp\}::s_getHPRFromQuat" alt="" coords="1817,112,2241,141"/>
+<area shape="rect" id="node13" href="$namespaceanonymous__namespace_02Controls_8cpp_03.html#ad4029349af79513030745a11f9832f72" title="anonymous_namespace\{Controls::cpp\}::rot" alt="" coords="2291,112,2563,141"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae2c317913a70c97b8e78e7126fed9318" title="osgEarth::Util::EarthManipulator::intersect" alt="" coords="701,216,968,245"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a9e8051599750a123fcf20c2a6ba31378" title="osgEarth::Util::ImageOverlay::getControlPoint" alt="" coords="387,112,675,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#ad5c0745f93d0785509aaf8c9c23c0f62" title="osgEarth::Util::ImageOverlayEditor::getDraggers" alt="" coords="379,165,683,195"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#aae268e9a60392ea95b1cbd7ffea1f460" title="osgEarth::Util::ImageOverlayEditor::getEllipsoid" alt="" coords="381,219,680,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a4c8e704790e7f51aebf59eb9459b8782" title="osgEarth::Util::ImageOverlayEditor::getOverlay" alt="" coords="383,272,679,301"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a29d7033554224c39924e7f66df89bca0" title="osgEarth::Util::ImageOverlayEditor::getTerrain" alt="" coords="385,325,676,355"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1974dd60d9b5f18a7b2b818ca46b8cdf" title="osgEarth::Util::ImageOverlay::getCenter" alt="" coords="744,5,1000,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a3852631341f487a27b5b4c27ad8fdedd" title="osgEarth::Util::ImageOverlay::getLowerLeft" alt="" coords="735,59,1009,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a48b893038ad75e8ba3f6a9085de175cc" title="osgEarth::Util::ImageOverlay::getLowerRight" alt="" coords="731,112,1013,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ab90e92d4cac6a062c71f182bd07781f9" title="osgEarth::Util::ImageOverlay::getUpperLeft" alt="" coords="735,165,1009,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a8160df1fb4f5ac90fe1f875b149133a5" title="osgEarth::Util::ImageOverlay::getUpperRight" alt="" coords="731,219,1013,248"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structKML__Feature.html#a7a6f7b31f798767f4a823df8bee9a0d2" title="KML_Feature::build" alt="" coords="201,192,335,221"/>
+<area shape="rect" id="node5" href="$structKML__Object.html#a8ba82a5395ccbcadc756fedff0b49a2f" title="KML_Object::build" alt="" coords="501,5,629,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Config.html#ac88bd62e7ac78d498981c3cf9f948b7c" title="osgEarth::Config::child" alt="" coords="488,59,643,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80" title="osgEarth::Config::empty" alt="" coords="484,112,647,141"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Config.html#a2491caa5d05f4165dc147049816098c6" title="osgEarth::Config::hasValue" alt="" coords="475,165,656,195"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#ae196053116779095fc2e07fc2c66ef24" title="osgEarth::Util::Annotation::AnnotationData::setDescription" alt="" coords="384,219,747,248"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#aa4d59cfcd435e81a180331242c5f6f43" title="osgEarth::Util::Annotation::AnnotationData::setName" alt="" coords="400,272,731,301"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#aaf59fe2ebf70ae3aef0b46add6d07906" title="osgEarth::Util::Annotation::AnnotationData::setViewpoint" alt="" coords="389,325,741,355"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Config.html#ab19f29b67dfeaf1b2ea58266f6e7b901" title="osgEarth::Config::value" alt="" coords="487,379,644,408"/>
+<area shape="rect" id="node9" href="$Config_8cpp.html#aa64dd5b0fd14e482676acb11aa4720e2" title="emptyConfig" alt="" coords="795,59,891,88"/>
+</map>

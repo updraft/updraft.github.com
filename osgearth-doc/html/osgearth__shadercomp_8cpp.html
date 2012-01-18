@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,22 +94,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__shadercomp_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_shadercomp/osgearth_shadercomp.cpp File Reference</h1>  </div>
 </div>
@@ -91,9 +109,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthUtil/EarthManipulator&gt;</code><br/>
 <code>#include &lt;osgEarth/ShaderComposition&gt;</code><br/>
 <code>#include &lt;osgEarth/Registry&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_shadercomp.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_shadercomp.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__shadercomp_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__shadercomp_2osgearth__shadercomp_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__shadercomp_2osgearth__shadercomp_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__shadercomp_2osgearth__shadercomp_8cpp">
 </map>
@@ -106,6 +126,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::StateAttribute *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c">createHaze</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__shadercomp_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">usage</a> (const std::string &amp;msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__shadercomp_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">s_hazeVertShader</a> [] = &quot;} \n&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">s_hazeFragShader</a> [] = &quot;} \n&quot;</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a74104a5fe48d91ed4614dd6979dfe86c"></a><!-- doxytag: member="osgearth_shadercomp.cpp::createHaze" ref="a74104a5fe48d91ed4614dd6979dfe86c" args="()" -->
@@ -122,13 +146,34 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>This sample demonstrates a simple use of osgEarth's shader composition framework.</p>
-<p>By default, <a class="el" href="namespaceosg_earth.html">osgEarth</a> uses GL shaders to render the terrain. Shader composition is a mechanism by which you can inject custom shader code into osgEarth's shader program pipeline. This gets around the problem of having to duplicate shader code in order to add functionality. </p>
+<p>By default, <a class="el" href="namespaceosgEarth.html">osgEarth</a> uses GL shaders to render the terrain. Shader composition is a mechanism by which you can inject custom shader code into osgEarth's shader program pipeline. This gets around the problem of having to duplicate shader code in order to add functionality. </p>
 
 <p>Definition at line <a class="el" href="osgearth__shadercomp_8cpp_source.html#l00095">95</a> of file <a class="el" href="osgearth__shadercomp_8cpp_source.html">osgearth_shadercomp.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="classosgEarth_1_1VirtualProgram.html">osgEarth::VirtualProgram</a>* vp = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1VirtualProgram.html">osgEarth::VirtualProgram</a>();
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+    vp-&gt;<a class="code" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e">setFunction</a>( <span class="stringliteral">&quot;setup_haze&quot;</span>, <a class="code" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">s_hazeVertShader</a>, <a class="code" href="namespaceosgEarth_1_1ShaderComp.html#aa58583ccd17a04d01aaec664bd42cdcaaa299bbc4180a44e8600da5d476cca8cf">osgEarth::ShaderComp::LOCATION_VERTEX_POST_LIGHTING</a> );
+    vp-&gt;<a class="code" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e">setFunction</a>( <span class="stringliteral">&quot;apply_haze&quot;</span>, <a class="code" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">s_hazeFragShader</a>, <a class="code" href="namespaceosgEarth_1_1ShaderComp.html#aa58583ccd17a04d01aaec664bd42cdcaa26e54a8675847077a5524a2459423ad4">osgEarth::ShaderComp::LOCATION_FRAGMENT_POST_LIGHTING</a> );
+
+    <span class="keywordflow">return</span> vp;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_cgraph.png" border="0" usemap="#osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_cgraph" alt=""/></div>
+<map name="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_cgraph" id="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e" title="osgEarth::VirtualProgram::setFunction" alt="" coords="145,5,388,35"/><area shape="rect" id="node5" href="classosgEarth_1_1VirtualProgram.html#a0dde219eb0e46b7c3b019a65111b8a61" title="osgEarth::VirtualProgram::setShader" alt="" coords="437,5,672,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_icgraph.png" border="0" usemap="#osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_icgraph" alt=""/></div>
 <map name="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_icgraph" id="osgearth__shadercomp_8cpp_a74104a5fe48d91ed4614dd6979dfe86c_icgraph">
 <area shape="rect" id="node3" href="osgearth__shadercomp_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="144,5,195,35"/></map>
@@ -163,13 +208,42 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__shadercomp_8cpp_source.html#l00047">47</a> of file <a class="el" href="osgearth__shadercomp_8cpp_source.html">osgearth_shadercomp.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    osg::Node* earthNode = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> (!earthNode)
+    {
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> );
+    }
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+    root-&gt;addChild( earthNode );
+    
+    osgViewer::Viewer viewer(arguments);
+    viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>() );
+    viewer.setSceneData( root );
+
+    <span class="comment">// inject the haze shader components:</span>
+    root-&gt;getOrCreateStateSet()-&gt;setAttributeAndModes( <a class="code" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c">createHaze</a>(), osg::StateAttribute::ON );
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::ThreadingHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__shadercomp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__shadercomp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__shadercomp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__shadercomp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c" title="createHaze" alt="" coords="105,5,193,35"/><area shape="rect" id="node5" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="121,59,177,88"/></map>
+<area shape="rect" id="node3" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c" title="createHaze" alt="" coords="105,5,193,35"/><area shape="rect" id="node9" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="121,59,177,88"/><area shape="rect" id="node5" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e" title="osgEarth::VirtualProgram::setFunction" alt="" coords="244,5,487,35"/><area shape="rect" id="node7" href="classosgEarth_1_1VirtualProgram.html#a0dde219eb0e46b7c3b019a65111b8a61" title="osgEarth::VirtualProgram::setShader" alt="" coords="536,5,771,35"/></map>
 </div>
 </p>
 
@@ -191,19 +265,48 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__shadercomp_8cpp_source.html#l00038">38</a> of file <a class="el" href="osgearth__shadercomp_8cpp_source.html">osgearth_shadercomp.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{    
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a>
+        &lt;&lt; msg &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_shadercomp &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl;
+
+    <span class="keywordflow">return</span> -1;
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a2d8ac774a6269e340f2b140782a1f2b5"></a><!-- doxytag: member="osgearth_shadercomp.cpp::s_hazeFragShader" ref="a2d8ac774a6269e340f2b140782a1f2b5" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">s_hazeFragShader</a>[] = &quot;} \n&quot;<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__shadercomp_8cpp_source.html#l00085">85</a> of file <a class="el" href="osgearth__shadercomp_8cpp_source.html">osgearth_shadercomp.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a39f3732e84266de3a9c8f473d92f16ef"></a><!-- doxytag: member="osgearth_shadercomp.cpp::s_hazeVertShader" ref="a39f3732e84266de3a9c8f473d92f16ef" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">s_hazeVertShader</a>[] = &quot;} \n&quot;<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__shadercomp_8cpp_source.html#l00078">78</a> of file <a class="el" href="osgearth__shadercomp_8cpp_source.html">osgearth_shadercomp.cpp</a>.</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__shadercomp_8cpp.html">osgearth_shadercomp.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -218,6 +321,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

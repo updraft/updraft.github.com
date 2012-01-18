@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$KML__Folder.html" title="KML_Folder" alt="" coords="5,83,96,112"/>
+<area shape="rect" id="node32" href="$KML__Document.html" title="KML_Document" alt="" coords="120,83,235,112"/>
+<area shape="rect" id="node36" href="$KML__PhotoOverlay.html" title="KML_PhotoOverlay" alt="" coords="259,83,392,112"/>
+<area shape="rect" id="node43" href="$KML__ScreenOverlay.html" title="KML_ScreenOverlay" alt="" coords="416,83,557,112"/>
+<area shape="rect" id="node47" href="$KML__GroundOverlay.html" title="KML_GroundOverlay" alt="" coords="581,83,723,112"/>
+<area shape="rect" id="node51" href="$KML__NetworkLink.html" title="KML_NetworkLink" alt="" coords="692,237,820,267"/>
+<area shape="rect" id="node54" href="$KML__Placemark.html" title="KML_Placemark" alt="" coords="647,160,764,189"/>
+<area shape="rect" id="node5" href="$KML__Common.html" title="KML_Common" alt="" coords="296,392,405,421"/>
+<area shape="rect" id="node22" href="$KML__Container.html" title="KML_Container" alt="" coords="123,160,235,189"/>
+<area shape="rect" id="node15" href="$KMLOptions.html" title="KMLOptions" alt="" coords="304,469,397,499"/>
+<area shape="rect" id="node25" href="$KML__Feature.html" title="KML_Feature" alt="" coords="464,237,563,267"/>
+<area shape="rect" id="node27" href="$KML__Object.html" title="KML_Object" alt="" coords="637,315,731,344"/>
+<area shape="rect" id="node39" href="$KML__Overlay.html" title="KML_Overlay" alt="" coords="436,160,537,189"/>
+</map>

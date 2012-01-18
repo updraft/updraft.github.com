@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,20 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1rendering__buffer.html">rendering_buffer</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('classagg_1_1rendering__buffer.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>agg::rendering_buffer Member List</h1>  </div>
@@ -90,21 +113,21 @@ This is the complete list of members for <a class="el" href="classagg_1_1renderi
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#af416294858d093870627370c66d314ea">buf</a>() const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a62ed0c726c30fdb7422a29fd8eb9d2c4">height</a>() const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a3f72a12f24c20d700cd7b8790021af09">inbox</a>(int x, int y) const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#af160c1c239ae68a85b4ac8f8f395e7f2">m_buf</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a59c20ec5006e0281b7a9f5e17166b44d">m_height</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a78926646758d066cd3c7b811e9934de2">m_max_height</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#ac85d6bed66651211e699e9d47b13ed1a">m_rows</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#ad356318c0b2b310fa5f2240cffbcdda5">m_stride</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#aa286889243950dcdcdfe58c668b557db">m_width</a></td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#abd9a35db056f954b31f40139c647ecd2">operator=</a>(const rendering_buffer &amp;)</td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#ae93886646728bed93e9d25c8ac808fff">rendering_buffer</a>(unsigned char *buf, unsigned width, unsigned height, int stride)</td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#af1e078e3f057bae6db223f3531814321">rendering_buffer</a>(const rendering_buffer &amp;)</td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#ae522cbd260da2117d9c562859a0990d0">row</a>(unsigned y)</td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a438092b86b05b67cf8e0de48341d9860">row</a>(unsigned y) const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a620e12b72906a56169c058d0598d38b1">stride</a>() const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#a1feb032c305fb7fcea896c2c25d51d5a">width</a>() const </td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classagg_1_1rendering__buffer.html#ad543ef02b28fff0b6eddca2786f54532">~rendering_buffer</a>()</td><td><a class="el" href="classagg_1_1rendering__buffer.html">agg::rendering_buffer</a></td><td></td></tr>
 </table></div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -119,6 +142,8 @@ This is the complete list of members for <a class="el" href="classagg_1_1renderi
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

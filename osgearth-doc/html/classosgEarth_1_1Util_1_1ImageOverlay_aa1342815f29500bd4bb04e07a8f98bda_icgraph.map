@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1d76f89b54b53bf55b6d340f4511e4f1" title="osgEarth::Util::ImageOverlay::setCorners" alt="" coords="352,111,613,140"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#adc15b4f14e8fa9448ea7d91e254a6f67" title="osgEarth::Util::ImageOverlay::setLowerLeft" alt="" coords="676,368,951,397"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ae226e69f4aa39e60279dc3f43ac63976" title="osgEarth::Util::ImageOverlay::setLowerRight" alt="" coords="672,421,955,451"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ad70840acca3d7252807abf932c1e9ad5" title="osgEarth::Util::ImageOverlay::setNorth" alt="" coords="689,475,937,504"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1f33e05e2506a2f75d6f2ef1b22d5a2f" title="osgEarth::Util::ImageOverlay::setSouth" alt="" coords="357,212,608,241"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ad707ba93936ef61db439a3bc3816e6b6" title="osgEarth::Util::ImageOverlay::setUpperLeft" alt="" coords="345,265,620,295"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ae0d4ae10ed1456a56a051f26253dd375" title="osgEarth::Util::ImageOverlay::setUpperRight" alt="" coords="341,319,624,348"/>
+<area shape="rect" id="node5" href="$structKML__GroundOverlay.html#ab1a567e96ef9a0fbfa9f3a8850d665f0" title="KML_GroundOverlay::build" alt="" coords="1384,84,1563,113"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a6db1aa19292a1020cfa08b4abb0e4b49" title="osgEarth::Util::ImageOverlay::setBounds" alt="" coords="683,8,944,37"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ab33853018828a2b707a30b610e889f66" title="osgEarth::Util::ImageOverlay::setBoundsAndRotation" alt="" coords="1003,59,1336,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a5962eb070f776c876385a2ada3b31eb9" title="osgEarth::Util::ImageOverlay::setCenter" alt="" coords="685,163,941,192"/>
+<area shape="rect" id="node9" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1144,5,1195,35"/>
+<area shape="rect" id="node11" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="1407,5,1540,35"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ab5e20252dd8f3133c5a3bbefb81fe20f" title="osgEarth::Util::ImageOverlay::setControlPoint" alt="" coords="1025,316,1313,345"/>
+</map>

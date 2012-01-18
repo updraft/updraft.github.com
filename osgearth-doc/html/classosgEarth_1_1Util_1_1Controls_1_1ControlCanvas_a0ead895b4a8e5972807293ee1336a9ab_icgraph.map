@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="403,165,683,195"/>
+<area shape="rect" id="node5" href="$osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8" title="addMouseCoords" alt="" coords="885,5,1008,35"/>
+<area shape="rect" id="node9" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="880,59,1013,88"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114" title="anonymous_namespace\{osgearth_manip::cpp\}::createHelp" alt="" coords="765,112,1128,141"/>
+<area shape="rect" id="node15" href="$osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7" title="createMenu" alt="" coords="901,165,992,195"/>
+<area shape="rect" id="node19" href="$classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#a99620b4c79c9d3912671acda65654231" title="anonymous_namespace\{osgearth_manip::cpp\}::SwitchHandler::handle" alt="" coords="732,219,1161,248"/>
+<area shape="rect" id="node21" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="921,272,972,301"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlNode.html#a0603c90d3928f4143e4140c6f4522e15" title="osgEarth::Util::Controls::ControlNode::traverse" alt="" coords="800,325,1093,355"/>
+<area shape="rect" id="node7" href="$osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1211,5,1261,35"/>
+<area shape="rect" id="node13" href="$osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1211,112,1261,141"/>
+<area shape="rect" id="node17" href="$osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1211,165,1261,195"/>
+</map>

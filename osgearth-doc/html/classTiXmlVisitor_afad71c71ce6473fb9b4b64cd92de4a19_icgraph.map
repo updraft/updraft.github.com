@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlUnknown.html#a4e54d7482e05a837cf83c925cc683380" title="TiXmlUnknown::Accept" alt="" coords="187,5,347,35"/>
+<area shape="rect" id="node5" href="$classTiXmlDeclaration.html#ab6a6b178161ba9abc2c35058de689864" title="TiXmlDeclaration::Accept" alt="" coords="181,59,352,88"/>
+<area shape="rect" id="node7" href="$classTiXmlText.html#a43b9954ebf679557fac1a4453f337b7c" title="TiXmlText::Accept" alt="" coords="201,112,332,141"/>
+<area shape="rect" id="node9" href="$classTiXmlComment.html#a4382de0e50da973f11a23ea5852568bd" title="TiXmlComment::Accept" alt="" coords="185,165,348,195"/>
+</map>

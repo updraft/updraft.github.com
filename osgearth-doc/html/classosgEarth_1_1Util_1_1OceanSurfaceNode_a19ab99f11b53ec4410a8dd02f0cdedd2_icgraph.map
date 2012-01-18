@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a253eda35eb06e0745898dd74e52c0fb1" title="osgEarth::Util::OceanSurfaceNode::setAdjustToMSL" alt="" coords="417,5,745,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a936892d890a38fcf12e941ed5b2dfcd2" title="osgEarth::Util::OceanSurfaceNode::setEnabled" alt="" coords="433,59,729,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aa6e3d07d7cd5f246b101cf66f1e5e35c" title="osgEarth::Util::OceanSurfaceNode::setInvertMask" alt="" coords="424,112,739,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a6600e6b5c2284efc513da25b5f922aec" title="osgEarth::Util::OceanSurfaceNode::setMaxRange" alt="" coords="425,165,737,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a2662c9afa1d862be598559a08d2b753e" title="osgEarth::Util::OceanSurfaceNode::setModulationColor" alt="" coords="409,219,753,248"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aeb7a2c75547e29abc11235026b198d88" title="osgEarth::Util::OceanSurfaceNode::setOceanMaskImageLayer" alt="" coords="388,272,775,301"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#af064c70686b645e54532d74aa2ecb9f4" title="osgEarth::Util::OceanSurfaceNode::setOceanSurfaceImage" alt="" coords="397,325,765,355"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#acfa0eeee3a5c10119a1c2ee870e16766" title="osgEarth::Util::OceanSurfaceNode::setOceanSurfaceImageSizeRadians" alt="" coords="360,379,803,408"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a97cd9249592048e46346b39da4178110" title="osgEarth::Util::OceanSurfaceNode::traverse" alt="" coords="443,432,720,461"/>
+<area shape="rect" id="node9" href="$osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="851,272,901,301"/>
+</map>

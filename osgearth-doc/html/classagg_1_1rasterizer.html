@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,49 +95,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1rasterizer.html">rasterizer</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('classagg_1_1rasterizer.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>agg::rasterizer Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="agg::rasterizer" -->
-<p><code>#include &lt;<a class="el" href="_a_g_g_8h_source.html">AGG.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for agg::rasterizer:</div>
-<div class="dyncontent">
+<p><code>#include &lt;<a class="el" href="AGG_8h_source.html">AGG.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Collaboration diagram for agg::rasterizer:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer__coll__graph.png" border="0" usemap="#agg_1_1rasterizer_coll__map" alt="Collaboration graph"/></div>
 <map name="agg_1_1rasterizer_coll__map" id="agg_1_1rasterizer_coll__map">
 <area shape="rect" id="node2" href="classagg_1_1outline.html" title="agg::outline" alt="" coords="5,152,93,181"/><area shape="rect" id="node4" href="structagg_1_1cell.html" title="agg::cell" alt="" coords="15,5,84,35"/><area shape="rect" id="node6" href="classagg_1_1scanline.html" title="agg::scanline" alt="" coords="117,152,216,181"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classagg_1_1rasterizer-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br/>
-&#160;&#160;<a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a96c97772304abbf2f859adc225b543f6">aa_shift</a> =  scanline::aa_shift, 
-<a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a3d3d54a92c3670c1dfb7fb6a9aa817fd">aa_num</a> =  1 &lt;&lt; aa_shift, 
-<a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a260e748d76cb8d7e774c6f34c4d1d412">aa_mask</a> =  aa_num - 1, 
-<a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1afa33e965a90ca5ac13ec1cbc2c0bd877">aa_2num</a> =  aa_num * 2, 
+&#160;&#160;<a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">aa_shift</a> =  scanline::aa_shift, 
+<a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd">aa_num</a> =  1 &lt;&lt; aa_shift, 
+<a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412">aa_mask</a> =  aa_num - 1, 
+<a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877">aa_2num</a> =  aa_num * 2, 
 <br/>
-&#160;&#160;<a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a6ae14c88089eb588566fbe26c0d3c708">aa_2mask</a> =  aa_2num - 1
+&#160;&#160;<a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708">aa_2mask</a> =  aa_2num - 1
 <br/>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
@@ -129,12 +157,25 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class Renderer &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c">render</a> (Renderer &amp;r, const <a class="el" href="structagg_1_1rgba8.html">rgba8</a> &amp;c, int dx=0, int dy=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#aea20152b4f05c38fb5d2af9dee38ec02">hit_test</a> (int tx, int ty)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a22e6eabd78f63365515df977a373eba4">rasterizer</a> (const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a065649303168e91ecae11e57e55c5208">operator=</a> (const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a> &amp;)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classagg_1_1outline.html">outline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classagg_1_1scanline.html">scanline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceagg.html#afed98fcb6e27bd6667abd5f6a1a587c3">filling_rule_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">m_filling_rule</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a> [256]</td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1rasterizer.html#ab5b3fced8d2c91f083544e1d09cca489">s_default_gamma</a> [256]</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00631">631</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00631">631</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
-<a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1"></a><!-- doxytag: member="agg::rasterizer::@6" ref="ad1f4c3134510d17050dd4f4f3babb6e1" args="" -->
+<a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3"></a><!-- doxytag: member="agg::rasterizer::@7" ref="a61b8e567506b8a1e5de44028d666acc3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -145,22 +186,29 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1a96c97772304abbf2f859adc225b543f6"></a><!-- doxytag: member="aa_shift" ref="ad1f4c3134510d17050dd4f4f3babb6e1a96c97772304abbf2f859adc225b543f6" args="" -->aa_shift</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6"></a><!-- doxytag: member="aa_shift" ref="a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6" args="" -->aa_shift</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1a3d3d54a92c3670c1dfb7fb6a9aa817fd"></a><!-- doxytag: member="aa_num" ref="ad1f4c3134510d17050dd4f4f3babb6e1a3d3d54a92c3670c1dfb7fb6a9aa817fd" args="" -->aa_num</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd"></a><!-- doxytag: member="aa_num" ref="a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd" args="" -->aa_num</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1a260e748d76cb8d7e774c6f34c4d1d412"></a><!-- doxytag: member="aa_mask" ref="ad1f4c3134510d17050dd4f4f3babb6e1a260e748d76cb8d7e774c6f34c4d1d412" args="" -->aa_mask</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412"></a><!-- doxytag: member="aa_mask" ref="a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412" args="" -->aa_mask</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1afa33e965a90ca5ac13ec1cbc2c0bd877"></a><!-- doxytag: member="aa_2num" ref="ad1f4c3134510d17050dd4f4f3babb6e1afa33e965a90ca5ac13ec1cbc2c0bd877" args="" -->aa_2num</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877"></a><!-- doxytag: member="aa_2num" ref="a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877" args="" -->aa_2num</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ad1f4c3134510d17050dd4f4f3babb6e1a6ae14c88089eb588566fbe26c0d3c708"></a><!-- doxytag: member="aa_2mask" ref="ad1f4c3134510d17050dd4f4f3babb6e1a6ae14c88089eb588566fbe26c0d3c708" args="" -->aa_2mask</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708"></a><!-- doxytag: member="aa_2mask" ref="a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708" args="" -->aa_2mask</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00634">634</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00634">634</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">aa_shift</a> = <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">scanline::aa_shift</a>,
+            <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd">aa_num</a>   = 1 &lt;&lt; <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">aa_shift</a>,
+            <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412">aa_mask</a>  = aa_num - 1,
+            <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877">aa_2num</a>  = aa_num * 2,
+            <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708">aa_2mask</a> = aa_2num - 1
+        };
+</pre></div>
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -178,7 +226,29 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00643">643</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00643">643</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                     :
+            <a class="code" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">m_filling_rule</a>(<a class="code" href="namespaceagg.html#afed98fcb6e27bd6667abd5f6a1a587c3a39764d24a08a13a158468d4fac9269c8">fill_non_zero</a>)
+        {
+            memcpy(<a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>, <a class="code" href="classagg_1_1rasterizer.html#ab5b3fced8d2c91f083544e1d09cca489">s_default_gamma</a>, <span class="keyword">sizeof</span>(<a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>));
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a22e6eabd78f63365515df977a373eba4"></a><!-- doxytag: member="agg::rasterizer::rasterizer" ref="a22e6eabd78f63365515df977a373eba4" args="(const rasterizer &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">agg::rasterizer::rasterizer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -198,14 +268,31 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00679">679</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00679">679</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">int</span> cover = area &gt;&gt; (<a class="code" href="namespaceagg.html#a5a7f5efba14872c770972a048c2b1a33a643c720e9c73332fcde460f8ba4c7f79">poly_base_shift</a>*2 + 1 - <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">aa_shift</a>);
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+            <span class="keywordflow">if</span>(cover &lt; 0) cover = -cover;
+            <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">m_filling_rule</a> == <a class="code" href="namespaceagg.html#afed98fcb6e27bd6667abd5f6a1a587c3a3200d5b4d1425ef6ebbe1fec746321b4">fill_even_odd</a>)
+            {
+                cover &amp;= <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708">aa_2mask</a>;
+                <span class="keywordflow">if</span>(cover &gt; <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd">aa_num</a>)
+                {
+                    cover = <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877">aa_2num</a> - cover;
+                }
+            }
+            <span class="keywordflow">if</span>(cover &gt; <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412">aa_mask</a>) cover = <a class="code" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412">aa_mask</a>;
+            <span class="keywordflow">return</span> cover;
+        }
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a82574b32efa305226ffdcbf3a9153e4c_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_a82574b32efa305226ffdcbf3a9153e4c_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a82574b32efa305226ffdcbf3a9153e4c_icgraph" id="classagg_1_1rasterizer_a82574b32efa305226ffdcbf3a9153e4c_icgraph">
-<area shape="rect" id="node3" href="classagg_1_1rasterizer.html#aea20152b4f05c38fb5d2af9dee38ec02" title="agg::rasterizer::hit_test" alt="" coords="257,5,412,35"/><area shape="rect" id="node5" href="classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c" title="agg::rasterizer::render" alt="" coords="260,59,409,88"/><area shape="rect" id="node7" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="461,59,800,88"/></map>
+<area shape="rect" id="node3" href="classagg_1_1rasterizer.html#aea20152b4f05c38fb5d2af9dee38ec02" title="agg::rasterizer::hit_test" alt="" coords="257,59,412,88"/><area shape="rect" id="node5" href="classagg_1_1rasterizer.html#af43784f2f33d9a18969b6a4a95aed73c" title="agg::rasterizer::render" alt="" coords="260,112,409,141"/><area shape="rect" id="node7" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="477,85,784,115"/><area shape="rect" id="node17" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="461,139,800,168"/><area shape="rect" id="node9" href="classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="893,5,1096,35"/><area shape="rect" id="node11" href="classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="889,59,1100,88"/><area shape="rect" id="node13" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="849,112,1140,141"/><area shape="rect" id="node15" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="875,165,1115,195"/></map>
 </div>
 </p>
 
@@ -226,14 +313,19 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00653">653</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00653">653</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        { 
+            <a class="code" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">m_filling_rule</a> = <a class="code" href="classagg_1_1rasterizer.html#a4066e5ce5da33f453e0307b59fb8177b">filling_rule</a>; 
+        }
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a4066e5ce5da33f453e0307b59fb8177b_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_a4066e5ce5da33f453e0307b59fb8177b_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a4066e5ce5da33f453e0307b59fb8177b_icgraph" id="classagg_1_1rasterizer_a4066e5ce5da33f453e0307b59fb8177b_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="224,5,563,35"/></map>
+<area shape="rect" id="node3" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="224,5,563,35"/></map>
 </div>
 </p>
 
@@ -254,8 +346,11 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l02047">2047</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l02047">2047</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        memcpy(<a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>, g, <span class="keyword">sizeof</span>(<a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>));
+    }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="aa4384b0f123ff4fc0eff7b7b6ab62b9f"></a><!-- doxytag: member="agg::rasterizer::gamma" ref="aa4384b0f123ff4fc0eff7b7b6ab62b9f" args="(double g)" -->
@@ -273,14 +368,23 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l02036">2036</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l02036">2036</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordtype">unsigned</span> i;
+        <span class="keywordflow">for</span>(i = 0; i &lt; 256; i++)
+        {
+            <a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>[i] = (<span class="keywordtype">unsigned</span> char)(pow(<span class="keywordtype">double</span>(i) / 255.0, g) * 255.0);
+        }
+    }
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aa4384b0f123ff4fc0eff7b7b6ab62b9f_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_aa4384b0f123ff4fc0eff7b7b6ab62b9f_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aa4384b0f123ff4fc0eff7b7b6ab62b9f_icgraph" id="classagg_1_1rasterizer_aa4384b0f123ff4fc0eff7b7b6ab62b9f_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="211,5,549,35"/></map>
+<area shape="rect" id="node3" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="211,5,549,35"/></map>
 </div>
 </p>
 
@@ -311,14 +415,70 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l02054">2054</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l02054">2054</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keyword">const</span> cell* <span class="keyword">const</span>* cells = <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.cells();
+        <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.num_cells() == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+        <span class="keywordtype">int</span> x, y;
+        <span class="keywordtype">int</span> cover;
+        <span class="keywordtype">int</span> alpha;
+        <span class="keywordtype">int</span> area;
+
+        cover = 0;
+        <span class="keyword">const</span> cell* cur_cell = *cells++;
+        <span class="keywordflow">for</span>(;;)
+        {
+            <span class="keyword">const</span> cell* start_cell = cur_cell;
+
+            <span class="keywordtype">int</span> coord  = cur_cell-&gt;packed_coord;
+            x = cur_cell-&gt;x;
+            y = cur_cell-&gt;y;
+
+            <span class="keywordflow">if</span>(y &gt; ty) <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+            area   = start_cell-&gt;area;
+            cover += start_cell-&gt;cover;
+
+            <span class="keywordflow">while</span>((cur_cell = *cells++) != 0)
+            {
+                <span class="keywordflow">if</span>(cur_cell-&gt;packed_coord != coord) <span class="keywordflow">break</span>;
+                area  += cur_cell-&gt;area;
+                cover += cur_cell-&gt;cover;
+            }
+
+            <span class="keywordflow">if</span>(area)
+            {
+                alpha = <a class="code" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c">calculate_alpha</a>((cover &lt;&lt; (<a class="code" href="namespaceagg.html#a5a7f5efba14872c770972a048c2b1a33a643c720e9c73332fcde460f8ba4c7f79">poly_base_shift</a> + 1)) - area);
+                <span class="keywordflow">if</span>(alpha)
+                {
+                    <span class="keywordflow">if</span>(tx == x &amp;&amp; ty == y) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+                }
+                x++;
+            }
+
+            <span class="keywordflow">if</span>(!cur_cell) <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">if</span>(cur_cell-&gt;x &gt; x)
+            {
+                alpha = <a class="code" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c">calculate_alpha</a>(cover &lt;&lt; (<a class="code" href="namespaceagg.html#a5a7f5efba14872c770972a048c2b1a33a643c720e9c73332fcde460f8ba4c7f79">poly_base_shift</a> + 1));
+                <span class="keywordflow">if</span>(alpha)
+                {
+                    <span class="keywordflow">if</span>(ty == y &amp;&amp; tx &gt;= x &amp;&amp; tx &lt;= cur_cell-&gt;x) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+                }
+            }
+        }
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+    }
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aea20152b4f05c38fb5d2af9dee38ec02_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_aea20152b4f05c38fb5d2af9dee38ec02_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aea20152b4f05c38fb5d2af9dee38ec02_cgraph" id="classagg_1_1rasterizer_aea20152b4f05c38fb5d2af9dee38ec02_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c" title="agg::rasterizer::calculate_alpha" alt="" coords="211,5,413,35"/><area shape="rect" id="node5" href="classagg_1_1outline.html#a44752016da5a9c3b091a57de5c2ee03d" title="agg::outline::cells" alt="" coords="251,59,373,88"/><area shape="rect" id="node9" href="classagg_1_1outline.html#ae9de12597ec54d71a5566f5183ca4125" title="agg::outline::num_cells" alt="" coords="235,112,389,141"/><area shape="rect" id="node7" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="463,59,596,88"/></map>
+<area shape="rect" id="node3" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c" title="agg::rasterizer::calculate_alpha" alt="" coords="211,67,413,96"/><area shape="rect" id="node5" href="classagg_1_1outline.html#a44752016da5a9c3b091a57de5c2ee03d" title="agg::outline::cells" alt="" coords="251,120,373,149"/><area shape="rect" id="node36" href="classagg_1_1outline.html#ae9de12597ec54d71a5566f5183ca4125" title="agg::outline::num_cells" alt="" coords="235,173,389,203"/><area shape="rect" id="node7" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1325,17,1496,47"/><area shape="rect" id="node11" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="472,120,605,149"/><area shape="rect" id="node28" href="classagg_1_1outline.html#aa23dcda8ba406b8d5faae9f9db9b4a89" title="agg::outline::sort_cells" alt="" coords="463,225,615,255"/><area shape="rect" id="node9" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1545,17,1724,47"/><area shape="rect" id="node13" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="664,120,824,149"/><area shape="rect" id="node15" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="1124,43,1263,72"/><area shape="rect" id="node17" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="873,93,1060,123"/><area shape="rect" id="node20" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="1111,96,1276,125"/><area shape="rect" id="node25" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="899,197,1035,227"/><area shape="rect" id="node23" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1363,96,1459,125"/><area shape="rect" id="node30" href="classagg_1_1outline.html#a7a3d96ac419b40b2208607a58efcb077" title="agg::outline::qsort_cells" alt="" coords="664,251,824,280"/><area shape="rect" id="node32" href="namespaceagg.html#af8ad277418c73e24d7b721c7cfccd1ec" title="agg::less_than" alt="" coords="913,251,1020,280"/><area shape="rect" id="node34" href="namespaceagg.html#af21a37afa0d4f422619eccd65807fa41" title="agg::swap_cells" alt="" coords="909,304,1024,333"/></map>
 </div>
 </p>
 
@@ -349,14 +509,17 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00664">664</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00664">664</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.line_to(x, y); }
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a9d17d31a9cc02218d713fac4e51a10d6_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_a9d17d31a9cc02218d713fac4e51a10d6_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a9d17d31a9cc02218d713fac4e51a10d6_cgraph" id="classagg_1_1rasterizer_a9d17d31a9cc02218d713fac4e51a10d6_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="207,5,340,35"/></map>
+<area shape="rect" id="node3" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="207,71,340,100"/><area shape="rect" id="node5" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="389,71,549,100"/><area shape="rect" id="node7" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="849,5,988,35"/><area shape="rect" id="node9" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="599,44,785,73"/><area shape="rect" id="node12" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="836,71,1001,100"/><area shape="rect" id="node20" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="624,148,760,177"/><area shape="rect" id="node14" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1051,44,1221,73"/><area shape="rect" id="node18" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1088,97,1184,127"/><area shape="rect" id="node16" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1271,44,1449,73"/></map>
 </div>
 </p>
 
@@ -387,23 +550,29 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00669">669</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00669">669</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                           { <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.line_to(<a class="code" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9">poly_coord</a>(x), 
+                                                               <a class="code" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9">poly_coord</a>(y)); }
+</pre></div>
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_cgraph" id="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="220,5,353,35"/><area shape="rect" id="node5" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="229,59,344,88"/></map>
+<area shape="rect" id="node3" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="220,71,353,100"/><area shape="rect" id="node23" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="229,124,344,153"/><area shape="rect" id="node5" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="403,71,563,100"/><area shape="rect" id="node7" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="863,5,1001,35"/><area shape="rect" id="node9" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="612,44,799,73"/><area shape="rect" id="node12" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="849,71,1015,100"/><area shape="rect" id="node20" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="637,148,773,177"/><area shape="rect" id="node14" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1064,44,1235,73"/><area shape="rect" id="node18" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1101,97,1197,127"/><area shape="rect" id="node16" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1284,44,1463,73"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_icgraph" id="classagg_1_1rasterizer_aa5a08b471671fb8f904ff2c796486e47_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="219,5,557,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="235,85,541,115"/><area shape="rect" id="node13" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="219,139,557,168"/><area shape="rect" id="node5" href="classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="651,5,853,35"/><area shape="rect" id="node7" href="classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="647,59,857,88"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="607,112,897,141"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="632,165,872,195"/></map>
 </div>
 </p>
 
@@ -423,11 +592,14 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00675">675</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00675">675</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.max_x(); }
+</pre></div>
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a5c88370e58fa89c5e8f83d397fec50bd_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_a5c88370e58fa89c5e8f83d397fec50bd_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a5c88370e58fa89c5e8f83d397fec50bd_cgraph" id="classagg_1_1rasterizer_a5c88370e58fa89c5e8f83d397fec50bd_cgraph">
 <area shape="rect" id="node3" href="classagg_1_1outline.html#a4211b2cac615642ed60bdd471a1ce241" title="agg::outline::max_x" alt="" coords="205,5,341,35"/></map>
@@ -450,11 +622,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00676">676</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00676">676</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.max_y(); }
+</pre></div>
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_ae4e429cef1db4bccbe3efc27f7986d10_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_ae4e429cef1db4bccbe3efc27f7986d10_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_ae4e429cef1db4bccbe3efc27f7986d10_cgraph" id="classagg_1_1rasterizer_ae4e429cef1db4bccbe3efc27f7986d10_cgraph">
 <area shape="rect" id="node3" href="classagg_1_1outline.html#a3e038d87c287553461e1b6e0303de602" title="agg::outline::max_y" alt="" coords="205,5,341,35"/></map>
@@ -477,11 +652,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00673">673</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00673">673</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.min_x(); }
+</pre></div>
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a9334ecd8ee4ac9184db11c3f262177d4_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_a9334ecd8ee4ac9184db11c3f262177d4_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a9334ecd8ee4ac9184db11c3f262177d4_cgraph" id="classagg_1_1rasterizer_a9334ecd8ee4ac9184db11c3f262177d4_cgraph">
 <area shape="rect" id="node3" href="classagg_1_1outline.html#a65070c2ef1e07fa688fb20d4e9b59f31" title="agg::outline::min_x" alt="" coords="204,5,335,35"/></map>
@@ -504,11 +682,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00674">674</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00674">674</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.min_y(); }
+</pre></div>
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_ac262dd36bc05a7ff6956a9f09c1c3b3a_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_ac262dd36bc05a7ff6956a9f09c1c3b3a_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_ac262dd36bc05a7ff6956a9f09c1c3b3a_cgraph" id="classagg_1_1rasterizer_ac262dd36bc05a7ff6956a9f09c1c3b3a_cgraph">
 <area shape="rect" id="node3" href="classagg_1_1outline.html#a15f853549e1f5c712bfdba36b4e426f9" title="agg::outline::min_y" alt="" coords="204,5,335,35"/></map>
@@ -542,14 +723,17 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00663">663</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00663">663</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.move_to(x, y); }
+</pre></div>
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a065aa1644e1a80138b83f5c6852de216_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_a065aa1644e1a80138b83f5c6852de216_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a065aa1644e1a80138b83f5c6852de216_cgraph" id="classagg_1_1rasterizer_a065aa1644e1a80138b83f5c6852de216_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="216,32,363,61"/><area shape="rect" id="node5" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="412,5,545,35"/><area shape="rect" id="node7" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="416,59,541,88"/><area shape="rect" id="node9" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="596,59,692,88"/></map>
+<area shape="rect" id="node3" href="classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="216,191,363,220"/><area shape="rect" id="node5" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="412,113,545,143"/><area shape="rect" id="node14" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="1041,113,1207,143"/><area shape="rect" id="node25" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="612,243,737,272"/><area shape="rect" id="node7" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="595,87,755,116"/><area shape="rect" id="node9" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="1055,9,1193,39"/><area shape="rect" id="node11" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="804,35,991,64"/><area shape="rect" id="node22" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="829,139,965,168"/><area shape="rect" id="node16" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1256,113,1427,143"/><area shape="rect" id="node20" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1293,192,1389,221"/><area shape="rect" id="node18" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1476,113,1655,143"/></map>
 </div>
 </p>
 
@@ -580,25 +764,48 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00667">667</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00667">667</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                           { <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.move_to(<a class="code" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9">poly_coord</a>(x), 
+                                                               <a class="code" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9">poly_coord</a>(y)); }
+</pre></div>
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_cgraph" id="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="232,32,379,61"/><area shape="rect" id="node11" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="248,85,363,115"/><area shape="rect" id="node5" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="428,5,561,35"/><area shape="rect" id="node7" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="432,59,557,88"/><area shape="rect" id="node9" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="612,59,708,88"/></map>
+<area shape="rect" id="node3" href="classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="232,191,379,220"/><area shape="rect" id="node29" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="248,244,363,273"/><area shape="rect" id="node5" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="428,113,561,143"/><area shape="rect" id="node14" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="1057,113,1223,143"/><area shape="rect" id="node25" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="628,243,753,272"/><area shape="rect" id="node7" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="611,87,771,116"/><area shape="rect" id="node9" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="1071,9,1209,39"/><area shape="rect" id="node11" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="820,35,1007,64"/><area shape="rect" id="node22" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="845,139,981,168"/><area shape="rect" id="node16" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1272,113,1443,143"/><area shape="rect" id="node20" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1309,192,1405,221"/><area shape="rect" id="node18" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1492,113,1671,143"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_icgraph" id="classagg_1_1rasterizer_a731b52aa19c0ed270539c10cca8c59c7_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="232,5,571,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="248,85,555,115"/><area shape="rect" id="node13" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="232,139,571,168"/><area shape="rect" id="node5" href="classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="664,5,867,35"/><area shape="rect" id="node7" href="classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="660,59,871,88"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="620,112,911,141"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="645,165,885,195"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="a065649303168e91ecae11e57e55c5208"></a><!-- doxytag: member="agg::rasterizer::operator=" ref="a065649303168e91ecae11e57e55c5208" args="(const rasterizer &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a>&amp; agg::rasterizer::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classagg_1_1rasterizer.html">rasterizer</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -641,23 +848,98 @@ template&lt;class Renderer &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00697">697</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00697">697</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keyword">const</span> cell* <span class="keyword">const</span>* cells = <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.cells();
+            <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.num_cells() == 0) <span class="keywordflow">return</span>;
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+            <span class="keywordtype">int</span> x, y;
+            <span class="keywordtype">int</span> cover;
+            <span class="keywordtype">int</span> alpha;
+            <span class="keywordtype">int</span> area;
+
+            <a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.reset(<a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.min_x(), <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.max_x(), dx, dy);
+
+            cover = 0;
+            <span class="keyword">const</span> cell* cur_cell = *cells++;
+            <span class="keywordflow">for</span>(;;)
+            {
+                <span class="keyword">const</span> cell* start_cell = cur_cell;
+
+                <span class="keywordtype">int</span> coord  = cur_cell-&gt;packed_coord;
+                x = cur_cell-&gt;x;
+                y = cur_cell-&gt;y;
+
+                area   = start_cell-&gt;area;
+                cover += start_cell-&gt;cover;
+
+                <span class="comment">//accumulate all start cells</span>
+                <span class="keywordflow">while</span>((cur_cell = *cells++) != 0)
+                {
+                    <span class="keywordflow">if</span>(cur_cell-&gt;packed_coord != coord) <span class="keywordflow">break</span>;
+                    area  += cur_cell-&gt;area;
+                    cover += cur_cell-&gt;cover;
+                }
+
+                <span class="keywordflow">if</span>(area)
+                {
+                    alpha = <a class="code" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c">calculate_alpha</a>((cover &lt;&lt; (<a class="code" href="namespaceagg.html#a5a7f5efba14872c770972a048c2b1a33a643c720e9c73332fcde460f8ba4c7f79">poly_base_shift</a> + 1)) - area);
+                    <span class="keywordflow">if</span>(alpha)
+                    {
+                        <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.is_ready(y))
+                        {
+                            r.render(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>, c);
+                            <a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.reset_spans();
+                        }
+                        <a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.add_cell(x, y, <a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>[alpha]);
+                    }
+                    x++;
+                }
+
+                <span class="keywordflow">if</span>(!cur_cell) <span class="keywordflow">break</span>;
+
+                <span class="keywordflow">if</span>(cur_cell-&gt;x &gt; x)
+                {
+                    alpha = <a class="code" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c">calculate_alpha</a>(cover &lt;&lt; (<a class="code" href="namespaceagg.html#a5a7f5efba14872c770972a048c2b1a33a643c720e9c73332fcde460f8ba4c7f79">poly_base_shift</a> + 1));
+                    <span class="keywordflow">if</span>(alpha)
+                    {
+                        <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.is_ready(y))
+                        {
+                            r.render(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>, c);
+                            <a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.reset_spans();
+                        }
+                        <a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.add_span(x, y, 
+                                            cur_cell-&gt;x - x, 
+                                            <a class="code" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">m_gamma</a>[alpha]);
+                    }
+                }
+            } 
+        
+            <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>.num_spans())
+            {
+                r.render(<a class="code" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">m_scanline</a>, c);
+            }
+        }
+</pre></div>
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_cgraph" id="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_cgraph">
-<area shape="rect" id="node3" href="classagg_1_1scanline.html#aec8e0033da21d69abe903611677c92b7" title="agg::scanline::add_cell" alt="" coords="227,5,381,35"/><area shape="rect" id="node7" href="classagg_1_1scanline.html#ad232ee623d33b3a5ddb59555879db4b1" title="agg::scanline::add_span" alt="" coords="223,59,385,88"/><area shape="rect" id="node10" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c" title="agg::rasterizer::calculate_alpha" alt="" coords="203,112,405,141"/><area shape="rect" id="node12" href="classagg_1_1outline.html#a44752016da5a9c3b091a57de5c2ee03d" title="agg::outline::cells" alt="" coords="243,165,365,195"/><area shape="rect" id="node16" href="classagg_1_1scanline.html#a2c7b0f238a4e060d8ec5a7ba57f4f59d" title="agg::scanline::is_ready" alt="" coords="227,219,381,248"/><area shape="rect" id="node18" href="classagg_1_1outline.html#a4211b2cac615642ed60bdd471a1ce241" title="agg::outline::max_x" alt="" coords="236,272,372,301"/><area shape="rect" id="node20" href="classagg_1_1outline.html#a65070c2ef1e07fa688fb20d4e9b59f31" title="agg::outline::min_x" alt="" coords="239,325,369,355"/><area shape="rect" id="node22" href="classagg_1_1outline.html#ae9de12597ec54d71a5566f5183ca4125" title="agg::outline::num_cells" alt="" coords="227,379,381,408"/><area shape="rect" id="node24" href="classagg_1_1scanline.html#aae24eee0e299f4eb923413ef15743e16" title="agg::scanline::num_spans" alt="" coords="217,432,391,461"/><area shape="rect" id="node26" href="classagg_1_1scanline.html#ae545a2e89b9e5be9003158071ab8adab" title="agg::scanline::reset" alt="" coords="236,485,372,515"/><area shape="rect" id="node28" href="classagg_1_1scanline.html#aaff3394c2b5f58bce11cf658c1afd19f" title="agg::scanline::reset_spans" alt="" coords="215,539,393,568"/><area shape="rect" id="node5" href="classagg_1_1scanline.html#a20138d7b09ff574dc7a2d89cc5dce493" title="agg::scanline::y" alt="" coords="464,32,579,61"/><area shape="rect" id="node14" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="455,165,588,195"/></map>
+<area shape="rect" id="node3" href="classagg_1_1scanline.html#aec8e0033da21d69abe903611677c92b7" title="agg::scanline::add_cell" alt="" coords="227,5,381,35"/><area shape="rect" id="node7" href="classagg_1_1scanline.html#ad232ee623d33b3a5ddb59555879db4b1" title="agg::scanline::add_span" alt="" coords="223,59,385,88"/><area shape="rect" id="node10" href="classagg_1_1rasterizer.html#a82574b32efa305226ffdcbf3a9153e4c" title="agg::rasterizer::calculate_alpha" alt="" coords="203,112,405,141"/><area shape="rect" id="node12" href="classagg_1_1outline.html#a44752016da5a9c3b091a57de5c2ee03d" title="agg::outline::cells" alt="" coords="243,165,365,195"/><area shape="rect" id="node43" href="classagg_1_1scanline.html#a2c7b0f238a4e060d8ec5a7ba57f4f59d" title="agg::scanline::is_ready" alt="" coords="227,219,381,248"/><area shape="rect" id="node45" href="classagg_1_1outline.html#a4211b2cac615642ed60bdd471a1ce241" title="agg::outline::max_x" alt="" coords="236,272,372,301"/><area shape="rect" id="node47" href="classagg_1_1outline.html#a65070c2ef1e07fa688fb20d4e9b59f31" title="agg::outline::min_x" alt="" coords="239,325,369,355"/><area shape="rect" id="node49" href="classagg_1_1outline.html#ae9de12597ec54d71a5566f5183ca4125" title="agg::outline::num_cells" alt="" coords="227,379,381,408"/><area shape="rect" id="node51" href="classagg_1_1scanline.html#aae24eee0e299f4eb923413ef15743e16" title="agg::scanline::num_spans" alt="" coords="217,432,391,461"/><area shape="rect" id="node53" href="classagg_1_1scanline.html#ae545a2e89b9e5be9003158071ab8adab" title="agg::scanline::reset" alt="" coords="236,485,372,515"/><area shape="rect" id="node55" href="classagg_1_1scanline.html#aaff3394c2b5f58bce11cf658c1afd19f" title="agg::scanline::reset_spans" alt="" coords="215,539,393,568"/><area shape="rect" id="node5" href="classagg_1_1scanline.html#a20138d7b09ff574dc7a2d89cc5dce493" title="agg::scanline::y" alt="" coords="473,7,588,36"/><area shape="rect" id="node14" href="classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1317,88,1488,117"/><area shape="rect" id="node18" href="classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="464,165,597,195"/><area shape="rect" id="node35" href="classagg_1_1outline.html#aa23dcda8ba406b8d5faae9f9db9b4a89" title="agg::outline::sort_cells" alt="" coords="455,271,607,300"/><area shape="rect" id="node16" href="classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1537,88,1716,117"/><area shape="rect" id="node20" href="classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="656,165,816,195"/><area shape="rect" id="node22" href="structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="1116,113,1255,143"/><area shape="rect" id="node24" href="classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="865,164,1052,193"/><area shape="rect" id="node27" href="classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="1103,167,1268,196"/><area shape="rect" id="node32" href="structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="891,268,1027,297"/><area shape="rect" id="node30" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1355,167,1451,196"/><area shape="rect" id="node37" href="classagg_1_1outline.html#a7a3d96ac419b40b2208607a58efcb077" title="agg::outline::qsort_cells" alt="" coords="656,321,816,351"/><area shape="rect" id="node39" href="namespaceagg.html#af8ad277418c73e24d7b721c7cfccd1ec" title="agg::less_than" alt="" coords="905,321,1012,351"/><area shape="rect" id="node41" href="namespaceagg.html#af21a37afa0d4f422619eccd65807fa41" title="agg::swap_cells" alt="" coords="901,375,1016,404"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_icgraph" id="classagg_1_1rasterizer_af43784f2f33d9a18969b6a4a95aed73c_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="203,5,541,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="219,85,525,115"/><area shape="rect" id="node13" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="203,139,541,168"/><area shape="rect" id="node5" href="classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="635,5,837,35"/><area shape="rect" id="node7" href="classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="631,59,841,88"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="591,112,881,141"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="616,165,856,195"/></map>
 </div>
 </p>
 
@@ -677,42 +959,132 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00650">650</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00650">650</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">m_outline</a>.reset(); }
+</pre></div>
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_cgraph.png" border="0" usemap="#classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_cgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_cgraph" id="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_cgraph">
 <area shape="rect" id="node3" href="classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="199,5,324,35"/><area shape="rect" id="node5" href="structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="375,5,471,35"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_icgraph.png" border="0" usemap="#classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_icgraph" alt=""/></div>
 <map name="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_icgraph" id="classagg_1_1rasterizer_aa43068c6f1948cf1aa1b4afef9e4861c_icgraph">
-<area shape="rect" id="node3" href="class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="197,5,536,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="213,85,520,115"/><area shape="rect" id="node13" href="classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="197,139,536,168"/><area shape="rect" id="node5" href="classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="629,5,832,35"/><area shape="rect" id="node7" href="classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="625,59,836,88"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="585,112,876,141"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="611,165,851,195"/></map>
 </div>
 </p>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a4246263df2d7b08fcfec11e084a83770"></a><!-- doxytag: member="agg::rasterizer::m_filling_rule" ref="a4246263df2d7b08fcfec11e084a83770" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceagg.html#afed98fcb6e27bd6667abd5f6a1a587c3">filling_rule_e</a> <a class="el" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">agg::rasterizer::m_filling_rule</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00784">784</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e62a498107f319de7cc718120b59a2b"></a><!-- doxytag: member="agg::rasterizer::m_gamma" ref="a8e62a498107f319de7cc718120b59a2b" args="[256]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a> <a class="el" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">agg::rasterizer::m_gamma</a>[256]<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00785">785</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24a1d77a475dd0125f04ac68ca664b48"></a><!-- doxytag: member="agg::rasterizer::m_outline" ref="a24a1d77a475dd0125f04ac68ca664b48" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classagg_1_1outline.html">outline</a> <a class="el" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">agg::rasterizer::m_outline</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00782">782</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f97f4567f490b6e750bcb33e8a395ca"></a><!-- doxytag: member="agg::rasterizer::m_scanline" ref="a3f97f4567f490b6e750bcb33e8a395ca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classagg_1_1scanline.html">scanline</a> <a class="el" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">agg::rasterizer::m_scanline</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00783">783</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5b3fced8d2c91f083544e1d09cca489"></a><!-- doxytag: member="agg::rasterizer::s_default_gamma" ref="ab5b3fced8d2c91f083544e1d09cca489" args="[256]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a> <a class="el" href="classagg_1_1rasterizer.html#ab5b3fced8d2c91f083544e1d09cca489">agg::rasterizer::s_default_gamma</a><code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Initial value:</b><div class="fragment"><pre class="fragment"> 
+    {
+          0,  0,  1,  1,  2,  2,  3,  4,  4,  5,  5,  6,  7,  7,  8,  8,
+          9, 10, 10, 11, 11, 12, 13, 13, 14, 14, 15, 16, 16, 17, 18, 18,
+         19, 19, 20, 21, 21, 22, 22, 23, 24, 24, 25, 25, 26, 27, 27, 28,
+         29, 29, 30, 30, 31, 32, 32, 33, 34, 34, 35, 36, 36, 37, 37, 38,
+         39, 39, 40, 41, 41, 42, 43, 43, 44, 45, 45, 46, 47, 47, 48, 49,
+         49, 50, 51, 51, 52, 53, 53, 54, 55, 55, 56, 57, 57, 58, 59, 60,
+         60, 61, 62, 62, 63, 64, 65, 65, 66, 67, 68, 68, 69, 70, 71, 71,
+         72, 73, 74, 74, 75, 76, 77, 78, 78, 79, 80, 81, 82, 83, 83, 84,
+         85, 86, 87, 88, 89, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99,
+        100,101,101,102,103,104,105,106,107,108,109,110,111,112,114,115,
+        116,117,118,119,120,121,122,123,124,126,127,128,129,130,131,132,
+        134,135,136,137,139,140,141,142,144,145,146,147,149,150,151,153,
+        154,155,157,158,159,161,162,164,165,166,168,169,171,172,174,175,
+        177,178,180,181,183,184,186,188,189,191,192,194,195,197,199,200,
+        202,204,205,207,209,210,212,214,215,217,219,220,222,224,225,227,
+        229,230,232,234,236,237,239,241,242,244,246,248,249,251,253,255
+    }
+</pre></div>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00786">786</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="_a_g_g_8h_source.html">AGG.h</a></li>
+<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="AGG_8h_source.html">AGG.h</a></li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
-      <li class="navelem"><a class="el" href="classagg_1_1rasterizer.html">rasterizer</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -727,6 +1099,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:49 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

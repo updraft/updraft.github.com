@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structKML__Feature.html#a7a6f7b31f798767f4a823df8bee9a0d2" title="KML_Feature::build" alt="" coords="1092,153,1225,183"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Config.html#ac88bd62e7ac78d498981c3cf9f948b7c" title="osgEarth::Config::child" alt="" coords="1445,703,1600,732"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Config.html#a2491caa5d05f4165dc147049816098c6" title="osgEarth::Config::hasValue" alt="" coords="1432,219,1613,248"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Config.html#ab19f29b67dfeaf1b2ea58266f6e7b901" title="osgEarth::Config::value" alt="" coords="1444,401,1601,431"/>
+<area shape="rect" id="node23" href="$structKML__Geometry.html#ae25678beeb9c5b6cf0e85bb1e87b3363" title="KML_Geometry::build" alt="" coords="303,1140,449,1169"/>
+<area shape="rect" id="node57" href="$classosgEarth_1_1Drivers_1_1KMLOptions.html#a2dfd76730de5da216d3bdbaab101e082" title="osgEarth::Drivers::KMLOptions::defaultIconImage" alt="" coords="220,1297,532,1327"/>
+<area shape="rect" id="node59" href="$classosgEarth_1_1Drivers_1_1KMLOptions.html#a468802bdc13d5c133cd7cb84887b7757" title="osgEarth::Drivers::KMLOptions::defaultIconURI" alt="" coords="227,1351,525,1380"/>
+<area shape="rect" id="node61" href="$classosgEarth_1_1Drivers_1_1KMLOptions.html#aa71e94c6ddd72e36c5f710d97ce70ebd" title="osgEarth::Drivers::KMLOptions::defaultTextSymbol" alt="" coords="216,1404,536,1433"/>
+<area shape="rect" id="node63" href="$classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390" title="osgEarth::Symbology::Geometry::getBounds" alt="" coords="235,1457,517,1487"/>
+<area shape="rect" id="node71" href="$classosgEarth_1_1Symbology_1_1Geometry.html#adb31d473e0579619e83f92b603c77d41" title="osgEarth::Symbology::Geometry::getComponentType" alt="" coords="209,1511,543,1540"/>
+<area shape="rect" id="node73" href="$classosgEarth_1_1Config.html#a5a4d1a93190f1b90d6661e7b966e02f6" title="osgEarth::Config::hasChild" alt="" coords="287,1564,465,1593"/>
+<area shape="rect" id="node76" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1440,1303,1605,1332"/>
+<area shape="rect" id="node78" href="$classosgEarth_1_1URI.html#a81c0c986fe0bc1e0274634c24a67ff86" title="osgEarth::URI::readImage" alt="" coords="289,1617,463,1647"/>
+<area shape="rect" id="node95" href="$structKML__Style.html#a8b0e4e2c94d8ba2ea0b291b0bea6ef78" title="KML_Style::scan" alt="" coords="723,465,845,495"/>
+<area shape="rect" id="node117" href="$classosgEarth_1_1Symbology_1_1MarkerSymbol.html#a6c3110c547a922efcdf7ecd5b56f2c08" title="osgEarth::Symbology::MarkerSymbol::url" alt="" coords="1392,599,1653,628"/>
+<area shape="rect" id="node121" href="$classosgEarth_1_1Features_1_1FeatureNode.html#adadfc32ee19e1999cc82b1b492e28717" title="osgEarth::Features::FeatureNode::setStyle" alt="" coords="240,1193,512,1223"/>
+<area shape="rect" id="node5" href="$structKML__Object.html#a8ba82a5395ccbcadc756fedff0b49a2f" title="KML_Object::build" alt="" coords="1459,5,1587,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80" title="osgEarth::Config::empty" alt="" coords="1441,325,1604,355"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#ae196053116779095fc2e07fc2c66ef24" title="osgEarth::Util::Annotation::AnnotationData::setDescription" alt="" coords="1341,59,1704,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#aa4d59cfcd435e81a180331242c5f6f43" title="osgEarth::Util::Annotation::AnnotationData::setName" alt="" coords="1357,112,1688,141"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#aaf59fe2ebf70ae3aef0b46add6d07906" title="osgEarth::Util::Annotation::AnnotationData::setViewpoint" alt="" coords="1347,165,1699,195"/>
+<area shape="rect" id="node9" href="$Config_8cpp.html#aa64dd5b0fd14e482676acb11aa4720e2" title="emptyConfig" alt="" coords="1752,703,1848,732"/>
+<area shape="rect" id="node25" href="$structKML__Geometry.html#a110018063622a962ca66531b4d340649" title="KML_Geometry::buildChild" alt="" coords="695,991,873,1020"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Config.html#a719c1a8834791318bf2be9ec46f2b55d" title="osgEarth::Config::children" alt="" coords="1436,1093,1609,1123"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Config.html#a5e8fece976ded6667239209f27139c6c" title="osgEarth::Config::key" alt="" coords="1084,1199,1233,1228"/>
+<area shape="rect" id="node32" href="$structKML__Geometry.html#aad8a4a0044358c006cfe28cdf5ed127a" title="KML_Geometry::parseCoords" alt="" coords="1061,676,1256,705"/>
+<area shape="rect" id="node36" href="$structKML__MultiGeometry.html#a2f7f0a260959a668a46940e6c6ebcf1d" title="KML_MultiGeometry::parseCoords" alt="" coords="1048,831,1269,860"/>
+<area shape="rect" id="node38" href="$structKML__Polygon.html#a5e2b488d27579dd82136edacfd371945" title="KML_Polygon::parseCoords" alt="" coords="1067,991,1251,1020"/>
+<area shape="rect" id="node43" href="$structKML__LinearRing.html#ae9b67bb2806ba039b0d61a26e6ad73a4" title="KML_LinearRing::parseCoords" alt="" coords="1423,1015,1623,1044"/>
+<area shape="rect" id="node46" href="$structKML__LineString.html#a993af2236211b1d62ed1d80412dd5119" title="KML_LineString::parseCoords" alt="" coords="1061,884,1256,913"/>
+<area shape="rect" id="node48" href="$structKML__Point.html#ac7416003d6b8bb6bc4fe5bfc3549ea31" title="KML_Point::parseCoords" alt="" coords="1075,937,1243,967"/>
+<area shape="rect" id="node50" href="$structKML__Polygon.html#a92bf3ab183b2572de19172ba46324158" title="KML_Polygon::parseStyle" alt="" coords="1072,1145,1245,1175"/>
+<area shape="rect" id="node52" href="$structKML__Geometry.html#a013d6351cc76c816ec29355a3032a25c" title="KML_Geometry::parseStyle" alt="" coords="1068,519,1249,548"/>
+<area shape="rect" id="node65" href="$classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::begin" alt="" coords="592,1457,976,1487"/>
+<area shape="rect" id="node67" href="$classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::end" alt="" coords="597,1511,971,1540"/>
+<area shape="rect" id="node69" href="$classosgEarth_1_1Bounds.html#a1fb3d4370745d4a4ad420eaa1b64dae3" title="osgEarth::Bounds::expandBy" alt="" coords="688,1404,880,1433"/>
+<area shape="rect" id="node80" href="$classosgEarth_1_1URI.html#a5a8a192b31bcb4a26713b9c401934447" title="osgEarth::URI::empty" alt="" coords="709,1617,859,1647"/>
+<area shape="rect" id="node82" href="$namespaceanonymous__namespace_02URI_8cpp_03.html#af94b88251c2132b2876a3b84104d8bd1" title="anonymous_namespace\{URI::cpp\}::fixOptions" alt="" coords="639,1671,929,1700"/>
+<area shape="rect" id="node88" href="$classosgEarth_1_1HTTPClient.html#a88cf773eb4b970e56749d3c7b703b26f" title="osgEarth::HTTPClient::readImageFile" alt="" coords="664,1564,904,1593"/>
+<area shape="rect" id="node84" href="$classosgEarth_1_1Registry.html#af93ce891741b629a507e503d8023881a" title="osgEarth::Registry::cloneOrCreateOptions" alt="" coords="1025,1671,1292,1700"/>
+<area shape="rect" id="node86" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="1065,1724,1252,1753"/>
+<area shape="rect" id="node90" href="$classosgEarth_1_1HTTPClient.html#ae540764fe1845156e2ad7d64d2c69e4f" title="osgEarth::HTTPClient::doReadImageFile" alt="" coords="1028,1564,1289,1593"/>
+<area shape="rect" id="node93" href="$classosgEarth_1_1HTTPClient.html#ade965ee3144c8534f140641a3d3fda30" title="osgEarth::HTTPClient::getClient" alt="" coords="1053,1617,1264,1647"/>
+<area shape="rect" id="node98" href="$structKML__PolyStyle.html#acdf08b0239597f813b35ff2d09f34e31" title="KML_PolyStyle::scan" alt="" coords="1085,257,1232,287"/>
+<area shape="rect" id="node105" href="$structKML__LineStyle.html#a24daee3de32582d927516420f60d8c29" title="KML_LineStyle::scan" alt="" coords="1085,311,1232,340"/>
+<area shape="rect" id="node110" href="$structKML__LabelStyle.html#a949eb680bdef4cdeacbfce04fc9bbca4" title="KML_LabelStyle::scan" alt="" coords="1083,465,1235,495"/>
+<area shape="rect" id="node112" href="$structKML__IconStyle.html#ae0aad137e7e21abee76de960f7a0a74a" title="KML_IconStyle::scan" alt="" coords="1085,572,1232,601"/>
+<area shape="rect" id="node101" href="$classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640" title="osgEarth::Symbology::PolygonSymbol::fill" alt="" coords="1389,272,1656,301"/>
+<area shape="rect" id="node123" href="$classosgEarth_1_1Features_1_1FeatureNode.html#a68543ac7982fb8a6d13f304250edfaf1" title="osgEarth::Features::FeatureNode::init" alt="" coords="1039,1303,1279,1332"/>
+</map>

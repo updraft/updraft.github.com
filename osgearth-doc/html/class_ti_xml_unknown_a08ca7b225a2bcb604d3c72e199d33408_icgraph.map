@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_unknown.html#a675c4b2684af35e4c7649b7fd5ae598d" title="Creates a copy of this Unknown and returns it." alt="" coords="247,5,399,35"/>
-<area shape="rect" id="node5" href="$class_ti_xml_unknown.html#a5097fe228cd5ad4edcdddf02c334fd83" title="TiXmlUnknown::operator=" alt="" coords="236,59,409,88"/>
-<area shape="rect" id="node7" href="$class_ti_xml_unknown.html#abe798ff4feea31474850c7f0de6bdf5e" title="TiXmlUnknown::TiXmlUnknown" alt="" coords="219,112,427,141"/>
-</map>

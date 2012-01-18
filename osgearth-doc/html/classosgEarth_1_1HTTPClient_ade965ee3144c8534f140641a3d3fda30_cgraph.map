@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structosgEarth_1_1Threading_1_1PerThread.html#a677baa850da97a7dc22289e5d18b63bd" title="osgEarth::Threading::PerThread::get" alt="" coords="265,32,497,61"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1HTTPClient.html#a23a15a8f27ac926a86c2ef7bc7bfebcb" title="osgEarth::HTTPClient::HTTPClient" alt="" coords="268,85,495,115"/>
+<area shape="rect" id="node7" href="$HTTPClient_8cpp.html#ac7e9a73231af27eae2565fdbc3b140f0" title="CurlProgressCallback" alt="" coords="595,59,744,88"/>
+<area shape="rect" id="node13" href="$namespaceosgEarth.html#aace606a64b020bbf8cd64a8ab34bb6c8" title="osgEarth::StreamObjectReadCallback" alt="" coords="548,112,791,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ProgressCallback.html#abe0f8bf93f93716f3aad268c0fe4c1e7" title="osgEarth::ProgressCallback::isCanceled" alt="" coords="851,5,1109,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1ProgressCallback.html#a5c9ed1704337456d1ce9633201fb2842" title="osgEarth::ProgressCallback::reportProgress" alt="" coords="841,59,1119,88"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1StreamObject.html#a6a2d6836658563225e115cd400a97a05" title="osgEarth::StreamObject::write" alt="" coords="881,112,1079,141"/>
+</map>

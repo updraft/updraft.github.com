@@ -1,0 +1,28 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structKML__Feature.html" title="KML_Feature" alt="" coords="185,165,284,195"/>
+<area shape="rect" id="node21" href="$structKML__Geometry.html" title="KML_Geometry" alt="" coords="179,352,291,381"/>
+<area shape="rect" id="node35" href="$structKML__IconStyle.html" title="KML_IconStyle" alt="" coords="180,405,289,435"/>
+<area shape="rect" id="node37" href="$structKML__LabelStyle.html" title="KML_LabelStyle" alt="" coords="176,459,293,488"/>
+<area shape="rect" id="node39" href="$structKML__LineStyle.html" title="KML_LineStyle" alt="" coords="180,512,289,541"/>
+<area shape="rect" id="node41" href="$structKML__NetworkLink.html" title="KML_NetworkLink" alt="" coords="171,565,299,595"/>
+<area shape="rect" id="node43" href="$structKML__NetworkLinkControl.html" title="KML_NetworkLinkControl" alt="" coords="149,619,320,648"/>
+<area shape="rect" id="node45" href="$structKML__PolyStyle.html" title="KML_PolyStyle" alt="" coords="179,672,291,701"/>
+<area shape="rect" id="node47" href="$structKML__Schema.html" title="KML_Schema" alt="" coords="183,725,287,755"/>
+<area shape="rect" id="node49" href="$structKML__StyleSelector.html" title="KML_StyleSelector" alt="" coords="168,779,301,808"/>
+<area shape="rect" id="node5" href="$structKML__Container.html" title="KML_Container" alt="" coords="383,59,495,88"/>
+<area shape="rect" id="node11" href="$structKML__Overlay.html" title="KML_Overlay" alt="" coords="388,139,489,168"/>
+<area shape="rect" id="node19" href="$structKML__Placemark.html" title="KML_Placemark" alt="" coords="380,192,497,221"/>
+<area shape="rect" id="node7" href="$structKML__Document.html" title="KML_Document" alt="" coords="572,5,687,35"/>
+<area shape="rect" id="node9" href="$structKML__Folder.html" title="KML_Folder" alt="" coords="584,59,675,88"/>
+<area shape="rect" id="node13" href="$structKML__GroundOverlay.html" title="KML_GroundOverlay" alt="" coords="559,112,700,141"/>
+<area shape="rect" id="node15" href="$structKML__PhotoOverlay.html" title="KML_PhotoOverlay" alt="" coords="563,165,696,195"/>
+<area shape="rect" id="node17" href="$structKML__ScreenOverlay.html" title="KML_ScreenOverlay" alt="" coords="559,219,700,248"/>
+<area shape="rect" id="node23" href="$structKML__LinearRing.html" title="KML_LinearRing" alt="" coords="380,245,497,275"/>
+<area shape="rect" id="node25" href="$structKML__LineString.html" title="KML_LineString" alt="" coords="381,299,496,328"/>
+<area shape="rect" id="node27" href="$structKML__Model.html" title="KML_Model" alt="" coords="393,352,484,381"/>
+<area shape="rect" id="node29" href="$structKML__MultiGeometry.html" title="KML_MultiGeometry" alt="" coords="368,405,509,435"/>
+<area shape="rect" id="node31" href="$structKML__Point.html" title="KML_Point" alt="" coords="396,459,481,488"/>
+<area shape="rect" id="node33" href="$structKML__Polygon.html" title="KML_Polygon" alt="" coords="388,512,489,541"/>
+<area shape="rect" id="node51" href="$structKML__Style.html" title="KML_Style" alt="" coords="396,752,481,781"/>
+<area shape="rect" id="node53" href="$structKML__StyleMap.html" title="KML_StyleMap" alt="" coords="384,805,493,835"/>
+</map>

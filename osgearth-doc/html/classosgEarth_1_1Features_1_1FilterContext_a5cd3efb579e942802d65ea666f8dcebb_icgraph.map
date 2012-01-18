@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classOverlayLabelSource.html#a91e07e826bf78741b765b38236b18ee2" title="OverlayLabelSource::createNode" alt="" coords="437,5,651,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1StencilVolumeFactory.html#a813a4cf92b0b65f9de432285565d8cfe" title="osgEarth::Features::StencilVolumeFactory::createVolume" alt="" coords="365,59,723,88"/>
+<area shape="rect" id="node7" href="$structStencilUtils.html#a104170daa2894911c2809e0f9469233e" title="StencilUtils::createVolume" alt="" coords="456,112,632,141"/>
+<area shape="rect" id="node9" href="$namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a2299e122948a33b07b2e49bd9cd925bb" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::createVolume" alt="" coords="320,165,768,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Features_1_1FilterContext.html#a7abf784cd71c7b419f3d0cdcca830f90" title="osgEarth::Features::FilterContext::fromMap" alt="" coords="407,219,681,248"/>
+<area shape="rect" id="node11" href="$classanonymous__namespace_02FeatureStencilModelSource_8cpp_03_1_1StencilVolumeNodeFactory.html#aea992db2503aa0d5f5683c553dbd320f" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::StencilVolumeNodeFactory::createOrUpdateNode" alt="" coords="816,165,1475,195"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ImageUtils.html#a9f5beddc20a1c2dd37667f641882c4a3" title="osgEarth::ImageUtils::copyAsSubImage" alt="" coords="472,5,728,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="507,59,693,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="509,112,691,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="511,165,689,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="511,219,689,248"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="776,112,1027,141"/>
+</map>

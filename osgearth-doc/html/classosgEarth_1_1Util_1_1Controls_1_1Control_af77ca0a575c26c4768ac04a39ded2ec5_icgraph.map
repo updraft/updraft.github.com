@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#aa9abc43dc014f6f70869fa67b97d087a" title="osgEarth::Util::Controls::LabelControl::calcSize" alt="" coords="329,5,628,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html#a846468d8cbe1f8891d65fc5c00bddf89" title="osgEarth::Util::Controls::CheckBoxControl::draw" alt="" coords="325,59,632,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html#a5a51e6f90a43adb65bfd8169ea5dd4ea" title="osgEarth::Util::Controls::HSliderControl::draw" alt="" coords="335,112,623,141"/>
+</map>

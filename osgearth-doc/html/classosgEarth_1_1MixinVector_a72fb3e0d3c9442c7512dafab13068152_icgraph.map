@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1StencilVolumeFactory.html#a813a4cf92b0b65f9de432285565d8cfe" title="osgEarth::Features::StencilVolumeFactory::createVolume" alt="" coords="291,5,648,35"/>
+<area shape="rect" id="node5" href="$namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a2299e122948a33b07b2e49bd9cd925bb" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::createVolume" alt="" coords="245,59,693,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html#a5688fa0e28e448d7c8264c5c468946ce" title="osgEarth::Symbology::GeometryExtrudeSymbolizer::extrude" alt="" coords="283,112,656,141"/>
+<area shape="rect" id="node7" href="$classanonymous__namespace_02FeatureStencilModelSource_8cpp_03_1_1StencilVolumeNodeFactory.html#aea992db2503aa0d5f5683c553dbd320f" title="anonymous_namespace\{FeatureStencilModelSource::cpp\}::StencilVolumeNodeFactory::createOrUpdateNode" alt="" coords="741,59,1400,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html#a57ed30c95d508972b65efd65f92ef7ab" title="osgEarth::Symbology::GeometryExtrudeSymbolizer::compile" alt="" coords="884,112,1257,141"/>
+</map>

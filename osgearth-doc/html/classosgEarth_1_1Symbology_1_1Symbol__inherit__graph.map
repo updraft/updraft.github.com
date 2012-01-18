@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1AltitudeSymbol.html" title="osgEarth::Symbology::AltitudeSymbol" alt="" coords="409,5,652,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html" title="osgEarth::Symbology::ExtrusionSymbol" alt="" coords="404,59,657,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1LineSymbol.html" title="osgEarth::Symbology::LineSymbol" alt="" coords="420,112,641,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1MarkerSymbol.html" title="osgEarth::Symbology::MarkerSymbol" alt="" coords="412,165,649,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Symbology_1_1PointSymbol.html" title="osgEarth::Symbology::PointSymbol" alt="" coords="416,219,645,248"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Symbology_1_1PolygonSymbol.html" title="osgEarth::Symbology::PolygonSymbol" alt="" coords="408,272,653,301"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html" title="osgEarth::Symbology::TextSymbol" alt="" coords="419,325,643,355"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Symbology_1_1Taggable.html" title="osgEarth::Symbology::Taggable\&lt; Symbol \&gt;" alt="" coords="393,379,668,408"/>
+<area shape="rect" id="node2" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="7,192,95,221"/>
+<area shape="rect" id="node17" href="$structPolygonPointSizeSymbol.html" title="PolygonPointSizeSymbol" alt="" coords="747,272,915,301"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Symbology_1_1SkinSymbol.html" title="osgEarth::Symbology::SkinSymbol" alt="" coords="719,379,943,408"/>
+</map>

@@ -1,0 +1,34 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ImageUtils.html#a578e3118767a2e156e683a36942abeb4" title="osgEarth::ImageUtils::convertToRGB8" alt="" coords="317,7,563,36"/>
+<area shape="rect" id="node37" href="$structosgEarth_1_1CacheSpec.html#a4253bd68a78e3ae7ec8a6e103c4dd187" title="osgEarth::CacheSpec::format" alt="" coords="683,59,877,88"/>
+<area shape="rect" id="node39" href="$classosgEarth_1_1GeoExtent.html#afa0bd831daf0541cbbb161763ed9291f" title="osgEarth::GeoExtent::getBounds" alt="" coords="333,111,547,140"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="345,164,535,193"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1DiskCache.html#ae9d6536b0310d13e82adeafd0d0c5473" title="osgEarth::DiskCache::getFilename" alt="" coords="327,217,553,247"/>
+<area shape="rect" id="node63" href="$classosgEarth_1_1DiskCacheOptions.html#a730457c0da3e80b6bb897228b3b73d7f" title="osgEarth::DiskCacheOptions::imageWriterPluginOptions" alt="" coords="265,271,615,300"/>
+<area shape="rect" id="node65" href="$namespaceosgEarth.html#a1981d347cd8d8597d14feb312218dfdf" title="osgEarth::isZipPath" alt="" coords="372,324,508,353"/>
+<area shape="rect" id="node67" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="357,377,523,407"/>
+<area shape="rect" id="node69" href="$classosgEarth_1_1DiskCacheOptions.html#a8c6a5ad14c0d12bd8807a0efc73fc3e2" title="osgEarth::DiskCacheOptions::writeWorldFiles" alt="" coords="295,431,585,460"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1ImageUtils.html#a87bf45d4d400ca1187aa51e5853e5ef5" title="osgEarth::ImageUtils::convert" alt="" coords="683,5,877,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ImageUtils.html#a2c95a17c4bce58c28abde303db749755" title="osgEarth::ImageUtils::canConvert" alt="" coords="945,5,1164,35"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1ImageUtils.html#a7933afbe98be55cbf1a80dc3c739cdbd" title="osgEarth::ImageUtils::cloneImage" alt="" coords="945,59,1164,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ImageUtils_1_1PixelWriter.html#a07171afa2aaceeb9b5111eb29e6739df" title="osgEarth::ImageUtils::PixelWriter::supports" alt="" coords="1217,5,1492,35"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1ImageUtils_1_1PixelReader.html#a989d213fab0a85098f0f61f70ed081b3" title="osgEarth::ImageUtils::PixelReader::supports" alt="" coords="1213,59,1496,88"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#af0b27d85e29e89fb7b2928a02a676596" title="anonymous_namespace\{ImageUtils::cpp\}::getWriter" alt="" coords="1552,5,1875,35"/>
+<area shape="rect" id="node15" href="$namespaceanonymous__namespace_02HTTPClient_8cpp_03.html#aded5b15bd1c39a55b5809d05ac3afa9d" title="anonymous_namespace\{HTTPClient::cpp\}::getReader" alt="" coords="1545,59,1881,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1HTTPResponse.html#a1510f46ba168edfcb48f40dbc123725f" title="osgEarth::HTTPResponse::getMimeType" alt="" coords="1957,5,2219,35"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Registry.html#abfab9ddc09d2ecce49d8b6838e152692" title="osgEarth::Registry::getReaderWriterForMimeType" alt="" coords="1931,59,2245,88"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="2295,111,2481,140"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="2532,111,2719,140"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="2768,57,3096,87"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="2820,219,3044,248"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="2811,111,3053,140"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="2809,164,3055,193"/>
+<area shape="rect" id="node45" href="$structosgEarth_1_1CacheSpec.html#a74395f8d7912eab234ba66e7537d7ba6" title="osgEarth::CacheSpec::cacheId" alt="" coords="679,112,881,141"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1TileKey.html#a0ee6b25bbae560dda11987ac1e9dc69d" title="osgEarth::TileKey::getLevelOfDetail" alt="" coords="665,165,895,195"/>
+<area shape="rect" id="node50" href="$classosgEarth_1_1Profile.html#aee25e5f52c64be4e48a5d9bde2f10c7f" title="osgEarth::Profile::getNumTiles" alt="" coords="680,219,880,248"/>
+<area shape="rect" id="node52" href="$classosgEarth_1_1DiskCache.html#aa3c047688a7b07dfd31817ce540c1fca" title="osgEarth::DiskCache::getPath" alt="" coords="680,272,880,301"/>
+<area shape="rect" id="node59" href="$classosgEarth_1_1TileKey.html#a3e50d16b9f2702e5d1008278a10ac6ae" title="osgEarth::TileKey::getProfile" alt="" coords="685,325,875,355"/>
+<area shape="rect" id="node61" href="$classosgEarth_1_1TileKey.html#a545d2e3b93a77fb983ef283e080fc390" title="osgEarth::TileKey::getTileXY" alt="" coords="685,379,875,408"/>
+<area shape="rect" id="node54" href="$namespaceosgEarth.html#ac14af30464b9b0b3791566e99e4a02de" title="osgEarth::getFullPath" alt="" coords="981,272,1128,301"/>
+<area shape="rect" id="node56" href="$namespaceosgEarth.html#acc0e85b18ae98a28ccbc86d545e19a41" title="osgEarth::isRelativePath" alt="" coords="1272,272,1437,301"/>
+</map>

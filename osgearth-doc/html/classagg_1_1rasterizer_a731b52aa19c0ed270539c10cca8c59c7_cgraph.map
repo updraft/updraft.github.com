@@ -1,7 +1,14 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="232,32,379,61"/>
-<area shape="rect" id="node11" href="$namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="248,85,363,115"/>
-<area shape="rect" id="node5" href="$classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="428,5,561,35"/>
-<area shape="rect" id="node7" href="$classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="432,59,557,88"/>
-<area shape="rect" id="node9" href="$structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="612,59,708,88"/>
+<area shape="rect" id="node3" href="$classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="232,191,379,220"/>
+<area shape="rect" id="node29" href="$namespaceagg.html#afe2650780973937a3194b67fae1738a9" title="agg::poly_coord" alt="" coords="248,244,363,273"/>
+<area shape="rect" id="node5" href="$classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="428,113,561,143"/>
+<area shape="rect" id="node14" href="$classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="1057,113,1223,143"/>
+<area shape="rect" id="node25" href="$classagg_1_1outline.html#ab76e038abe2fdde87690e08b5f04d11f" title="agg::outline::reset" alt="" coords="628,243,753,272"/>
+<area shape="rect" id="node7" href="$classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="611,87,771,116"/>
+<area shape="rect" id="node9" href="$structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="1071,9,1209,39"/>
+<area shape="rect" id="node11" href="$classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="820,35,1007,64"/>
+<area shape="rect" id="node22" href="$structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="845,139,981,168"/>
+<area shape="rect" id="node16" href="$classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1272,113,1443,143"/>
+<area shape="rect" id="node20" href="$structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1309,192,1405,221"/>
+<area shape="rect" id="node18" href="$classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1492,113,1671,143"/>
 </map>

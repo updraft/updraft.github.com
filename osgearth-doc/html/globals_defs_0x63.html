@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,93 +127,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_defs_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_defs_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="globals_defs_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_defs_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>CACHE_OPTIONS_TAG
-: <a class="el" href="_caching_8cpp.html#afafe63d354646f4f50062e0b613ffe08">Caching.cpp</a>
+: <a class="el" href="Caching_8cpp.html#afafe63d354646f4f50062e0b613ffe08">Caching.cpp</a>
 </li>
 <li>CSS_FILL
-: <a class="el" href="_s_l_d_8cpp.html#ac6a1909f8c4c64aabc060bac026c6e0c">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#ac6a1909f8c4c64aabc060bac026c6e0c">SLD.cpp</a>
 </li>
 <li>CSS_FILL_OPACITY
-: <a class="el" href="_s_l_d_8cpp.html#a2107b246e7749dfd71b227e78bd51209">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a2107b246e7749dfd71b227e78bd51209">SLD.cpp</a>
 </li>
 <li>CSS_POINT_SIZE
-: <a class="el" href="_s_l_d_8cpp.html#af8f61f7246e02281fb5de489bbdfcf51">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af8f61f7246e02281fb5de489bbdfcf51">SLD.cpp</a>
 </li>
 <li>CSS_STROKE
-: <a class="el" href="_s_l_d_8cpp.html#a872d4d4d52e18e40b9da160ed24a4c81">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a872d4d4d52e18e40b9da160ed24a4c81">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_LINECAP
-: <a class="el" href="_s_l_d_8cpp.html#af68c867ec058877030d64459efc2b9a3">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af68c867ec058877030d64459efc2b9a3">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_OPACITY
-: <a class="el" href="_s_l_d_8cpp.html#a083686f90305efa8f5f22d5ab2f8bec1">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a083686f90305efa8f5f22d5ab2f8bec1">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_WIDTH
-: <a class="el" href="_s_l_d_8cpp.html#a29501600e9157d73072b4399c77e3ac5">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a29501600e9157d73072b4399c77e3ac5">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_ATTRIBUTE
-: <a class="el" href="_s_l_d_8cpp.html#a764ea44cffea3829aa71cca596824abd">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a764ea44cffea3829aa71cca596824abd">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_CONTENT
-: <a class="el" href="_s_l_d_8cpp.html#a46b02f14a7afdfeb9c984d501a322505">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a46b02f14a7afdfeb9c984d501a322505">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_CONTENT_ATTRIBUTE_DELIMITER
-: <a class="el" href="_s_l_d_8cpp.html#afbc5f35ae65572675de5a2a5e7f3541f">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#afbc5f35ae65572675de5a2a5e7f3541f">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_FONT
-: <a class="el" href="_s_l_d_8cpp.html#a6be09da6a5ab5914fdab03d7be738a24">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a6be09da6a5ab5914fdab03d7be738a24">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_HALO
-: <a class="el" href="_s_l_d_8cpp.html#a151215ae659f54689e5991f9c93e7049">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a151215ae659f54689e5991f9c93e7049">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_LINE_ORIENTATION
-: <a class="el" href="_s_l_d_8cpp.html#a16e4d715cbbaa3a82c2d58433ebcb7ea">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a16e4d715cbbaa3a82c2d58433ebcb7ea">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_LINE_PLACEMENT
-: <a class="el" href="_s_l_d_8cpp.html#ad8c4215acd337eace72bf2127f6cc5d4">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#ad8c4215acd337eace72bf2127f6cc5d4">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_REMOVE_DUPLICATE_LABELS
-: <a class="el" href="_s_l_d_8cpp.html#af308c672ae317cdb957f727a4e593737">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af308c672ae317cdb957f727a4e593737">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_ROTATE_TO_SCREEN
-: <a class="el" href="_s_l_d_8cpp.html#a0c28b78970cebabb64f1fd899fa480f1">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a0c28b78970cebabb64f1fd899fa480f1">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_SIZE
-: <a class="el" href="_s_l_d_8cpp.html#aadab702f58a515b4b9a2581a80ee39fb">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#aadab702f58a515b4b9a2581a80ee39fb">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_SIZE_MODE
-: <a class="el" href="_s_l_d_8cpp.html#a93117c01cf8d3326b1fbbd464db20fff">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a93117c01cf8d3326b1fbbd464db20fff">SLD.cpp</a>
+</li>
+<li>CULL_RANGE_FACTOR
+: <a class="el" href="rivers_2engine__droam_2Common.html#ac21cb0c8fd5f49b4d26ac5d092b7c392">Common</a>
+</li>
+<li>CYAN
+: <a class="el" href="rivers_2engine__droam_2Common.html#ad243f93c16bc4c1d3e0a13b84421d760">Common</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -198,6 +214,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

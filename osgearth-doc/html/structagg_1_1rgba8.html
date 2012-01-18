@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,20 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="structagg_1_1rgba8.html">rgba8</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('structagg_1_1rgba8.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -89,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="agg::rgba8" -->
-<p><code>#include &lt;<a class="el" href="_a_g_g_8h_source.html">AGG.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="AGG_8h_source.html">AGG.h</a>&gt;</code></p>
 
 <p><a href="structagg_1_1rgba8-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -116,7 +139,7 @@ Public Attributes</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00037">37</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00037">37</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="aba809b9a3adb9925f5f391a6a0118d85"></a><!-- doxytag: member="agg::rgba8::order" ref="aba809b9a3adb9925f5f391a6a0118d85" args="" -->
 <div class="memitem">
@@ -137,8 +160,9 @@ Public Attributes</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00039">39</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00039">39</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a67daf8254a0bc0f6d87d996e78539cdf">rgb</a>, <a class="code" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a6ab81fb083f98fea7200fd8435479655">bgr</a> };
+</pre></div>
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -156,11 +180,14 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00047">47</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00047">47</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{}
+</pre></div>
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structagg_1_1rgba8_a447976f937e593330e106be9dc47044a_icgraph.png" border="0" usemap="#structagg_1_1rgba8_a447976f937e593330e106be9dc47044a_icgraph" alt=""/></div>
 <map name="structagg_1_1rgba8_a447976f937e593330e106be9dc47044a_icgraph" id="structagg_1_1rgba8_a447976f937e593330e106be9dc47044a_icgraph">
 <area shape="rect" id="node3" href="structagg_1_1rgba8.html#a06ce47d7177d7e4f96d7b6af0335a78d" title="agg::rgba8::pre" alt="" coords="176,5,285,35"/></map>
@@ -206,8 +233,10 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00050">50</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00050">50</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                      :
+            <a class="code" href="structagg_1_1rgba8.html#a1e9679aa16a5d5c24c0003917aae2a15">r</a>(<a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(r_)), <a class="code" href="structagg_1_1rgba8.html#aa60d50394bcb77d1385e31347a4bc28a">g</a>(<a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(g_)), <a class="code" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">b</a>(<a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(b_)), <a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>(<a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(a_)) {}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ab8b832f0f5d5a089c432b3c03efea4ed"></a><!-- doxytag: member="agg::rgba8::rgba8" ref="ab8b832f0f5d5a089c432b3c03efea4ed" args="(unsigned packed, order o)" -->
@@ -235,8 +264,13 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00054">54</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00054">54</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                        : 
+            <a class="code" href="structagg_1_1rgba8.html#a1e9679aa16a5d5c24c0003917aae2a15">r</a>((o == <a class="code" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a67daf8254a0bc0f6d87d996e78539cdf">rgb</a>) ? ((packed &gt;&gt; 16) &amp; 0xFF) : (packed &amp; 0xFF)),
+            <a class="code" href="structagg_1_1rgba8.html#aa60d50394bcb77d1385e31347a4bc28a">g</a>((packed &gt;&gt; 8)  &amp; 0xFF),
+            <a class="code" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">b</a>((o == <a class="code" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a67daf8254a0bc0f6d87d996e78539cdf">rgb</a>) ? (packed &amp; 0xFF) : ((packed &gt;&gt; 16) &amp; 0xFF)),
+            <a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>(255) {}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -265,8 +299,17 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00075">75</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00075">75</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <a class="code" href="structagg_1_1rgba8.html#a447976f937e593330e106be9dc47044a">rgba8</a> ret;
+            <span class="keywordtype">int</span> ik = int(k * 256);
+            ret.r = <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(<span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a1e9679aa16a5d5c24c0003917aae2a15">r</a>) + (((<span class="keywordtype">int</span>(c.r) - <span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a1e9679aa16a5d5c24c0003917aae2a15">r</a>)) * ik) &gt;&gt; 8));
+            ret.g = <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(<span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#aa60d50394bcb77d1385e31347a4bc28a">g</a>) + (((<span class="keywordtype">int</span>(c.g) - <span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#aa60d50394bcb77d1385e31347a4bc28a">g</a>)) * ik) &gt;&gt; 8));
+            ret.b = <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(<span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">b</a>) + (((<span class="keywordtype">int</span>(c.b) - <span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">b</a>)) * ik) &gt;&gt; 8));
+            ret.a = <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(<span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>) + (((<span class="keywordtype">int</span>(c.a) - <span class="keywordtype">int</span>(<a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>)) * ik) &gt;&gt; 8));
+            <span class="keywordflow">return</span> ret;
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ade22cfe9f112a0347a3fa8dd6e98da34"></a><!-- doxytag: member="agg::rgba8::opacity" ref="ade22cfe9f112a0347a3fa8dd6e98da34" args="() const " -->
@@ -283,8 +326,11 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00069">69</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00069">69</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> double(<a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>) / 255.0;
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="adb6bf09c7f10aba3bc4ee493f2a892b0"></a><!-- doxytag: member="agg::rgba8::opacity" ref="adb6bf09c7f10aba3bc4ee493f2a892b0" args="(double a_)" -->
@@ -302,8 +348,13 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00061">61</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00061">61</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">if</span>(a_ &lt; 0.0) a_ = 0.0;
+            <span class="keywordflow">if</span>(a_ &gt; 1.0) a_ = 1.0;
+            <a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a> = <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>(a_ * 255.0);
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a06ce47d7177d7e4f96d7b6af0335a78d"></a><!-- doxytag: member="agg::rgba8::pre" ref="a06ce47d7177d7e4f96d7b6af0335a78d" args="() const " -->
@@ -320,11 +371,16 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00086">86</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00086">86</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> <a class="code" href="structagg_1_1rgba8.html#a447976f937e593330e106be9dc47044a">rgba8</a>((<a class="code" href="structagg_1_1rgba8.html#a1e9679aa16a5d5c24c0003917aae2a15">r</a>*<a class="code" href="structagg_1_1rgba8.html#a4ac9f7bb8df0b685ebb338e0d4f837e8">a</a>) &gt;&gt; 8, (<a class="code" href="structagg_1_1rgba8.html#aa60d50394bcb77d1385e31347a4bc28a">g</a>*a) &gt;&gt; 8, (<a class="code" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">b</a>*a) &gt;&gt; 8, a);
+        }
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structagg_1_1rgba8_a06ce47d7177d7e4f96d7b6af0335a78d_cgraph.png" border="0" usemap="#structagg_1_1rgba8_a06ce47d7177d7e4f96d7b6af0335a78d_cgraph" alt=""/></div>
 <map name="structagg_1_1rgba8_a06ce47d7177d7e4f96d7b6af0335a78d_cgraph" id="structagg_1_1rgba8_a06ce47d7177d7e4f96d7b6af0335a78d_cgraph">
 <area shape="rect" id="node3" href="structagg_1_1rgba8.html#a447976f937e593330e106be9dc47044a" title="agg::rgba8::rgba8" alt="" coords="163,5,285,35"/></map>
@@ -345,7 +401,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00044">44</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00044">44</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 
 </div>
 </div>
@@ -360,7 +416,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00043">43</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00043">43</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 
 </div>
 </div>
@@ -375,7 +431,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00042">42</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00042">42</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 
 </div>
 </div>
@@ -390,24 +446,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00041">41</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00041">41</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="_a_g_g_8h_source.html">AGG.h</a></li>
+<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="AGG_8h_source.html">AGG.h</a></li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
-      <li class="navelem"><a class="el" href="structagg_1_1rgba8.html">rgba8</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -422,6 +468,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

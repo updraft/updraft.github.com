@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$EarthManipulator_8cpp.html#a0959f5ef4d02a7c323a6284c3ba87705" title="calcTangentPoint" alt="" coords="176,32,299,61"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aafa5cbf5b47771babd84642ad934630e" title="osgEarth::Util::EarthManipulator::drag" alt="" coords="348,32,588,61"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ad71dec84e6552197efdabb2331f3440f" title="osgEarth::Util::EarthManipulator::handleMovementAction" alt="" coords="637,32,989,61"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ac12212fd02efb5487e3159269e058b89" title="osgEarth::Util::EarthManipulator::handleContinuousAction" alt="" coords="1037,5,1395,35"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#af964ea1d3516dfa778ad57bc45ad09fd" title="osgEarth::Util::EarthManipulator::handleMouseAction" alt="" coords="1051,59,1381,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a11a833833f8e0f2f44aec92ad02ac77b" title="osgEarth::Util::EarthManipulator::handle" alt="" coords="1444,32,1697,61"/>
+</map>

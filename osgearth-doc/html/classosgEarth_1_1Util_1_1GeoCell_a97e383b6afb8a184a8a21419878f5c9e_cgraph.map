@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1GeoCell.html#ae83883f758e39e49b0b9f051fd3e70f8" title="osgEarth::Util::GeoCell::adjustCount" alt="" coords="352,112,587,141"/>
+<area shape="rect" id="node25" href="$namespaceanonymous__namespace_02SpatialData_8cpp_03.html#a39828fcac7b619a86895b5a25660e089" title="anonymous_namespace\{SpatialData::cpp\}::findObject" alt="" coords="303,165,636,195"/>
+<area shape="rect" id="node5" href="$namespaceanonymous__namespace_02SpatialData_8cpp_03.html#ab318c3b8dee63cd134a9a8c069fa2997" title="anonymous_namespace\{SpatialData::cpp\}::makeClusterGeode" alt="" coords="687,112,1073,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="1143,59,1361,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="1124,112,1380,141"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="1153,165,1351,195"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="1440,5,1627,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="1443,59,1624,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="1685,59,1936,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="1431,112,1636,141"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="1704,112,1917,141"/>
+<area shape="rect" id="node21" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1984,112,2395,141"/>
+</map>

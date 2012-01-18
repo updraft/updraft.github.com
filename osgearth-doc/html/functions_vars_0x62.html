@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -86,7 +116,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_vars_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_vars_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_vars_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_vars_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_vars_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_vars_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_vars_0x6d.html#index_m"><span>m</span></a></li>
       <li><a href="functions_vars_0x6e.html#index_n"><span>n</span></a></li>
@@ -97,24 +129,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_vars_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="functions_vars_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_vars_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_vars_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_vars_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
@@ -122,28 +142,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>b
 : <a class="el" href="structagg_1_1rgba8.html#a4a40498c554c2856564b7e71950fe05f">agg::rgba8</a>
 </li>
+<li>BAM
+: <a class="el" href="classosgEarth_1_1Units.html#ae29067c88f82103df919af53ffbdb8d0">osgEarth::Units</a>
+</li>
 <li>base_name
-: <a class="el" href="class_v_p_b_database.html#a34f60ae7a132479f4014a6911106ffb7">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#a34f60ae7a132479f4014a6911106ffb7">VPBDatabase</a>
+</li>
+<li>begin_
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#a46d7cff77fb3d9ab1e30a21d69e4a328">osgEarth::Json::Reader</a>
 </li>
 <li>bHasNoData
-: <a class="el" href="struct_band_property.html#abad408e8466effee12a4b0f8f61ff305">BandProperty</a>
+: <a class="el" href="structBandProperty.html#abad408e8466effee12a4b0f8f61ff305">BandProperty</a>
+</li>
+<li>Black
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#ad4282315e214e01f5c2cc046c3a3d8f4">osgEarth::Symbology::Color</a>
 </li>
 <li>blacklistedFilenames
-: <a class="el" href="class_v_p_b_database.html#ab76141732066b340ac3f7bd82fd8f80f">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#ab76141732066b340ac3f7bd82fd8f80f">VPBDatabase</a>
 </li>
 <li>blacklistMutex
-: <a class="el" href="class_v_p_b_database.html#abc993a4bb0cd961c080b9e31aa5b2706">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#abc993a4bb0cd961c080b9e31aa5b2706">VPBDatabase</a>
+</li>
+<li>Blue
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#a7bc662a92370952bf21058bc7d1e7965">osgEarth::Symbology::Color</a>
+</li>
+<li>bool_
+: <a class="el" href="unionosgEarth_1_1Json_1_1Value_1_1ValueHolder.html#af2bc13acc9008cbcc117548a34475f7a">osgEarth::Json::Value::ValueHolder</a>
+</li>
+<li>boolValue
+: <a class="el" href="structosgEarth_1_1Features_1_1AttributeValueUnion.html#a7356d9498915a076949704e48221ba0f">osgEarth::Features::AttributeValueUnion</a>
+</li>
+<li>buf
+: <a class="el" href="structosgEarth_1_1Stringify.html#a1734244ace62fef01d304a2d7992e8f2">osgEarth::Stringify</a>
+</li>
+<li>buffer
+: <a class="el" href="classTiXmlPrinter.html#ae6cc56c79e52ef352ecc612809fdbedf">TiXmlPrinter</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -158,6 +194,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

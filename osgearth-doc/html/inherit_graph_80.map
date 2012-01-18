@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$struct_my_map_listener.html" title="MyMapListener" alt="" coords="7,5,116,35"/>
+<area shape="rect" id="node1" href="$structanonymous__namespace_02Terrain_8cpp_03_1_1NestingDrawCallback.html" title="anonymous_namespace\{Terrain.cpp\}::NestingDrawCallback" alt="" coords="5,5,376,35"/>
+<area shape="rect" id="node3" href="$structanonymous__namespace_02Terrain_8cpp_03_1_1QuickReleaseGLCallback.html" title="anonymous_namespace\{Terrain.cpp\}::QuickReleaseGLCallback" alt="" coords="424,5,819,35"/>
 </map>

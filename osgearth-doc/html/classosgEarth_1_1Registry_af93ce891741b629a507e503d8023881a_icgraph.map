@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceanonymous__namespace_02URI_8cpp_03.html#af94b88251c2132b2876a3b84104d8bd1" title="anonymous_namespace\{URI::cpp\}::fixOptions" alt="" coords="323,87,613,116"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Drivers_1_1KML.html#ab5fda7ff2c54667f1f8f54ecbf0af626" title="osgEarth::Drivers::KML::load" alt="" coords="984,163,1173,192"/>
+<area shape="rect" id="node16" href="$structReaderWriterKML.html#ac7b9aac8e9bf958c674fa0f5d88bcff3" title="ReaderWriterKML::readNode" alt="" coords="984,216,1173,245"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1URI.html#a81c0c986fe0bc1e0274634c24a67ff86" title="osgEarth::URI::readImage" alt="" coords="664,60,837,89"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1URI.html#a80d7106545ad389cbeb2f091ccc5f288" title="osgEarth::URI::readNode" alt="" coords="665,113,836,143"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1URI.html#a7b27f5638462b4d4f04ab247dc8b3f23" title="osgEarth::URI::readObject" alt="" coords="663,7,839,36"/>
+<area shape="rect" id="node7" href="$structKML__Placemark.html#a17f118ad9527e21e8ed35d6a012ca399" title="KML_Placemark::build" alt="" coords="1003,109,1155,139"/>
+<area shape="rect" id="node9" href="$osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1456,111,1507,140"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Symbology_1_1MarkerResource.html#ace29f34ef33bc7f3c465f525bd45fcbb" title="osgEarth::Symbology::MarkerResource::createNodeFromURI" alt="" coords="889,5,1268,35"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Symbology_1_1MarkerResource.html#a76c8e3d17ab6ec1371a30c5c720b5473" title="osgEarth::Symbology::MarkerResource::createNode" alt="" coords="1319,5,1644,35"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Symbology_1_1ResourceCache.html#a611bcfbba008c62836d878267b337fce" title="osgEarth::Symbology::ResourceCache::getMarkerNode" alt="" coords="1693,5,2040,35"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Features_1_1SubstituteModelFilter.html#a791aa5e33fc6b7f2c7c3f5783f234434" title="osgEarth::Features::SubstituteModelFilter::process" alt="" coords="2089,5,2407,35"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Features_1_1SubstituteModelFilter.html#a3bb5b23998ca820286075d027effe7dd" title="osgEarth::Features::SubstituteModelFilter::push" alt="" coords="2457,5,2756,35"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Features_1_1GeometryCompiler.html#accc6d2f89d615bdb233ae2e9fbf058b2" title="osgEarth::Features::GeometryCompiler::compile" alt="" coords="2807,5,3108,35"/>
+</map>

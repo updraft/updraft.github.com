@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1PatchSet.html#a79ee6ba3b2fd6e86e5403c78f6fec119" title="seamless::PatchSet::initPrimitiveSets" alt="" coords="264,123,507,153"/>
+<area shape="rect" id="node22" href="$classseamless_1_1PatchSet.html#a014fa5c1b6809b04a7ad354d2a4960b1" title="seamless::PatchSet::setPrecisionFactor" alt="" coords="257,177,513,206"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1anonymous__namespace_02PatchSet_8cpp_03.html#a9359accdd0b740f7a99483f6ed2ff1fd" title="seamless::anonymous_namespace\{PatchSet::cpp\}::getGridCoords" alt="" coords="853,18,1264,47"/>
+<area shape="rect" id="node7" href="$classseamless_1_1PatchSet.html#a2b3136d52fa2f78a93026f371cafe4e0" title="seamless::PatchSet::makeBasicTrile" alt="" coords="565,97,803,126"/>
+<area shape="rect" id="node9" href="$classseamless_1_1PatchSet.html#a11d865268ec257c4a2ab5adb1806384c" title="seamless::PatchSet::makeIndex" alt="" coords="953,149,1164,178"/>
+<area shape="rect" id="node11" href="$classseamless_1_1PatchSet.html#a82c72f6aa339213d933027003edd4c6a" title="seamless::PatchSet::makeDualStrip" alt="" coords="567,201,801,230"/>
+<area shape="rect" id="node15" href="$classseamless_1_1PatchSet.html#aab6bca23313105c7f889cf93b512b927" title="seamless::PatchSet::makeSingleStrip" alt="" coords="563,254,805,283"/>
+<area shape="rect" id="node18" href="$classseamless_1_1PatchSet.html#a712348ff6fdd83480973b6d1df84b371" title="seamless::PatchSet::rotateIndex" alt="" coords="577,43,791,73"/>
+</map>

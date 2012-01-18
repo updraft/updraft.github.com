@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1PatchSet.html#a79ee6ba3b2fd6e86e5403c78f6fec119" title="seamless::PatchSet::initPrimitiveSets" alt="" coords="284,120,527,149"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Drivers_1_1SeamlessOptions.html#a17b72ff16d0a5f5b5e47f5b08d4af5be" title="osgEarth::Drivers::SeamlessOptions::resolution" alt="" coords="256,173,555,202"/>
+<area shape="rect" id="node24" href="$classseamless_1_1PatchSet.html#a014fa5c1b6809b04a7ad354d2a4960b1" title="seamless::PatchSet::setPrecisionFactor" alt="" coords="277,226,533,256"/>
+<area shape="rect" id="node26" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="323,280,488,309"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1TerrainOptions.html#af2a17dc02b09c09f94cdcbdc18f6574f" title="osgEarth::TerrainOptions::verticalScale" alt="" coords="280,333,531,362"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1anonymous__namespace_02PatchSet_8cpp_03.html#a9359accdd0b740f7a99483f6ed2ff1fd" title="seamless::anonymous_namespace\{PatchSet::cpp\}::getGridCoords" alt="" coords="893,16,1304,45"/>
+<area shape="rect" id="node7" href="$classseamless_1_1PatchSet.html#a2b3136d52fa2f78a93026f371cafe4e0" title="seamless::PatchSet::makeBasicTrile" alt="" coords="605,94,843,124"/>
+<area shape="rect" id="node9" href="$classseamless_1_1PatchSet.html#a11d865268ec257c4a2ab5adb1806384c" title="seamless::PatchSet::makeIndex" alt="" coords="993,146,1204,176"/>
+<area shape="rect" id="node11" href="$classseamless_1_1PatchSet.html#a82c72f6aa339213d933027003edd4c6a" title="seamless::PatchSet::makeDualStrip" alt="" coords="607,198,841,228"/>
+<area shape="rect" id="node15" href="$classseamless_1_1PatchSet.html#aab6bca23313105c7f889cf93b512b927" title="seamless::PatchSet::makeSingleStrip" alt="" coords="603,252,845,281"/>
+<area shape="rect" id="node18" href="$classseamless_1_1PatchSet.html#a712348ff6fdd83480973b6d1df84b371" title="seamless::PatchSet::rotateIndex" alt="" coords="617,41,831,70"/>
+</map>

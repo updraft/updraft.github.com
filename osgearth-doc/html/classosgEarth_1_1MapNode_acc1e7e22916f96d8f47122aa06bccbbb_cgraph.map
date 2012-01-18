@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ModelLayer.html#acddc9c4b8c5a68b8b003d0dda1e66241" title="osgEarth::ModelLayer::addCallback" alt="" coords="343,5,572,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1MapNode.html#ae21b527e746fc0da94870ff3d57ed210" title="osgEarth::MapNode::addTerrainDecorator" alt="" coords="325,59,589,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ModelLayer.html#a2d1b6e98937aab7ebb7a38ac4270664f" title="osgEarth::ModelLayer::getModelSource" alt="" coords="332,112,583,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1ModelLayer.html#a44669952891f84cd005613cb5f01b318" title="osgEarth::ModelLayer::getName" alt="" coords="352,165,563,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1ModelSource.html#adf6e79ea8d42fc3dc067204799581817" title="osgEarth::ModelSource::getOptions" alt="" coords="343,219,572,248"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1ModelLayer.html#a75b3db75740239dda3621629f36e101a" title="osgEarth::ModelLayer::getOrCreateNode" alt="" coords="328,323,587,352"/>
+<area shape="rect" id="node19" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="696,219,861,248"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1ModelLayer.html#a59861abf27a3dbeca3cd8ffed67eef78" title="osgEarth::ModelLayer::getOverlay" alt="" coords="348,376,567,405"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1ModelSourceOptions.html#a2e6d225467461728882b9e8dc74c4f8a" title="osgEarth::ModelSourceOptions::renderOrder" alt="" coords="319,429,596,459"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1MapNode.html#a85e1a20e9c7af2edd025dee6be14644a" title="osgEarth::MapNode::updateOverlayGraph" alt="" coords="325,483,589,512"/>
+<area shape="rect" id="node38" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="375,536,540,565"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1TerrainDecorator.html#a81e65314d1637a2fe5785996c7bdb18a" title="osgEarth::TerrainDecorator::onInstall" alt="" coords="661,59,896,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1ModelLayerOptions.html#a23132113ef18bc7ab5971a8b066f4401" title="osgEarth::ModelLayerOptions::enabled" alt="" coords="983,309,1228,339"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1ModelLayerOptions.html#a056dc6975cdbdb76ea75068c9bbecb97" title="osgEarth::ModelLayerOptions::lightingEnabled" alt="" coords="960,388,1251,417"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1ModelLayer.html#a9407661224690f874bd82415a2ed99f4" title="osgEarth::ModelLayer::setEnabled" alt="" coords="668,323,889,352"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1ModelLayer.html#a5ca2f06ef61f2ba848991741a14a3364" title="osgEarth::ModelLayer::setLightingEnabled" alt="" coords="645,427,912,456"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1ModelLayerOptions.html#a1fa13c73fa96a9e97cc3129f9b95bbaa" title="osgEarth::ModelLayerOptions::overlay" alt="" coords="657,480,900,509"/>
+</map>

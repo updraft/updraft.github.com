@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__featureinfo_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_featureinfo/osgearth_featureinfo.cpp</h1>  </div>
@@ -111,27 +127,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;osgEarthFeatures/GeometryUtils&gt;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">00030</a> std::string <a class="code" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">attributeTypeToString</a>( AttributeType type )
+<a name="l00030"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">00030</a> std::string <a class="code" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">attributeTypeToString</a>( <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208">AttributeType</a> type )
 <a name="l00031"></a>00031 {
 <a name="l00032"></a>00032     <span class="keywordflow">switch</span> (type)
 <a name="l00033"></a>00033     {
-<a name="l00034"></a>00034     <span class="keywordflow">case</span> ATTRTYPE_BOOL: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Boolean&quot;</span>;
-<a name="l00035"></a>00035     <span class="keywordflow">case</span> ATTRTYPE_DOUBLE: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Double&quot;</span>;
-<a name="l00036"></a>00036     <span class="keywordflow">case</span> ATTRTYPE_INT: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Integer&quot;</span>;
-<a name="l00037"></a>00037     <span class="keywordflow">case</span> ATTRTYPE_STRING: <span class="keywordflow">return</span> <span class="stringliteral">&quot;String&quot;</span>;
+<a name="l00034"></a>00034     <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a7cd913d3a8e60e3fd9889a21b8624898">ATTRTYPE_BOOL</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Boolean&quot;</span>;
+<a name="l00035"></a>00035     <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a3f24f11723d1bd2d24adc94c1ce741e8">ATTRTYPE_DOUBLE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Double&quot;</span>;
+<a name="l00036"></a>00036     <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a89e9293bc4d900093906ea56d7e8b869">ATTRTYPE_INT</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Integer&quot;</span>;
+<a name="l00037"></a>00037     <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a6c19a5712388824f9d3eb5b00db75514">ATTRTYPE_STRING</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;String&quot;</span>;
 <a name="l00038"></a>00038     <span class="keywordflow">default</span>:  <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unspecified&quot;</span>;
 <a name="l00039"></a>00039     }
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
 <a name="l00042"></a><a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">00042</a> std::string <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> = <span class="stringliteral">&quot;    &quot;</span>;
 <a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">00044</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">printStats</a>(FeatureSource* features)
+<a name="l00044"></a><a class="code" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">00044</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">printStats</a>(<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a>* features)
 <a name="l00045"></a>00045 {
-<a name="l00046"></a>00046     std::cout &lt;&lt; <span class="stringliteral">&quot;Feature Count:  &quot;</span> &lt;&lt; features-&gt;getFeatureCount() &lt;&lt; std::endl;
-<a name="l00047"></a>00047     std::cout &lt;&lt; <span class="stringliteral">&quot;Geometry Type:  &quot;</span> &lt;&lt; osgEarth::Symbology::Geometry::toString( features-&gt;getGeometryType() ) &lt;&lt; std::endl;
+<a name="l00046"></a>00046     std::cout &lt;&lt; <span class="stringliteral">&quot;Feature Count:  &quot;</span> &lt;&lt; features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a1eeb1b74d5ca16d6c6a0a15c6260df35">getFeatureCount</a>() &lt;&lt; std::endl;
+<a name="l00047"></a>00047     std::cout &lt;&lt; <span class="stringliteral">&quot;Geometry Type:  &quot;</span> &lt;&lt; <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html#a3c26f20748da289c096bfffbfecc26f3">osgEarth::Symbology::Geometry::toString</a>( features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a929f9ab4da3030ceed68e499fea5f2e5">getGeometryType</a>() ) &lt;&lt; std::endl;
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049     <span class="comment">//Print the schema</span>
-<a name="l00050"></a>00050     <span class="keyword">const</span> FeatureSchema schema = features-&gt;getSchema();
+<a name="l00050"></a>00050     <span class="keyword">const</span> <a class="code" href="namespaceosgEarth_1_1Features.html#a4fc4fc0470ea639c7b57516893151756">FeatureSchema</a> schema = features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a909a94e6a8806dd27f4acc3058a948d3">getSchema</a>();
 <a name="l00051"></a>00051     std::cout &lt;&lt; <span class="stringliteral">&quot;Schema:&quot;</span> &lt;&lt; std::endl;
 <a name="l00052"></a>00052     <span class="keywordflow">for</span> (FeatureSchema::const_iterator itr = schema.begin(); itr != schema.end(); ++itr)
 <a name="l00053"></a>00053     {
@@ -140,36 +156,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056     std::cout &lt;&lt; std::endl;
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">00059</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a>( Feature* feature )
+<a name="l00059"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">00059</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a>( <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* feature )
 <a name="l00060"></a>00060 {
-<a name="l00061"></a>00061     std::cout &lt;&lt; <span class="stringliteral">&quot;FID: &quot;</span> &lt;&lt; feature-&gt;getFID() &lt;&lt; std::endl;
-<a name="l00062"></a>00062     <span class="keywordflow">for</span> (AttributeTable::const_iterator itr = feature-&gt;getAttrs().begin(); itr != feature-&gt;getAttrs().end(); ++itr)
+<a name="l00061"></a>00061     std::cout &lt;&lt; <span class="stringliteral">&quot;FID: &quot;</span> &lt;&lt; feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#aa0e4c6063baf88e8a32110bc3e39123a">getFID</a>() &lt;&lt; std::endl;
+<a name="l00062"></a>00062     <span class="keywordflow">for</span> (AttributeTable::const_iterator itr = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76">getAttrs</a>().begin(); itr != feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76">getAttrs</a>().end(); ++itr)
 <a name="l00063"></a>00063     {
 <a name="l00064"></a>00064         std::cout 
 <a name="l00065"></a>00065             &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> 
 <a name="l00066"></a>00066             &lt;&lt; itr-&gt;first &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; itr-&gt;second.getString() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span>
-<a name="l00067"></a>00067             &lt;&lt; (itr-&gt;second.first == ATTRTYPE_INT?    <span class="stringliteral">&quot;integer&quot;</span> :
-<a name="l00068"></a>00068                 itr-&gt;second.first == ATTRTYPE_DOUBLE? <span class="stringliteral">&quot;double&quot;</span> :
-<a name="l00069"></a>00069                 itr-&gt;second.first == ATTRTYPE_BOOL?   <span class="stringliteral">&quot;bool&quot;</span> :
+<a name="l00067"></a>00067             &lt;&lt; (itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a89e9293bc4d900093906ea56d7e8b869">ATTRTYPE_INT</a>?    <span class="stringliteral">&quot;integer&quot;</span> :
+<a name="l00068"></a>00068                 itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a3f24f11723d1bd2d24adc94c1ce741e8">ATTRTYPE_DOUBLE</a>? <span class="stringliteral">&quot;double&quot;</span> :
+<a name="l00069"></a>00069                 itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a7cd913d3a8e60e3fd9889a21b8624898">ATTRTYPE_BOOL</a>?   <span class="stringliteral">&quot;bool&quot;</span> :
 <a name="l00070"></a>00070                 <span class="stringliteral">&quot;string&quot;</span>)
 <a name="l00071"></a>00071             &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;
 <a name="l00072"></a>00072     }
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074     <span class="comment">//Print out the geometry</span>
-<a name="l00075"></a>00075     Geometry* geom = feature-&gt;getGeometry();
+<a name="l00075"></a>00075     <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* geom = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57">getGeometry</a>();
 <a name="l00076"></a>00076     <span class="keywordflow">if</span> (geom)
 <a name="l00077"></a>00077     {
-<a name="l00078"></a>00078         std::cout &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> &lt;&lt; geometryToWkt( geom ) &lt;&lt; std::endl;
+<a name="l00078"></a>00078         std::cout &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> &lt;&lt; <a class="code" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca">geometryToWkt</a>( geom ) &lt;&lt; std::endl;
 <a name="l00079"></a>00079     }
 <a name="l00080"></a>00080     std::cout &lt;&lt; std::endl;
 <a name="l00081"></a>00081 }
 <a name="l00082"></a>00082 
-<a name="l00083"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">00083</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">printAllFeatures</a>(FeatureSource* features)
+<a name="l00083"></a><a class="code" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">00083</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">printAllFeatures</a>(<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a>* features)
 <a name="l00084"></a>00084 {
-<a name="l00085"></a>00085     osg::ref_ptr&lt; FeatureCursor &gt; cursor = features-&gt;createFeatureCursor();
+<a name="l00085"></a>00085     osg::ref_ptr&lt; FeatureCursor &gt; cursor = features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a0a655dd1d0620eac81c9511ce3a330ac">createFeatureCursor</a>();
 <a name="l00086"></a>00086     <span class="keywordflow">while</span> (cursor-&gt;hasMore())
 <a name="l00087"></a>00087     {
-<a name="l00088"></a>00088         osg::ref_ptr&lt; Feature &gt; feature = cursor-&gt;nextFeature();
+<a name="l00088"></a>00088         osg::ref_ptr&lt; Feature &gt; feature = cursor-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureCursor.html#ad3d52f67638278714f54cd1b63af288d">nextFeature</a>();
 <a name="l00089"></a>00089         <a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a>( feature.get() );
 <a name="l00090"></a>00090     }
 <a name="l00091"></a>00091 }
@@ -241,11 +257,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00157"></a>00157 
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159     <span class="comment">//Open the feature source</span>
-<a name="l00160"></a>00160     OGRFeatureOptions featureOpt;
-<a name="l00161"></a>00161     featureOpt.url() = filename;
-<a name="l00162"></a>00162     featureOpt.openWrite() = write;
+<a name="l00160"></a>00160     <a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html">OGRFeatureOptions</a> featureOpt;
+<a name="l00161"></a>00161     featureOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8">url</a>() = filename;
+<a name="l00162"></a>00162     featureOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureSourceOptions.html#af828d9f76025befddbf91f97e2624802">openWrite</a>() = write;
 <a name="l00163"></a>00163 
-<a name="l00164"></a>00164     osg::ref_ptr&lt; FeatureSource &gt; features = FeatureSourceFactory::create( featureOpt );
+<a name="l00164"></a>00164     osg::ref_ptr&lt; FeatureSource &gt; features = <a class="code" href="classosgEarth_1_1Features_1_1FeatureSourceFactory.html#aeb4d4d28b39972eae24f232f67db9d11">FeatureSourceFactory::create</a>( featureOpt );
 <a name="l00165"></a>00165     features-&gt;initialize(<span class="stringliteral">&quot;&quot;</span>);
 <a name="l00166"></a>00166     features-&gt;getFeatureProfile();
 <a name="l00167"></a>00167 
@@ -254,7 +270,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00170"></a>00170     {
 <a name="l00171"></a>00171         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; toDelete.size(); ++i)
 <a name="l00172"></a>00172         {
-<a name="l00173"></a>00173             FeatureID fid = toDelete[i];
+<a name="l00173"></a>00173             <a class="code" href="namespaceosgEarth_1_1Features.html#ab9bb7beec9c80e57ef67a505392ea156">FeatureID</a> fid = toDelete[i];
 <a name="l00174"></a>00174             std::cout &lt;&lt; <span class="stringliteral">&quot;Deleting Feature &quot;</span> &lt;&lt; fid &lt;&lt; std::endl;
 <a name="l00175"></a>00175             features-&gt;deleteFeature( fid );
 <a name="l00176"></a>00176         }
@@ -264,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00180"></a>00180         <span class="comment">//Print out any specific FIDs</span>
 <a name="l00181"></a>00181         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; fids.size(); ++i)
 <a name="l00182"></a>00182         {
-<a name="l00183"></a>00183             FeatureID fid = fids[i];
+<a name="l00183"></a>00183             <a class="code" href="namespaceosgEarth_1_1Features.html#ab9bb7beec9c80e57ef67a505392ea156">FeatureID</a> fid = fids[i];
 <a name="l00184"></a>00184             osg::ref_ptr&lt; Feature &gt; feature = features-&gt;getFeature( fid );
 <a name="l00185"></a>00185             <span class="keywordflow">if</span> (feature.valid())
 <a name="l00186"></a>00186             {
@@ -291,14 +307,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00207"></a>00207 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__featureinfo_8cpp.html">osgearth_featureinfo.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -313,6 +321,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

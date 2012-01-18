@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -86,7 +116,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_vars_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_vars_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_vars_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_vars_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_vars_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_vars_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_vars_0x6d.html#index_m"><span>m</span></a></li>
       <li class="current"><a href="functions_vars_0x6e.html#index_n"><span>n</span></a></li>
@@ -97,65 +129,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_vars_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="functions_vars_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_vars_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_vars_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_vars_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>name
+: <a class="el" href="classTiXmlAttribute.html#afcbe165f33f08cf9b24daa33f0ee951a">TiXmlAttribute</a>
+, <a class="el" href="classosgEarth_1_1XmlElement.html#a339b894eec616ae5916d021ff94ab619">osgEarth::XmlElement</a>
+, <a class="el" href="structosgEarth_1_1Util_1_1SkyNode_1_1StarData.html#a961f9801c6b85a4ab357a991cf1f7253">osgEarth::Util::SkyNode::StarData</a>
+, <a class="el" href="classMapServiceLayer.html#a6a65edad126a0fb2dd04c247c30ce113">MapServiceLayer</a>
+</li>
+<li>NATO_MILS
+: <a class="el" href="classosgEarth_1_1Units.html#aeab715bbfbe6173cfb49dbd8ea3ba0f7">osgEarth::Units</a>
+</li>
+<li>NAUTICAL_MILES
+: <a class="el" href="classosgEarth_1_1Units.html#aeed3b38a3e21969260ee2ad04ae9fb7d">osgEarth::Units</a>
+</li>
+<li>Navy
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#adda7875c259fae4ee19b5c5c3e44b790">osgEarth::Symbology::Color</a>
+</li>
 <li>nBlockXSize
-: <a class="el" href="struct_dataset_property.html#afff2fd2bf4a6094f8ebd50b9d3a20e52">DatasetProperty</a>
+: <a class="el" href="structDatasetProperty.html#afff2fd2bf4a6094f8ebd50b9d3a20e52">DatasetProperty</a>
 </li>
 <li>nBlockYSize
-: <a class="el" href="struct_dataset_property.html#aa81e7795a41e16098a91a08cb9fb3bb6">DatasetProperty</a>
+: <a class="el" href="structDatasetProperty.html#aa81e7795a41e16098a91a08cb9fb3bb6">DatasetProperty</a>
 </li>
 <li>next
-: <a class="el" href="class_ti_xml_node.html#a2f329cc993d2d34df76e17dcbb776b45">TiXmlNode</a>
+: <a class="el" href="classTiXmlNode.html#a2f329cc993d2d34df76e17dcbb776b45">TiXmlNode</a>
+, <a class="el" href="classTiXmlAttribute.html#ae851adf61b80cf45b797fee77dea135f">TiXmlAttribute</a>
 </li>
 <li>noDataValue
-: <a class="el" href="struct_band_property.html#adb824d7f797dedf04ed641ed8b939799">BandProperty</a>
+: <a class="el" href="structBandProperty.html#adb824d7f797dedf04ed641ed8b939799">BandProperty</a>
+</li>
+<li>node
+: <a class="el" href="classTiXmlHandle.html#ac5429de14bb78b16288bac5bf33c6858">TiXmlHandle</a>
+</li>
+<li>nodes_
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#ad39575a5f9bf0f28b86f5395ddf50ff9">osgEarth::Json::Reader</a>
+</li>
+<li>normalData
+: <a class="el" href="structseamless_1_1Patch_1_1Data.html#a2f98cc161a164e2c8488b9a73c6e0e08">seamless::Patch::Data</a>
 </li>
 <li>npos
-: <a class="el" href="class_ti_xml_string.html#a8f4422d227088dc7bec96f479b275d0a">TiXmlString</a>
+: <a class="el" href="classTiXmlString.html#a8f4422d227088dc7bec96f479b275d0a">TiXmlString</a>
 </li>
 <li>nRasterXSize
-: <a class="el" href="struct_dataset_property.html#a93a1005f43504da99d1dff615f674ae5">DatasetProperty</a>
+: <a class="el" href="structDatasetProperty.html#a93a1005f43504da99d1dff615f674ae5">DatasetProperty</a>
 </li>
 <li>nRasterYSize
-: <a class="el" href="struct_dataset_property.html#a36e4030488547e99b55ba4f84864009a">DatasetProperty</a>
+: <a class="el" href="structDatasetProperty.html#a36e4030488547e99b55ba4f84864009a">DatasetProperty</a>
+</li>
+<li>null
+: <a class="el" href="classosgEarth_1_1Json_1_1Value.html#ae5c01c1a10d1e9fb731aae53e8234e24">osgEarth::Json::Value</a>
+</li>
+<li>NullAction
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#aaf194968daafe33b83923b3ad18ed2ef">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>nullrep_
+: <a class="el" href="classTiXmlString.html#ae1f9e0de28328eed27d5623ff67a3191">TiXmlString</a>
+</li>
+<li>num_tiles_high
+: <a class="el" href="classTileInfo.html#ad2edff0309d902868ef90cd2f6f78a92">TileInfo</a>
+</li>
+<li>num_tiles_wide
+: <a class="el" href="classTileInfo.html#ae42724cc6a22018fd9ca055257a78878">TileInfo</a>
 </li>
 <li>numEdges
-: <a class="el" href="structseamless_1_1_share_result.html#af60070beb4f84a3fff33135a19953a7f">seamless::ShareResult</a>
+: <a class="el" href="structseamless_1_1ShareResult.html#af60070beb4f84a3fff33135a19953a7f">seamless::ShareResult</a>
 </li>
 <li>nv
-: <a class="el" href="structseamless_1_1_node_path_proxy.html#aa8b603c20650937c58765278a63f3043">seamless::NodePathProxy</a>
+: <a class="el" href="structseamless_1_1NodePathProxy.html#aa8b603c20650937c58765278a63f3043">seamless::NodePathProxy</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -170,6 +222,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

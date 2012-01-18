@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html#aed0aaabea5e3687bdab1f06b6fe72698" title="osgEarth::Util::Annotation::CircleNode::CircleNode" alt="" coords="307,5,624,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html#a481f52ee32ee3adff9d647a47342c2ad" title="osgEarth::Util::Annotation::EllipseNode::EllipseNode" alt="" coords="301,59,629,88"/>
+<area shape="rect" id="node7" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="440,112,491,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Features_1_1BuildGeometryFilter.html#aed90989fb4e9df89fa58c0a693596efc" title="osgEarth::Features::BuildGeometryFilter::process" alt="" coords="311,165,620,195"/>
+<area shape="rect" id="node9" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="757,112,891,141"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Features_1_1BuildGeometryFilter.html#a42c991f38367b8527fc1002aac6ba12a" title="osgEarth::Features::BuildGeometryFilter::push" alt="" coords="679,165,969,195"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Features_1_1GeometryCompiler.html#accc6d2f89d615bdb233ae2e9fbf058b2" title="osgEarth::Features::GeometryCompiler::compile" alt="" coords="1020,112,1321,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Graticule.html#ac827f0e618d622fd4abd273ce1bb4c66" title="osgEarth::Util::Graticule::createGridLevel" alt="" coords="1040,165,1301,195"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Annotation_1_1GeometryNode.html#ad30127f4541fa94a6a26168de735e28f" title="osgEarth::Util::Annotation::GeometryNode::init" alt="" coords="1024,219,1317,248"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1Annotation_1_1GeometryNode.html#a5561954c5888dadeefdfd590d0bf243b" title="osgEarth::Util::Annotation::GeometryNode::GeometryNode" alt="" coords="1372,219,1735,248"/>
+</map>

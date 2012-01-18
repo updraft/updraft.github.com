@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTile.html#a36219d91d8b17471099bcc5c4bc1b2ed" title="Tile::getElevationLayer" alt="" coords="361,5,516,35"/>
+<area shape="rect" id="node5" href="$classTerrain.html#afc533f56374093322731448e6a4b813e" title="Terrain::getSampleRatio" alt="" coords="357,59,520,88"/>
+<area shape="rect" id="node7" href="$classTile.html#a7c0c83673975b5474d61a9845a0cd02b" title="Tile::getTerrain" alt="" coords="384,112,493,141"/>
+</map>

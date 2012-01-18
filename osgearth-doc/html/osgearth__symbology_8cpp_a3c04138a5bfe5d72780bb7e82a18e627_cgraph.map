@@ -1,4 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59" title="createSymbologyScene" alt="" coords="104,5,264,35"/>
-<area shape="rect" id="node5" href="$class_style_editor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="312,5,507,35"/>
+<area shape="rect" id="node3" href="$osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59" title="createSymbologyScene" alt="" coords="104,112,264,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640" title="osgEarth::Symbology::PolygonSymbol::fill" alt="" coords="312,5,579,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d" title="osgEarth::Symbology::TextSymbol::font" alt="" coords="319,59,572,88"/>
+<area shape="rect" id="node9" href="$osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591" title="getRandomValueInOne" alt="" coords="367,112,524,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b" title="osgEarth::Style::setName" alt="" coords="359,165,532,195"/>
+<area shape="rect" id="node13" href="$classStyleEditor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="348,219,543,248"/>
 </map>

@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846" title="createControlPanel" alt="" coords="387,5,520,35"/>
+<area shape="rect" id="node7" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="400,59,507,88"/>
+<area shape="rect" id="node11" href="$osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e" title="createToolBar" alt="" coords="403,112,504,141"/>
+<area shape="rect" id="node15" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="428,165,479,195"/>
+<area shape="rect" id="node5" href="$osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="609,5,660,35"/>
+<area shape="rect" id="node9" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="609,59,660,88"/>
+<area shape="rect" id="node13" href="$osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="609,112,660,141"/>
+<area shape="rect" id="node17" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="568,165,701,195"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1PatchSet.html#a7d5efa687079e29f8995c780bb880223" title="seamless::PatchSet::getMap" alt="" coords="497,5,687,35"/>
+<area shape="rect" id="node5" href="$classseamless_1_1PatchOptions.html#abca755a6b3603ef597395e0723c52b65" title="seamless::PatchOptions::getPatchExtents" alt="" coords="457,59,727,88"/>
+<area shape="rect" id="node7" href="$classseamless_1_1PatchOptions.html#ae6af53a54b5326a4c8ee72a5b4368328" title="seamless::PatchOptions::getPatchLevel" alt="" coords="464,112,720,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48" title="osgEarth::Map::getProfile" alt="" coords="507,165,677,195"/>
+</map>

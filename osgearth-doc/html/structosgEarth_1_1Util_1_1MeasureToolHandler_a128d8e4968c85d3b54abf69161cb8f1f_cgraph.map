@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structosgEarth_1_1Util_1_1MeasureToolHandler.html#a5c93653f93b8d676b4d2038ef072234d" title="osgEarth::Util::MeasureToolHandler::clear" alt="" coords="349,32,616,61"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1Util_1_1MeasureToolHandler.html#ab7890d30576f8de4f19f9dd9b344a12e" title="osgEarth::Util::MeasureToolHandler::fireDistanceChanged" alt="" coords="664,32,1024,61"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoMath.html#a96bbe3c5db69ddeedcec13a261798f5d" title="osgEarth::GeoMath::distance" alt="" coords="1092,5,1284,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoMath.html#a846f674470091ed8006406833d8e677a" title="osgEarth::GeoMath::rhumbDistance" alt="" coords="1073,59,1303,88"/>
+</map>

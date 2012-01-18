@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ad71dec84e6552197efdabb2331f3440f" title="osgEarth::Util::EarthManipulator::handleMovementAction" alt="" coords="301,57,653,87"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ade52cf89022826fd211d9b2a0d4a347a" title="osgEarth::Util::EarthManipulator::serviceTask" alt="" coords="335,111,620,140"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ac12212fd02efb5487e3159269e058b89" title="osgEarth::Util::EarthManipulator::handleContinuousAction" alt="" coords="701,5,1059,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#af964ea1d3516dfa778ad57bc45ad09fd" title="osgEarth::Util::EarthManipulator::handleMouseAction" alt="" coords="715,59,1045,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a11a833833f8e0f2f44aec92ad02ac77b" title="osgEarth::Util::EarthManipulator::handle" alt="" coords="1108,59,1361,88"/>
+</map>

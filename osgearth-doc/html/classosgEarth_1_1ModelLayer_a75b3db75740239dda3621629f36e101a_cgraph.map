@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ModelLayerOptions.html#a23132113ef18bc7ab5971a8b066f4401" title="osgEarth::ModelLayerOptions::enabled" alt="" coords="649,74,895,104"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="363,34,528,64"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ModelLayerOptions.html#a056dc6975cdbdb76ea75068c9bbecb97" title="osgEarth::ModelLayerOptions::lightingEnabled" alt="" coords="627,153,917,182"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ModelLayer.html#a9407661224690f874bd82415a2ed99f4" title="osgEarth::ModelLayer::setEnabled" alt="" coords="335,88,556,117"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1ModelLayer.html#a5ca2f06ef61f2ba848991741a14a3364" title="osgEarth::ModelLayer::setLightingEnabled" alt="" coords="312,192,579,221"/>
+</map>

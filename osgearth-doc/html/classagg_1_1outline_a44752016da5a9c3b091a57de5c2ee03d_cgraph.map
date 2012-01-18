@@ -1,3 +1,15 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="180,5,313,35"/>
+<area shape="rect" id="node3" href="$classagg_1_1outline.html#a94571c0444e2018c6d7a76770128a7c7" title="agg::outline::add_cur_cell" alt="" coords="1043,17,1213,47"/>
+<area shape="rect" id="node7" href="$classagg_1_1outline.html#ae50b61d241835e1a59c107ef5da6a83d" title="agg::outline::line_to" alt="" coords="189,120,323,149"/>
+<area shape="rect" id="node24" href="$classagg_1_1outline.html#aa23dcda8ba406b8d5faae9f9db9b4a89" title="agg::outline::sort_cells" alt="" coords="180,199,332,228"/>
+<area shape="rect" id="node5" href="$classagg_1_1outline.html#a2b97900069b6de62a8addff037ba967a" title="agg::outline::allocate_block" alt="" coords="1263,17,1441,47"/>
+<area shape="rect" id="node9" href="$classagg_1_1outline.html#a5bf6aa6d214f5dc8ab8e19c06e43c7ed" title="agg::outline::render_line" alt="" coords="381,120,541,149"/>
+<area shape="rect" id="node11" href="$structagg_1_1cell.html#aa00c6581b1d462c8df222689752b5a1b" title="agg::cell::add_cover" alt="" coords="841,43,980,72"/>
+<area shape="rect" id="node13" href="$classagg_1_1outline.html#a69ee36a6b38b7eb280d3960d2b1689ea" title="agg::outline::render_scanline" alt="" coords="591,93,777,123"/>
+<area shape="rect" id="node16" href="$classagg_1_1outline.html#a407fb81e100cbf9c515cb8718963f618" title="agg::outline::set_cur_cell" alt="" coords="828,96,993,125"/>
+<area shape="rect" id="node21" href="$structagg_1_1cell.html#a1873bd1201513f6d0a99819bbe0af893" title="agg::cell::set_cover" alt="" coords="616,197,752,227"/>
+<area shape="rect" id="node19" href="$structagg_1_1cell.html#a7a3389b2b3c55e5c619d8f94d05ce396" title="agg::cell::set" alt="" coords="1080,96,1176,125"/>
+<area shape="rect" id="node26" href="$classagg_1_1outline.html#a7a3d96ac419b40b2208607a58efcb077" title="agg::outline::qsort_cells" alt="" coords="381,251,541,280"/>
+<area shape="rect" id="node28" href="$namespaceagg.html#af8ad277418c73e24d7b721c7cfccd1ec" title="agg::less_than" alt="" coords="631,251,737,280"/>
+<area shape="rect" id="node30" href="$namespaceagg.html#af21a37afa0d4f422619eccd65807fa41" title="agg::swap_cells" alt="" coords="627,304,741,333"/>
 </map>

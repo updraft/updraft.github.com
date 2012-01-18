@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlElement.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="236,59,393,88"/>
+<area shape="rect" id="node5" href="$classTiXmlElement.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="467,5,613,35"/>
+<area shape="rect" id="node7" href="$classTiXmlElement.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="457,59,623,88"/>
+<area shape="rect" id="node9" href="$classTiXmlElement.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="443,112,637,141"/>
+</map>

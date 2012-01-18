@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,22 +94,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__manip_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_manip/osgearth_manip.cpp File Reference</h1>  </div>
 </div>
@@ -97,9 +117,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthUtil/Viewpoint&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/AutoClipPlaneHandler&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/Controls&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_manip.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_manip.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__manip_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__manip_2osgearth__manip_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__manip_2osgearth__manip_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__manip_2osgearth__manip_8cpp">
 </map>
@@ -107,9 +129,21 @@ Include dependency graph for osgearth_manip.cpp:</div>
 </div>
 <p><a href="osgearth__manip_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html">anonymous_namespace{osgearth_manip.cpp}::SwitchHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html">anonymous_namespace{osgearth_manip.cpp}::FlyToViewpointHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html">anonymous_namespace{osgearth_manip.cpp}::LockAzimuthHandler</a></td></tr>
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html">anonymous_namespace{osgearth_manip.cpp}</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">anonymous_namespace{osgearth_manip.cpp}::createHelp</a> (osgViewer::View *view)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#a4b4a92772e2861368fa2b94d18ee75dd">anonymous_namespace{osgearth_manip.cpp}::VPs</a> []</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a><!-- doxytag: member="osgearth_manip.cpp::main" ref="a3c04138a5bfe5d72780bb7e82a18e627" args="(int argc, char **argv)" -->
@@ -138,19 +172,82 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__manip_8cpp_source.html#l00149">149</a> of file <a class="el" href="osgearth__manip_8cpp_source.html">osgearth_manip.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);       
+    osg::DisplaySettings::instance()-&gt;setMinimumNumStencilBits( 8 );
+
+    <span class="comment">// install the programmable manipulator.</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>* manip = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>();
+
+    osg::Node* earthNode = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> (!earthNode)
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> -1;
+    }
+
+    osgViewer::Viewer viewer(arguments);
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+    root-&gt;addChild( earthNode );
+    root-&gt;addChild( <a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">createHelp</a>(&amp;viewer) );
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( earthNode );
+    <span class="keywordflow">if</span> ( mapNode )
+    {
+        <span class="keywordflow">if</span> ( mapNode )
+            manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ac04e4204ab79440f3ea56a6551e55597">setNode</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb">getTerrainEngine</a>() );
+
+        <span class="keywordflow">if</span> ( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960">isGeocentric</a>() )
+        {
+            manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a008fc79026e795d30735cf19dfc02474">setHomeViewpoint</a>( 
+                <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( osg::Vec3d( -90, 0, 0 ), 0.0, -90.0, 5e7 ) );
+
+            <span class="comment">// add a handler that will automatically calculate good clipping planes</span>
+            viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneHandler.html">AutoClipPlaneHandler</a>() );
+        }
+    }
+
+    viewer.setSceneData( root );
+    viewer.setCameraManipulator( manip );
+
+    manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8">getSettings</a>()-&gt;bindMouse(
+        EarthManipulator::ACTION_EARTH_DRAG,
+        osgGA::GUIEventAdapter::LEFT_MOUSE_BUTTON,
+        osgGA::GUIEventAdapter::MODKEY_SHIFT );
+
+    manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8">getSettings</a>()-&gt;setArcViewpointTransitions( <span class="keyword">true</span> );
+    
+    viewer.addEventHandler(<span class="keyword">new</span> FlyToViewpointHandler( manip ));
+    viewer.addEventHandler(<span class="keyword">new</span> LockAzimuthHandler(<span class="charliteral">&#39;u&#39;</span>, manip));
+
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::ThreadingHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::LODScaleHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::HelpHandler(arguments.getApplicationUsage()));
+    <span class="comment">//viewer.addEventHandler(new osgViewer::RecordCameraPathHandler());</span>
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__manip_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__manip_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__manip_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__manip_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114" title="anonymous_namespace\{osgearth_manip::cpp\}::createHelp" alt="" coords="104,328,467,357"/><area shape="rect" id="node39" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="2160,1408,2381,1437"/><area shape="rect" id="node41" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="2176,1500,2365,1529"/><area shape="rect" id="node43" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8" title="osgEarth::Util::EarthManipulator::getSettings" alt="" coords="144,1592,427,1621"/><area shape="rect" id="node45" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb" title="osgEarth::MapNode::getTerrainEngine" alt="" coords="164,696,407,725"/><area shape="rect" id="node54" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960" title="osgEarth::Map::isGeocentric" alt="" coords="192,1645,379,1674"/><area shape="rect" id="node58" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a008fc79026e795d30735cf19dfc02474" title="osgEarth::Util::EarthManipulator::setHomeViewpoint" alt="" coords="931,882,1256,912"/><area shape="rect" id="node60" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ac04e4204ab79440f3ea56a6551e55597" title="osgEarth::Util::EarthManipulator::setNode" alt="" coords="153,1040,417,1069"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1" title="osgEarth::Util::Controls::ControlCanvas::addControl" alt="" coords="515,89,840,118"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="543,354,812,384"/><area shape="rect" id="node33" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="537,196,817,225"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1832,328,2075,357"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="2135,328,2407,357"/><area shape="rect" id="node13" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="929,328,1257,357"/><area shape="rect" id="node31" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="957,381,1229,410"/><area shape="rect" id="node16" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="1423,221,1697,250"/><area shape="rect" id="node18" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1477,536,1643,565"/><area shape="rect" id="node20" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="1396,274,1724,304"/><area shape="rect" id="node22" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="1413,168,1707,197"/><area shape="rect" id="node25" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="1416,328,1704,357"/><area shape="rect" id="node28" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="1427,381,1693,410"/><area shape="rect" id="node35" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a0ead895b4a8e5972807293ee1336a9ab" title="osgEarth::Util::Controls::ControlCanvas::ControlCanvas" alt="" coords="919,154,1268,184"/><area shape="rect" id="node37" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a5fd6aeb9e88aa39864c3b9c5afb7fc97" title="osgEarth::Util::Controls::ControlCanvas::init" alt="" coords="1421,114,1699,144"/><area shape="rect" id="node47" href="classosgEarth_1_1MapNode.html#a71c5e96ccedec45570122243cd3b5748" title="osgEarth::MapNode::getMapNodeOptions" alt="" coords="545,642,809,672"/><area shape="rect" id="node49" href="classosgEarth_1_1MapNodeOptions.html#a23c25b7a45fc7ac2b5c1301808ddf7a6" title="osgEarth::MapNodeOptions::getTerrainOptions" alt="" coords="531,696,824,725"/><area shape="rect" id="node52" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1011,644,1176,673"/><area shape="rect" id="node56" href="classosgEarth_1_1MapOptions.html#aed50a44017f7ed40f56855253cc027d0" title="osgEarth::MapOptions::coordSysType" alt="" coords="556,1645,799,1674"/><area shape="rect" id="node62" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ad9774a7b32221362485e0ba101f2ec07" title="osgEarth::Util::EarthManipulator::established" alt="" coords="536,1040,819,1069"/><area shape="rect" id="node111" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a44171bc4f431b0bbec84b828429f9cfb" title="osgEarth::Util::EarthManipulator::reinitialize" alt="" coords="540,986,815,1016"/><area shape="rect" id="node64" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="1017,936,1169,965"/><area shape="rect" id="node67" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ae8c30588a24f3b70da9e2e88b2b5c1c4" title="osgEarth::Util::EarthManipulator::recalculateLocalPitchAndAzimuth" alt="" coords="888,1252,1299,1281"/><area shape="rect" id="node72" href="classosgEarth_1_1Util_1_1EarthManipulator.html#af2d299a4e7a689feeede98cd994a47d1" title="osgEarth::Util::EarthManipulator::setViewpoint" alt="" coords="948,1040,1239,1069"/><area shape="rect" id="node69" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#aaf8b4909bb5c6f9e41dc75d48682437a" title="anonymous_namespace\{EarthManipulator::cpp\}::s_getHPRFromQuat" alt="" coords="1348,1437,1772,1466"/><area shape="rect" id="node74" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#acc256493a5743e9285b3449c953db829" title="anonymous_namespace\{EarthManipulator::cpp\}::accelerationInterp" alt="" coords="1356,696,1764,725"/><area shape="rect" id="node77" href="classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="1825,881,2081,910"/><area shape="rect" id="node79" href="classosgEarth_1_1Util_1_1Viewpoint.html#a28e1cdc406732321a2043a1b211e285d" title="osgEarth::Util::Viewpoint::getFocalPoint" alt="" coords="1433,800,1687,829"/><area shape="rect" id="node81" href="classosgEarth_1_1SpatialReference.html#a42fc6ea305be6b94340bf300d7b67dbe" title="osgEarth::SpatialReference::getGeographicSRS" alt="" coords="1409,853,1711,882"/><area shape="rect" id="node83" href="classosgEarth_1_1Util_1_1Viewpoint.html#a87aebecfa388a4111d3f3efbc6f16280" title="osgEarth::Util::Viewpoint::getHeading" alt="" coords="1440,906,1680,936"/><area shape="rect" id="node85" href="classosgEarth_1_1Util_1_1EarthManipulator.html#aa412d8793e031d74860f58a99c860577" title="osgEarth::Util::EarthManipulator::getMyCoordinateFrame" alt="" coords="1384,960,1736,989"/><area shape="rect" id="node87" href="classosgEarth_1_1Util_1_1Viewpoint.html#ab2a0b04e7e38de382c76967758869511" title="osgEarth::Util::Viewpoint::getPitch" alt="" coords="1449,1066,1671,1096"/><area shape="rect" id="node89" href="classosgEarth_1_1Util_1_1Viewpoint.html#af69ec3d7cc0678966905aad2a334f6e5" title="osgEarth::Util::Viewpoint::getRange" alt="" coords="1445,1120,1675,1149"/><area shape="rect" id="node91" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a6237f67ea76dfaf4503d41bb9898c07e" title="osgEarth::Util::EarthManipulator::getRotation" alt="" coords="1419,1173,1701,1202"/><area shape="rect" id="node93" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a5194c54a67ca8c18227014cb5a5c6832" title="osgEarth::Util::EarthManipulator::getSRS" alt="" coords="1823,1330,2084,1360"/><area shape="rect" id="node97" href="classosgEarth_1_1Util_1_1Viewpoint.html#a763582d51aecef1dc75cfdf12fb9d2b7" title="osgEarth::Util::Viewpoint::getSRS" alt="" coords="1449,1277,1671,1306"/><area shape="rect" id="node99" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a29b0e7356c6f72e6e1e0926286f6644d" title="osgEarth::Util::EarthManipulator::getViewpoint" alt="" coords="1415,1013,1705,1042"/><area shape="rect" id="node103" href="classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="1427,1330,1693,1360"/><area shape="rect" id="node105" href="EarthManipulator_8cpp.html#ad9a9e389ea200eabb13b1c615e21d079" title="normalizeAzimRad" alt="" coords="1495,1384,1625,1413"/><area shape="rect" id="node107" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a9a181806ea8eb81c478ff7bc243edfab" title="osgEarth::Util::EarthManipulator::recalculateCenter" alt="" coords="1401,589,1719,618"/><area shape="rect" id="node109" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a9b966c412b1df02aecfef17ab84c4809" title="osgEarth::Util::EarthManipulator::setDistance" alt="" coords="1417,642,1703,672"/></map>
+</div>
+</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__manip_8cpp.html">osgearth_manip.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -165,6 +262,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

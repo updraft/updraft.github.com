@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Registry.html#a88c0d0ac2d6952af6f744eeb3b329ba1" title="osgEarth::Registry::blacklist" alt="" coords="327,5,513,35"/>
+<area shape="rect" id="node5" href="$classOSGTerrainEngineNode.html#aa874c3f1e48c77d150cc01927a6f0173" title="OSGTerrainEngineNode::getEngineByUID" alt="" coords="287,59,553,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="327,112,513,141"/>
+<area shape="rect" id="node7" href="$OSGTerrainEngineNode_8cpp.html#a1db5afae54161bdbd47842c082615aef" title="getEngineNodeCache" alt="" coords="623,59,772,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="604,112,791,141"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="840,32,1168,61"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="892,85,1116,115"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="883,139,1125,168"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="881,192,1127,221"/>
+</map>

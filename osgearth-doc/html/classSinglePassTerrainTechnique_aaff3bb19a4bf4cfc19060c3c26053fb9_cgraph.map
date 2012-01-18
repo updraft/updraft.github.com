@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSinglePassTerrainTechnique.html#aaf6c1a4c000dbcefc89a2c1b795dc26f" title="SinglePassTerrainTechnique::createGeoImage" alt="" coords="404,112,695,141"/>
+<area shape="rect" id="node17" href="$classTileFrame.html#aa64f473bf7c23057885cb44209238ea2" title="TileFrame::getCustomColorLayer" alt="" coords="443,165,656,195"/>
+<area shape="rect" id="node19" href="$classCustomColorLayer.html#abf341a630a68be118bfe8ab562b6eb78" title="CustomColorLayer::isFallbackData" alt="" coords="436,219,663,248"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoImage.html#a40db87ae60b4dde189b1f218ff3c8777" title="osgEarth::GeoImage::valid" alt="" coords="461,272,637,301"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoLocator.html#a125f2bd702f4a911c65c6fe9334c640a" title="osgEarth::GeoLocator::getGeographicFromGeocentric" alt="" coords="745,59,1079,88"/>
+<area shape="rect" id="node13" href="$classCustomColorLayer.html#a761fdfb07388be6ac6438c2b96c7639d" title="CustomColorLayer::getImage" alt="" coords="816,112,1008,141"/>
+<area shape="rect" id="node15" href="$classCustomColorLayer.html#ac9725adc85c194c7b4a4c99ed26d3d52" title="CustomColorLayer::getLocator" alt="" coords="812,165,1012,195"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoLocator.html#a3d6d7da71a8187c45110890a550b5655" title="osgEarth::GeoLocator::GeoLocator" alt="" coords="1137,5,1361,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#afa0bd831daf0541cbbb161763ed9291f" title="osgEarth::GeoExtent::getBounds" alt="" coords="1143,59,1356,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoLocator.html#a0ed2730a383c6a42c1df8bb6b07fc6df" title="osgEarth::GeoLocator::getDataExtent" alt="" coords="1129,112,1369,141"/>
+</map>

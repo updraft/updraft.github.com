@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Registry.html#a8ebadcf08d3161838cb5d2d7e0dcdbb3" title="osgEarth::Registry::getCapabilities" alt="" coords="444,5,668,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Capabilities.html#a4a5058dbd84538cb7a3d1828220c6346" title="osgEarth::Capabilities::getMaxGPUTextureUnits" alt="" coords="404,59,708,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="463,112,649,141"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1TextureLayout.html#a0847dae920110b4b28265585ce503581" title="osgEarth::TextureLayout::isSlotAvailable" alt="" coords="427,165,685,195"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1TextureLayout.html#a47f26bffd28caca0e6632c2440f42791" title="osgEarth::TextureLayout::setReservedSlots" alt="" coords="417,219,695,248"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="759,112,945,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="995,32,1323,61"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1047,85,1271,115"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1037,139,1280,168"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1036,192,1281,221"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="313,5,465,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1ModelLayer.html#aeecbe7281d0d1e11fa2665e8ae0e40fb" title="osgEarth::ModelLayer::initialize" alt="" coords="288,59,491,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="271,112,508,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ModelSourceFactory.html#aa04ff59f6f44b8cffe06dbdc1d45c65f" title="osgEarth::ModelSourceFactory::create" alt="" coords="559,5,804,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1ModelLayerOptions.html#a0db8860b9fde151576402fa73ba513b8" title="osgEarth::ModelLayerOptions::driver" alt="" coords="564,59,799,88"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="599,112,764,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="853,5,1115,35"/>
+</map>

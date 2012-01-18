@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlDocument.html#a3daab2f472418ef66315750202f762ae" title="TiXmlDocument::Accept" alt="" coords="239,5,404,35"/>
+<area shape="rect" id="node5" href="$classTiXmlElement.html#a31ab28cc3b892a69254391d6bbe08df3" title="TiXmlElement::Accept" alt="" coords="245,59,397,88"/>
+<area shape="rect" id="node7" href="$classTiXmlHandle.html#af9cf6a7d08a5da94a8924425ad0cd5ac" title="TiXmlHandle::Child" alt="" coords="255,112,388,141"/>
+<area shape="rect" id="node9" href="$classTiXmlDocument.html#af69deeb984e060bd00f668460dec8ef2" title="TiXmlDocument::CopyTo" alt="" coords="236,165,407,195"/>
+<area shape="rect" id="node17" href="$classTiXmlElement.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="243,219,400,248"/>
+<area shape="rect" id="node25" href="$classTiXmlNode.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="223,272,420,301"/>
+<area shape="rect" id="node35" href="$classTiXmlNode.html#aaef7ac3978c4bb1cc8a24ffae7bced75" title="TiXmlNode::IterateChildren" alt="" coords="232,325,411,355"/>
+<area shape="rect" id="node37" href="$classTiXmlNode.html#a7667217e269e0da01d1f82aee94d1a3d" title="TiXmlNode::NextSiblingElement" alt="" coords="216,379,427,408"/>
+<area shape="rect" id="node40" href="$classTiXmlDocument.html#a7b1aea204fee266b70b9c105c8bf2ada" title="Print this Document to a FILE stream." alt="" coords="247,432,396,461"/>
+<area shape="rect" id="node42" href="$classTiXmlElement.html#ad9d0c008866982ab8d9aafae7e14d692" title="TiXmlElement::Print" alt="" coords="252,485,391,515"/>
+<area shape="rect" id="node44" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745" title="anonymous_namespace\{XmlUtils::cpp\}::processNode" alt="" coords="476,511,809,540"/>
+<area shape="rect" id="node11" href="$classTiXmlDocument.html#ac9e8f09b23454d953b32d1b65cd1409e" title="TiXmlDocument::Clone" alt="" coords="564,5,721,35"/>
+<area shape="rect" id="node13" href="$classTiXmlDocument.html#aafbfacc3414008f619b1345775ef12a4" title="TiXmlDocument::operator=" alt="" coords="553,59,732,88"/>
+<area shape="rect" id="node15" href="$classTiXmlDocument.html#a323a7486e7da6099cdc19a5ff7e74b07" title="TiXmlDocument::TiXmlDocument" alt="" coords="533,112,752,141"/>
+<area shape="rect" id="node19" href="$classTiXmlElement.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="569,165,716,195"/>
+<area shape="rect" id="node21" href="$classTiXmlElement.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="560,219,725,248"/>
+<area shape="rect" id="node23" href="$classTiXmlElement.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="545,272,740,301"/>
+<area shape="rect" id="node27" href="$classTiXmlHandle.html#a8786475b9d1f1518492e3a46704c7ef0" title="TiXmlHandle::ChildElement" alt="" coords="552,432,733,461"/>
+<area shape="rect" id="node29" href="$classTiXmlHandle.html#a24d1112e995e937e4dddb202d4113d4a" title="Return a handle to the first child element." alt="" coords="539,325,747,355"/>
+<area shape="rect" id="node31" href="$classTiXmlDocument.html#ad09d17927f908f40efb406af2fb873be" title="TiXmlDocument::RootElement" alt="" coords="543,379,743,408"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1XmlDocument.html#abe920eb01a1e40874e6689fb64633f9a" title="osgEarth::XmlDocument::load" alt="" coords="859,445,1056,475"/>
+</map>

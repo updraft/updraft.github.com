@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlElement.html#a31ab28cc3b892a69254391d6bbe08df3" title="TiXmlElement::Accept" alt="" coords="231,5,383,35"/>
+<area shape="rect" id="node5" href="$classTiXmlElement.html#a5670933ec2d7d9763b9891acc05d7f7d" title="TiXmlElement::ClearThis" alt="" coords="223,59,391,88"/>
+<area shape="rect" id="node11" href="$classTiXmlElement.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="228,112,385,141"/>
+<area shape="rect" id="node18" href="$classTiXmlElement.html#a516054c9073647d6cb29b6abe9fa0592" title="Access the first attribute in this element." alt="" coords="213,165,400,195"/>
+<area shape="rect" id="node24" href="$classTiXmlElement.html#ad9d0c008866982ab8d9aafae7e14d692" title="TiXmlElement::Print" alt="" coords="237,219,376,248"/>
+<area shape="rect" id="node7" href="$classTiXmlElement.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="533,59,699,88"/>
+<area shape="rect" id="node9" href="$classTiXmlElement.html#aa049a47c5081c0d021968666360da261" title="TiXmlElement::~TiXmlElement" alt="" coords="515,5,717,35"/>
+<area shape="rect" id="node13" href="$classTiXmlElement.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="543,112,689,141"/>
+<area shape="rect" id="node16" href="$classTiXmlElement.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="519,165,713,195"/>
+<area shape="rect" id="node20" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745" title="anonymous_namespace\{XmlUtils::cpp\}::processNode" alt="" coords="449,219,783,248"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1XmlDocument.html#abe920eb01a1e40874e6689fb64633f9a" title="osgEarth::XmlDocument::load" alt="" coords="832,219,1029,248"/>
+</map>

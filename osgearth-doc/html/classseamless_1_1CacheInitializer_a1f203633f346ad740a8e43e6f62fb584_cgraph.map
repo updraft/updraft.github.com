@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceseamless_1_1anonymous__namespace_02Euler_8cpp_03.html#a49e7e4018e57c89b9c7b3726b9cbdeaa" title="seamless::anonymous_namespace\{Euler::cpp\}::createEulerSRS" alt="" coords="329,32,724,61"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1SpatialReference.html#a1ce7bab196098591946294d17771c355" title="osgEarth::SpatialReference::getSpatialReferenceCache" alt="" coords="353,85,700,115"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="775,85,961,115"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="1012,85,1199,115"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1248,5,1576,35"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1300,59,1524,88"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1291,112,1533,141"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1289,165,1535,195"/>
+</map>

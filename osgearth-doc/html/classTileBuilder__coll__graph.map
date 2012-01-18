@@ -1,0 +1,32 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="2540,449,2628,479"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1TaskService.html" title="osgEarth::TaskService" alt="" coords="2875,449,3029,479"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1Map.html" title="osgEarth::Map" alt="" coords="2899,611,3005,640"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1Drivers_1_1OSGTerrainOptions.html" title="osgEarth::Drivers::OSGTerrainOptions" alt="" coords="2040,445,2285,475"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1TerrainOptions.html" title="osgEarth::TerrainOptions" alt="" coords="1569,313,1735,343"/>
+<area shape="rect" id="node8" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="1147,577,1347,607"/>
+<area shape="rect" id="node53" href="$classosgEarth_1_1CacheOptions.html" title="osgEarth::CacheOptions" alt="" coords="1569,549,1735,579"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="705,604,871,633"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1MapOptions.html" title="osgEarth::MapOptions" alt="" coords="2508,611,2660,640"/>
+<area shape="rect" id="node59" href="$classosgEarth_1_1ProfileOptions.html" title="osgEarth::ProfileOptions" alt="" coords="1165,772,1328,801"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="307,604,427,633"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,577,152,607"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,631,157,660"/>
+<area shape="rect" id="node18" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="1160,487,1333,516"/>
+<area shape="rect" id="node20" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="279,132,455,161"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1LoadingPolicy.html" title="osgEarth::LoadingPolicy" alt="" coords="707,225,869,255"/>
+<area shape="rect" id="node22" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ElevationInterpolation \&gt;" alt="" coords="1109,239,1384,268"/>
+<area shape="rect" id="node24" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LoadingPolicy \&gt;" alt="" coords="1131,185,1363,215"/>
+<area shape="rect" id="node28" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Mode \&gt;" alt="" coords="276,235,457,264"/>
+<area shape="rect" id="node31" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="284,344,449,373"/>
+<area shape="rect" id="node34" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CompositingTechnique \&gt;" alt="" coords="1105,292,1388,321"/>
+<area shape="rect" id="node47" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CoordinateSystemType \&gt;" alt="" coords="2019,583,2307,612"/>
+<area shape="rect" id="node49" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; std::string \&gt;" alt="" coords="684,759,892,788"/>
+<area shape="rect" id="node51" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CacheOptions \&gt;" alt="" coords="2045,529,2280,559"/>
+<area shape="rect" id="node57" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProfileOptions \&gt;" alt="" coords="1761,769,1993,799"/>
+<area shape="rect" id="node63" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Bounds \&gt;" alt="" coords="691,831,885,860"/>
+<area shape="rect" id="node65" href="$classosgEarth_1_1Bounds.html" title="osgEarth::Bounds" alt="" coords="304,831,429,860"/>
+<area shape="rect" id="node68" href="$structosgEarth_1_1Revision.html" title="osgEarth::Revision" alt="" coords="2517,664,2651,693"/>
+<area shape="rect" id="node70" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html" title="osgEarth::Threading::ReadWriteMutex" alt="" coords="2461,784,2707,813"/>
+<area shape="rect" id="node72" href="$classosgEarth_1_1Threading_1_1Event.html" title="osgEarth::Threading::Event" alt="" coords="2072,828,2253,857"/>
+</map>

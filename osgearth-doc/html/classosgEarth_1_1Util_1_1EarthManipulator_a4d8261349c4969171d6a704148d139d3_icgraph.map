@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aafa5cbf5b47771babd84642ad934630e" title="osgEarth::Util::EarthManipulator::drag" alt="" coords="413,32,653,61"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a532c2b8db78a23b49b2a35de0f977bde" title="osgEarth::Util::EarthManipulator::setByMatrix" alt="" coords="391,85,676,115"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ad71dec84e6552197efdabb2331f3440f" title="osgEarth::Util::EarthManipulator::handleMovementAction" alt="" coords="725,32,1077,61"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ac12212fd02efb5487e3159269e058b89" title="osgEarth::Util::EarthManipulator::handleContinuousAction" alt="" coords="1125,5,1483,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#af964ea1d3516dfa778ad57bc45ad09fd" title="osgEarth::Util::EarthManipulator::handleMouseAction" alt="" coords="1139,59,1469,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a11a833833f8e0f2f44aec92ad02ac77b" title="osgEarth::Util::EarthManipulator::handle" alt="" coords="1532,32,1785,61"/>
+</map>

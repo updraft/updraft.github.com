@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlNode.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="283,59,480,88"/>
+<area shape="rect" id="node13" href="$classTiXmlNode.html#a7667217e269e0da01d1f82aee94d1a3d" title="TiXmlNode::NextSiblingElement" alt="" coords="276,5,487,35"/>
+<area shape="rect" id="node16" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745" title="anonymous_namespace\{XmlUtils::cpp\}::processNode" alt="" coords="215,137,548,167"/>
+<area shape="rect" id="node5" href="$classTiXmlHandle.html#a8786475b9d1f1518492e3a46704c7ef0" title="TiXmlHandle::ChildElement" alt="" coords="612,5,793,35"/>
+<area shape="rect" id="node7" href="$classTiXmlHandle.html#a24d1112e995e937e4dddb202d4113d4a" title="Return a handle to the first child element." alt="" coords="599,59,807,88"/>
+<area shape="rect" id="node9" href="$classTiXmlDocument.html#ad09d17927f908f40efb406af2fb873be" title="TiXmlDocument::RootElement" alt="" coords="603,112,803,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1XmlDocument.html#abe920eb01a1e40874e6689fb64633f9a" title="osgEarth::XmlDocument::load" alt="" coords="856,139,1053,168"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a3c45e0b101add88ab5029d6b64295777" title="osgEarth::Symbology::Taggable\&lt; osg::Referenced \&gt;::addTag" alt="" coords="344,5,723,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1Taggable.html#ad07e2e909f4e16c4716b3789316320d3" title="osgEarth::Symbology::Taggable\&lt; osg::Referenced \&gt;::addTags" alt="" coords="340,59,727,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a27f344394a29bbc19d8290e688fcb784" title="osgEarth::Symbology::Taggable\&lt; osg::Referenced \&gt;::containsTag" alt="" coords="331,112,736,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a7dd23f6039638d2502eb22f67446d74e" title="osgEarth::Symbology::Taggable\&lt; osg::Referenced \&gt;::containsTags" alt="" coords="327,165,740,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a17a2088443785d5402fbe6e07fbcb69f" title="osgEarth::Symbology::Taggable\&lt; osg::Referenced \&gt;::removeTag" alt="" coords="333,219,733,248"/>
+</map>

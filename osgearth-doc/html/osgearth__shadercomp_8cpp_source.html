@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__shadercomp_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_shadercomp/osgearth_shadercomp.cpp</h1>  </div>
@@ -113,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="osgearth__shadercomp_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">00038</a> <span class="keywordtype">int</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="keyword">const</span> std::string&amp; msg )
 <a name="l00039"></a>00039 {    
-<a name="l00040"></a>00040     OE_NOTICE
+<a name="l00040"></a>00040     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a>
 <a name="l00041"></a>00041         &lt;&lt; msg &lt;&lt; std::endl
 <a name="l00042"></a>00042         &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_shadercomp &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl;
 <a name="l00043"></a>00043 
@@ -134,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058     root-&gt;addChild( earthNode );
 <a name="l00059"></a>00059     
 <a name="l00060"></a>00060     osgViewer::Viewer viewer(arguments);
-<a name="l00061"></a>00061     viewer.setCameraManipulator( <span class="keyword">new</span> osgEarth::Util::EarthManipulator() );
+<a name="l00061"></a>00061     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>() );
 <a name="l00062"></a>00062     viewer.setSceneData( root );
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064     <span class="comment">// inject the haze shader components:</span>
@@ -151,14 +167,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076 <span class="comment">//-------------------------------------------------------------------------</span>
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="keyword">static</span> <span class="keywordtype">char</span> s_hazeVertShader[] =
+<a name="l00078"></a><a class="code" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">00078</a> <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">s_hazeVertShader</a>[] =
 <a name="l00079"></a>00079     <span class="stringliteral">&quot;varying vec3 v_pos; \n&quot;</span>
 <a name="l00080"></a>00080     <span class="stringliteral">&quot;void setup_haze() \n&quot;</span>
 <a name="l00081"></a>00081     <span class="stringliteral">&quot;{ \n&quot;</span>
 <a name="l00082"></a>00082     <span class="stringliteral">&quot;    v_pos = vec3(gl_ModelViewMatrix * gl_Vertex); \n&quot;</span>
 <a name="l00083"></a>00083     <span class="stringliteral">&quot;} \n&quot;</span>;
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="keyword">static</span> <span class="keywordtype">char</span> s_hazeFragShader[] =
+<a name="l00085"></a><a class="code" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">00085</a> <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">s_hazeFragShader</a>[] =
 <a name="l00086"></a>00086     <span class="stringliteral">&quot;varying vec3 v_pos; \n&quot;</span>
 <a name="l00087"></a>00087     <span class="stringliteral">&quot;void apply_haze(inout vec4 color) \n&quot;</span>
 <a name="l00088"></a>00088     <span class="stringliteral">&quot;{ \n&quot;</span>
@@ -170,23 +186,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094 osg::StateAttribute*
 <a name="l00095"></a><a class="code" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c">00095</a> <a class="code" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c">createHaze</a>()
 <a name="l00096"></a>00096 {
-<a name="l00097"></a>00097     osgEarth::VirtualProgram* vp = <span class="keyword">new</span> osgEarth::VirtualProgram();
+<a name="l00097"></a>00097     <a class="code" href="classosgEarth_1_1VirtualProgram.html">osgEarth::VirtualProgram</a>* vp = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1VirtualProgram.html">osgEarth::VirtualProgram</a>();
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099     vp-&gt;setFunction( <span class="stringliteral">&quot;setup_haze&quot;</span>, s_hazeVertShader, osgEarth::ShaderComp::LOCATION_VERTEX_POST_LIGHTING );
-<a name="l00100"></a>00100     vp-&gt;setFunction( <span class="stringliteral">&quot;apply_haze&quot;</span>, s_hazeFragShader, osgEarth::ShaderComp::LOCATION_FRAGMENT_POST_LIGHTING );
+<a name="l00099"></a>00099     vp-&gt;<a class="code" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e">setFunction</a>( <span class="stringliteral">&quot;setup_haze&quot;</span>, <a class="code" href="osgearth__shadercomp_8cpp.html#a39f3732e84266de3a9c8f473d92f16ef">s_hazeVertShader</a>, <a class="code" href="namespaceosgEarth_1_1ShaderComp.html#aa58583ccd17a04d01aaec664bd42cdcaaa299bbc4180a44e8600da5d476cca8cf">osgEarth::ShaderComp::LOCATION_VERTEX_POST_LIGHTING</a> );
+<a name="l00100"></a>00100     vp-&gt;<a class="code" href="classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e">setFunction</a>( <span class="stringliteral">&quot;apply_haze&quot;</span>, <a class="code" href="osgearth__shadercomp_8cpp.html#a2d8ac774a6269e340f2b140782a1f2b5">s_hazeFragShader</a>, <a class="code" href="namespaceosgEarth_1_1ShaderComp.html#aa58583ccd17a04d01aaec664bd42cdcaa26e54a8675847077a5524a2459423ad4">osgEarth::ShaderComp::LOCATION_FRAGMENT_POST_LIGHTING</a> );
 <a name="l00101"></a>00101 
 <a name="l00102"></a>00102     <span class="keywordflow">return</span> vp;
 <a name="l00103"></a>00103 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__shadercomp_8cpp.html">osgearth_shadercomp.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -201,6 +209,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

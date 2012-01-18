@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a2c43e9fb92d127b847a03298c1508730" title="osgEarth::Util::ImageOverlayEditor::addDragger" alt="" coords="404,32,703,61"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a3d8a1272db3ffbe332f9f6b2ef42d523" title="osgEarth::Util::IntersectingDragger::setNode" alt="" coords="793,5,1073,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#afdbf9f7635aeb0101521fe21bf53fabc" title="osgEarth::Util::IntersectingDragger::setupDefaultGeometry" alt="" coords="752,59,1115,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#ae5324acb61f17355e69257980bf6af33" title="osgEarth::Util::IntersectingDragger::setDrawableColor" alt="" coords="1163,59,1499,88"/>
+</map>

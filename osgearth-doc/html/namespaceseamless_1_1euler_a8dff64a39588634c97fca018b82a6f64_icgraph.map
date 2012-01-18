@@ -1,7 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="227,59,395,88"/>
-<area shape="rect" id="node9" href="$namespaceseamless_1_1qsc.html#a9895fd02979ef967a651a7de665ea7c4" title="seamless::qsc::face2ec" alt="" coords="231,112,391,141"/>
-<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d" title="seamless::euler::arcLength" alt="" coords="473,5,652,35"/>
-<area shape="rect" id="node7" href="$namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="444,59,681,88"/>
-<area shape="rect" id="node11" href="$namespaceseamless_1_1qsc.html#a5942897e6a8540d44b1329c8935480f6" title="seamless::qsc::faceCoordsToLatLon" alt="" coords="445,112,680,141"/>
+<area shape="rect" id="node3" href="$namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="227,5,395,35"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1qsc.html#a9895fd02979ef967a651a7de665ea7c4" title="seamless::qsc::face2ec" alt="" coords="231,59,391,88"/>
+<area shape="rect" id="node7" href="$namespaceseamless_1_1qsc.html#a5942897e6a8540d44b1329c8935480f6" title="seamless::qsc::faceCoordsToLatLon" alt="" coords="444,59,679,88"/>
 </map>

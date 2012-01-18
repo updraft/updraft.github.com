@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('namespaceseamless.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
@@ -91,39 +108,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Euler_8cpp_03.html">anonymous_namespace{Euler.cpp}</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html">anonymous_namespace{Geographic.cpp}</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html">anonymous_namespace{Patch.cpp}</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02PatchSet_8cpp_03.html">anonymous_namespace{PatchSet.cpp}</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Projected_8cpp_03.html">anonymous_namespace{Projected.cpp}</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02QSC_8cpp_03.html">anonymous_namespace{QSC.cpp}</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html">euler</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1qsc.html">qsc</a></td></tr>
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1_cache_initializer.html">CacheInitializer</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1_grid_edge.html">GridEdge</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1_share_result.html">ShareResult</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1_tile_updater.html">TileUpdater</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1_my_node_accept_op.html">MyNodeAcceptOp</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1_node_path_proxy.html">NodePathProxy</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1_projected_options.html">ProjectedOptions</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1_seamless_map_proxy.html">SeamlessMapProxy</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1_seamless_plugin.html">SeamlessPlugin</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1AutoBuffer.html">AutoBuffer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1EulerFaceLocator.html">EulerFaceLocator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1EulerSpatialReference.html">EulerSpatialReference</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1EulerProfile.html">EulerProfile</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1CacheInitializer.html">CacheInitializer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1Geographic.html">Geographic</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1GridEdge.html">GridEdge</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1ShareResult.html">ShareResult</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1TileUpdater.html">TileUpdater</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1SubArraySimple.html">SubArraySimple</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1SubArray.html">SubArray</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1Reference.html">Reference</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1Reference_3_01ElementType_00_01Store_00_011_01_4.html">Reference&lt; ElementType, Store, 1 &gt;</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1multi__array__ref.html">multi_array_ref</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1vector__ref.html">vector_ref</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1Patch.html">Patch</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1MyNodeAcceptOp.html">MyNodeAcceptOp</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1PatchGroup.html">PatchGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1PatchOptions.html">PatchOptions</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1NodePathProxy.html">NodePathProxy</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1PatchInfo.html">PatchInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1PatchSet.html">PatchSet</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1Projected.html">Projected</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1ProjectedOptions.html">ProjectedOptions</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1QscFaceLocator.html">QscFaceLocator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1QscSpatialReference.html">QscSpatialReference</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1QscProfile.html">QscProfile</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1SeamlessEngineNode.html">SeamlessEngineNode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structseamless_1_1SeamlessMapProxy.html">SeamlessMapProxy</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classseamless_1_1SeamlessPlugin.html">SeamlessPlugin</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef multi_array_ref&lt; Vec3f, <br class="typebreak"/>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classseamless_1_1multi__array__ref.html">multi_array_ref</a>&lt; Vec3f, <br class="typebreak"/>
 Vec3Array, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a021379465ec3a11c8a9c5ddd569d707f">PatchArray</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef vector_ref&lt; Vec3f, <br class="typebreak"/>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classseamless_1_1vector__ref.html">vector_ref</a>&lt; Vec3f, <br class="typebreak"/>
 Vec3Array &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a252bf65b0b5b612bca4ba837a282b2a1">expandHeights</a> (Geographic *gpatchset, const TileKey &amp;key, const GeoHeightField &amp;hf, Vec3Array *verts, Vec3Array *normals)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2">installHeightField</a> (GeoPatch *patch, const TileKey &amp;key, const GeoHeightField &amp;hf)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">MatrixTransform *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#aa663b51b44cd869ba89496cc70c5e3ea">createPatchAux</a> (Geographic *gpatchset, const TileKey &amp;key, const GeoHeightField &amp;hf)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#afcd14d04789f1237284d42c905a8d95a">containsTile</a> (const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;parent, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;child)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ac3804adf63e187042d9e066424d69ca5">isNeighborTile</a> (const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;tile, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;neighbor)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ac365093ff9719f83406e05f82ed5afb1">adjoinsTile</a> (const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;tile, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;neighbor)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">PatchGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a910fffa1e14042df22eb897316a8de4d">findFaceRoot</a> (GeoPatch *patch, NodePath &amp;pathList)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6">makeEdgeRef</a> (GeoPatch *gpatch, int edgeno, int mult)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structseamless_1_1_share_result.html">ShareResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a55ad0fcaed6ad75112709b80f0d73078">tilesShareEdges</a> (const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;tile1, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;tile2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d">transferEdges</a> (GeoPatch *toPatch, const Matrixd &amp;toMat, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;toIdx, GeoPatch *fromPatch, const Matrixd &amp;fromMat, const <a class="el" href="structseamless_1_1_key_index.html">KeyIndex</a> &amp;fromIdx, const <a class="el" href="structseamless_1_1_share_result.html">ShareResult</a> &amp;shared)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a252bf65b0b5b612bca4ba837a282b2a1">expandHeights</a> (<a class="el" href="classseamless_1_1Geographic.html">Geographic</a> *gpatchset, const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;key, const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;hf, Vec3Array *verts, Vec3Array *normals)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2">installHeightField</a> (<a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a> *patch, const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;key, const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;hf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">MatrixTransform *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#aa663b51b44cd869ba89496cc70c5e3ea">createPatchAux</a> (<a class="el" href="classseamless_1_1Geographic.html">Geographic</a> *gpatchset, const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;key, const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;hf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#afcd14d04789f1237284d42c905a8d95a">containsTile</a> (const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;parent, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;child)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ac3804adf63e187042d9e066424d69ca5">isNeighborTile</a> (const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;tile, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;neighbor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ac365093ff9719f83406e05f82ed5afb1">adjoinsTile</a> (const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;tile, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;neighbor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classseamless_1_1PatchGroup.html">PatchGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a910fffa1e14042df22eb897316a8de4d">findFaceRoot</a> (<a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a> *patch, NodePath &amp;pathList)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classseamless_1_1vector__ref.html">EdgeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6">makeEdgeRef</a> (<a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a> *gpatch, int edgeno, int mult)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structseamless_1_1ShareResult.html">ShareResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a55ad0fcaed6ad75112709b80f0d73078">tilesShareEdges</a> (const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;tile1, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;tile2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d">transferEdges</a> (<a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a> *toPatch, const Matrixd &amp;toMat, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;toIdx, <a class="el" href="classseamless_1_1GeoPatch.html">GeoPatch</a> *fromPatch, const Matrixd &amp;fromMat, const <a class="el" href="structseamless_1_1KeyIndex.html">KeyIndex</a> &amp;fromIdx, const <a class="el" href="structseamless_1_1ShareResult.html">ShareResult</a> &amp;shared)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b">safeCopy</a> (Vec3f &amp;dest, const Vec3f &amp;src, const Matrixd &amp;mat)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osg::Vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ab195588265db8b5d2a982f2ee2b61fa2">closestPointOnSegment</a> (const osg::Vec3 &amp;p1, const osg::Vec3 &amp;p2, const osg::Vec3 &amp;p3)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a6fd338140a630b8faf0315f110528aa8">distanceToSegment</a> (const osg::Vec3 &amp;p1, const osg::Vec3 &amp;p2, const osg::Vec3 &amp;p3)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#ae6adeffda33a45ec77a9e3d34cb96d0e">closestPointOnSegment</a> (const Vec3 &amp;p1, const Vec3 &amp;p2, const Vec3 &amp;p3)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless.html#a2e8e39edffc22030b82a387ea2e8d0c2">distanceToSegment</a> (const Vec3 &amp;p1, const Vec3 &amp;p2, const Vec3 &amp;p3)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
@@ -139,13 +186,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef vector_ref&lt;Vec3f, Vec3Array&gt; <a class="el" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">seamless::EdgeRef</a></td>
+          <td class="memname">typedef <a class="el" href="classseamless_1_1vector__ref.html">vector_ref</a>&lt;Vec3f, Vec3Array&gt; <a class="el" href="classseamless_1_1vector__ref.html">seamless::EdgeRef</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00677">677</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00677">677</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
 
 </div>
 </div>
@@ -154,13 +201,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef multi_array_ref&lt;Vec3f, Vec3Array, 2&gt; <a class="el" href="namespaceseamless.html#a021379465ec3a11c8a9c5ddd569d707f">seamless::PatchArray</a></td>
+          <td class="memname">typedef <a class="el" href="classseamless_1_1multi__array__ref.html">multi_array_ref</a>&lt;Vec3f, Vec3Array, 2&gt; <a class="el" href="classseamless_1_1multi__array__ref.html">seamless::PatchArray</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00032">32</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00032">32</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
 
 </div>
 </div>
@@ -190,7 +237,52 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00633">633</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00633">633</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab195588265db8b5d2a982f2ee2b61fa2"></a><!-- doxytag: member="seamless::closestPointOnSegment" ref="ab195588265db8b5d2a982f2ee2b61fa2" args="(const osg::Vec3 &amp;p1, const osg::Vec3 &amp;p2, const osg::Vec3 &amp;p3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osg::Vec3 seamless::closestPointOnSegment </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_ab195588265db8b5d2a982f2ee2b61fa2_icgraph.png" border="0" usemap="#namespaceseamless_ab195588265db8b5d2a982f2ee2b61fa2_icgraph" alt=""/></div>
+<map name="namespaceseamless_ab195588265db8b5d2a982f2ee2b61fa2_icgraph" id="namespaceseamless_ab195588265db8b5d2a982f2ee2b61fa2_icgraph">
+<area shape="rect" id="node3" href="namespaceseamless.html#a2e8e39edffc22030b82a387ea2e8d0c2" title="seamless::distanceToSegment" alt="" coords="281,5,484,35"/><area shape="rect" id="node5" href="classseamless_1_1Patch.html#af25c15cc173e6324e8cf65a00c9b942f" title="seamless::Patch::getEdgeError" alt="" coords="281,59,484,88"/><area shape="rect" id="node7" href="classseamless_1_1Patch.html#ad5612101be8918d6a3fba1ab29019bf4" title="seamless::Patch::getPatchError" alt="" coords="536,32,744,61"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1GeoCell.html#a038943dff9f9181d2aa8fefb241111eb" title="osgEarth::Util::GeoCell::traverse" alt="" coords="535,85,745,115"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -225,17 +317,21 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_patch_8cpp_source.html#l00162">162</a> of file <a class="el" href="_patch_8cpp_source.html">Patch.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceseamless_ae6adeffda33a45ec77a9e3d34cb96d0e_icgraph.png" border="0" usemap="#namespaceseamless_ae6adeffda33a45ec77a9e3d34cb96d0e_icgraph" alt=""/></div>
-<map name="namespaceseamless_ae6adeffda33a45ec77a9e3d34cb96d0e_icgraph" id="namespaceseamless_ae6adeffda33a45ec77a9e3d34cb96d0e_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless.html#a2e8e39edffc22030b82a387ea2e8d0c2" title="seamless::distanceToSegment" alt="" coords="280,5,483,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="532,5,769,35"/></map>
-</div>
-</p>
-
+<p>Definition at line <a class="el" href="Patch_8cpp_source.html#l00162">162</a> of file <a class="el" href="Patch_8cpp_source.html">Patch.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3 vec = p2 - p1;
+    <span class="keywordtype">float</span> len2 = vec.length2();
+    <span class="keywordflow">if</span> (equivalent(len2, 0))
+        <span class="keywordflow">return</span> p1;
+    <span class="keywordtype">float</span> u = ((p3 - p1) * vec) / len2;
+    <span class="keywordflow">if</span> (u &lt;= 0.0)
+        <span class="keywordflow">return</span> p1;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (u &gt;= 1.0)
+        <span class="keywordflow">return</span> p2;
+    <span class="keywordflow">else</span>
+        <span class="keywordflow">return</span> p1 + vec * u;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="afcd14d04789f1237284d42c905a8d95a"></a><!-- doxytag: member="seamless::containsTile" ref="afcd14d04789f1237284d42c905a8d95a" args="(const KeyIndex &amp;parent, const KeyIndex &amp;child)" -->
@@ -263,8 +359,9 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00604">604</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00604">604</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="aa663b51b44cd869ba89496cc70c5e3ea"></a><!-- doxytag: member="seamless::createPatchAux" ref="aa663b51b44cd869ba89496cc70c5e3ea" args="(Geographic *gpatchset, const TileKey &amp;key, const GeoHeightField &amp;hf)" -->
@@ -280,13 +377,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TileKey &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const GeoHeightField &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;&#160;</td>
           <td class="paramname"><em>hf</em>&#160;</td>
         </tr>
         <tr>
@@ -298,14 +395,77 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00292">292</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00292">292</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    GeoPatch* patch = <span class="keyword">new</span> GeoPatch(key);
+    patch-&gt;setGeographic(gpatchset);
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1GeoExtent.html">GeoExtent</a>&amp; patchExtent = key.<a class="code" href="classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4">getExtent</a>();
+    <span class="keywordtype">double</span> centx, centy;
+    patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729">getCentroid</a>(centx, centy);
+    Vec3d patchCenter = gpatchset-&gt;toModel(centx, centy, 0);
+    Matrixd patchMat = Matrixd::translate(patchCenter);
+    <a class="code" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2">installHeightField</a>(patch, key, hf);
+    MatrixTransform* result = <span class="keyword">new</span> MatrixTransform;
+    result-&gt;addChild(patch);
+    result-&gt;setMatrix(patchMat);
+    <span class="keywordflow">return</span> result;
+}
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+
+<span class="keyword">namespace</span>
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_aa663b51b44cd869ba89496cc70c5e3ea_cgraph.png" border="0" usemap="#namespaceseamless_aa663b51b44cd869ba89496cc70c5e3ea_cgraph" alt=""/></div>
 <map name="namespaceseamless_aa663b51b44cd869ba89496cc70c5e3ea_cgraph" id="namespaceseamless_aa663b51b44cd869ba89496cc70c5e3ea_cgraph">
-<area shape="rect" id="node3" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2" title="seamless::installHeightField" alt="" coords="232,5,419,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="241,32,460,61"/><area shape="rect" id="node11" href="classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="256,85,445,115"/><area shape="rect" id="node13" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2" title="seamless::installHeightField" alt="" coords="257,139,444,168"/><area shape="rect" id="node15" href="classseamless_1_1GeoPatch.html#a2a48acce8034cc5351e248fb2cde4ea6" title="seamless::GeoPatch::setGeographic" alt="" coords="233,192,468,221"/><area shape="rect" id="node5" href="classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="517,5,704,35"/><area shape="rect" id="node7" href="classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="520,59,701,88"/><area shape="rect" id="node9" href="classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="752,59,1003,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fd338140a630b8faf0315f110528aa8"></a><!-- doxytag: member="seamless::distanceToSegment" ref="a6fd338140a630b8faf0315f110528aa8" args="(const osg::Vec3 &amp;p1, const osg::Vec3 &amp;p2, const osg::Vec3 &amp;p3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float seamless::distanceToSegment </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3 &amp;&#160;</td>
+          <td class="paramname"><em>p3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_a6fd338140a630b8faf0315f110528aa8_icgraph.png" border="0" usemap="#namespaceseamless_a6fd338140a630b8faf0315f110528aa8_icgraph" alt=""/></div>
+<map name="namespaceseamless_a6fd338140a630b8faf0315f110528aa8_icgraph" id="namespaceseamless_a6fd338140a630b8faf0315f110528aa8_icgraph">
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="257,5,495,35"/><area shape="rect" id="node5" href="classseamless_1_1GeoPatch.html#ac6ae73602e8b9c4749a671159a3307c4" title="seamless::GeoPatch::getEdgeError" alt="" coords="263,59,489,88"/></map>
 </div>
 </p>
 
@@ -342,23 +502,20 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_patch_8cpp_source.html#l00177">177</a> of file <a class="el" href="_patch_8cpp_source.html">Patch.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Patch_8cpp_source.html#l00177">177</a> of file <a class="el" href="Patch_8cpp_source.html">Patch.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3 pt = <a class="code" href="namespaceseamless.html#ab195588265db8b5d2a982f2ee2b61fa2">closestPointOnSegment</a>(p1, p2, p3);
+    <span class="keywordflow">return</span> (p3 - pt).length();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_cgraph.png" border="0" usemap="#namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_cgraph" alt=""/></div>
 <map name="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_cgraph" id="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_cgraph">
-<area shape="rect" id="node3" href="namespaceseamless.html#ae6adeffda33a45ec77a9e3d34cb96d0e" title="seamless::closestPointOnSegment" alt="" coords="256,5,483,35"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_icgraph.png" border="0" usemap="#namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_icgraph" alt=""/></div>
-<map name="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_icgraph" id="namespaceseamless_a2e8e39edffc22030b82a387ea2e8d0c2_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="257,5,495,35"/></map>
+<area shape="rect" id="node3" href="namespaceseamless.html#ab195588265db8b5d2a982f2ee2b61fa2" title="seamless::closestPointOnSegment" alt="" coords="256,5,483,35"/></map>
 </div>
 </p>
 
@@ -377,13 +534,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TileKey &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const GeoHeightField &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;&#160;</td>
           <td class="paramname"><em>hf</em>, </td>
         </tr>
         <tr>
@@ -407,7 +564,101 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00170">170</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00170">170</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">int</span> resolution = gpatchset-&gt;getResolution();
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1GeoExtent.html">GeoExtent</a>&amp; patchExtent = key.<a class="code" href="classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4">getExtent</a>();
+    <span class="keywordtype">double</span> centx, centy;
+    patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729">getCentroid</a>(centx, centy);
+    Vec3d patchCenter = gpatchset-&gt;toModel(centx, centy, 0);
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1SpatialReference.html">SpatialReference</a>* srs = key.<a class="code" href="classosgEarth_1_1TileKey.html#a3e50d16b9f2702e5d1008278a10ac6ae">getProfile</a>()-&gt;<a class="code" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b">getSRS</a>();
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1SpatialReference.html">SpatialReference</a>* geoSrs = srs-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#a42fc6ea305be6b94340bf300d7b67dbe">getGeographicSRS</a>();
+    <span class="comment">// Populate cell</span>
+    ref_ptr&lt;Patch::Data&gt; data = <span class="keyword">new</span> Patch::Data;
+    <span class="keywordtype">int</span> patchDim = resolution + 1;
+    <span class="keywordtype">double</span> xInc = (patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00">xMax</a>() - patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b">xMin</a>()) / resolution;
+    <span class="keywordtype">double</span> yInc = (patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc">yMax</a>() - patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c">yMin</a>()) / resolution;
+    <span class="keyword">const</span> EllipsoidModel* eModel = gpatchset-&gt;getEllipsoidModel();
+    <span class="keyword">const</span> <span class="keywordtype">float</span> verticalScale = gpatchset-&gt;getVerticalScale();
+    <a class="code" href="namespaceseamless.html#a021379465ec3a11c8a9c5ddd569d707f">PatchArray</a> mverts(*verts, patchDim);
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; patchDim; ++j)
+    {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; patchDim; i++)
+        {
+            Vec2d cubeCoord(patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b">xMin</a>() + i * xInc,
+                            patchExtent.<a class="code" href="classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c">yMin</a>() + j * yInc);
+            <span class="keywordtype">double</span> lon, lat;
+            srs-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#a28d916a87ed2653a5763bf8777cd9cbf">transform</a>(cubeCoord.x(), cubeCoord.y(), geoSrs, lon, lat);
+            <span class="keywordtype">float</span> elevation;
+
+            <span class="keywordtype">bool</span> found = hf.<a class="code" href="classosgEarth_1_1GeoHeightField.html#a69cd23edf51596764b79e6985e609874">getElevation</a>(srs, cubeCoord.x(), cubeCoord.y(),
+                                         <a class="code" href="HeightFieldUtils.html#aa9ed60725e4c7bb403b0d985f9d3bf37">INTERP_BILINEAR</a>, 0, elevation);
+            <span class="comment">// Into ec coordinates</span>
+            <span class="keywordflow">if</span> (!found)
+            {
+                <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Couldn&#39;t find height sample for cube coordinates &quot;</span>
+                        &lt;&lt; cubeCoord.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; cubeCoord.y()
+                        &lt;&lt; <span class="stringliteral">&quot; (lon lat &quot;</span> &lt;&lt; lon &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; lat &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;
+                <span class="keywordflow">continue</span>;
+            }
+            elevation *= verticalScale;
+            Vec3d coord;
+            eModel-&gt;convertLatLongHeightToXYZ(
+                DegreesToRadians(lat), DegreesToRadians(lon), elevation,
+                coord.x(), coord.y(), coord.z());
+            mverts[j][i] = coord - patchCenter;
+            <span class="keywordflow">if</span> (fabs(mverts[j][i].z()) &gt; 6000000)
+                <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;found huge coordinate.\n&quot;</span>;
+        }
+    }
+    <span class="comment">// Normals. Average the normals of the triangles around the sample</span>
+    <span class="comment">// point. We&#39;re not following the actual tessallation of the grid.</span>
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; patchDim; ++j)
+    {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; patchDim; i++)
+        {
+            <span class="keyword">const</span> Vec3&amp; pt = (*verts)[j * patchDim + i];
+            <span class="comment">// A cross of points.</span>
+            Vec3 delta[4];      <span class="comment">// Initialized to zero vectors</span>
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; 2; ++k)
+            {
+                <span class="keywordtype">int</span> gridx = i + 2 * k - 1;
+                <span class="keywordflow">if</span> (gridx &lt; patchDim &amp;&amp; gridx &gt;= 0)
+                    delta[2 * k] = (*verts)[j * patchDim + gridx] - pt;
+            }
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; 2; ++k)
+            {
+                <span class="keywordtype">int</span> gridy = j + 2 * k - 1;
+                <span class="keywordflow">if</span> (gridy &lt; patchDim &amp;&amp; gridy &gt;= 0)
+                    delta[2 * k + 1] = (*verts)[gridy * patchDim + i] - pt;
+            }
+            Vec3 normal;
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= 4; ++k)
+            {
+                <span class="keywordtype">int</span> v1 = k - 1, v2 = k % 4;
+                <span class="comment">// If One or both of the deltas are 0, then the cross</span>
+                <span class="comment">// product is 0 and won&#39;t contribute to the average.</span>
+                normal += delta[v1] ^ delta[v2];
+            }
+            normal.normalize();
+            (*normals)[j * patchDim + i] = normal;
+        }
+    }
+}
+
+<span class="keywordtype">void</span> <a class="code" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2">installHeightField</a>(GeoPatch* patch, <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a>&amp; key,
+                        <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a>&amp; hf)
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_a252bf65b0b5b612bca4ba837a282b2a1_cgraph.png" border="0" usemap="#namespaceseamless_a252bf65b0b5b612bca4ba837a282b2a1_cgraph" alt=""/></div>
+<map name="namespaceseamless_a252bf65b0b5b612bca4ba837a282b2a1_cgraph" id="namespaceseamless_a252bf65b0b5b612bca4ba837a282b2a1_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="244,60,463,89"/><area shape="rect" id="node11" href="classosgEarth_1_1GeoHeightField.html#a69cd23edf51596764b79e6985e609874" title="osgEarth::GeoHeightField::getElevation" alt="" coords="228,297,479,327"/><area shape="rect" id="node60" href="classosgEarth_1_1SpatialReference.html#a42fc6ea305be6b94340bf300d7b67dbe" title="osgEarth::SpatialReference::getGeographicSRS" alt="" coords="535,113,836,143"/><area shape="rect" id="node65" href="classosgEarth_1_1SpatialReference.html#a28d916a87ed2653a5763bf8777cd9cbf" title="osgEarth::SpatialReference::transform" alt="" coords="1259,321,1504,351"/><area shape="rect" id="node97" href="classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="596,481,775,511"/><area shape="rect" id="node99" href="classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="596,535,775,564"/><area shape="rect" id="node101" href="classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="259,636,448,665"/><area shape="rect" id="node104" href="classosgEarth_1_1TileKey.html#a3e50d16b9f2702e5d1008278a10ac6ae" title="osgEarth::TileKey::getProfile" alt="" coords="259,689,448,719"/><area shape="rect" id="node106" href="classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b" title="osgEarth::Profile::getSRS" alt="" coords="267,428,440,457"/><area shape="rect" id="node110" href="classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00" title="osgEarth::GeoExtent::xMax" alt="" coords="261,743,445,772"/><area shape="rect" id="node113" href="classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc" title="osgEarth::GeoExtent::yMax" alt="" coords="261,796,445,825"/><area shape="rect" id="node5" href="classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="592,60,779,89"/><area shape="rect" id="node7" href="classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="595,7,776,36"/><area shape="rect" id="node9" href="classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="925,5,1176,35"/><area shape="rect" id="node13" href="classosgEarth_1_1VerticalSpatialReference.html#a3132c1f0e80a0fc643f5ba5af619d21a" title="osgEarth::VerticalSpatialReference::canTransform" alt="" coords="528,324,843,353"/><area shape="rect" id="node17" href="classosgEarth_1_1GeoExtent.html#aee6715804d02b8467ace54bd77d93681" title="osgEarth::GeoExtent::contains" alt="" coords="585,220,785,249"/><area shape="rect" id="node40" href="classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="2543,792,2809,821"/><area shape="rect" id="node58" href="classosgEarth_1_1SpatialReference.html#a8ac8eb28a1c629d9c7522096310311db" title="osgEarth::SpatialReference::transform2D" alt="" coords="920,271,1181,300"/><area shape="rect" id="node87" href="classosgEarth_1_1HeightFieldUtils.html#a4105a355e751cf6c15e11341ec3bae71" title="osgEarth::HeightFieldUtils::getHeightAtLocation" alt="" coords="535,167,836,196"/><area shape="rect" id="node91" href="classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="587,428,784,457"/><area shape="rect" id="node15" href="classosgEarth_1_1VerticalSpatialReference.html#a13fc3444cc305fe9dea936efaf166548" title="osgEarth::VerticalSpatialReference::isEquivalentTo" alt="" coords="891,324,1211,353"/><area shape="rect" id="node19" href="classosgEarth_1_1SpatialReference.html#a398407559e7c170fc44cde6842511548" title="osgEarth::SpatialReference::isEquivalentTo" alt="" coords="1884,321,2159,351"/><area shape="rect" id="node21" href="classosgEarth_1_1SpatialReference.html#afe559cd555e232b45109fbce72742b02" title="osgEarth::SpatialReference::_isEquivalentTo" alt="" coords="2208,377,2491,407"/><area shape="rect" id="node25" href="classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="2863,451,3068,480"/><area shape="rect" id="node23" href="classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="2548,264,2804,293"/><area shape="rect" id="node31" href="classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333" title="osgEarth::SpatialReference::getWKT" alt="" coords="2557,584,2795,613"/><area shape="rect" id="node34" href="classosgEarth_1_1SpatialReference.html#a7e2212a07fe863d5680b73f1e76cdee2" title="osgEarth::SpatialReference::isContiguous" alt="" coords="2543,317,2809,347"/><area shape="rect" id="node37" href="classosgEarth_1_1SpatialReference.html#a56b924155ab1745c5c9592269c6c147b" title="osgEarth::SpatialReference::isCube" alt="" coords="2561,424,2791,453"/><area shape="rect" id="node43" href="classosgEarth_1_1SpatialReference.html#a8531e5c5cfc660c195ec9a569ba28cab" title="osgEarth::SpatialReference::isLTP" alt="" coords="2564,371,2788,400"/><area shape="rect" id="node45" href="classosgEarth_1_1SpatialReference.html#a7b198b8e4dc79a8c4e04cee6b73c85c4" title="osgEarth::SpatialReference::isMercator" alt="" coords="2551,637,2801,667"/><area shape="rect" id="node48" href="classosgEarth_1_1SpatialReference.html#a3ac570432fd7345ac3f1fa3c400a5553" title="osgEarth::SpatialReference::isNorthPolar" alt="" coords="2545,477,2807,507"/><area shape="rect" id="node51" href="classosgEarth_1_1SpatialReference.html#ae913b39821f50acf4662194ef5bcd3c3" title="osgEarth::SpatialReference::isSouthPolar" alt="" coords="2544,531,2808,560"/><area shape="rect" id="node54" href="classosgEarth_1_1SpatialReference.html#a1cb6bf576e355f9e32b226e43311e359" title="osgEarth::SpatialReference::isUserDefined" alt="" coords="2540,211,2812,240"/><area shape="rect" id="node27" href="classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="3119,451,3332,480"/><area shape="rect" id="node29" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="3381,451,3792,480"/><area shape="rect" id="node63" href="classosgEarth_1_1SpatialReference.html#ae27903c7c477c9f22b68ee71415888bf" title="osgEarth::SpatialReference::SpatialReference" alt="" coords="905,113,1196,143"/><area shape="rect" id="node69" href="classosgEarth_1_1SpatialReference.html#a3c3d798015a48c93c5063182ac177688" title="osgEarth::SpatialReference::transformPoints" alt="" coords="1552,532,1835,561"/><area shape="rect" id="node71" href="SpatialReference_8cpp.html#a253ee9380896291f2aec77e4868d994c" title="geographicToMercator" alt="" coords="1947,532,2096,561"/><area shape="rect" id="node73" href="classosgEarth_1_1SpatialReference.html#a2e11d757cd795a81173912054fbb83c9" title="osgEarth::SpatialReference::getName" alt="" coords="2228,740,2471,769"/><area shape="rect" id="node81" href="SpatialReference_8cpp.html#a047d2c7e4580672483d0926a8f694e7e" title="mercatorToGeographic" alt="" coords="1944,636,2099,665"/><area shape="rect" id="node83" href="classosgEarth_1_1SpatialReference.html#a1f6be4de7c26f8dd31504f10b21d68be" title="osgEarth::SpatialReference::postTransform" alt="" coords="1884,689,2159,719"/><area shape="rect" id="node85" href="classosgEarth_1_1SpatialReference.html#a9ce72de8ce6def17df6239a136dedb5d" title="osgEarth::SpatialReference::preTransform" alt="" coords="1888,377,2155,407"/><area shape="rect" id="node89" href="classosgEarth_1_1HeightFieldUtils.html#a22c62355cca03b5aba9edeff73534da7" title="osgEarth::HeightFieldUtils::getHeightAtPixel" alt="" coords="911,167,1191,196"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -416,7 +667,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PatchGroup* seamless::findFaceRoot </td>
+          <td class="memname"><a class="el" href="classseamless_1_1PatchGroup.html">PatchGroup</a>* seamless::findFaceRoot </td>
           <td>(</td>
           <td class="paramtype">GeoPatch *&#160;</td>
           <td class="paramname"><em>patch</em>, </td>
@@ -436,7 +687,48 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00645">645</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00645">645</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        PatchGroup* pg = <span class="keyword">dynamic_cast&lt;</span>PatchGroup*<span class="keyword">&gt;</span>(*itr);
+        <span class="keywordflow">if</span> (pg)
+        {
+            PatchOptions* poptions = pg-&gt;getOptions();
+            <span class="keywordflow">if</span> (poptions)
+            {
+                <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key = poptions-&gt;getTileKey();
+                <span class="keywordflow">if</span> (key.<a class="code" href="classosgEarth_1_1TileKey.html#a0ee6b25bbae560dda11987ac1e9dc69d">getLevelOfDetail</a>() == 2 &amp;&amp; x == key.<a class="code" href="classosgEarth_1_1TileKey.html#add6a3c7117d189c2d801bc77f0e7b697">getTileX</a>()
+                    &amp;&amp; y == key.<a class="code" href="classosgEarth_1_1TileKey.html#ad1ff38fbd762c0faba5b03b326617628">getTileY</a>())
+                <span class="keywordflow">return</span> pg;
+            }
+        }
+    }
+    <span class="keywordflow">return</span> 0;
+}
+
+<span class="keyword">typedef</span> vector_ref&lt;Vec3f, Vec3Array&gt; <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>;
+
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_cgraph.png" border="0" usemap="#namespaceseamless_a910fffa1e14042df22eb897316a8de4d_cgraph" alt=""/></div>
+<map name="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_cgraph" id="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1TileKey.html#a0ee6b25bbae560dda11987ac1e9dc69d" title="osgEarth::TileKey::getLevelOfDetail" alt="" coords="221,5,451,35"/><area shape="rect" id="node5" href="classseamless_1_1PatchGroup.html#a603125d9d27500ed0905f48df39c8ab2" title="seamless::PatchGroup::getOptions" alt="" coords="223,59,449,88"/><area shape="rect" id="node7" href="classseamless_1_1PatchOptions.html#a035841ea7ce2ccaa9ad739bd19d4f0a4" title="seamless::PatchOptions::getTileKey" alt="" coords="219,112,453,141"/><area shape="rect" id="node9" href="classosgEarth_1_1TileKey.html#add6a3c7117d189c2d801bc77f0e7b697" title="osgEarth::TileKey::getTileX" alt="" coords="245,165,427,195"/><area shape="rect" id="node11" href="classosgEarth_1_1TileKey.html#ad1ff38fbd762c0faba5b03b326617628" title="osgEarth::TileKey::getTileY" alt="" coords="245,219,427,248"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_icgraph.png" border="0" usemap="#namespaceseamless_a910fffa1e14042df22eb897316a8de4d_icgraph" alt=""/></div>
+<map name="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_icgraph" id="namespaceseamless_a910fffa1e14042df22eb897316a8de4d_icgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Util_1_1GeoCellVisitor.html#af14bb5dd0bf7c369e91655fe1921c76c" title="osgEarth::Util::GeoCellVisitor::operator()" alt="" coords="220,5,476,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -453,13 +745,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const TileKey &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1TileKey.html">TileKey</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const GeoHeightField &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgEarth_1_1GeoHeightField.html">GeoHeightField</a> &amp;&#160;</td>
           <td class="paramname"><em>hf</em>&#160;</td>
         </tr>
         <tr>
@@ -471,11 +763,36 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00254">254</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00254">254</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; patchDim; i++)
+        {
+            (*texCoords)[j * patchDim +i] = Vec2(i * resinv, j * resinv);
+        }
+    }
+    <span class="comment">// Construct the patch and its transform.</span>
+    ref_ptr&lt;Patch::Data&gt; data = <span class="keyword">new</span> Patch::Data;
+    data-&gt;vertexData.array = verts;
+    data-&gt;vertexData.binding = Geometry::BIND_PER_VERTEX;
+    data-&gt;normalData.array = normals;
+    data-&gt;normalData.binding = Geometry::BIND_PER_VERTEX;
+    Vec4Array* <a class="code" href="osgearth__tilesource_8cpp.html#a9e71186980a23d60f4d42454c5b968f3">colors</a> = <span class="keyword">new</span> Vec4Array(1);
+    (*colors)[0] = Vec4(1.0, 1.0, 1.0, 1.0);
+    data-&gt;colorData.array = <a class="code" href="osgearth__tilesource_8cpp.html#a9e71186980a23d60f4d42454c5b968f3">colors</a>;
+    data-&gt;colorData.binding = Geometry::BIND_OVERALL;
+    data-&gt;texCoordList
+        .push_back(Geometry::ArrayData(texCoords, Geometry::BIND_PER_VERTEX));
+    patch-&gt;setData(data);
+}
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<span class="comment">// Create a patch and the transform that places it in the</span>
+<span class="comment">// world. Install a height field if one is given.</span>
+</pre></div>
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_a5ea0685e482ce581c635c891b74eebe2_icgraph.png" border="0" usemap="#namespaceseamless_a5ea0685e482ce581c635c891b74eebe2_icgraph" alt=""/></div>
 <map name="namespaceseamless_a5ea0685e482ce581c635c891b74eebe2_icgraph" id="namespaceseamless_a5ea0685e482ce581c635c891b74eebe2_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless.html#aa663b51b44cd869ba89496cc70c5e3ea" title="seamless::createPatchAux" alt="" coords="240,5,419,35"/></map>
@@ -509,8 +826,9 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00618">618</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00618">618</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a9e1b3d49abbfab0b33e9879db6818aa6"></a><!-- doxytag: member="seamless::makeEdgeRef" ref="a9e1b3d49abbfab0b33e9879db6818aa6" args="(GeoPatch *gpatch, int edgeno, int mult)" -->
@@ -518,7 +836,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a> seamless::makeEdgeRef </td>
+          <td class="memname"><a class="el" href="classseamless_1_1vector__ref.html">EdgeRef</a> seamless::makeEdgeRef </td>
           <td>(</td>
           <td class="paramtype">GeoPatch *&#160;</td>
           <td class="paramname"><em>gpatch</em>, </td>
@@ -544,11 +862,29 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00679">679</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00679">679</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+    <span class="keywordflow">case</span> 0:
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>(*verts, mult, shape, 0);
+    <span class="keywordflow">case</span> 1:
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>(*verts, patchDim * mult, shape, patchDim - 1);
+    <span class="keywordflow">case</span> 2:
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>(*verts, mult, shape, (patchDim - 1) * patchDim);
+    <span class="keywordflow">case</span> 3:
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>(*verts, patchDim * mult, shape, 0);
+    <span class="keywordflow">default</span>:
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a>(*verts, 0, 0, 0); <span class="comment">// shouldn&#39;t happen</span>
+    }
+}
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<span class="keyword">struct </span>ShareResult
+{
+</pre></div>
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_a9e1b3d49abbfab0b33e9879db6818aa6_icgraph.png" border="0" usemap="#namespaceseamless_a9e1b3d49abbfab0b33e9879db6818aa6_icgraph" alt=""/></div>
 <map name="namespaceseamless_a9e1b3d49abbfab0b33e9879db6818aa6_icgraph" id="namespaceseamless_a9e1b3d49abbfab0b33e9879db6818aa6_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d" title="seamless::transferEdges" alt="" coords="225,5,391,35"/></map>
@@ -588,11 +924,15 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00787">787</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00787">787</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">                  : <span class="keyword">public</span> NodeVisitor
+{
+</pre></div>
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_ae0effba121f73eac1f8f9ce3f6ccb26b_icgraph.png" border="0" usemap="#namespaceseamless_ae0effba121f73eac1f8f9ce3f6ccb26b_icgraph" alt=""/></div>
 <map name="namespaceseamless_ae0effba121f73eac1f8f9ce3f6ccb26b_icgraph" id="namespaceseamless_ae0effba121f73eac1f8f9ce3f6ccb26b_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d" title="seamless::transferEdges" alt="" coords="199,5,364,35"/></map>
@@ -606,7 +946,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structseamless_1_1_share_result.html">ShareResult</a> seamless::tilesShareEdges </td>
+          <td class="memname"><a class="el" href="structseamless_1_1ShareResult.html">ShareResult</a> seamless::tilesShareEdges </td>
           <td>(</td>
           <td class="paramtype">const KeyIndex &amp;&#160;</td>
           <td class="paramname"><em>tile1</em>, </td>
@@ -626,8 +966,68 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00714">714</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00714">714</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="comment">// tile1 contains tile2; do they share edges?</span>
+        <span class="keywordflow">if</span> (x == tile2.x)
+        {
+            result.tile1[0] = 3;
+            result.tile2[0] = 3;
+            result.numEdges = 1;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (xleft == tile2.x + 1)
+        {
+            result.tile1[0] = 1;
+            result.tile2[0] = 1;
+            result.numEdges = 1;
+        }
+        <span class="keywordflow">if</span> (y == tile2.y)
+        {
+            result.tile1[result.numEdges] = 2;
+            result.tile2[result.numEdges] = 2;
+            result.numEdges++;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ybottom == tile2.y + 1)
+        {
+            result.tile1[result.numEdges] = 0;
+            result.tile2[result.numEdges] = 0;
+            result.numEdges++;
+        }
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="comment">// Tiles can share 1 edge.</span>
+        <span class="keywordflow">if</span> (x == tile2.x + 1)
+        {
+            result.tile1[0] = 3;
+            result.tile2[0] = 1;
+            result.numEdges = 1;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (xleft == tile2.x)
+        {
+            result.tile1[0] = 1;
+            result.tile2[0] = 3;
+            result.numEdges = 1;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (y == tile2.y + 1)
+        {
+            result.tile1[0] = 2;
+            result.tile2[0] = 0;
+            result.numEdges = 1;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ybottom == tile2.y)
+        {
+            result.tile1[0] = 0;
+            result.tile2[0] = 2;
+            result.numEdges = 1;
+        }
+    }
+    <span class="keywordflow">return</span> result;
+}
 
+<span class="keywordtype">void</span> <a class="code" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d">transferEdges</a>(
+    GeoPatch* toPatch, <span class="keyword">const</span> Matrixd&amp; toMat, <span class="keyword">const</span> KeyIndex&amp; toIdx,
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a0d14e267bc2972085cb5343d1d61ed4d"></a><!-- doxytag: member="seamless::transferEdges" ref="a0d14e267bc2972085cb5343d1d61ed4d" args="(GeoPatch *toPatch, const Matrixd &amp;toMat, const KeyIndex &amp;toIdx, GeoPatch *fromPatch, const Matrixd &amp;fromMat, const KeyIndex &amp;fromIdx, const ShareResult &amp;shared)" -->
@@ -685,14 +1085,46 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_geographic_8cpp_source.html#l00894">894</a> of file <a class="el" href="_geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Geographic_8cpp_source.html#l00894">894</a> of file <a class="el" href="Geographic_8cpp_source.html">Geographic.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">int</span> resolution = toPatch-&gt;getPatchSet()-&gt;getResolution();
+    <span class="keywordtype">int</span> patchDim = resolution + 1;
+    <span class="keywordtype">int</span> lodDiff = fromIdx.lod - toIdx.lod;
+    <span class="keywordtype">int</span> detailMult = 1 &lt;&lt; lodDiff;
+    Matrixd transferMat = fromMat * Matrixd::inverse(toMat);
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; shared.numEdges; ++i)
+    {
+        <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a> toEdge = <a class="code" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6">makeEdgeRef</a>(toPatch, shared.tile1[i], 1);
+        <a class="code" href="namespaceseamless.html#ab6a52856fa1cdca1c5409fddf6e8c8a2">EdgeRef</a> fromEdge = <a class="code" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6">makeEdgeRef</a>(fromPatch, shared.tile2[i], detailMult);
+        <span class="keywordtype">int</span> toStart;
+        <span class="keywordflow">if</span> (shared.tile1[i] == 0 || shared.tile1[i] == 2)
+            toStart = (fromIdx.x - (toIdx.x * detailMult)) * resolution / detailMult;
+        <span class="keywordflow">else</span>
+            toStart = (detailMult - 1 - (fromIdx.y - (toIdx.y * detailMult)))
+                * resolution / detailMult;
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jt = toStart, jf = 0; jf &lt; fromEdge.shape(); ++jt, ++jf)
+        {
+<span class="preprocessor">#if 0</span>
+<span class="preprocessor"></span>            Vec3d vtx = Vec3d(fromEdge[jf]);
+            vtx = vtx * transferMat;
+            toEdge[jt] = Vec3f(vtx);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>            <a class="code" href="namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b">safeCopy</a>(toEdge[jt], fromEdge[jf], transferMat);
+        }
+    }
+}
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<span class="keywordtype">void</span> GeoPatchUpdateCallback::operator()(Node* node, NodeVisitor* nv)
+{
+</pre></div>
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_a0d14e267bc2972085cb5343d1d61ed4d_cgraph.png" border="0" usemap="#namespaceseamless_a0d14e267bc2972085cb5343d1d61ed4d_cgraph" alt=""/></div>
 <map name="namespaceseamless_a0d14e267bc2972085cb5343d1d61ed4d_cgraph" id="namespaceseamless_a0d14e267bc2972085cb5343d1d61ed4d_cgraph">
-<area shape="rect" id="node3" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6" title="seamless::makeEdgeRef" alt="" coords="223,5,391,35"/><area shape="rect" id="node5" href="namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b" title="seamless::safeCopy" alt="" coords="236,59,377,88"/></map>
+<area shape="rect" id="node3" href="classseamless_1_1Patch.html#aaf9af454ba0fc3aa68db1ae9700dbdb4" title="seamless::Patch::getPatchSet" alt="" coords="236,5,436,35"/><area shape="rect" id="node5" href="classseamless_1_1PatchSet.html#a74e610d6cf0635e27bda4cedce30e79b" title="seamless::PatchSet::getResolution" alt="" coords="223,59,449,88"/><area shape="rect" id="node7" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6" title="seamless::makeEdgeRef" alt="" coords="252,112,420,141"/><area shape="rect" id="node9" href="namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b" title="seamless::safeCopy" alt="" coords="265,165,407,195"/><area shape="rect" id="node11" href="classseamless_1_1vector__ref.html#aa7f8d8c1534b5c611e2cfec65577376c" title="seamless::vector_ref::shape" alt="" coords="243,219,429,248"/><area shape="rect" id="node13" href="classseamless_1_1multi__array__ref.html#a1798f48439a9998604f30f12cf41c796" title="seamless::multi_array_ref\&lt; ElementType, Store, 1 \&gt;::shape" alt="" coords="499,219,869,248"/></map>
 </div>
 </p>
 
@@ -710,7 +1142,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00043">43</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00043">43</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
 
 </div>
 </div>
@@ -725,7 +1157,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00044">44</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00044">44</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
 
 </div>
 </div>
@@ -740,7 +1172,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00045">45</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00045">45</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
 
 </div>
 </div>
@@ -755,20 +1187,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00046">46</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00046">46</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceseamless.html">seamless</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -783,6 +1206,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a9e8051599750a123fcf20c2a6ba31378" title="osgEarth::Util::ImageOverlay::getControlPoint" alt="" coords="311,5,599,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a5962eb070f776c876385a2ada3b31eb9" title="osgEarth::Util::ImageOverlay::setCenter" alt="" coords="327,59,583,88"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a19f7914e87f353d5bfff614ff201b53c" title="osgEarth::Util::ImageOverlayEditor::updateDraggers" alt="" coords="648,5,973,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ab5e20252dd8f3133c5a3bbefb81fe20f" title="osgEarth::Util::ImageOverlay::setControlPoint" alt="" coords="667,59,955,88"/>
+</map>

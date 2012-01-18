@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Map.html#a63e65da3e4d6d60cab5f7d174e55a688" title="osgEarth::Map::calculateProfile" alt="" coords="297,5,500,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Registry.html#af0514abf004fbb1755f74a9ea4f2cc15" title="osgEarth::Registry::getNamedProfile" alt="" coords="281,59,516,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Profile.html#a36828ab40c6dfc20e77846fa00ee7fd6" title="osgEarth::Profile::create" alt="" coords="565,59,728,88"/>
+</map>

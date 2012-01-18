@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Annotation_1_1GeometryNode.html#ad30127f4541fa94a6a26168de735e28f" title="osgEarth::Util::Annotation::GeometryNode::init" alt="" coords="283,19,576,48"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1FeatureNode.html#a68543ac7982fb8a6d13f304250edfaf1" title="osgEarth::Features::FeatureNode::init" alt="" coords="309,125,549,155"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#aa6426913186eb3eedfab8bc13832d9d8" title="osgEarth::Util::ImageOverlay::postCTOR" alt="" coords="299,205,560,235"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1DrapeableNode.html#ab39f51f1c8d0413cb587f17afe975964" title="osgEarth::DrapeableNode::setDrapedImpl" alt="" coords="297,272,561,301"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Annotation_1_1GeometryNode.html#a5561954c5888dadeefdfd590d0bf243b" title="osgEarth::Util::Annotation::GeometryNode::GeometryNode" alt="" coords="625,5,988,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FeatureNode.html#a9d004a6ae7c174fc5f32b1d506f126c4" title="osgEarth::Features::FeatureNode::FeatureNode" alt="" coords="657,59,956,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Features_1_1FeatureNode.html#abb889403a6e71d42ab18d73e2eb4cdb6" title="osgEarth::Features::FeatureNode::setFeature" alt="" coords="664,112,949,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Features_1_1FeatureNode.html#adadfc32ee19e1999cc82b1b492e28717" title="osgEarth::Features::FeatureNode::setStyle" alt="" coords="671,165,943,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html#aed0aaabea5e3687bdab1f06b6fe72698" title="osgEarth::Util::Annotation::CircleNode::CircleNode" alt="" coords="1043,59,1360,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html#a481f52ee32ee3adff9d647a47342c2ad" title="osgEarth::Util::Annotation::EllipseNode::EllipseNode" alt="" coords="1037,112,1365,141"/>
+<area shape="rect" id="node19" href="$structKML__Placemark.html#a17f118ad9527e21e8ed35d6a012ca399" title="KML_Placemark::build" alt="" coords="1125,165,1277,195"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a79e7a7e46a6b1727cad9f988bbe1ad43" title="osgEarth::Util::ImageOverlay::ImageOverlay" alt="" coords="667,219,947,248"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1DrapeableNode.html#ac998bd18b545d2d93037f26afceeac09" title="osgEarth::DrapeableNode::applyChanges" alt="" coords="676,272,937,301"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1DrapeableNode.html#a1c986cf804eb190aa73fa196e43257fb" title="osgEarth::DrapeableNode::traverse" alt="" coords="1088,272,1315,301"/>
+</map>

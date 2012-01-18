@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -73,27 +103,169 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespacemembers_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_j"><span>j</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+    </ul>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
 </div>
-<script type="text/javascript">
-  initNavTree('namespacemembers.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>_fmgMutex
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#a404f36f34d7f19720301a59f5c1ea8b4">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
+<li>_fmgRegistry
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#af8371fd449023d3d1e471867f68aceb6">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
+<li>_uid
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#a43a0502d42f8fc6f7c8b4b2530495a77">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>colors
+: <a class="el" href="namespaceanonymous__namespace_02DebugTileSource_8cpp_03.html#a80dec315f7b4b52846afa4cc425b100e">anonymous_namespace{DebugTileSource.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>edgeCoords
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html#a299a4f791f801db3b1c38b1b52e6d90f">seamless::anonymous_namespace{Patch.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GeoLocator
+: <a class="el" href="namespaceosgEarth.html#a77a229e6dd7c0af326f4fe7d4abd7786">osgEarth</a>
+</li>
+<li>GZD_ALPHABET
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a475edf296a3cea2533091379fae83dff">anonymous_namespace{Formatters.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_j"></a>- j -</h3><ul>
+<li>JD2000
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#ae637bac605bcc6b01022c5e3f200d085">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>MERC_HEIGHT
+: <a class="el" href="namespaceosgEarth.html#a72deb57627132f3a0627e4a4a25b054b">osgEarth</a>
+</li>
+<li>MERC_MAXX
+: <a class="el" href="namespaceosgEarth.html#a0aafd64a66a32f8e42166970c862873c">osgEarth</a>
+</li>
+<li>MERC_MAXY
+: <a class="el" href="namespaceosgEarth.html#af325d65d0215b4ead3d341eacad41878">osgEarth</a>
+</li>
+<li>MERC_MINX
+: <a class="el" href="namespaceosgEarth.html#a268d3fa8018d503ce2d7d714b1136678">osgEarth</a>
+</li>
+<li>MERC_MINY
+: <a class="el" href="namespaceosgEarth.html#acac5543deee0687eefda5b7185aec38a">osgEarth</a>
+</li>
+<li>MERC_WIDTH
+: <a class="el" href="namespaceosgEarth.html#a5b4be8eecdc8f6946dc4dee50497f0c8">osgEarth</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>PiOver12
 : <a class="el" href="namespaceseamless.html#adeb1b09a86ef39d7cc091bd36e03cafd">seamless</a>
 </li>
 <li>PiOver12Inv
 : <a class="el" href="namespaceseamless.html#ad63d946792a53e7c7d57115cca4663e1">seamless</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>r2
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#a5caa4b40191551ab3efb0d3feb4ba60e">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+<li>r3
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#a287481b880fb5496eb044c8417fac085">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+<li>r5
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#a884487faaa33fdb55ccbc41f8bff4747">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>s_atmosphereFragmentSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a887f286ac249283ce4cb35d789c815e3">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_atmosphereVertexSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a3dd8b6bb43072f2b4c648f5ca7e28c25">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_cacheInitializer
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Euler_8cpp_03.html#aa9f05d80e9f1a9923f51f5a066b1ea77">seamless::anonymous_namespace{Euler.cpp}</a>
+</li>
+<li>s_controlVertexShader
+: <a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html#aa96b22ba09fb5ef154410df78c9236ad">anonymous_namespace{Controls.cpp}</a>
+</li>
+<li>s_defaultLineSymbol
+: <a class="el" href="namespaceanonymous__namespace_02GeometryCompiler_8cpp_03.html#a848095f3874079baed74e73b87bd1b0b">anonymous_namespace{GeometryCompiler.cpp}</a>
+</li>
+<li>s_defaultModel
+: <a class="el" href="namespaceanonymous__namespace_02SubstituteModelFilter_8cpp_03.html#aeb39aeb0bc3b14191b6cead46aecd6fe">anonymous_namespace{SubstituteModelFilter.cpp}</a>
+</li>
+<li>s_defaultPointSymbol
+: <a class="el" href="namespaceanonymous__namespace_02GeometryCompiler_8cpp_03.html#a51dc80ebfd962f465acf700697f65908">anonymous_namespace{GeometryCompiler.cpp}</a>
+</li>
+<li>s_defaultPolygonSymbol
+: <a class="el" href="namespaceanonymous__namespace_02GeometryCompiler_8cpp_03.html#adf771c2a86f7bdb32ab5056ac1ffde75">anonymous_namespace{GeometryCompiler.cpp}</a>
+</li>
+<li>s_defaultStarData
+: <a class="el" href="namespaceosgEarth_1_1Util.html#ab80737f08c439915f3c80bc5a7caa023">osgEarth::Util</a>
+</li>
+<li>s_font
+: <a class="el" href="namespaceanonymous__namespace_02SpatialData_8cpp_03.html#ac8c02f7505de51316c58e22535d3bde6">anonymous_namespace{SpatialData.cpp}</a>
+</li>
+<li>s_fragmentShader
+: <a class="el" href="namespaceanonymous__namespace_02Graticule_8cpp_03.html#a0e551a53360178692e9cdf6c02077393">anonymous_namespace{Graticule.cpp}</a>
+</li>
+<li>s_imageControlFragmentShader
+: <a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html#a7eb953f9e6dc3fedaae6d73f14b1fd26">anonymous_namespace{Controls.cpp}</a>
+</li>
+<li>s_labelControlFragmentShader
+: <a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html#a22818e0af57bb3f019022bef3b3561b6">anonymous_namespace{Controls.cpp}</a>
+</li>
+<li>s_starFragmentSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#aa19660376b9940d760d37215c1561a17">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_starVertexSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a75a9cf7a74e836fb74067d45bd52dbbe">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_sunFragmentSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a423b1cae479ac5d949bdb850dc0b67ec">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_sunVertexSource
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a3bb487fc5c47f47be7411ac246cf7749">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_vertexShader
+: <a class="el" href="namespaceanonymous__namespace_02Graticule_8cpp_03.html#ae97602d20bfd98ff22fb1218d2d3c3fe">anonymous_namespace{Graticule.cpp}</a>
 </li>
 <li>sqrt2
 : <a class="el" href="namespaceseamless.html#a9521be90c7ad12f9a2d1a94f856f5951">seamless</a>
@@ -102,15 +274,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="namespaceseamless.html#a4bffe8b9e4f59c91a8f7725ae0558d93">seamless</a>
 </li>
 </ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>TWO_PI
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#a195de32bac5bd12c234380bfa8c541d7">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UPS_COL_ALPHABET
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a74edde779a044bc205a1f543f016fd9d">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UPS_COL_ALPHABET_SIZE
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#aee6d9da8e9a6cb21904eea51a71289b4">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UPS_ROW_ALPHABET
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a799c01e34bc7ece5ace1f81db825b894">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UPS_ROW_ALPHABET_SIZE
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a6227f2cab3618ea1a06a36be6235d12e">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UTM_COL_ALPHABET
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a929b922b8dff63d3756a52126956d314">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UTM_ROW_ALPHABET
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a6907b695e86af9809b2c9a8173ed888d">anonymous_namespace{Formatters.cpp}</a>
+</li>
+<li>UTM_ROW_ALPHABET_SIZE
+: <a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html#a08675ca9d49ad9911567473ed6497537">anonymous_namespace{Formatters.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>VPs
+: <a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#a4b4a92772e2861368fa2b94d18ee75dd">anonymous_namespace{osgearth_manip.cpp}</a>
+</li>
+</ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -125,6 +328,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

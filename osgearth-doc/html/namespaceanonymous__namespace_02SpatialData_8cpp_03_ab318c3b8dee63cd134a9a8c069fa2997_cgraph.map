@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="463,59,681,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="444,112,700,141"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="473,165,671,195"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="760,5,947,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="763,59,944,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="1005,59,1256,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="751,112,956,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="1024,112,1237,141"/>
+<area shape="rect" id="node17" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1304,112,1715,141"/>
+</map>

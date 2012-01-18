@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MaskLayer.html#a79f7a8d051a2b2e410ea58d4ee7fc12d" title="osgEarth::MaskLayer::initialize" alt="" coords="313,59,513,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="295,112,532,141"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="331,165,496,195"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1MaskSourceFactory.html#aa8d5486b3d73b7632c2c153c65c056d7" title="osgEarth::MaskSourceFactory::create" alt="" coords="581,5,824,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1MaskLayerOptions.html#aaa0c518dff8e5f2cf2e9f04e4aa06599" title="osgEarth::MaskLayerOptions::driver" alt="" coords="588,59,817,88"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="620,112,785,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="872,5,1133,35"/>
+</map>

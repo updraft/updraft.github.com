@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a5962eb070f776c876385a2ada3b31eb9" title="osgEarth::Util::ImageOverlay::setCenter" alt="" coords="344,272,600,301"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a0ad73da7581a8e7aac5ffc46b278182c" title="osgEarth::Util::ImageOverlay::setEast" alt="" coords="351,408,593,437"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#adc15b4f14e8fa9448ea7d91e254a6f67" title="osgEarth::Util::ImageOverlay::setLowerLeft" alt="" coords="652,165,927,195"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ae226e69f4aa39e60279dc3f43ac63976" title="osgEarth::Util::ImageOverlay::setLowerRight" alt="" coords="648,219,931,248"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ad70840acca3d7252807abf932c1e9ad5" title="osgEarth::Util::ImageOverlay::setNorth" alt="" coords="665,379,913,408"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1f33e05e2506a2f75d6f2ef1b22d5a2f" title="osgEarth::Util::ImageOverlay::setSouth" alt="" coords="664,5,915,35"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ad707ba93936ef61db439a3bc3816e6b6" title="osgEarth::Util::ImageOverlay::setUpperLeft" alt="" coords="652,59,927,88"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#ae0d4ae10ed1456a56a051f26253dd375" title="osgEarth::Util::ImageOverlay::setUpperRight" alt="" coords="648,112,931,141"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a312cbce0abed1ddcf7df5d9e1b10da3e" title="osgEarth::Util::ImageOverlay::setWest" alt="" coords="348,475,596,504"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1974dd60d9b5f18a7b2b818ca46b8cdf" title="osgEarth::Util::ImageOverlay::getCenter" alt="" coords="661,272,917,301"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a1d76f89b54b53bf55b6d340f4511e4f1" title="osgEarth::Util::ImageOverlay::setCorners" alt="" coords="659,325,920,355"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#aa1342815f29500bd4bb04e07a8f98bda" title="osgEarth::Util::ImageOverlay::clampLatitudes" alt="" coords="980,165,1265,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1ImageOverlay.html#a8a37a28a585516a25e0acfa22627c926" title="osgEarth::Util::ImageOverlay::dirty" alt="" coords="1011,219,1235,248"/>
+<area shape="rect" id="node11" href="$ImageOverlay_8cpp.html#aecbb8021dd1e0cb5001a70195eef7dae" title="clampLatitude" alt="" coords="1316,165,1417,195"/>
+</map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,46 +127,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>d2r
-: <a class="el" href="_sky_node_8cpp.html#ac560cd74fdb873d24ae44a460a9d2fdc">SkyNode.cpp</a>
+: <a class="el" href="SkyNode_8cpp.html#ac560cd74fdb873d24ae44a460a9d2fdc">SkyNode.cpp</a>
 </li>
 <li>decomposeCenter()
-: <a class="el" href="_earth_manipulator_8cpp.html#a034a2b08c63923bd6ef915c126d5df27">EarthManipulator.cpp</a>
+: <a class="el" href="EarthManipulator_8cpp.html#a034a2b08c63923bd6ef915c126d5df27">EarthManipulator.cpp</a>
 </li>
 <li>DEVIATION
-: <a class="el" href="_diamond_8cpp.html#ab3a2e48ea0f22367d9d3a8ba0ba9a273">Diamond.cpp</a>
+: <a class="el" href="Diamond_8cpp.html#ab3a2e48ea0f22367d9d3a8ba0ba9a273">Diamond.cpp</a>
+</li>
+<li>DiamondAncestor
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696">Diamond</a>
+</li>
+<li>DiamondJobList
+: <a class="el" href="MeshManager.html#a5d05bbf005a4a4de7f394bf218e10e22">MeshManager</a>
+</li>
+<li>DiamondJobOrderedSet
+: <a class="el" href="MeshManager.html#a7484225c34f5ea685eb90c7d0abf4c00">MeshManager</a>
+</li>
+<li>DiamondJobQDeque
+: <a class="el" href="MeshManager.html#a17fb26ba2a06756744e4174ab11b67a1">MeshManager</a>
+</li>
+<li>DiamondJobQueue
+: <a class="el" href="MeshManager.html#a61c2806755a1fa754414114506bf94df">MeshManager</a>
+</li>
+<li>DiamondPriorityQueue
+: <a class="el" href="MeshManager.html#a815dd57f3deaaac16142167b56a20021">MeshManager</a>
+</li>
+<li>DiamondQueue
+: <a class="el" href="MeshManager.html#ad087b342d0afcd532c22b9cde9ea6643">MeshManager</a>
+</li>
+<li>DiamondStatus
+: <a class="el" href="Diamond.html#a14f2cb6b85d7de86736527d3a14f98b7">Diamond</a>
+</li>
+<li>dummyValueAllocatorInitializer
+: <a class="el" href="JsonUtils_8cpp.html#ab1a9f0a6692189e3f5c157426dd40079">JsonUtils.cpp</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -151,6 +189,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

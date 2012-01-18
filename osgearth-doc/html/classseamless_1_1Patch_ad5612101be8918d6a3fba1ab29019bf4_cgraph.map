@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1Patch.html#af25c15cc173e6324e8cf65a00c9b942f" title="seamless::Patch::getEdgeError" alt="" coords="263,59,465,88"/>
+<area shape="rect" id="node5" href="$namespaceseamless.html#ab195588265db8b5d2a982f2ee2b61fa2" title="seamless::closestPointOnSegment" alt="" coords="579,32,805,61"/>
+<area shape="rect" id="node7" href="$namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html#abe6bf389a040399a8e90312a4f33f354" title="seamless::anonymous_namespace\{Patch::cpp\}::getEdge" alt="" coords="515,85,869,115"/>
+<area shape="rect" id="node9" href="$classseamless_1_1Patch.html#a5344fb69a27ce83bf6de08c8009a4700" title="seamless::Patch::getData" alt="" coords="945,5,1119,35"/>
+<area shape="rect" id="node11" href="$classseamless_1_1Patch.html#aaf9af454ba0fc3aa68db1ae9700dbdb4" title="seamless::Patch::getPatchSet" alt="" coords="932,59,1132,88"/>
+<area shape="rect" id="node13" href="$classseamless_1_1PatchSet.html#a74e610d6cf0635e27bda4cedce30e79b" title="seamless::PatchSet::getResolution" alt="" coords="919,112,1145,141"/>
+<area shape="rect" id="node15" href="$classseamless_1_1PatchSet.html#a11d865268ec257c4a2ab5adb1806384c" title="seamless::PatchSet::makeIndex" alt="" coords="927,165,1137,195"/>
+</map>

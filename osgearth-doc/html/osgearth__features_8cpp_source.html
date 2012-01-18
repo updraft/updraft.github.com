@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__features_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_features/osgearth_features.cpp</h1>  </div>
@@ -140,101 +156,101 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056     osgViewer::Viewer viewer(arguments);
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058     <span class="comment">// Start by creating the map:</span>
-<a name="l00059"></a>00059     Map* map = <span class="keyword">new</span> Map();
+<a name="l00059"></a>00059     <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Map.html">Map</a>();
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061     <span class="comment">// Start with a basemap imagery layer; we&#39;ll be using the GDAL driver</span>
 <a name="l00062"></a>00062     <span class="comment">// to load a local GeoTIFF file:</span>
-<a name="l00063"></a>00063     GDALOptions basemapOpt;
-<a name="l00064"></a>00064     basemapOpt.url() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
-<a name="l00065"></a>00065     map-&gt;addImageLayer( <span class="keyword">new</span> ImageLayer( ImageLayerOptions(<span class="stringliteral">&quot;basemap&quot;</span>, basemapOpt) ) );
+<a name="l00063"></a>00063     <a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html">GDALOptions</a> basemapOpt;
+<a name="l00064"></a>00064     basemapOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95">url</a>() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
+<a name="l00065"></a>00065     map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0">addImageLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a>(<span class="stringliteral">&quot;basemap&quot;</span>, basemapOpt) ) );
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067     <span class="comment">// Next we add a feature layer. First configure a feature driver to </span>
 <a name="l00068"></a>00068     <span class="comment">// load the vectors from a shapefile:</span>
-<a name="l00069"></a>00069     OGRFeatureOptions featureOpt;
+<a name="l00069"></a>00069     <a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html">OGRFeatureOptions</a> featureOpt;
 <a name="l00070"></a>00070     <span class="keywordflow">if</span> ( !useMem )
 <a name="l00071"></a>00071     {
-<a name="l00072"></a>00072         featureOpt.url() = <span class="stringliteral">&quot;../data/usa.shp&quot;</span>;
+<a name="l00072"></a>00072         featureOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8">url</a>() = <span class="stringliteral">&quot;../data/usa.shp&quot;</span>;
 <a name="l00073"></a>00073     }
 <a name="l00074"></a>00074     <span class="keywordflow">else</span>
 <a name="l00075"></a>00075     {
-<a name="l00076"></a>00076         Ring* line = <span class="keyword">new</span> Ring();
-<a name="l00077"></a>00077         line-&gt;push_back( osg::Vec3d(-60, 20, 0) );
-<a name="l00078"></a>00078         line-&gt;push_back( osg::Vec3d(-120, 20, 0) );
-<a name="l00079"></a>00079         line-&gt;push_back( osg::Vec3d(-120, 60, 0) );
-<a name="l00080"></a>00080         line-&gt;push_back( osg::Vec3d(-60, 60, 0) );
-<a name="l00081"></a>00081         featureOpt.geometry() = line;
+<a name="l00076"></a>00076         <a class="code" href="classosgEarth_1_1Symbology_1_1Ring.html">Ring</a>* line = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1Ring.html">Ring</a>();
+<a name="l00077"></a>00077         line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 20, 0) );
+<a name="l00078"></a>00078         line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-120, 20, 0) );
+<a name="l00079"></a>00079         line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-120, 60, 0) );
+<a name="l00080"></a>00080         line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 60, 0) );
+<a name="l00081"></a>00081         featureOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a3d740605e33427e1cb86f9afe0eb5398">geometry</a>() = line;
 <a name="l00082"></a>00082     }
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084     <span class="comment">// Define a style for the feature data. Since we are going to render the</span>
 <a name="l00085"></a>00085     <span class="comment">// vectors as lines, configure the line symbolizer:</span>
-<a name="l00086"></a>00086     Style style;
+<a name="l00086"></a>00086     <a class="code" href="classosgEarth_1_1Style.html">Style</a> style;
 <a name="l00087"></a>00087 
-<a name="l00088"></a>00088     LineSymbol* ls = style.getOrCreateSymbol&lt;LineSymbol&gt;();
-<a name="l00089"></a>00089     ls-&gt;stroke()-&gt;color() = osg::Vec4f( 1,1,0,1 ); <span class="comment">// yellow</span>
-<a name="l00090"></a>00090     ls-&gt;stroke()-&gt;width() = 2.0f;
+<a name="l00088"></a>00088     <a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>* ls = style.getOrCreateSymbol&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;();
+<a name="l00089"></a>00089     ls-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html#a87c1c62229a5bd3bbe12a187f5522233">stroke</a>()-&gt;color() = osg::Vec4f( 1,1,0,1 ); <span class="comment">// yellow</span>
+<a name="l00090"></a>00090     ls-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html#a87c1c62229a5bd3bbe12a187f5522233">stroke</a>()-&gt;width() = 2.0f;
 <a name="l00091"></a>00091 
 <a name="l00092"></a>00092     <span class="comment">// Add some text labels.</span>
 <a name="l00093"></a>00093     <span class="keywordflow">if</span> ( useLabels )
 <a name="l00094"></a>00094     {
-<a name="l00095"></a>00095         TextSymbol* text = style.getOrCreateSymbol&lt;TextSymbol&gt;();
-<a name="l00096"></a>00096         text-&gt;provider() = <span class="stringliteral">&quot;overlay&quot;</span>;
-<a name="l00097"></a>00097         text-&gt;content() = StringExpression( <span class="stringliteral">&quot;[name]&quot;</span> );
-<a name="l00098"></a>00098         text-&gt;priority() = NumericExpression( <span class="stringliteral">&quot;[area]&quot;</span> );
-<a name="l00099"></a>00099         text-&gt;removeDuplicateLabels() = <span class="keyword">true</span>;
-<a name="l00100"></a>00100         text-&gt;size() = 16.0f;
-<a name="l00101"></a>00101         text-&gt;fill()-&gt;color() = Color::White;
-<a name="l00102"></a>00102         text-&gt;halo()-&gt;color() = Color::DarkGray;
+<a name="l00095"></a>00095         <a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html">TextSymbol</a>* text = style.getOrCreateSymbol&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html">TextSymbol</a>&gt;();
+<a name="l00096"></a>00096         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a3747f3755b4b9268044866403e32d719">provider</a>() = <span class="stringliteral">&quot;overlay&quot;</span>;
+<a name="l00097"></a>00097         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#af4dc10f833fbccf33f138ae9d9ee4ac3">content</a>() = <a class="code" href="classosgEarth_1_1Symbology_1_1StringExpression.html">StringExpression</a>( <span class="stringliteral">&quot;[name]&quot;</span> );
+<a name="l00098"></a>00098         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a7e123ffd2753380918d68e9b2d02142f">priority</a>() = <a class="code" href="classosgEarth_1_1Symbology_1_1NumericExpression.html">NumericExpression</a>( <span class="stringliteral">&quot;[area]&quot;</span> );
+<a name="l00099"></a>00099         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a2ebaddf98769da5c384657b9f982e152">removeDuplicateLabels</a>() = <span class="keyword">true</span>;
+<a name="l00100"></a>00100         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a3e7ab832c2c56a2094ffe5c97e89937f">size</a>() = 16.0f;
+<a name="l00101"></a>00101         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a8b3ab4ee20a8cc790e45138c44f602b1">fill</a>()-&gt;color() = Color::White;
+<a name="l00102"></a>00102         text-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#a253d33a89e58f5cbb49ebf3ecc815e65">halo</a>()-&gt;color() = Color::DarkGray;
 <a name="l00103"></a>00103     }
 <a name="l00104"></a>00104 
 <a name="l00105"></a>00105     <span class="comment">// That&#39;s it, the map is ready; now create a MapNode to render the Map:</span>
-<a name="l00106"></a>00106     MapNodeOptions mapNodeOptions;
-<a name="l00107"></a>00107     mapNodeOptions.enableLighting() = <span class="keyword">false</span>;
+<a name="l00106"></a>00106     <a class="code" href="classosgEarth_1_1MapNodeOptions.html">MapNodeOptions</a> mapNodeOptions;
+<a name="l00107"></a>00107     mapNodeOptions.<a class="code" href="classosgEarth_1_1MapNodeOptions.html#ac863f7668280399c37332966a9c1ea2f">enableLighting</a>() = <span class="keyword">false</span>;
 <a name="l00108"></a>00108 
-<a name="l00109"></a>00109     MapNode* mapNode = <span class="keyword">new</span> MapNode( map, mapNodeOptions );
+<a name="l00109"></a>00109     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>( map, mapNodeOptions );
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111     <span class="comment">// Now we&#39;ll choose the AGG-Lite driver to render the features. By the way, the</span>
 <a name="l00112"></a>00112     <span class="comment">// feature data is actually polygons, so we override that to treat it as lines.</span>
 <a name="l00113"></a>00113     <span class="comment">// We apply the feature driver and set the style as well.</span>
 <a name="l00114"></a>00114     <span class="keywordflow">if</span> (useStencil)
 <a name="l00115"></a>00115     {
-<a name="l00116"></a>00116         FeatureStencilModelOptions worldOpt;
-<a name="l00117"></a>00117         worldOpt.featureOptions() = featureOpt;
-<a name="l00118"></a>00118         worldOpt.geometryTypeOverride() = Geometry::TYPE_LINESTRING;
-<a name="l00119"></a>00119         worldOpt.styles() = <span class="keyword">new</span> StyleSheet();
-<a name="l00120"></a>00120         worldOpt.styles()-&gt;addStyle( style );
-<a name="l00121"></a>00121         worldOpt.enableLighting() = <span class="keyword">false</span>;
-<a name="l00122"></a>00122         worldOpt.depthTestEnabled() = <span class="keyword">false</span>;
-<a name="l00123"></a>00123         map-&gt;addModelLayer( <span class="keyword">new</span> ModelLayer( <span class="stringliteral">&quot;my features&quot;</span>, worldOpt ) );
+<a name="l00116"></a>00116         <a class="code" href="classosgEarth_1_1Drivers_1_1FeatureStencilModelOptions.html">FeatureStencilModelOptions</a> worldOpt;
+<a name="l00117"></a>00117         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a6feb1c36056befcaabdec296d4eb02ef">featureOptions</a>() = featureOpt;
+<a name="l00118"></a>00118         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a0a60a031d22b9149b4519d3e1bb38ce2">geometryTypeOverride</a>() = Geometry::TYPE_LINESTRING;
+<a name="l00119"></a>00119         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a7027229813a85994188cea844cb52206">styles</a>() = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>();
+<a name="l00120"></a>00120         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a7027229813a85994188cea844cb52206">styles</a>()-&gt;addStyle( style );
+<a name="l00121"></a>00121         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a29146789ad33eabcf4a6840141fa628c">enableLighting</a>() = <span class="keyword">false</span>;
+<a name="l00122"></a>00122         worldOpt.<a class="code" href="classosgEarth_1_1ModelSourceOptions.html#a702bf95dbdacdca0e04b57d4f001b711">depthTestEnabled</a>() = <span class="keyword">false</span>;
+<a name="l00123"></a>00123         map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa12f2741dd873872cf77fa487e84c915">addModelLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ModelLayer.html">ModelLayer</a>( <span class="stringliteral">&quot;my features&quot;</span>, worldOpt ) );
 <a name="l00124"></a>00124     }
 <a name="l00125"></a>00125     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (useRaster)
 <a name="l00126"></a>00126     {
-<a name="l00127"></a>00127         AGGLiteOptions worldOpt;
-<a name="l00128"></a>00128         worldOpt.featureOptions() = featureOpt;
-<a name="l00129"></a>00129         worldOpt.geometryTypeOverride() = Geometry::TYPE_LINESTRING;
-<a name="l00130"></a>00130         worldOpt.styles() = <span class="keyword">new</span> StyleSheet();
-<a name="l00131"></a>00131         worldOpt.styles()-&gt;addStyle( style );
-<a name="l00132"></a>00132         map-&gt;addImageLayer( <span class="keyword">new</span> ImageLayer( ImageLayerOptions(<span class="stringliteral">&quot;world&quot;</span>, worldOpt) ) );
+<a name="l00127"></a>00127         <a class="code" href="classosgEarth_1_1Drivers_1_1AGGLiteOptions.html">AGGLiteOptions</a> worldOpt;
+<a name="l00128"></a>00128         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureTileSourceOptions.html#a565234b580112b30397043d9e7b1894f">featureOptions</a>() = featureOpt;
+<a name="l00129"></a>00129         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureTileSourceOptions.html#a034b42971c1de41fbfa16b2e96fa09ed">geometryTypeOverride</a>() = Geometry::TYPE_LINESTRING;
+<a name="l00130"></a>00130         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureTileSourceOptions.html#adcf7b59da27583acf11a371b2b7e9043">styles</a>() = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>();
+<a name="l00131"></a>00131         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureTileSourceOptions.html#adcf7b59da27583acf11a371b2b7e9043">styles</a>()-&gt;addStyle( style );
+<a name="l00132"></a>00132         map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0">addImageLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a>(<span class="stringliteral">&quot;world&quot;</span>, worldOpt) ) );
 <a name="l00133"></a>00133     }
 <a name="l00134"></a>00134     <span class="keywordflow">else</span> <span class="comment">//if (useGeom || useOverlay)</span>
 <a name="l00135"></a>00135     {
-<a name="l00136"></a>00136         FeatureGeomModelOptions worldOpt;
-<a name="l00137"></a>00137         worldOpt.featureOptions() = featureOpt;
-<a name="l00138"></a>00138         worldOpt.geometryTypeOverride() = Geometry::TYPE_LINESTRING;
-<a name="l00139"></a>00139         worldOpt.styles() = <span class="keyword">new</span> StyleSheet();
-<a name="l00140"></a>00140         worldOpt.styles()-&gt;addStyle( style );
-<a name="l00141"></a>00141         worldOpt.enableLighting() = <span class="keyword">false</span>;
-<a name="l00142"></a>00142         worldOpt.depthTestEnabled() = <span class="keyword">false</span>;
+<a name="l00136"></a>00136         <a class="code" href="classosgEarth_1_1Drivers_1_1FeatureGeomModelOptions.html">FeatureGeomModelOptions</a> worldOpt;
+<a name="l00137"></a>00137         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a6feb1c36056befcaabdec296d4eb02ef">featureOptions</a>() = featureOpt;
+<a name="l00138"></a>00138         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a0a60a031d22b9149b4519d3e1bb38ce2">geometryTypeOverride</a>() = Geometry::TYPE_LINESTRING;
+<a name="l00139"></a>00139         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a7027229813a85994188cea844cb52206">styles</a>() = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>();
+<a name="l00140"></a>00140         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a7027229813a85994188cea844cb52206">styles</a>()-&gt;addStyle( style );
+<a name="l00141"></a>00141         worldOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a29146789ad33eabcf4a6840141fa628c">enableLighting</a>() = <span class="keyword">false</span>;
+<a name="l00142"></a>00142         worldOpt.<a class="code" href="classosgEarth_1_1ModelSourceOptions.html#a702bf95dbdacdca0e04b57d4f001b711">depthTestEnabled</a>() = <span class="keyword">false</span>;
 <a name="l00143"></a>00143 
-<a name="l00144"></a>00144         ModelLayerOptions options( <span class="stringliteral">&quot;my features&quot;</span>, worldOpt );
-<a name="l00145"></a>00145         options.overlay() = useOverlay;
-<a name="l00146"></a>00146         map-&gt;addModelLayer( <span class="keyword">new</span> ModelLayer(options) );
+<a name="l00144"></a>00144         <a class="code" href="classosgEarth_1_1ModelLayerOptions.html">ModelLayerOptions</a> options( <span class="stringliteral">&quot;my features&quot;</span>, worldOpt );
+<a name="l00145"></a>00145         options.<a class="code" href="classosgEarth_1_1ModelLayerOptions.html#a1fa13c73fa96a9e97cc3129f9b95bbaa">overlay</a>() = useOverlay;
+<a name="l00146"></a>00146         map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa12f2741dd873872cf77fa487e84c915">addModelLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ModelLayer.html">ModelLayer</a>(options) );
 <a name="l00147"></a>00147     }
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149     viewer.setSceneData( mapNode );
-<a name="l00150"></a>00150     viewer.setCameraManipulator( <span class="keyword">new</span> EarthManipulator() );
+<a name="l00150"></a>00150     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>() );
 <a name="l00151"></a>00151 
 <a name="l00152"></a>00152     <span class="keywordflow">if</span> ( !useStencil &amp;&amp; !useOverlay )
-<a name="l00153"></a>00153         viewer.addEventHandler( <span class="keyword">new</span> osgEarth::Util::AutoClipPlaneHandler );
+<a name="l00153"></a>00153         viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneHandler.html">osgEarth::Util::AutoClipPlaneHandler</a> );
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155     <span class="comment">// add some stock OSG handlers:</span>
 <a name="l00156"></a>00156     viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
@@ -245,14 +261,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00161"></a>00161 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__features_8cpp.html">osgearth_features.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -267,6 +275,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

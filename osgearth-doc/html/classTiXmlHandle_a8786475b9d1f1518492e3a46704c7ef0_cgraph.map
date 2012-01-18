@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlNode.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="244,59,441,88"/>
+<area shape="rect" id="node11" href="$classTiXmlNode.html#a7667217e269e0da01d1f82aee94d1a3d" title="TiXmlNode::NextSiblingElement" alt="" coords="237,112,448,141"/>
+<area shape="rect" id="node15" href="$classTiXmlHandle.html#aba18fd7bdefb942ecdea4bf4b8e29ec8" title="Create a handle from any node (at any depth of the tree.) This can be a null pointer." alt="" coords="253,165,432,195"/>
+<area shape="rect" id="node5" href="$classTiXmlNode.html#a44c8eee26bbe2d1b2762038df9dde2f0" title="The first child of this node. Will be null if there are no children." alt="" coords="503,5,652,35"/>
+<area shape="rect" id="node7" href="$classTiXmlNode.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="496,112,659,141"/>
+<area shape="rect" id="node9" href="$classTiXmlNode.html#a72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="499,59,656,88"/>
+</map>

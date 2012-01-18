@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af77ca0a575c26c4768ac04a39ded2ec5" title="osgEarth::Util::Controls::Control::foreColor" alt="" coords="369,5,639,35"/>
+<area shape="rect" id="node5" href="$structLabelText.html#adbef373f04dfa2f31f97de6416045184" title="LabelText::getATMatrix" alt="" coords="425,59,583,88"/>
+<area shape="rect" id="node7" href="$structLabelText.html#aa553fed7a1f47e615ddb0548d1ae4d7a" title="LabelText::getTextBB" alt="" coords="429,112,579,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a6f023a154cf38055b03935f549a0d177" title="osgEarth::Util::Controls::LabelControl::haloColor" alt="" coords="353,165,655,195"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="421,219,587,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a0cd1e423eec8358180c640c8fb27d453" title="osgEarth::Util::Controls::Control::margin" alt="" coords="376,272,632,301"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a363fe4321d8150a4e31d2e6e2456a1d7" title="osgEarth::Util::Controls::Control::padding" alt="" coords="373,325,635,355"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ad0ae1170326deed17ef6502b3475c325" title="osgEarth::Util::Controls::Control::visible" alt="" coords="377,379,631,408"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a14d72a9c879a902d2f43e782ffd5d5bd" title="osgEarth::Util::Controls::Control::x" alt="" coords="392,432,616,461"/>
+<area shape="rect" id="node21" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#ad9d8bb215060c53eb35ce3a23836a8de" title="osgEarth::Util::Controls::Gutter::x" alt="" coords="395,485,613,515"/>
+<area shape="rect" id="node23" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html#af5866775b393dcb25e91c4c80235d498" title="osgEarth::Util::Controls::Gutter::y" alt="" coords="395,539,613,568"/>
+</map>

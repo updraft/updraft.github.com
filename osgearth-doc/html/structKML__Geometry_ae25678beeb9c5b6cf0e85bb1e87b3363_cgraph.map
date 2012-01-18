@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structKML__Geometry.html#a110018063622a962ca66531b4d340649" title="KML_Geometry::buildChild" alt="" coords="203,323,381,352"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1Config.html#a719c1a8834791318bf2be9ec46f2b55d" title="osgEarth::Config::children" alt="" coords="785,535,959,564"/>
+<area shape="rect" id="node8" href="$classosgEarth_1_1Config.html#a5e8fece976ded6667239209f27139c6c" title="osgEarth::Config::key" alt="" coords="467,323,616,352"/>
+<area shape="rect" id="node10" href="$structKML__Geometry.html#aad8a4a0044358c006cfe28cdf5ed127a" title="KML_Geometry::parseCoords" alt="" coords="444,165,639,195"/>
+<area shape="rect" id="node18" href="$structKML__MultiGeometry.html#a2f7f0a260959a668a46940e6c6ebcf1d" title="KML_MultiGeometry::parseCoords" alt="" coords="431,376,652,405"/>
+<area shape="rect" id="node20" href="$structKML__Polygon.html#a5e2b488d27579dd82136edacfd371945" title="KML_Polygon::parseCoords" alt="" coords="449,269,633,299"/>
+<area shape="rect" id="node30" href="$structKML__LinearRing.html#ae9b67bb2806ba039b0d61a26e6ad73a4" title="KML_LinearRing::parseCoords" alt="" coords="772,219,972,248"/>
+<area shape="rect" id="node35" href="$structKML__LineString.html#a993af2236211b1d62ed1d80412dd5119" title="KML_LineString::parseCoords" alt="" coords="444,429,639,459"/>
+<area shape="rect" id="node37" href="$structKML__Point.html#ac7416003d6b8bb6bc4fe5bfc3549ea31" title="KML_Point::parseCoords" alt="" coords="457,483,625,512"/>
+<area shape="rect" id="node39" href="$structKML__Polygon.html#a92bf3ab183b2572de19172ba46324158" title="KML_Polygon::parseStyle" alt="" coords="455,59,628,88"/>
+<area shape="rect" id="node41" href="$structKML__Geometry.html#a013d6351cc76c816ec29355a3032a25c" title="KML_Geometry::parseStyle" alt="" coords="451,112,632,141"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1Config.html#ac88bd62e7ac78d498981c3cf9f948b7c" title="osgEarth::Config::child" alt="" coords="795,165,949,195"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Config.html#ab19f29b67dfeaf1b2ea58266f6e7b901" title="osgEarth::Config::value" alt="" coords="793,112,951,141"/>
+<area shape="rect" id="node14" href="$Config_8cpp.html#aa64dd5b0fd14e482676acb11aa4720e2" title="emptyConfig" alt="" coords="1091,165,1187,195"/>
+<area shape="rect" id="node24" href="$namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed" title="anonymous_namespace\{MeshConsolidator::cpp\}::copy" alt="" coords="701,379,1043,408"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80" title="osgEarth::Config::empty" alt="" coords="791,432,953,461"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Symbology_1_1Polygon.html#aef6967b31b28c8a5119269aaed5ad429" title="osgEarth::Symbology::Polygon::getHoles" alt="" coords="741,272,1003,301"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1MixinVector.html#a07fb3575b7634179acbb8bddda3b750f" title="osgEarth::MixinVector::reserve" alt="" coords="771,325,973,355"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1Symbology_1_1AltitudeSymbol.html#a85a77c59744078cc2b3cd009c772ade4" title="osgEarth::Symbology::AltitudeSymbol::clamping" alt="" coords="721,5,1023,35"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html#a8d6a77457d05841678b29ca5f448c30b" title="osgEarth::Symbology::ExtrusionSymbol::flatten" alt="" coords="723,59,1021,88"/>
+</map>

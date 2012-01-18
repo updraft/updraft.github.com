@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ImageUtils.html#a9f5beddc20a1c2dd37667f641882c4a3" title="osgEarth::ImageUtils::copyAsSubImage" alt="" coords="333,5,589,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoImage.html#acceef1704fdd0bb942d8b0339c391b7e" title="osgEarth::GeoImage::GeoImage" alt="" coords="356,59,567,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0" title="osgEarth::GeoImage::getSRS" alt="" coords="364,112,559,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="368,165,555,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="371,219,552,248"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00" title="osgEarth::GeoExtent::xMax" alt="" coords="369,272,553,301"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="372,325,551,355"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc" title="osgEarth::GeoExtent::yMax" alt="" coords="369,379,553,408"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="372,432,551,461"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="664,112,861,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="637,219,888,248"/>
+</map>

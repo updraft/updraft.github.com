@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,54 +127,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>MAGENTA
+: <a class="el" href="rivers_2engine__droam_2Common.html#a6f699060902f800f12aaae150f3a708e">Common</a>
+</li>
 <li>main()
 : <a class="el" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_annotation.cpp</a>
-, <a class="el" href="osgearth__clouds_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_clouds.cpp</a>
-, <a class="el" href="osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_controls.cpp</a>
-, <a class="el" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_featureinfo.cpp</a>
-, <a class="el" href="osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_ocean.cpp</a>
-, <a class="el" href="osgearth__resources_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_resources.cpp</a>
-, <a class="el" href="osgearth__features_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_features.cpp</a>
-, <a class="el" href="osgearth__seamless_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_seamless.cpp</a>
-, <a class="el" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_seed.cpp</a>
-, <a class="el" href="osgearth__earthfile_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_earthfile.cpp</a>
-, <a class="el" href="osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_imageoverlay.cpp</a>
-, <a class="el" href="osgearth__shadercomp_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_shadercomp.cpp</a>
-, <a class="el" href="osgearth__symbology_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_symbology.cpp</a>
-, <a class="el" href="osgearth__kml_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_kml.cpp</a>
-, <a class="el" href="osgearth__tests_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_tests.cpp</a>
-, <a class="el" href="osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_viewer.cpp</a>
-, <a class="el" href="osgearth__version_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_version.cpp</a>
-, <a class="el" href="osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_toc.cpp</a>
-, <a class="el" href="osgearth__tilesource_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_tilesource.cpp</a>
 , <a class="el" href="osgearth__composite_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_composite.cpp</a>
-, <a class="el" href="osgearth__elevation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_elevation.cpp</a>
-, <a class="el" href="osgearth__labels_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_labels.cpp</a>
-, <a class="el" href="osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_manip.cpp</a>
 , <a class="el" href="osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_featureeditor.cpp</a>
-, <a class="el" href="osgearth__map_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_map.cpp</a>
 , <a class="el" href="osgearth__measure_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_measure.cpp</a>
+, <a class="el" href="osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_ocean.cpp</a>
+, <a class="el" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_featureinfo.cpp</a>
+, <a class="el" href="osgearth__resources_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_resources.cpp</a>
+, <a class="el" href="osgearth__seamless_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_seamless.cpp</a>
+, <a class="el" href="osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_controls.cpp</a>
+, <a class="el" href="osgearth__features_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_features.cpp</a>
+, <a class="el" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_seed.cpp</a>
+, <a class="el" href="osgearth__shadercomp_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_shadercomp.cpp</a>
+, <a class="el" href="osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_imageoverlay.cpp</a>
+, <a class="el" href="osgearth__symbology_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_symbology.cpp</a>
+, <a class="el" href="osgearth__tests_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_tests.cpp</a>
+, <a class="el" href="osgearth__clouds_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_clouds.cpp</a>
+, <a class="el" href="osgearth__earthfile_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_earthfile.cpp</a>
+, <a class="el" href="osgearth__kml_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_kml.cpp</a>
+, <a class="el" href="osgearth__tilesource_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_tilesource.cpp</a>
+, <a class="el" href="osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_toc.cpp</a>
+, <a class="el" href="osgearth__labels_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_labels.cpp</a>
+, <a class="el" href="osgearth__version_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_version.cpp</a>
+, <a class="el" href="osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_viewer.cpp</a>
+, <a class="el" href="osgearth__elevation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_elevation.cpp</a>
+, <a class="el" href="osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_manip.cpp</a>
+, <a class="el" href="osgearth__map_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">osgearth_map.cpp</a>
 </li>
 <li>make3DImage()
 : <a class="el" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">osgearth_ocean.cpp</a>
@@ -152,52 +174,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>makeRGBA()
 : <a class="el" href="osgearth__clouds_8cpp.html#a6ffeb5d9d971dfdac2dbb4ac8cf31aaf">osgearth_clouds.cpp</a>
 </li>
+<li>makeRGBAandComputeAlpha()
+: <a class="el" href="OSGTileSource_8cpp.html#af172ca87c5244f1fde77c75b7ad12a92">OSGTileSource.cpp</a>
+</li>
+<li>manualReproject()
+: <a class="el" href="GeoData_8cpp.html#a1ac02668d1ba5339b77b84a31e7c54f2">GeoData.cpp</a>
+</li>
 <li>MapServiceLayerList
-: <a class="el" href="_map_service_8h.html#ac3896c967d697cfc5520681f34dc0837">MapService.h</a>
+: <a class="el" href="MapService_8h.html#ac3896c967d697cfc5520681f34dc0837">MapService.h</a>
 </li>
 <li>MarkerToFeatures
-: <a class="el" href="_substitute_model_filter_8cpp.html#a99876178ed2b2525a15752b7f12786b9">SubstituteModelFilter.cpp</a>
+: <a class="el" href="SubstituteModelFilter_8cpp.html#a99876178ed2b2525a15752b7f12786b9">SubstituteModelFilter.cpp</a>
 </li>
 <li>MASK_SAMPLER_FUNC
-: <a class="el" href="_ocean_surface_node_8cpp.html#a3084c6c62548afa50259b31583a6666b">OceanSurfaceNode.cpp</a>
+: <a class="el" href="OceanSurfaceNode_8cpp.html#a3084c6c62548afa50259b31583a6666b">OceanSurfaceNode.cpp</a>
 </li>
 <li>MASK_SOURCE_OPTIONS_TAG
-: <a class="el" href="_mask_source_8cpp.html#ab64db81ad2471de003ecd8d92ec90eb9">MaskSource.cpp</a>
+: <a class="el" href="MaskSource_8cpp.html#ab64db81ad2471de003ecd8d92ec90eb9">MaskSource.cpp</a>
 </li>
 <li>MATCH_TOLERANCE
-: <a class="el" href="_single_pass_terrain_technique_8cpp.html#a7c4706a3fe0c40ded0456294496bd773">SinglePassTerrainTechnique.cpp</a>
+: <a class="el" href="SinglePassTerrainTechnique_8cpp.html#a7c4706a3fe0c40ded0456294496bd773">SinglePassTerrainTechnique.cpp</a>
+</li>
+<li>MAX_ACTIVE_LEVEL
+: <a class="el" href="rivers_2engine__droam_2Common.html#a5b0a3970dfe888b139260b02c31b843d">Common</a>
+</li>
+<li>MAX_JOBS_PER_FRAME
+: <a class="el" href="rivers_2engine__droam_2Common.html#a34befc0a36f60ca91b41b522618aa938">Common</a>
 </li>
 <li>MAX_NUM_STYLES
-: <a class="el" href="_feature_stencil_model_source_8cpp.html#a2ffc5e11ec70ba89220d8185fd6177b0">FeatureStencilModelSource.cpp</a>
+: <a class="el" href="FeatureStencilModelSource_8cpp.html#a2ffc5e11ec70ba89220d8185fd6177b0">FeatureStencilModelSource.cpp</a>
 </li>
 <li>MAX_REQUEST_TO_RUN_PURGE
-: <a class="el" href="_sqlite3_cache_8cpp.html#a2d3ea31a02daa347d07b3bb351882fcc">Sqlite3Cache.cpp</a>
+: <a class="el" href="Sqlite3Cache_8cpp.html#a2d3ea31a02daa347d07b3bb351882fcc">Sqlite3Cache.cpp</a>
 </li>
 <li>MERC_MAX_LAT
-: <a class="el" href="_locators_8cpp.html#a833fb8c51228dc8637fa2c510a6f0daa">Locators.cpp</a>
+: <a class="el" href="Locators_8cpp.html#a833fb8c51228dc8637fa2c510a6f0daa">Locators.cpp</a>
 </li>
 <li>MERC_MIN_LAT
-: <a class="el" href="_locators_8cpp.html#a790d18bb21230a9a12f91ab187ce7ea2">Locators.cpp</a>
+: <a class="el" href="Locators_8cpp.html#a790d18bb21230a9a12f91ab187ce7ea2">Locators.cpp</a>
+</li>
+<li>mercatorToGeographic()
+: <a class="el" href="SpatialReference_8cpp.html#a047d2c7e4580672483d0926a8f694e7e">SpatialReference.cpp</a>
 </li>
 <li>MERGE_SHADERS
-: <a class="el" href="_shader_composition_8cpp.html#ae00b92d36e3e58eaffee7f2babbbb25c">ShaderComposition.cpp</a>
+: <a class="el" href="ShaderComposition_8cpp.html#ae00b92d36e3e58eaffee7f2babbbb25c">ShaderComposition.cpp</a>
 </li>
 <li>message()
 : <a class="el" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73">osgearth_seed.cpp</a>
 </li>
 <li>MODEL_SOURCE_OPTIONS_TAG
-: <a class="el" href="_model_source_8cpp.html#ae9deaa51368e3ecc1b868ca565c00ee4">ModelSource.cpp</a>
+: <a class="el" href="ModelSource_8cpp.html#ae9deaa51368e3ecc1b868ca565c00ee4">ModelSource.cpp</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -212,6 +241,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

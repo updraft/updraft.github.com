@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1GeoCell.html#abf74b0a9176af0a122a002ec55791b44" title="osgEarth::Util::GeoCell::generateBoundaries" alt="" coords="267,219,547,248"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="615,59,833,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="596,112,852,141"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="625,165,823,195"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00" title="osgEarth::GeoExtent::xMax" alt="" coords="632,219,816,248"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="635,272,813,301"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc" title="osgEarth::GeoExtent::yMax" alt="" coords="632,325,816,355"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="635,379,813,408"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="912,5,1099,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="915,59,1096,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="1157,59,1408,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="903,112,1108,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="1176,112,1389,141"/>
+<area shape="rect" id="node19" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1456,112,1867,141"/>
+</map>

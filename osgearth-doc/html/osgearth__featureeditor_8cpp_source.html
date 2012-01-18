@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__featureeditor_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_featureeditor/osgearth_featureeditor.cpp</h1>  </div>
@@ -144,127 +160,127 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060 }
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keyword">static</span> <span class="keywordtype">int</span> s_fid = 0;
+<a name="l00063"></a><a class="code" href="osgearth__featureeditor_8cpp.html#aac9d89ed9d50c7914d2dd4b969eb36a2">00063</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="osgearth__featureeditor_8cpp.html#aac9d89ed9d50c7914d2dd4b969eb36a2">s_fid</a> = 0;
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="keyword">static</span> osg::ref_ptr&lt; AddPointHandler &gt; s_addPointHandler;
-<a name="l00066"></a>00066 <span class="keyword">static</span> osg::ref_ptr&lt; osg::Node &gt; s_editor;
-<a name="l00067"></a>00067 <span class="keyword">static</span> osg::ref_ptr&lt; Feature &gt; s_activeFeature;
-<a name="l00068"></a>00068 <span class="keyword">static</span> osgViewer::Viewer* s_viewer;
-<a name="l00069"></a>00069 <span class="keyword">static</span> osg::ref_ptr&lt; osg::Group &gt; s_root;
-<a name="l00070"></a>00070 <span class="keyword">static</span> osg::ref_ptr&lt; FeatureListSource &gt; s_source;
-<a name="l00071"></a>00071 <span class="keyword">static</span> osg::ref_ptr&lt; MapNode &gt; s_mapNode;
+<a name="l00065"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">00065</a> <span class="keyword">static</span> osg::ref_ptr&lt; AddPointHandler &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>;
+<a name="l00066"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">00066</a> <span class="keyword">static</span> osg::ref_ptr&lt; osg::Node &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a>;
+<a name="l00067"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">00067</a> <span class="keyword">static</span> osg::ref_ptr&lt; Feature &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a>;
+<a name="l00068"></a><a class="code" href="osgearth__featureeditor_8cpp.html#ada283620b11edac0dad3f3ea2be4021f">00068</a> <span class="keyword">static</span> osgViewer::Viewer* <a class="code" href="osgearth__featureeditor_8cpp.html#ada283620b11edac0dad3f3ea2be4021f">s_viewer</a>;
+<a name="l00069"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">00069</a> <span class="keyword">static</span> osg::ref_ptr&lt; osg::Group &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>;
+<a name="l00070"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">00070</a> <span class="keyword">static</span> osg::ref_ptr&lt; FeatureListSource &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a>;
+<a name="l00071"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">00071</a> <span class="keyword">static</span> osg::ref_ptr&lt; MapNode &gt; <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>;
 <a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">00073</a> Grid* <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>()
+<a name="l00073"></a><a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">00073</a> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>()
 <a name="l00074"></a>00074 {    
-<a name="l00075"></a>00075     Grid* toolbar = <span class="keyword">new</span> Grid();
-<a name="l00076"></a>00076     toolbar-&gt;setBackColor(0,0,0,0.5);
-<a name="l00077"></a>00077     toolbar-&gt;setMargin( 10 );
-<a name="l00078"></a>00078     toolbar-&gt;setPadding( 10 );
-<a name="l00079"></a>00079     toolbar-&gt;setChildSpacing( 10 );
-<a name="l00080"></a>00080     toolbar-&gt;setChildVertAlign( Control::ALIGN_CENTER );
-<a name="l00081"></a>00081     toolbar-&gt;setAbsorbEvents( <span class="keyword">true</span> );
-<a name="l00082"></a>00082     toolbar-&gt;setVertAlign( Control::ALIGN_TOP );    
+<a name="l00075"></a>00075     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* toolbar = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+<a name="l00076"></a>00076     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);
+<a name="l00077"></a>00077     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+<a name="l00078"></a>00078     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+<a name="l00079"></a>00079     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+<a name="l00080"></a>00080     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( Control::ALIGN_CENTER );
+<a name="l00081"></a>00081     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0">setAbsorbEvents</a>( <span class="keyword">true</span> );
+<a name="l00082"></a>00082     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_TOP );    
 <a name="l00083"></a>00083     <span class="keywordflow">return</span> toolbar;    
 <a name="l00084"></a>00084 }
 <a name="l00085"></a>00085 
-<a name="l00086"></a><a class="code" href="struct_add_verts_mode_handler.html">00086</a> <span class="keyword">struct </span><a class="code" href="struct_add_verts_mode_handler.html">AddVertsModeHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00086"></a><a class="code" href="structAddVertsModeHandler.html">00086</a> <span class="keyword">struct </span><a class="code" href="structAddVertsModeHandler.html">AddVertsModeHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00087"></a>00087 {
-<a name="l00088"></a><a class="code" href="struct_add_verts_mode_handler.html#af23f834015793686a6450c7a72f9a7d6">00088</a>     <a class="code" href="struct_add_verts_mode_handler.html">AddVertsModeHandler</a>( FeatureModelGraph* featureGraph)
+<a name="l00088"></a><a class="code" href="structAddVertsModeHandler.html#af23f834015793686a6450c7a72f9a7d6">00088</a>     <a class="code" href="structAddVertsModeHandler.html">AddVertsModeHandler</a>( <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html">FeatureModelGraph</a>* featureGraph)
 <a name="l00089"></a>00089         : _featureGraph( featureGraph )
 <a name="l00090"></a>00090     {
 <a name="l00091"></a>00091     }
 <a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="struct_add_verts_mode_handler.html#aeb875a83b44ea615f4fb6be0f2c871e4">00093</a>     <span class="keywordtype">void</span> <a class="code" href="struct_add_verts_mode_handler.html#aeb875a83b44ea615f4fb6be0f2c871e4">onClick</a>( Control* control, <span class="keywordtype">int</span> mouseButtonMask ) {
+<a name="l00093"></a><a class="code" href="structAddVertsModeHandler.html#aeb875a83b44ea615f4fb6be0f2c871e4">00093</a>     <span class="keywordtype">void</span> <a class="code" href="structAddVertsModeHandler.html#aeb875a83b44ea615f4fb6be0f2c871e4">onClick</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">int</span> mouseButtonMask ) {
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095         <span class="comment">//remove the editor if it&#39;s valid</span>
-<a name="l00096"></a>00096         <span class="keywordflow">if</span> (s_editor.valid())
+<a name="l00096"></a>00096         <span class="keywordflow">if</span> (<a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a>.valid())
 <a name="l00097"></a>00097         {
-<a name="l00098"></a>00098             s_root-&gt;removeChild( s_editor.get() );
-<a name="l00099"></a>00099             s_editor = NULL;
+<a name="l00098"></a>00098             <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>-&gt;removeChild( <a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a>.get() );
+<a name="l00099"></a>00099             <a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a> = <a class="code" href="Export.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 <a name="l00100"></a>00100 
-<a name="l00101"></a>00101             Style* style = _featureGraph-&gt;getStyles()-&gt;getDefaultStyle();
+<a name="l00101"></a>00101             <a class="code" href="classosgEarth_1_1Style.html">Style</a>* style = _featureGraph-&gt;getStyles()-&gt;getDefaultStyle();
 <a name="l00102"></a>00102             <span class="keywordflow">if</span> ( style )
 <a name="l00103"></a>00103             {            
-<a name="l00104"></a>00104                 style-&gt;get&lt;LineSymbol&gt;()-&gt;stroke()-&gt;stipple().unset();
+<a name="l00104"></a>00104                 style-&gt;get&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;stipple().unset();
 <a name="l00105"></a>00105                 _featureGraph-&gt;dirty();
 <a name="l00106"></a>00106             }
 <a name="l00107"></a>00107         }
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109         <span class="comment">//Add the new add point handler</span>
-<a name="l00110"></a>00110         <span class="keywordflow">if</span> (!s_addPointHandler.valid() &amp;&amp; s_activeFeature.valid())
+<a name="l00110"></a>00110         <span class="keywordflow">if</span> (!<a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>.valid() &amp;&amp; <a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a>.valid())
 <a name="l00111"></a>00111         {
-<a name="l00112"></a>00112             s_addPointHandler = <span class="keyword">new</span> AddPointHandler(s_activeFeature.get(), s_source.get(), s_mapNode-&gt;getMap()-&gt;getProfile()-&gt;getSRS());
-<a name="l00113"></a>00113             s_addPointHandler-&gt;setIntersectionMask( 0x1 );
-<a name="l00114"></a>00114             s_viewer-&gt;addEventHandler( s_addPointHandler.get() );
+<a name="l00112"></a>00112             <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a> = <span class="keyword">new</span> <a class="code" href="structosgEarth_1_1Util_1_1AddPointHandler.html">AddPointHandler</a>(<a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a>.get(), <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a>.get(), <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>-&gt;getMap()-&gt;getProfile()-&gt;getSRS());
+<a name="l00113"></a>00113             <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>-&gt;setIntersectionMask( 0x1 );
+<a name="l00114"></a>00114             <a class="code" href="osgearth__featureeditor_8cpp.html#ada283620b11edac0dad3f3ea2be4021f">s_viewer</a>-&gt;addEventHandler( <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>.get() );
 <a name="l00115"></a>00115         }        
 <a name="l00116"></a>00116     }
 <a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="struct_add_verts_mode_handler.html#a339a89eed3b44f0bcd0b87337111d8a9">00118</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="struct_add_verts_mode_handler.html#a339a89eed3b44f0bcd0b87337111d8a9">_featureGraph</a>;
+<a name="l00118"></a><a class="code" href="structAddVertsModeHandler.html#a339a89eed3b44f0bcd0b87337111d8a9">00118</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="structAddVertsModeHandler.html#a339a89eed3b44f0bcd0b87337111d8a9">_featureGraph</a>;
 <a name="l00119"></a>00119 };
 <a name="l00120"></a>00120 
-<a name="l00121"></a><a class="code" href="struct_edit_mode_handler.html">00121</a> <span class="keyword">struct </span><a class="code" href="struct_edit_mode_handler.html">EditModeHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00121"></a><a class="code" href="structEditModeHandler.html">00121</a> <span class="keyword">struct </span><a class="code" href="structEditModeHandler.html">EditModeHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00122"></a>00122 {
-<a name="l00123"></a><a class="code" href="struct_edit_mode_handler.html#add4b89681aa866afa944e37611faa983">00123</a>     <a class="code" href="struct_edit_mode_handler.html">EditModeHandler</a>( FeatureModelGraph* featureGraph)
+<a name="l00123"></a><a class="code" href="structEditModeHandler.html#add4b89681aa866afa944e37611faa983">00123</a>     <a class="code" href="structEditModeHandler.html">EditModeHandler</a>( <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html">FeatureModelGraph</a>* featureGraph)
 <a name="l00124"></a>00124         : _featureGraph( featureGraph )
 <a name="l00125"></a>00125     { 
 <a name="l00126"></a>00126     }
 <a name="l00127"></a>00127 
-<a name="l00128"></a><a class="code" href="struct_edit_mode_handler.html#a94b74e6f5f35774d262fe968d489a53c">00128</a>     <span class="keywordtype">void</span> <a class="code" href="struct_edit_mode_handler.html#a94b74e6f5f35774d262fe968d489a53c">onClick</a>( Control* control, <span class="keywordtype">int</span> mouseButtonMask ) {
+<a name="l00128"></a><a class="code" href="structEditModeHandler.html#a94b74e6f5f35774d262fe968d489a53c">00128</a>     <span class="keywordtype">void</span> <a class="code" href="structEditModeHandler.html#a94b74e6f5f35774d262fe968d489a53c">onClick</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">int</span> mouseButtonMask ) {
 <a name="l00129"></a>00129         
 <a name="l00130"></a>00130         <span class="comment">//Remove the add point handler if it&#39;s valid</span>
-<a name="l00131"></a>00131         <span class="keywordflow">if</span> (s_addPointHandler.valid())
+<a name="l00131"></a>00131         <span class="keywordflow">if</span> (<a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>.valid())
 <a name="l00132"></a>00132         {            
-<a name="l00133"></a>00133             osgEarth::removeEventHandler( s_viewer, s_addPointHandler.get() );
-<a name="l00134"></a>00134             s_addPointHandler = NULL;
+<a name="l00133"></a>00133             <a class="code" href="namespaceosgEarth.html#a8179e6924d195ccdbc192d956bcefa96">osgEarth::removeEventHandler</a>( <a class="code" href="osgearth__featureeditor_8cpp.html#ada283620b11edac0dad3f3ea2be4021f">s_viewer</a>, <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a>.get() );
+<a name="l00134"></a>00134             <a class="code" href="osgearth__featureeditor_8cpp.html#a85947a9e76fd0a5fd564b68b29e5d8ee">s_addPointHandler</a> = <a class="code" href="Export.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 <a name="l00135"></a>00135         }        
 <a name="l00136"></a>00136 
-<a name="l00137"></a>00137         <span class="keywordflow">if</span> (!s_editor.valid() &amp;&amp; s_activeFeature.valid())
+<a name="l00137"></a>00137         <span class="keywordflow">if</span> (!<a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a>.valid() &amp;&amp; <a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a>.valid())
 <a name="l00138"></a>00138         {
-<a name="l00139"></a>00139             Style* style = _featureGraph-&gt;getStyles()-&gt;getDefaultStyle();
+<a name="l00139"></a>00139             <a class="code" href="classosgEarth_1_1Style.html">Style</a>* style = _featureGraph-&gt;getStyles()-&gt;getDefaultStyle();
 <a name="l00140"></a>00140             <span class="keywordflow">if</span> ( style )
 <a name="l00141"></a>00141             {
-<a name="l00142"></a>00142                 style-&gt;get&lt;LineSymbol&gt;()-&gt;stroke()-&gt;stipple() = 0x00FF;
+<a name="l00142"></a>00142                 style-&gt;get&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;stipple() = 0x00FF;
 <a name="l00143"></a>00143                 _featureGraph-&gt;dirty();
 <a name="l00144"></a>00144             }
-<a name="l00145"></a>00145             s_editor = <span class="keyword">new</span> FeatureEditor(s_activeFeature.get(), s_source.get(), s_mapNode.get());
-<a name="l00146"></a>00146             s_root-&gt;addChild( s_editor.get() );
+<a name="l00145"></a>00145             <a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1FeatureEditor.html">FeatureEditor</a>(<a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a>.get(), <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a>.get(), <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>.get());
+<a name="l00146"></a>00146             <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>-&gt;addChild( <a class="code" href="osgearth__featureeditor_8cpp.html#a4241301a6970db2e7304b747abef1512">s_editor</a>.get() );
 <a name="l00147"></a>00147         }
 <a name="l00148"></a>00148     }
 <a name="l00149"></a>00149 
-<a name="l00150"></a><a class="code" href="struct_edit_mode_handler.html#ab92dd1cf0da9a9e664f962c4fdffac07">00150</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="struct_edit_mode_handler.html#ab92dd1cf0da9a9e664f962c4fdffac07">_featureGraph</a>;
+<a name="l00150"></a><a class="code" href="structEditModeHandler.html#ab92dd1cf0da9a9e664f962c4fdffac07">00150</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="structEditModeHandler.html#ab92dd1cf0da9a9e664f962c4fdffac07">_featureGraph</a>;
 <a name="l00151"></a>00151 };
 <a name="l00152"></a>00152 
-<a name="l00153"></a><a class="code" href="struct_change_style_handler.html">00153</a> <span class="keyword">struct </span><a class="code" href="struct_change_style_handler.html">ChangeStyleHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00153"></a><a class="code" href="structChangeStyleHandler.html">00153</a> <span class="keyword">struct </span><a class="code" href="structChangeStyleHandler.html">ChangeStyleHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00154"></a>00154 {
-<a name="l00155"></a><a class="code" href="struct_change_style_handler.html#ab4b9239c2bcdb833c0d11b07621a8727">00155</a>     <a class="code" href="struct_change_style_handler.html">ChangeStyleHandler</a>( FeatureModelGraph* features, StyleSheet* styleSheet) 
+<a name="l00155"></a><a class="code" href="structChangeStyleHandler.html#ab4b9239c2bcdb833c0d11b07621a8727">00155</a>     <a class="code" href="structChangeStyleHandler.html">ChangeStyleHandler</a>( <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html">FeatureModelGraph</a>* features, <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>* styleSheet) 
 <a name="l00156"></a>00156         : _features( features), _styleSheet(styleSheet)
 <a name="l00157"></a>00157     {
 <a name="l00158"></a>00158         <span class="comment">//nop</span>
 <a name="l00159"></a>00159     }
 <a name="l00160"></a>00160 
-<a name="l00161"></a><a class="code" href="struct_change_style_handler.html#a54a06978dd6806492933094b055478a8">00161</a>     <span class="keywordtype">void</span> <a class="code" href="struct_change_style_handler.html#a54a06978dd6806492933094b055478a8">onClick</a>( Control* control, <span class="keywordtype">int</span> mouseButtonMask ) {
+<a name="l00161"></a><a class="code" href="structChangeStyleHandler.html#a54a06978dd6806492933094b055478a8">00161</a>     <span class="keywordtype">void</span> <a class="code" href="structChangeStyleHandler.html#a54a06978dd6806492933094b055478a8">onClick</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">int</span> mouseButtonMask ) {
 <a name="l00162"></a>00162         _features-&gt;setStyles( _styleSheet.get() );
 <a name="l00163"></a>00163     }
 <a name="l00164"></a>00164 
-<a name="l00165"></a><a class="code" href="struct_change_style_handler.html#adc8eb49f6718832189541b50194366c1">00165</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="struct_change_style_handler.html#adc8eb49f6718832189541b50194366c1">_features</a>;
-<a name="l00166"></a><a class="code" href="struct_change_style_handler.html#a143f1d54785f284d3cfca192a2b0a4fb">00166</a>     osg::ref_ptr&lt; StyleSheet &gt;        <a class="code" href="struct_change_style_handler.html#a143f1d54785f284d3cfca192a2b0a4fb">_styleSheet</a>;
+<a name="l00165"></a><a class="code" href="structChangeStyleHandler.html#adc8eb49f6718832189541b50194366c1">00165</a>     osg::ref_ptr&lt; FeatureModelGraph &gt; <a class="code" href="structChangeStyleHandler.html#adc8eb49f6718832189541b50194366c1">_features</a>;
+<a name="l00166"></a><a class="code" href="structChangeStyleHandler.html#a143f1d54785f284d3cfca192a2b0a4fb">00166</a>     osg::ref_ptr&lt; StyleSheet &gt;        <a class="code" href="structChangeStyleHandler.html#a143f1d54785f284d3cfca192a2b0a4fb">_styleSheet</a>;
 <a name="l00167"></a>00167 };
 <a name="l00168"></a>00168 
-<a name="l00169"></a><a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">00169</a> StyleSheet* <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( <span class="keyword">const</span> osg::Vec4 &amp;color, <span class="keywordtype">float</span> width )
+<a name="l00169"></a><a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">00169</a> <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>* <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( <span class="keyword">const</span> osg::Vec4 &amp;color, <span class="keywordtype">float</span> width )
 <a name="l00170"></a>00170 {
 <a name="l00171"></a>00171     <span class="comment">// Define a style for the feature data. Since we are going to render the</span>
 <a name="l00172"></a>00172     <span class="comment">// vectors as lines, configure the line symbolizer:</span>
-<a name="l00173"></a>00173     Style style;
+<a name="l00173"></a>00173     <a class="code" href="classosgEarth_1_1Style.html">Style</a> style;
 <a name="l00174"></a>00174 
-<a name="l00175"></a>00175     LineSymbol* ls = style.getOrCreateSymbol&lt;LineSymbol&gt;();
-<a name="l00176"></a>00176     ls-&gt;stroke()-&gt;color() = color;
-<a name="l00177"></a>00177     ls-&gt;stroke()-&gt;width() = width;
+<a name="l00175"></a>00175     <a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>* ls = style.getOrCreateSymbol&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;();
+<a name="l00176"></a>00176     ls-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html#a87c1c62229a5bd3bbe12a187f5522233">stroke</a>()-&gt;color() = color;
+<a name="l00177"></a>00177     ls-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html#a87c1c62229a5bd3bbe12a187f5522233">stroke</a>()-&gt;width() = width;
 <a name="l00178"></a>00178 
 <a name="l00179"></a>00179     <span class="comment">//AltitudeSymbol* as = style.getOrCreate&lt;AltitudeSymbol&gt;();</span>
 <a name="l00180"></a>00180     <span class="comment">//as-&gt;clamping() = AltitudeSymbol::CLAMP_TO_TERRAIN;</span>
 <a name="l00181"></a>00181 
-<a name="l00182"></a>00182     StyleSheet* styleSheet = <span class="keyword">new</span> StyleSheet();
-<a name="l00183"></a>00183     styleSheet-&gt;addStyle( style );
+<a name="l00182"></a>00182     <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>* styleSheet = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>();
+<a name="l00183"></a>00183     styleSheet-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html#a71a8f0321144d5400faf8a7deabbdc2c">addStyle</a>( style );
 <a name="l00184"></a>00184     <span class="keywordflow">return</span> styleSheet;
 <a name="l00185"></a>00185 }
 <a name="l00186"></a>00186 
@@ -277,86 +293,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00193"></a>00193     osg::ArgumentParser arguments(&amp;argc,argv);
 <a name="l00194"></a>00194 
 <a name="l00195"></a>00195     osgViewer::Viewer viewer(arguments);
-<a name="l00196"></a>00196     s_viewer = &amp;viewer;
+<a name="l00196"></a>00196     <a class="code" href="osgearth__featureeditor_8cpp.html#ada283620b11edac0dad3f3ea2be4021f">s_viewer</a> = &amp;viewer;
 <a name="l00197"></a>00197 
 <a name="l00198"></a>00198     <span class="comment">// Start by creating the map:</span>
-<a name="l00199"></a>00199     s_mapNode = MapNode::load(arguments);
-<a name="l00200"></a>00200     <span class="keywordflow">if</span> ( !s_mapNode )
+<a name="l00199"></a>00199     <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a> = <a class="code" href="classosgEarth_1_1MapNode.html#a49315e647112695161b9f859a85f9783">MapNode::load</a>(arguments);
+<a name="l00200"></a>00200     <span class="keywordflow">if</span> ( !<a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a> )
 <a name="l00201"></a>00201     {
-<a name="l00202"></a>00202         Map* map = <span class="keyword">new</span> Map();
+<a name="l00202"></a>00202         <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Map.html">Map</a>();
 <a name="l00203"></a>00203 
 <a name="l00204"></a>00204         <span class="comment">// Start with a basemap imagery layer; we&#39;ll be using the GDAL driver</span>
 <a name="l00205"></a>00205         <span class="comment">// to load a local GeoTIFF file:</span>
-<a name="l00206"></a>00206         GDALOptions basemapOpt;
-<a name="l00207"></a>00207         basemapOpt.url() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
-<a name="l00208"></a>00208         map-&gt;addImageLayer( <span class="keyword">new</span> ImageLayer( ImageLayerOptions(<span class="stringliteral">&quot;basemap&quot;</span>, basemapOpt) ) );
+<a name="l00206"></a>00206         <a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html">GDALOptions</a> basemapOpt;
+<a name="l00207"></a>00207         basemapOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95">url</a>() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
+<a name="l00208"></a>00208         map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0">addImageLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a>(<span class="stringliteral">&quot;basemap&quot;</span>, basemapOpt) ) );
 <a name="l00209"></a>00209 
 <a name="l00210"></a>00210         <span class="comment">// That&#39;s it, the map is ready; now create a MapNode to render the Map:</span>
-<a name="l00211"></a>00211         MapNodeOptions mapNodeOptions;
-<a name="l00212"></a>00212         mapNodeOptions.enableLighting() = <span class="keyword">false</span>;
+<a name="l00211"></a>00211         <a class="code" href="classosgEarth_1_1MapNodeOptions.html">MapNodeOptions</a> mapNodeOptions;
+<a name="l00212"></a>00212         mapNodeOptions.<a class="code" href="classosgEarth_1_1MapNodeOptions.html#ac863f7668280399c37332966a9c1ea2f">enableLighting</a>() = <span class="keyword">false</span>;
 <a name="l00213"></a>00213 
-<a name="l00214"></a>00214         s_mapNode = <span class="keyword">new</span> MapNode( map, mapNodeOptions );
+<a name="l00214"></a>00214         <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>( map, mapNodeOptions );
 <a name="l00215"></a>00215     }
-<a name="l00216"></a>00216     s_mapNode-&gt;setNodeMask( 0x01 );
+<a name="l00216"></a>00216     <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>-&gt;setNodeMask( 0x01 );
 <a name="l00217"></a>00217 
 <a name="l00218"></a>00218         
 <a name="l00219"></a>00219     <span class="comment">// Define a style for the feature data. Since we are going to render the</span>
 <a name="l00220"></a>00220     <span class="comment">// vectors as lines, configure the line symbolizer:</span>
-<a name="l00221"></a>00221     StyleSheet* styleSheet = <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( Color::Yellow, 2.0f );
+<a name="l00221"></a>00221     <a class="code" href="classosgEarth_1_1Symbology_1_1StyleSheet.html">StyleSheet</a>* styleSheet = <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( Color::Yellow, 2.0f );
 <a name="l00222"></a>00222 
-<a name="l00223"></a>00223     s_source = <span class="keyword">new</span> FeatureListSource();
+<a name="l00223"></a>00223     <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureListSource.html">FeatureListSource</a>();
 <a name="l00224"></a>00224 
-<a name="l00225"></a>00225     LineString* line = <span class="keyword">new</span> LineString();
-<a name="l00226"></a>00226     line-&gt;push_back( osg::Vec3d(-60, 20, 0) );
-<a name="l00227"></a>00227     line-&gt;push_back( osg::Vec3d(-120, 20, 0) );
-<a name="l00228"></a>00228     line-&gt;push_back( osg::Vec3d(-120, 60, 0) );
-<a name="l00229"></a>00229     line-&gt;push_back( osg::Vec3d(-60, 60, 0) );
-<a name="l00230"></a>00230     Feature *feature = <span class="keyword">new</span> Feature(s_fid++);
-<a name="l00231"></a>00231     feature-&gt;setGeometry( line );
-<a name="l00232"></a>00232     s_source-&gt;insertFeature( feature );
-<a name="l00233"></a>00233     s_activeFeature = feature;
+<a name="l00225"></a>00225     <a class="code" href="classosgEarth_1_1Symbology_1_1LineString.html">LineString</a>* line = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1LineString.html">LineString</a>();
+<a name="l00226"></a>00226     line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 20, 0) );
+<a name="l00227"></a>00227     line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-120, 20, 0) );
+<a name="l00228"></a>00228     line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-120, 60, 0) );
+<a name="l00229"></a>00229     line-&gt;<a class="code" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb">push_back</a>( osg::Vec3d(-60, 60, 0) );
+<a name="l00230"></a>00230     <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a> *feature = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>(<a class="code" href="osgearth__featureeditor_8cpp.html#aac9d89ed9d50c7914d2dd4b969eb36a2">s_fid</a>++);
+<a name="l00231"></a>00231     feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a1e0af304a8e5207c48b7088431db2c0b">setGeometry</a>( line );
+<a name="l00232"></a>00232     <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a>-&gt;insertFeature( feature );
+<a name="l00233"></a>00233     <a class="code" href="osgearth__featureeditor_8cpp.html#a600b0f051c7d6ebca4e4250fd67314bd">s_activeFeature</a> = feature;
 <a name="l00234"></a>00234   
-<a name="l00235"></a>00235     s_root = <span class="keyword">new</span> osg::Group;
-<a name="l00236"></a>00236     s_root-&gt;addChild( s_mapNode.get() );
+<a name="l00235"></a>00235     <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a> = <span class="keyword">new</span> osg::Group;
+<a name="l00236"></a>00236     <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>-&gt;addChild( <a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>.get() );
 <a name="l00237"></a>00237 
-<a name="l00238"></a>00238     Session* session = <span class="keyword">new</span> Session(s_mapNode-&gt;getMap(), styleSheet);
+<a name="l00238"></a>00238     <a class="code" href="classosgEarth_1_1Features_1_1Session.html">Session</a>* session = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1Session.html">Session</a>(<a class="code" href="osgearth__featureeditor_8cpp.html#a35258652cd378e0a9e7c5a6164de6520">s_mapNode</a>-&gt;getMap(), styleSheet);
 <a name="l00239"></a>00239 
-<a name="l00240"></a>00240     FeatureModelGraph* graph = <span class="keyword">new</span> FeatureModelGraph( 
-<a name="l00241"></a>00241         s_source.get(), 
-<a name="l00242"></a>00242         FeatureModelSourceOptions(), 
-<a name="l00243"></a>00243         <span class="keyword">new</span> GeomFeatureNodeFactory(),
+<a name="l00240"></a>00240     <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html">FeatureModelGraph</a>* graph = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html">FeatureModelGraph</a>( 
+<a name="l00241"></a>00241         <a class="code" href="osgearth__featureeditor_8cpp.html#a70578c12150ebb2a93e8d9303119f1d7">s_source</a>.get(), 
+<a name="l00242"></a>00242         <a class="code" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html">FeatureModelSourceOptions</a>(), 
+<a name="l00243"></a>00243         <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Features_1_1GeomFeatureNodeFactory.html">GeomFeatureNodeFactory</a>(),
 <a name="l00244"></a>00244         session );
 <a name="l00245"></a>00245 
 <a name="l00246"></a>00246     graph-&gt;getOrCreateStateSet()-&gt;setMode(GL_LIGHTING, osg::StateAttribute::OFF);
 <a name="l00247"></a>00247     graph-&gt;getOrCreateStateSet()-&gt;setMode(GL_DEPTH_TEST, osg::StateAttribute::OFF);
 <a name="l00248"></a>00248 
-<a name="l00249"></a>00249     s_root-&gt;addChild( graph );
+<a name="l00249"></a>00249     <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>-&gt;addChild( graph );
 <a name="l00250"></a>00250 
 <a name="l00251"></a>00251     <span class="comment">//Setup the controls</span>
-<a name="l00252"></a>00252     ControlCanvas* canvas = ControlCanvas::get( &amp;viewer );
-<a name="l00253"></a>00253     s_root-&gt;addChild( canvas );
-<a name="l00254"></a>00254     Grid *toolbar = <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>( );
-<a name="l00255"></a>00255     canvas-&gt;addControl( toolbar );
+<a name="l00252"></a>00252     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = ControlCanvas::get( &amp;viewer );
+<a name="l00253"></a>00253     <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>-&gt;addChild( canvas );
+<a name="l00254"></a>00254     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a> *toolbar = <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>( );
+<a name="l00255"></a>00255     canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( toolbar );
 <a name="l00256"></a>00256     canvas-&gt;setNodeMask( 0x1 &lt;&lt; 1 );
 <a name="l00257"></a>00257 
 <a name="l00258"></a>00258 
 <a name="l00259"></a>00259 
 <a name="l00260"></a>00260     <span class="keywordtype">int</span> col = 0;
-<a name="l00261"></a>00261     LabelControl* addVerts = <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Add Verts&quot;</span>);
-<a name="l00262"></a>00262     toolbar-&gt;setControl(col++, 0, addVerts );    
-<a name="l00263"></a>00263     addVerts-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_add_verts_mode_handler.html">AddVertsModeHandler</a>( graph ));
+<a name="l00261"></a>00261     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* addVerts = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Add Verts&quot;</span>);
+<a name="l00262"></a>00262     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>(col++, 0, addVerts );    
+<a name="l00263"></a>00263     addVerts-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structAddVertsModeHandler.html">AddVertsModeHandler</a>( graph ));
 <a name="l00264"></a>00264     
-<a name="l00265"></a>00265     LabelControl* edit = <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Edit&quot;</span>);
-<a name="l00266"></a>00266     toolbar-&gt;setControl(col++, 0, edit );    
-<a name="l00267"></a>00267     edit-&gt;addEventHandler(<span class="keyword">new</span> <a class="code" href="struct_edit_mode_handler.html">EditModeHandler</a>( graph ));
+<a name="l00265"></a>00265     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* edit = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Edit&quot;</span>);
+<a name="l00266"></a>00266     toolbar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>(col++, 0, edit );    
+<a name="l00267"></a>00267     edit-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>(<span class="keyword">new</span> <a class="code" href="structEditModeHandler.html">EditModeHandler</a>( graph ));
 <a name="l00268"></a>00268 
 <a name="l00269"></a>00269     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row = 0;
-<a name="l00270"></a>00270     Grid *styleBar = <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>( );
-<a name="l00271"></a>00271     styleBar-&gt;setPosition(0, 50);
-<a name="l00272"></a>00272     canvas-&gt;addControl( styleBar );
+<a name="l00270"></a>00270     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a> *styleBar = <a class="code" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">createToolBar</a>( );
+<a name="l00271"></a>00271     styleBar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5de436628d3db4df128500271eedd1b">setPosition</a>(0, 50);
+<a name="l00272"></a>00272     canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( styleBar );
 <a name="l00273"></a>00273     
 <a name="l00274"></a>00274     <span class="comment">//Make a list of styles</span>
-<a name="l00275"></a>00275     styleBar-&gt;setControl(0, row++, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Styles&quot;</span>) );    
+<a name="l00275"></a>00275     styleBar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>(0, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Styles&quot;</span>) );    
 <a name="l00276"></a>00276 
 <a name="l00277"></a>00277     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numStyles = 8;
 <a name="l00278"></a>00278     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numStyles; ++i)
@@ -369,18 +385,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00285"></a>00285         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r = row++;
 <a name="l00286"></a>00286         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; 3; j++) 
 <a name="l00287"></a>00287         {
-<a name="l00288"></a>00288             Control* l = <span class="keyword">new</span> Control();            
-<a name="l00289"></a>00289             l-&gt;setBackColor( color );
-<a name="l00290"></a>00290             l-&gt;addEventHandler(<span class="keyword">new</span> <a class="code" href="struct_change_style_handler.html">ChangeStyleHandler</a>(graph, <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( color, widths[j] ) ));
-<a name="l00291"></a>00291             l-&gt;setSize(w,5 * widths[j]);
-<a name="l00292"></a>00292             styleBar-&gt;setControl(j, r, l);
+<a name="l00288"></a>00288             <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* l = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>();            
+<a name="l00289"></a>00289             l-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( color );
+<a name="l00290"></a>00290             l-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>(<span class="keyword">new</span> <a class="code" href="structChangeStyleHandler.html">ChangeStyleHandler</a>(graph, <a class="code" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">buildStyleSheet</a>( color, widths[j] ) ));
+<a name="l00291"></a>00291             l-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a">setSize</a>(w,5 * widths[j]);
+<a name="l00292"></a>00292             styleBar-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>(j, r, l);
 <a name="l00293"></a>00293         }
 <a name="l00294"></a>00294     }
 <a name="l00295"></a>00295    
 <a name="l00296"></a>00296     
-<a name="l00297"></a>00297     viewer.setSceneData( s_root.get() );
-<a name="l00298"></a>00298     viewer.setCameraManipulator( <span class="keyword">new</span> EarthManipulator() );
-<a name="l00299"></a>00299     viewer.addEventHandler( <span class="keyword">new</span> osgEarth::Util::AutoClipPlaneHandler );
+<a name="l00297"></a>00297     viewer.setSceneData( <a class="code" href="osgearth__featureeditor_8cpp.html#a1e9285e43b2c8ac18249fd3be7a45869">s_root</a>.get() );
+<a name="l00298"></a>00298     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>() );
+<a name="l00299"></a>00299     viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneHandler.html">osgEarth::Util::AutoClipPlaneHandler</a> );
 <a name="l00300"></a>00300 
 <a name="l00301"></a>00301     <span class="comment">// add some stock OSG handlers:</span>
 <a name="l00302"></a>00302     viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
@@ -391,14 +407,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00307"></a>00307 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__featureeditor_8cpp.html">osgearth_featureeditor.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -413,6 +421,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

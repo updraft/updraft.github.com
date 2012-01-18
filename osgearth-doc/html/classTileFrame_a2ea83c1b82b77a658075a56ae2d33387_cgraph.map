@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTile.html#a36219d91d8b17471099bcc5c4bc1b2ed" title="Tile::getElevationLayer" alt="" coords="200,5,355,35"/>
+<area shape="rect" id="node5" href="$classTile.html#a380c276636a5b501fe14570bd47b0cac" title="Tile::getLocator" alt="" coords="221,59,333,88"/>
+<area shape="rect" id="node7" href="$classTile.html#a7c0c83673975b5474d61a9845a0cd02b" title="Tile::getTerrain" alt="" coords="223,112,332,141"/>
+<area shape="rect" id="node9" href="$classTile.html#a2830aa851e77779a1491cac215d2af23" title="Tile::getTerrainMasks" alt="" coords="204,165,351,195"/>
+</map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,47 +127,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>PARALLEL_EPSILON
-: <a class="el" href="_feature_stencil_model_source_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">FeatureStencilModelSource.cpp</a>
-, <a class="el" href="_stencil_utils_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">StencilUtils.cpp</a>
-, <a class="el" href="_geometry_extrude_symbolizer_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">GeometryExtrudeSymbolizer.cpp</a>
-, <a class="el" href="osg_earth_features_2_stencil_volume_node_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">StencilVolumeNode.cpp</a>
+: <a class="el" href="FeatureStencilModelSource_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">FeatureStencilModelSource.cpp</a>
+, <a class="el" href="StencilUtils_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">StencilUtils.cpp</a>
+, <a class="el" href="GeometryExtrudeSymbolizer_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">GeometryExtrudeSymbolizer.cpp</a>
+, <a class="el" href="osgEarthFeatures_2StencilVolumeNode_8cpp.html#a2de5885a4d6edc0c85ad76178e5de82f">StencilVolumeNode.cpp</a>
+</li>
+<li>PARENT_L
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696ae86ff5449523a391fcae04e43f7ff6f7">Diamond</a>
+</li>
+<li>PARENT_R
+: <a class="el" href="Diamond.html#abb258efa2c0e86d6e6d2f4ba8edfb696a0138b2a9f89e5add2d2a64ced248f343">Diamond</a>
+</li>
+<li>parseAttributes()
+: <a class="el" href="BuildTextOperator_8cpp.html#a948c28890f8fa68454bcc223ec1a25a3">BuildTextOperator.cpp</a>
+</li>
+<li>parseLineCap()
+: <a class="el" href="SLD_8cpp.html#a2ea5fe2ce4a6e795682e35df8fc006c4">SLD.cpp</a>
 </li>
 <li>POS_X
-: <a class="el" href="_cube_manifold_8cpp.html#a9fcdf0e14a2830c8f14eb2cdad8412f5">CubeManifold.cpp</a>
+: <a class="el" href="CubeManifold_8cpp.html#a9fcdf0e14a2830c8f14eb2cdad8412f5">CubeManifold.cpp</a>
 </li>
 <li>POS_Y
-: <a class="el" href="_cube_manifold_8cpp.html#a90f06ea2a12ab06566ed7ae1d73e5917">CubeManifold.cpp</a>
+: <a class="el" href="CubeManifold_8cpp.html#a90f06ea2a12ab06566ed7ae1d73e5917">CubeManifold.cpp</a>
 </li>
 <li>POS_Z
-: <a class="el" href="_cube_manifold_8cpp.html#a1096fef1510f4727dae64435e94be621">CubeManifold.cpp</a>
+: <a class="el" href="CubeManifold_8cpp.html#a1096fef1510f4727dae64435e94be621">CubeManifold.cpp</a>
 </li>
 <li>PRI_IMAGE_OFFSET
-: <a class="el" href="_streaming_tile_8cpp.html#ad42151f84cf3785b35f252644271c6a6">StreamingTile.cpp</a>
+: <a class="el" href="StreamingTile_8cpp.html#ad42151f84cf3785b35f252644271c6a6">StreamingTile.cpp</a>
 </li>
 <li>PRI_LAYER_OFFSET
-: <a class="el" href="_streaming_tile_8cpp.html#a3a76cb1195853c1b90388e69de6f8b07">StreamingTile.cpp</a>
+: <a class="el" href="StreamingTile_8cpp.html#a3a76cb1195853c1b90388e69de6f8b07">StreamingTile.cpp</a>
 </li>
 <li>printAllFeatures()
 : <a class="el" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">osgearth_featureinfo.cpp</a>
@@ -149,67 +180,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">osgearth_featureinfo.cpp</a>
 </li>
 <li>PROP_CELL_SIZE
-: <a class="el" href="_feature_gridder_8cpp.html#a1c21a0a2ecba3ffdaffd586e9845e7b8">FeatureGridder.cpp</a>
+: <a class="el" href="FeatureGridder_8cpp.html#a1c21a0a2ecba3ffdaffd586e9845e7b8">FeatureGridder.cpp</a>
 </li>
 <li>PROP_CLUSTER_CULLING
-: <a class="el" href="_feature_gridder_8cpp.html#a6162b72106db1764bccfa6af61d3d185">FeatureGridder.cpp</a>
+: <a class="el" href="FeatureGridder_8cpp.html#a6162b72106db1764bccfa6af61d3d185">FeatureGridder.cpp</a>
 </li>
 <li>PROP_CULLING_TECHNIQUE
-: <a class="el" href="_feature_gridder_8cpp.html#a2d1bf899739385df0e0db27b9be5d8c5">FeatureGridder.cpp</a>
+: <a class="el" href="FeatureGridder_8cpp.html#a2d1bf899739385df0e0db27b9be5d8c5">FeatureGridder.cpp</a>
 </li>
 <li>PROP_SPATIALIZE_GROUPS
-: <a class="el" href="_feature_gridder_8cpp.html#a8dd91ea81ad18216ccf43201799d1c22">FeatureGridder.cpp</a>
+: <a class="el" href="FeatureGridder_8cpp.html#a8dd91ea81ad18216ccf43201799d1c22">FeatureGridder.cpp</a>
 </li>
 <li>PROPERTY_BASE_NAME
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a90f729d7e146cceead18cbf11fdabb6d">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a90f729d7e146cceead18cbf11fdabb6d">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_DIRECTORY_STRUCTURE
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a6e331b57091040a5b9c1febe8abbf670">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a6e331b57091040a5b9c1febe8abbf670">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_FORMAT
-: <a class="el" href="_reader_writer_arc_g_i_s_map_cache_8cpp.html#a2564d4054c2415f1df57152006f35246">ReaderWriterArcGISMapCache.cpp</a>
+: <a class="el" href="ReaderWriterArcGISMapCache_8cpp.html#a2564d4054c2415f1df57152006f35246">ReaderWriterArcGISMapCache.cpp</a>
 </li>
 <li>PROPERTY_LAYER
-: <a class="el" href="_reader_writer_arc_g_i_s_map_cache_8cpp.html#a69aef50437b4e2287bd31c2418a44200">ReaderWriterArcGISMapCache.cpp</a>
+: <a class="el" href="ReaderWriterArcGISMapCache_8cpp.html#a69aef50437b4e2287bd31c2418a44200">ReaderWriterArcGISMapCache.cpp</a>
 </li>
 <li>PROPERTY_LAYER_NUM
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a8a0117305d5eba5a0ffdcc5072976dc0">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a8a0117305d5eba5a0ffdcc5072976dc0">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_MAP
-: <a class="el" href="_reader_writer_arc_g_i_s_map_cache_8cpp.html#a759409456a05273e9f4d596263fde3b0">ReaderWriterArcGISMapCache.cpp</a>
+: <a class="el" href="ReaderWriterArcGISMapCache_8cpp.html#a759409456a05273e9f4d596263fde3b0">ReaderWriterArcGISMapCache.cpp</a>
 </li>
 <li>PROPERTY_NUM_TILES_HIGH_AT_LOD0
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a1ae9c775ce1311005b51dbf7ba66780d">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a1ae9c775ce1311005b51dbf7ba66780d">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_NUM_TILES_WIDE_AT_LOD0
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#aabcb27e9f5613d74a549a96bd69b405a">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#aabcb27e9f5613d74a549a96bd69b405a">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_PRIMARY_SPLIT_LEVEL
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a02e22b3cec513212796c99dda60ebbbe">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a02e22b3cec513212796c99dda60ebbbe">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_SECONDARY_SPLIT_LEVEL
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#a4fd015ff1bddc43bbd97e8293f8ca741">Copy of ReaderWriterVPB.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#a4fd015ff1bddc43bbd97e8293f8ca741">Copy of ReaderWriterVPB.cpp</a>
 </li>
 <li>PROPERTY_URL
-: <a class="el" href="_copy_01of_01_reader_writer_v_p_b_8cpp.html#affac242c90c0c8799c427bca31302df1">Copy of ReaderWriterVPB.cpp</a>
-, <a class="el" href="_reader_writer_arc_g_i_s_map_cache_8cpp.html#affac242c90c0c8799c427bca31302df1">ReaderWriterArcGISMapCache.cpp</a>
+: <a class="el" href="Copy_01of_01ReaderWriterVPB_8cpp.html#affac242c90c0c8799c427bca31302df1">Copy of ReaderWriterVPB.cpp</a>
+, <a class="el" href="ReaderWriterArcGISMapCache_8cpp.html#affac242c90c0c8799c427bca31302df1">ReaderWriterArcGISMapCache.cpp</a>
 </li>
 <li>purge()
 : <a class="el" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324">osgearth_seed.cpp</a>
 </li>
 <li>PURGE_GENERAL
-: <a class="el" href="_sqlite3_cache_8cpp.html#a5c5c4728ef8ca497fa5f488c42f6db50">Sqlite3Cache.cpp</a>
+: <a class="el" href="Sqlite3Cache_8cpp.html#a5c5c4728ef8ca497fa5f488c42f6db50">Sqlite3Cache.cpp</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -224,6 +247,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

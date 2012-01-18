@@ -1,0 +1,44 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlDocument.html#a6dfc01a6e5d58e56acd537dfd3bdeb29" title="TiXmlDocument::Error" alt="" coords="352,133,504,163"/>
+<area shape="rect" id="node5" href="$classTiXmlDocument.html#aa90bc630ee5203c6109ca5fad3323649" title="The column where the error occured. See ErrorRow()" alt="" coords="343,187,513,216"/>
+<area shape="rect" id="node7" href="$classTiXmlDocument.html#a9d0f689f6e09ea494ea547be8d79c25e" title="Contains a textual (english) description of the error if one occurs." alt="" coords="337,240,519,269"/>
+<area shape="rect" id="node9" href="$classTiXmlDocument.html#af30efc75e804aa2e92fb8be3a8cb676e" title="TiXmlDocument::ErrorRow" alt="" coords="339,293,517,323"/>
+<area shape="rect" id="node11" href="$classTiXmlDocument.html#a789ad2f06f93d52bdb5570b2f3670289" title="TiXmlDocument::Parse" alt="" coords="349,347,507,376"/>
+<area shape="rect" id="node58" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745" title="anonymous_namespace\{XmlUtils::cpp\}::processNode" alt="" coords="655,821,988,851"/>
+<area shape="rect" id="node83" href="$classosgEarth_1_1URIContext.html#a0a2c365adfb3e6517cb1ab1167aca783" title="osgEarth::URIContext::referrer" alt="" coords="328,451,528,480"/>
+<area shape="rect" id="node85" href="$namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a6dfe64451418b982d6ad9c45203b3d2a" title="anonymous_namespace\{XmlUtils::cpp\}::removeDocType" alt="" coords="251,504,605,533"/>
+<area shape="rect" id="node87" href="$classTiXmlDocument.html#ad09d17927f908f40efb406af2fb873be" title="TiXmlDocument::RootElement" alt="" coords="328,557,528,587"/>
+<area shape="rect" id="node94" href="$classosgEarth_1_1XmlDocument.html#a71daa95a33b7a692549974258893b36e" title="osgEarth::XmlDocument::XmlDocument" alt="" coords="300,611,556,640"/>
+<area shape="rect" id="node13" href="$structTiXmlCursor.html#a1e6fa622b59dafb71b6efe595105dcdd" title="TiXmlCursor::Clear" alt="" coords="1333,371,1467,400"/>
+<area shape="rect" id="node15" href="$classTiXmlDocument.html#ac66b8c28db86363315712a3574e87c35" title="TiXmlDocument::ClearError" alt="" coords="731,163,912,192"/>
+<area shape="rect" id="node17" href="$classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05" title="TiXmlParsingData::Cursor" alt="" coords="1313,424,1487,453"/>
+<area shape="rect" id="node19" href="$classTiXmlDeclaration.html#a5d974231f9e9a2f0542f15f3a46cdb76" title="Encoding. Will return an empty string if none was found." alt="" coords="729,267,913,296"/>
+<area shape="rect" id="node21" href="$classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb" title="TiXmlNode::Identify" alt="" coords="752,320,891,349"/>
+<area shape="rect" id="node27" href="$classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875" title="TiXmlBase::SkipWhiteSpace" alt="" coords="1056,136,1245,165"/>
+<area shape="rect" id="node31" href="$classTiXmlBase.html#a51631e6986179558b9e5850723ed165a" title="TiXmlBase::StringEqual" alt="" coords="1071,213,1231,243"/>
+<area shape="rect" id="node35" href="$classTiXmlNode.html#a1a881212554b759865f6cac79a851d38" title="TiXmlNode::LinkEndChild" alt="" coords="736,525,907,555"/>
+<area shape="rect" id="node41" href="$classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de" title="TiXmlDocument::SetError" alt="" coords="1065,475,1236,504"/>
+<area shape="rect" id="node49" href="$classTiXmlBase.html#a00e4edb0219d00a1379c856e5a1d2025" title="TiXmlBase::Parse" alt="" coords="757,579,885,608"/>
+<area shape="rect" id="node54" href="$classTiXmlDocument.html#a612360241b85bad0826b2a9ae9cda561" title="TiXmlDocument::TabSize" alt="" coords="736,5,907,35"/>
+<area shape="rect" id="node56" href="$classTiXmlNode.html#a9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="733,59,909,88"/>
+<area shape="rect" id="node23" href="$classTiXmlBase.html#ae22522b2e8e1ac43102d16394f639fc8" title="TiXmlBase::IsAlpha" alt="" coords="1081,320,1220,349"/>
+<area shape="rect" id="node25" href="$classTiXmlText.html#acb17ff7c5d09b2c839393445a3de5ea9" title="Turns on or off a CDATA representation of text." alt="" coords="1073,267,1228,296"/>
+<area shape="rect" id="node29" href="$classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e" title="TiXmlBase::IsWhiteSpace" alt="" coords="1312,136,1488,165"/>
+<area shape="rect" id="node33" href="$classTiXmlBase.html#a799f17405a86a5c2029618e85f11a097" title="TiXmlBase::ToLower" alt="" coords="1328,213,1472,243"/>
+<area shape="rect" id="node37" href="$classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071" title="TiXmlNode::GetDocument" alt="" coords="1063,528,1239,557"/>
+<area shape="rect" id="node47" href="$classTiXmlNode.html#a57b99d5c97d67a42b9752f5210a1ba5e" title="TiXmlNode::Type" alt="" coords="1089,581,1212,611"/>
+<area shape="rect" id="node39" href="$classTiXmlNode.html#a8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="1315,531,1485,560"/>
+<area shape="rect" id="node45" href="$classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d" title="TiXmlParsingData::Stamp" alt="" coords="1313,477,1487,507"/>
+<area shape="rect" id="node60" href="$classTiXmlElement.html#a516054c9073647d6cb29b6abe9fa0592" title="Access the first attribute in this element." alt="" coords="1057,901,1244,931"/>
+<area shape="rect" id="node64" href="$classTiXmlNode.html#a44c8eee26bbe2d1b2762038df9dde2f0" title="The first child of this node. Will be null if there are no children." alt="" coords="1076,1008,1225,1037"/>
+<area shape="rect" id="node66" href="$classosgEarth_1_1XmlElement.html#a14c7e96885d0a6c71abecbfa3279ca8e" title="osgEarth::XmlElement::getChildren" alt="" coords="1037,955,1264,984"/>
+<area shape="rect" id="node68" href="$classTiXmlAttribute.html#a298a57287d305904ba6bd96ae6f78d3d" title="Return the name of this attribute." alt="" coords="1077,635,1224,664"/>
+<area shape="rect" id="node70" href="$classTiXmlAttribute.html#a776478980776a024f7c2846eec640f65" title="Get the next sibling attribute in the DOM. Returns null at end." alt="" coords="1080,688,1221,717"/>
+<area shape="rect" id="node72" href="$classTiXmlNode.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="1069,1061,1232,1091"/>
+<area shape="rect" id="node74" href="$classTiXmlNode.html#a72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="1072,1115,1229,1144"/>
+<area shape="rect" id="node76" href="$classTiXmlNode.html#a95a46a52c525992d6b4ee08beb14cd69" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="1083,741,1219,771"/>
+<area shape="rect" id="node79" href="$classTiXmlAttribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute." alt="" coords="1077,795,1224,824"/>
+<area shape="rect" id="node81" href="$classTiXmlNode.html#a77943eb90d12c2892b1337a9f5918b41" title="TiXmlNode::Value" alt="" coords="1087,848,1215,877"/>
+<area shape="rect" id="node62" href="$classTiXmlAttributeSet.html#ae0636e88cedd4b09d61c451860f68598" title="TiXmlAttributeSet::First" alt="" coords="1321,901,1479,931"/>
+<area shape="rect" id="node89" href="$classTiXmlNode.html#ab1f8d8e70d88aea4c5efedfe00862d55" title="Convenience function to get through elements." alt="" coords="723,1035,920,1064"/>
+</map>

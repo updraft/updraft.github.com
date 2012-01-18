@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MapFrame.html#a2f1751fdcda89f7f575ed022d3d2c885" title="osgEarth::MapFrame::elevationLayers" alt="" coords="376,5,619,35"/>
+<area shape="rect" id="node5" href="$classStreamingTerrain.html#a9b7e61092ae82b5f97c432e91ab7afe7" title="StreamingTerrain::getElevationTaskService" alt="" coords="360,59,635,88"/>
+<area shape="rect" id="node11" href="$classStreamingTerrain.html#a65a4b0aecff3b213badbacf55f3874dd" title="StreamingTerrain::getImageryTaskService" alt="" coords="364,112,631,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1ElevationLayer.html#abd9557d0b3d30c3beece155b5f46b207" title="osgEarth::ElevationLayer::getTerrainLayerOptions" alt="" coords="343,165,652,195"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1MapFrame.html#a1445bd530fe5debcbda43377ad757cd4" title="osgEarth::MapFrame::imageLayers" alt="" coords="384,219,611,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1TerrainLayerOptions.html#a282bf6d4eb710794c0bf2ee0f121a5ee" title="osgEarth::TerrainLayerOptions::loadingWeight" alt="" coords="353,272,641,301"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1TaskService.html#a54d41dbbc6b76430c9b2db8b158a518d" title="osgEarth::TaskService::setNumThreads" alt="" coords="369,325,625,355"/>
+<area shape="rect" id="node27" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="415,379,580,408"/>
+<area shape="rect" id="node7" href="$classStreamingTerrain.html#ac1c8ed64e96684c269de171b875d98e6" title="StreamingTerrain::createTaskService" alt="" coords="720,112,957,141"/>
+<area shape="rect" id="node9" href="$classStreamingTerrain.html#a961db9a6d8166378cd1acbf9a4545e19" title="StreamingTerrain::getTaskService" alt="" coords="729,59,948,88"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1TaskService.html#af404a937e3e426a94a4bc1768677b0c3" title="osgEarth::TaskService::adjustThreadCount" alt="" coords="703,325,975,355"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1TaskService.html#a341869927ec57741da8708490dd360cc" title="osgEarth::TaskService::removeFinishedThreads" alt="" coords="1025,325,1327,355"/>
+</map>

@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_w_f_s_feature_source.html" title="WFSFeatureSource" alt="" coords="7,5,143,35"/>
+<area shape="rect" id="node1" href="$classosgEarth_1_1Features_1_1FeatureSourceDriver.html" title="osgEarth::Features::FeatureSourceDriver" alt="" coords="5,32,267,61"/>
+<area shape="rect" id="node3" href="$classOGRFeatureSourceFactory.html" title="OGRFeatureSourceFactory" alt="" coords="315,5,496,35"/>
+<area shape="rect" id="node5" href="$classWFSFeatureSourceFactory.html" title="WFSFeatureSourceFactory" alt="" coords="315,59,496,88"/>
 </map>

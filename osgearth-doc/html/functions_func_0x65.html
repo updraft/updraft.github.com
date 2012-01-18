@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +108,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="functions_func.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_func.html#index__"><span>_</span></a></li>
+      <li><a href="functions_func_0x61.html#index_a"><span>a</span></a></li>
       <li><a href="functions_func_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_func_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_func_0x64.html#index_d"><span>d</span></a></li>
@@ -87,6 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_0x6a.html#index_j"><span>j</span></a></li>
       <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
@@ -102,84 +134,240 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_func_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_func_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_func_0x7a.html#index_z"><span>z</span></a></li>
       <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>EarthManipulator()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#aa99821905b0b304e0272f20fabbd9080">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>Edge()
+: <a class="el" href="structanonymous__namespace_02MeshSubdivider_8cpp_03_1_1Edge.html#ac79a7e631c9fa67d6f091be1a9adc4b7">anonymous_namespace{MeshSubdivider.cpp}::Edge</a>
+</li>
+<li>edgeBufferRatio()
+: <a class="el" href="classosgEarth_1_1TerrainLayerOptions.html#a8ad33fc2a0fd539f609d06c2b15153df">osgEarth::TerrainLayerOptions</a>
+</li>
 <li>EditHandler()
-: <a class="el" href="struct_edit_handler.html#a5bfdf11b2bb3c07eff817286453b0fb5">EditHandler</a>
+: <a class="el" href="structEditHandler.html#a5bfdf11b2bb3c07eff817286453b0fb5">EditHandler</a>
 </li>
 <li>EditModeHandler()
-: <a class="el" href="struct_edit_mode_handler.html#add4b89681aa866afa944e37611faa983">EditModeHandler</a>
+: <a class="el" href="structEditModeHandler.html#add4b89681aa866afa944e37611faa983">EditModeHandler</a>
+</li>
+<li>EGM96Geoid()
+: <a class="el" href="structosgEarth_1_1EGM96Geoid.html#ab1af0c18d9ad16239f0574c469ce93df">osgEarth::EGM96Geoid</a>
 </li>
 <li>EGM96HF()
-: <a class="el" href="struct_e_g_m96_h_f.html#ad4c6d3f4edaab22b441915b1468e654c">EGM96HF</a>
+: <a class="el" href="structEGM96HF.html#ad4c6d3f4edaab22b441915b1468e654c">EGM96HF</a>
 </li>
 <li>Element()
-: <a class="el" href="class_ti_xml_handle.html#acb5fe8388a526289ea65e817a51e05e7">TiXmlHandle</a>
+: <a class="el" href="classTiXmlHandle.html#acb5fe8388a526289ea65e817a51e05e7">TiXmlHandle</a>
+</li>
+<li>elevationCachePath()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WorldWindOptions.html#a6e0ca2a2bfb57deaa4ac84ac140bbbae">osgEarth::Drivers::WorldWindOptions</a>
+</li>
+<li>elevationInterpolation()
+: <a class="el" href="classosgEarth_1_1TerrainOptions.html#afc5ffd520aa073af45bf983e638344e8">osgEarth::TerrainOptions</a>
+</li>
+<li>ElevationLayer()
+: <a class="el" href="classosgEarth_1_1ElevationLayer.html#a80eb93bd7576ea1cc8912615e12a9741">osgEarth::ElevationLayer</a>
+</li>
+<li>ElevationLayerOptions()
+: <a class="el" href="classosgEarth_1_1ElevationLayerOptions.html#ac8e31155ef04c96e95457f11edb4abb3">osgEarth::ElevationLayerOptions</a>
+</li>
+<li>ElevationLayerPreCacheOperation()
+: <a class="el" href="structanonymous__namespace_02ElevationLayer_8cpp_03_1_1ElevationLayerPreCacheOperation.html#af201a33d275b39a1952a9f28fe26f8b2">anonymous_namespace{ElevationLayer.cpp}::ElevationLayerPreCacheOperation</a>
+</li>
+<li>elevationLayers()
+: <a class="el" href="classosgEarth_1_1MapFrame.html#a2f1751fdcda89f7f575ed022d3d2c885">osgEarth::MapFrame</a>
+</li>
+<li>ElevationManager()
+: <a class="el" href="classosgEarth_1_1Util_1_1ElevationManager.html#a5d1d3ec74f7d56b272b7189d7042c5b3">osgEarth::Util::ElevationManager</a>
+</li>
+<li>ElevationQuery()
+: <a class="el" href="classosgEarth_1_1ElevationQuery.html#aa9c77bded86a29a036a91b2eb3f975b6">osgEarth::ElevationQuery</a>
+</li>
+<li>elevationUnit()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WCSOptions.html#a82b67e350141214b416d99e09e7e70ba">osgEarth::Drivers::WCSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WMSOptions.html#a6a813a109e6229d6b6c3f5ca9b612e28">osgEarth::Drivers::WMSOptions</a>
+</li>
+<li>elevationURL()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WorldWindOptions.html#ad4c30db1fc648611eec7333aec3f0f3d">osgEarth::Drivers::WorldWindOptions</a>
+</li>
+<li>EllipseNode()
+: <a class="el" href="classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html#a481f52ee32ee3adff9d647a47342c2ad">osgEarth::Util::Annotation::EllipseNode</a>
 </li>
 <li>empty()
-: <a class="el" href="class_ti_xml_string.html#a9a61e1d11cdb71bea4a4ed79caa793f4">TiXmlString</a>
+: <a class="el" href="structosgEarth_1_1CacheSpec.html#a4cb31708d18ae065c3dd9a724c13524d">osgEarth::CacheSpec</a>
+, <a class="el" href="classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80">osgEarth::Config</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1Value.html#a5417a775ce08947b88d3ea51ffdfbeab">osgEarth::Json::Value</a>
+, <a class="el" href="classTiXmlString.html#a9a61e1d11cdb71bea4a4ed79caa793f4">TiXmlString</a>
+, <a class="el" href="classosgEarth_1_1URIContext.html#a35d25c7377d57818786c6fad9b81ade6">osgEarth::URIContext</a>
+, <a class="el" href="classosgEarth_1_1URI.html#a5a8a192b31bcb4a26713b9c401934447">osgEarth::URI</a>
+, <a class="el" href="classosgEarth_1_1MixinVector.html#ab446839c4ce9ed945fb5c8474ad40d6a">osgEarth::MixinVector&lt; ValueT, SuperClass &gt;</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1NumericExpression.html#a30f1cd91eadba280565764ab1ee0d6d1">osgEarth::Symbology::NumericExpression</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1StringExpression.html#aa253aa353b31276d50c0001427ffd88b">osgEarth::Symbology::StringExpression</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1Style.html#aaad923a3039b6318dfed75a5d020033b">osgEarth::Symbology::Style</a>
+</li>
+<li>enabled()
+: <a class="el" href="classosgEarth_1_1ModelLayerOptions.html#a23132113ef18bc7ab5971a8b066f4401">osgEarth::ModelLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1TerrainLayerOptions.html#a5d94829534898c7d4ade40a3aebf7126">osgEarth::TerrainLayerOptions</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1GriddingPolicy.html#ad339fda839b0d8c72e07134b2e7a9a82">osgEarth::Features::GriddingPolicy</a>
 </li>
 <li>EnabledHandler()
-: <a class="el" href="struct_enabled_handler.html#ab43dfa298172b003934a0ce004ac18af">EnabledHandler</a>
+: <a class="el" href="structEnabledHandler.html#ab43dfa298172b003934a0ce004ac18af">EnabledHandler</a>
+</li>
+<li>enableLighting()
+: <a class="el" href="classosgEarth_1_1MapNodeOptions.html#ac863f7668280399c37332966a9c1ea2f">osgEarth::MapNodeOptions</a>
+, <a class="el" href="classosgEarth_1_1TerrainOptions.html#ae37507089216d81df94ca2b40d3f007e">osgEarth::TerrainOptions</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html#a29146789ad33eabcf4a6840141fa628c">osgEarth::Features::FeatureModelSourceOptions</a>
+</li>
+<li>enableMipmapping()
+: <a class="el" href="classosgEarth_1_1TerrainOptions.html#a9e1fb1429d479daa76de61e3a4d84ae0">osgEarth::TerrainOptions</a>
+</li>
+<li>enableYAMLCompatibility()
+: <a class="el" href="classosgEarth_1_1Json_1_1FastWriter.html#ab1f6aac3dad261e681a2ca7893ce031b">osgEarth::Json::FastWriter</a>
+</li>
+<li>encodePart()
+: <a class="el" href="structOgrUtils.html#aafe9eacb5c35136f27c9d762218cde0d">OgrUtils</a>
+</li>
+<li>encodeShape()
+: <a class="el" href="structOgrUtils.html#af172956424da6c3edd28a3713296a841">OgrUtils</a>
 </li>
 <li>EncodeString()
-: <a class="el" href="class_ti_xml_base.html#a32ed202562b58de64c7d799ca3c9db98">TiXmlBase</a>
+: <a class="el" href="classTiXmlBase.html#a32ed202562b58de64c7d799ca3c9db98">TiXmlBase</a>
 </li>
 <li>Encoding()
-: <a class="el" href="class_ti_xml_declaration.html#a5d974231f9e9a2f0542f15f3a46cdb76">TiXmlDeclaration</a>
+: <a class="el" href="classTiXmlDeclaration.html#a5d974231f9e9a2f0542f15f3a46cdb76">TiXmlDeclaration</a>
+</li>
+<li>end()
+: <a class="el" href="classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7">osgEarth::MixinVector&lt; ValueT, SuperClass &gt;</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1LineFunctor.html#af09a2af39f99f14863e797117ac8323f">osgEarth::Symbology::LineFunctor&lt; T &gt;</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1Value.html#a23b56c0885aedab921eb457ee7ea6c00">osgEarth::Json::Value</a>
+</li>
+<li>endTime()
+: <a class="el" href="classosgEarth_1_1TaskRequest.html#ae1d848b3b71625019a5a0411653c77b7">osgEarth::TaskRequest</a>
+</li>
+<li>ensureCapacity()
+: <a class="el" href="classosgEarth_1_1ArrayUniform.html#a182d7f1dafee7cec9623abe1fe55b572">osgEarth::ArrayUniform</a>
+</li>
+<li>erase()
+: <a class="el" href="classosgEarth_1_1LRUCache.html#af4f96f50ef3fd357798f43f394d6aa27">osgEarth::LRUCache&lt; K, T &gt;</a>
+, <a class="el" href="classosgEarth_1_1MixinVector.html#a72fb3e0d3c9442c7512dafab13068152">osgEarth::MixinVector&lt; ValueT, SuperClass &gt;</a>
 </li>
 <li>Error()
-: <a class="el" href="class_ti_xml_document.html#a6dfc01a6e5d58e56acd537dfd3bdeb29">TiXmlDocument</a>
+: <a class="el" href="classTiXmlDocument.html#a6dfc01a6e5d58e56acd537dfd3bdeb29">TiXmlDocument</a>
 </li>
 <li>ErrorCol()
-: <a class="el" href="class_ti_xml_document.html#aa90bc630ee5203c6109ca5fad3323649">TiXmlDocument</a>
+: <a class="el" href="classTiXmlDocument.html#aa90bc630ee5203c6109ca5fad3323649">TiXmlDocument</a>
 </li>
 <li>ErrorDesc()
-: <a class="el" href="class_ti_xml_document.html#a9d0f689f6e09ea494ea547be8d79c25e">TiXmlDocument</a>
+: <a class="el" href="classTiXmlDocument.html#a9d0f689f6e09ea494ea547be8d79c25e">TiXmlDocument</a>
 </li>
 <li>ErrorId()
-: <a class="el" href="class_ti_xml_document.html#af96fc2f3f9ec6422782bfe916c9e778f">TiXmlDocument</a>
+: <a class="el" href="classTiXmlDocument.html#af96fc2f3f9ec6422782bfe916c9e778f">TiXmlDocument</a>
 </li>
 <li>ErrorRow()
-: <a class="el" href="class_ti_xml_document.html#af30efc75e804aa2e92fb8be3a8cb676e">TiXmlDocument</a>
+: <a class="el" href="classTiXmlDocument.html#af30efc75e804aa2e92fb8be3a8cb676e">TiXmlDocument</a>
+</li>
+<li>established()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ad9774a7b32221362485e0ba101f2ec07">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>EulerFaceLocator()
+: <a class="el" href="classseamless_1_1EulerFaceLocator.html#ada7bd7ead7c67f71e9af2b4809d23927">seamless::EulerFaceLocator</a>
+</li>
+<li>EulerProfile()
+: <a class="el" href="classseamless_1_1EulerProfile.html#ad00d103320cabc222d0ba021f55308a1">seamless::EulerProfile</a>
+</li>
+<li>EulerSpatialReference()
+: <a class="el" href="classseamless_1_1EulerSpatialReference.html#a5c0fb0f1717c331d84d06ac12fde36b6">seamless::EulerSpatialReference</a>
+</li>
+<li>eval()
+: <a class="el" href="classosgEarth_1_1Features_1_1Feature.html#a7e45df02c1660959d070d7f4603d4dcd">osgEarth::Features::Feature</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1NumericExpression.html#ae9486f987f30f98584fa2b554518ac72">osgEarth::Symbology::NumericExpression</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1StringExpression.html#acc32f2da9c72c81ae25d599773dcff91">osgEarth::Symbology::StringExpression</a>
+</li>
+<li>Event()
+: <a class="el" href="classosgEarth_1_1Threading_1_1Event.html#af907d1a13affcd764be887a4ee932b99">osgEarth::Threading::Event</a>
+</li>
+<li>exactCropping()
+: <a class="el" href="classosgEarth_1_1TerrainLayerOptions.html#af7d8f5abac0df078b4888c420576798b">osgEarth::TerrainLayerOptions</a>
+</li>
+<li>exclude()
+: <a class="el" href="classosgEarth_1_1Features_1_1OptimizerHints.html#a463797b88630d0c13cfb08d92a61d9ef">osgEarth::Features::OptimizerHints</a>
 </li>
 <li>execute()
-: <a class="el" href="struct_build_color_layer.html#a02e09da907645980799a762c4564435c">BuildColorLayer</a>
-, <a class="el" href="struct_assemble_tile.html#a85c07d0b1fdaba65b0c69cb3c93ea4e5">AssembleTile</a>
-, <a class="el" href="struct_build_elev_layer.html#ae5270734db988a847a1ef9140a52f782">BuildElevLayer</a>
+: <a class="el" href="structBuildElevLayer.html#ae5270734db988a847a1ef9140a52f782">BuildElevLayer</a>
+, <a class="el" href="structAssembleTile.html#a85c07d0b1fdaba65b0c69cb3c93ea4e5">AssembleTile</a>
+, <a class="el" href="structBuildColorLayer.html#a02e09da907645980799a762c4564435c">BuildColorLayer</a>
+</li>
+<li>expand()
+: <a class="el" href="classosgEarth_1_1GeoExtent.html#a69957d59ff1977142b4ab0249411e1b8">osgEarth::GeoExtent</a>
+, <a class="el" href="classAMRTriangle.html#ad1e647d55645f9e9f08321850b2d0268">AMRTriangle</a>
+</li>
+<li>expandBy()
+: <a class="el" href="classosgEarth_1_1Bounds.html#af0e5fa630edd151cd8dba6d9dfbff90f">osgEarth::Bounds</a>
+</li>
+<li>expandSpec()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator_1_1Settings.html#a34ed92b354a61dea04f5344a09cbd3b2">osgEarth::Util::EarthManipulator::Settings</a>
+</li>
+<li>expandToInclude()
+: <a class="el" href="classosgEarth_1_1GeoExtent.html#a6e72a5acf87394ee6041c5627e5e739d">osgEarth::GeoExtent</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a8a69a4dbebaf67dca4c6cf0276aca812">osgEarth::Util::Controls::Grid</a>
+, <a class="el" href="classosgEarth_1_1GeoExtent.html#a5f2ed4323db2a7b279926fb3f7a2e0cf">osgEarth::GeoExtent</a>
+</li>
+<li>expectToken()
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader.html#ac774d3b3d88b3633b6a1d83c13a0ac2b">osgEarth::Json::Reader</a>
+</li>
+<li>expr()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1NumericExpression.html#a866fb752430c1ba8a8b31b89e91c995c">osgEarth::Symbology::NumericExpression</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1StringExpression.html#a59d05910e29bb4470694d32a2475bdaa">osgEarth::Symbology::StringExpression</a>
+</li>
+<li>expression()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1Query.html#a13fba0e3f55cf3c7a5cbfe3bf9949b58">osgEarth::Symbology::Query</a>
+</li>
+<li>extendedBound()
+: <a class="el" href="structDiamond.html#a5ae68b430b173c2fc5677a6444d7ec6c">Diamond</a>
+</li>
+<li>extensions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#ad654152ca60ce186e8c8a1bb54e42227">osgEarth::Drivers::GDALOptions</a>
+</li>
+<li>extent()
+: <a class="el" href="classosgEarth_1_1Features_1_1FilterContext.html#a65ffb7344d5ccc327334d34cb8066947">osgEarth::Features::FilterContext</a>
 </li>
 <li>Extent()
-: <a class="el" href="class_extent.html#aaff71345ea1eec3d3579fa6fcbed22b6">Extent</a>
+: <a class="el" href="classExtent.html#a2d02de9ac76730698443980f27a838f8">Extent</a>
+</li>
+<li>extent()
+: <a class="el" href="classosgEarth_1_1Features_1_1FilterContext.html#aae6d21359f35d760bd54982facab7a4a">osgEarth::Features::FilterContext</a>
+</li>
+<li>Extent()
+: <a class="el" href="classExtent.html#a5555925b9d3edfeb2e2be7e96c99f448">Extent</a>
+</li>
+<li>externalConfig()
+: <a class="el" href="classosgEarth_1_1MapNode.html#aaf1d0f0c11d88481f102aa63048508cd">osgEarth::MapNode</a>
+</li>
+<li>extrude()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html#a5688fa0e28e448d7c8264c5c468946ce">osgEarth::Symbology::GeometryExtrudeSymbolizer</a>
+</li>
+<li>extrudeGeometry()
+: <a class="el" href="classosgEarth_1_1Features_1_1ExtrudeGeometryFilter.html#aa34dbf5f27a60bdcf1ff5359aef263c1">osgEarth::Features::ExtrudeGeometryFilter</a>
+</li>
+<li>ExtrudeGeometryFilter()
+: <a class="el" href="classosgEarth_1_1Features_1_1ExtrudeGeometryFilter.html#ad0a37c3e6a072199e1054b6b3c00a5ea">osgEarth::Features::ExtrudeGeometryFilter</a>
+</li>
+<li>extrusionDistance()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureStencilModelOptions.html#a2cb00cfe5cdfdf5061ffcd6fc4bd8d47">osgEarth::Drivers::FeatureStencilModelOptions</a>
+</li>
+<li>ExtrusionSymbol()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html#ad218e836da71fce624a0ce67162dfa9b">osgEarth::Symbology::ExtrusionSymbol</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -194,6 +382,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

@@ -1,7 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="181,57,328,87"/>
-<area shape="rect" id="node11" href="$classagg_1_1rasterizer.html#aa43068c6f1948cf1aa1b4afef9e4861c" title="agg::rasterizer::reset" alt="" coords="184,111,325,140"/>
-<area shape="rect" id="node5" href="$classagg_1_1rasterizer.html#a065aa1644e1a80138b83f5c6852de216" title="agg::rasterizer::move_to" alt="" coords="384,5,547,35"/>
-<area shape="rect" id="node7" href="$classagg_1_1rasterizer.html#a731b52aa19c0ed270539c10cca8c59c7" title="agg::rasterizer::move_to_d" alt="" coords="377,59,553,88"/>
-<area shape="rect" id="node9" href="$class_a_g_g_lite_rasterizer_tile_source.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="603,85,941,115"/>
+<area shape="rect" id="node3" href="$classagg_1_1outline.html#a6d7acd19ef36d1f976f449132dd03a54" title="agg::outline::move_to" alt="" coords="181,125,328,155"/>
+<area shape="rect" id="node21" href="$classagg_1_1rasterizer.html#aa43068c6f1948cf1aa1b4afef9e4861c" title="agg::rasterizer::reset" alt="" coords="395,179,536,208"/>
+<area shape="rect" id="node5" href="$classagg_1_1rasterizer.html#a065aa1644e1a80138b83f5c6852de216" title="agg::rasterizer::move_to" alt="" coords="384,125,547,155"/>
+<area shape="rect" id="node7" href="$classagg_1_1rasterizer.html#a731b52aa19c0ed270539c10cca8c59c7" title="agg::rasterizer::move_to_d" alt="" coords="377,72,553,101"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1GeometryRasterizer.html#af558000c54dda2504afb14a181684cf5" title="osgEarth::Symbology::GeometryRasterizer::draw" alt="" coords="619,85,925,115"/>
+<area shape="rect" id="node19" href="$classAGGLiteRasterizerTileSource.html#a7217b1b7dead911fc0160c73a572a3f8" title="AGGLiteRasterizerTileSource::renderFeaturesForStyle" alt="" coords="603,152,941,181"/>
+<area shape="rect" id="node11" href="$classDebugTileSource.html#a1c91fd3f1ecc8e680a8fb887f477325d" title="DebugTileSource::createImage" alt="" coords="1035,5,1237,35"/>
+<area shape="rect" id="node13" href="$classCustomTileSource.html#a7bce8239850bf4650198f86dfa6b4d14" title="CustomTileSource::createImage" alt="" coords="1031,59,1241,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html#ae596be355e82e8163b3d8de8b4e68513" title="osgEarth::Util::Controls::RoundedFrame::draw" alt="" coords="991,112,1281,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Frame.html#a617590d3383c99add58706184a3c3524" title="osgEarth::Util::Controls::Frame::draw" alt="" coords="1016,165,1256,195"/>
 </map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -76,62 +106,149 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_j"><span>j</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_q"><span>q</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
       <li><a href="#index_v"><span>v</span></a></li>
       <li><a href="#index_x"><span>x</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('namespacemembers.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>accelerationInterp()
+: <a class="el" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#acc256493a5743e9285b3449c953db829">anonymous_namespace{EarthManipulator.cpp}</a>
+</li>
 <li>adjoinsTile()
 : <a class="el" href="namespaceseamless.html#ac365093ff9719f83406e05f82ed5afb1">seamless</a>
 </li>
+<li>angleBetween()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a6580d09863f46f073f8787615ad71019">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
 <li>arcLength()
-: <a class="el" href="namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d">seamless::euler</a>
+: <a class="el" href="namespaceseamless_1_1euler.html#a14bd23b024439771d2bd29d6a23a0b3b">seamless::euler</a>
+</li>
+<li>as()
+: <a class="el" href="namespaceosgEarth.html#adb09857b86063a0961fba50bd18c8fa7">osgEarth</a>
+</li>
+<li>as&lt; bool &gt;()
+: <a class="el" href="namespaceosgEarth.html#ac837a224f884ba0d2c9d9c2ff689109a">osgEarth</a>
+</li>
+<li>as&lt; osg::Vec3f &gt;()
+: <a class="el" href="namespaceosgEarth.html#a02c61300ad1218ccbb1f7a611024ee53">osgEarth</a>
+</li>
+<li>as&lt; std::string &gt;()
+: <a class="el" href="namespaceosgEarth.html#aed65d7feed443abb8753f2d1a5ce4101">osgEarth</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>bisector()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#af64ef04361d311188c5a9d2c68246ff8">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>buildImageModel()
+: <a class="el" href="namespaceanonymous__namespace_02MarkerResource_8cpp_03.html#a3d80957b5b3e266a88ae85aa8298926c">anonymous_namespace{MarkerResource.cpp}</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>calculateRotatedSize()
+: <a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html#ace04107cb38fb178e22fe9edcd69b429">anonymous_namespace{Controls.cpp}</a>
+</li>
+<li>canOptimize()
+: <a class="el" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#a0609020a00bec78848ede87599fd0b8f">anonymous_namespace{MeshConsolidator.cpp}</a>
+</li>
+<li>chooseReader()
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#a6789d557a98856b233ac4bcf190d8b66">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+<li>chooseWriter()
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#a82a9f78853b9211bf3ab8fd10f7661c8">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+<li>closestPointOnLine()
+: <a class="el" href="namespaceseamless_1_1euler.html#a5fc91ccba584b1c62e880a93e19b16bd">seamless::euler</a>
+</li>
 <li>closestPointOnSegment()
-: <a class="el" href="namespaceseamless.html#ae6adeffda33a45ec77a9e3d34cb96d0e">seamless</a>
+: <a class="el" href="namespaceseamless.html#ab195588265db8b5d2a982f2ee2b61fa2">seamless</a>
+</li>
+<li>colorToString()
+: <a class="el" href="namespaceosgEarth.html#a04940a2895d6b43a059ade2b1093c9b4">osgEarth</a>
+</li>
+<li>computeLoadingThreads()
+: <a class="el" href="namespaceosgEarth.html#a4d3ce597f710473506d2bc6c620ebe66">osgEarth</a>
+</li>
+<li>containsNewLine()
+: <a class="el" href="namespaceosgEarth_1_1Json.html#a0c50dcccce3c66aa08d134beaf3b5edf">osgEarth::Json</a>
 </li>
 <li>containsTile()
 : <a class="el" href="namespaceseamless.html#afcd14d04789f1237284d42c905a8d95a">seamless</a>
 </li>
+<li>copy()
+: <a class="el" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed">anonymous_namespace{MeshConsolidator.cpp}</a>
+</li>
+<li>copySubImageAndColorize()
+: <a class="el" href="namespaceanonymous__namespace_02DebugTileSource_8cpp_03.html#a59e8ebd6120cd2686e57ce681c799155">anonymous_namespace{DebugTileSource.cpp}</a>
+</li>
+<li>createCellGeometry()
+: <a class="el" href="namespaceanonymous__namespace_02Graticule_8cpp_03.html#ae10078a85b328c9996d97beee07bb845">anonymous_namespace{Graticule.cpp}</a>
+</li>
+<li>createClusterCullingCallback()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html#ad1a1e8506dc46c1f182ce476e90f6009">seamless::anonymous_namespace{Geographic.cpp}</a>
+</li>
+<li>createColorNode()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a5748b1699616cf3fe7728b5b190e52b5">anonymous_namespace{FeatureStencilModelSource.cpp}</a>
+</li>
+<li>createEulerSRS()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Euler_8cpp_03.html#a49e7e4018e57c89b9c7b3726b9cbdeaa">seamless::anonymous_namespace{Euler.cpp}</a>
+</li>
+<li>createGeocentricInvRefFrame()
+: <a class="el" href="namespaceanonymous__namespace_02TransformFilter_8cpp_03.html#a0eaf62d68e52594aef74916e97814b8f">anonymous_namespace{TransformFilter.cpp}</a>
+</li>
+<li>createHelp()
+: <a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">anonymous_namespace{osgearth_manip.cpp}</a>
+</li>
+<li>createPagedNode()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#a52447e73b27457a7a4f9c2e1599eae80">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
 <li>createPatchAux()
 : <a class="el" href="namespaceseamless.html#aa663b51b44cd869ba89496cc70c5e3ea">seamless</a>
 </li>
+<li>createQscSRS()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02QSC_8cpp_03.html#a23674dbf17c3685f5a3330540ced1a70">seamless::anonymous_namespace{QSC.cpp}</a>
+</li>
+<li>createTextTransform()
+: <a class="el" href="namespaceanonymous__namespace_02Graticule_8cpp_03.html#abf5b9d6f02f98a55469cf2813cf95154">anonymous_namespace{Graticule.cpp}</a>
+</li>
+<li>createVolume()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a2299e122948a33b07b2e49bd9cd925bb">anonymous_namespace{FeatureStencilModelSource.cpp}</a>
+</li>
+<li>crossesDateLine()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html#a87e8fd33084e8bcde4889bdfd3958f63">seamless::anonymous_namespace{Geographic.cpp}</a>
+</li>
 <li>cubeToFace()
-: <a class="el" href="namespaceseamless_1_1euler.html#a217aa6bed12a59621855479ca03401e1">seamless::euler</a>
-, <a class="el" href="namespaceseamless_1_1qsc.html#a81f0b73ee5e0a94f5d06aa726418afe4">seamless::qsc</a>
+: <a class="el" href="namespaceseamless_1_1qsc.html#a81f0b73ee5e0a94f5d06aa726418afe4">seamless::qsc</a>
+, <a class="el" href="namespaceseamless_1_1euler.html#ac308eca82b121ca0e15a1835d0137421">seamless::euler</a>
+, <a class="el" href="namespaceseamless_1_1qsc.html#aa2d602cf7304d41df7f50f8974400ff2">seamless::qsc</a>
+, <a class="el" href="namespaceseamless_1_1euler.html#a217aa6bed12a59621855479ca03401e1">seamless::euler</a>
 </li>
 </ul>
 
@@ -148,6 +265,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>endsWith()
+: <a class="el" href="namespaceosgEarth.html#aa32a7f7f74f7e64738fa4d86ab212e5a">osgEarth</a>
+</li>
 <li>expandHeights()
 : <a class="el" href="namespaceseamless.html#a252bf65b0b5b612bca4ba837a282b2a1">seamless</a>
 </li>
@@ -156,46 +276,169 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>face2dc()
-: <a class="el" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b">seamless::euler</a>
+: <a class="el" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">seamless::euler</a>
 </li>
 <li>face2ec()
 : <a class="el" href="namespaceseamless_1_1qsc.html#a9895fd02979ef967a651a7de665ea7c4">seamless::qsc</a>
 </li>
 <li>face2qrs()
-: <a class="el" href="namespaceseamless_1_1qsc.html#aaa2a219c2204ac0e365c09e2394a8b65">seamless::qsc</a>
-, <a class="el" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64">seamless::euler</a>
+: <a class="el" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64">seamless::euler</a>
+, <a class="el" href="namespaceseamless_1_1qsc.html#aaa2a219c2204ac0e365c09e2394a8b65">seamless::qsc</a>
 </li>
 <li>faceCoordsToLatLon()
 : <a class="el" href="namespaceseamless_1_1euler.html#a716d5725e48c780ee396bed196a903bc">seamless::euler</a>
 , <a class="el" href="namespaceseamless_1_1qsc.html#a5942897e6a8540d44b1329c8935480f6">seamless::qsc</a>
 </li>
 <li>faceToCube()
-: <a class="el" href="namespaceseamless_1_1qsc.html#ab44ea00db5fc8044b4e387564035169a">seamless::qsc</a>
-, <a class="el" href="namespaceseamless_1_1euler.html#ab775c339277610569ca3187fd6bb62e6">seamless::euler</a>
+: <a class="el" href="namespaceseamless_1_1euler.html#ab775c339277610569ca3187fd6bb62e6">seamless::euler</a>
+, <a class="el" href="namespaceseamless_1_1qsc.html#ab44ea00db5fc8044b4e387564035169a">seamless::qsc</a>
+</li>
+<li>fast_rand()
+: <a class="el" href="namespaceanonymous__namespace_02Random_8cpp_03.html#a13d321b6db0634ee47cfbe7a3826814f">anonymous_namespace{Random.cpp}</a>
 </li>
 <li>findFaceRoot()
 : <a class="el" href="namespaceseamless.html#a910fffa1e14042df22eb897316a8de4d">seamless</a>
+</li>
+<li>findFirstParentOfType()
+: <a class="el" href="namespaceosgEarth.html#a5eaffa99ade55f94fef2d612fe63acf5">osgEarth</a>
+</li>
+<li>findObject()
+: <a class="el" href="namespaceanonymous__namespace_02SpatialData_8cpp_03.html#a39828fcac7b619a86895b5a25660e089">anonymous_namespace{SpatialData.cpp}</a>
+</li>
+<li>findRelativeNodeOfType()
+: <a class="el" href="namespaceosgEarth.html#a33f82fe81a917e4e7574b0cf3850cbc5">osgEarth</a>
+</li>
+<li>findTopMostNodeOfType()
+: <a class="el" href="namespaceosgEarth.html#a4a9104192d737d7329119f7d4c33cb8e">osgEarth</a>
+</li>
+<li>fixOptions()
+: <a class="el" href="namespaceanonymous__namespace_02URI_8cpp_03.html#af94b88251c2132b2876a3b84104d8bd1">anonymous_namespace{URI.cpp}</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>geocentricMidpoint()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a8b12fa56296c16c65712ea239f336c9b">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>geocentricSurfaceDistance()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a7b49eb8baa3de3fb29afb39dbf659e38">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>geocentricToGeodetic()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a5dc8ef69b3dd16d722f90c8073df1425">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>geodeticMidpoint()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a43d21aa5564f9a851359de8ca004f38f">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>geometryToGml()
+: <a class="el" href="namespaceosgEarth_1_1Features.html#a73398ebc58c4d9a089454049541598e5">osgEarth::Features</a>
+</li>
+<li>geometryToJson()
+: <a class="el" href="namespaceosgEarth_1_1Features.html#a1a622e30e9888c43fea20d09ff04805f">osgEarth::Features</a>
+</li>
+<li>geometryToKml()
+: <a class="el" href="namespaceosgEarth_1_1Features.html#ae65b1cca8b7a02473be2cccda5635cbf">osgEarth::Features</a>
+</li>
+<li>geometryToWkt()
+: <a class="el" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca">osgEarth::Features</a>
+</li>
+<li>getApparentRotation()
+: <a class="el" href="namespaceanonymous__namespace_02ExtrudeGeometryFilter_8cpp_03.html#ad8f6528004b2b8c4773bf183a60aa39a">anonymous_namespace{ExtrudeGeometryFilter.cpp}</a>
+</li>
+<li>getAttributes()
+: <a class="el" href="namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a1a7441b6b442205e8104d9896cf5a276">anonymous_namespace{XmlUtils.cpp}</a>
+</li>
+<li>getEdge()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html#abe6bf389a040399a8e90312a4f33f354">seamless::anonymous_namespace{Patch.cpp}</a>
+</li>
 <li>getFace()
 : <a class="el" href="namespaceseamless_1_1euler.html#a9403dbf2c337e40a4e305884258540ac">seamless::euler</a>
 , <a class="el" href="namespaceseamless_1_1qsc.html#ad81c5f5e2c10927461d8e2f44afc1882">seamless::qsc</a>
 </li>
+<li>getFullPath()
+: <a class="el" href="namespaceosgEarth.html#ac14af30464b9b0b3791566e99e4a02de">osgEarth</a>
+</li>
+<li>getGeoHeightField()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html#ac959b5ddd477634e22566f34e674b88f">seamless::anonymous_namespace{Geographic.cpp}</a>
+</li>
+<li>getGridCoords()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02PatchSet_8cpp_03.html#a9359accdd0b740f7a99483f6ed2ff1fd">seamless::anonymous_namespace{PatchSet.cpp}</a>
+</li>
+<li>getHPRFromQuat()
+: <a class="el" href="namespaceanonymous__namespace_02ObjectLocator_8cpp_03.html#ab84c012a0388e01d6f7ceaa819c0c7b4">anonymous_namespace{ObjectLocator.cpp}</a>
+</li>
+<li>getIndex()
+: <a class="el" href="namespaceanonymous__namespace_02SpatialData_8cpp_03.html#ad1fb18c28cfc1177f3d68359bd7f5bfd">anonymous_namespace{SpatialData.cpp}</a>
+</li>
+<li>getJulianDate()
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#aba48965435687f3844790501c08ec9d1">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>getMinMaxExtentInSilhouette()
+: <a class="el" href="namespaceanonymous__namespace_02OverlayDecorator_8cpp_03.html#a72aa4286c3a75b676e906bbae5517eb5">anonymous_namespace{OverlayDecorator.cpp}</a>
+</li>
+<li>getModeValue()
+: <a class="el" href="namespaceanonymous__namespace_02ShaderUtils_8cpp_03.html#a6dc88c6ad69f0388c0174657786fd8f8">anonymous_namespace{ShaderUtils.cpp}</a>
+</li>
 <li>getNormalToSegment()
 : <a class="el" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00">seamless::euler</a>
+</li>
+<li>getNotifyLevel()
+: <a class="el" href="namespaceosgEarth.html#a078522323ccc29dbfb3f5e637ba4ce25">osgEarth</a>
+</li>
+<li>getOGRAttrValue()
+: <a class="el" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9">anonymous_namespace{SpatialReference.cpp}</a>
+</li>
+<li>getReader()
+: <a class="el" href="namespaceanonymous__namespace_02HTTPClient_8cpp_03.html#aded5b15bd1c39a55b5809d05ac3afa9d">anonymous_namespace{HTTPClient.cpp}</a>
+, <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#ab7f9004667c1f46d84193dcc4c6eafa6">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+<li>getWriter()
+: <a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#af0b27d85e29e89fb7b2928a02a676596">anonymous_namespace{ImageUtils.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>hashString()
+: <a class="el" href="namespaceosgEarth.html#a73391515286f2830aefc25b521fdc09c">osgEarth</a>
+</li>
+<li>hsv2rgb()
+: <a class="el" href="namespaceanonymous__namespace_02Color_8cpp_03.html#a75279edb90cf7908285269c7323266f1">anonymous_namespace{Color.cpp}</a>
+</li>
+<li>htmlColorToVec4f()
+: <a class="el" href="namespaceosgEarth.html#a5f291b4d9138089d05db75e6406477dc">osgEarth</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>in()
+: <a class="el" href="namespaceosgEarth_1_1Json.html#ac78f55a4c4e91e3fd75de3ad98b50bef">osgEarth::Json</a>
+</li>
+<li>initNotifyLevel()
+: <a class="el" href="namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb">osgEarth</a>
+</li>
 <li>installHeightField()
 : <a class="el" href="namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2">seamless</a>
 </li>
 <li>isNeighborTile()
 : <a class="el" href="namespaceseamless.html#ac3804adf63e187042d9e066424d69ca5">seamless</a>
+</li>
+<li>isNotifyEnabled()
+: <a class="el" href="namespaceosgEarth.html#adfe2a04649a7d81bdc4b6698c1d78829">osgEarth</a>
+</li>
+<li>isRelativePath()
+: <a class="el" href="namespaceosgEarth.html#acc0e85b18ae98a28ccbc86d545e19a41">osgEarth</a>
+</li>
+<li>isZipPath()
+: <a class="el" href="namespaceosgEarth.html#a1981d347cd8d8597d14feb312218dfdf">osgEarth</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_j"></a>- j -</h3><ul>
+<li>joinStrings()
+: <a class="el" href="namespaceosgEarth.html#a1d87f9e977327e0bcc384b5f688a4115">osgEarth</a>
 </li>
 </ul>
 
@@ -206,18 +449,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="namespaceseamless_1_1qsc.html#ac396bf982ce4f065efa67698fbe77c8c">seamless::qsc</a>
 </li>
 <li>latLonToFaceCoords()
-: <a class="el" href="namespaceseamless_1_1qsc.html#a04409bed687117f09b4dc8fd881935fa">seamless::qsc</a>
-, <a class="el" href="namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6">seamless::euler</a>
+: <a class="el" href="namespaceseamless_1_1qsc.html#a2f2870916c419e7ff4a142d0fe683299">seamless::qsc</a>
+, <a class="el" href="namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59">seamless::euler</a>
+</li>
+<li>less_than()
+: <a class="el" href="namespaceagg.html#af8ad277418c73e24d7b721c7cfccd1ec">agg</a>
 </li>
 <li>lineLineIntersect()
 : <a class="el" href="namespaceseamless_1_1euler.html#ae370edb27fca30b8656dc8140a305801">seamless::euler</a>
+</li>
+<li>localizeGeometry()
+: <a class="el" href="namespaceanonymous__namespace_02TransformFilter_8cpp_03.html#a35717843cb401c767d52de05c89e3673">anonymous_namespace{TransformFilter.cpp}</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>makeClusterGeode()
+: <a class="el" href="namespaceanonymous__namespace_02SpatialData_8cpp_03.html#ab318c3b8dee63cd134a9a8c069fa2997">anonymous_namespace{SpatialData.cpp}</a>
+</li>
 <li>makeEdgeRef()
 : <a class="el" href="namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6">seamless</a>
+</li>
+<li>makeSamplerName()
+: <a class="el" href="namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#a4d275306e92ddf2acc33ad07460c3c4a">anonymous_namespace{TextureCompositorMulti.cpp}</a>
+</li>
+<li>makeTileKey()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Projected_8cpp_03.html#aa039781d785e3ac8118959d9a7cf57b6">seamless::anonymous_namespace{Projected.cpp}</a>
+</li>
+<li>mergeHeightFields()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html#a53695b03628f122547b78bc89f027570">seamless::anonymous_namespace{Geographic.cpp}</a>
+</li>
+<li>mergeImages()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html#a8ca1f597189998cdedd4ceaee6d6d3d9">seamless::anonymous_namespace{Geographic.cpp}</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>notify()
+: <a class="el" href="namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de">osgEarth</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>operator&lt;&lt;()
+: <a class="el" href="namespaceosgEarth_1_1Json.html#aef9cd931a44ce406b3d9a4f641a7c151">osgEarth::Json</a>
+</li>
+<li>operator&gt;&gt;()
+: <a class="el" href="namespaceosgEarth_1_1Json.html#ada37395bf420b187163592d19df2becc">osgEarth::Json</a>
 </li>
 </ul>
 
@@ -225,6 +506,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>poly_coord()
 : <a class="el" href="namespaceagg.html#afe2650780973937a3194b67fae1738a9">agg</a>
+</li>
+<li>populateLines()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#ae852eb315880f315a6127dd8e3b8339a">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>populateTriangles()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#ab2e6781dfd60592af92f9937fd8504a2">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>powFast()
+: <a class="el" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#a66f66f1fe15faf75377a2deb47825362">anonymous_namespace{EarthManipulator.cpp}</a>
+</li>
+<li>processNode()
+: <a class="el" href="namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a333a78c6da3032e34b53d74378ac4745">anonymous_namespace{XmlUtils.cpp}</a>
 </li>
 </ul>
 
@@ -236,29 +529,152 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>remake()
+: <a class="el" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa009bb29c232c233344c1fdedcce0907">anonymous_namespace{MeshConsolidator.cpp}</a>
+</li>
+<li>removeDocType()
+: <a class="el" href="namespaceanonymous__namespace_02XmlUtils_8cpp_03.html#a6dfe64451418b982d6ad9c45203b3d2a">anonymous_namespace{XmlUtils.cpp}</a>
+</li>
+<li>removeEventHandler()
+: <a class="el" href="namespaceosgEarth.html#a8179e6924d195ccdbc192d956bcefa96">osgEarth</a>
+</li>
+<li>replaceIn()
+: <a class="el" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a59706a6ee7bf09e14a6ea74e7d0567f5">anonymous_namespace{SpatialReference.cpp}</a>
+, <a class="el" href="namespaceosgEarth.html#ab90c87cc380f2527d8eaf90d10265158">osgEarth</a>
+</li>
+<li>resampleHeightField()
+: <a class="el" href="namespaceseamless_1_1anonymous__namespace_02Projected_8cpp_03.html#a81f2251560e1eb6ae1f37bc50c8c6af2">seamless::anonymous_namespace{Projected.cpp}</a>
+</li>
+<li>rgb2hsv()
+: <a class="el" href="namespaceanonymous__namespace_02Color_8cpp_03.html#a97c207d956d85807eeeb90e7dbbea815">anonymous_namespace{Color.cpp}</a>
+</li>
+<li>rot()
+: <a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html#ad4029349af79513030745a11f9832f72">anonymous_namespace{Controls.cpp}</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>s_createTextureFragShaderFunction()
+: <a class="el" href="namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#ad9d5f9bf6a00c1663a6c452815cf5508">anonymous_namespace{TextureCompositorMulti.cpp}</a>
+</li>
+<li>s_createTextureVertexShader()
+: <a class="el" href="namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#a6eef5408e3e880b71eee8805377cf40b">anonymous_namespace{TextureCompositorMulti.cpp}</a>
+</li>
+<li>s_findGeodeByUID()
+: <a class="el" href="namespaceanonymous__namespace_02MultiPassTerrainTechnique_8cpp_03.html#afad9f70bd9360ca82d332b39107a6454">anonymous_namespace{MultiPassTerrainTechnique.cpp}</a>
+</li>
+<li>s_getHeightField()
+: <a class="el" href="namespaceanonymous__namespace_02Map_8cpp_03.html#ad7b47bdac1bfab5aef1bddd9e7545edd">anonymous_namespace{Map.cpp}</a>
+</li>
+<li>s_getHPRFromQuat()
+: <a class="el" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#aaf8b4909bb5c6f9e41dc75d48682437a">anonymous_namespace{EarthManipulator.cpp}</a>
+</li>
+<li>s_getTexture()
+: <a class="el" href="namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#a1d1f12df27e645590ff9f84e17aff758">anonymous_namespace{TextureCompositorMulti.cpp}</a>
+</li>
+<li>s_getTileExtent()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#a9974657a22e0735907141bbb38d903cf">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
+<li>s_makeDiscGeometry()
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#ae0857b55649c08b188bb3abb85110399">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_makeEllipsoidGeometry()
+: <a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html#ab033e2eaceb4376126d69a7a1a86b0d0">anonymous_namespace{SkyNode.cpp}</a>
+</li>
+<li>s_makeURI()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html#a10803d54417bcfb40e2d3c2c05573cbf">anonymous_namespace{FeatureModelGraph.cpp}</a>
+</li>
+<li>s_maxLatAdjustment()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a0e55688342a0799296cf339a92c52df4">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>s_pole()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#ab831872a4389be67780a045768f3ae67">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
 <li>safeCopy()
 : <a class="el" href="namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b">seamless</a>
+</li>
+<li>setNotifyLevel()
+: <a class="el" href="namespaceosgEarth.html#ab26f99240d39cde17d977fcbda659c66">osgEarth</a>
+</li>
+<li>smoothStepInterp()
+: <a class="el" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#a5c39ab9b77a6a8b57b5164f701cc732d">anonymous_namespace{EarthManipulator.cpp}</a>
+</li>
+<li>startsWith()
+: <a class="el" href="namespaceosgEarth.html#a4c5320dc9ca7ee620ce2262d72fff769">osgEarth</a>
+</li>
+<li>StreamObjectReadCallback()
+: <a class="el" href="namespaceosgEarth.html#aace606a64b020bbf8cd64a8ab34bb6c8">osgEarth</a>
+</li>
+<li>stringToColor()
+: <a class="el" href="namespaceosgEarth.html#a640fbccfe0a2f77c9747469dce6aa049">osgEarth</a>
+</li>
+<li>stringToVec3f()
+: <a class="el" href="namespaceosgEarth.html#af0c3a09fbcec7971041979704f22021d">osgEarth</a>
+</li>
+<li>subdivide()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a6fcd99f3a98e918be4a99ea435998f55">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>subdivideLines()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a928d5cf5fc29bbe570ecb93fc53c370d">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>subdivideTriangles()
+: <a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html#a37204d34b675d37ccd559129aef60487">anonymous_namespace{MeshSubdivider.cpp}</a>
+</li>
+<li>swap_cells()
+: <a class="el" href="namespaceagg.html#af21a37afa0d4f422619eccd65807fa41">agg</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>tessellate()
+: <a class="el" href="namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html#a0c31797baf7e648bd61486d143a30c47">anonymous_namespace{FeatureStencilModelSource.cpp}</a>
+</li>
 <li>tilesShareEdges()
 : <a class="el" href="namespaceseamless.html#a55ad0fcaed6ad75112709b80f0d73078">seamless</a>
 </li>
+<li>toLower()
+: <a class="el" href="namespaceosgEarth.html#a2c3b7223f6314c9d36e643c231f9123f">osgEarth</a>
+</li>
+<li>toString()
+: <a class="el" href="namespaceosgEarth.html#a18c6b16685eb5809c934715423be97fc">osgEarth</a>
+</li>
+<li>toString&lt; bool &gt;()
+: <a class="el" href="namespaceosgEarth.html#a060b46051377cc3b15ac842f65b6fc8c">osgEarth</a>
+</li>
+<li>toString&lt; osg::Vec3f &gt;()
+: <a class="el" href="namespaceosgEarth.html#a46660370bdf9ffad7aabe0b5df3b0ef5">osgEarth</a>
+</li>
 <li>transferEdges()
 : <a class="el" href="namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d">seamless</a>
+</li>
+<li>trim()
+: <a class="el" href="namespaceosgEarth.html#a0bcf40dbfb8d914b6322a874eb021f50">osgEarth</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>uintToString()
+: <a class="el" href="namespaceosgEarth_1_1Json.html#a30f5d03d2050ddfd9af9f2a4e2f56a35">osgEarth::Json</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>valueToQuotedString()
-: <a class="el" href="namespaceosg_earth_1_1_json.html#a882ccca80a3c37959712afe7ed755ea8">osgEarth::Json</a>
+: <a class="el" href="namespaceosgEarth_1_1Json.html#a882ccca80a3c37959712afe7ed755ea8">osgEarth::Json</a>
 </li>
 <li>valueToString()
-: <a class="el" href="namespaceosg_earth_1_1_json.html#a9063bbb61e15bc91d39a5504d0efab5e">osgEarth::Json</a>
+: <a class="el" href="namespaceosgEarth_1_1Json.html#ace6497f2b3037497c24f32c972c74efd">osgEarth::Json</a>
+</li>
+<li>vec3fToString()
+: <a class="el" href="namespaceosgEarth.html#aee0e85e25091f7cdb4a30a0fff02001a">osgEarth</a>
+</li>
+<li>vec4fToHtmlColor()
+: <a class="el" href="namespaceosgEarth.html#a6da8b72eaf1f91f8eda026892f3bf259">osgEarth</a>
 </li>
 </ul>
 
@@ -270,14 +686,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -292,6 +700,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

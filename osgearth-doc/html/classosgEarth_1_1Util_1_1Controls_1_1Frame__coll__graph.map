@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html" title="osgEarth::Util::Controls::ImageControl" alt="" coords="955,237,1200,267"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html" title="osgEarth::Util::Controls::Control" alt="" coords="647,201,855,231"/>
+<area shape="rect" id="node6" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="357,5,445,35"/>
+<area shape="rect" id="node8" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Alignment \&gt;" alt="" coords="297,60,505,89"/>
+<area shape="rect" id="node10" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="313,160,489,189"/>
+<area shape="rect" id="node12" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; osg::Vec4f \&gt;" alt="" coords="295,243,508,272"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1Util_1_1Controls_1_1Gutter.html" title="osgEarth::Util::Controls::Gutter" alt="" coords="300,308,503,337"/>
+<area shape="rect" id="node16" href="$structosgEarth_1_1Angular.html" title="osgEarth::Angular" alt="" coords="688,284,813,313"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1qualified__double.html" title="osgEarth::qualified_double\&lt; Angular \&gt;" alt="" coords="280,361,523,391"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Units.html" title="osgEarth::Units" alt="" coords="44,361,156,391"/>
+</map>

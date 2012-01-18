@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_element.html#ac1e4691e9375ba4e665dce7e46a50a9c" title="TiXmlElement::Attribute" alt="" coords="203,5,363,35"/>
-<area shape="rect" id="node5" href="$class_ti_xml_element.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="204,59,361,88"/>
-<area shape="rect" id="node13" href="$class_ti_xml_declaration.html#a9839ea97ed687a2b7342fd7b0f04361b" title="TiXmlDeclaration::Parse" alt="" coords="201,112,364,141"/>
-<area shape="rect" id="node7" href="$class_ti_xml_element.html#a13f6df105ebb1e8dc636e75cc883be32" title="Creates a new Element and returns it &#45; the returned element is a copy." alt="" coords="437,5,584,35"/>
-<area shape="rect" id="node9" href="$class_ti_xml_element.html#af5cd4156e082ef3bf23adfe0ed173340" title="TiXmlElement::operator=" alt="" coords="428,59,593,88"/>
-<area shape="rect" id="node11" href="$class_ti_xml_element.html#a1ca4465f3c2eac6a60e641cd7f1d9f7e" title="TiXmlElement::TiXmlElement" alt="" coords="413,112,608,141"/>
-</map>

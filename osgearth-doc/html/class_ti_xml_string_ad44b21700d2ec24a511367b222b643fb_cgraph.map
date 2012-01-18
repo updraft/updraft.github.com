@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_string.html#a76e4d6aba7845f4cf9c02332a5fbf916" title="TiXmlString::capacity" alt="" coords="384,5,531,35"/>
-<area shape="rect" id="node5" href="$class_ti_xml_string.html#a3202f27d139a3fac79205f1f3c707727" title="TiXmlString::length" alt="" coords="391,59,524,88"/>
-<area shape="rect" id="node7" href="$class_ti_xml_string.html#a88ecf9f0f00cb5c67b6b637958d7049c" title="TiXmlString::reserve" alt="" coords="195,109,336,139"/>
-<area shape="rect" id="node10" href="$class_ti_xml_string.html#a00abc60f135c7ca1951c7334cc2c7993" title="TiXmlString::data" alt="" coords="396,112,519,141"/>
-<area shape="rect" id="node13" href="$class_ti_xml_string.html#aa392cbc180752a79f007f4f9280c7762" title="TiXmlString::swap" alt="" coords="393,165,521,195"/>
-</map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__labels_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#define-members">Defines</a> &#124;
@@ -96,9 +113,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthDrivers/feature_ogr/OGRFeatureOptions&gt;</code><br/>
 <code>#include &lt;osgEarthFeatures/FeatureSource&gt;</code><br/>
 <code>#include &lt;osgEarth/Utils&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_labels.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_labels.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__labels_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__labels_2osgearth__labels_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__labels_2osgearth__labels_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__labels_2osgearth__labels_8cpp">
 </map>
@@ -153,10 +172,108 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__labels_8cpp_source.html#l00107">107</a> of file <a class="el" href="osgearth__labels_8cpp_source.html">osgearth_labels.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Group&gt; labels = <span class="keyword">new</span> osg::Group();
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">// first, open up the source shapefile</span>
+    <a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html">OGRFeatureOptions</a> fo;
+    fo.<a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8">url</a>() = <a class="code" href="osgearth__labels_8cpp.html#a1bb822b7bfbac10d0879b719294a2dc7">g_featureFile</a>;
+
+    osg::ref_ptr&lt;FeatureSource&gt; features = FeatureSourceFactory::create( fo );
+    <span class="keywordflow">if</span> ( !features.valid() )
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <a class="code" href="osgearth__labels_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load features!&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> 0L;
+    }
+
+    features-&gt;initialize( <span class="stringliteral">&quot;&quot;</span> );
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Features_1_1FeatureProfile.html">FeatureProfile</a>* featureProfile = features-&gt;getFeatureProfile();
+    <span class="keywordflow">if</span> ( !featureProfile || !featureProfile-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureProfile.html#a7f2cf88a25569de112c7c929555e3943">getSRS</a>() )
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <a class="code" href="osgearth__labels_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;Feature data has no spatial reference!&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> 0L;
+    }
+
+    osg::ref_ptr&lt;FeatureCursor&gt; cursor = features-&gt;createFeatureCursor();
+    <span class="keywordflow">if</span> ( !cursor.valid() )
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <a class="code" href="osgearth__labels_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;Failed to query the feature source!&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> 0L;
+    }
+
+    <span class="comment">//SceneControlBin* priorityBin = canvas-&gt;getSceneControls();</span>
+
+    <span class="keywordtype">unsigned</span> count = 0;
+
+    std::set&lt;std::string&gt; antiDupeSet;
+
+    <span class="keywordflow">while</span>( cursor-&gt;hasMore() )
+    {
+        <a class="code" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a>* feature = cursor-&gt;nextFeature();
+        <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* geom = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57">getGeometry</a>();
+
+        <span class="keywordflow">if</span> ( !geom )
+            <span class="keywordflow">continue</span>;
+
+        <span class="comment">// we will display the country name:</span>
+        std::string text = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a5ea00601ab28fb9a2ce015d6faa7a3a9">getString</a>( <a class="code" href="osgearth__labels_8cpp.html#adefa887c5d973c06ecf17c63e1aaf8d5">g_labelAttr</a> );
+        <span class="keywordflow">if</span> ( text.empty() )
+            <span class="keywordflow">continue</span>;
+
+        <span class="comment">// and use the population to prioritize labels:</span>
+        <span class="keywordtype">float</span> population = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#ac783fc569e3cd918592c3f10c0060b97">getDouble</a>(<a class="code" href="osgearth__labels_8cpp.html#abc95389a75efaf890d3d8b323c5e2488">g_priorityAttr</a>, 0.0);
+
+        <span class="comment">// remove duplicate labels:</span>
+        <span class="keywordflow">if</span> ( <a class="code" href="osgearth__labels_8cpp.html#ad99ae8eff9824a04e600b4476bfcb185">g_removeDupes</a> )
+        {
+            <span class="keywordflow">if</span> ( antiDupeSet.find(text) != antiDupeSet.end() )
+                <span class="keywordflow">continue</span>;
+            antiDupeSet.insert(text);
+        }
+
+        <span class="comment">// calculate the world location of the label:</span>
+        osg::Vec3d centerPoint = geom-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390">getBounds</a>().center();
+
+        osg::Vec3d mapPoint;
+        <span class="keywordflow">if</span> ( !map-&gt;toMapPoint( centerPoint, featureProfile-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureProfile.html#a7f2cf88a25569de112c7c929555e3943">getSRS</a>(), mapPoint ) )
+            <span class="keywordflow">continue</span>;
+
+        osg::Vec3d worldPoint;
+        <span class="keywordflow">if</span> ( !map-&gt;mapPointToWorldPoint( mapPoint, worldPoint ) )
+            <span class="keywordflow">continue</span>;
+
+        <span class="comment">// create the label and place it:</span>
+        osg::MatrixTransform* xform = <span class="keyword">new</span> osg::MatrixTransform( osg::Matrix::translate(worldPoint) );
+        xform-&gt;setCullCallback( <span class="keyword">new</span> <a class="code" href="structosgEarth_1_1CullNodeByNormal.html">CullNodeByNormal</a>(worldPoint) );
+        xform-&gt;addChild( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlNode.html">ControlNode</a>(<span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(text)) );
+        labels-&gt;addChild( xform );
+
+        ++count;
+
+        <span class="comment">//OE_NOTICE &lt;&lt; LC &lt;&lt; &quot;Added: &quot; &lt;&lt; text &lt;&lt; std::endl;</span>
+    }
+
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <a class="code" href="osgearth__labels_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;Found &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot; features. &quot;</span> &lt;&lt; std::endl;
+
+    <span class="keywordflow">return</span> labels.release();
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_cgraph.png" border="0" usemap="#osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_cgraph" alt=""/></div>
+<map name="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_cgraph" id="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Features_1_1FeatureSourceFactory.html#aeb4d4d28b39972eae24f232f67db9d11" title="osgEarth::Features::FeatureSourceFactory::create" alt="" coords="149,5,464,35"/><area shape="rect" id="node7" href="classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390" title="osgEarth::Symbology::Geometry::getBounds" alt="" coords="165,85,448,115"/><area shape="rect" id="node15" href="classosgEarth_1_1Features_1_1Feature.html#ac783fc569e3cd918592c3f10c0060b97" title="osgEarth::Features::Feature::getDouble" alt="" coords="181,139,432,168"/><area shape="rect" id="node19" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="173,192,440,221"/><area shape="rect" id="node21" href="classosgEarth_1_1Features_1_1FeatureProfile.html#a7f2cf88a25569de112c7c929555e3943" title="osgEarth::Features::FeatureProfile::getSRS" alt="" coords="169,245,444,275"/><area shape="rect" id="node23" href="classosgEarth_1_1Features_1_1Feature.html#a5ea00601ab28fb9a2ce015d6faa7a3a9" title="osgEarth::Features::Feature::getString" alt="" coords="184,299,429,328"/><area shape="rect" id="node26" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8" title="osgEarth::Drivers::OGRFeatureOptions::url" alt="" coords="171,352,443,381"/><area shape="rect" id="node5" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="573,5,835,35"/><area shape="rect" id="node9" href="classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::begin" alt="" coords="512,59,896,88"/><area shape="rect" id="node11" href="classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::end" alt="" coords="517,112,891,141"/><area shape="rect" id="node13" href="classosgEarth_1_1Bounds.html#a1fb3d4370745d4a4ad420eaa1b64dae3" title="osgEarth::Bounds::expandBy" alt="" coords="608,165,800,195"/><area shape="rect" id="node17" href="namespaceosgEarth.html#a2c3b7223f6314c9d36e643c231f9123f" title="osgEarth::toLower" alt="" coords="640,245,768,275"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_icgraph.png" border="0" usemap="#osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_icgraph" alt=""/></div>
 <map name="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_icgraph" id="osgearth__labels_8cpp_a226d4cd4f8495bb51181abdec578e9d9_icgraph">
 <area shape="rect" id="node3" href="osgearth__labels_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="149,5,200,35"/></map>
@@ -192,13 +309,72 @@ Here is the caller graph for this function:</div>
 <p>Demonstrates the dynamic labeling engine in osgEarthUtil::Controls. </p>
 
 <p>Definition at line <a class="el" href="osgearth__labels_8cpp_source.html#l00047">47</a> of file <a class="el" href="osgearth__labels_8cpp_source.html">osgearth_labels.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="keywordflow">if</span> ( arguments.read( <span class="stringliteral">&quot;--help&quot;</span> ) || argc &lt; 2 )
+    {
+        <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <a class="code" href="osgearth__labels_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; std::endl &lt;&lt; std::endl
+
+            &lt;&lt; <span class="stringliteral">&quot;osgearth_labels &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl
+            &lt;&lt; <span class="stringliteral">&quot;    --features &lt;filename&gt;            : name of shapefile containing feature labels&quot;</span> &lt;&lt; std::endl
+            &lt;&lt; <span class="stringliteral">&quot;    --label-attr &lt;attribute&gt;         : attribute containing label text&quot;</span> &lt;&lt; std::endl
+            &lt;&lt; <span class="stringliteral">&quot;    --priority-attr &lt;attribute&gt;      : attribute containing priority value&quot;</span> &lt;&lt; std::endl
+            &lt;&lt; <span class="stringliteral">&quot;    --show-duplicates                : draws duplicate labels (usually won&#39;t)&quot;</span> &lt;&lt; std::endl;
+        
+        <span class="keywordflow">return</span> 0;
+    }
+
+    <span class="keywordflow">if</span> ( !arguments.read( <span class="stringliteral">&quot;--features&quot;</span>, <a class="code" href="osgearth__labels_8cpp.html#a1bb822b7bfbac10d0879b719294a2dc7">g_featureFile</a> ) )
+        <a class="code" href="osgearth__labels_8cpp.html#a1bb822b7bfbac10d0879b719294a2dc7">g_featureFile</a> = <span class="stringliteral">&quot;../data/world.shp&quot;</span>;
+    
+    <span class="keywordflow">if</span> ( !arguments.read( <span class="stringliteral">&quot;--label-attr&quot;</span>, <a class="code" href="osgearth__labels_8cpp.html#adefa887c5d973c06ecf17c63e1aaf8d5">g_labelAttr</a> ) )
+        <a class="code" href="osgearth__labels_8cpp.html#adefa887c5d973c06ecf17c63e1aaf8d5">g_labelAttr</a> = <span class="stringliteral">&quot;cntry_name&quot;</span>;
+
+    <span class="keywordflow">if</span> ( !arguments.read( <span class="stringliteral">&quot;--priority-attr&quot;</span>, <a class="code" href="osgearth__labels_8cpp.html#abc95389a75efaf890d3d8b323c5e2488">g_priorityAttr</a> ) )
+        <a class="code" href="osgearth__labels_8cpp.html#abc95389a75efaf890d3d8b323c5e2488">g_priorityAttr</a> = <span class="stringliteral">&quot;cntry_pop&quot;</span>;
+
+    <span class="keywordflow">if</span> ( arguments.read( <span class="stringliteral">&quot;--show-duplicates&quot;</span> ) )
+        <a class="code" href="osgearth__labels_8cpp.html#ad99ae8eff9824a04e600b4476bfcb185">g_removeDupes</a> = <span class="keyword">false</span>;
+
+    osgViewer::Viewer viewer(arguments);
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+    osg::Node* node = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> ( node )
+        root-&gt;addChild( node );
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode(node);
+    <span class="keywordflow">if</span> ( mapNode )
+    {
+        viewer.setSceneData( root );
+        viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a> );
+
+        <span class="comment">//root-&gt;addChild( new ControlCanvas( &amp;viewer ) );</span>
+
+        <span class="comment">// load up some labels.</span>
+        root-&gt;addChild( <a class="code" href="osgearth__labels_8cpp.html#a226d4cd4f8495bb51181abdec578e9d9">createLabels</a>(mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()) );
+    }
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::ThreadingHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::LODScaleHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::HelpHandler(arguments.getApplicationUsage()));
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__labels_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__labels_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__labels_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__labels_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__labels_8cpp.html#a226d4cd4f8495bb51181abdec578e9d9" title="createLabels" alt="" coords="104,5,200,35"/></map>
+<area shape="rect" id="node3" href="osgearth__labels_8cpp.html#a226d4cd4f8495bb51181abdec578e9d9" title="createLabels" alt="" coords="168,192,264,221"/><area shape="rect" id="node30" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="105,245,327,275"/><area shape="rect" id="node32" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="121,299,311,328"/><area shape="rect" id="node5" href="classosgEarth_1_1Features_1_1FeatureSourceFactory.html#aeb4d4d28b39972eae24f232f67db9d11" title="osgEarth::Features::FeatureSourceFactory::create" alt="" coords="376,5,691,35"/><area shape="rect" id="node9" href="classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390" title="osgEarth::Symbology::Geometry::getBounds" alt="" coords="392,85,675,115"/><area shape="rect" id="node17" href="classosgEarth_1_1Features_1_1Feature.html#ac783fc569e3cd918592c3f10c0060b97" title="osgEarth::Features::Feature::getDouble" alt="" coords="408,139,659,168"/><area shape="rect" id="node21" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="400,192,667,221"/><area shape="rect" id="node23" href="classosgEarth_1_1Features_1_1FeatureProfile.html#a7f2cf88a25569de112c7c929555e3943" title="osgEarth::Features::FeatureProfile::getSRS" alt="" coords="396,245,671,275"/><area shape="rect" id="node25" href="classosgEarth_1_1Features_1_1Feature.html#a5ea00601ab28fb9a2ce015d6faa7a3a9" title="osgEarth::Features::Feature::getString" alt="" coords="411,299,656,328"/><area shape="rect" id="node28" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8" title="osgEarth::Drivers::OGRFeatureOptions::url" alt="" coords="397,352,669,381"/><area shape="rect" id="node7" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="800,5,1061,35"/><area shape="rect" id="node11" href="classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::begin" alt="" coords="739,59,1123,88"/><area shape="rect" id="node13" href="classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::end" alt="" coords="744,112,1117,141"/><area shape="rect" id="node15" href="classosgEarth_1_1Bounds.html#a1fb3d4370745d4a4ad420eaa1b64dae3" title="osgEarth::Bounds::expandBy" alt="" coords="835,165,1027,195"/><area shape="rect" id="node19" href="namespaceosgEarth.html#a2c3b7223f6314c9d36e643c231f9123f" title="osgEarth::toLower" alt="" coords="867,245,995,275"/></map>
 </div>
 </p>
 
@@ -266,15 +442,6 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__labels_8cpp.html">osgearth_labels.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -289,6 +456,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

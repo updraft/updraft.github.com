@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1" title="osgEarth::Util::Controls::ControlCanvas::addControl" alt="" coords="569,25,895,54"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0" title="osgEarth::Util::Controls::Control::setAbsorbEvents" alt="" coords="195,77,512,106"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="205,130,501,160"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566" title="osgEarth::Util::Controls::Container::setChildSpacing" alt="" coords="569,182,895,212"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="188,338,519,368"/>
+<area shape="rect" id="node37" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="965,656,1253,685"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e" title="osgEarth::Util::Controls::Control::setMargin" alt="" coords="595,236,869,265"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932" title="osgEarth::Util::Controls::Control::setPadding" alt="" coords="212,285,495,314"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1323,261,1565,290"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1615,261,1887,290"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="649,129,815,158"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="568,472,896,501"/>
+<area shape="rect" id="node26" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1027,338,1192,368"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="972,445,1247,474"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="945,498,1273,528"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="963,602,1256,632"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="976,392,1243,421"/>
+<area shape="rect" id="node33" href="$structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1355,656,1533,685"/>
+<area shape="rect" id="node35" href="$structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1361,602,1527,632"/>
+</map>

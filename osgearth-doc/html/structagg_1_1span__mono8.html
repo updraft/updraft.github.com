@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,20 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="structagg_1_1span__mono8.html">span_mono8</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('structagg_1_1span__mono8.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a>  </div>
@@ -87,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="agg::span_mono8" -->
-<p><code>#include &lt;<a class="el" href="_a_g_g_8h_source.html">AGG.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="AGG_8h_source.html">AGG.h</a>&gt;</code></p>
 
 <p><a href="structagg_1_1span__mono8-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -100,7 +123,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00791">791</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00791">791</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a86a891a98d9724b246a8ec04bd663725"></a><!-- doxytag: member="agg::span_mono8::get" ref="a86a891a98d9724b246a8ec04bd663725" args="(unsigned char *ptr, int x)" -->
 <div class="memitem">
@@ -127,8 +150,17 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00829">829</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00829">829</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">unsigned</span> rgb = ptr[x];
+            rgba8 c;
+            c.r = rgb; 
+            c.g = rgb; 
+            c.b = rgb;
+            c.a = 255;
+            <span class="keywordflow">return</span> c;
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="aa2a2557a54d6f6ddef5882433278dee6"></a><!-- doxytag: member="agg::span_mono8::hline" ref="aa2a2557a54d6f6ddef5882433278dee6" args="(unsigned char *ptr, int x, unsigned count, const rgba8 &amp;c)" -->
@@ -168,11 +200,18 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00818">818</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00818">818</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* p = ptr + x;
+            <span class="keywordtype">unsigned</span> v = <a class="code" href="structagg_1_1span__mono8.html#a39794708960199522852127626514981">mono8</a>(c.r, c.g, c.b);
+            <span class="keywordflow">do</span> { *p++ = v; } <span class="keywordflow">while</span>(--count);
+        }
+</pre></div>
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structagg_1_1span__mono8_aa2a2557a54d6f6ddef5882433278dee6_cgraph.png" border="0" usemap="#structagg_1_1span__mono8_aa2a2557a54d6f6ddef5882433278dee6_cgraph" alt=""/></div>
 <map name="structagg_1_1span__mono8_aa2a2557a54d6f6ddef5882433278dee6_cgraph" id="structagg_1_1span__mono8_aa2a2557a54d6f6ddef5882433278dee6_cgraph">
 <area shape="rect" id="node3" href="structagg_1_1span__mono8.html#a39794708960199522852127626514981" title="agg::span_mono8::mono8" alt="" coords="215,5,385,35"/></map>
@@ -212,11 +251,16 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00794">794</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00794">794</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> (r * 77 + g * 150 + b * 29) &gt;&gt; 8;
+        }
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structagg_1_1span__mono8_a39794708960199522852127626514981_icgraph.png" border="0" usemap="#structagg_1_1span__mono8_a39794708960199522852127626514981_icgraph" alt=""/></div>
 <map name="structagg_1_1span__mono8_a39794708960199522852127626514981_icgraph" id="structagg_1_1span__mono8_a39794708960199522852127626514981_icgraph">
 <area shape="rect" id="node3" href="structagg_1_1span__mono8.html#aa2a2557a54d6f6ddef5882433278dee6" title="agg::span_mono8::hline" alt="" coords="232,5,392,35"/><area shape="rect" id="node5" href="structagg_1_1span__mono8.html#ad3e3764b0d00afd2ceed4e9e0f04497d" title="agg::span_mono8::render" alt="" coords="228,59,396,88"/></map>
@@ -268,11 +312,24 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00800">800</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00800">800</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* p = ptr + x;
+            <span class="keywordtype">unsigned</span> dst = <a class="code" href="structagg_1_1span__mono8.html#a39794708960199522852127626514981">mono8</a>(c.r, c.g, c.b);
+            <span class="keywordflow">do</span>
+            {
+                <span class="keywordtype">int</span> alpha = (*covers++) * c.a;
+                <span class="keywordtype">unsigned</span> src = *p;
+                *p++ = (((dst - src) * alpha) + (src &lt;&lt; 16)) &gt;&gt; 16;
+            }
+            <span class="keywordflow">while</span>(--count);
+        }
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structagg_1_1span__mono8_ad3e3764b0d00afd2ceed4e9e0f04497d_cgraph.png" border="0" usemap="#structagg_1_1span__mono8_ad3e3764b0d00afd2ceed4e9e0f04497d_cgraph" alt=""/></div>
 <map name="structagg_1_1span__mono8_ad3e3764b0d00afd2ceed4e9e0f04497d_cgraph" id="structagg_1_1span__mono8_ad3e3764b0d00afd2ceed4e9e0f04497d_cgraph">
 <area shape="rect" id="node3" href="structagg_1_1span__mono8.html#a39794708960199522852127626514981" title="agg::span_mono8::mono8" alt="" coords="225,5,396,35"/></map>
@@ -282,19 +339,9 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="_a_g_g_8h_source.html">AGG.h</a></li>
+<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="AGG_8h_source.html">AGG.h</a></li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
-      <li class="navelem"><a class="el" href="structagg_1_1span__mono8.html">span_mono8</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -309,6 +356,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:49 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

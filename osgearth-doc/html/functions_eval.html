@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -78,192 +108,140 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="#index_a"><span>a</span></a></li>
-      <li><a href="#index_b"><span>b</span></a></li>
-      <li><a href="#index_f"><span>f</span></a></li>
-      <li><a href="#index_h"><span>h</span></a></li>
-      <li><a href="#index_i"><span>i</span></a></li>
-      <li><a href="#index_n"><span>n</span></a></li>
-      <li><a href="#index_o"><span>o</span></a></li>
-      <li><a href="#index_r"><span>r</span></a></li>
-      <li><a href="#index_t"><span>t</span></a></li>
+      <li class="current"><a href="functions_eval.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_eval_0x62.html#index_b"><span>b</span></a></li>
+      <li><a href="functions_eval_0x63.html#index_c"><span>c</span></a></li>
+      <li><a href="functions_eval_0x64.html#index_d"><span>d</span></a></li>
+      <li><a href="functions_eval_0x65.html#index_e"><span>e</span></a></li>
+      <li><a href="functions_eval_0x66.html#index_f"><span>f</span></a></li>
+      <li><a href="functions_eval_0x68.html#index_h"><span>h</span></a></li>
+      <li><a href="functions_eval_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_eval_0x6a.html#index_j"><span>j</span></a></li>
+      <li><a href="functions_eval_0x6b.html#index_k"><span>k</span></a></li>
+      <li><a href="functions_eval_0x6c.html#index_l"><span>l</span></a></li>
+      <li><a href="functions_eval_0x6d.html#index_m"><span>m</span></a></li>
+      <li><a href="functions_eval_0x6e.html#index_n"><span>n</span></a></li>
+      <li><a href="functions_eval_0x6f.html#index_o"><span>o</span></a></li>
+      <li><a href="functions_eval_0x70.html#index_p"><span>p</span></a></li>
+      <li><a href="functions_eval_0x72.html#index_r"><span>r</span></a></li>
+      <li><a href="functions_eval_0x73.html#index_s"><span>s</span></a></li>
+      <li><a href="functions_eval_0x74.html#index_t"><span>t</span></a></li>
+      <li><a href="functions_eval_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_eval_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_eval_0x77.html#index_w"><span>w</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>aa_2mask
-: <a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a6ae14c88089eb588566fbe26c0d3c708">agg::rasterizer</a>
+: <a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a6ae14c88089eb588566fbe26c0d3c708">agg::rasterizer</a>
 </li>
 <li>aa_2num
-: <a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1afa33e965a90ca5ac13ec1cbc2c0bd877">agg::rasterizer</a>
+: <a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3afa33e965a90ca5ac13ec1cbc2c0bd877">agg::rasterizer</a>
 </li>
 <li>aa_mask
-: <a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a260e748d76cb8d7e774c6f34c4d1d412">agg::rasterizer</a>
+: <a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a260e748d76cb8d7e774c6f34c4d1d412">agg::rasterizer</a>
 </li>
 <li>aa_num
-: <a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a3d3d54a92c3670c1dfb7fb6a9aa817fd">agg::rasterizer</a>
+: <a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a3d3d54a92c3670c1dfb7fb6a9aa817fd">agg::rasterizer</a>
 </li>
 <li>aa_shift
-: <a class="el" href="classagg_1_1scanline.html#a8c0dea901f548d493dad238110d2d527ab00d984c39140f477411538583ad6fad">agg::scanline</a>
-, <a class="el" href="classagg_1_1rasterizer.html#ad1f4c3134510d17050dd4f4f3babb6e1a96c97772304abbf2f859adc225b543f6">agg::rasterizer</a>
+: <a class="el" href="classagg_1_1scanline.html#a7c270962d1fc7daa4e041e8db560aa87ab00d984c39140f477411538583ad6fad">agg::scanline</a>
+, <a class="el" href="classagg_1_1rasterizer.html#a61b8e567506b8a1e5de44028d666acc3a96c97772304abbf2f859adc225b543f6">agg::rasterizer</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
-<li>bgr
-: <a class="el" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a6ab81fb083f98fea7200fd8435479655">agg::rgba8</a>
+<li>ABGR
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#a6b61783504951d5d4a03d79ed65aa4cbabc9a0f765547eabd04b46c68f2d2e95f">osgEarth::Symbology::Color</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>FLAT
-: <a class="el" href="class_v_p_b_database.html#a91bb9c20c06d758d1a0d30d78bd27c47a4dd38bcb00ff9594011ad5f1adfbbfa5">VPBDatabase</a>
+<li>ACTION_EARTH_DRAG
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a1e494751ae534e2ebde70224c22d3224">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>FLAT_TASK_DIRECTORIES
-: <a class="el" href="class_v_p_b_database.html#a91bb9c20c06d758d1a0d30d78bd27c47a2a3e5b330d922a2e138128994a3b882f">VPBDatabase</a>
+<li>ACTION_GOTO
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a47d963e8130197a94ed7ba9a77d36308">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
-<li>HEIGHTFIELD
-: <a class="el" href="class_reader_writer_zip_f_s.html#a52cb6c8ed27ac0b6e240108b38eb8b62a3a8c033991d5331309fd6d2db55f077b">ReaderWriterZipFS</a>
+<li>ACTION_HOME
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a9102261a9399d7ae06113d29bc30daf9">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>IMAGE
-: <a class="el" href="class_reader_writer_zip_f_s.html#a52cb6c8ed27ac0b6e240108b38eb8b62a2b034531f0aca54982ec53d9ed856172">ReaderWriterZipFS</a>
+<li>ACTION_NULL
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a1b957eda99d3c9245f049115aee79b5c">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>NESTED_TASK_DIRECTORIES
-: <a class="el" href="class_v_p_b_database.html#a91bb9c20c06d758d1a0d30d78bd27c47ac48e54e7fd132629404fe6bf6b9e2d66">VPBDatabase</a>
+<li>ACTION_PAN
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29aacdb9738597f0538a13096bbc3e07019">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>NODE
-: <a class="el" href="class_reader_writer_zip_f_s.html#a52cb6c8ed27ac0b6e240108b38eb8b62a33a9e52e4d70b0f986fd167411a0b2cc">ReaderWriterZipFS</a>
+<li>ACTION_PAN_DOWN
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a2b7f43b43a506cf4df075afa3f273f28">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>OBJECT
-: <a class="el" href="class_reader_writer_zip_f_s.html#a52cb6c8ed27ac0b6e240108b38eb8b62ae18e38c81ea383aae9f2f28043412abd">ReaderWriterZipFS</a>
+<li>ACTION_PAN_LEFT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a1ac1281865653e2abc68c001b446948a">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>rgb
-: <a class="el" href="structagg_1_1rgba8.html#aba809b9a3adb9925f5f391a6a0118d85a67daf8254a0bc0f6d87d996e78539cdf">agg::rgba8</a>
+<li>ACTION_PAN_RIGHT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a8ebdd6b973a0c031f5c3d8718727d776">osgEarth::Util::EarthManipulator</a>
 </li>
-</ul>
-
-
-<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
-<li>TINYXML_COMMENT
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a742eb78855db1e81614848072de03721">TiXmlNode</a>
+<li>ACTION_PAN_UP
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a671addb094dc5a9b6faa728de261dfec">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_DECLARATION
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a1e2351ad8cd0c805538d94222f3d8cd0">TiXmlNode</a>
+<li>ACTION_ROTATE
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29aa375f113558510b9dcca2e3d41e6876d">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_DOCUMENT
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a76c4c520453398cd033e8b97ec9a0b04">TiXmlNode</a>
+<li>ACTION_ROTATE_DOWN
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a41b2f6c6904e67af86f0a231dbcbd2c3">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_ELEMENT
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a9ad167b17c3148d7a018fde9a41ce976">TiXmlNode</a>
+<li>ACTION_ROTATE_LEFT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a588f81f24700316c132f902f496bf786">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_TEXT
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2aa6177e9506461cdca7062559387a2714">TiXmlNode</a>
+<li>ACTION_ROTATE_RIGHT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a840183913e4eef93cfa4b6970dba1f4b">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_TYPECOUNT
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a878567737ed539bd3de6a941027e9309">TiXmlNode</a>
+<li>ACTION_ROTATE_UP
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29acf0c2cd4b9756324e6d19add41034b0f">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TINYXML_UNKNOWN
-: <a class="el" href="class_ti_xml_node.html#a836eded4920ab9e9ef28496f48cd95a2a7376f9420c8ab507842c8a0813bb077e">TiXmlNode</a>
+<li>ACTION_ZOOM
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29ad07191d1db2dcc1fa054824b782da37e">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TIXML_ERROR
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48abcabc1b8efabeda1cc4352aa73d64390">TiXmlBase</a>
+<li>ACTION_ZOOM_IN
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a1c77c8d1f0995962100f1ad8c50854c5">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TIXML_ERROR_DOCUMENT_EMPTY
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ab345f3e42e6ae9cdedee2b95e4d461b9">TiXmlBase</a>
+<li>ACTION_ZOOM_OUT
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29ae66ac1147757f2982812f11150fbedd6">osgEarth::Util::EarthManipulator</a>
 </li>
-<li>TIXML_ERROR_DOCUMENT_TOP_ONLY
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a679b15d950f29257700a724bb118c34d">TiXmlBase</a>
+<li>ADD
+: <a class="el" href="classosgEarth_1_1Symbology_1_1NumericExpression.html#a4476a1f4da7ca5de41e69dd13b74f198a10047c93b962babfbc66c040ca5348d2">osgEarth::Symbology::NumericExpression</a>
 </li>
-<li>TIXML_ERROR_EMBEDDED_NULL
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TiXmlBase</a>
+<li>ADD_ELEVATION_LAYER
+: <a class="el" href="structosgEarth_1_1MapModelChange.html#af25022d670929a5d72c1859060f81114a6698281474289b2e6e501a26a9c20ac4">osgEarth::MapModelChange</a>
 </li>
-<li>TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48adcc31ca78a9d507a88c9fafb3d18a3c4">TiXmlBase</a>
+<li>ADD_IMAGE_LAYER
+: <a class="el" href="structosgEarth_1_1MapModelChange.html#af25022d670929a5d72c1859060f81114a46b3aef057123daf5ad293050b0d5298">osgEarth::MapModelChange</a>
+, <a class="el" href="structTileUpdate.html#a6e936293df482c0d99b4aa5fe80bcabda678dff68a2a346db1648149b75e79243">TileUpdate</a>
 </li>
-<li>TIXML_ERROR_OPENING_FILE
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ab803949b8f12e03b5b57f86d9c52b614">TiXmlBase</a>
+<li>ADD_MASK_LAYER
+: <a class="el" href="structosgEarth_1_1MapModelChange.html#af25022d670929a5d72c1859060f81114a1a2b82f545c90fdc15107b591cef3525">osgEarth::MapModelChange</a>
 </li>
-<li>TIXML_ERROR_PARSING_CDATA
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48aab2c858631b5d38eae1e6675949b9cd4">TiXmlBase</a>
+<li>ADD_MODEL_LAYER
+: <a class="el" href="structosgEarth_1_1MapModelChange.html#af25022d670929a5d72c1859060f81114a16ec3f7c4fdea607a678ec1d52906e28">osgEarth::MapModelChange</a>
 </li>
-<li>TIXML_ERROR_PARSING_COMMENT
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a72e3072a44be499edb89593f6ce10f6c">TiXmlBase</a>
+<li>ALIGN_BOTTOM
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">osgEarth::Util::Controls::Control</a>
 </li>
-<li>TIXML_ERROR_PARSING_DECLARATION
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a4c200f9d125027ab449e2be7be471ba0">TiXmlBase</a>
+<li>ALIGN_CENTER
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1ab3b34efd4acd09720e1ef6441c0ad6fe">osgEarth::Util::Controls::Control</a>
 </li>
-<li>TIXML_ERROR_PARSING_ELEMENT
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5cbfcf7fe5e67f0cd1aef98deac55dd2">TiXmlBase</a>
+<li>ALIGN_LEFT
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aac9cc19c01d29206a1453a72cecf4152">osgEarth::Util::Controls::Control</a>
 </li>
-<li>TIXML_ERROR_PARSING_EMPTY
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5f2aee664733a20f13f6f77556b9fa85">TiXmlBase</a>
+<li>ALIGN_NONE
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a438cf94a5286b6720f9187561699694c">osgEarth::Util::Controls::Control</a>
 </li>
-<li>TIXML_ERROR_PARSING_UNKNOWN
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a24c814fdcf1d84704869e6f76b19cb6e">TiXmlBase</a>
+<li>ALIGN_RIGHT
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aeaefaf56dd2ef1d5e28ab607325730ff">osgEarth::Util::Controls::Control</a>
 </li>
-<li>TIXML_ERROR_READING_ATTRIBUTES
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TiXmlBase</a>
-</li>
-<li>TIXML_ERROR_READING_ELEMENT_VALUE
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48afefdc75db23215e846605a2b5af0c2d3">TiXmlBase</a>
-</li>
-<li>TIXML_ERROR_READING_END_TAG
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a175f7c72e2f9630bb96ef5137b325502">TiXmlBase</a>
-</li>
-<li>TIXML_ERROR_STRING_COUNT
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a14552894942250efcec6b00dc52fc48a">TiXmlBase</a>
-</li>
-<li>TIXML_NO_ERROR
-: <a class="el" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a750a76ca602241c416d5ec357d55fba1">TiXmlBase</a>
+<li>ALIGN_TOP
+: <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a6a262a1cc0167fd55c62abdb417d5183">osgEarth::Util::Controls::Control</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -278,6 +256,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

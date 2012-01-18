@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceanonymous__namespace_02SpatialData_8cpp_03.html#ad1fb18c28cfc1177f3d68359bd7f5bfd" title="anonymous_namespace\{SpatialData::cpp\}::getIndex" alt="" coords="303,85,628,115"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1GeoObject.html#ab222ab9849fb324da0062cf02bfb527e" title="osgEarth::Util::GeoObject::getLocation" alt="" coords="343,139,588,168"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="677,5,864,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="680,59,861,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="681,112,860,141"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="681,165,860,195"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="912,59,1163,88"/>
+</map>

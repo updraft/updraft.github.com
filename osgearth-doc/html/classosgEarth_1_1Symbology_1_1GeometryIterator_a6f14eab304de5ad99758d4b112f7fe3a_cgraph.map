@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1MultiGeometry.html#a97b8ca20db8dd9d87eb9e4ddecf2c87c" title="osgEarth::Symbology::MultiGeometry::getComponents" alt="" coords="375,5,713,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1Polygon.html#aef6967b31b28c8a5119269aaed5ad429" title="osgEarth::Symbology::Polygon::getHoles" alt="" coords="413,59,675,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="411,112,677,141"/>
+</map>

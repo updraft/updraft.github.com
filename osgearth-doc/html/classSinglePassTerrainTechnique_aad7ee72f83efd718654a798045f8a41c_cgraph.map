@@ -1,0 +1,40 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSinglePassTerrainTechnique.html#ab32efb9633174fc7d8f89a9521feb9cb" title="SinglePassTerrainTechnique::applyTileUpdates" alt="" coords="584,58,880,88"/>
+<area shape="rect" id="node14" href="$classSinglePassTerrainTechnique.html#a38db1d0b19580a4db1b8b29fa245702c" title="SinglePassTerrainTechnique::compile" alt="" coords="268,322,508,352"/>
+<area shape="rect" id="node5" href="$namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed" title="anonymous_namespace\{MeshConsolidator::cpp\}::copy" alt="" coords="1328,30,1669,60"/>
+<area shape="rect" id="node7" href="$classSinglePassTerrainTechnique.html#a569874547276caff6a69d142e7910538" title="SinglePassTerrainTechnique::getFrontGeode" alt="" coords="1739,32,2021,61"/>
+<area shape="rect" id="node9" href="$classSinglePassTerrainTechnique.html#aa775992f0528849e57df987f7ea2a99a" title="SinglePassTerrainTechnique::getParentStateSet" alt="" coords="956,84,1257,113"/>
+<area shape="rect" id="node11" href="$classSinglePassTerrainTechnique.html#a4f815dffbcff201fdd1703ba7ee8e288" title="SinglePassTerrainTechnique::getActiveStateSet" alt="" coords="1348,84,1649,113"/>
+<area shape="rect" id="node16" href="$classSinglePassTerrainTechnique.html#a46e28db8765c6497caa7d6d89e4acb64" title="SinglePassTerrainTechnique::createGeometry" alt="" coords="588,376,876,405"/>
+<area shape="rect" id="node53" href="$classSinglePassTerrainTechnique.html#a0804134cb4f0834a42e6630329884b4e" title="SinglePassTerrainTechnique::createStateSet" alt="" coords="591,608,873,637"/>
+<area shape="rect" id="node75" href="$structTileUpdate.html#a8462dd4c2eee5ffe575de63f4f5bafb6" title="TileUpdate::getAction" alt="" coords="659,216,805,245"/>
+<area shape="rect" id="node77" href="$structTileUpdate.html#a9290735e48c4063f0ca693463d082ab3" title="TileUpdate::getLayerUID" alt="" coords="649,269,815,298"/>
+<area shape="rect" id="node79" href="$classosgEarth_1_1ProgressCallback.html#abe0f8bf93f93716f3aad268c0fe4c1e7" title="osgEarth::ProgressCallback::isCanceled" alt="" coords="603,322,861,352"/>
+<area shape="rect" id="node81" href="$classSinglePassTerrainTechnique.html#aaff3bb19a4bf4cfc19060c3c26053fb9" title="SinglePassTerrainTechnique::prepareImageLayerUpdate" alt="" coords="557,766,907,796"/>
+<area shape="rect" id="node18" href="$classSinglePassTerrainTechnique.html#a51849da28ac79c19e5f9820160daf5e0" title="SinglePassTerrainTechnique::calculateSampling" alt="" coords="956,401,1257,430"/>
+<area shape="rect" id="node20" href="$classTile.html#a36219d91d8b17471099bcc5c4bc1b2ed" title="Tile::getElevationLayer" alt="" coords="1421,348,1576,377"/>
+<area shape="rect" id="node24" href="$classTile.html#a7c0c83673975b5474d61a9845a0cd02b" title="Tile::getTerrain" alt="" coords="1444,454,1553,484"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1GeoLocator.html#a125f2bd702f4a911c65c6fe9334c640a" title="osgEarth::GeoLocator::getGeographicFromGeocentric" alt="" coords="1332,606,1665,636"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1Symbology_1_1Polygon.html#aef6967b31b28c8a5119269aaed5ad429" title="osgEarth::Symbology::Polygon::getHoles" alt="" coords="976,244,1237,273"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="973,297,1240,326"/>
+<area shape="rect" id="node40" href="$classCustomColorLayer.html#af539b1957865fd51e5eb75ef7bd497ed" title="CustomColorLayer::getUID" alt="" coords="1016,556,1197,585"/>
+<area shape="rect" id="node42" href="$classTerrain.html#a9137bf26a5edaf11515e74aa58a6caf4" title="Terrain::getVerticalScale" alt="" coords="1024,190,1189,220"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1Symbology_1_1Geometry.html#ab226e51c4de9dac844f6ed63fded1129" title="osgEarth::Symbology::Geometry::toVec3Array" alt="" coords="961,137,1252,166"/>
+<area shape="rect" id="node22" href="$classTerrain.html#afc533f56374093322731448e6a4b813e" title="Terrain::getSampleRatio" alt="" coords="1417,401,1580,430"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1GeoLocator.html#a3d6d7da71a8187c45110890a550b5655" title="osgEarth::GeoLocator::GeoLocator" alt="" coords="1768,660,1992,689"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1GeoExtent.html#afa0bd831daf0541cbbb161763ed9291f" title="osgEarth::GeoExtent::getBounds" alt="" coords="1773,553,1987,582"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1GeoLocator.html#a0ed2730a383c6a42c1df8bb6b07fc6df" title="osgEarth::GeoLocator::getDataExtent" alt="" coords="1760,606,2000,636"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::begin" alt="" coords="1307,190,1691,220"/>
+<area shape="rect" id="node49" href="$classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::end" alt="" coords="1312,244,1685,273"/>
+<area shape="rect" id="node51" href="$classosgEarth_1_1MixinVector.html#a29d1318457f75e1e0841d7e20f61dadb" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::size" alt="" coords="1311,137,1687,166"/>
+<area shape="rect" id="node55" href="$classSinglePassTerrainTechnique.html#aaf6c1a4c000dbcefc89a2c1b795dc26f" title="SinglePassTerrainTechnique::createGeoImage" alt="" coords="961,766,1252,796"/>
+<area shape="rect" id="node65" href="$classCustomColorLayer.html#abf341a630a68be118bfe8ab562b6eb78" title="CustomColorLayer::isFallbackData" alt="" coords="993,713,1220,742"/>
+<area shape="rect" id="node67" href="$classosgEarth_1_1GeoExtent.html#a8151cbc0905e59c9d88e6fad5690a0ce" title="osgEarth::GeoExtent::isValid" alt="" coords="1012,660,1201,689"/>
+<area shape="rect" id="node58" href="$classCustomColorLayer.html#a761fdfb07388be6ac6438c2b96c7639d" title="CustomColorLayer::getImage" alt="" coords="1403,766,1595,796"/>
+<area shape="rect" id="node60" href="$classCustomColorLayer.html#ac9725adc85c194c7b4a4c99ed26d3d52" title="CustomColorLayer::getLocator" alt="" coords="1399,820,1599,849"/>
+<area shape="rect" id="node69" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="1405,660,1592,689"/>
+<area shape="rect" id="node71" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="1408,713,1589,742"/>
+<area shape="rect" id="node73" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="1755,713,2005,742"/>
+<area shape="rect" id="node84" href="$classTileFrame.html#aa64f473bf7c23057885cb44209238ea2" title="TileFrame::getCustomColorLayer" alt="" coords="1000,820,1213,849"/>
+<area shape="rect" id="node87" href="$classosgEarth_1_1GeoImage.html#a40db87ae60b4dde189b1f218ff3c8777" title="osgEarth::GeoImage::valid" alt="" coords="1019,873,1195,902"/>
+</map>

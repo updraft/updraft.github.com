@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MaskLayerOptions.html#af6079b8a9f01964f236c9c977ca3aae8" title="osgEarth::MaskLayerOptions::fromConfig" alt="" coords="365,5,627,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1MaskLayerOptions.html#a9c1b4f35e1d63eff59be2cc3edbce10b" title="osgEarth::MaskLayerOptions::name" alt="" coords="381,59,611,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1MaskLayerOptions.html#acdc35d5d469ce6da597b11de47f1c4b8" title="osgEarth::MaskLayerOptions::setDefaults" alt="" coords="363,112,629,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Config.html#a95cece81f3d0f072ce4e83fdd9b7e665" title="osgEarth::Config::getIfSet" alt="" coords="679,5,852,35"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1optional.html#ab6d549a85b0bea66eab29423445f4572" title="osgEarth::optional::defaultValue" alt="" coords="903,5,1108,35"/>
+</map>

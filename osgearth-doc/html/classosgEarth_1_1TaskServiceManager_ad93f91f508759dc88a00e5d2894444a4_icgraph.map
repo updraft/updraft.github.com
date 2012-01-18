@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1TaskServiceManager.html#af787ea9fc38285b24ccf4917c7036538" title="osgEarth::TaskServiceManager::add" alt="" coords="359,5,593,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1TaskServiceManager.html#a7cda61fdd55fc27424f691c093462ed9" title="osgEarth::TaskServiceManager::remove" alt="" coords="348,59,604,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1TaskServiceManager.html#add070e6fb57f6ab7030b2060b1670aba" title="osgEarth::TaskServiceManager::setNumThreads" alt="" coords="323,112,629,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1TaskServiceManager.html#ad99aa899712b75ce21640308f10a6f4f" title="osgEarth::TaskServiceManager::setWeight" alt="" coords="340,165,612,195"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TaskServiceManager.html#a693469abce73622767833a1c55e41d8d" title="osgEarth::TaskServiceManager::getOrAdd" alt="" coords="679,5,945,35"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#afb002f6001ac23651593289a629b925d" title="osgEarth::Util::IntersectingDragger::setColor" alt="" coords="308,5,588,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a3d8a1272db3ffbe332f9f6b2ef42d523" title="osgEarth::Util::IntersectingDragger::setNode" alt="" coords="308,59,588,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a0c62b47d4f855a8f8ac68dd9d4da7174" title="osgEarth::Util::IntersectingDragger::setPickColor" alt="" coords="295,112,601,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#a4213bb71847650b0960e515fd3d0b9a2" title="osgEarth::Util::IntersectingDragger::setSize" alt="" coords="311,165,585,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#afdbf9f7635aeb0101521fe21bf53fabc" title="osgEarth::Util::IntersectingDragger::setupDefaultGeometry" alt="" coords="267,219,629,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1IntersectingDragger.html#ae5324acb61f17355e69257980bf6af33" title="osgEarth::Util::IntersectingDragger::setDrawableColor" alt="" coords="677,219,1013,248"/>
+</map>

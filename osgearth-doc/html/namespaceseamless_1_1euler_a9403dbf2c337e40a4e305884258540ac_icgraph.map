@@ -1,4 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceseamless_1_1qsc.html#a04409bed687117f09b4dc8fd881935fa" title="seamless::qsc::latLonToFaceCoords" alt="" coords="228,5,463,35"/>
-<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6" title="seamless::euler::latLonToFaceCoords" alt="" coords="224,59,467,88"/>
+<area shape="rect" id="node3" href="$namespaceseamless_1_1qsc.html#a2f2870916c419e7ff4a142d0fe683299" title="seamless::qsc::latLonToFaceCoords" alt="" coords="228,59,463,88"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59" title="seamless::euler::latLonToFaceCoords" alt="" coords="224,112,467,141"/>
+<area shape="rect" id="node7" href="$classseamless_1_1QscFaceLocator.html#a9347485cfcb8906597ebfa1d7e21cac5" title="seamless::QscFaceLocator::convertModelToLocal" alt="" coords="516,5,831,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1CubeFaceLocator.html#acb1dde57d1ff5deea78d9c2086759bde" title="osgEarth::CubeFaceLocator::convertModelToLocal" alt="" coords="515,59,832,88"/>
+<area shape="rect" id="node11" href="$classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="523,112,824,141"/>
+<area shape="rect" id="node13" href="$classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="520,165,827,195"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1CubeSpatialReference.html#a0c93b28558303617a9cc543e2aaec3ff" title="osgEarth::CubeSpatialReference::postTransform" alt="" coords="521,219,825,248"/>
 </map>

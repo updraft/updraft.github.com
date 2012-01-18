@@ -1,4 +1,18 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1" title="make3DImage" alt="" coords="104,5,211,35"/>
-<area shape="rect" id="node5" href="$osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="129,59,185,88"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1MapNode.html#ae21b527e746fc0da94870ff3d57ed210" title="osgEarth::MapNode::addTerrainDecorator" alt="" coords="167,5,431,35"/>
+<area shape="rect" id="node7" href="$osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7" title="createMenu" alt="" coords="253,59,344,88"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="188,112,409,141"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="204,165,393,195"/>
+<area shape="rect" id="node19" href="$osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1" title="make3DImage" alt="" coords="245,219,352,248"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aa6e3d07d7cd5f246b101cf66f1e5e35c" title="osgEarth::Util::OceanSurfaceNode::setInvertMask" alt="" coords="141,272,456,301"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aeb7a2c75547e29abc11235026b198d88" title="osgEarth::Util::OceanSurfaceNode::setOceanMaskImageLayer" alt="" coords="105,325,492,355"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#af064c70686b645e54532d74aa2ecb9f4" title="osgEarth::Util::OceanSurfaceNode::setOceanSurfaceImage" alt="" coords="115,379,483,408"/>
+<area shape="rect" id="node35" href="$osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="271,432,327,461"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TerrainDecorator.html#a81e65314d1637a2fe5785996c7bdb18a" title="osgEarth::TerrainDecorator::onInstall" alt="" coords="577,5,812,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="555,59,835,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a0ead895b4a8e5972807293ee1336a9ab" title="osgEarth::Util::Controls::ControlCanvas::ControlCanvas" alt="" coords="896,59,1245,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a5fd6aeb9e88aa39864c3b9c5afb7fc97" title="osgEarth::Util::Controls::ControlCanvas::init" alt="" coords="1295,59,1572,88"/>
+<area shape="rect" id="node21" href="$namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de" title="osgEarth::notify" alt="" coords="637,219,752,248"/>
+<area shape="rect" id="node23" href="$namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="988,219,1153,248"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a19ab99f11b53ec4410a8dd02f0cdedd2" title="osgEarth::Util::OceanSurfaceNode::shadersDirty" alt="" coords="541,325,848,355"/>
 </map>

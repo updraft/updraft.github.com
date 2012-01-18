@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Features_1_1FeatureSource.html" title="osgEarth::Features::FeatureSource" alt="" coords="2233,245,2460,275"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1Revisioned.html" title="osgEarth::Revisioned\&lt; osg::Object \&gt;" alt="" coords="1868,59,2105,88"/>
+<area shape="rect" id="node6" href="$classosg_1_1Object.html" title="osg::Object" alt="" coords="1465,5,1553,35"/>
+<area shape="rect" id="node8" href="$structosgEarth_1_1Revision.html" title="osgEarth::Revision" alt="" coords="1443,59,1576,88"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1Features_1_1FeatureSourceOptions.html" title="osgEarth::Features::FeatureSourceOptions" alt="" coords="1852,352,2121,381"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html" title="osgEarth::Drivers::OGRFeatureOptions" alt="" coords="2221,415,2472,444"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="1168,301,1368,331"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="553,289,719,319"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1ProfileOptions.html" title="osgEarth::ProfileOptions" alt="" coords="980,249,1143,279"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="279,289,399,319"/>
+<area shape="rect" id="node41" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Config \&gt;" alt="" coords="765,553,955,583"/>
+<area shape="rect" id="node18" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,289,152,319"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,195,157,224"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1URI.html" title="osgEarth::URI" alt="" coords="285,112,392,141"/>
+<area shape="rect" id="node22" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="1423,404,1596,433"/>
+<area shape="rect" id="node24" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; std::string \&gt;" alt="" coords="532,417,740,447"/>
+<area shape="rect" id="node26" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProfileOptions \&gt;" alt="" coords="1393,249,1625,279"/>
+<area shape="rect" id="node32" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Bounds \&gt;" alt="" coords="539,164,733,193"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Bounds.html" title="osgEarth::Bounds" alt="" coords="276,165,401,195"/>
+<area shape="rect" id="node36" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="553,224,719,253"/>
+<area shape="rect" id="node44" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; URI \&gt;" alt="" coords="1652,163,1825,192"/>
+</map>

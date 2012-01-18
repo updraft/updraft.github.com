@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a7dd23f6039638d2502eb22f67446d74e" title="osgEarth::Symbology::Taggable::containsTags" alt="" coords="389,5,683,35"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="453,59,619,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1SkinResource.html#a36ca1f41372e1d182e52f00954e17a63" title="osgEarth::Symbology::SkinResource::isTiled" alt="" coords="395,112,677,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1SkinSymbol.html#a3781d6cbc4a9cd94e95cfccd66e3e313" title="osgEarth::Symbology::SkinSymbol::isTiled" alt="" coords="401,165,671,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Symbology_1_1SkinSymbol.html#a7bb4f85386f79f4385dee98bdd11977a" title="osgEarth::Symbology::SkinSymbol::maxObjectHeight" alt="" coords="369,219,703,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Symbology_1_1SkinResource.html#a379e24019e6ba266393ae161af2d5d0f" title="osgEarth::Symbology::SkinResource::maxObjectHeight" alt="" coords="363,272,709,301"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Symbology_1_1SkinSymbol.html#a539339d20c6cf56d98ad55a61fb31625" title="osgEarth::Symbology::SkinSymbol::minObjectHeight" alt="" coords="371,325,701,355"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Symbology_1_1SkinResource.html#a3e96e16fd16a729282993699dacaf85c" title="osgEarth::Symbology::SkinResource::minObjectHeight" alt="" coords="365,379,707,408"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Symbology_1_1SkinSymbol.html#a8499fbe414000112290130e845e542e3" title="osgEarth::Symbology::SkinSymbol::objectHeight" alt="" coords="383,432,689,461"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Symbology_1_1Taggable.html#a62f213fff1aae4907895eca7454820f5" title="osgEarth::Symbology::Taggable::tags" alt="" coords="416,485,656,515"/>
+<area shape="rect" id="node23" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="453,539,619,568"/>
+</map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__map_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_map/osgearth_map.cpp</h1>  </div>
@@ -123,24 +139,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039     osg::ArgumentParser arguments(&amp;argc,argv);
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041     <span class="comment">// create the map.</span>
-<a name="l00042"></a>00042     Map* map = <span class="keyword">new</span> Map();
+<a name="l00042"></a>00042     <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Map.html">Map</a>();
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044     <span class="comment">// add a TMS imager layer:</span>
-<a name="l00045"></a>00045     TMSOptions imagery;
-<a name="l00046"></a>00046     imagery.url() = <span class="stringliteral">&quot;http://readymap.org/readymap/tiles/1.0.0/7/&quot;</span>;
-<a name="l00047"></a>00047     map-&gt;addImageLayer( <span class="keyword">new</span> ImageLayer(<span class="stringliteral">&quot;Imagery&quot;</span>, imagery) );
+<a name="l00045"></a>00045     <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> imagery;
+<a name="l00046"></a>00046     imagery.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://readymap.org/readymap/tiles/1.0.0/7/&quot;</span>;
+<a name="l00047"></a>00047     map-&gt;<a class="code" href="classosgEarth_1_1Map.html#aff4f55389d999d345b4822eaf74cecf0">addImageLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>(<span class="stringliteral">&quot;Imagery&quot;</span>, imagery) );
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049     <span class="comment">// add a TMS elevation layer:</span>
-<a name="l00050"></a>00050     TMSOptions elevation;
-<a name="l00051"></a>00051     elevation.url() = <span class="stringliteral">&quot;http://readymap.org/readymap/tiles/1.0.0/9/&quot;</span>;
-<a name="l00052"></a>00052     map-&gt;addElevationLayer( <span class="keyword">new</span> ElevationLayer(<span class="stringliteral">&quot;Elevation&quot;</span>, elevation) );
+<a name="l00050"></a>00050     <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> elevation;
+<a name="l00051"></a>00051     elevation.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://readymap.org/readymap/tiles/1.0.0/9/&quot;</span>;
+<a name="l00052"></a>00052     map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a0b9cb734082b8f3cf9b0d0918690c7bd">addElevationLayer</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ElevationLayer.html">ElevationLayer</a>(<span class="stringliteral">&quot;Elevation&quot;</span>, elevation) );
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054     <span class="comment">// make the map scene graph:</span>
-<a name="l00055"></a>00055     MapNode* node = <span class="keyword">new</span> MapNode( map );
+<a name="l00055"></a>00055     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* node = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>( map );
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057     <span class="comment">// initialize a viewer:</span>
 <a name="l00058"></a>00058     osgViewer::Viewer viewer(arguments);
-<a name="l00059"></a>00059     viewer.setCameraManipulator( <span class="keyword">new</span> EarthManipulator );
+<a name="l00059"></a>00059     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a> );
 <a name="l00060"></a>00060     viewer.setSceneData( node );
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062     <span class="comment">// osgEarth benefits from pre-compilation of GL objects in the pager. In newer versions of</span>
@@ -159,14 +175,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__map_8cpp.html">osgearth_map.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -181,6 +189,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

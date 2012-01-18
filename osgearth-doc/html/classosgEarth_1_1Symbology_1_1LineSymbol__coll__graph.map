@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Symbology_1_1Symbol.html" title="osgEarth::Symbology::Symbol" alt="" coords="668,59,865,88"/>
+<area shape="rect" id="node4" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="397,5,485,35"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="365,59,517,88"/>
+<area shape="rect" id="node8" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Stroke \&gt;" alt="" coords="672,117,861,147"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1Symbology_1_1Stroke.html" title="osgEarth::Symbology::Stroke" alt="" coords="345,124,537,153"/>
+<area shape="rect" id="node12" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; unsigned short \&gt;" alt="" coords="7,44,241,73"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="36,97,212,127"/>
+<area shape="rect" id="node16" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LineJoinStyle \&gt;" alt="" coords="9,151,239,180"/>
+<area shape="rect" id="node18" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LineCapStyle \&gt;" alt="" coords="9,204,239,233"/>
+</map>

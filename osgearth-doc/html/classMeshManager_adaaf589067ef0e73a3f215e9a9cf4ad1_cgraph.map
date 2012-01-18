@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978" title="osgEarth::GeoImage::getImage" alt="" coords="207,5,409,35"/>
+<area shape="rect" id="node5" href="$structDiamond.html#a63181f0cbc2a707e9653a1b5ae369f24" title="Diamond::merge" alt="" coords="249,185,367,215"/>
+<area shape="rect" id="node11" href="$structDiamond.html#a99d5910fcf59bf2fb94ea4a4e15c0373" title="Diamond::refreshDrawable" alt="" coords="1213,237,1389,267"/>
+<area shape="rect" id="node36" href="$MeshManager_8cpp.html#acd4ed78acce658c89b946ec0bb2f2445" title="outlineTexture" alt="" coords="256,317,360,347"/>
+<area shape="rect" id="node39" href="$structDiamond.html#ac292d950221eb5e48916943adb2363c5" title="Diamond::split" alt="" coords="255,264,361,293"/>
+<area shape="rect" id="node7" href="$structDiamond.html#aa6782b05916e296943538332d1fe3abc" title="Diamond::dirty" alt="" coords="992,264,1099,293"/>
+<area shape="rect" id="node29" href="$structDiamond.html#ae1ef02049763861f989d9a37306071ca" title="Diamond::removeChild" alt="" coords="473,160,628,189"/>
+<area shape="rect" id="node9" href="$classMeshManager.html#ad166dbb08e9178a4d830847c91f711dc" title="MeshManager::queueForRefresh" alt="" coords="1196,291,1407,320"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="1457,291,1647,320"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="1459,344,1645,373"/>
+<area shape="rect" id="node17" href="$structDiamond.html#aaa003d1932c27e6444e20ef2de94fa47" title="Diamond::node" alt="" coords="1497,436,1607,465"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="1461,131,1643,160"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="1463,184,1641,213"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="1463,237,1641,267"/>
+<area shape="rect" id="node19" href="$classMeshManager.html#aaabb61d8f0f173737b48dd238cbe9a4d" title="MeshManager::node" alt="" coords="1752,436,1891,465"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="1696,131,1947,160"/>
+<area shape="rect" id="node32" href="$structDiamond.html#ad8655e5f02f59782bb5a83f48a76d8aa" title="Diamond::getNeighbor" alt="" coords="717,264,869,293"/>
+<area shape="rect" id="node34" href="$classMeshManager.html#acaed7501a0a46f3d9b7adb1bb0f18278" title="MeshManager::removeNode" alt="" coords="700,160,887,189"/>
+<area shape="rect" id="node43" href="$structDiamond.html#a7c2cc654038c8cdbd4f397f924731e96" title="Diamond::getOrCreateChild" alt="" coords="460,475,641,504"/>
+<area shape="rect" id="node45" href="$structDiamond.html#a67a49af4cc8109874fa5e09d4946abf8" title="Diamond::activate" alt="" coords="729,659,857,688"/>
+<area shape="rect" id="node52" href="$structDiamond.html#a0bb775bc54a9a4781586a148f1743b61" title="Diamond::Diamond" alt="" coords="727,421,860,451"/>
+<area shape="rect" id="node54" href="$structDiamond.html#ae4f06eac6fc1a10267d6a4772b7fff73" title="Diamond::getOrCreateNeighbor" alt="" coords="691,475,896,504"/>
+<area shape="rect" id="node56" href="$structDiamond.html#a422c2a134b5ca3c64871ecda8d649e4b" title="Diamond::q" alt="" coords="749,528,837,557"/>
+<area shape="rect" id="node58" href="$structDiamond.html#af63b93743f9cbdf323d644628b2aca37" title="Diamond::setChild" alt="" coords="728,368,859,397"/>
+<area shape="rect" id="node61" href="$structDiamond.html#a884f386ba5b0f292ef278fbcdcb2ba38" title="Diamond::setCoord" alt="" coords="727,605,860,635"/>
+<area shape="rect" id="node47" href="$structDiamond.html#a92f8386bf6603e5146d0df6b0db0693c" title="Diamond::computeBound" alt="" coords="1217,515,1385,544"/>
+<area shape="rect" id="node50" href="$classMeshManager.html#a7533ed486cffaa5b6f22d392b02e43c2" title="MeshManager::queueForImage" alt="" coords="944,659,1147,688"/>
+</map>

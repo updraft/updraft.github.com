@@ -1,3 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="93,5,144,35"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="128,5,419,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1FeatureTileSource.html#a80af978c5495abab5ab9779479162a07" title="osgEarth::Features::FeatureTileSource::createImage" alt="" coords="111,59,436,88"/>
+<area shape="rect" id="node7" href="$osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="248,112,299,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1GeometryFeatureCursor.html#a8e1bbfce699cf352c8b984b1f84032c4" title="osgEarth::Features::GeometryFeatureCursor::nextFeature" alt="" coords="95,165,452,195"/>
 </map>

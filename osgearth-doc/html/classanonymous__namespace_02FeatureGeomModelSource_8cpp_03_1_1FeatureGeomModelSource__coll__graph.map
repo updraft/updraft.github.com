@@ -1,0 +1,38 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Features_1_1FeatureModelSource.html" title="osgEarth::Features::FeatureModelSource" alt="" coords="3361,608,3623,637"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1ModelSource.html" title="osgEarth::ModelSource" alt="" coords="2556,349,2713,379"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1Revisioned.html" title="osgEarth::Revisioned\&lt; osg::Object \&gt;" alt="" coords="2053,59,2291,88"/>
+<area shape="rect" id="node8" href="$classosg_1_1Object.html" title="osg::Object" alt="" coords="1577,5,1665,35"/>
+<area shape="rect" id="node10" href="$structosgEarth_1_1Revision.html" title="osgEarth::Revision" alt="" coords="1555,59,1688,88"/>
+<area shape="rect" id="node12" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; double \&gt;" alt="" coords="1527,924,1716,953"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1Features_1_1FeatureModelSourceOptions.html" title="osgEarth::Features::FeatureModelSourceOptions" alt="" coords="2941,635,3248,664"/>
+<area shape="rect" id="node49" href="$classosgEarth_1_1Features_1_1GriddingPolicy.html" title="osgEarth::Features::GriddingPolicy" alt="" coords="2060,509,2284,539"/>
+<area shape="rect" id="node83" href="$classosgEarth_1_1Features_1_1GeometryCompilerOptions.html" title="osgEarth::Features::GeometryCompilerOptions" alt="" coords="2025,1077,2319,1107"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1ModelSourceOptions.html" title="osgEarth::ModelSourceOptions" alt="" coords="2071,413,2273,443"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="1521,864,1721,893"/>
+<area shape="rect" id="node63" href="$classosgEarth_1_1Features_1_1FeatureSourceOptions.html" title="osgEarth::Features::FeatureSourceOptions" alt="" coords="2037,755,2307,784"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="729,1016,895,1045"/>
+<area shape="rect" id="node71" href="$classosgEarth_1_1ProfileOptions.html" title="osgEarth::ProfileOptions" alt="" coords="1100,789,1263,819"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="279,1044,399,1073"/>
+<area shape="rect" id="node22" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,1044,152,1073"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,1120,157,1149"/>
+<area shape="rect" id="node58" href="$classosgEarth_1_1Symbology_1_1StringExpression.html" title="osgEarth::Symbology::StringExpression" alt="" coords="428,1155,681,1184"/>
+<area shape="rect" id="node26" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="1535,549,1708,579"/>
+<area shape="rect" id="node40" href="$classosgEarth_1_1Features_1_1FeatureDisplayLayout.html" title="osgEarth::Features::FeatureDisplayLayout" alt="" coords="2039,221,2305,251"/>
+<area shape="rect" id="node28" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="1533,236,1709,265"/>
+<area shape="rect" id="node30" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="729,295,895,324"/>
+<area shape="rect" id="node80" href="$classosgEarth_1_1Drivers_1_1FeatureGeomModelOptions.html" title="osgEarth::Drivers::FeatureGeomModelOptions" alt="" coords="3347,661,3637,691"/>
+<area shape="rect" id="node36" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Geometry::Type \&gt;" alt="" coords="2512,983,2757,1012"/>
+<area shape="rect" id="node38" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; FeatureDisplayLayout \&gt;" alt="" coords="2496,403,2773,432"/>
+<area shape="rect" id="node42" href="$classosg_1_1Referenced.html" title="Referenced" alt="" coords="1577,177,1665,207"/>
+<area shape="rect" id="node47" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; GriddingPolicy \&gt;" alt="" coords="2517,519,2752,548"/>
+<area shape="rect" id="node53" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CullingTechnique \&gt;" alt="" coords="1496,347,1747,376"/>
+<area shape="rect" id="node56" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; StringExpression \&gt;" alt="" coords="1496,1183,1747,1212"/>
+<area shape="rect" id="node61" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; FeatureSourceOptions \&gt;" alt="" coords="2495,839,2775,868"/>
+<area shape="rect" id="node67" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; std::string \&gt;" alt="" coords="708,751,916,780"/>
+<area shape="rect" id="node69" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProfileOptions \&gt;" alt="" coords="1505,779,1737,808"/>
+<area shape="rect" id="node75" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Bounds \&gt;" alt="" coords="715,837,909,867"/>
+<area shape="rect" id="node77" href="$classosgEarth_1_1Bounds.html" title="osgEarth::Bounds" alt="" coords="276,837,401,867"/>
+<area shape="rect" id="node86" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; GeoInterpolation \&gt;" alt="" coords="1499,1129,1744,1159"/>
+<area shape="rect" id="node91" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; osgEarth::Features::ResampleFilter::ResampleMode \&gt;" alt="" coords="1393,1025,1849,1055"/>
+</map>

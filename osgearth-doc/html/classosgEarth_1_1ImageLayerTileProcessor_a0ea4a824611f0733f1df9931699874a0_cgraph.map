@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structosgEarth_1_1ImageUtils_1_1PixelVisitor.html#aadc93ccdf4e42649a4b8e1b6dd5f416e" title="osgEarth::ImageUtils::PixelVisitor::accept" alt="" coords="355,5,621,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1ImageUtils.html#acd9d8ddb03fc871d725881d516384023" title="osgEarth::ImageUtils::areEquivalent" alt="" coords="372,59,604,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ImageUtils.html#a2c95a17c4bce58c28abde303db749755" title="osgEarth::ImageUtils::canConvert" alt="" coords="932,111,1151,140"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1ImageUtils.html#aa823b7a7857bb0e568068aa1ba734c9e" title="osgEarth::ImageUtils::convertToRGBA8" alt="" coords="360,163,616,192"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1ImageUtils.html#ad43b062b9b0a9eb0a475ef6eb6f1ad60" title="osgEarth::ImageUtils::hasAlphaChannel" alt="" coords="361,216,615,245"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1ImageUtils.html#a8414cd0e0ff334e107ce1b2ce4c862f4" title="osgEarth::ImageUtils::isCompressed" alt="" coords="369,269,607,299"/>
+<area shape="rect" id="node46" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="405,323,571,352"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1ImageLayerOptions.html#abe6a71fb7cc7e4459d6e7ac89c79cd3f" title="osgEarth::ImageLayerOptions::transparentColor" alt="" coords="339,376,637,405"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ImageUtils_1_1PixelWriter.html#a07171afa2aaceeb9b5111eb29e6739df" title="osgEarth::ImageUtils::PixelWriter::supports" alt="" coords="1204,84,1479,113"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1ImageUtils_1_1PixelReader.html#a989d213fab0a85098f0f61f70ed081b3" title="osgEarth::ImageUtils::PixelReader::supports" alt="" coords="1200,137,1483,167"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02ImageUtils_8cpp_03.html#af0b27d85e29e89fb7b2928a02a676596" title="anonymous_namespace\{ImageUtils::cpp\}::getWriter" alt="" coords="1539,84,1861,113"/>
+<area shape="rect" id="node15" href="$namespaceanonymous__namespace_02HTTPClient_8cpp_03.html#aded5b15bd1c39a55b5809d05ac3afa9d" title="anonymous_namespace\{HTTPClient::cpp\}::getReader" alt="" coords="1532,137,1868,167"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1HTTPResponse.html#a1510f46ba168edfcb48f40dbc123725f" title="osgEarth::HTTPResponse::getMimeType" alt="" coords="1944,84,2205,113"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Registry.html#abfab9ddc09d2ecce49d8b6838e152692" title="osgEarth::Registry::getReaderWriterForMimeType" alt="" coords="1917,137,2232,167"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="2281,164,2468,193"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="2519,164,2705,193"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="2755,84,3083,113"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="2807,137,3031,167"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="2797,191,3040,220"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="2796,244,3041,273"/>
+<area shape="rect" id="node37" href="$classosgEarth_1_1ImageUtils.html#a87bf45d4d400ca1187aa51e5853e5ef5" title="osgEarth::ImageUtils::convert" alt="" coords="687,163,881,192"/>
+<area shape="rect" id="node40" href="$classosgEarth_1_1ImageUtils.html#a7933afbe98be55cbf1a80dc3c739cdbd" title="osgEarth::ImageUtils::cloneImage" alt="" coords="932,164,1151,193"/>
+</map>

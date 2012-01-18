@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -86,7 +116,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_vars_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_vars_0x67.html#index_g"><span>g</span></a></li>
+      <li><a href="functions_vars_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_vars_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_vars_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_vars_0x6c.html#index_l"><span>l</span></a></li>
       <li class="current"><a href="functions_vars_0x6d.html#index_m"><span>m</span></a></li>
       <li><a href="functions_vars_0x6e.html#index_n"><span>n</span></a></li>
@@ -97,41 +129,199 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_vars_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="functions_vars_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_vars_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_vars_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_vars_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>m_buf
+: <a class="el" href="classagg_1_1rendering__buffer.html#af160c1c239ae68a85b4ac8f8f395e7f2">agg::rendering_buffer</a>
+</li>
+<li>m_cells
+: <a class="el" href="classagg_1_1outline.html#ab8d6bbd642142b1fe6f8d115baffbecb">agg::outline</a>
+</li>
+<li>m_close_x
+: <a class="el" href="classagg_1_1outline.html#a27deca183262a4b60b860d970380f32c">agg::outline</a>
+</li>
+<li>m_close_y
+: <a class="el" href="classagg_1_1outline.html#a1a0ed09a0974bc1351de6e8c350c832b">agg::outline</a>
+</li>
+<li>m_counts
+: <a class="el" href="classagg_1_1scanline.html#a45e2807e7946a8dd00d1a4d08166707f">agg::scanline</a>
+</li>
+<li>m_covers
+: <a class="el" href="classagg_1_1scanline_1_1iterator.html#ad298d27330c6e76a0568b5ccc434b33b">agg::scanline::iterator</a>
+, <a class="el" href="classagg_1_1scanline.html#a1a887930b3bf7d6cd8b26dd62c283668">agg::scanline</a>
+</li>
+<li>m_cur_block
+: <a class="el" href="classagg_1_1outline.html#ade72b351355113c250d678d977b4426c">agg::outline</a>
+</li>
+<li>m_cur_cell
+: <a class="el" href="classagg_1_1outline.html#a57a993e702aada8849d5edc11cc12631">agg::outline</a>
+</li>
+<li>m_cur_cell_ptr
+: <a class="el" href="classagg_1_1outline.html#a0e803aab5a705d41c269b03aba6c2e57">agg::outline</a>
+</li>
+<li>m_cur_count
+: <a class="el" href="classagg_1_1scanline_1_1iterator.html#a279db49ea7f41f86e5037f02353318bc">agg::scanline::iterator</a>
+, <a class="el" href="classagg_1_1scanline.html#a7751084a915fa48241d46a328b78d59b">agg::scanline</a>
+</li>
+<li>m_cur_start_ptr
+: <a class="el" href="classagg_1_1scanline_1_1iterator.html#ab7a37601c38ae766a09e11c7cb089710">agg::scanline::iterator</a>
+, <a class="el" href="classagg_1_1scanline.html#aa7b4f12d48b3bc569886e05a95040abd">agg::scanline</a>
+</li>
+<li>m_cur_x
+: <a class="el" href="classagg_1_1outline.html#a63babd8cfbf10f1dbc918235236fc088">agg::outline</a>
+</li>
+<li>m_cur_y
+: <a class="el" href="classagg_1_1outline.html#a109bb5dbc4b0e1d991dd040851543e02">agg::outline</a>
+</li>
+<li>m_dx
+: <a class="el" href="classagg_1_1scanline.html#a533e3c057ad174cb9e79655f3f898301">agg::scanline</a>
+</li>
+<li>m_dy
+: <a class="el" href="classagg_1_1scanline.html#ae726eea162f018d564931bc548d9e5b6">agg::scanline</a>
+</li>
+<li>m_filling_rule
+: <a class="el" href="classagg_1_1rasterizer.html#a4246263df2d7b08fcfec11e084a83770">agg::rasterizer</a>
+</li>
+<li>m_flags
+: <a class="el" href="classagg_1_1outline.html#a7f6ed6a66a19a411a3f87250eb6adfe4">agg::outline</a>
+</li>
+<li>m_gamma
+: <a class="el" href="classagg_1_1rasterizer.html#a8e62a498107f319de7cc718120b59a2b">agg::rasterizer</a>
+</li>
+<li>m_height
+: <a class="el" href="classagg_1_1rendering__buffer.html#a59c20ec5006e0281b7a9f5e17166b44d">agg::rendering_buffer</a>
+</li>
+<li>m_last_x
+: <a class="el" href="classagg_1_1scanline.html#a9a4eaa42dc50b0526c65111798f1046c">agg::scanline</a>
+</li>
+<li>m_last_y
+: <a class="el" href="classagg_1_1scanline.html#a15eed296a87eeb12698595d2a7927b83">agg::scanline</a>
+</li>
+<li>m_max_blocks
+: <a class="el" href="classagg_1_1outline.html#a08e9603a98f29f92fcfef62bc3f2c1bf">agg::outline</a>
+</li>
+<li>m_max_height
+: <a class="el" href="classagg_1_1rendering__buffer.html#a78926646758d066cd3c7b811e9934de2">agg::rendering_buffer</a>
+</li>
+<li>m_max_len
+: <a class="el" href="classagg_1_1scanline.html#ad2014582a7c0aef4d6dfc9db066d5fe4">agg::scanline</a>
+</li>
+<li>m_max_x
+: <a class="el" href="classagg_1_1outline.html#afc58d65f68dcaf1960a4e34f66fa0b8e">agg::outline</a>
+</li>
+<li>m_max_y
+: <a class="el" href="classagg_1_1outline.html#a88f5c4f20af1b32850bb7decc3200892">agg::outline</a>
+</li>
+<li>m_min_x
+: <a class="el" href="classagg_1_1scanline.html#a875affd40aff958a6470a0b3abe7c52c">agg::scanline</a>
+, <a class="el" href="classagg_1_1outline.html#a64baee1c446c632c8432a91f7b6a814c">agg::outline</a>
+</li>
+<li>m_min_y
+: <a class="el" href="classagg_1_1outline.html#a380d14bf219cb5478b0d731a2d333632">agg::outline</a>
+</li>
+<li>m_num_blocks
+: <a class="el" href="classagg_1_1outline.html#aa5926ff43a4705bbec2036b618381a9d">agg::outline</a>
+</li>
+<li>m_num_cells
+: <a class="el" href="classagg_1_1outline.html#ad28f5865906b526f43f450093e2dad62">agg::outline</a>
+</li>
+<li>m_num_spans
+: <a class="el" href="classagg_1_1scanline.html#aedf1bc7fc3cbb0e3162b532c6081f578">agg::scanline</a>
+</li>
+<li>m_outline
+: <a class="el" href="classagg_1_1rasterizer.html#a24a1d77a475dd0125f04ac68ca664b48">agg::rasterizer</a>
+</li>
+<li>m_rbuf
+: <a class="el" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">agg::renderer&lt; Span &gt;</a>
+</li>
+<li>m_rows
+: <a class="el" href="classagg_1_1rendering__buffer.html#ac85d6bed66651211e699e9d47b13ed1a">agg::rendering_buffer</a>
+</li>
+<li>m_scanline
+: <a class="el" href="classagg_1_1rasterizer.html#a3f97f4567f490b6e750bcb33e8a395ca">agg::rasterizer</a>
+</li>
+<li>m_sorted_cells
+: <a class="el" href="classagg_1_1outline.html#ada680f6cd41b0f99c6379e319ce4d80c">agg::outline</a>
+</li>
+<li>m_sorted_size
+: <a class="el" href="classagg_1_1outline.html#a2fe8275c30d2c664f235bbbad487e5c7">agg::outline</a>
+</li>
+<li>m_span
+: <a class="el" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">agg::renderer&lt; Span &gt;</a>
+</li>
+<li>m_start_ptrs
+: <a class="el" href="classagg_1_1scanline.html#a46e7217141ecc84d43220ccacef18c5d">agg::scanline</a>
+</li>
+<li>m_stride
+: <a class="el" href="classagg_1_1rendering__buffer.html#ad356318c0b2b310fa5f2240cffbcdda5">agg::rendering_buffer</a>
+</li>
+<li>m_width
+: <a class="el" href="classagg_1_1rendering__buffer.html#aa286889243950dcdcdfe58c668b557db">agg::rendering_buffer</a>
+</li>
+<li>magnitude
+: <a class="el" href="structosgEarth_1_1Util_1_1SkyNode_1_1StarData.html#a510a6fdb710f4b18c0e369ed73b02ac9">osgEarth::Util::SkyNode::StarData</a>
+</li>
+<li>map_
+: <a class="el" href="unionosgEarth_1_1Json_1_1Value_1_1ValueHolder.html#a51e679f16f190d2cbc663bcff1db3256">osgEarth::Json::Value::ValueHolder</a>
+</li>
+<li>Maroon
+: <a class="el" href="structosgEarth_1_1Symbology_1_1Color.html#ac84d719088ad1af8d1cfc40f8a4f2ab3">osgEarth::Symbology::Color</a>
+</li>
+<li>max_level
+: <a class="el" href="classTileInfo.html#a27e091825c293eabc29d220cf8bf6e1b">TileInfo</a>
+</li>
+<li>maxInt
+: <a class="el" href="classosgEarth_1_1Json_1_1Value.html#ab63c823f124102ef230831df39dddc0b">osgEarth::Json::Value</a>
+</li>
 <li>maxNumTilesInCache
-: <a class="el" href="class_v_p_b_database.html#a7e278edddc266d0cefbb7b775e89cdbd">VPBDatabase</a>
+: <a class="el" href="classVPBDatabase.html#a7e278edddc266d0cefbb7b775e89cdbd">VPBDatabase</a>
+</li>
+<li>maxUInt
+: <a class="el" href="classosgEarth_1_1Json_1_1Value.html#a8c09e92938facf0642739b0a10f5c196">osgEarth::Json::Value</a>
+</li>
+<li>message_
+: <a class="el" href="classosgEarth_1_1Json_1_1Reader_1_1ErrorInfo.html#a8a953a3173674b801ec62ef9310f39bc">osgEarth::Json::Reader::ErrorInfo</a>
+</li>
+<li>METERS
+: <a class="el" href="classosgEarth_1_1Units.html#a94564859bf2576220d2ba056a1e5c987">osgEarth::Units</a>
+</li>
+<li>METERS_PER_SECOND
+: <a class="el" href="classosgEarth_1_1Units.html#aa2a5230500e00d1c86f07100ff8cc94b">osgEarth::Units</a>
+</li>
+<li>MICROSECONDS
+: <a class="el" href="classosgEarth_1_1Units.html#a774818fccce7a2480a6ac7831cdfa2d2">osgEarth::Units</a>
+</li>
+<li>MILES
+: <a class="el" href="classosgEarth_1_1Units.html#a38ce793848693ae2229804f1255ea72b">osgEarth::Units</a>
+</li>
+<li>MILES_PER_HOUR
+: <a class="el" href="classosgEarth_1_1Units.html#add1dbb62be0520aa3da40b01f3da18a0">osgEarth::Units</a>
+</li>
+<li>MILLIMETERS
+: <a class="el" href="classosgEarth_1_1Units.html#a622aeae6d88d74cc2ce7461b2a86b2dd">osgEarth::Units</a>
+</li>
+<li>MILLISECONDS
+: <a class="el" href="classosgEarth_1_1Units.html#a296f0e2b38438a5cba6d8e8bdea60c93">osgEarth::Units</a>
+</li>
+<li>min_level
+: <a class="el" href="classTileInfo.html#a50121aa76ddb71055011e547bdd8bac8">TileInfo</a>
+</li>
+<li>minInt
+: <a class="el" href="classosgEarth_1_1Json_1_1Value.html#aff9bf0c36e461aa023969d4c1cea1c1e">osgEarth::Json::Value</a>
+</li>
+<li>MINUTES
+: <a class="el" href="classosgEarth_1_1Units.html#aac14680066cf9852d99f7d01331122ad">osgEarth::Units</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -146,6 +336,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

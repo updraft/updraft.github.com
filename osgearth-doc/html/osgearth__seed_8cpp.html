@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__seed_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#define-members">Defines</a> &#124;
@@ -97,9 +114,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
 <code>#include &lt;iterator&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_seed.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_seed.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seed_2osgearth__seed_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seed_2osgearth__seed_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__seed_2osgearth__seed_8cpp">
 </map>
@@ -152,22 +171,60 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seed_8cpp_source.html#l00151">151</a> of file <a class="el" href="osgearth__seed_8cpp_source.html">osgearth_seed.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Node&gt; node = osgDB::readNodeFiles( args );
+    <span class="keywordflow">if</span> ( !node.valid() )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode( node.get() );
+    <span class="keywordflow">if</span> ( !mapNode )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>();
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Cache.html">Cache</a>* cache = map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9">getCache</a>();
+
+    <span class="keywordflow">if</span> ( !cache )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73">message</a>( <span class="stringliteral">&quot;Earth file does not contain a cache.&quot;</span> );
+
+    std::cout 
+        &lt;&lt; <span class="stringliteral">&quot;Cache config = &quot;</span> &lt;&lt; cache-&gt;<a class="code" href="classosgEarth_1_1Cache.html#a0ab19f1b4a34db3061226596026f67ba">getCacheOptions</a>().<a class="code" href="classosgEarth_1_1CacheOptions.html#a58bfde2290953aea85a56bda4a6cf9c4">getConfig</a>().<a class="code" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464">toString</a>() &lt;&lt; std::endl;
+
+    <a class="code" href="classosgEarth_1_1MapFrame.html">MapFrame</a> mapf( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+
+    <a class="code" href="namespaceosgEarth.html#ad234a89c8e06029b766b237b1c657e39">TerrainLayerVector</a> layers;
+    <a class="code" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed">std::copy</a>( mapf.imageLayers().begin(), mapf.imageLayers().end(), std::back_inserter(layers) );
+    <a class="code" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed">std::copy</a>( mapf.elevationLayers().begin(), mapf.elevationLayers().end(), std::back_inserter(layers) );
+
+    <span class="keywordflow">for</span>( TerrainLayerVector::const_iterator i =layers.begin(); i != layers.end(); ++i )
+    {
+        <a class="code" href="classosgEarth_1_1TerrainLayer.html">TerrainLayer</a>* layer = i-&gt;get();
+        <span class="keyword">const</span> <a class="code" href="structosgEarth_1_1CacheSpec.html">CacheSpec</a>&amp; spec = layer-&gt;<a class="code" href="classosgEarth_1_1TerrainLayer.html#ac7bbb6252240f66f6589475cd3d2a7c0">getCacheSpec</a>();
+        std::cout
+            &lt;&lt; <span class="stringliteral">&quot;Layer = \&quot;&quot;</span> &lt;&lt; layer-&gt;<a class="code" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c">getName</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot;, cacheId = &quot;</span> &lt;&lt; spec.<a class="code" href="structosgEarth_1_1CacheSpec.html#a74395f8d7912eab234ba66e7537d7ba6">cacheId</a>() &lt;&lt; std::endl;
+    }
+
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_cgraph.png" border="0" usemap="#osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_cgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_cgraph" id="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_cgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="93,5,168,35"/><area shape="rect" id="node5" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="103,59,159,88"/></map>
+<area shape="rect" id="node3" href="structosgEarth_1_1CacheSpec.html#a74395f8d7912eab234ba66e7537d7ba6" title="osgEarth::CacheSpec::cacheId" alt="" coords="163,32,365,61"/><area shape="rect" id="node5" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed" title="anonymous_namespace\{MeshConsolidator::cpp\}::copy" alt="" coords="93,85,435,115"/><area shape="rect" id="node7" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="153,139,375,168"/><area shape="rect" id="node9" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9" title="osgEarth::Map::getCache" alt="" coords="179,192,349,221"/><area shape="rect" id="node42" href="classosgEarth_1_1Cache.html#a0ab19f1b4a34db3061226596026f67ba" title="osgEarth::Cache::getCacheOptions" alt="" coords="149,299,379,328"/><area shape="rect" id="node44" href="classosgEarth_1_1TerrainLayer.html#ac7bbb6252240f66f6589475cd3d2a7c0" title="osgEarth::TerrainLayer::getCacheSpec" alt="" coords="140,352,388,381"/><area shape="rect" id="node46" href="classosgEarth_1_1CacheOptions.html#a58bfde2290953aea85a56bda4a6cf9c4" title="osgEarth::CacheOptions::getConfig" alt="" coords="149,245,379,275"/><area shape="rect" id="node52" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="169,405,359,435"/><area shape="rect" id="node54" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="157,459,371,488"/><area shape="rect" id="node56" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="227,512,301,541"/><area shape="rect" id="node58" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464" title="osgEarth::Config::toString" alt="" coords="177,565,351,595"/><area shape="rect" id="node60" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="236,619,292,648"/><area shape="rect" id="node11" href="classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="508,5,703,35"/><area shape="rect" id="node13" href="classosgEarth_1_1CacheFactory.html#a1bac5511c0d97cf20443a7a96ea6e324" title="osgEarth::CacheFactory::create" alt="" coords="501,59,709,88"/><area shape="rect" id="node17" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="529,112,681,141"/><area shape="rect" id="node19" href="classosgEarth_1_1Registry.html#a061d3903e633b9abfafc38d6faa1590c" title="osgEarth::Registry::getCacheOverride" alt="" coords="484,165,727,195"/><area shape="rect" id="node21" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="512,219,699,248"/><area shape="rect" id="node34" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="824,272,989,301"/><area shape="rect" id="node36" href="classosgEarth_1_1Map.html#a2340eb04005ed0caf43a554959a88294" title="osgEarth::Map::setCache" alt="" coords="520,376,691,405"/><area shape="rect" id="node15" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="776,59,1037,88"/><area shape="rect" id="node23" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="813,219,1000,248"/><area shape="rect" id="node25" href="classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1085,139,1413,168"/><area shape="rect" id="node28" href="classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1137,192,1361,221"/><area shape="rect" id="node30" href="classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1128,245,1371,275"/><area shape="rect" id="node32" href="classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1127,299,1372,328"/><area shape="rect" id="node38" href="classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="788,379,1025,408"/><area shape="rect" id="node40" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="824,325,989,355"/><area shape="rect" id="node48" href="classosgEarth_1_1Config.html#a7634d2c4fc97a686d06265ca071744d7" title="osgEarth::Config::updateIfSet" alt="" coords="508,323,703,352"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_icgraph.png" border="0" usemap="#osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_icgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_icgraph" id="osgearth__seed_8cpp_af4b11f03092036dcc7d19e0eaf644e88_icgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="93,5,144,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="128,5,419,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Features_1_1FeatureTileSource.html#a80af978c5495abab5ab9779479162a07" title="osgEarth::Features::FeatureTileSource::createImage" alt="" coords="111,59,436,88"/><area shape="rect" id="node7" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="248,112,299,141"/><area shape="rect" id="node9" href="classosgEarth_1_1Features_1_1GeometryFeatureCursor.html#a8e1bbfce699cf352c8b984b1f84032c4" title="osgEarth::Features::GeometryFeatureCursor::nextFeature" alt="" coords="95,165,452,195"/></map>
 </div>
 </p>
 
@@ -199,13 +256,27 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seed_8cpp_source.html#l00049">49</a> of file <a class="el" href="osgearth__seed_8cpp_source.html">osgearth_seed.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser args(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="keywordflow">if</span> ( args.read( <span class="stringliteral">&quot;--seed&quot;</span>) )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#ab778b2c4948eabbbdb75cb4f3f92b9ca">seed</a>( args );
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( args.read( <span class="stringliteral">&quot;--list&quot;</span> ) )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88">list</a>( args );
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( args.read( <span class="stringliteral">&quot;--purge&quot;</span> ) )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324">purge</a>( args );
+    <span class="keywordflow">else</span>
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(<span class="stringliteral">&quot;&quot;</span>);
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__seed_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__seed_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="113,5,151,35"/><area shape="rect" id="node7" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="217,97,273,127"/><area shape="rect" id="node9" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="105,59,159,88"/><area shape="rect" id="node13" href="osgearth__seed_8cpp.html#ab778b2c4948eabbbdb75cb4f3f92b9ca" title="seed" alt="" coords="107,163,157,192"/><area shape="rect" id="node5" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="208,19,283,48"/></map>
+<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="113,428,151,457"/><area shape="rect" id="node54" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="351,693,407,723"/><area shape="rect" id="node56" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="105,613,159,643"/><area shape="rect" id="node63" href="osgearth__seed_8cpp.html#ab778b2c4948eabbbdb75cb4f3f92b9ca" title="seed" alt="" coords="107,747,157,776"/><area shape="rect" id="node5" href="structosgEarth_1_1CacheSpec.html#a74395f8d7912eab234ba66e7537d7ba6" title="osgEarth::CacheSpec::cacheId" alt="" coords="277,109,480,139"/><area shape="rect" id="node7" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed" title="anonymous_namespace\{MeshConsolidator::cpp\}::copy" alt="" coords="208,163,549,192"/><area shape="rect" id="node9" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="268,587,489,616"/><area shape="rect" id="node11" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9" title="osgEarth::Map::getCache" alt="" coords="293,323,464,352"/><area shape="rect" id="node36" href="classosgEarth_1_1Cache.html#a0ab19f1b4a34db3061226596026f67ba" title="osgEarth::Cache::getCacheOptions" alt="" coords="264,216,493,245"/><area shape="rect" id="node38" href="classosgEarth_1_1TerrainLayer.html#ac7bbb6252240f66f6589475cd3d2a7c0" title="osgEarth::TerrainLayer::getCacheSpec" alt="" coords="255,269,503,299"/><area shape="rect" id="node40" href="classosgEarth_1_1CacheOptions.html#a58bfde2290953aea85a56bda4a6cf9c4" title="osgEarth::CacheOptions::getConfig" alt="" coords="264,376,493,405"/><area shape="rect" id="node46" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="284,640,473,669"/><area shape="rect" id="node48" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="653,429,867,459"/><area shape="rect" id="node50" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="341,533,416,563"/><area shape="rect" id="node52" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464" title="osgEarth::Config::toString" alt="" coords="292,480,465,509"/><area shape="rect" id="node13" href="classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="663,269,857,299"/><area shape="rect" id="node15" href="classosgEarth_1_1CacheFactory.html#a1bac5511c0d97cf20443a7a96ea6e324" title="osgEarth::CacheFactory::create" alt="" coords="656,5,864,35"/><area shape="rect" id="node19" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="684,323,836,352"/><area shape="rect" id="node21" href="classosgEarth_1_1Registry.html#a061d3903e633b9abfafc38d6faa1590c" title="osgEarth::Registry::getCacheOverride" alt="" coords="639,59,881,88"/><area shape="rect" id="node23" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="667,112,853,141"/><area shape="rect" id="node28" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1019,376,1184,405"/><area shape="rect" id="node30" href="classosgEarth_1_1Map.html#a2340eb04005ed0caf43a554959a88294" title="osgEarth::Map::setCache" alt="" coords="675,165,845,195"/><area shape="rect" id="node17" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="971,5,1232,35"/><area shape="rect" id="node25" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="1008,112,1195,141"/><area shape="rect" id="node32" href="classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="983,165,1220,195"/><area shape="rect" id="node34" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1019,271,1184,300"/><area shape="rect" id="node42" href="classosgEarth_1_1Config.html#a7634d2c4fc97a686d06265ca071744d7" title="osgEarth::Config::updateIfSet" alt="" coords="663,376,857,405"/><area shape="rect" id="node67" href="classosgEarth_1_1CacheSeed.html#abeac486824e4e45a61096b279e93b65e" title="osgEarth::CacheSeed::seed" alt="" coords="285,747,472,776"/><area shape="rect" id="node107" href="classosgEarth_1_1CacheSeed.html#a95d33ab4ccaafc97914bfe0f71d11668" title="osgEarth::CacheSeed::setBounds" alt="" coords="269,800,488,829"/><area shape="rect" id="node109" href="classosgEarth_1_1CacheSeed.html#a1636bfaab6b044b9000fb072f8cd3fc9" title="osgEarth::CacheSeed::setMaxLevel" alt="" coords="263,853,495,883"/><area shape="rect" id="node111" href="classosgEarth_1_1CacheSeed.html#a2e80e67137c9bf11ddfcbae89cc8882c" title="osgEarth::CacheSeed::setMinLevel" alt="" coords="265,907,492,936"/><area shape="rect" id="node113" href="classosgEarth_1_1CacheSeed.html#aff04a2d8f3c56ab65e6e086d8a69a4df" title="osgEarth::CacheSeed::setProgressCallback" alt="" coords="240,960,517,989"/><area shape="rect" id="node70" href="classosgEarth_1_1TerrainLayerOptions.html#a2eaa401b3dedfe09b1995b12194acd85" title="osgEarth::TerrainLayerOptions::cacheOnly" alt="" coords="625,533,895,563"/><area shape="rect" id="node72" href="classosgEarth_1_1MapFrame.html#a2f1751fdcda89f7f575ed022d3d2c885" title="osgEarth::MapFrame::elevationLayers" alt="" coords="639,587,881,616"/><area shape="rect" id="node75" href="classosgEarth_1_1TerrainLayer.html#a66224f1f423fb2695a59439823910628" title="osgEarth::TerrainLayer::getCache" alt="" coords="651,640,869,669"/><area shape="rect" id="node77" href="classosgEarth_1_1ElevationLayer.html#a6c187ec6d866f74b7f212b31b1d55566" title="osgEarth::ElevationLayer::getElevationLayerOptions" alt="" coords="597,693,923,723"/><area shape="rect" id="node79" href="classosgEarth_1_1Profile.html#af8ce182ba0e6f0e362046e593068955e" title="osgEarth::Profile::getExtent" alt="" coords="669,747,851,776"/><area shape="rect" id="node81" href="classosgEarth_1_1ImageLayer.html#a6fbc035cfa825c362ed96285cd5d0cb2" title="osgEarth::ImageLayer::getImageLayerOptions" alt="" coords="616,800,904,829"/><area shape="rect" id="node83" href="classosgEarth_1_1Map.html#a693567c847af460f6934b0fdb9242ab2" title="osgEarth::Map::getMapOptions" alt="" coords="659,853,861,883"/><area shape="rect" id="node86" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48" title="osgEarth::Map::getProfile" alt="" coords="675,907,845,936"/><area shape="rect" id="node88" href="classosgEarth_1_1Profile.html#a7864541930b61a87cf27dc5fe3fb3a4c" title="osgEarth::Profile::getRootKeys" alt="" coords="659,960,861,989"/><area shape="rect" id="node90" href="classosgEarth_1_1MapFrame.html#a1445bd530fe5debcbda43377ad757cd4" title="osgEarth::MapFrame::imageLayers" alt="" coords="647,1013,873,1043"/><area shape="rect" id="node93" href="classosgEarth_1_1TerrainLayerOptions.html#a94728c6a1f4a5e7ec7576623968370db" title="osgEarth::TerrainLayerOptions::maxLevel" alt="" coords="629,1067,891,1096"/><area shape="rect" id="node95" href="classosgEarth_1_1TerrainLayerOptions.html#ac03dee3a8a1e08dbd18a8a3cd5515e7b" title="osgEarth::TerrainLayerOptions::minLevel" alt="" coords="631,1120,889,1149"/><area shape="rect" id="node97" href="classosgEarth_1_1TileSource.html#a8cf573fc3ca27252a0f72dbdc1360e26" title="osgEarth::TileSource::supportsPersistentCaching" alt="" coords="605,1173,915,1203"/><area shape="rect" id="node99" href="classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00" title="osgEarth::GeoExtent::xMax" alt="" coords="668,1227,852,1256"/><area shape="rect" id="node101" href="classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="671,1280,849,1309"/><area shape="rect" id="node103" href="classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc" title="osgEarth::GeoExtent::yMax" alt="" coords="668,1333,852,1363"/><area shape="rect" id="node105" href="classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="671,1387,849,1416"/></map>
 </div>
 </p>
 
@@ -227,13 +298,22 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seed_8cpp_source.html#l00092">92</a> of file <a class="el" href="osgearth__seed_8cpp_source.html">osgearth_seed.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> ( !msg.empty() )
+    {
+        std::cout &lt;&lt; msg &lt;&lt; std::endl &lt;&lt; std::endl;
+    }
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_adfbe3c3520aedad87e99b1fa58e40f73_icgraph.png" border="0" usemap="#osgearth__seed_8cpp_adfbe3c3520aedad87e99b1fa58e40f73_icgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_adfbe3c3520aedad87e99b1fa58e40f73_icgraph" id="osgearth__seed_8cpp_adfbe3c3520aedad87e99b1fa58e40f73_icgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="137,5,175,35"/><area shape="rect" id="node7" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="129,59,183,88"/><area shape="rect" id="node5" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="327,5,377,35"/><area shape="rect" id="node9" href="struct_layer_table.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="233,59,471,88"/><area shape="rect" id="node14" href="struct_layer_table.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="289,112,415,141"/><area shape="rect" id="node11" href="class_sqlite3_cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="521,85,660,115"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Json_1_1Reader.html#acb314251f8970eacaf6c55fd2209e8a1" title="osgEarth::Json::Reader::addError" alt="" coords="129,213,345,243"/><area shape="rect" id="node32" href="osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="219,477,256,507"/><area shape="rect" id="node42" href="osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="211,611,264,640"/><area shape="rect" id="node5" href="classosgEarth_1_1Json_1_1Reader.html#a6f12e4ba3013e55ecb49ce3019ebff39" title="osgEarth::Json::Reader::addErrorAndRecover" alt="" coords="431,32,719,61"/><area shape="rect" id="node9" href="classosgEarth_1_1Json_1_1Reader.html#a49b9c81c86f52ff01061eb9e23af9087" title="osgEarth::Json::Reader::readValue" alt="" coords="1107,32,1333,61"/><area shape="rect" id="node18" href="classosgEarth_1_1Json_1_1Reader.html#a3c1f6ac67b611f066e696f6e651d6197" title="osgEarth::Json::Reader::decodeDouble" alt="" coords="449,136,700,165"/><area shape="rect" id="node20" href="classosgEarth_1_1Json_1_1Reader.html#a3cf306f45ce2df7d7c83f981fc54a13b" title="osgEarth::Json::Reader::decodeNumber" alt="" coords="803,136,1059,165"/><area shape="rect" id="node24" href="classosgEarth_1_1Json_1_1Reader.html#afbda33b83515c6ef65432d5e031890ca" title="osgEarth::Json::Reader::decodeString" alt="" coords="809,265,1052,295"/><area shape="rect" id="node26" href="classosgEarth_1_1Json_1_1Reader.html#aba4d7f7900165edf2468e7c3ff8c5658" title="osgEarth::Json::Reader::decodeUnicodeEscapeSequence" alt="" coords="395,291,755,320"/><area shape="rect" id="node29" href="classosgEarth_1_1Json_1_1Reader.html#ac774d3b3d88b3633b6a1d83c13a0ac2b" title="osgEarth::Json::Reader::expectToken" alt="" coords="453,344,696,373"/><area shape="rect" id="node7" href="classosgEarth_1_1Json_1_1Reader.html#a5b7e122decc32bc123b5db448f18597c" title="osgEarth::Json::Reader::readArray" alt="" coords="819,32,1043,61"/><area shape="rect" id="node14" href="classosgEarth_1_1Json_1_1Reader.html#a43ea88cea32d8580ec7690ef4a76547a" title="osgEarth::Json::Reader::readObject" alt="" coords="1383,5,1612,35"/><area shape="rect" id="node11" href="classosgEarth_1_1Json_1_1Reader.html#a3ee890974263f9aaed2a3027d8228b7f" title="Read a Value from a JSON document." alt="" coords="1397,59,1597,88"/><area shape="rect" id="node34" href="classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="429,504,720,533"/><area shape="rect" id="node36" href="classosgEarth_1_1Features_1_1FeatureTileSource.html#a80af978c5495abab5ab9779479162a07" title="osgEarth::Features::FeatureTileSource::createImage" alt="" coords="412,397,737,427"/><area shape="rect" id="node38" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="549,557,600,587"/><area shape="rect" id="node40" href="classosgEarth_1_1Features_1_1GeometryFeatureCursor.html#a8e1bbfce699cf352c8b984b1f84032c4" title="osgEarth::Features::GeometryFeatureCursor::nextFeature" alt="" coords="396,451,753,480"/><area shape="rect" id="node44" href="structLayerTable.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="456,717,693,747"/><area shape="rect" id="node49" href="structLayerTable.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="512,611,637,640"/><area shape="rect" id="node52" href="classSqlite3Cache.html#a90410529af647e1e89b7f538226bda8d" title="Sqlite3Cache::setImageSync" alt="" coords="479,664,671,693"/><area shape="rect" id="node46" href="classSqlite3Cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="861,664,1000,693"/></map>
 </div>
 </p>
 
@@ -255,22 +335,43 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seed_8cpp_source.html#l00188">188</a> of file <a class="el" href="osgearth__seed_8cpp_source.html">osgearth_seed.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Sorry, but purge is not yet implemented.&quot;</span> );
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    osg::ref_ptr&lt;osg::Node&gt; node = osgDB::readNodeFiles( args );
+    <span class="keywordflow">if</span> ( !node.valid() )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode( node.get() );
+    <span class="keywordflow">if</span> ( !mapNode )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>();
+    <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Cache.html">Cache</a>* cache = map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9">getCache</a>();
+
+    <span class="keywordflow">if</span> ( !cache )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73">message</a>( <span class="stringliteral">&quot;Earth file does not contain a cache.&quot;</span> );
+}
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_cgraph.png" border="0" usemap="#osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_cgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_cgraph" id="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_cgraph">
-<area shape="rect" id="node3" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="109,5,184,35"/><area shape="rect" id="node5" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="119,59,175,88"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="111,112,332,141"/><area shape="rect" id="node5" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9" title="osgEarth::Map::getCache" alt="" coords="136,165,307,195"/><area shape="rect" id="node38" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="127,219,316,248"/><area shape="rect" id="node40" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73" title="message" alt="" coords="184,272,259,301"/><area shape="rect" id="node42" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="193,325,249,355"/><area shape="rect" id="node7" href="classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="407,5,601,35"/><area shape="rect" id="node9" href="classosgEarth_1_1CacheFactory.html#a1bac5511c0d97cf20443a7a96ea6e324" title="osgEarth::CacheFactory::create" alt="" coords="400,59,608,88"/><area shape="rect" id="node13" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="428,112,580,141"/><area shape="rect" id="node15" href="classosgEarth_1_1Registry.html#a061d3903e633b9abfafc38d6faa1590c" title="osgEarth::Registry::getCacheOverride" alt="" coords="383,165,625,195"/><area shape="rect" id="node17" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="411,219,597,248"/><area shape="rect" id="node30" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="421,272,587,301"/><area shape="rect" id="node32" href="classosgEarth_1_1Map.html#a2340eb04005ed0caf43a554959a88294" title="osgEarth::Map::setCache" alt="" coords="419,325,589,355"/><area shape="rect" id="node11" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="675,59,936,88"/><area shape="rect" id="node19" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="712,219,899,248"/><area shape="rect" id="node21" href="classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="984,139,1312,168"/><area shape="rect" id="node24" href="classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1036,192,1260,221"/><area shape="rect" id="node26" href="classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1027,245,1269,275"/><area shape="rect" id="node28" href="classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1025,299,1271,328"/><area shape="rect" id="node34" href="classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="687,299,924,328"/><area shape="rect" id="node36" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="723,352,888,381"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_icgraph.png" border="0" usemap="#osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_icgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_icgraph" id="osgearth__seed_8cpp_a5474eb5fe707f69df07bc3256c116324_icgraph">
-<area shape="rect" id="node3" href="struct_layer_table.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="111,5,348,35"/><area shape="rect" id="node7" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="204,59,255,88"/><area shape="rect" id="node9" href="struct_layer_table.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="167,112,292,141"/><area shape="rect" id="node5" href="class_sqlite3_cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="399,59,537,88"/></map>
+<area shape="rect" id="node3" href="structLayerTable.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="111,5,348,35"/><area shape="rect" id="node7" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="204,59,255,88"/><area shape="rect" id="node9" href="structLayerTable.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="167,112,292,141"/><area shape="rect" id="node12" href="classSqlite3Cache.html#a90410529af647e1e89b7f538226bda8d" title="Sqlite3Cache::setImageSync" alt="" coords="133,165,325,195"/><area shape="rect" id="node5" href="classSqlite3Cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="399,59,537,88"/></map>
 </div>
 </p>
 
@@ -292,19 +393,68 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__seed_8cpp_source.html#l00103">103</a> of file <a class="el" href="osgearth__seed_8cpp_source.html">osgearth_seed.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{    
+    <span class="comment">//Read the min level</span>
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minLevel = 0;
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--min-level&quot;</span>, minLevel));
+    
+    <span class="comment">//Read the max level</span>
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxLevel = 5;
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--max-level&quot;</span>, maxLevel));
+    
+    <span class="comment">//Read the bounds</span>
+    <a class="code" href="classosgEarth_1_1Bounds.html">Bounds</a> bounds(0, 0, 0, 0);
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--bounds&quot;</span>, bounds.xMin(), bounds.yMin(), bounds.xMax(), bounds.yMax()));
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;-b&quot;</span>, bounds.xMin(), bounds.yMin(), bounds.xMax(), bounds.yMax()));
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">//Read the cache override directory</span>
+    std::string cachePath;
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--cache-path&quot;</span>, cachePath));
+
+    <span class="comment">//Read the cache type</span>
+    std::string cacheType;
+    <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--cache-type&quot;</span>, cacheType));
+
+    <span class="keywordtype">bool</span> quiet = args.read(<span class="stringliteral">&quot;--quiet&quot;</span>);
+
+    <span class="comment">//Read in the earth file.</span>
+    osg::ref_ptr&lt;osg::Node&gt; node = osgDB::readNodeFiles( args );
+    <span class="keywordflow">if</span> ( !node.valid() )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode( node.get() );
+    <span class="keywordflow">if</span> ( !mapNode )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1CacheSeed.html">CacheSeed</a> seeder;
+    seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a2e80e67137c9bf11ddfcbae89cc8882c">setMinLevel</a>( minLevel );
+    seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a1636bfaab6b044b9000fb072f8cd3fc9">setMaxLevel</a>( maxLevel );
+    seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a95d33ab4ccaafc97914bfe0f71d11668">setBounds</a>( bounds );
+    <span class="keywordflow">if</span> (!quiet)
+    {
+        seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#aff04a2d8f3c56ab65e6e086d8a69a4df">setProgressCallback</a>(<span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ConsoleProgressCallback.html">ConsoleProgressCallback</a>);
+    }
+    seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#abeac486824e4e45a61096b279e93b65e">seed</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_cgraph.png" border="0" usemap="#osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_cgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_cgraph" id="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_cgraph">
-<area shape="rect" id="node3" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="105,5,161,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="133,432,355,461"/><area shape="rect" id="node5" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="149,485,339,515"/><area shape="rect" id="node7" href="classosgEarth_1_1CacheSeed.html#abeac486824e4e45a61096b279e93b65e" title="osgEarth::CacheSeed::seed" alt="" coords="151,539,337,568"/><area shape="rect" id="node51" href="classosgEarth_1_1CacheSeed.html#a95d33ab4ccaafc97914bfe0f71d11668" title="osgEarth::CacheSeed::setBounds" alt="" coords="135,592,353,621"/><area shape="rect" id="node53" href="classosgEarth_1_1CacheSeed.html#a1636bfaab6b044b9000fb072f8cd3fc9" title="osgEarth::CacheSeed::setMaxLevel" alt="" coords="128,645,360,675"/><area shape="rect" id="node55" href="classosgEarth_1_1CacheSeed.html#a2e80e67137c9bf11ddfcbae89cc8882c" title="osgEarth::CacheSeed::setMinLevel" alt="" coords="131,699,357,728"/><area shape="rect" id="node57" href="classosgEarth_1_1CacheSeed.html#aff04a2d8f3c56ab65e6e086d8a69a4df" title="osgEarth::CacheSeed::setProgressCallback" alt="" coords="105,752,383,781"/><area shape="rect" id="node59" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="216,805,272,835"/><area shape="rect" id="node9" href="classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="497,5,692,35"/><area shape="rect" id="node11" href="classosgEarth_1_1TerrainLayerOptions.html#a2eaa401b3dedfe09b1995b12194acd85" title="osgEarth::TerrainLayerOptions::cacheOnly" alt="" coords="460,59,729,88"/><area shape="rect" id="node13" href="classosgEarth_1_1MapFrame.html#a2f1751fdcda89f7f575ed022d3d2c885" title="osgEarth::MapFrame::elevationLayers" alt="" coords="473,112,716,141"/><area shape="rect" id="node15" href="structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="519,165,671,195"/><area shape="rect" id="node17" href="classosgEarth_1_1TerrainLayer.html#a66224f1f423fb2695a59439823910628" title="osgEarth::TerrainLayer::getCache" alt="" coords="485,219,704,248"/><area shape="rect" id="node19" href="classosgEarth_1_1ElevationLayer.html#a6c187ec6d866f74b7f212b31b1d55566" title="osgEarth::ElevationLayer::getElevationLayerOptions" alt="" coords="432,272,757,301"/><area shape="rect" id="node21" href="classosgEarth_1_1Profile.html#af8ce182ba0e6f0e362046e593068955e" title="osgEarth::Profile::getExtent" alt="" coords="504,325,685,355"/><area shape="rect" id="node23" href="classosgEarth_1_1ImageLayer.html#a6fbc035cfa825c362ed96285cd5d0cb2" title="osgEarth::ImageLayer::getImageLayerOptions" alt="" coords="451,379,739,408"/><area shape="rect" id="node25" href="classosgEarth_1_1Map.html#a693567c847af460f6934b0fdb9242ab2" title="osgEarth::Map::getMapOptions" alt="" coords="493,432,696,461"/><area shape="rect" id="node27" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="488,485,701,515"/><area shape="rect" id="node29" href="classosgEarth_1_1Map.html#a7d4fe3351a35ece7b80316b8869a3b48" title="osgEarth::Map::getProfile" alt="" coords="509,539,680,568"/><area shape="rect" id="node31" href="classosgEarth_1_1Profile.html#a7864541930b61a87cf27dc5fe3fb3a4c" title="osgEarth::Profile::getRootKeys" alt="" coords="493,592,696,621"/><area shape="rect" id="node33" href="classosgEarth_1_1MapFrame.html#a1445bd530fe5debcbda43377ad757cd4" title="osgEarth::MapFrame::imageLayers" alt="" coords="481,645,708,675"/><area shape="rect" id="node35" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="512,699,677,728"/><area shape="rect" id="node37" href="classosgEarth_1_1TerrainLayerOptions.html#a94728c6a1f4a5e7ec7576623968370db" title="osgEarth::TerrainLayerOptions::maxLevel" alt="" coords="464,752,725,781"/><area shape="rect" id="node39" href="classosgEarth_1_1TerrainLayerOptions.html#ac03dee3a8a1e08dbd18a8a3cd5515e7b" title="osgEarth::TerrainLayerOptions::minLevel" alt="" coords="465,805,724,835"/><area shape="rect" id="node41" href="classosgEarth_1_1TileSource.html#a8cf573fc3ca27252a0f72dbdc1360e26" title="osgEarth::TileSource::supportsPersistentCaching" alt="" coords="440,859,749,888"/><area shape="rect" id="node43" href="classosgEarth_1_1GeoExtent.html#a91457972e7827ea655db19203e63db00" title="osgEarth::GeoExtent::xMax" alt="" coords="503,912,687,941"/><area shape="rect" id="node45" href="classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="505,965,684,995"/><area shape="rect" id="node47" href="classosgEarth_1_1GeoExtent.html#aa64e915bc55e7390c60f99962ff1cccc" title="osgEarth::GeoExtent::yMax" alt="" coords="503,1019,687,1048"/><area shape="rect" id="node49" href="classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="505,1072,684,1101"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_icgraph.png" border="0" usemap="#osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_icgraph" alt=""/></div>
 <map name="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_icgraph" id="osgearth__seed_8cpp_ab778b2c4948eabbbdb75cb4f3f92b9ca_icgraph">
 <area shape="rect" id="node3" href="osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="104,5,155,35"/></map>
@@ -331,15 +481,6 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__seed_8cpp.html">osgearth_seed.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -354,6 +495,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

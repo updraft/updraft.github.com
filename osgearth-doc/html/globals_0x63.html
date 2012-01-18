@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,52 +127,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>CACHE_OPTIONS_TAG
-: <a class="el" href="_caching_8cpp.html#afafe63d354646f4f50062e0b613ffe08">Caching.cpp</a>
+: <a class="el" href="Caching_8cpp.html#afafe63d354646f4f50062e0b613ffe08">Caching.cpp</a>
 </li>
 <li>calcTangentPoint()
-: <a class="el" href="_earth_manipulator_8cpp.html#a0959f5ef4d02a7c323a6284c3ba87705">EarthManipulator.cpp</a>
+: <a class="el" href="EarthManipulator_8cpp.html#a0959f5ef4d02a7c323a6284c3ba87705">EarthManipulator.cpp</a>
+</li>
+<li>case
+: <a class="el" href="README.html#aefc0dd210db9be3c35176ff85a3f4c50">README</a>
+</li>
+<li>ChildIndex
+: <a class="el" href="rivers_2engine__droam_2Common.html#af758888672f3414ac075d2e2a482a903">Common</a>
 </li>
 <li>clampLatitude()
-: <a class="el" href="_image_overlay_8cpp.html#aecbb8021dd1e0cb5001a70195eef7dae">ImageOverlay.cpp</a>
+: <a class="el" href="ImageOverlay_8cpp.html#aecbb8021dd1e0cb5001a70195eef7dae">ImageOverlay.cpp</a>
 </li>
 <li>closestPtOnLine()
-: <a class="el" href="_earth_manipulator_8cpp.html#a8ee503dd8cc38565afce8b61f320c503">EarthManipulator.cpp</a>
+: <a class="el" href="EarthManipulator_8cpp.html#a8ee503dd8cc38565afce8b61f320c503">EarthManipulator.cpp</a>
+</li>
+<li>ColorLayersByUID
+: <a class="el" href="Tile.html#a69e705aa9d311b81c5de241954028a6b">Tile</a>
+, <a class="el" href="CustomTile.html#a69e705aa9d311b81c5de241954028a6b">CustomTile</a>
+</li>
+<li>colors
+: <a class="el" href="osgearth__tilesource_8cpp.html#a9e71186980a23d60f4d42454c5b968f3">osgearth_tilesource.cpp</a>
 </li>
 <li>createClouds()
 : <a class="el" href="osgearth__clouds_8cpp.html#a434ab4400fba2a5581650670132dc991">osgearth_clouds.cpp</a>
 </li>
 <li>createControlPanel()
-: <a class="el" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29">osgearth_viewer.cpp</a>
-, <a class="el" href="osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846">osgearth_imageoverlay.cpp</a>
+: <a class="el" href="osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846">osgearth_imageoverlay.cpp</a>
 , <a class="el" href="osgearth__toc_8cpp.html#aec754f3eaea4793fc4e202b1fe491a59">osgearth_toc.cpp</a>
+, <a class="el" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29">osgearth_viewer.cpp</a>
 </li>
 <li>createControls()
 : <a class="el" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968">osgearth_controls.cpp</a>
 </li>
+<li>createDataSetFromImage()
+: <a class="el" href="GeoData_8cpp.html#a6d257a0cb9cb5a9c7e906cf709ba7ec3">GeoData.cpp</a>
+</li>
+<li>createFlag()
+: <a class="el" href="osgearth__elevation_8cpp.html#a7abadc19d4486d3c75be3fa9f33556c9">osgearth_elevation.cpp</a>
+, <a class="el" href="osgearth__seamless_8cpp.html#ad45e95ecb5b1d1bb04e8a22a4357e819">osgearth_seamless.cpp</a>
+</li>
 <li>createHaze()
 : <a class="el" href="osgearth__shadercomp_8cpp.html#a74104a5fe48d91ed4614dd6979dfe86c">osgearth_shadercomp.cpp</a>
+</li>
+<li>createImageFromDataset()
+: <a class="el" href="GeoData_8cpp.html#ad9120f2b46febd30ee8c1931666976d0">GeoData.cpp</a>
 </li>
 <li>createLabels()
 : <a class="el" href="osgearth__labels_8cpp.html#a226d4cd4f8495bb51181abdec578e9d9">osgearth_labels.cpp</a>
@@ -152,6 +194,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>createLineGeometry()
 : <a class="el" href="osgearth__symbology_8cpp.html#a70e7cdaecc6035c833018fc296869336">osgearth_symbology.cpp</a>
+</li>
+<li>createMemDS()
+: <a class="el" href="GeoData_8cpp.html#a7f438bf288e7263c18f7ab26553d8017">GeoData.cpp</a>
+</li>
+<li>createMenu()
+: <a class="el" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">osgearth_ocean.cpp</a>
 </li>
 <li>createPointsGeometry()
 : <a class="el" href="osgearth__symbology_8cpp.html#ae6f7f9c4c638adfe7f5871204edaaf0c">osgearth_symbology.cpp</a>
@@ -169,69 +217,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e">osgearth_featureeditor.cpp</a>
 </li>
 <li>CSS_FILL
-: <a class="el" href="_s_l_d_8cpp.html#ac6a1909f8c4c64aabc060bac026c6e0c">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#ac6a1909f8c4c64aabc060bac026c6e0c">SLD.cpp</a>
 </li>
 <li>CSS_FILL_OPACITY
-: <a class="el" href="_s_l_d_8cpp.html#a2107b246e7749dfd71b227e78bd51209">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a2107b246e7749dfd71b227e78bd51209">SLD.cpp</a>
 </li>
 <li>CSS_POINT_SIZE
-: <a class="el" href="_s_l_d_8cpp.html#af8f61f7246e02281fb5de489bbdfcf51">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af8f61f7246e02281fb5de489bbdfcf51">SLD.cpp</a>
 </li>
 <li>CSS_STROKE
-: <a class="el" href="_s_l_d_8cpp.html#a872d4d4d52e18e40b9da160ed24a4c81">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a872d4d4d52e18e40b9da160ed24a4c81">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_LINECAP
-: <a class="el" href="_s_l_d_8cpp.html#af68c867ec058877030d64459efc2b9a3">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af68c867ec058877030d64459efc2b9a3">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_OPACITY
-: <a class="el" href="_s_l_d_8cpp.html#a083686f90305efa8f5f22d5ab2f8bec1">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a083686f90305efa8f5f22d5ab2f8bec1">SLD.cpp</a>
 </li>
 <li>CSS_STROKE_WIDTH
-: <a class="el" href="_s_l_d_8cpp.html#a29501600e9157d73072b4399c77e3ac5">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a29501600e9157d73072b4399c77e3ac5">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_ATTRIBUTE
-: <a class="el" href="_s_l_d_8cpp.html#a764ea44cffea3829aa71cca596824abd">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a764ea44cffea3829aa71cca596824abd">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_CONTENT
-: <a class="el" href="_s_l_d_8cpp.html#a46b02f14a7afdfeb9c984d501a322505">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a46b02f14a7afdfeb9c984d501a322505">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_CONTENT_ATTRIBUTE_DELIMITER
-: <a class="el" href="_s_l_d_8cpp.html#afbc5f35ae65572675de5a2a5e7f3541f">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#afbc5f35ae65572675de5a2a5e7f3541f">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_FONT
-: <a class="el" href="_s_l_d_8cpp.html#a6be09da6a5ab5914fdab03d7be738a24">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a6be09da6a5ab5914fdab03d7be738a24">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_HALO
-: <a class="el" href="_s_l_d_8cpp.html#a151215ae659f54689e5991f9c93e7049">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a151215ae659f54689e5991f9c93e7049">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_LINE_ORIENTATION
-: <a class="el" href="_s_l_d_8cpp.html#a16e4d715cbbaa3a82c2d58433ebcb7ea">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a16e4d715cbbaa3a82c2d58433ebcb7ea">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_LINE_PLACEMENT
-: <a class="el" href="_s_l_d_8cpp.html#ad8c4215acd337eace72bf2127f6cc5d4">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#ad8c4215acd337eace72bf2127f6cc5d4">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_REMOVE_DUPLICATE_LABELS
-: <a class="el" href="_s_l_d_8cpp.html#af308c672ae317cdb957f727a4e593737">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#af308c672ae317cdb957f727a4e593737">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_ROTATE_TO_SCREEN
-: <a class="el" href="_s_l_d_8cpp.html#a0c28b78970cebabb64f1fd899fa480f1">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a0c28b78970cebabb64f1fd899fa480f1">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_SIZE
-: <a class="el" href="_s_l_d_8cpp.html#aadab702f58a515b4b9a2581a80ee39fb">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#aadab702f58a515b4b9a2581a80ee39fb">SLD.cpp</a>
 </li>
 <li>CSS_TEXT_SIZE_MODE
-: <a class="el" href="_s_l_d_8cpp.html#a93117c01cf8d3326b1fbbd464db20fff">SLD.cpp</a>
+: <a class="el" href="SLD_8cpp.html#a93117c01cf8d3326b1fbbd464db20fff">SLD.cpp</a>
+</li>
+<li>CULL_RANGE_FACTOR
+: <a class="el" href="rivers_2engine__droam_2Common.html#ac21cb0c8fd5f49b4d26ac5d092b7c392">Common</a>
+</li>
+<li>CurlProgressCallback()
+: <a class="el" href="HTTPClient_8cpp.html#ac7e9a73231af27eae2565fdbc3b140f0">HTTPClient.cpp</a>
+</li>
+<li>CYAN
+: <a class="el" href="rivers_2engine__droam_2Common.html#ad243f93c16bc4c1d3e0a13b84421d760">Common</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -246,6 +295,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

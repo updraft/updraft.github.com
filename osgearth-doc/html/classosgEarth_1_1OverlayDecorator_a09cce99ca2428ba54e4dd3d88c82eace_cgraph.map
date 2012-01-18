@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Registry.html#a8ebadcf08d3161838cb5d2d7e0dcdbb3" title="osgEarth::Registry::getCapabilities" alt="" coords="356,5,580,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TerrainEngineNode.html#a719bff8ddb0f444f5f7e19c4a71bc9e3" title="osgEarth::TerrainEngineNode::getMap" alt="" coords="347,59,589,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Capabilities.html#aaecf11d2726a2dec348fe42aefd19738" title="osgEarth::Capabilities::getMaxFastTextureSize" alt="" coords="320,112,616,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1TerrainEngineNode.html#a06d67cc2ade987fae6ad7d610d941580" title="osgEarth::TerrainEngineNode::getTextureCompositor" alt="" coords="303,165,633,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="375,219,561,248"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1optional.html#a3a903b78968146555a904059e001d602" title="osgEarth::optional::init" alt="" coords="392,272,544,301"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="375,325,561,355"/>
+<area shape="rect" id="node28" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="761,377,927,407"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1OverlayDecorator.html#a65321fc7dc7a2ba1277b6b65a38344ad" title="osgEarth::OverlayDecorator::reinit" alt="" coords="359,429,577,459"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1TextureCompositor.html#ab7a9336f87cda5e79e8f20f01a169e14" title="osgEarth::TextureCompositor::usesShaderComposition" alt="" coords="297,483,639,512"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="377,536,559,565"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="751,324,937,353"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1048,244,1376,273"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1100,297,1324,327"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1091,351,1333,380"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1089,404,1335,433"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1OverlayDecorator.html#a84677df2ac8f2786733e6605b9638b15" title="osgEarth::OverlayDecorator::initRTTShaders" alt="" coords="703,431,985,460"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1OverlayDecorator.html#af521bc095b4ca1ecfb187370cf1b70d1" title="osgEarth::OverlayDecorator::initSubgraphShaders" alt="" coords="688,484,1000,513"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1VirtualProgram.html#af9da03697906650ba02f2da3a8fdd04e" title="osgEarth::VirtualProgram::setFunction" alt="" coords="1091,484,1333,513"/>
+<area shape="rect" id="node38" href="$classosgEarth_1_1VirtualProgram.html#a0dde219eb0e46b7c3b019a65111b8a61" title="osgEarth::VirtualProgram::setShader" alt="" coords="1424,484,1659,513"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="719,537,969,567"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="384,231,712,260"/>
+<area shape="rect" id="node54" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a08214e72e7181dddf40dc340afd4f6ed" title="osgEarth::Util::Controls::Container::calcFill" alt="" coords="412,284,684,313"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3" title="osgEarth::Util::Controls::HBox::addControl" alt="" coords="795,73,1064,103"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="795,177,1064,207"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a25144e9d12a23524f4bf609f21fcd265" title="osgEarth::Util::Controls::Container::setChildHorizAlign" alt="" coords="760,231,1099,260"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="764,284,1095,313"/>
+<area shape="rect" id="node39" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="800,441,1059,471"/>
+<area shape="rect" id="node7" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="1559,205,1692,235"/>
+<area shape="rect" id="node9" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="1275,73,1381,103"/>
+<area shape="rect" id="node11" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1600,73,1651,103"/>
+<area shape="rect" id="node17" href="$namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114" title="anonymous_namespace\{osgearth_manip::cpp\}::createHelp" alt="" coords="1147,127,1509,156"/>
+<area shape="rect" id="node21" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1303,231,1353,260"/>
+<area shape="rect" id="node19" href="$osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1600,127,1651,156"/>
+<area shape="rect" id="node29" href="$osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846" title="createControlPanel" alt="" coords="1261,284,1395,313"/>
+<area shape="rect" id="node34" href="$osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e" title="createToolBar" alt="" coords="1277,337,1379,367"/>
+<area shape="rect" id="node31" href="$osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1600,284,1651,313"/>
+<area shape="rect" id="node36" href="$osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1600,337,1651,367"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a6481a84518097ca479507ade97b4a770" title="osgEarth::Util::Controls::Grid::addControl" alt="" coords="1197,545,1459,575"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#aef86ee35f5d7e87270ef27f251952d68" title="osgEarth::Util::Controls::Grid::addControls" alt="" coords="1193,599,1463,628"/>
+<area shape="rect" id="node46" href="$osgearth__toc_8cpp.html#aa71991ef036a5d30b262af0eeb75c09f" title="createLayerItem" alt="" coords="1271,441,1385,471"/>
+<area shape="rect" id="node48" href="$osgearth__toc_8cpp.html#a46d27909d39c4375f3cb070f332fe4d1" title="updateControlPanel" alt="" coords="1557,468,1693,497"/>
+<area shape="rect" id="node50" href="$osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1741,468,1792,497"/>
+</map>

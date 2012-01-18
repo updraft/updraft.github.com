@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="388,219,684,248"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a" title="osgEarth::Util::Controls::LabelControl::setFont" alt="" coords="391,5,681,35"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b" title="osgEarth::Util::Controls::LabelControl::setFontSize" alt="" coords="377,59,695,88"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a6df2f3d6c431643d1f6da8cb717c4a43" title="osgEarth::Util::Controls::Control::setForeColor" alt="" coords="391,165,681,195"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01" title="osgEarth::Util::Controls::LabelControl::setText" alt="" coords="391,112,681,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="744,112,987,141"/>
+<area shape="rect" id="node9" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="783,192,948,221"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1036,112,1308,141"/>
+</map>

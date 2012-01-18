@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1StencilVolumeNode.html#ac3680a7e5411ebf43b8c309ef1657d18" title="osgEarth::Symbology::StencilVolumeNode::init" alt="" coords="449,112,743,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Registry.html#a8ebadcf08d3161838cb5d2d7e0dcdbb3" title="osgEarth::Registry::getCapabilities" alt="" coords="833,32,1057,61"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="852,85,1039,115"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Capabilities.html#ae79ab557d1b92887d821d447bd238db3" title="osgEarth::Capabilities::supportsStencilWrap" alt="" coords="807,139,1084,168"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Capabilities.html#ab4bf840e85afd9f437bd8c4bcd4ed09e" title="osgEarth::Capabilities::supportsTwoSidedStencil" alt="" coords="792,192,1099,221"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="1148,85,1335,115"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1384,5,1712,35"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1436,59,1660,88"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1427,112,1669,141"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1425,165,1671,195"/>
+</map>

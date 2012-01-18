@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -65,36 +95,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
+      <li class="navelem"><a class="el" href="classagg_1_1renderer.html">renderer</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('classagg_1_1renderer.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>agg::renderer&lt; Span &gt; Class Template Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="agg::renderer" -->
-<p><code>#include &lt;<a class="el" href="_a_g_g_8h_source.html">AGG.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for agg::renderer&lt; Span &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="classagg_1_1renderer__coll__graph.png" border="0" usemap="#agg_1_1renderer_3_01_span_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="agg_1_1renderer_3_01_span_01_4_coll__map" id="agg_1_1renderer_3_01_span_01_4_coll__map">
+<p><code>#include &lt;<a class="el" href="AGG_8h_source.html">AGG.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Collaboration diagram for agg::renderer&lt; Span &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classagg_1_1renderer__coll__graph.png" border="0" usemap="#agg_1_1renderer_3_01Span_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="agg_1_1renderer_3_01Span_01_4_coll__map" id="agg_1_1renderer_3_01Span_01_4_coll__map">
 <area shape="rect" id="node4" href="classagg_1_1rendering__buffer.html" title="agg::rendering_buffer" alt="" coords="80,5,224,35"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classagg_1_1renderer-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -106,13 +132,17 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structagg_1_1rgba8.html">rgba8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1renderer.html#abf2f4bbb530922b1a0057d7f5b95b5bf">pixel</a> (int x, int y) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1renderer.html#a552eb76ef8b848a94bd9d91bc7ea8e87">render</a> (const <a class="el" href="classagg_1_1scanline.html">scanline</a> &amp;sl, const <a class="el" href="structagg_1_1rgba8.html">rgba8</a> &amp;c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classagg_1_1rendering__buffer.html">rendering_buffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1renderer.html#a29d41a23ebb5fa0c822d149f90d94761">rbuf</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classagg_1_1rendering__buffer.html">rendering_buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Span&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Span&gt;<br/>
  class agg::renderer&lt; Span &gt;</h3>
 
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00406">406</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00406">406</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aedeeab69c0dece884cecabde5a3ee59a"></a><!-- doxytag: member="agg::renderer::renderer" ref="aedeeab69c0dece884cecabde5a3ee59a" args="(rendering_buffer &amp;rbuf)" -->
 <div class="memitem">
@@ -131,8 +161,11 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00410">410</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00410">410</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">                                         : <a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>(&amp;<a class="code" href="classagg_1_1renderer.html#a29d41a23ebb5fa0c822d149f90d94761">rbuf</a>)
+        {
+        }
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -153,8 +186,15 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00415">415</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00415">415</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">unsigned</span> y;
+            <span class="keywordflow">for</span>(y = 0; y &lt; <a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;height(); y++)
+            {
+                <a class="code" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a>.hline(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;row(y), 0, <a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;width(), c);
+            }
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a2d11f04b0b31eac04bdadb1931efa904"></a><!-- doxytag: member="agg::renderer::pixel" ref="a2d11f04b0b31eac04bdadb1931efa904" args="(int x, int y, const rgba8 &amp;c)" -->
@@ -190,8 +230,14 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00425">425</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00425">425</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;inbox(x, y))
+            {
+                <a class="code" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a>.hline(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;row(y), x, 1, c);
+            }
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="abf2f4bbb530922b1a0057d7f5b95b5bf"></a><!-- doxytag: member="agg::renderer::pixel" ref="abf2f4bbb530922b1a0057d7f5b95b5bf" args="(int x, int y) const " -->
@@ -221,8 +267,15 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00434">434</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00434">434</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">if</span>(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;inbox(x, y))
+            {
+                <span class="keywordflow">return</span> <a class="code" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a>.get(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;row(y), x);
+            }
+            <span class="keywordflow">return</span> rgba8(0,0,0);
+        }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a29d41a23ebb5fa0c822d149f90d94761"></a><!-- doxytag: member="agg::renderer::rbuf" ref="a29d41a23ebb5fa0c822d149f90d94761" args="()" -->
@@ -241,8 +294,9 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00479">479</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
-
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00479">479</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> *<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>; }
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="a552eb76ef8b848a94bd9d91bc7ea8e87"></a><!-- doxytag: member="agg::renderer::render" ref="a552eb76ef8b848a94bd9d91bc7ea8e87" args="(const scanline &amp;sl, const rgba8 &amp;c)" -->
@@ -272,24 +326,81 @@ template&lt;class Span&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_g_g_8h_source.html#l00444">444</a> of file <a class="el" href="_a_g_g_8h_source.html">AGG.h</a>.</p>
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00444">444</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">if</span>(sl.y() &lt; 0 || sl.y() &gt;= int(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;height()))
+            {
+                <span class="keywordflow">return</span>;
+            }
+
+            <span class="keywordtype">unsigned</span> num_spans = sl.num_spans();
+            <span class="keywordtype">int</span> base_x = sl.base_x();
+            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* row = <a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;row(sl.y());
+            <a class="code" href="classagg_1_1scanline.html#a67171474c4da6cc8efe0c7fafefd2b2d">scanline::iterator</a> span(sl);
+
+            <span class="keywordflow">do</span>
+            {
+                <span class="keywordtype">int</span> x = span.next() + base_x;
+                <span class="keyword">const</span> <a class="code" href="namespaceagg.html#a73de6e179616b2843e3405721989dedf">int8u</a>* covers = span.covers();
+                <span class="keywordtype">int</span> num_pix = span.num_pix();
+                <span class="keywordflow">if</span>(x &lt; 0)
+                {
+                    num_pix += x;
+                    <span class="keywordflow">if</span>(num_pix &lt;= 0) <span class="keywordflow">continue</span>;
+                    covers -= x;
+                    x = 0;
+                }
+                <span class="keywordflow">if</span>(x + num_pix &gt;= <span class="keywordtype">int</span>(<a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;width()))
+                {
+                    num_pix = <a class="code" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a>-&gt;width() - x;
+                    <span class="keywordflow">if</span>(num_pix &lt;= 0) <span class="keywordflow">continue</span>;
+                }
+                <a class="code" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a>.render(row, x, num_pix, covers, c);
+            }
+            <span class="keywordflow">while</span>(--num_spans);
+        }
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a6f621632922e9ecee03315e5617093e7"></a><!-- doxytag: member="agg::renderer::m_rbuf" ref="a6f621632922e9ecee03315e5617093e7" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Span&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classagg_1_1rendering__buffer.html">rendering_buffer</a>* <a class="el" href="classagg_1_1renderer.html">agg::renderer</a>&lt; Span &gt;::<a class="el" href="classagg_1_1renderer.html#a6f621632922e9ecee03315e5617093e7">m_rbuf</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00482">482</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30202301923f76990561966a791ea1f0"></a><!-- doxytag: member="agg::renderer::m_span" ref="a30202301923f76990561966a791ea1f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Span&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Span <a class="el" href="classagg_1_1renderer.html">agg::renderer</a>&lt; Span &gt;::<a class="el" href="classagg_1_1renderer.html#a30202301923f76990561966a791ea1f0">m_span</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="AGG_8h_source.html#l00483">483</a> of file <a class="el" href="AGG_8h_source.html">AGG.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="_a_g_g_8h_source.html">AGG.h</a></li>
+<li>/home/cube/sources/osgearth/src/osgEarthSymbology/<a class="el" href="AGG_8h_source.html">AGG.h</a></li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceagg.html">agg</a>      </li>
-      <li class="navelem"><a class="el" href="classagg_1_1renderer.html">renderer</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -304,6 +415,8 @@ template&lt;class Span&gt; </div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

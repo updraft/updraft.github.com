@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__symbology_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -110,9 +127,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osg/LineWidth&gt;</code><br/>
 <code>#include &lt;osg/Point&gt;</code><br/>
 <code>#include &lt;osg/Material&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_symbology.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_symbology.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__symbology_2osgearth__symbology_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__symbology_2osgearth__symbology_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__symbology_2osgearth__symbology_8cpp">
 </map>
@@ -122,22 +141,23 @@ Include dependency graph for osgearth_symbology.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_sample_geometry_input.html">SampleGeometryInput</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pop_up_symbolizer_context.html">PopUpSymbolizerContext</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pop_up_symbolizer.html">PopUpSymbolizer</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_polygon_point_size_symbol.html">PolygonPointSizeSymbol</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_point_symbolizer.html">GeometryPointSymbolizer</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_style_editor.html">StyleEditor</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSampleGeometryInput.html">SampleGeometryInput</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPopUpSymbolizerContext.html">PopUpSymbolizerContext</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPopUpSymbolizer.html">PopUpSymbolizer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPolygonPointSizeSymbol.html">PolygonPointSizeSymbol</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGeometryPointSymbolizer.html">GeometryPointSymbolizer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStyleEditor.html">StyleEditor</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef SymbolicNode&lt; State<br class="typebreak"/>
-&lt; GeometryContent &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a></td></tr>
+&lt; <a class="el" href="classosgEarth_1_1Symbology_1_1GeometryContent.html">GeometryContent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Geometry *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a70e7cdaecc6035c833018fc296869336">createLineGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Geometry *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#add27ce1e495dd32e573c1f6b963f521e">createRingGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Geometry *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a1654b48b74b269e1b3c227d6605b04e1">createPolygonGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Geometry *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#ae6f7f9c4c638adfe7f5871204edaaf0c">createPointsGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591">getRandomValueInOne</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a70e7cdaecc6035c833018fc296869336">createLineGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#add27ce1e495dd32e573c1f6b963f521e">createRingGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a1654b48b74b269e1b3c227d6605b04e1">createPolygonGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#ae6f7f9c4c638adfe7f5871204edaaf0c">createPointsGeometry</a> (const osg::Vec3d &amp;start)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59">createSymbologyScene</a> (PopupManager *wm)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__symbology_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 </table>
@@ -147,7 +167,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef SymbolicNode&lt; State&lt;GeometryContent&gt; &gt; <a class="el" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a></td>
+          <td class="memname">typedef SymbolicNode&lt; State&lt;<a class="el" href="classosgEarth_1_1Symbology_1_1GeometryContent.html">GeometryContent</a>&gt; &gt; <a class="el" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a></td>
         </tr>
       </table>
 </div>
@@ -163,7 +183,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Geometry* createLineGeometry </td>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* createLineGeometry </td>
           <td>(</td>
           <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
           <td class="paramname"><em>start</em></td><td>)</td>
@@ -174,13 +194,34 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00059">59</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Vec3dArray&gt; array = <span class="keyword">new</span> osg::Vec3dArray;
+    array-&gt;push_back(start + osg::Vec3d(-100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,100,0));
+    array-&gt;push_back(start + osg::Vec3d(-100,100,0));
+    <span class="keywordflow">return</span> Geometry::create(Geometry::TYPE_LINESTRING, array);
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_cgraph" alt=""/></div>
+<map name="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_cgraph" id="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1Geometry.html#a1a7566f22a3c75425f28817cb5707542" title="osgEarth::Symbology::Geometry::create" alt="" coords="192,5,448,35"/><area shape="rect" id="node5" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb" title="osgEarth::MixinVector::push_back" alt="" coords="209,59,431,88"/></map>
+</div>
+</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_icgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_icgraph" id="osgearth__symbology_8cpp_a70e7cdaecc6035c833018fc296869336_icgraph">
-<area shape="rect" id="node3" href="struct_sample_geometry_input.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="192,5,483,35"/></map>
+<area shape="rect" id="node3" href="structSampleGeometryInput.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="192,5,483,35"/></map>
 </div>
 </p>
 
@@ -191,7 +232,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Geometry* createPointsGeometry </td>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* createPointsGeometry </td>
           <td>(</td>
           <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
           <td class="paramname"><em>start</em></td><td>)</td>
@@ -202,13 +243,34 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00092">92</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Vec3dArray&gt; array = <span class="keyword">new</span> osg::Vec3dArray;
+    array-&gt;push_back(start + osg::Vec3d(-100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,100,0));
+    array-&gt;push_back(start + osg::Vec3d(-100,100,0));
+    <span class="keywordflow">return</span> Geometry::create(Geometry::TYPE_POINTSET, array);
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_cgraph" alt=""/></div>
+<map name="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_cgraph" id="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1Geometry.html#a1a7566f22a3c75425f28817cb5707542" title="osgEarth::Symbology::Geometry::create" alt="" coords="205,5,461,35"/><area shape="rect" id="node5" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb" title="osgEarth::MixinVector::push_back" alt="" coords="223,59,444,88"/></map>
+</div>
+</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_icgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_icgraph" id="osgearth__symbology_8cpp_ae6f7f9c4c638adfe7f5871204edaaf0c_icgraph">
-<area shape="rect" id="node3" href="struct_sample_geometry_input.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="205,5,496,35"/></map>
+<area shape="rect" id="node3" href="structSampleGeometryInput.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="205,5,496,35"/></map>
 </div>
 </p>
 
@@ -219,7 +281,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Geometry* createPolygonGeometry </td>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* createPolygonGeometry </td>
           <td>(</td>
           <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
           <td class="paramname"><em>start</em></td><td>)</td>
@@ -230,13 +292,35 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00080">80</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Vec3dArray&gt; array = <span class="keyword">new</span> osg::Vec3dArray;
+    array-&gt;push_back(start + osg::Vec3d(-100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(-10,-10,0));
+    array-&gt;push_back(start + osg::Vec3d(100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,100,0));
+    array-&gt;push_back(start + osg::Vec3d(-100,100,0));
+    <span class="keywordflow">return</span> Geometry::create(Geometry::TYPE_POLYGON, array);
+}
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_cgraph" alt=""/></div>
+<map name="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_cgraph" id="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1Geometry.html#a1a7566f22a3c75425f28817cb5707542" title="osgEarth::Symbology::Geometry::create" alt="" coords="216,5,472,35"/><area shape="rect" id="node5" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb" title="osgEarth::MixinVector::push_back" alt="" coords="233,59,455,88"/></map>
+</div>
+</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_icgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_icgraph" id="osgearth__symbology_8cpp_a1654b48b74b269e1b3c227d6605b04e1_icgraph">
-<area shape="rect" id="node3" href="struct_sample_geometry_input.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="216,5,507,35"/></map>
+<area shape="rect" id="node3" href="structSampleGeometryInput.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="216,5,507,35"/></map>
 </div>
 </p>
 
@@ -247,7 +331,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Geometry* createRingGeometry </td>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* createRingGeometry </td>
           <td>(</td>
           <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
           <td class="paramname"><em>start</em></td><td>)</td>
@@ -258,13 +342,34 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00069">69</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt;osg::Vec3dArray&gt; array = <span class="keyword">new</span> osg::Vec3dArray;
+    array-&gt;push_back(start + osg::Vec3d(-100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,-100,0));
+    array-&gt;push_back(start + osg::Vec3d(100,100,0));
+    array-&gt;push_back(start + osg::Vec3d(-100,100,0));
+    <span class="keywordflow">return</span> Geometry::create(Geometry::TYPE_RING, array);
+}
+</pre></div>
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_cgraph" alt=""/></div>
+<map name="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_cgraph" id="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1Geometry.html#a1a7566f22a3c75425f28817cb5707542" title="osgEarth::Symbology::Geometry::create" alt="" coords="197,5,453,35"/><area shape="rect" id="node5" href="classosgEarth_1_1MixinVector.html#ad9ccc8f201ab12b8dad941f726dbabbb" title="osgEarth::MixinVector::push_back" alt="" coords="215,59,436,88"/></map>
+</div>
+</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_icgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_icgraph" id="osgearth__symbology_8cpp_add27ce1e495dd32e573c1f6b963f521e_icgraph">
-<area shape="rect" id="node3" href="struct_sample_geometry_input.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="197,5,488,35"/></map>
+<area shape="rect" id="node3" href="structSampleGeometryInput.html#a947664134364457692df0895716bb6f7" title="SampleGeometryInput::SampleGeometryInput" alt="" coords="197,5,488,35"/></map>
 </div>
 </p>
 
@@ -289,22 +394,227 @@ Here is the caller graph for this function:</div>
 </p>
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00472">472</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::Group* grp = <span class="keyword">new</span> osg::Group;
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    osg::ref_ptr&lt;SampleGeometryInput&gt; dataset = <span class="keyword">new</span> <a class="code" href="structSampleGeometryInput.html">SampleGeometryInput</a>;
+    <a class="code" href="namespaceosgEarth_1_1Symbology.html#abc1ac29b7a45b7283134c8b73aed5bfa">StyleList</a> styles;
+
+    {
+        osg::ref_ptr&lt;Style&gt; style = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Style.html">Style</a>;
+        style-&gt;<a class="code" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b">setName</a>(<span class="stringliteral">&quot;PolygonSymbol-color&quot;</span>);
+        osg::ref_ptr&lt;PolygonSymbol&gt; polySymbol = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html">PolygonSymbol</a>;
+        polySymbol-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640">fill</a>()-&gt;color() = osg::Vec4(0,1,1,1);
+        style-&gt;addSymbol(polySymbol.get());
+        styles.push_back(style.get());
+    }
+
+    {
+        osg::ref_ptr&lt;Style&gt; style = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Style.html">Style</a>;
+        style-&gt;<a class="code" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b">setName</a>(<span class="stringliteral">&quot;Custom-PolygonPointSizeSymbol-size&amp;color&quot;</span>);
+        osg::ref_ptr&lt;PolygonPointSizeSymbol&gt; polySymbol = <span class="keyword">new</span> <a class="code" href="structPolygonPointSizeSymbol.html">PolygonPointSizeSymbol</a>;
+        polySymbol-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640">fill</a>()-&gt;color() = osg::Vec4(1,0,0,1);
+        polySymbol-&gt;size() = 2.0;
+        style-&gt;addSymbol(polySymbol.get());
+        styles.push_back(style.get());
+    }
+
+
+    <span class="comment">// style for extruded</span>
+    {
+        osg::ref_ptr&lt;Style&gt; style = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Style.html">Style</a>;
+        style-&gt;<a class="code" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b">setName</a>(<span class="stringliteral">&quot;Extrude-Polygon&amp;Line-height&amp;color&quot;</span>);
+        osg::ref_ptr&lt;ExtrudedPolygonSymbol&gt; polySymbol = <span class="keyword">new</span> ExtrudedPolygonSymbol;
+        polySymbol-&gt;fill()-&gt;color() = osg::Vec4(1,0,0,1);
+        polySymbol-&gt;extrude()-&gt;height() = 100;
+        polySymbol-&gt;extrude()-&gt;offset() = 10;
+        style-&gt;addSymbol(polySymbol.get());
+
+        osg::ref_ptr&lt;ExtrudedLineSymbol&gt; lineSymbol = <span class="keyword">new</span> ExtrudedLineSymbol;
+        lineSymbol-&gt;stroke()-&gt;color() = osg::Vec4(0,0,1,1);
+        lineSymbol-&gt;extrude()-&gt;height() = 150;
+        lineSymbol-&gt;extrude()-&gt;offset() = 10;
+        style-&gt;addSymbol(lineSymbol.get());
+        styles.push_back(style.get());
+    }
+
+
+    <span class="comment">// style for marker</span>
+    {
+        osg::ref_ptr&lt;Style&gt; style = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Style.html">Style</a>;
+        style-&gt;<a class="code" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b">setName</a>(<span class="stringliteral">&quot;Marker&quot;</span>);
+        osg::ref_ptr&lt;MarkerSymbol&gt; pointSymbol = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1MarkerSymbol.html">MarkerSymbol</a>;
+        pointSymbol-&gt;marker() = <span class="stringliteral">&quot;../data/tree.ive&quot;</span>;
+        style-&gt;addSymbol(pointSymbol.get());
+
+        osg::ref_ptr&lt;MarkerLineSymbol&gt; lineSymbol = <span class="keyword">new</span> MarkerLineSymbol;
+        lineSymbol-&gt;marker() = <span class="stringliteral">&quot;../data/tree.ive&quot;</span>;
+        lineSymbol-&gt;interval() = 5;
+        style-&gt;addSymbol(lineSymbol.get());
+
+        osg::ref_ptr&lt;MarkerPolygonSymbol&gt; polySymbol = <span class="keyword">new</span> MarkerPolygonSymbol;
+        polySymbol-&gt;marker() = <span class="stringliteral">&quot;../data/tree.ive&quot;</span>;
+        polySymbol-&gt;interval() = 20;
+        polySymbol-&gt;randomRatio() = 1.0;
+        style-&gt;addSymbol(polySymbol.get());
+
+        styles.push_back(style.get());
+    }
+
+
+    <span class="comment">// style for popup</span>
+    {
+        osg::ref_ptr&lt;Style&gt; style = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Style.html">Style</a>;
+        style-&gt;<a class="code" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b">setName</a>(<span class="stringliteral">&quot;Popup&quot;</span>);
+        osg::ref_ptr&lt;TextSymbol&gt; symbol = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html">TextSymbol</a>;
+        <span class="comment">//symbol-&gt;theme() = &quot;../data/popup-theme.png&quot;;</span>
+        symbol-&gt;<a class="code" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d">font</a>() = <span class="stringliteral">&quot;arial.ttf&quot;</span>;
+        symbol-&gt;size() = 14;
+        symbol-&gt;fill()-&gt;color() = osg::Vec4(<a class="code" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591">getRandomValueInOne</a>(), <a class="code" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591">getRandomValueInOne</a>() , <a class="code" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591">getRandomValueInOne</a>(), 0.7);
+        style-&gt;addSymbol(symbol.get());
+        styles.push_back(style.get());
+    }
+
+
+    {
+        <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>* node = <span class="keyword">new</span> <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>();
+        node-&gt;setSymbolizer( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1GeometrySymbolizer.html">GeometrySymbolizer</a>() );
+
+        node-&gt;getState()-&gt;setStyle( styles[0].<span class="keyword">get</span>() );
+        node-&gt;getState()-&gt;setContent( dataset.get() );
+
+        osg::MatrixTransform* tr = <span class="keyword">new</span> osg::MatrixTransform;
+        tr-&gt;setMatrix(osg::Matrix::translate(0, -250 , 0));
+        tr-&gt;addChild(node);
+        grp-&gt;addChild(tr);
+    }
+
+
+    {
+        <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>* node = <span class="keyword">new</span> <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>();
+        node-&gt;setSymbolizer( <span class="keyword">new</span> <a class="code" href="structGeometryPointSymbolizer.html">GeometryPointSymbolizer</a>() );
+        node-&gt;getState()-&gt;setStyle(styles[1].<span class="keyword">get</span>());
+        node-&gt;getState()-&gt;setContent(dataset.get());
+        osg::MatrixTransform* tr = <span class="keyword">new</span> osg::MatrixTransform;
+        tr-&gt;addChild(node);
+        tr-&gt;setMatrix(osg::Matrix::translate(0, 0 , 0));
+        grp-&gt;addChild(tr);
+    }
+
+
+    {
+        <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>* node = <span class="keyword">new</span> <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>();
+        node-&gt;setSymbolizer( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1GeometryExtrudeSymbolizer.html">GeometryExtrudeSymbolizer</a>() );
+        node-&gt;getState()-&gt;setStyle(styles[2].<span class="keyword">get</span>());
+        node-&gt;getState()-&gt;setContent(dataset.get());
+        osg::MatrixTransform* tr = <span class="keyword">new</span> osg::MatrixTransform;
+        tr-&gt;addChild(node);
+        tr-&gt;setMatrix(osg::Matrix::translate(0, 250 , 0));
+        grp-&gt;addChild(tr);
+    }
+
+
+    {
+        <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>* node = <span class="keyword">new</span> <a class="code" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">GeometrySymbolicNode</a>();
+        node-&gt;setSymbolizer( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Symbology_1_1MarkerSymbolizer.html">MarkerSymbolizer</a>() );
+        node-&gt;getState()-&gt;setStyle(styles[3].<span class="keyword">get</span>());
+        node-&gt;getState()-&gt;setContent(dataset.get());
+        osg::MatrixTransform* tr = <span class="keyword">new</span> osg::MatrixTransform;
+        tr-&gt;addChild(node);
+        tr-&gt;setMatrix(osg::Matrix::translate(0, 500 , 0));
+        grp-&gt;addChild(tr);
+    }
+
+
+
+    <span class="comment">//{</span>
+    <span class="comment">//    osg::ref_ptr&lt;ModelSymbolizer&gt; symbolizer = new ModelSymbolizer();</span>
+    <span class="comment">//    osg::ref_ptr&lt;SymbolicNode&gt; node = new SymbolicNode;</span>
+    <span class="comment">//    node-&gt;setSymbolizer(symbolizer.get());</span>
+    <span class="comment">//    Style* style = new Style;</span>
+    <span class="comment">//    std::string real = osgDB::getRealPath(&quot;../data/tree.ive&quot;);</span>
+    <span class="comment">//    MarkerSymbol* marker = new MarkerSymbol;</span>
+    <span class="comment">//    marker-&gt;marker() = real;</span>
+    <span class="comment">//    node-&gt;setDataSet(dataset.get());</span>
+    <span class="comment">//    style-&gt;addSymbol(marker);</span>
+    <span class="comment">//    node-&gt;setStyle(style);</span>
+    <span class="comment">//    osg::MatrixTransform* tr = new osg::MatrixTransform;</span>
+    <span class="comment">//    tr-&gt;addChild(node);</span>
+    <span class="comment">//    tr-&gt;setMatrix(osg::Matrix::scale(10,10,10) * osg::Matrix::translate(0, 750 , 0));</span>
+    <span class="comment">//    grp-&gt;addChild(tr);</span>
+    <span class="comment">//}</span>
+
+    <a class="code" href="classStyleEditor.html">StyleEditor</a>* styleEditor = <span class="keyword">new</span> <a class="code" href="classStyleEditor.html">StyleEditor</a>(styles);
+    {
+        <a class="code" href="structPopUpSymbolizerContext.html">PopUpSymbolizerContext</a>* ctx = <span class="keyword">new</span> <a class="code" href="structPopUpSymbolizerContext.html">PopUpSymbolizerContext</a>(wm);
+        styleEditor-&gt;<a class="code" href="classStyleEditor.html#a070d17af6ca325aa4bf55e524dc32cab">setPopupContext</a>(ctx);
+
+        SymbolicNode&lt; State&lt;GeometryContent&gt; &gt;* node = <span class="keyword">new</span> SymbolicNode&lt; State&lt;GeometryContent&gt; &gt;();
+        node-&gt;setSymbolizer( <span class="keyword">new</span> <a class="code" href="structPopUpSymbolizer.html">PopUpSymbolizer</a>() );
+        node-&gt;getState()-&gt;setStyle(styles[4]);
+        node-&gt;getState()-&gt;setContent(dataset.get());
+        node-&gt;getState()-&gt;setContext(ctx);
+        osg::MatrixTransform* tr = <span class="keyword">new</span> osg::MatrixTransform;
+        tr-&gt;addChild(node);
+        tr-&gt;setMatrix(osg::Matrix::translate(0, 1000 , 0));
+        grp-&gt;addChild(tr);
+    }
+    
+    grp-&gt;addEventCallback(styleEditor);
+    <span class="keywordflow">return</span> grp;
+}
+</pre></div>
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_cgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_cgraph" id="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_cgraph">
-<area shape="rect" id="node3" href="class_style_editor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="213,5,408,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640" title="osgEarth::Symbology::PolygonSymbol::fill" alt="" coords="213,5,480,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d" title="osgEarth::Symbology::TextSymbol::font" alt="" coords="220,59,473,88"/><area shape="rect" id="node7" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591" title="getRandomValueInOne" alt="" coords="268,112,425,141"/><area shape="rect" id="node9" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b" title="osgEarth::Style::setName" alt="" coords="260,165,433,195"/><area shape="rect" id="node11" href="classStyleEditor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="249,219,444,248"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_icgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_icgraph" id="osgearth__symbology_8cpp_a3def9dd95c964754ea325b8c0b3eaa59_icgraph">
 <area shape="rect" id="node3" href="osgearth__symbology_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="213,5,264,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae95e864e6b84c22ac3f18a321324f591"></a><!-- doxytag: member="osgearth_symbology.cpp::getRandomValueInOne" ref="ae95e864e6b84c22ac3f18a321324f591" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double getRandomValueInOne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00053">53</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> ((rand() * 1.0)/(RAND_MAX-1));
+}
+</pre></div>
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__symbology_8cpp_ae95e864e6b84c22ac3f18a321324f591_icgraph.png" border="0" usemap="#osgearth__symbology_8cpp_ae95e864e6b84c22ac3f18a321324f591_icgraph" alt=""/></div>
+<map name="osgearth__symbology_8cpp_ae95e864e6b84c22ac3f18a321324f591_icgraph" id="osgearth__symbology_8cpp_ae95e864e6b84c22ac3f18a321324f591_icgraph">
+<area shape="rect" id="node3" href="osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59" title="createSymbologyScene" alt="" coords="211,5,371,35"/><area shape="rect" id="node5" href="osgearth__symbology_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="419,5,469,35"/></map>
 </div>
 </p>
 
@@ -336,28 +646,41 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__symbology_8cpp_source.html#l00647">647</a> of file <a class="el" href="osgearth__symbology_8cpp_source.html">osgearth_symbology.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    osgViewer::Viewer viewer(arguments);
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.setCameraManipulator(<span class="keyword">new</span> osgGA::TrackballManipulator());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+    
+    osg::Group* root = <span class="keyword">new</span> osg::Group;
+    viewer.setSceneData(root);
+    viewer.realize();
+
+    PopupManager* wm = <span class="keyword">new</span> PopupManager(&amp;viewer);
+    osg::Node* node = <a class="code" href="osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59">createSymbologyScene</a>(wm);
+    root-&gt;addChild(node);
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__symbology_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__symbology_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__symbology_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__symbology_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59" title="createSymbologyScene" alt="" coords="104,5,264,35"/><area shape="rect" id="node5" href="class_style_editor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="312,5,507,35"/></map>
+<area shape="rect" id="node3" href="osgearth__symbology_8cpp.html#a3def9dd95c964754ea325b8c0b3eaa59" title="createSymbologyScene" alt="" coords="104,112,264,141"/><area shape="rect" id="node5" href="classosgEarth_1_1Symbology_1_1PolygonSymbol.html#aac74c9a734eaa8a8656003c60ddb9640" title="osgEarth::Symbology::PolygonSymbol::fill" alt="" coords="312,5,579,35"/><area shape="rect" id="node7" href="classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d" title="osgEarth::Symbology::TextSymbol::font" alt="" coords="319,59,572,88"/><area shape="rect" id="node9" href="osgearth__symbology_8cpp.html#ae95e864e6b84c22ac3f18a321324f591" title="getRandomValueInOne" alt="" coords="367,112,524,141"/><area shape="rect" id="node11" href="classosgEarth_1_1Style.html#a6c392dd34ce20d8da240f6550794b02b" title="osgEarth::Style::setName" alt="" coords="359,165,532,195"/><area shape="rect" id="node13" href="classStyleEditor.html#a070d17af6ca325aa4bf55e524dc32cab" title="StyleEditor::setPopupContext" alt="" coords="348,219,543,248"/></map>
 </div>
 </p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__symbology_8cpp.html">osgearth_symbology.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -372,6 +695,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

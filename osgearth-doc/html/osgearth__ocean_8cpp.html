@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__ocean_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -95,9 +112,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthUtil/EarthManipulator&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/OceanSurfaceNode&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/Controls&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_ocean.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_ocean.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__ocean_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__ocean_2osgearth__ocean_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__ocean_2osgearth__ocean_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__ocean_2osgearth__ocean_8cpp">
 </map>
@@ -107,14 +126,15 @@ Include dependency graph for osgearth_ocean.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_graphics_context.html">MyGraphicsContext</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_my_event_handler.html">MyEventHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyGraphicsContext.html">MyGraphicsContext</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMyEventHandler.html">MyEventHandler</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
 &lt; osg::ref_ptr&lt; osg::Image &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">createMenu</a> (osgViewer::View *view)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Image *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">make3DImage</a> (const <a class="el" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a> &amp;images)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__ocean_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">usage</a> (const std::string &amp;msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
@@ -136,6 +156,84 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a629c99b5824d65359bbdadd8f636ace7"></a><!-- doxytag: member="osgearth_ocean.cpp::createMenu" ref="a629c99b5824d65359bbdadd8f636ace7" args="(osgViewer::View *view)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static osg::Node* createMenu </td>
+          <td>(</td>
+          <td class="paramtype">osgViewer::View *&#160;</td>
+          <td class="paramname"><em>view</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__ocean_8cpp_source.html#l00067">67</a> of file <a class="el" href="osgearth__ocean_8cpp_source.html">osgearth_ocean.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">using namespace </span>osgEarth::Util::Controls;
+
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( view );
+
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+    grid-&gt;setBackColor( 0, 0, 0, 0.5 );
+    grid-&gt;setMargin( 5 );
+    grid-&gt;setChildSpacing( 3 );
+    grid-&gt;setVertAlign( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">Control::ALIGN_BOTTOM</a> );
+    <span class="keywordtype">int</span> row = 0;
+
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Ocean Demo&quot;</span>, 18.0f, osg::Vec4(1,1,0,1) ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Zoom in to the coastline to see ocean effects.&quot;</span>, 14.0f, osg::Vec4(.6,.6,.6,1) ) );
+
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;e&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle ocean effects&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;m&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle MSL adjustment&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;h/H&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec wave height&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;p/P&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec wave period&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;c/C&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec ocean modulation color&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;a/A&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec shimmer effect period&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;j/J&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec surface image size&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;i&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle ocean mask inversion&quot;</span> ) );
+    grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;w&quot;</span> ) );
+    grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle wireframe mode&quot;</span> ) );
+
+    canvas-&gt;addControl( grid );
+    <span class="keywordflow">return</span> canvas;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_cgraph.png" border="0" usemap="#osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_cgraph" alt=""/></div>
+<map name="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_cgraph" id="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="144,5,424,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a0ead895b4a8e5972807293ee1336a9ab" title="osgEarth::Util::Controls::ControlCanvas::ControlCanvas" alt="" coords="472,5,821,35"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a5fd6aeb9e88aa39864c3b9c5afb7fc97" title="osgEarth::Util::Controls::ControlCanvas::init" alt="" coords="871,5,1148,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_icgraph.png" border="0" usemap="#osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_icgraph" alt=""/></div>
+<map name="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_icgraph" id="osgearth__ocean_8cpp_a629c99b5824d65359bbdadd8f636ace7_icgraph">
+<area shape="rect" id="node3" href="osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="144,5,195,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a><!-- doxytag: member="osgearth_ocean.cpp::main" ref="a3c04138a5bfe5d72780bb7e82a18e627" args="(int argc, char **argv)" -->
 <div class="memitem">
 <div class="memproto">
@@ -162,13 +260,72 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__ocean_8cpp_source.html#l00229">229</a> of file <a class="el" href="osgearth__ocean_8cpp_source.html">osgearth_ocean.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    std::string maskLayerName = <span class="stringliteral">&quot;ocean&quot;</span>;
+    <span class="keywordflow">while</span>( arguments.read(<span class="stringliteral">&quot;--mask-layer&quot;</span>, maskLayerName) );
+
+    <span class="keywordtype">bool</span> invertMask = arguments.isOption(<span class="stringliteral">&quot;--invert-mask&quot;</span>);
+
+    osg::Group* group = <span class="keyword">new</span> osg::Group;
+
+    osg::ref_ptr&lt;osg::Node&gt; loadedModel = osgDB::readNodeFiles(arguments);   
+    <span class="keywordflow">if</span> ( !loadedModel.valid() )
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to load an earth file.&quot;</span> );
+
+    <a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html">osgEarth::Util::OceanSurfaceNode</a>* ocean = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html">osgEarth::Util::OceanSurfaceNode</a>();
+
+    <span class="keywordflow">if</span> ( !maskLayerName.empty() )
+    {
+        <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( loadedModel.get() );
+        <span class="keywordflow">if</span> ( mapNode )
+        {
+            <a class="code" href="classosgEarth_1_1MapFrame.html">osgEarth::MapFrame</a> mapf( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+            ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aeb7a2c75547e29abc11235026b198d88">setOceanMaskImageLayer</a>( mapf.getImageLayerByName( maskLayerName ) );
+        }
+    }
+
+    ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aa6e3d07d7cd5f246b101cf66f1e5e35c">setInvertMask</a>( !invertMask );
+
+    <span class="comment">// install some water-surface images for an interesting shimmering effect:</span>
+    <a class="code" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a> waterImages;
+    waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface1.png&quot;</span>) );
+    waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface2.png&quot;</span>) );
+    waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface3.png&quot;</span>) );
+    waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface4.png&quot;</span>) );
+
+    osg::ref_ptr&lt;osg::Image&gt; waterImage = <a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">make3DImage</a>(waterImages);    
+    ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#af064c70686b645e54532d74aa2ecb9f4">setOceanSurfaceImage</a>( waterImage.get() );
+
+    <span class="comment">// Find the MapNode and add the ocean as a terrain decorator.</span>
+    <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( loadedModel.get() );
+    mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ae21b527e746fc0da94870ff3d57ed210">addTerrainDecorator</a>( ocean );
+
+    <span class="comment">// assemble the rest of the scene graph and go</span>
+    osgViewer::Viewer viewer(arguments);
+
+    group-&gt;addChild( loadedModel.get() );
+    group-&gt;addChild( <a class="code" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">createMenu</a>(&amp;viewer) );
+    viewer.setSceneData(group);
+    
+    viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>() );
+
+    viewer.addEventHandler(<span class="keyword">new</span> <a class="code" href="structMyEventHandler.html">MyEventHandler</a>(ocean));
+    viewer.addEventHandler( <span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()) );
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler);
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__ocean_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__ocean_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__ocean_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__ocean_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1" title="make3DImage" alt="" coords="104,5,211,35"/><area shape="rect" id="node5" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="129,59,185,88"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1MapNode.html#ae21b527e746fc0da94870ff3d57ed210" title="osgEarth::MapNode::addTerrainDecorator" alt="" coords="167,5,431,35"/><area shape="rect" id="node7" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7" title="createMenu" alt="" coords="253,59,344,88"/><area shape="rect" id="node15" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="188,112,409,141"/><area shape="rect" id="node17" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="204,165,393,195"/><area shape="rect" id="node19" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1" title="make3DImage" alt="" coords="245,219,352,248"/><area shape="rect" id="node25" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aa6e3d07d7cd5f246b101cf66f1e5e35c" title="osgEarth::Util::OceanSurfaceNode::setInvertMask" alt="" coords="141,272,456,301"/><area shape="rect" id="node29" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aeb7a2c75547e29abc11235026b198d88" title="osgEarth::Util::OceanSurfaceNode::setOceanMaskImageLayer" alt="" coords="105,325,492,355"/><area shape="rect" id="node32" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#af064c70686b645e54532d74aa2ecb9f4" title="osgEarth::Util::OceanSurfaceNode::setOceanSurfaceImage" alt="" coords="115,379,483,408"/><area shape="rect" id="node35" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="271,432,327,461"/><area shape="rect" id="node5" href="classosgEarth_1_1TerrainDecorator.html#a81e65314d1637a2fe5785996c7bdb18a" title="osgEarth::TerrainDecorator::onInstall" alt="" coords="577,5,812,35"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="555,59,835,88"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a0ead895b4a8e5972807293ee1336a9ab" title="osgEarth::Util::Controls::ControlCanvas::ControlCanvas" alt="" coords="896,59,1245,88"/><area shape="rect" id="node13" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a5fd6aeb9e88aa39864c3b9c5afb7fc97" title="osgEarth::Util::Controls::ControlCanvas::init" alt="" coords="1295,59,1572,88"/><area shape="rect" id="node21" href="namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de" title="osgEarth::notify" alt="" coords="637,219,752,248"/><area shape="rect" id="node23" href="namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="988,219,1153,248"/><area shape="rect" id="node27" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#a19ab99f11b53ec4410a8dd02f0cdedd2" title="osgEarth::Util::OceanSurfaceNode::shadersDirty" alt="" coords="541,325,848,355"/></map>
 </div>
 </p>
 
@@ -190,10 +347,43 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__ocean_8cpp_source.html#l00196">196</a> of file <a class="el" href="osgearth__ocean_8cpp_source.html">osgearth_ocean.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="classMyGraphicsContext.html">MyGraphicsContext</a> gc;
+    <a class="code" href="namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de">osg::notify</a>(osg::NOTICE) &lt;&lt; <span class="stringliteral">&quot;Made graphic context &quot;</span> &lt;&lt; std::endl;
+    <span class="comment">/*for (unsigned int i = 0; i &lt; images.size(); ++i)</span>
+<span class="comment">    {</span>
+<span class="comment">        images[i]-&gt;scaleImage(256, 256, 1);</span>
+<span class="comment">        osg::notify(osg::NOTICE) &lt;&lt; &quot;Scaled image &quot; &lt;&lt; i &lt;&lt; std::endl;</span>
+<span class="comment">    }*/</span>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+    osg::Image* image3D = <span class="keyword">new</span> osg::Image;
+    image3D-&gt;allocateImage(images[0]-&gt;s(), images[0]-&gt;t(), images.size(),
+                           images[0]-&gt;getPixelFormat(), images[0]-&gt;getDataType());
+    
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; images.size(); ++i)
+    {
+        image3D-&gt;copySubImage(0, 0, i, images[i].<span class="keyword">get</span>());
+    }
+    image3D-&gt;setInternalTextureFormat(images[0]-&gt;getInternalTextureFormat());
+    <span class="keywordflow">return</span> image3D;
+}
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_cgraph.png" border="0" usemap="#osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_cgraph" alt=""/></div>
+<map name="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_cgraph" id="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_cgraph">
+<area shape="rect" id="node3" href="namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de" title="osgEarth::notify" alt="" coords="160,5,275,35"/><area shape="rect" id="node5" href="namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="323,5,488,35"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_icgraph.png" border="0" usemap="#osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_icgraph" alt=""/></div>
 <map name="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_icgraph" id="osgearth__ocean_8cpp_acf3657c422e1fc5a2e10dc3e015dfea1_icgraph">
 <area shape="rect" id="node3" href="osgearth__ocean_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="160,5,211,35"/></map>
@@ -218,19 +408,17 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__ocean_8cpp_source.html#l00219">219</a> of file <a class="el" href="osgearth__ocean_8cpp_source.html">osgearth_ocean.cpp</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a>
+        &lt;&lt; msg &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_ocean [--mask-layer &lt;layername&gt;] [--invert-mask] &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;(note: &lt;layername&gt; defaults to \&quot;ocean\&quot;)&quot;</span> &lt;&lt; std::endl;
+    <span class="keywordflow">return</span> -1;
+}
+</pre></div>
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__ocean_8cpp.html">osgearth_ocean.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -245,6 +433,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

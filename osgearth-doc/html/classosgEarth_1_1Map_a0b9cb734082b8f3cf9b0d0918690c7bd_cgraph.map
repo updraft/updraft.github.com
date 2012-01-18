@@ -1,0 +1,31 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MapOptions.html#ab85de1d6b56f3bc365e8137d5d36f0d0" title="osgEarth::MapOptions::cache" alt="" coords="653,36,848,65"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Registry.html#a619b41e8ddbfac14a491edac8b879c1f" title="osgEarth::Registry::clearBlacklist" alt="" coords="309,593,525,622"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9" title="osgEarth::Map::getCache" alt="" coords="332,222,503,252"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="657,353,844,382"/>
+<area shape="rect" id="node31" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="668,406,833,436"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1MapOptions.html#ab5f0670c447efcb8e24d01624eb8cd73" title="osgEarth::MapOptions::referenceURI" alt="" coords="956,89,1193,118"/>
+<area shape="rect" id="node37" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="992,300,1157,329"/>
+<area shape="rect" id="node41" href="$structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="328,646,507,676"/>
+<area shape="rect" id="node44" href="$classosgEarth_1_1TerrainLayer.html#ae98db9ea06d28b953bef666b95c5e9ad" title="osgEarth::TerrainLayer::setCache" alt="" coords="308,540,527,569"/>
+<area shape="rect" id="node65" href="$classosgEarth_1_1TerrainLayer.html#a8259fe83544eee15cd68fc739183025e" title="osgEarth::TerrainLayer::setTargetProfileHint" alt="" coords="279,700,556,729"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1CacheFactory.html#a1bac5511c0d97cf20443a7a96ea6e324" title="osgEarth::CacheFactory::create" alt="" coords="647,249,855,278"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="675,142,827,172"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1Registry.html#a061d3903e633b9abfafc38d6faa1590c" title="osgEarth::Registry::getCacheOverride" alt="" coords="629,89,872,118"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1Map.html#a2340eb04005ed0caf43a554959a88294" title="osgEarth::Map::setCache" alt="" coords="665,196,836,225"/>
+<area shape="rect" id="node12" href="$classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="944,246,1205,276"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="981,353,1168,382"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1253,273,1581,302"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1305,326,1529,356"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1296,380,1539,409"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1295,433,1540,462"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1TerrainLayerOptions.html#a3e25ced92475376f2b5117af076dbb0e" title="osgEarth::TerrainLayerOptions::cacheEnabled" alt="" coords="607,886,895,916"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1TerrainLayerOptions.html#a8418e1ff33afb76c241144c1e1804992" title="osgEarth::TerrainLayerOptions::cacheFormat" alt="" coords="609,460,892,489"/>
+<area shape="rect" id="node50" href="$classosgEarth_1_1TerrainLayerOptions.html#af32e3cc40e8d9a7b27c305706cd17f5e" title="osgEarth::TerrainLayerOptions::cacheId" alt="" coords="624,513,877,542"/>
+<area shape="rect" id="node52" href="$classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f" title="osgEarth::TerrainLayerOptions::driver" alt="" coords="632,566,869,596"/>
+<area shape="rect" id="node54" href="$structosgEarth_1_1CacheSpec.html#a4253bd68a78e3ae7ec8a6e103c4dd187" title="osgEarth::CacheSpec::format" alt="" coords="653,620,848,649"/>
+<area shape="rect" id="node56" href="$classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="644,673,857,702"/>
+<area shape="rect" id="node58" href="$namespaceosgEarth.html#a73391515286f2830aefc25b521fdc09c" title="osgEarth::hashString" alt="" coords="679,726,823,756"/>
+<area shape="rect" id="node61" href="$classosgEarth_1_1Config.html#a6544fe1a09134161f5bdc451045a1e7f" title="osgEarth::Config::remove" alt="" coords="665,780,836,809"/>
+<area shape="rect" id="node63" href="$classosgEarth_1_1Config.html#ae2b663e7cdb3f6920f4a199024d87b8f" title="osgEarth::Config::toHashString" alt="" coords="649,833,852,862"/>
+</map>

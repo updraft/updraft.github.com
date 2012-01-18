@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceseamless.html">seamless</a>      </li>
+      <li class="navelem"><a class="el" href="namespaceseamless_1_1euler.html">euler</a>      </li>
+    </ul>
   </div>
 </div>
-<script type="text/javascript">
-  initNavTree('namespaceseamless_1_1euler.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -87,25 +110,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ae370edb27fca30b8656dc8140a305801">lineLineIntersect</a> (const Vec3d &amp;p1, const Vec3d &amp;p2, const Vec3d &amp;p3, const Vec3d &amp;p4, Vec3d &amp;pa, Vec3d &amp;pb, double &amp;mua, double &amp;mub)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ad86ebc92d393f0d4dc72ab45c99f6591">latLon2xyz</a> (double lat_deg, double lon_deg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a9403dbf2c337e40a4e305884258540ac">getFace</a> (const Vec3d &amp;vec)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#afc0929cc01450dd3fccd982a7a45ef19">xyz2qrs</a> (const Vec3d &amp;xyz, int face)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6">latLonToFaceCoords</a> (double lat_deg, double lon_deg, double &amp;out_x, double &amp;out_y, int &amp;out_face, int faceHint)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64">face2qrs</a> (const Vec2d &amp;face)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88">qrs2xyz</a> (const Vec3d &amp;local, int face)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b">face2dc</a> (int faceNum, const Vec2d &amp;faceCoord)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59">latLonToFaceCoords</a> (double lat_deg, double lon_deg, double &amp;out_x, double &amp;out_y, int &amp;out_face, int faceHint=-1)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a716d5725e48c780ee396bed196a903bc">faceCoordsToLatLon</a> (double x, double y, int face, double &amp;out_lat_deg, double &amp;out_lon_deg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ac308eca82b121ca0e15a1835d0137421">cubeToFace</a> (double &amp;in_out_x, double &amp;in_out_y, int &amp;out_face)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a217aa6bed12a59621855479ca03401e1">cubeToFace</a> (double &amp;in_out_xmin, double &amp;in_out_ymin, double &amp;in_out_xmax, double &amp;in_out_ymax, int &amp;out_face)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ab775c339277610569ca3187fd6bb62e6">faceToCube</a> (double &amp;in_out_x, double &amp;in_out_y, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osg::Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">face2dc</a> (int face, const osg::Vec2d &amp;faceCoord)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a14bd23b024439771d2bd29d6a23a0b3b">arcLength</a> (const osg::Vec2d &amp;coord1, const osg::Vec2d &amp;coord2, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#aceff918451426d33fe4e1e2c4af7cab1">distanceToSegment</a> (const osg::Vec3d &amp;p, const osg::Vec2d &amp;coord1, const osg::Vec2d &amp;coord2, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a890e99b55c358dcbec957f3f6df5d264">distanceToSegment</a> (const osg::Vec3d &amp;p, const osg::Vec3d &amp;coord1, const osg::Vec3d &amp;coord2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ae370edb27fca30b8656dc8140a305801">lineLineIntersect</a> (const Vec3d &amp;p1, const Vec3d &amp;p2, const Vec3d &amp;p3, const Vec3d &amp;p4, Vec3d &amp;pa, Vec3d &amp;pb, double &amp;mua, double &amp;mub)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ad86ebc92d393f0d4dc72ab45c99f6591">latLon2xyz</a> (double lat_deg, double lon_deg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a9403dbf2c337e40a4e305884258540ac">getFace</a> (const Vec3d &amp;vec)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#afc0929cc01450dd3fccd982a7a45ef19">xyz2qrs</a> (const Vec3d &amp;xyz, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64">face2qrs</a> (const Vec2d &amp;face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88">qrs2xyz</a> (const Vec3d &amp;local, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b">face2dc</a> (int faceNum, const Vec2d &amp;faceCoord)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d">arcLength</a> (const Vec2d &amp;coord1, const Vec2d &amp;coord2, int face)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static osg::Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a5fc91ccba584b1c62e880a93e19b16bd">closestPointOnLine</a> (const osg::Vec3d &amp;p1, const osg::Vec3d &amp;p2, const osg::Vec3d &amp;p3)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a27f5ab6ee083d42089e24004a7d51116">distanceToLine</a> (const Vec3d &amp;p1, const Vec3d &amp;p2, const Vec3d &amp;p3)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a490d1d9484f78cba830848d5ba2d9cd2">distanceToSegment</a> (const Vec3d &amp;p, const Vec3d &amp;geo1, const Vec3d &amp;geo2, const Vec3d &amp;norm)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00">getNormalToSegment</a> (const Vec2d &amp;coord1, const Vec2d &amp;coord2, int face)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec">distanceToSegment</a> (const Vec3d &amp;p, const Vec2d &amp;coord1, const Vec2d &amp;coord2, int face)</td></tr>
 </table>
-<hr/><h2>Function Documentation</h2>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>The Euler cube</p>
+<p>The faces of a cube are projected onto the spherical globe. Within a cube face, the coordinates are specified as as angles from the fixed axes parallel to the cube face. For example, the x coordinate of equatorial faces is equivalent to longitude. The y coordinate is not latitude, because it is not measured in the longitudinal plane. The major effect of this is that the grid lines on the cube faces are great circles.</p>
+<p>The cube is layed out like a flattened cut-out. the x,y coordinates range from (0,0) to (4, 3). In the equatorial region, x is 0-4 and y is 1-2. North Pole is (0, 2) -&gt;(1,3); South Pole is (0,0)-&gt;(1,1).</p>
+<p>Face 0 is centered on lat lon (0, 0). Faces 1-3 are the equatorial faces to the East. 4 is the North Pole, 5 is the South.</p>
+<p>Within each face, the conversion formulas assume that coordinate values range from -1 to 1. </p>
+</div><hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a14bd23b024439771d2bd29d6a23a0b3b"></a><!-- doxytag: member="seamless::euler::arcLength" ref="a14bd23b024439771d2bd29d6a23a0b3b" args="(const osg::Vec2d &amp;coord1, const osg::Vec2d &amp;coord2, int face)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double seamless::euler::arcLength </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec2d &amp;&#160;</td>
+          <td class="paramname"><em>coord1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec2d &amp;&#160;</td>
+          <td class="paramname"><em>coord2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>face</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Length of great circle arc between face coordinates. This will be the length of a grid edge if the points share a coordinate. </p>
+
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a14bd23b024439771d2bd29d6a23a0b3b_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a14bd23b024439771d2bd29d6a23a0b3b_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a14bd23b024439771d2bd29d6a23a0b3b_icgraph" id="namespaceseamless_1_1euler_a14bd23b024439771d2bd29d6a23a0b3b_icgraph">
+<area shape="rect" id="node3" href="classseamless_1_1GeoPatch.html#a9249d6e2fdeaee333abf76ab37f5c7fd" title="seamless::GeoPatch::GeoPatch" alt="" coords="232,5,443,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a7e6eca33ab2ffa67a7cb666476f28d1d"></a><!-- doxytag: member="seamless::euler::arcLength" ref="a7e6eca33ab2ffa67a7cb666476f28d1d" args="(const Vec2d &amp;coord1, const Vec2d &amp;coord2, int face)" -->
 <div class="memitem">
 <div class="memproto">
@@ -137,14 +216,101 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00336">336</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00336">336</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (coord1.x() != coord2.x() &amp;&amp; coord1.y() != coord2.y())
+    {
+        Vec3d geo1 = <a class="code" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">face2dc</a>(face, coord1);
+        Vec3d geo2 = <a class="code" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">face2dc</a>(face, coord2);
+        Vec3d norm = geo1 ^ geo2;
+        <span class="keywordflow">return</span> atan2(norm.length(), geo1 * geo2) * WGS_84_RADIUS_EQUATOR;
+    }
+    <span class="keywordtype">double</span> x1, y1, x2, y2;
+    <span class="keywordflow">if</span> (coord1.x() == coord2.x())
+    {
+        x1 = coord1.x() * PI_4;  y1 = coord1.y() * PI_4;
+        x2 = coord2.x() * PI_4;  y2 = coord2.y() * PI_4;
+    }
+    <span class="keywordflow">else</span>
+    {
+        x1 = coord1.y() * PI_4;  y1 = coord1.x() * PI_4;
+        x2 = coord2.y() * PI_4;  y2 = coord2.x() * PI_4;
+    }
+    <span class="keywordtype">double</span> tanPhi1 = cos(x1) * tan(y1);
+    <span class="keywordtype">double</span> tanPhi2 = cos(x2) * tan(y2);
+    <span class="comment">// tan(phi2 - phi1) = (tan(phi2) - tan(hi1)) / (1 + tan(phi2) * tan(phi1))</span>
+    <span class="keywordflow">return</span> fabs(atan2(tanPhi2 - tanPhi1, 1 + tanPhi2 * tanPhi1))
+        * WGS_84_RADIUS_EQUATOR;
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a7e6eca33ab2ffa67a7cb666476f28d1d_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a7e6eca33ab2ffa67a7cb666476f28d1d_cgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a7e6eca33ab2ffa67a7cb666476f28d1d_cgraph" id="namespaceseamless_1_1euler_a7e6eca33ab2ffa67a7cb666476f28d1d_cgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="232,32,400,61"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64" title="seamless::euler::face2qrs" alt="" coords="449,5,620,35"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="451,59,619,88"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79" title="seamless::euler::face2dc" alt="" coords="232,5,400,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fc91ccba584b1c62e880a93e19b16bd"></a><!-- doxytag: member="seamless::euler::closestPointOnLine" ref="a5fc91ccba584b1c62e880a93e19b16bd" args="(const osg::Vec3d &amp;p1, const osg::Vec3d &amp;p2, const osg::Vec3d &amp;p3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static osg::Vec3d seamless::euler::closestPointOnLine </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>p3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00366">366</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d vec = p2 - p1;
+    <span class="keywordtype">double</span> len2 = vec.length2();
+    <span class="keywordflow">if</span> (equivalent(len2, 0))
+        <span class="keywordflow">return</span> p1;
+    <span class="keywordtype">double</span> u = ((p3 - p1) * vec) / len2;
+    <span class="keywordflow">if</span> (u &lt;= 0.0)
+        <span class="keywordflow">return</span> p1;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (u &gt;= 1.0)
+        <span class="keywordflow">return</span> p2;
+    <span class="keywordflow">else</span>
+        <span class="keywordflow">return</span> p1 + vec * u;
+}
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a5fc91ccba584b1c62e880a93e19b16bd_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a5fc91ccba584b1c62e880a93e19b16bd_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a5fc91ccba584b1c62e880a93e19b16bd_icgraph" id="namespaceseamless_1_1euler_a5fc91ccba584b1c62e880a93e19b16bd_icgraph">
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a27f5ab6ee083d42089e24004a7d51116" title="seamless::euler::distanceToLine" alt="" coords="288,5,499,35"/></map>
 </div>
 </p>
 
@@ -192,9 +358,56 @@ Here is the call graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
+<p>Converts cube coordinates (0,0=&gt;4,3) to face coordinates (-1,-1=&gt;1,1,F). This version takes an extent, which is better than the non-extent version since it can resolve face-border ambiguity. </p>
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00266">266</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00266">266</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> xmin, xmax, ymin, ymax;
+    <span class="keywordflow">if</span> (in_out_ymin &gt; 1.0 - 1e-11 &amp;&amp; in_out_ymax &lt; 2.0 + 1e-11)
+    {
+        <span class="keywordtype">double</span> faceMin = floor(in_out_xmin + 1e-11);
+        <span class="keywordtype">double</span> faceMax = floor(in_out_xmax - 1e-11);
+        <span class="keywordflow">if</span> (faceMin != faceMax)
+        {
+            <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <a class="code" href="Euler_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;Min face &lt;&gt; Max face!\n&quot;</span>;
+            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        }
+        xmin = in_out_xmin - faceMin;
+        xmax = in_out_xmax - faceMin;
+        ymin = in_out_ymin - 1.0;
+        ymax = in_out_ymax - 1.0;
+        out_face = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(faceMin);
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (in_out_ymin &gt; 2.0 - 1e-11 &amp;&amp; in_out_ymax &gt; 2.0 + 1e-11)
+    {
+        out_face = 4;
+        ymin = in_out_ymin - 2.0;
+        ymax = in_out_ymax - 2.0;
+        xmin = in_out_xmin;
+        xmax = in_out_xmax;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (in_out_ymax &lt; 1.0 + 1e-11)
+    {
+        out_face = 5;
+        ymin = in_out_ymin;
+        ymax = in_out_ymax;
+        xmin = in_out_xmin;
+        xmax = in_out_xmax;
+    }
+    <span class="keywordflow">else</span>
+    {
+        <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <a class="code" href="Euler_8cpp.html#aa499bb75bb504909cd0a72baf48c4653">LC</a> &lt;&lt; <span class="stringliteral">&quot;can&#39;t determine face for (&quot;</span>
+                &lt;&lt; in_out_xmin &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; in_out_ymin &lt;&lt; <span class="stringliteral">&quot;), (&quot;</span>
+                &lt;&lt; in_out_xmax &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; in_out_ymax &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+    }
+    in_out_xmin = xmin * 2.0 - 1.0;
+    in_out_xmax = xmax * 2.0 - 1.0;
+    in_out_ymin = ymin * 2.0 - 1.0;
+    in_out_ymax = ymax * 2.0 - 1.0;
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac308eca82b121ca0e15a1835d0137421"></a><!-- doxytag: member="seamless::euler::cubeToFace" ref="ac308eca82b121ca0e15a1835d0137421" args="(double &amp;in_out_x, double &amp;in_out_y, int &amp;out_face)" -->
@@ -227,8 +440,57 @@ Here is the call graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
+<p>Converts cube coordinates (0,0=&gt;4,3) to face coordinates (-1,-1=&gt;1,1,F). WARNING. If the cube coordinate lies on a face boundary, this method will always return the lower-numbered face. The "extent" version of this method (below) is better b/c it's unambiguous. </p>
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00227">227</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00227">227</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> x, y;
+    <span class="keywordflow">if</span> (in_out_x &gt; 1.0 + 1e-11)
+    {
+        <span class="keywordtype">double</span> face = floor(in_out_x);
+        x = in_out_x - face;
+        <span class="keywordflow">if</span> (x &lt; 1e-11)
+        {
+            face += -1.0;
+            x += 1.0;
+        }
+        y = in_out_y - 1.0;
+        out_face = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(face);
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">if</span> (in_out_y &gt; 2.0 + 1e-11)
+        {
+            out_face = 4;
+            y = in_out_y - 2.0;
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (in_out_y &lt; 1.0 + 1e-11)
+        {
+            out_face = 5;
+            y = in_out_y;
+        }
+        <span class="keywordflow">else</span>
+        {
+            out_face = 0;
+            y = in_out_y - 1.0;
+        }
+        x = in_out_x;
+    }
+    in_out_x = x * 2.0 - 1.0;
+    in_out_y = y * 2.0 - 1.0;
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_ac308eca82b121ca0e15a1835d0137421_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_ac308eca82b121ca0e15a1835d0137421_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_ac308eca82b121ca0e15a1835d0137421_icgraph" id="namespaceseamless_1_1euler_ac308eca82b121ca0e15a1835d0137421_icgraph">
+<area shape="rect" id="node3" href="classseamless_1_1QscSpatialReference.html#a1e57eb58f7a4ab21210b9148792d056b" title="seamless::QscSpatialReference::createLocator" alt="" coords="277,5,573,35"/><area shape="rect" id="node5" href="classseamless_1_1EulerSpatialReference.html#aa0466ae3fa03df14b1ecd7ca34598909" title="seamless::EulerSpatialReference::createLocator" alt="" coords="1024,177,1325,207"/><area shape="rect" id="node7" href="classosgEarth_1_1CubeSpatialReference.html#adbd2780150a9846725be229cd6beb7d5" title="osgEarth::CubeSpatialReference::createLocator" alt="" coords="276,109,575,139"/><area shape="rect" id="node9" href="classseamless_1_1GeoPatch.html#a9249d6e2fdeaee333abf76ab37f5c7fd" title="seamless::GeoPatch::GeoPatch" alt="" coords="320,163,531,192"/><area shape="rect" id="node11" href="classseamless_1_1QscSpatialReference.html#afec8249fe3448b66ff20bd6f09aeb97c" title="seamless::QscSpatialReference::preTransform" alt="" coords="279,216,572,245"/><area shape="rect" id="node13" href="classseamless_1_1EulerSpatialReference.html#a2fe582b3bfe6faa7902b04e802423551" title="seamless::EulerSpatialReference::preTransform" alt="" coords="275,269,576,299"/><area shape="rect" id="node18" href="classseamless_1_1EulerSpatialReference.html#a2c6c66f4c1d8ef866e14c9d1423a48b6" title="seamless::EulerSpatialReference::transformExtent" alt="" coords="1016,256,1333,285"/><area shape="rect" id="node22" href="classseamless_1_1QscSpatialReference.html#adaa0b6132e38a9a8f318415affefe659" title="seamless::QscSpatialReference::transformExtent" alt="" coords="271,373,580,403"/><area shape="rect" id="node25" href="classosgEarth_1_1CubeSpatialReference.html#aee9a5bb4aedd3a4856fa1bee16e25991" title="osgEarth::CubeSpatialReference::transformExtent" alt="" coords="268,427,583,456"/><area shape="rect" id="node27" href="classseamless_1_1EulerSpatialReference.html#a719d93987f1733d65d0dca9c9b9763f6" title="seamless::EulerSpatialReference::transformExtentPoints" alt="" coords="248,480,603,509"/><area shape="rect" id="node15" href="classseamless_1_1EulerSpatialReference.html#aa6a2a563b63f9b3ce2fe8606b1ede863" title="seamless::EulerSpatialReference::transform" alt="" coords="671,216,948,245"/><area shape="rect" id="node20" href="classseamless_1_1EulerSpatialReference.html#a6a526ba843cecf5df2dbc1b087b80ac5" title="seamless::EulerSpatialReference::transformPoints" alt="" coords="652,269,967,299"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -263,7 +525,115 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00383">383</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00383">383</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d pt = <a class="code" href="namespaceseamless_1_1euler.html#a5fc91ccba584b1c62e880a93e19b16bd">closestPointOnLine</a>(p1, p2, p3);
+    <span class="keywordflow">return</span> (p3 - pt).length();
+}
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a27f5ab6ee083d42089e24004a7d51116_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a27f5ab6ee083d42089e24004a7d51116_cgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a27f5ab6ee083d42089e24004a7d51116_cgraph" id="namespaceseamless_1_1euler_a27f5ab6ee083d42089e24004a7d51116_cgraph">
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a5fc91ccba584b1c62e880a93e19b16bd" title="seamless::euler::closestPointOnLine" alt="" coords="264,5,499,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aceff918451426d33fe4e1e2c4af7cab1"></a><!-- doxytag: member="seamless::euler::distanceToSegment" ref="aceff918451426d33fe4e1e2c4af7cab1" args="(const osg::Vec3d &amp;p, const osg::Vec2d &amp;coord1, const osg::Vec2d &amp;coord2, int face)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double seamless::euler::distanceToSegment </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec2d &amp;&#160;</td>
+          <td class="paramname"><em>coord1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec2d &amp;&#160;</td>
+          <td class="paramname"><em>coord2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>face</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Distance between a point and an arc on a face. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the point, for example the eyepoint. </td></tr>
+    <tr><td class="paramname">coord1</td><td>beginning of segment in face coordinates </td></tr>
+    <tr><td class="paramname">coord2</td><td>end of segment in face coordinates </td></tr>
+    <tr><td class="paramname">face</td><td>cube face. coord1 and coord2 lie on the same face. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>distance </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a890e99b55c358dcbec957f3f6df5d264"></a><!-- doxytag: member="seamless::euler::distanceToSegment" ref="a890e99b55c358dcbec957f3f6df5d264" args="(const osg::Vec3d &amp;p, const osg::Vec3d &amp;coord1, const osg::Vec3d &amp;coord2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double seamless::euler::distanceToSegment </td>
+          <td>(</td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>coord1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>coord2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Distance between a point and an arc on the spherical earth. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the point, for example the eyepoint. </td></tr>
+    <tr><td class="paramname">coord1</td><td>beginning of the arc as a direction cosine. </td></tr>
+    <tr><td class="paramname">coord2</td><td>end of the arc as a direction cosine. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>distance </dd></dl>
 
 </div>
 </div>
@@ -304,11 +674,45 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00389">389</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00389">389</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// Find the distance to the closet point on the circle that</span>
+    <span class="comment">// contains the segment. If that point lies on the segment, that&#39;s</span>
+    <span class="comment">// the shortest distance; otherwise, the distance to one of the</span>
+    <span class="comment">// end points is the shortest.</span>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">// Project p into plane of circle</span>
+    Vec3d q = p - norm * (norm * p);
+    <span class="comment">// If q = (0, 0, 0) -- the center of the circle -- then all points</span>
+    <span class="comment">// on the circle are equidistant.</span>
+    <span class="comment">// qnorm will be on unit circle</span>
+    <span class="keyword">const</span> <span class="keywordtype">double</span> r = WGS_84_RADIUS_EQUATOR;
+    <span class="keywordflow">if</span> (equivalent(q.length2(), 0))
+    {
+        <span class="keywordflow">return</span> sqrt(r * r + p.length2());
+    }
+    Vec3d qnorm = q / q.length();
+
+    <span class="comment">// Vec3d x = q * r / q.length();</span>
+    <span class="keyword">const</span> Vec3d zero;
+    Vec3d end1, end2;
+    <span class="keywordtype">double</span> mua, mub;
+    <span class="keywordflow">if</span> (<a class="code" href="namespaceseamless_1_1euler.html#ae370edb27fca30b8656dc8140a305801">lineLineIntersect</a>(zero, qnorm, geo1, geo2, end1, end2, mua, mub)
+        &amp;&amp; mub &gt;= 0.0 &amp;&amp; mub &lt;= 1.0)
+    {
+        <span class="keywordflow">return</span> (p - qnorm * r).length();
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">return</span> minimum((p - geo1 * r).length(), (p - geo2 * r).length());
+    }
+}
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a490d1d9484f78cba830848d5ba2d9cd2_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a490d1d9484f78cba830848d5ba2d9cd2_cgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a490d1d9484f78cba830848d5ba2d9cd2_cgraph" id="namespaceseamless_1_1euler_a490d1d9484f78cba830848d5ba2d9cd2_cgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#ae370edb27fca30b8656dc8140a305801" title="seamless::euler::lineLineIntersect" alt="" coords="295,5,511,35"/></map>
@@ -354,14 +758,22 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00445">445</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00445">445</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d norm = <a class="code" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00">getNormalToSegment</a>(coord1, coord2, face);
+    Vec3d geo1 = <a class="code" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">face2dc</a>(face, coord1);
+    Vec3d geo2 = <a class="code" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79">face2dc</a>(face, coord2);
+    <span class="keywordflow">return</span> <a class="code" href="namespaceseamless_1_1euler.html#aceff918451426d33fe4e1e2c4af7cab1">distanceToSegment</a>(p, geo1, geo2, norm);
+}
+</pre></div>
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_afc225961c75e47549a258be502e156ec_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_afc225961c75e47549a258be502e156ec_cgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_afc225961c75e47549a258be502e156ec_cgraph" id="namespaceseamless_1_1euler_afc225961c75e47549a258be502e156ec_cgraph">
-<area shape="rect" id="node3" href="namespaceseamless.html#a2e8e39edffc22030b82a387ea2e8d0c2" title="seamless::distanceToSegment" alt="" coords="317,5,520,35"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="335,59,503,88"/><area shape="rect" id="node13" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00" title="seamless::euler::getNormalToSegment" alt="" coords="295,112,543,141"/><area shape="rect" id="node5" href="namespaceseamless.html#ae6adeffda33a45ec77a9e3d34cb96d0e" title="seamless::closestPointOnSegment" alt="" coords="592,5,819,35"/><area shape="rect" id="node9" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64" title="seamless::euler::face2qrs" alt="" coords="620,59,791,88"/><area shape="rect" id="node11" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="621,112,789,141"/></map>
+<area shape="rect" id="node3" href="namespaceseamless.html#a6fd338140a630b8faf0315f110528aa8" title="seamless::distanceToSegment" alt="" coords="317,5,520,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a238fa5ad0ac6a08259f782a6de623d79" title="seamless::euler::face2dc" alt="" coords="335,59,503,88"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00" title="seamless::euler::getNormalToSegment" alt="" coords="295,112,543,141"/><area shape="rect" id="node9" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="592,112,760,141"/></map>
 </div>
 </p>
 
@@ -392,22 +804,58 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00190">190</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00190">190</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d local = <a class="code" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64">face2qrs</a>(faceCoord);
+    <span class="keywordflow">return</span> <a class="code" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88">qrs2xyz</a>(local, faceNum);
+}
+</pre></div>
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_cgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_cgraph" id="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_cgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a8dff64a39588634c97fca018b82a6f64" title="seamless::euler::face2qrs" alt="" coords="223,5,393,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="224,59,392,88"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_icgraph" alt=""/></div>
-<map name="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_icgraph" id="namespaceseamless_1_1euler_a714f62a3ca6d24c5bcac37eaf492cc3b_icgraph">
+</div>
+</div>
+<a class="anchor" id="a238fa5ad0ac6a08259f782a6de623d79"></a><!-- doxytag: member="seamless::euler::face2dc" ref="a238fa5ad0ac6a08259f782a6de623d79" args="(int face, const osg::Vec2d &amp;faceCoord)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osg::Vec3d seamless::euler::face2dc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>face</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const osg::Vec2d &amp;&#160;</td>
+          <td class="paramname"><em>faceCoord</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Calculate the direction cosine representation (unit vector from the origin) of a face coordinate's geographic location. </p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a238fa5ad0ac6a08259f782a6de623d79_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a238fa5ad0ac6a08259f782a6de623d79_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a238fa5ad0ac6a08259f782a6de623d79_icgraph" id="namespaceseamless_1_1euler_a238fa5ad0ac6a08259f782a6de623d79_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d" title="seamless::euler::arcLength" alt="" coords="252,5,431,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="223,59,460,88"/></map>
 </div>
 </p>
@@ -429,14 +877,32 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00145">145</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00145">145</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> xang = face[0] * osg::PI_4;
+    <span class="keywordtype">double</span> yang = face[1] * osg::PI_4;
+    <span class="keywordtype">double</span> sx = sin(xang), cx = cos(xang);
+    <span class="keywordtype">double</span> ty = tan(yang);
+    <span class="comment">// phi is a latitude measure, in the longitudinal plane</span>
+    <span class="keywordtype">double</span> tanPhi = cx * ty;
+    <span class="keywordtype">double</span> radical = sqrt(1 + tanPhi * tanPhi);
+    <span class="keywordtype">double</span> c = 1.0 / radical;
+    Vec3d result;
+    <span class="keywordtype">double</span> b = tanPhi * c;      <span class="comment">// b gets the right sign</span>
+    result.x() = c * sx;
+    result.y() = b;
+    result.z() = c * cx;
+    <span class="keywordflow">return</span> result;
+}
+</pre></div>
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a8dff64a39588634c97fca018b82a6f64_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a8dff64a39588634c97fca018b82a6f64_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a8dff64a39588634c97fca018b82a6f64_icgraph" id="namespaceseamless_1_1euler_a8dff64a39588634c97fca018b82a6f64_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="227,59,395,88"/><area shape="rect" id="node9" href="namespaceseamless_1_1qsc.html#a9895fd02979ef967a651a7de665ea7c4" title="seamless::qsc::face2ec" alt="" coords="231,112,391,141"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d" title="seamless::euler::arcLength" alt="" coords="473,5,652,35"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="444,59,681,88"/><area shape="rect" id="node11" href="namespaceseamless_1_1qsc.html#a5942897e6a8540d44b1329c8935480f6" title="seamless::qsc::faceCoordsToLatLon" alt="" coords="445,112,680,141"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="227,5,395,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1qsc.html#a9895fd02979ef967a651a7de665ea7c4" title="seamless::qsc::face2ec" alt="" coords="231,59,391,88"/><area shape="rect" id="node7" href="namespaceseamless_1_1qsc.html#a5942897e6a8540d44b1329c8935480f6" title="seamless::qsc::faceCoordsToLatLon" alt="" coords="444,59,679,88"/></map>
 </div>
 </p>
 
@@ -484,8 +950,48 @@ Here is the caller graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
+<p>Converts face coordinates into lat/long. </p>
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00196">196</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00196">196</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> lat, lon;
+    <span class="keyword">const</span> <span class="keywordtype">double</span> l = x * osg::PI_4;
+    <span class="keyword">const</span> <span class="keywordtype">double</span> ty = tan(y * osg::PI_4);
+    <span class="keywordflow">if</span> (face &lt; 4)
+    {
+        lon = face * osg::PI_2 + l;
+        lon = fmod(lon + osg::PI, 2.0 * osg::PI) - osg::PI;
+        lat = atan(cos(l) * ty);
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keyword">const</span> <span class="keywordtype">double</span> tx = tan(x * osg::PI_4);
+        lat = osg::PI_2 - atan(sqrt(tx * tx + ty * ty));
+        <span class="keywordflow">if</span> (face == 5)
+        {
+            lon = atan2(tx, ty);
+            lat = -lat;
+        }
+        <span class="keywordflow">else</span>
+        {
+            lon = atan2(tx, -ty);
+        }
+    }
+    out_lon_deg = RadiansToDegrees(lon);
+    out_lat_deg = RadiansToDegrees(lat);
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a716d5725e48c780ee396bed196a903bc_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a716d5725e48c780ee396bed196a903bc_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a716d5725e48c780ee396bed196a903bc_icgraph" id="namespaceseamless_1_1euler_a716d5725e48c780ee396bed196a903bc_icgraph">
+<area shape="rect" id="node3" href="classseamless_1_1QscFaceLocator.html#a9b9da6fa15e1850fcf2b630e39da791f" title="seamless::QscFaceLocator::convertLocalToModel" alt="" coords="297,5,612,35"/><area shape="rect" id="node5" href="classosgEarth_1_1CubeFaceLocator.html#a21a2a24bfa680b61b46f0f12e6292f80" title="osgEarth::CubeFaceLocator::convertLocalToModel" alt="" coords="296,59,613,88"/><area shape="rect" id="node7" href="classseamless_1_1QscSpatialReference.html#afec8249fe3448b66ff20bd6f09aeb97c" title="seamless::QscSpatialReference::preTransform" alt="" coords="308,112,601,141"/><area shape="rect" id="node9" href="classseamless_1_1EulerSpatialReference.html#a2fe582b3bfe6faa7902b04e802423551" title="seamless::EulerSpatialReference::preTransform" alt="" coords="304,165,605,195"/><area shape="rect" id="node15" href="classseamless_1_1EulerSpatialReference.html#a2c6c66f4c1d8ef866e14c9d1423a48b6" title="seamless::EulerSpatialReference::transformExtent" alt="" coords="1027,191,1344,220"/><area shape="rect" id="node19" href="classosgEarth_1_1CubeSpatialReference.html#ae4a4c150dff5264b4343a170733559da" title="osgEarth::CubeSpatialReference::preTransform" alt="" coords="305,269,604,299"/><area shape="rect" id="node21" href="classseamless_1_1QscSpatialReference.html#adaa0b6132e38a9a8f318415affefe659" title="seamless::QscSpatialReference::transformExtent" alt="" coords="300,323,609,352"/><area shape="rect" id="node24" href="classosgEarth_1_1CubeSpatialReference.html#aee9a5bb4aedd3a4856fa1bee16e25991" title="osgEarth::CubeSpatialReference::transformExtent" alt="" coords="297,376,612,405"/><area shape="rect" id="node11" href="classseamless_1_1EulerSpatialReference.html#aa6a2a563b63f9b3ce2fe8606b1ede863" title="seamless::EulerSpatialReference::transform" alt="" coords="681,112,959,141"/><area shape="rect" id="node17" href="classseamless_1_1EulerSpatialReference.html#a6a526ba843cecf5df2dbc1b087b80ac5" title="seamless::EulerSpatialReference::transformPoints" alt="" coords="663,165,977,195"/><area shape="rect" id="node13" href="classseamless_1_1EulerSpatialReference.html#aa0466ae3fa03df14b1ecd7ca34598909" title="seamless::EulerSpatialReference::createLocator" alt="" coords="1035,112,1336,141"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -519,8 +1025,38 @@ Here is the caller graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
+<p>Converts face coordinates (-1,-1=&gt;1,1 +F) to cube coordinates (0,0=&gt;4,3). </p>
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00316">316</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00316">316</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> x = (in_out_x + 1.0) * .5;
+    <span class="keywordtype">double</span> y = (in_out_y + 1.0) * .5;
+    <span class="keywordflow">if</span> (face &lt; 4)
+    {
+        in_out_x = x + face;
+        in_out_y = y + 1.0;
+    }
+    <span class="keywordflow">else</span>
+    {
+        in_out_x = x;
+        <span class="keywordflow">if</span> (face == 4)
+            in_out_y = y + 2.0;
+        <span class="keywordflow">else</span>
+            in_out_y = y;
+    }
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_ab775c339277610569ca3187fd6bb62e6_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_ab775c339277610569ca3187fd6bb62e6_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_ab775c339277610569ca3187fd6bb62e6_icgraph" id="namespaceseamless_1_1euler_ab775c339277610569ca3187fd6bb62e6_icgraph">
+<area shape="rect" id="node3" href="classseamless_1_1Geographic.html#a342dc315cdd3f02a439be70c24c0fa0d" title="seamless::Geographic::createPatchSetGraph" alt="" coords="287,5,572,35"/><area shape="rect" id="node5" href="classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="279,59,580,88"/><area shape="rect" id="node7" href="classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="276,112,583,141"/><area shape="rect" id="node9" href="classosgEarth_1_1UnifiedCubeProfile.html#a78138ce4ecda3ff1e376ee89fc0c0e8c" title="osgEarth::UnifiedCubeProfile::transformGcsExtentOnFace" alt="" coords="248,165,611,195"/><area shape="rect" id="node11" href="classosgEarth_1_1UnifiedCubeProfile.html#abc217079f0ba081cde7370e27bae3260" title="osgEarth::UnifiedCubeProfile::getIntersectingTiles" alt="" coords="660,165,972,195"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -539,14 +1075,47 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00068">68</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00068">68</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> absx = fabs(vec.x());
+    <span class="keywordtype">double</span> absy = fabs(vec.y());
+    <span class="keywordtype">double</span> absz = fabs(vec.z());
+    <span class="comment">// pole faces</span>
+    <span class="keywordflow">if</span> (absz &gt; (absx + 1e-11) &amp;&amp; absz &gt; (absy + 1e-11))
+    {
+        <span class="keywordflow">if</span> (vec.z() &gt; 0.0)
+            <span class="keywordflow">return</span> 4;
+        <span class="keywordflow">else</span>
+            <span class="keywordflow">return</span> 5;
+    }
+    <span class="comment">// One of the X faces, unless on a border</span>
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (absx &gt; absy || equivalent(absx, absy, 1e-11))
+    {
+        <span class="keywordflow">if</span> (vec.x() &gt; 0.0)
+            <span class="keywordflow">return</span> 0;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (equivalent(vec.x(), -vec.y(), 1e-11))
+            <span class="keywordflow">return</span> 1;           <span class="comment">// Boundary between 1 and 2</span>
+        <span class="keywordflow">else</span>
+            <span class="keywordflow">return</span> 2;
+    }
+    <span class="comment">// One of the Y faces</span>
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">if</span> (vec.y() &gt; 0.0)
+            <span class="keywordflow">return</span> 1;
+        <span class="keywordflow">else</span>
+            <span class="keywordflow">return</span> 3;
+    }
+}
+</pre></div>
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a9403dbf2c337e40a4e305884258540ac_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a9403dbf2c337e40a4e305884258540ac_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a9403dbf2c337e40a4e305884258540ac_icgraph" id="namespaceseamless_1_1euler_a9403dbf2c337e40a4e305884258540ac_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a04409bed687117f09b4dc8fd881935fa" title="seamless::qsc::latLonToFaceCoords" alt="" coords="228,5,463,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6" title="seamless::euler::latLonToFaceCoords" alt="" coords="224,59,467,88"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a2f2870916c419e7ff4a142d0fe683299" title="seamless::qsc::latLonToFaceCoords" alt="" coords="228,59,463,88"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59" title="seamless::euler::latLonToFaceCoords" alt="" coords="224,112,467,141"/><area shape="rect" id="node7" href="classseamless_1_1QscFaceLocator.html#a9347485cfcb8906597ebfa1d7e21cac5" title="seamless::QscFaceLocator::convertModelToLocal" alt="" coords="516,5,831,35"/><area shape="rect" id="node9" href="classosgEarth_1_1CubeFaceLocator.html#acb1dde57d1ff5deea78d9c2086759bde" title="osgEarth::CubeFaceLocator::convertModelToLocal" alt="" coords="515,59,832,88"/><area shape="rect" id="node11" href="classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="523,112,824,141"/><area shape="rect" id="node13" href="classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="520,165,827,195"/><area shape="rect" id="node15" href="classosgEarth_1_1CubeSpatialReference.html#a0c93b28558303617a9cc543e2aaec3ff" title="osgEarth::CubeSpatialReference::postTransform" alt="" coords="521,219,825,248"/></map>
 </div>
 </p>
 
@@ -583,20 +1152,40 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00427">427</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00427">427</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (coord1.x() == coord2.x())
+    {
+        <span class="keywordtype">double</span> xang = coord1.x() * PI_4;
+        <span class="keywordtype">double</span> sx = sin(xang), cx = cos(xang);
+        Vec3d qrsNormal(cx, 0.0, -sx);
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88">qrs2xyz</a>(qrsNormal, face);
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordtype">double</span> yang = coord1.y() * PI_4;
+        <span class="keywordtype">double</span> sy = sin(yang), cy = cos(yang);
+        Vec3d qrsNormal(0.0, cy, -sy);
+        <span class="keywordflow">return</span> <a class="code" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88">qrs2xyz</a>(qrsNormal, face);
+    }
+}
+</pre></div>
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_cgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_cgraph" id="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_cgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#ad45539f7356a2122ec2ba16126f0ba88" title="seamless::euler::qrs2xyz" alt="" coords="304,5,472,35"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_icgraph" id="namespaceseamless_1_1euler_a11cf2e867ce4fba0fe8f2bde7b257a00_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="305,5,543,35"/></map>
@@ -630,20 +1219,31 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00056">56</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00056">56</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d result;
+    result.z() = sin(DegreesToRadians(lat_deg));
+    <span class="keywordtype">double</span> hyp = sqrt(1 - result.z() * result.z());
+    <span class="keywordtype">double</span> long_rad = DegreesToRadians(lon_deg);
+    result.x() = hyp * cos(long_rad);
+    result.y() = hyp * sin(long_rad);
+    <span class="keywordflow">return</span> result;
+}
+</pre></div>
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_ad86ebc92d393f0d4dc72ab45c99f6591_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_ad86ebc92d393f0d4dc72ab45c99f6591_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_ad86ebc92d393f0d4dc72ab45c99f6591_icgraph" id="namespaceseamless_1_1euler_ad86ebc92d393f0d4dc72ab45c99f6591_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a04409bed687117f09b4dc8fd881935fa" title="seamless::qsc::latLonToFaceCoords" alt="" coords="244,5,479,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6" title="seamless::euler::latLonToFaceCoords" alt="" coords="240,59,483,88"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a2f2870916c419e7ff4a142d0fe683299" title="seamless::qsc::latLonToFaceCoords" alt="" coords="244,59,479,88"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59" title="seamless::euler::latLonToFaceCoords" alt="" coords="240,112,483,141"/><area shape="rect" id="node7" href="classseamless_1_1QscFaceLocator.html#a9347485cfcb8906597ebfa1d7e21cac5" title="seamless::QscFaceLocator::convertModelToLocal" alt="" coords="532,5,847,35"/><area shape="rect" id="node9" href="classosgEarth_1_1CubeFaceLocator.html#acb1dde57d1ff5deea78d9c2086759bde" title="osgEarth::CubeFaceLocator::convertModelToLocal" alt="" coords="531,59,848,88"/><area shape="rect" id="node11" href="classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="539,112,840,141"/><area shape="rect" id="node13" href="classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="536,165,843,195"/><area shape="rect" id="node15" href="classosgEarth_1_1CubeSpatialReference.html#a0c93b28558303617a9cc543e2aaec3ff" title="osgEarth::CubeSpatialReference::postTransform" alt="" coords="537,219,841,248"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a754cf24f717cae9ad5bdd8059c0432b6"></a><!-- doxytag: member="seamless::euler::latLonToFaceCoords" ref="a754cf24f717cae9ad5bdd8059c0432b6" args="(double lat_deg, double lon_deg, double &amp;out_x, double &amp;out_y, int &amp;out_face, int faceHint)" -->
+<a class="anchor" id="a68a059dd37e98c13091a4399ee9b8f59"></a><!-- doxytag: member="seamless::euler::latLonToFaceCoords" ref="a68a059dd37e98c13091a4399ee9b8f59" args="(double lat_deg, double lon_deg, double &amp;out_x, double &amp;out_y, int &amp;out_face, int faceHint=&#45;1)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -681,7 +1281,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>faceHint</em>&#160;</td>
+          <td class="paramname"><em>faceHint</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -692,14 +1292,41 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00127">127</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00127">127</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (lat_deg &gt; 90.0 || lat_deg &lt; -90.0
+        || lon_deg &lt; -180.0 || lon_deg &gt; 180.0)
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+    Vec3d xyz = <a class="code" href="namespaceseamless_1_1euler.html#ad86ebc92d393f0d4dc72ab45c99f6591">latLon2xyz</a>(lat_deg, lon_deg);
+    out_face = faceHint &gt;= 0 ? faceHint : <a class="code" href="namespaceseamless_1_1euler.html#a9403dbf2c337e40a4e305884258540ac">getFace</a>(xyz);
+    Vec3d qrs = <a class="code" href="namespaceseamless_1_1euler.html#afc0929cc01450dd3fccd982a7a45ef19">xyz2qrs</a>(xyz, out_face);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceseamless_1_1euler_a754cf24f717cae9ad5bdd8059c0432b6_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a754cf24f717cae9ad5bdd8059c0432b6_cgraph" alt=""/></div>
-<map name="namespaceseamless_1_1euler_a754cf24f717cae9ad5bdd8059c0432b6_cgraph" id="namespaceseamless_1_1euler_a754cf24f717cae9ad5bdd8059c0432b6_cgraph">
+    <span class="keywordtype">double</span> xang = atan2(qrs[0], qrs[2]);
+    <span class="keywordtype">double</span> yang = atan2(qrs[1], qrs[2]);
+    out_x = xang / osg::PI_4;
+    out_y = yang / osg::PI_4;
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_cgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_cgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_cgraph" id="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_cgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a9403dbf2c337e40a4e305884258540ac" title="seamless::euler::getFace" alt="" coords="305,5,473,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#ad86ebc92d393f0d4dc72ab45c99f6591" title="seamless::euler::latLon2xyz" alt="" coords="297,59,481,88"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#afc0929cc01450dd3fccd982a7a45ef19" title="seamless::euler::xyz2qrs" alt="" coords="305,112,473,141"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_icgraph" alt=""/></div>
+<map name="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_icgraph" id="namespaceseamless_1_1euler_a68a059dd37e98c13091a4399ee9b8f59_icgraph">
+<area shape="rect" id="node3" href="classseamless_1_1QscFaceLocator.html#a9347485cfcb8906597ebfa1d7e21cac5" title="seamless::QscFaceLocator::convertModelToLocal" alt="" coords="297,5,612,35"/><area shape="rect" id="node5" href="classosgEarth_1_1CubeFaceLocator.html#acb1dde57d1ff5deea78d9c2086759bde" title="osgEarth::CubeFaceLocator::convertModelToLocal" alt="" coords="296,59,613,88"/><area shape="rect" id="node7" href="classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="304,112,605,141"/><area shape="rect" id="node9" href="classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="301,165,608,195"/><area shape="rect" id="node11" href="classosgEarth_1_1CubeSpatialReference.html#a0c93b28558303617a9cc543e2aaec3ff" title="osgEarth::CubeSpatialReference::postTransform" alt="" coords="303,219,607,248"/></map>
 </div>
 </p>
 
@@ -766,11 +1393,45 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00463">463</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00463">463</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Vec3d p13, p43, p21;
+    <span class="keywordtype">double</span> d1343, d4321, d1321, d4343, d2121;
+    <span class="keywordtype">double</span> numer, denom;
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+    p13 = p1 - p3;
+    p43 = p4 - p3;
+    <span class="keywordflow">if</span> (equivalent(p43.length2(), 0.0, 1e-11))
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+    p21 = p2 - p1;
+    <span class="keywordflow">if</span> (equivalent(p21.length2(), 0.0, 1e-11))
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+    d1343 = p13.x() * p43.x() + p13.y() * p43.y() + p13.z() * p43.z();
+    d4321 = p43.x() * p21.x() + p43.y() * p21.y() + p43.z() * p21.z();
+    d1321 = p13.x() * p21.x() + p13.y() * p21.y() + p13.z() * p21.z();
+    d4343 = p43.x() * p43.x() + p43.y() * p43.y() + p43.z() * p43.z();
+    d2121 = p21.x() * p21.x() + p21.y() * p21.y() + p21.z() * p21.z();
+
+    denom = d2121 * d4343 - d4321 * d4321;
+    <span class="keywordflow">if</span> (equivalent(denom, 0.0, 1e-11))
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+    numer = d1343 * d4321 - d1321 * d4343;
+
+    mua = numer / denom;
+    mub = (d1343 + d4321 * (mua)) / d4343;
+
+    pa = p1 + p21 * mua;
+    pb = p3 + p43 * mub;
+
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_ae370edb27fca30b8656dc8140a305801_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_ae370edb27fca30b8656dc8140a305801_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_ae370edb27fca30b8656dc8140a305801_icgraph" id="namespaceseamless_1_1euler_ae370edb27fca30b8656dc8140a305801_icgraph">
 <area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a490d1d9484f78cba830848d5ba2d9cd2" title="seamless::euler::distanceToSegment" alt="" coords="273,5,511,35"/></map>
@@ -804,14 +1465,37 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00163">163</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00163">163</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">switch</span> (face)
+    {
+    <span class="keywordflow">case</span> 0:
+        <span class="keywordflow">return</span> Vec3d(local.z(), local.x(), local.y());
+        <span class="keywordflow">break</span>;
+    <span class="keywordflow">case</span> 1:
+        <span class="keywordflow">return</span> Vec3d(-local.x(), local.z(), local.y());
+        <span class="keywordflow">break</span>;
+    <span class="keywordflow">case</span> 2:
+        <span class="keywordflow">return</span> Vec3d(-local.z(), -local.x(), local.y());
+    <span class="keywordflow">case</span> 3:
+        <span class="keywordflow">return</span> Vec3d(local.x(), -local.z(), local.y());
+    <span class="keywordflow">case</span> 4:
+        <span class="keywordflow">return</span> Vec3d(-local.y(),local.x(), local.z());
+    <span class="keywordflow">case</span> 5:
+        <span class="keywordflow">return</span> Vec3d(local.y(), local.x(), -local.z());
+    <span class="keywordflow">default</span>:
+        <span class="keywordflow">return</span> Vec3d(0,0,0);
+    }
+}
+</pre></div>
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_ad45539f7356a2122ec2ba16126f0ba88_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_ad45539f7356a2122ec2ba16126f0ba88_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_ad45539f7356a2122ec2ba16126f0ba88_icgraph" id="namespaceseamless_1_1euler_ad45539f7356a2122ec2ba16126f0ba88_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="263,5,431,35"/><area shape="rect" id="node9" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00" title="seamless::euler::getNormalToSegment" alt="" coords="223,59,471,88"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a7e6eca33ab2ffa67a7cb666476f28d1d" title="seamless::euler::arcLength" alt="" coords="551,5,729,35"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="521,59,759,88"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1euler.html#a714f62a3ca6d24c5bcac37eaf492cc3b" title="seamless::euler::face2dc" alt="" coords="263,5,431,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a11cf2e867ce4fba0fe8f2bde7b257a00" title="seamless::euler::getNormalToSegment" alt="" coords="223,59,471,88"/><area shape="rect" id="node7" href="namespaceseamless_1_1euler.html#afc225961c75e47549a258be502e156ec" title="seamless::euler::distanceToSegment" alt="" coords="521,59,759,88"/></map>
 </div>
 </p>
 
@@ -842,30 +1526,41 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_euler_8cpp_source.html#l00106">106</a> of file <a class="el" href="_euler_8cpp_source.html">Euler.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p>Definition at line <a class="el" href="Euler_8cpp_source.html#l00106">106</a> of file <a class="el" href="Euler_8cpp_source.html">Euler.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">switch</span> (face)
+    {
+    <span class="keywordflow">case</span> 0:
+        <span class="keywordflow">return</span> Vec3d(xyz.y(), xyz.z(), xyz.x());
+    <span class="keywordflow">case</span> 1:
+        <span class="keywordflow">return</span> Vec3d(-xyz.x(), xyz.z(), xyz.y());
+    <span class="keywordflow">case</span> 2:
+        <span class="keywordflow">return</span> Vec3d(-xyz.y(), xyz.z(), -xyz.x());
+    <span class="keywordflow">case</span> 3:
+        <span class="keywordflow">return</span> Vec3d(xyz.x(), xyz.z(), -xyz.y());
+    <span class="keywordflow">case</span> 4:
+        <span class="keywordflow">return</span> Vec3d(xyz.y(), -xyz.x(), xyz.z());
+    <span class="keywordflow">case</span> 5:
+        <span class="keywordflow">return</span> Vec3d(xyz.y(), xyz.x(), -xyz.z());
+    <span class="keywordflow">default</span>:
+        <span class="keywordflow">return</span> Vec3d(0, 0, 0);
+    }
+}
+</pre></div>
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceseamless_1_1euler_afc0929cc01450dd3fccd982a7a45ef19_icgraph.png" border="0" usemap="#namespaceseamless_1_1euler_afc0929cc01450dd3fccd982a7a45ef19_icgraph" alt=""/></div>
 <map name="namespaceseamless_1_1euler_afc0929cc01450dd3fccd982a7a45ef19_icgraph" id="namespaceseamless_1_1euler_afc0929cc01450dd3fccd982a7a45ef19_icgraph">
-<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a04409bed687117f09b4dc8fd881935fa" title="seamless::qsc::latLonToFaceCoords" alt="" coords="225,5,460,35"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a754cf24f717cae9ad5bdd8059c0432b6" title="seamless::euler::latLonToFaceCoords" alt="" coords="221,59,464,88"/></map>
+<area shape="rect" id="node3" href="namespaceseamless_1_1qsc.html#a2f2870916c419e7ff4a142d0fe683299" title="seamless::qsc::latLonToFaceCoords" alt="" coords="225,59,460,88"/><area shape="rect" id="node5" href="namespaceseamless_1_1euler.html#a68a059dd37e98c13091a4399ee9b8f59" title="seamless::euler::latLonToFaceCoords" alt="" coords="221,112,464,141"/><area shape="rect" id="node7" href="classseamless_1_1QscFaceLocator.html#a9347485cfcb8906597ebfa1d7e21cac5" title="seamless::QscFaceLocator::convertModelToLocal" alt="" coords="513,5,828,35"/><area shape="rect" id="node9" href="classosgEarth_1_1CubeFaceLocator.html#acb1dde57d1ff5deea78d9c2086759bde" title="osgEarth::CubeFaceLocator::convertModelToLocal" alt="" coords="512,59,829,88"/><area shape="rect" id="node11" href="classseamless_1_1QscSpatialReference.html#abcbea5d9101403cc3505ce27a96c8797" title="seamless::QscSpatialReference::postTransform" alt="" coords="520,112,821,141"/><area shape="rect" id="node13" href="classseamless_1_1EulerSpatialReference.html#a4ce0fa8322657dad1ec3924724b7ab57" title="seamless::EulerSpatialReference::postTransform" alt="" coords="517,165,824,195"/><area shape="rect" id="node15" href="classosgEarth_1_1CubeSpatialReference.html#a0c93b28558303617a9cc543e2aaec3ff" title="osgEarth::CubeSpatialReference::postTransform" alt="" coords="519,219,823,248"/></map>
 </div>
 </p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespaceseamless.html">seamless</a>      </li>
-      <li class="navelem"><a class="el" href="namespaceseamless_1_1euler.html">euler</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -880,6 +1575,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

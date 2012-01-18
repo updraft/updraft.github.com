@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureTileSource.html#a83ecc3a75ddfafe02ffc766ba26a2386" title="osgEarth::Features::FeatureTileSource::initialize" alt="" coords="263,5,564,35"/>
+<area shape="rect" id="node5" href="$classWCS11Source.html#a5a35ddffdf690f0334b15331f8b9250e" title="WCS11Source::initialize" alt="" coords="332,59,495,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1CompositeTileSource.html#a7422e982879482899aa7c8663752453e" title="osgEarth::CompositeTileSource::initialize" alt="" coords="283,112,544,141"/>
+</map>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e" title="TiXmlBase::ReadText" alt="" coords="199,32,348,61"/>
-<area shape="rect" id="node5" href="$class_ti_xml_text.html#a8d2dcfa41fc73d3e62dacc2fcf633819" title="TiXmlText::Parse" alt="" coords="409,5,532,35"/>
-<area shape="rect" id="node11" href="$class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda" title="TiXmlAttribute::Parse" alt="" coords="397,59,544,88"/>
-<area shape="rect" id="node7" href="$class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41" title="TiXmlElement::ReadValue" alt="" coords="592,5,768,35"/>
-<area shape="rect" id="node9" href="$class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b" title="TiXmlElement::Parse" alt="" coords="816,32,963,61"/>
-<area shape="rect" id="node13" href="$class_ti_xml_declaration.html#a9839ea97ed687a2b7342fd7b0f04361b" title="TiXmlDeclaration::Parse" alt="" coords="599,109,761,139"/>
-</map>

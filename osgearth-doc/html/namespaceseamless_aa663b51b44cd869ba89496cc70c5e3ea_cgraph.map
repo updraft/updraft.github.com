@@ -1,3 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2" title="seamless::installHeightField" alt="" coords="232,5,419,35"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoExtent.html#a998688871072aa060b330f1ce1646729" title="osgEarth::GeoExtent::getCentroid" alt="" coords="241,32,460,61"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="256,85,445,115"/>
+<area shape="rect" id="node13" href="$namespaceseamless.html#a5ea0685e482ce581c635c891b74eebe2" title="seamless::installHeightField" alt="" coords="257,139,444,168"/>
+<area shape="rect" id="node15" href="$classseamless_1_1GeoPatch.html#a2a48acce8034cc5351e248fb2cde4ea6" title="seamless::GeoPatch::setGeographic" alt="" coords="233,192,468,221"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="517,5,704,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="520,59,701,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="752,59,1003,88"/>
 </map>

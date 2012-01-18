@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$structKML__Container.html" title="KML_Container" alt="" coords="133,160,245,189"/>
+<area shape="rect" id="node11" href="$structKML__Overlay.html" title="KML_Overlay" alt="" coords="359,160,460,189"/>
+<area shape="rect" id="node19" href="$structKML__Placemark.html" title="KML_Placemark" alt="" coords="484,160,601,189"/>
+<area shape="rect" id="node2" href="$structKML__Object.html" title="KML_Object" alt="" coords="363,5,456,35"/>
+<area shape="rect" id="node7" href="$structKML__Document.html" title="KML_Document" alt="" coords="5,237,120,267"/>
+<area shape="rect" id="node9" href="$structKML__Folder.html" title="KML_Folder" alt="" coords="144,237,235,267"/>
+<area shape="rect" id="node13" href="$structKML__GroundOverlay.html" title="KML_GroundOverlay" alt="" coords="259,237,400,267"/>
+<area shape="rect" id="node15" href="$structKML__PhotoOverlay.html" title="KML_PhotoOverlay" alt="" coords="424,237,557,267"/>
+<area shape="rect" id="node17" href="$structKML__ScreenOverlay.html" title="KML_ScreenOverlay" alt="" coords="581,237,723,267"/>
+</map>

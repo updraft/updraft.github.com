@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classTile.html" title="Tile" alt="" coords="5,5,48,35"/>
+<area shape="rect" id="node3" href="$classStreamingTile.html" title="StreamingTile" alt="" coords="97,5,199,35"/>
+</map>

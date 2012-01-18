@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__ocean_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_ocean/osgearth_ocean.cpp</h1>  </div>
@@ -112,9 +128,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;osgEarthUtil/OceanSurfaceNode&gt;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &lt;osgEarthUtil/Controls&gt;</span>
 <a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="class_my_graphics_context.html">00031</a> <span class="keyword">class </span><a class="code" href="class_my_graphics_context.html">MyGraphicsContext</a> {
+<a name="l00031"></a><a class="code" href="classMyGraphicsContext.html">00031</a> <span class="keyword">class </span><a class="code" href="classMyGraphicsContext.html">MyGraphicsContext</a> {
 <a name="l00032"></a>00032     <span class="keyword">public</span>:
-<a name="l00033"></a><a class="code" href="class_my_graphics_context.html#af657acbe4882b9dd83cf23018ff1e8a9">00033</a>         <a class="code" href="class_my_graphics_context.html#af657acbe4882b9dd83cf23018ff1e8a9">MyGraphicsContext</a>()
+<a name="l00033"></a><a class="code" href="classMyGraphicsContext.html#af657acbe4882b9dd83cf23018ff1e8a9">00033</a>         <a class="code" href="classMyGraphicsContext.html#af657acbe4882b9dd83cf23018ff1e8a9">MyGraphicsContext</a>()
 <a name="l00034"></a>00034         {
 <a name="l00035"></a>00035             osg::ref_ptr&lt;osg::GraphicsContext::Traits&gt; traits = <span class="keyword">new</span> osg::GraphicsContext::Traits;
 <a name="l00036"></a>00036             traits-&gt;x = 0;
@@ -126,74 +142,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042             traits-&gt;sharedContext = 0;
 <a name="l00043"></a>00043             traits-&gt;pbuffer = <span class="keyword">true</span>;
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045             _gc = osg::GraphicsContext::createGraphicsContext(traits.get());
+<a name="l00045"></a>00045             <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a> = osg::GraphicsContext::createGraphicsContext(traits.get());
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047             <span class="keywordflow">if</span> (!_gc)
+<a name="l00047"></a>00047             <span class="keywordflow">if</span> (!<a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>)
 <a name="l00048"></a>00048             {
 <a name="l00049"></a>00049                 traits-&gt;pbuffer = <span class="keyword">false</span>;
-<a name="l00050"></a>00050                 _gc = osg::GraphicsContext::createGraphicsContext(traits.get());
+<a name="l00050"></a>00050                 <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a> = osg::GraphicsContext::createGraphicsContext(traits.get());
 <a name="l00051"></a>00051             }
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053             <span class="keywordflow">if</span> (_gc.valid()) 
+<a name="l00053"></a>00053             <span class="keywordflow">if</span> (<a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>.valid()) 
 <a name="l00054"></a>00054             {
-<a name="l00055"></a>00055                 _gc-&gt;realize();
-<a name="l00056"></a>00056                 _gc-&gt;makeCurrent();
+<a name="l00055"></a>00055                 <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>-&gt;realize();
+<a name="l00056"></a>00056                 <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>-&gt;makeCurrent();
 <a name="l00057"></a>00057             }
 <a name="l00058"></a>00058         }
 <a name="l00059"></a>00059         
-<a name="l00060"></a><a class="code" href="class_my_graphics_context.html#a71783ddca3d75c0d42e1d646ed2cf683">00060</a>         <span class="keywordtype">bool</span> <a class="code" href="class_my_graphics_context.html#a71783ddca3d75c0d42e1d646ed2cf683">valid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _gc.valid() &amp;&amp; _gc-&gt;isRealized(); }
+<a name="l00060"></a><a class="code" href="classMyGraphicsContext.html#a71783ddca3d75c0d42e1d646ed2cf683">00060</a>         <span class="keywordtype">bool</span> <a class="code" href="classMyGraphicsContext.html#a71783ddca3d75c0d42e1d646ed2cf683">valid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>.valid() &amp;&amp; <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>-&gt;isRealized(); }
 <a name="l00061"></a>00061         
 <a name="l00062"></a>00062     <span class="keyword">private</span>:
-<a name="l00063"></a>00063         osg::ref_ptr&lt;osg::GraphicsContext&gt; _gc;
+<a name="l00063"></a><a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">00063</a>         osg::ref_ptr&lt;osg::GraphicsContext&gt; <a class="code" href="classMyGraphicsContext.html#abf3059bd1d416fa31a8fd96b6d86b72b">_gc</a>;
 <a name="l00064"></a>00064 };
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066 <span class="comment">// build an on-screen menu</span>
-<a name="l00067"></a>00067 <span class="keyword">static</span> osg::Node* createMenu( osgViewer::View* view )
+<a name="l00067"></a><a class="code" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">00067</a> <span class="keyword">static</span> osg::Node* <a class="code" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">createMenu</a>( osgViewer::View* view )
 <a name="l00068"></a>00068 {
 <a name="l00069"></a>00069     <span class="keyword">using namespace </span>osgEarth::Util::Controls;
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071     ControlCanvas* canvas = ControlCanvas::get( view );
+<a name="l00071"></a>00071     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( view );
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073     Grid* grid = <span class="keyword">new</span> Grid();
+<a name="l00073"></a>00073     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
 <a name="l00074"></a>00074     grid-&gt;setBackColor( 0, 0, 0, 0.5 );
 <a name="l00075"></a>00075     grid-&gt;setMargin( 5 );
 <a name="l00076"></a>00076     grid-&gt;setChildSpacing( 3 );
-<a name="l00077"></a>00077     grid-&gt;setVertAlign( Control::ALIGN_BOTTOM );
+<a name="l00077"></a>00077     grid-&gt;setVertAlign( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">Control::ALIGN_BOTTOM</a> );
 <a name="l00078"></a>00078     <span class="keywordtype">int</span> row = 0;
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;Ocean Demo&quot;</span>, 18.0f, osg::Vec4(1,1,0,1) ) );
-<a name="l00081"></a>00081     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;Zoom in to the coastline to see ocean effects.&quot;</span>, 14.0f, osg::Vec4(.6,.6,.6,1) ) );
+<a name="l00080"></a>00080     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Ocean Demo&quot;</span>, 18.0f, osg::Vec4(1,1,0,1) ) );
+<a name="l00081"></a>00081     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Zoom in to the coastline to see ocean effects.&quot;</span>, 14.0f, osg::Vec4(.6,.6,.6,1) ) );
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;e&quot;</span> ) );
-<a name="l00084"></a>00084     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;toggle ocean effects&quot;</span> ) );
-<a name="l00085"></a>00085     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;m&quot;</span> ) );
-<a name="l00086"></a>00086     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;toggle MSL adjustment&quot;</span> ) );
-<a name="l00087"></a>00087     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;h/H&quot;</span> ) );
-<a name="l00088"></a>00088     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;inc/dec wave height&quot;</span> ) );
-<a name="l00089"></a>00089     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;p/P&quot;</span> ) );
-<a name="l00090"></a>00090     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;inc/dec wave period&quot;</span> ) );
-<a name="l00091"></a>00091     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;c/C&quot;</span> ) );
-<a name="l00092"></a>00092     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;inc/dec ocean modulation color&quot;</span> ) );
-<a name="l00093"></a>00093     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;a/A&quot;</span> ) );
-<a name="l00094"></a>00094     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;inc/dec shimmer effect period&quot;</span> ) );
-<a name="l00095"></a>00095     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;j/J&quot;</span> ) );
-<a name="l00096"></a>00096     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;inc/dec surface image size&quot;</span> ) );
-<a name="l00097"></a>00097     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;i&quot;</span> ) );
-<a name="l00098"></a>00098     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;toggle ocean mask inversion&quot;</span> ) );
-<a name="l00099"></a>00099     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;w&quot;</span> ) );
-<a name="l00100"></a>00100     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;toggle wireframe mode&quot;</span> ) );
+<a name="l00083"></a>00083     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;e&quot;</span> ) );
+<a name="l00084"></a>00084     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle ocean effects&quot;</span> ) );
+<a name="l00085"></a>00085     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;m&quot;</span> ) );
+<a name="l00086"></a>00086     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle MSL adjustment&quot;</span> ) );
+<a name="l00087"></a>00087     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;h/H&quot;</span> ) );
+<a name="l00088"></a>00088     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec wave height&quot;</span> ) );
+<a name="l00089"></a>00089     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;p/P&quot;</span> ) );
+<a name="l00090"></a>00090     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec wave period&quot;</span> ) );
+<a name="l00091"></a>00091     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;c/C&quot;</span> ) );
+<a name="l00092"></a>00092     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec ocean modulation color&quot;</span> ) );
+<a name="l00093"></a>00093     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;a/A&quot;</span> ) );
+<a name="l00094"></a>00094     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec shimmer effect period&quot;</span> ) );
+<a name="l00095"></a>00095     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;j/J&quot;</span> ) );
+<a name="l00096"></a>00096     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;inc/dec surface image size&quot;</span> ) );
+<a name="l00097"></a>00097     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;i&quot;</span> ) );
+<a name="l00098"></a>00098     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle ocean mask inversion&quot;</span> ) );
+<a name="l00099"></a>00099     grid-&gt;setControl( 0, row  , <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;w&quot;</span> ) );
+<a name="l00100"></a>00100     grid-&gt;setControl( 1, row++, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;toggle wireframe mode&quot;</span> ) );
 <a name="l00101"></a>00101 
 <a name="l00102"></a>00102     canvas-&gt;addControl( grid );
 <a name="l00103"></a>00103     <span class="keywordflow">return</span> canvas;
 <a name="l00104"></a>00104 }
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106 <span class="comment">// An event handler that will print out the elevation at the clicked point</span>
-<a name="l00107"></a><a class="code" href="struct_my_event_handler.html">00107</a> <span class="keyword">struct </span><a class="code" href="struct_my_event_handler.html">MyEventHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler 
+<a name="l00107"></a><a class="code" href="structMyEventHandler.html">00107</a> <span class="keyword">struct </span><a class="code" href="structMyEventHandler.html">MyEventHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler 
 <a name="l00108"></a>00108 {
-<a name="l00109"></a><a class="code" href="struct_my_event_handler.html#abf02a1186b745dcb0c26078458e6d2d2">00109</a>     <a class="code" href="struct_my_event_handler.html#abf02a1186b745dcb0c26078458e6d2d2">MyEventHandler</a>( osgEarth::Util::OceanSurfaceNode* ocean )
-<a name="l00110"></a>00110         :<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>(ocean) { }
+<a name="l00109"></a><a class="code" href="structMyEventHandler.html#abf02a1186b745dcb0c26078458e6d2d2">00109</a>     <a class="code" href="structMyEventHandler.html#abf02a1186b745dcb0c26078458e6d2d2">MyEventHandler</a>( <a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html">osgEarth::Util::OceanSurfaceNode</a>* ocean )
+<a name="l00110"></a>00110         :<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>(ocean) { }
 <a name="l00111"></a>00111 
-<a name="l00112"></a><a class="code" href="struct_my_event_handler.html#ac2837ea71297213b6b7003a973c126cf">00112</a>     <span class="keywordtype">bool</span> <a class="code" href="struct_my_event_handler.html#ac2837ea71297213b6b7003a973c126cf">handle</a>( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
+<a name="l00112"></a><a class="code" href="structMyEventHandler.html#ac2837ea71297213b6b7003a973c126cf">00112</a>     <span class="keywordtype">bool</span> <a class="code" href="structMyEventHandler.html#ac2837ea71297213b6b7003a973c126cf">handle</a>( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
 <a name="l00113"></a>00113     {
 <a name="l00114"></a>00114         <span class="keywordflow">if</span> ( ea.getEventType() == osgGA::GUIEventAdapter::KEYDOWN )
 <a name="l00115"></a>00115         {
@@ -201,70 +217,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00117"></a>00117             {
 <a name="l00118"></a>00118             <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:
 <a name="l00119"></a>00119                 {
-<a name="l00120"></a>00120                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setWaveHeight( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getWaveHeight() * 1.1 );
+<a name="l00120"></a>00120                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setWaveHeight( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getWaveHeight() * 1.1 );
 <a name="l00121"></a>00121                 }
 <a name="l00122"></a>00122                 <span class="keywordflow">break</span>;
 <a name="l00123"></a>00123             <span class="keywordflow">case</span> <span class="charliteral">&#39;H&#39;</span>:
 <a name="l00124"></a>00124                 {
-<a name="l00125"></a>00125                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setWaveHeight( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getWaveHeight() * 0.9 );
+<a name="l00125"></a>00125                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setWaveHeight( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getWaveHeight() * 0.9 );
 <a name="l00126"></a>00126                 }
 <a name="l00127"></a>00127                 <span class="keywordflow">break</span>;
 <a name="l00128"></a>00128             <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:
 <a name="l00129"></a>00129                 {
-<a name="l00130"></a>00130                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setPeriod( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getPeriod() * 1.1 );
+<a name="l00130"></a>00130                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setPeriod( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getPeriod() * 1.1 );
 <a name="l00131"></a>00131                 }
 <a name="l00132"></a>00132                 <span class="keywordflow">break</span>;
 <a name="l00133"></a>00133             <span class="keywordflow">case</span> <span class="charliteral">&#39;P&#39;</span>:
 <a name="l00134"></a>00134                 {
-<a name="l00135"></a>00135                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setPeriod( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getPeriod() * 0.9 );
+<a name="l00135"></a>00135                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setPeriod( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getPeriod() * 0.9 );
 <a name="l00136"></a>00136                 }
 <a name="l00137"></a>00137                 <span class="keywordflow">break</span>;
 <a name="l00138"></a>00138             <span class="keywordflow">case</span> <span class="charliteral">&#39;e&#39;</span>:
 <a name="l00139"></a>00139                 {
-<a name="l00140"></a>00140                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setEnabled( !<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getEnabled() );
+<a name="l00140"></a>00140                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setEnabled( !<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getEnabled() );
 <a name="l00141"></a>00141                 }
 <a name="l00142"></a>00142             <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>:
 <a name="l00143"></a>00143                 {
-<a name="l00144"></a>00144                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setInvertMask( !<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getInvertMask() );
+<a name="l00144"></a>00144                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setInvertMask( !<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getInvertMask() );
 <a name="l00145"></a>00145                 }
 <a name="l00146"></a>00146                 <span class="keywordflow">break</span>;
 <a name="l00147"></a>00147             <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:
 <a name="l00148"></a>00148                 {
-<a name="l00149"></a>00149                     osg::Vec4f color = <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getModulationColor();
+<a name="l00149"></a>00149                     osg::Vec4f color = <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getModulationColor();
 <a name="l00150"></a>00150                     color.a() = osg::clampBelow( color.a() + 0.1f, 1.0f );
-<a name="l00151"></a>00151                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setModulationColor( color );                        
+<a name="l00151"></a>00151                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setModulationColor( color );                        
 <a name="l00152"></a>00152                 }
 <a name="l00153"></a>00153                 <span class="keywordflow">break</span>;
 <a name="l00154"></a>00154             <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:
 <a name="l00155"></a>00155                 {
-<a name="l00156"></a>00156                     osg::Vec4f color = <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getModulationColor();
+<a name="l00156"></a>00156                     osg::Vec4f color = <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getModulationColor();
 <a name="l00157"></a>00157                     color.a() = osg::clampAbove( color.a() - 0.1f, 0.0f );
-<a name="l00158"></a>00158                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setModulationColor( color );                        
+<a name="l00158"></a>00158                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setModulationColor( color );                        
 <a name="l00159"></a>00159                 }
 <a name="l00160"></a>00160                 <span class="keywordflow">break</span>;
 <a name="l00161"></a>00161             <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:
 <a name="l00162"></a>00162                 { 
-<a name="l00163"></a>00163                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanAnimationPeriod(<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanAnimationPeriod() + 0.25);
+<a name="l00163"></a>00163                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanAnimationPeriod(<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanAnimationPeriod() + 0.25);
 <a name="l00164"></a>00164                 }
 <a name="l00165"></a>00165                 <span class="keywordflow">break</span>;
 <a name="l00166"></a>00166             <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:
 <a name="l00167"></a>00167                 { 
-<a name="l00168"></a>00168                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanAnimationPeriod(<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanAnimationPeriod() - 0.25);
+<a name="l00168"></a>00168                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanAnimationPeriod(<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanAnimationPeriod() - 0.25);
 <a name="l00169"></a>00169                 }
 <a name="l00170"></a>00170                 <span class="keywordflow">break</span>;
 <a name="l00171"></a>00171             <span class="keywordflow">case</span> <span class="charliteral">&#39;J&#39;</span>:
 <a name="l00172"></a>00172                 {
-<a name="l00173"></a>00173                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanSurfaceImageSizeRadians( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanSurfaceImageSizeRadians() * 1.5f);
+<a name="l00173"></a>00173                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanSurfaceImageSizeRadians( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanSurfaceImageSizeRadians() * 1.5f);
 <a name="l00174"></a>00174                 }
 <a name="l00175"></a>00175                 <span class="keywordflow">break</span>;
 <a name="l00176"></a>00176             <span class="keywordflow">case</span> <span class="charliteral">&#39;j&#39;</span>:
 <a name="l00177"></a>00177                 {
-<a name="l00178"></a>00178                     <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanSurfaceImageSizeRadians( <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanSurfaceImageSizeRadians() * 0.5f);
+<a name="l00178"></a>00178                     <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setOceanSurfaceImageSizeRadians( <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getOceanSurfaceImageSizeRadians() * 0.5f);
 <a name="l00179"></a>00179                 }
 <a name="l00180"></a>00180                 <span class="keywordflow">break</span>;
 <a name="l00181"></a>00181                         <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:
 <a name="l00182"></a>00182                                 {
-<a name="l00183"></a>00183                                         <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setAdjustToMSL( !<a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getAdjustToMSL());
+<a name="l00183"></a>00183                                         <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;setAdjustToMSL( !<a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>-&gt;getAdjustToMSL());
 <a name="l00184"></a>00184                                 }
 <a name="l00185"></a>00185                                 <span class="keywordflow">break</span>;
 <a name="l00186"></a>00186             }
@@ -272,15 +288,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00188"></a>00188         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00189"></a>00189     }
 <a name="l00190"></a>00190 
-<a name="l00191"></a><a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">00191</a>     osg::ref_ptr&lt; osgEarth::Util::OceanSurfaceNode &gt; <a class="code" href="struct_my_event_handler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>;
+<a name="l00191"></a><a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">00191</a>     osg::ref_ptr&lt; osgEarth::Util::OceanSurfaceNode &gt; <a class="code" href="structMyEventHandler.html#a233ae5e9bd031df6727dced906d70988">_ocean</a>;
 <a name="l00192"></a>00192 };
 <a name="l00193"></a>00193 
 <a name="l00194"></a><a class="code" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">00194</a> <span class="keyword">typedef</span> std::vector&lt; osg::ref_ptr&lt; osg::Image &gt; &gt; <a class="code" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a>;
 <a name="l00195"></a>00195 
-<a name="l00196"></a><a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">00196</a> osg::Image* <a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">make3DImage</a>(<span class="keyword">const</span> ImageList&amp; images)
+<a name="l00196"></a><a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">00196</a> osg::Image* <a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">make3DImage</a>(<span class="keyword">const</span> <a class="code" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a>&amp; images)
 <a name="l00197"></a>00197 {
-<a name="l00198"></a>00198     <a class="code" href="class_my_graphics_context.html">MyGraphicsContext</a> gc;
-<a name="l00199"></a>00199     osg::notify(osg::NOTICE) &lt;&lt; <span class="stringliteral">&quot;Made graphic context &quot;</span> &lt;&lt; std::endl;
+<a name="l00198"></a>00198     <a class="code" href="classMyGraphicsContext.html">MyGraphicsContext</a> gc;
+<a name="l00199"></a>00199     <a class="code" href="namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de">osg::notify</a>(osg::NOTICE) &lt;&lt; <span class="stringliteral">&quot;Made graphic context &quot;</span> &lt;&lt; std::endl;
 <a name="l00200"></a>00200     <span class="comment">/*for (unsigned int i = 0; i &lt; images.size(); ++i)</span>
 <a name="l00201"></a>00201 <span class="comment">    {</span>
 <a name="l00202"></a>00202 <span class="comment">        images[i]-&gt;scaleImage(256, 256, 1);</span>
@@ -302,7 +318,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00218"></a>00218 
 <a name="l00219"></a><a class="code" href="osgearth__ocean_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">00219</a> <span class="keywordtype">int</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="keyword">const</span> std::string&amp; msg )
 <a name="l00220"></a>00220 {
-<a name="l00221"></a>00221     OE_NOTICE
+<a name="l00221"></a>00221     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a>
 <a name="l00222"></a>00222         &lt;&lt; msg &lt;&lt; std::endl
 <a name="l00223"></a>00223         &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_ocean [--mask-layer &lt;layername&gt;] [--invert-mask] &lt;earthfile&gt;&quot;</span> &lt;&lt; std::endl
 <a name="l00224"></a>00224         &lt;&lt; <span class="stringliteral">&quot;(note: &lt;layername&gt; defaults to \&quot;ocean\&quot;)&quot;</span> &lt;&lt; std::endl;
@@ -325,44 +341,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00241"></a>00241     <span class="keywordflow">if</span> ( !loadedModel.valid() )
 <a name="l00242"></a>00242         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to load an earth file.&quot;</span> );
 <a name="l00243"></a>00243 
-<a name="l00244"></a>00244     osgEarth::Util::OceanSurfaceNode* ocean = <span class="keyword">new</span> osgEarth::Util::OceanSurfaceNode();
+<a name="l00244"></a>00244     <a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html">osgEarth::Util::OceanSurfaceNode</a>* ocean = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html">osgEarth::Util::OceanSurfaceNode</a>();
 <a name="l00245"></a>00245 
 <a name="l00246"></a>00246     <span class="keywordflow">if</span> ( !maskLayerName.empty() )
 <a name="l00247"></a>00247     {
-<a name="l00248"></a>00248         osgEarth::MapNode* mapNode = osgEarth::MapNode::findMapNode( loadedModel.get() );
+<a name="l00248"></a>00248         <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( loadedModel.get() );
 <a name="l00249"></a>00249         <span class="keywordflow">if</span> ( mapNode )
 <a name="l00250"></a>00250         {
-<a name="l00251"></a>00251             osgEarth::MapFrame mapf( mapNode-&gt;getMap() );
-<a name="l00252"></a>00252             ocean-&gt;setOceanMaskImageLayer( mapf.getImageLayerByName( maskLayerName ) );
+<a name="l00251"></a>00251             <a class="code" href="classosgEarth_1_1MapFrame.html">osgEarth::MapFrame</a> mapf( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+<a name="l00252"></a>00252             ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aeb7a2c75547e29abc11235026b198d88">setOceanMaskImageLayer</a>( mapf.getImageLayerByName( maskLayerName ) );
 <a name="l00253"></a>00253         }
 <a name="l00254"></a>00254     }
 <a name="l00255"></a>00255 
-<a name="l00256"></a>00256     ocean-&gt;setInvertMask( !invertMask );
+<a name="l00256"></a>00256     ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#aa6e3d07d7cd5f246b101cf66f1e5e35c">setInvertMask</a>( !invertMask );
 <a name="l00257"></a>00257 
 <a name="l00258"></a>00258     <span class="comment">// install some water-surface images for an interesting shimmering effect:</span>
-<a name="l00259"></a>00259     ImageList waterImages;
+<a name="l00259"></a>00259     <a class="code" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">ImageList</a> waterImages;
 <a name="l00260"></a>00260     waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface1.png&quot;</span>) );
 <a name="l00261"></a>00261     waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface2.png&quot;</span>) );
 <a name="l00262"></a>00262     waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface3.png&quot;</span>) );
 <a name="l00263"></a>00263     waterImages.push_back( osgDB::readImageFile(<span class="stringliteral">&quot;../data/watersurface4.png&quot;</span>) );
 <a name="l00264"></a>00264 
 <a name="l00265"></a>00265     osg::ref_ptr&lt;osg::Image&gt; waterImage = <a class="code" href="osgearth__ocean_8cpp.html#acf3657c422e1fc5a2e10dc3e015dfea1">make3DImage</a>(waterImages);    
-<a name="l00266"></a>00266     ocean-&gt;setOceanSurfaceImage( waterImage.get() );
+<a name="l00266"></a>00266     ocean-&gt;<a class="code" href="classosgEarth_1_1Util_1_1OceanSurfaceNode.html#af064c70686b645e54532d74aa2ecb9f4">setOceanSurfaceImage</a>( waterImage.get() );
 <a name="l00267"></a>00267 
 <a name="l00268"></a>00268     <span class="comment">// Find the MapNode and add the ocean as a terrain decorator.</span>
-<a name="l00269"></a>00269     osgEarth::MapNode* mapNode = osgEarth::MapNode::findMapNode( loadedModel.get() );
-<a name="l00270"></a>00270     mapNode-&gt;addTerrainDecorator( ocean );
+<a name="l00269"></a>00269     <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( loadedModel.get() );
+<a name="l00270"></a>00270     mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ae21b527e746fc0da94870ff3d57ed210">addTerrainDecorator</a>( ocean );
 <a name="l00271"></a>00271 
 <a name="l00272"></a>00272     <span class="comment">// assemble the rest of the scene graph and go</span>
 <a name="l00273"></a>00273     osgViewer::Viewer viewer(arguments);
 <a name="l00274"></a>00274 
 <a name="l00275"></a>00275     group-&gt;addChild( loadedModel.get() );
-<a name="l00276"></a>00276     group-&gt;addChild( createMenu(&amp;viewer) );
+<a name="l00276"></a>00276     group-&gt;addChild( <a class="code" href="osgearth__ocean_8cpp.html#a629c99b5824d65359bbdadd8f636ace7">createMenu</a>(&amp;viewer) );
 <a name="l00277"></a>00277     viewer.setSceneData(group);
 <a name="l00278"></a>00278     
-<a name="l00279"></a>00279     viewer.setCameraManipulator( <span class="keyword">new</span> osgEarth::Util::EarthManipulator() );
+<a name="l00279"></a>00279     viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>() );
 <a name="l00280"></a>00280 
-<a name="l00281"></a>00281     viewer.addEventHandler(<span class="keyword">new</span> <a class="code" href="struct_my_event_handler.html">MyEventHandler</a>(ocean));
+<a name="l00281"></a>00281     viewer.addEventHandler(<span class="keyword">new</span> <a class="code" href="structMyEventHandler.html">MyEventHandler</a>(ocean));
 <a name="l00282"></a>00282     viewer.addEventHandler( <span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()) );
 <a name="l00283"></a>00283     viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler);
 <a name="l00284"></a>00284 
@@ -370,14 +386,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00286"></a>00286 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__ocean_8cpp.html">osgearth_ocean.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -392,6 +400,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

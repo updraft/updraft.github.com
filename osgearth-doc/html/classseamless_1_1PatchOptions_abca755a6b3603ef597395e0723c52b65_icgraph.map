@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1PatchSet.html#a2e6c1f9b5b54ada0476c16dc104a9cf6" title="seamless::PatchSet::createChild" alt="" coords="420,5,633,35"/>
+<area shape="rect" id="node7" href="$classseamless_1_1PatchSet.html#afba25a6047d2a4b1f804ab5786ef1f2b" title="seamless::PatchSet::createPatch" alt="" coords="417,59,636,88"/>
+<area shape="rect" id="node9" href="$classseamless_1_1PatchInfo.html#a234f664f9970983d8dacc949ec798bfe" title="seamless::PatchInfo::getPatchExtents" alt="" coords="404,112,649,141"/>
+<area shape="rect" id="node11" href="$namespaceseamless_1_1anonymous__namespace_02Projected_8cpp_03.html#aa039781d785e3ac8118959d9a7cf57b6" title="seamless::anonymous_namespace\{Projected::cpp\}::makeTileKey" alt="" coords="325,165,728,195"/>
+<area shape="rect" id="node5" href="$classseamless_1_1SeamlessPlugin.html#a65e942df8ed857b6d9dffc1bdc92bb48" title="seamless::SeamlessPlugin::readNode" alt="" coords="777,5,1020,35"/>
+<area shape="rect" id="node13" href="$classseamless_1_1Projected.html#a3e7a91e57257d0352905789ac8f96596" title="seamless::Projected::createPatch" alt="" coords="789,165,1008,195"/>
+</map>

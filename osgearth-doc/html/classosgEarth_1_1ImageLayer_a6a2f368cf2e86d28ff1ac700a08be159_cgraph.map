@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ImageLayer.html#aaf9b19df9f05fdd52c10c7eaabf2c6cb" title="osgEarth::ImageLayer::fireCallback" alt="" coords="321,5,548,35"/>
+<area shape="rect" id="node5" href="$structosgEarth_1_1ImageLayerCallback.html#a85a4b7c379eafedb0b870cd47410cdfc" title="osgEarth::ImageLayerCallback::onOpacityChanged" alt="" coords="275,59,595,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1ImageLayerOptions.html#a1a91ce21a99e303488219a630e90e426" title="osgEarth::ImageLayerOptions::opacity" alt="" coords="312,112,557,141"/>
+</map>

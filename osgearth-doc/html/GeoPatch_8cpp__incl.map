@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$GeoPatch.html" title="GeoPatch" alt="" coords="97,160,177,189"/>
+<area shape="rect" id="node23" href="$Geographic.html" title="Geographic" alt="" coords="1209,83,1297,112"/>
+<area shape="rect" id="node40" href="$PatchSet.html" title="PatchSet" alt="" coords="741,160,816,189"/>
+<area shape="rect" id="node72" href="$Euler.html" title="Euler" alt="" coords="1848,160,1899,189"/>
+<area shape="rect" id="node5" href="$Patch.html" title="Patch" alt="" coords="215,237,271,267"/>
+<area shape="rect" id="node54" href="$PatchGroup.html" title="PatchGroup" alt="" coords="860,237,951,267"/>
+<area shape="rect" id="node66" href="$SeamlessOptions.html" title="SeamlessOptions" alt="" coords="975,237,1100,267"/>
+<area shape="rect" id="node62" href="$PatchInfo.html" title="PatchInfo" alt="" coords="613,315,691,344"/>
+</map>

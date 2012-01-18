@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__tests_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_tests/osgearth_tests.cpp</h1>  </div>
@@ -127,79 +143,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044   <span class="comment">//One to one test.  Read a single 1 to 1 tile out of a MapLayer</span>
 <a name="l00045"></a>00045   {
-<a name="l00046"></a>00046       GDALOptions driverOpt;
-<a name="l00047"></a>00047       driverOpt.url() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
+<a name="l00046"></a>00046       <a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html">GDALOptions</a> driverOpt;
+<a name="l00047"></a>00047       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95">url</a>() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049       ImageLayerOptions layerOpt;
-<a name="l00050"></a>00050       layerOpt.driver() = driverOpt;
-<a name="l00051"></a>00051       layerOpt.name() = <span class="stringliteral">&quot;test_simple&quot;</span>;
+<a name="l00049"></a>00049       <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+<a name="l00050"></a>00050       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+<a name="l00051"></a>00051       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_simple&quot;</span>;
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> ImageLayer( layerOpt );
+<a name="l00053"></a>00053       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055       TileKey key(0, 0, 0, layer-&gt;getProfile());
-<a name="l00056"></a>00056           GeoImage image = layer-&gt;createImage( key );
+<a name="l00055"></a>00055       <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, layer-&gt;getProfile());
+<a name="l00056"></a>00056           <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
 <a name="l00057"></a>00057           osgDB::writeImageFile(*image.getImage(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
 <a name="l00058"></a>00058   }
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060   <span class="comment">//Mosaic test.  Request a tile in the global geodetic profile from a layer with a geographic SRS but a different tiling scheme.</span>
 <a name="l00061"></a>00061   {
-<a name="l00062"></a>00062       ArcGISOptions driverOpt;
-<a name="l00063"></a>00063       driverOpt.url() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
+<a name="l00062"></a>00062       <a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html">ArcGISOptions</a> driverOpt;
+<a name="l00063"></a>00063       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8">url</a>() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065       ImageLayerOptions layerOpt;
-<a name="l00066"></a>00066       layerOpt.driver() = driverOpt;
-<a name="l00067"></a>00067       layerOpt.name() = <span class="stringliteral">&quot;test_mosaic&quot;</span>;
+<a name="l00065"></a>00065       <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+<a name="l00066"></a>00066       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+<a name="l00067"></a>00067       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_mosaic&quot;</span>;
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> ImageLayer( layerOpt );
+<a name="l00069"></a>00069       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071       TileKey key(0, 0, 0, osgEarth::Registry::instance()-&gt;getGlobalGeodeticProfile());
-<a name="l00072"></a>00072           GeoImage image = layer-&gt;createImage( key );
-<a name="l00073"></a>00073           osgDB::writeImageFile(*image.getImage(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+<a name="l00071"></a>00071       <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, <a class="code" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09">osgEarth::Registry::instance</a>()-&gt;getGlobalGeodeticProfile());
+<a name="l00072"></a>00072           <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+<a name="l00073"></a>00073           osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.<a class="code" href="classosgEarth_1_1TileKey.html#aff6a958d86c7ac9a6300e0d9fa8aa72c">str</a>() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
 <a name="l00074"></a>00074   }
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076   <span class="comment">//Reprojection.  Request a UTM image from a global geodetic profile</span>
 <a name="l00077"></a>00077   {
-<a name="l00078"></a>00078       ArcGISOptions driverOpt;
-<a name="l00079"></a>00079       driverOpt.url() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
+<a name="l00078"></a>00078       <a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html">ArcGISOptions</a> driverOpt;
+<a name="l00079"></a>00079       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8">url</a>() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081       ImageLayerOptions layerOpt;
-<a name="l00082"></a>00082       layerOpt.name() = <span class="stringliteral">&quot;test_reprojected_utm&quot;</span>;
-<a name="l00083"></a>00083       layerOpt.driver() = driverOpt;
-<a name="l00084"></a>00084       layerOpt.reprojectedTileSize() = 512;
+<a name="l00081"></a>00081       <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+<a name="l00082"></a>00082       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_reprojected_utm&quot;</span>;
+<a name="l00083"></a>00083       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+<a name="l00084"></a>00084       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a18c8e5fb2aa65339b69dcab92b2ebedf">reprojectedTileSize</a>() = 512;
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> ImageLayer( layerOpt );
+<a name="l00086"></a>00086       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
 <a name="l00087"></a>00087 
-<a name="l00088"></a>00088       TileKey key(0, 0, 0, Profile::create(<span class="stringliteral">&quot;epsg:26917&quot;</span>, 560725, 4385762, 573866, 4400705));
-<a name="l00089"></a>00089           GeoImage image = layer-&gt;createImage( key );
-<a name="l00090"></a>00090           osgDB::writeImageFile(*image.getImage(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+<a name="l00088"></a>00088       <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, Profile::create(<span class="stringliteral">&quot;epsg:26917&quot;</span>, 560725, 4385762, 573866, 4400705));
+<a name="l00089"></a>00089           <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+<a name="l00090"></a>00090           osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.<a class="code" href="classosgEarth_1_1TileKey.html#aff6a958d86c7ac9a6300e0d9fa8aa72c">str</a>() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
 <a name="l00091"></a>00091   }
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094   <span class="comment">//Mercator.  Request a geodetic reprojected image from a mercator source</span>
 <a name="l00095"></a>00095   {
-<a name="l00096"></a>00096       TMSOptions driverOpt;
-<a name="l00097"></a>00097       driverOpt.url() = <span class="stringliteral">&quot;http://tile.openstreetmap.org&quot;</span>;
-<a name="l00098"></a>00098       driverOpt.format() = <span class="stringliteral">&quot;png&quot;</span>;
-<a name="l00099"></a>00099       driverOpt.tileSize() = 256;
-<a name="l00100"></a>00100       driverOpt.tmsType() = <span class="stringliteral">&quot;google&quot;</span>;
+<a name="l00096"></a>00096       <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> driverOpt;
+<a name="l00097"></a>00097       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://tile.openstreetmap.org&quot;</span>;
+<a name="l00098"></a>00098       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#af9c81bbb1544320c9d15c447b22ade25">format</a>() = <span class="stringliteral">&quot;png&quot;</span>;
+<a name="l00099"></a>00099       driverOpt.<a class="code" href="classosgEarth_1_1TileSourceOptions.html#a408fb6362b758888204763465a986346">tileSize</a>() = 256;
+<a name="l00100"></a>00100       driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#aa857627ab7015e5f810335ad6f2d4ecb">tmsType</a>() = <span class="stringliteral">&quot;google&quot;</span>;
 <a name="l00101"></a>00101 
-<a name="l00102"></a>00102       ImageLayerOptions layerOpt;
-<a name="l00103"></a>00103       layerOpt.driver() = driverOpt;
-<a name="l00104"></a>00104       layerOpt.name() = <span class="stringliteral">&quot;test_mercator_reprojected&quot;</span>;
-<a name="l00105"></a>00105       layerOpt.reprojectedTileSize() = 256;
-<a name="l00106"></a>00106       layerOpt.exactCropping() = <span class="keyword">true</span>;
-<a name="l00107"></a>00107       layerOpt.profile() = ProfileOptions( <span class="stringliteral">&quot;global-mercator&quot;</span> );
+<a name="l00102"></a>00102       <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+<a name="l00103"></a>00103       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+<a name="l00104"></a>00104       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_mercator_reprojected&quot;</span>;
+<a name="l00105"></a>00105       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a18c8e5fb2aa65339b69dcab92b2ebedf">reprojectedTileSize</a>() = 256;
+<a name="l00106"></a>00106       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#af7d8f5abac0df078b4888c420576798b">exactCropping</a>() = <span class="keyword">true</span>;
+<a name="l00107"></a>00107       layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#ae1fd077446d87d31ff2c0d7ddad4a112">profile</a>() = <a class="code" href="classosgEarth_1_1ProfileOptions.html">ProfileOptions</a>( <span class="stringliteral">&quot;global-mercator&quot;</span> );
 <a name="l00108"></a>00108 
-<a name="l00109"></a>00109       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> ImageLayer( layerOpt );
+<a name="l00109"></a>00109       osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111           <span class="comment">//Request an image from the mercator source.  Should be reprojected to geodetic</span>
-<a name="l00112"></a>00112           TileKey key(0, 0, 0, osgEarth::Registry::instance()-&gt;getGlobalGeodeticProfile());
-<a name="l00113"></a>00113           GeoImage image = layer-&gt;createImage( key );
-<a name="l00114"></a>00114           <span class="keywordflow">if</span> (!image.getSRS()-&gt;isGeographic())
+<a name="l00112"></a>00112           <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, <a class="code" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09">osgEarth::Registry::instance</a>()-&gt;getGlobalGeodeticProfile());
+<a name="l00113"></a>00113           <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+<a name="l00114"></a>00114           <span class="keywordflow">if</span> (!image.<a class="code" href="classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3">isGeographic</a>())
 <a name="l00115"></a>00115           {
-<a name="l00116"></a>00116                   OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;Error:  Should have reprojected image to geodetic but returned SRS is  &quot;</span> &lt;&lt; image.getSRS()-&gt;getWKT() &lt;&lt; std::endl;
+<a name="l00116"></a>00116                   <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Error:  Should have reprojected image to geodetic but returned SRS is  &quot;</span> &lt;&lt; image.<a class="code" href="classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333">getWKT</a>() &lt;&lt; std::endl;
 <a name="l00117"></a>00117           }
-<a name="l00118"></a>00118           osgDB::writeImageFile(*image.getImage(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+<a name="l00118"></a>00118           osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.<a class="code" href="classosgEarth_1_1TileKey.html#aff6a958d86c7ac9a6300e0d9fa8aa72c">str</a>() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
 <a name="l00119"></a>00119   }
 <a name="l00120"></a>00120 
 <a name="l00121"></a>00121   <span class="keywordflow">return</span> 0;
@@ -207,14 +223,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00123"></a>00123 
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__tests_8cpp.html">osgearth_tests.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -229,6 +237,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

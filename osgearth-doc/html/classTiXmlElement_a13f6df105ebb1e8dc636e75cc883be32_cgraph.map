@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlElement.html#a9e0c1983b840de4134f1f6bf7af00b0f" title="TiXmlElement::CopyTo" alt="" coords="219,244,376,273"/>
+<area shape="rect" id="node47" href="$classTiXmlElement.html#a01bc3ab372d35da08efcbbe65ad90c60" title="Construct an element." alt="" coords="200,297,395,327"/>
+<area shape="rect" id="node49" href="$classTiXmlNode.html#a77943eb90d12c2892b1337a9f5918b41" title="TiXmlNode::Value" alt="" coords="233,351,361,380"/>
+<area shape="rect" id="node5" href="$classTiXmlNode.html#a4508cc3a2d7a98e96a54cc09c37a78a4" title="TiXmlNode::Clone" alt="" coords="469,59,597,88"/>
+<area shape="rect" id="node7" href="$classTiXmlAttributeSet.html#ae0636e88cedd4b09d61c451860f68598" title="TiXmlAttributeSet::First" alt="" coords="455,112,612,141"/>
+<area shape="rect" id="node9" href="$classTiXmlNode.html#a1a881212554b759865f6cac79a851d38" title="TiXmlNode::LinkEndChild" alt="" coords="448,165,619,195"/>
+<area shape="rect" id="node25" href="$classTiXmlAttribute.html#a298a57287d305904ba6bd96ae6f78d3d" title="Return the name of this attribute." alt="" coords="1161,231,1308,260"/>
+<area shape="rect" id="node27" href="$classTiXmlAttribute.html#a776478980776a024f7c2846eec640f65" title="Get the next sibling attribute in the DOM. Returns null at end." alt="" coords="463,269,604,299"/>
+<area shape="rect" id="node29" href="$classTiXmlNode.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="452,323,615,352"/>
+<area shape="rect" id="node31" href="$classTiXmlElement.html#abf0b3bd7f0e4c746a89ec6e7f101fc32" title="TiXmlElement::SetAttribute" alt="" coords="443,376,624,405"/>
+<area shape="rect" id="node45" href="$classTiXmlAttribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute." alt="" coords="460,429,607,459"/>
+<area shape="rect" id="node11" href="$classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071" title="TiXmlNode::GetDocument" alt="" coords="689,32,865,61"/>
+<area shape="rect" id="node15" href="$classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de" title="TiXmlDocument::SetError" alt="" coords="692,112,863,141"/>
+<area shape="rect" id="node23" href="$classTiXmlNode.html#a57b99d5c97d67a42b9752f5210a1ba5e" title="TiXmlNode::Type" alt="" coords="716,165,839,195"/>
+<area shape="rect" id="node13" href="$classTiXmlNode.html#a8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="933,5,1104,35"/>
+<area shape="rect" id="node17" href="$structTiXmlCursor.html#a1e6fa622b59dafb71b6efe595105dcdd" title="TiXmlCursor::Clear" alt="" coords="952,59,1085,88"/>
+<area shape="rect" id="node19" href="$classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05" title="TiXmlParsingData::Cursor" alt="" coords="932,112,1105,141"/>
+<area shape="rect" id="node21" href="$classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d" title="TiXmlParsingData::Stamp" alt="" coords="932,165,1105,195"/>
+<area shape="rect" id="node33" href="$classTiXmlAttributeSet.html#a5e28f5d32f048fba85d04dc317495bdc" title="TiXmlAttributeSet::FindOrCreate" alt="" coords="672,321,883,351"/>
+<area shape="rect" id="node43" href="$classTiXmlAttribute.html#a2dae44178f668b3cb48101be4f2236a0" title="Set the value." alt="" coords="695,376,860,405"/>
+<area shape="rect" id="node35" href="$classTiXmlAttributeSet.html#a745e50ddaae3bee93e4589321e0b9c1a" title="TiXmlAttributeSet::Add" alt="" coords="941,269,1096,299"/>
+<area shape="rect" id="node37" href="$classTiXmlAttributeSet.html#af3675cc2bfd0aea153cda1cfcdd1f77e" title="TiXmlAttributeSet::Find" alt="" coords="1156,309,1313,339"/>
+<area shape="rect" id="node41" href="$classTiXmlAttribute.html#ab7fa3d21ff8d7c5764cf9af15b667a99" title="Set the name of this attribute." alt="" coords="935,373,1103,403"/>
+</map>

@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__featureinfo_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
@@ -88,9 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;osg/Notify&gt;</code><br/>
 <code>#include &lt;osgEarthDrivers/feature_ogr/OGRFeatureOptions&gt;</code><br/>
 <code>#include &lt;osgEarthFeatures/GeometryUtils&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_featureinfo.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_featureinfo.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__featureinfo_2osgearth__featureinfo_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__featureinfo_2osgearth__featureinfo_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__featureinfo_2osgearth__featureinfo_8cpp">
 </map>
@@ -100,10 +119,10 @@ Include dependency graph for osgearth_featureinfo.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">attributeTypeToString</a> (AttributeType type)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">printStats</a> (FeatureSource *features)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a> (Feature *feature)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">printAllFeatures</a> (FeatureSource *features)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">attributeTypeToString</a> (<a class="el" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208">AttributeType</a> type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">printStats</a> (<a class="el" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a> *features)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a> (<a class="el" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a> *feature)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">printAllFeatures</a> (<a class="el" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a> *features)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">usage</a> (const std::string &amp;msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
@@ -118,7 +137,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">std::string attributeTypeToString </td>
           <td>(</td>
-          <td class="paramtype">AttributeType&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208">AttributeType</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -127,10 +146,22 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00030">30</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">switch</span> (type)
+    {
+    <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a7cd913d3a8e60e3fd9889a21b8624898">ATTRTYPE_BOOL</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Boolean&quot;</span>;
+    <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a3f24f11723d1bd2d24adc94c1ce741e8">ATTRTYPE_DOUBLE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Double&quot;</span>;
+    <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a89e9293bc4d900093906ea56d7e8b869">ATTRTYPE_INT</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;Integer&quot;</span>;
+    <span class="keywordflow">case</span> <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a6c19a5712388824f9d3eb5b00db75514">ATTRTYPE_STRING</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;String&quot;</span>;
+    <span class="keywordflow">default</span>:  <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unspecified&quot;</span>;
+    }
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_a687d00bae5efd6be739e8070fc38fb2f_icgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a687d00bae5efd6be739e8070fc38fb2f_icgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_a687d00bae5efd6be739e8070fc38fb2f_icgraph" id="osgearth__featureinfo_8cpp_a687d00bae5efd6be739e8070fc38fb2f_icgraph">
 <area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc" title="printStats" alt="" coords="201,5,279,35"/><area shape="rect" id="node5" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="328,5,379,35"/></map>
@@ -165,13 +196,109 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00113">113</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="keywordflow">if</span> (argc &lt; 2)
+    {
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>(<span class="stringliteral">&quot;&quot;</span>);
+    }
+
+
+    std::vector&lt; FeatureID &gt; toDelete;
+    <span class="keywordtype">int</span> fid;
+    <span class="keywordflow">while</span> (arguments.read(<span class="stringliteral">&quot;--delete&quot;</span>, fid))
+    {
+        toDelete.push_back( fid );
+    }
+
+    std::vector&lt; FeatureID &gt; fids;
+    <span class="keywordflow">while</span> (arguments.read(<span class="stringliteral">&quot;--fid&quot;</span>, fid))
+    {
+        fids.push_back( fid );
+    }
+    
+    <span class="keywordtype">bool</span> printFeatures = <span class="keyword">false</span>;
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--printfeatures&quot;</span> )) printFeatures = <span class="keyword">true</span>;
+
+    std::string filename;
+
+    <span class="comment">//Get the first argument that is not an option</span>
+    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> pos=1;pos&lt;arguments.argc();++pos)
+    {
+        <span class="keywordflow">if</span> (!arguments.isOption(pos))
+        {
+            filename  = arguments[ pos ];
+        }
+    }
+
+    <span class="keywordflow">if</span> (filename.empty())
+    {
+        <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Please provide a filename&quot;</span> );
+    }
+
+    <span class="keywordtype">bool</span> write = toDelete.size() &gt; 0;
+
+
+
+    <span class="comment">//Open the feature source</span>
+    <a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html">OGRFeatureOptions</a> featureOpt;
+    featureOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8">url</a>() = filename;
+    featureOpt.<a class="code" href="classosgEarth_1_1Features_1_1FeatureSourceOptions.html#af828d9f76025befddbf91f97e2624802">openWrite</a>() = write;
+
+    osg::ref_ptr&lt; FeatureSource &gt; features = FeatureSourceFactory::create( featureOpt );
+    features-&gt;initialize(<span class="stringliteral">&quot;&quot;</span>);
+    features-&gt;getFeatureProfile();
+
+    <span class="comment">//Delete any features if requested</span>
+    <span class="keywordflow">if</span> (toDelete.size() &gt; 0)
+    {
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; toDelete.size(); ++i)
+        {
+            <a class="code" href="namespaceosgEarth_1_1Features.html#ab9bb7beec9c80e57ef67a505392ea156">FeatureID</a> fid = toDelete[i];
+            std::cout &lt;&lt; <span class="stringliteral">&quot;Deleting Feature &quot;</span> &lt;&lt; fid &lt;&lt; std::endl;
+            features-&gt;deleteFeature( fid );
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fids.size() &gt; 0)
+    {
+        <span class="comment">//Print out any specific FIDs</span>
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; fids.size(); ++i)
+        {
+            <a class="code" href="namespaceosgEarth_1_1Features.html#ab9bb7beec9c80e57ef67a505392ea156">FeatureID</a> fid = fids[i];
+            osg::ref_ptr&lt; Feature &gt; feature = features-&gt;getFeature( fid );
+            <span class="keywordflow">if</span> (feature.valid())
+            {
+                <a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a>( feature.get() );
+            }
+            <span class="keywordflow">else</span>
+            {
+                std::cout &lt;&lt; <span class="stringliteral">&quot;Couldn&#39;t get feature &quot;</span> &lt;&lt; fid &lt;&lt; std::endl;
+            }
+        }
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="comment">//Print out feature info</span>
+        <a class="code" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc">printStats</a>( features.get() );
+
+        <span class="keywordflow">if</span> (printFeatures)
+        {
+            <a class="code" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe">printAllFeatures</a>( features.get() );
+        }
+    }
+
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__featureinfo_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe" title="printAllFeatures" alt="" coords="105,5,217,35"/><area shape="rect" id="node5" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216" title="printFeature" alt="" coords="295,31,385,60"/><area shape="rect" id="node8" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc" title="printStats" alt="" coords="123,109,200,139"/><area shape="rect" id="node12" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="133,163,189,192"/><area shape="rect" id="node10" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="267,109,413,139"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Features_1_1FeatureSourceFactory.html#aeb4d4d28b39972eae24f232f67db9d11" title="osgEarth::Features::FeatureSourceFactory::create" alt="" coords="116,19,431,48"/><area shape="rect" id="node7" href="classosgEarth_1_1Features_1_1FeatureSourceOptions.html#af828d9f76025befddbf91f97e2624802" title="osgEarth::Features::FeatureSourceOptions::openWrite" alt="" coords="104,99,443,128"/><area shape="rect" id="node9" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe" title="printAllFeatures" alt="" coords="217,152,329,181"/><area shape="rect" id="node15" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216" title="printFeature" alt="" coords="623,165,713,195"/><area shape="rect" id="node32" href="osgearth__featureinfo_8cpp.html#ac82570b375785e9e4fd108b23882b8bc" title="printStats" alt="" coords="235,257,312,287"/><area shape="rect" id="node44" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8" title="osgEarth::Drivers::OGRFeatureOptions::url" alt="" coords="137,311,409,340"/><area shape="rect" id="node46" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549" title="usage" alt="" coords="245,364,301,393"/><area shape="rect" id="node5" href="classosgEarth_1_1DriverConfigOptions.html#ab989b270751800e8fca87b17fdc456bc" title="osgEarth::DriverConfigOptions::getDriver" alt="" coords="537,5,799,35"/><area shape="rect" id="node11" href="classosgEarth_1_1Features_1_1FeatureSource.html#a0a655dd1d0620eac81c9511ce3a330ac" title="osgEarth::Features::FeatureSource::createFeatureCursor" alt="" coords="492,59,844,88"/><area shape="rect" id="node13" href="classosgEarth_1_1Features_1_1FeatureCursor.html#ad3d52f67638278714f54cd1b63af288d" title="osgEarth::Features::FeatureCursor::nextFeature" alt="" coords="517,112,819,141"/><area shape="rect" id="node17" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca" title="osgEarth::Features::geometryToWkt" alt="" coords="911,85,1145,115"/><area shape="rect" id="node25" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76" title="osgEarth::Features::Feature::getAttrs" alt="" coords="909,139,1147,168"/><area shape="rect" id="node27" href="classosgEarth_1_1Features_1_1Feature.html#aa0e4c6063baf88e8a32110bc3e39123a" title="osgEarth::Features::Feature::getFID" alt="" coords="912,192,1144,221"/><area shape="rect" id="node29" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="895,245,1161,275"/><area shape="rect" id="node19" href="structOgrUtils.html#a0649bdba5f6cf92ec77e2a142edcfc71" title="OgrUtils::createOgrGeometry" alt="" coords="1211,85,1403,115"/><area shape="rect" id="node21" href="classosgEarth_1_1Symbology_1_1MultiGeometry.html#a97b8ca20db8dd9d87eb9e4ddecf2c87c" title="osgEarth::Symbology::MultiGeometry::getComponents" alt="" coords="1452,59,1791,88"/><area shape="rect" id="node23" href="classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="1488,112,1755,141"/><area shape="rect" id="node34" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="595,219,741,248"/><area shape="rect" id="node36" href="classosgEarth_1_1Features_1_1FeatureSource.html#a1eeb1b74d5ca16d6c6a0a15c6260df35" title="osgEarth::Features::FeatureSource::getFeatureCount" alt="" coords="503,272,833,301"/><area shape="rect" id="node38" href="classosgEarth_1_1Features_1_1FeatureSource.html#a929f9ab4da3030ceed68e499fea5f2e5" title="osgEarth::Features::FeatureSource::getGeometryType" alt="" coords="499,325,837,355"/><area shape="rect" id="node40" href="classosgEarth_1_1Features_1_1FeatureSource.html#a909a94e6a8806dd27f4acc3058a948d3" title="osgEarth::Features::FeatureSource::getSchema" alt="" coords="519,379,817,408"/><area shape="rect" id="node42" href="classosgEarth_1_1Symbology_1_1Geometry.html#a3c26f20748da289c096bfffbfecc26f3" title="osgEarth::Symbology::Geometry::toString" alt="" coords="536,432,800,461"/></map>
 </div>
 </p>
 
@@ -184,7 +311,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void printAllFeatures </td>
           <td>(</td>
-          <td class="paramtype">FeatureSource *&#160;</td>
+          <td class="paramtype"><a class="el" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a> *&#160;</td>
           <td class="paramname"><em>features</em></td><td>)</td>
           <td></td>
         </tr>
@@ -193,19 +320,31 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00083">83</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+<div class="fragment"><pre class="fragment">{
+    osg::ref_ptr&lt; FeatureCursor &gt; cursor = features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a0a655dd1d0620eac81c9511ce3a330ac">createFeatureCursor</a>();
+    <span class="keywordflow">while</span> (cursor-&gt;hasMore())
+    {
+        osg::ref_ptr&lt; Feature &gt; feature = cursor-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureCursor.html#ad3d52f67638278714f54cd1b63af288d">nextFeature</a>();
+        <a class="code" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216">printFeature</a>( feature.get() );
+    }
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_cgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_cgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_cgraph" id="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_cgraph">
-<area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216" title="printFeature" alt="" coords="168,5,259,35"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Features_1_1FeatureSource.html#a0a655dd1d0620eac81c9511ce3a330ac" title="osgEarth::Features::FeatureSource::createFeatureCursor" alt="" coords="169,5,521,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Features_1_1FeatureCursor.html#ad3d52f67638278714f54cd1b63af288d" title="osgEarth::Features::FeatureCursor::nextFeature" alt="" coords="195,59,496,88"/><area shape="rect" id="node7" href="osgearth__featureinfo_8cpp.html#a2e2affc5ede1313d9a6d03005ce29216" title="printFeature" alt="" coords="300,112,391,141"/><area shape="rect" id="node9" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca" title="osgEarth::Features::geometryToWkt" alt="" coords="588,32,823,61"/><area shape="rect" id="node17" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76" title="osgEarth::Features::Feature::getAttrs" alt="" coords="587,85,824,115"/><area shape="rect" id="node19" href="classosgEarth_1_1Features_1_1Feature.html#aa0e4c6063baf88e8a32110bc3e39123a" title="osgEarth::Features::Feature::getFID" alt="" coords="589,139,821,168"/><area shape="rect" id="node21" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="572,192,839,221"/><area shape="rect" id="node11" href="structOgrUtils.html#a0649bdba5f6cf92ec77e2a142edcfc71" title="OgrUtils::createOgrGeometry" alt="" coords="888,32,1080,61"/><area shape="rect" id="node13" href="classosgEarth_1_1Symbology_1_1MultiGeometry.html#a97b8ca20db8dd9d87eb9e4ddecf2c87c" title="osgEarth::Symbology::MultiGeometry::getComponents" alt="" coords="1129,5,1468,35"/><area shape="rect" id="node15" href="classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="1165,59,1432,88"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_icgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_icgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_icgraph" id="osgearth__featureinfo_8cpp_a9e6aaac0b44eceb3693e4cd5a1e576fe_icgraph">
 <area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="168,5,219,35"/></map>
@@ -221,7 +360,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void printFeature </td>
           <td>(</td>
-          <td class="paramtype">Feature *&#160;</td>
+          <td class="paramtype"><a class="el" href="classosgEarth_1_1Features_1_1Feature.html">Feature</a> *&#160;</td>
           <td class="paramname"><em>feature</em></td><td>)</td>
           <td></td>
         </tr>
@@ -230,10 +369,45 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00059">59</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    std::cout &lt;&lt; <span class="stringliteral">&quot;FID: &quot;</span> &lt;&lt; feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#aa0e4c6063baf88e8a32110bc3e39123a">getFID</a>() &lt;&lt; std::endl;
+    <span class="keywordflow">for</span> (AttributeTable::const_iterator itr = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76">getAttrs</a>().begin(); itr != feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76">getAttrs</a>().end(); ++itr)
+    {
+        std::cout 
+            &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> 
+            &lt;&lt; itr-&gt;first &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; itr-&gt;second.getString() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span>
+            &lt;&lt; (itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a89e9293bc4d900093906ea56d7e8b869">ATTRTYPE_INT</a>?    <span class="stringliteral">&quot;integer&quot;</span> :
+                itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a3f24f11723d1bd2d24adc94c1ce741e8">ATTRTYPE_DOUBLE</a>? <span class="stringliteral">&quot;double&quot;</span> :
+                itr-&gt;second.first == <a class="code" href="namespaceosgEarth_1_1Features.html#ae16d834f49ff92e77e6de1b6a1ddc208a7cd913d3a8e60e3fd9889a21b8624898">ATTRTYPE_BOOL</a>?   <span class="stringliteral">&quot;bool&quot;</span> :
+                <span class="stringliteral">&quot;string&quot;</span>)
+            &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;
+    }
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">//Print out the geometry</span>
+    <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html">Geometry</a>* geom = feature-&gt;<a class="code" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57">getGeometry</a>();
+    <span class="keywordflow">if</span> (geom)
+    {
+        std::cout &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> &lt;&lt; <a class="code" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca">geometryToWkt</a>( geom ) &lt;&lt; std::endl;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+</pre></div>
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_cgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_cgraph" alt=""/></div>
+<map name="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_cgraph" id="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_cgraph">
+<area shape="rect" id="node3" href="namespaceosgEarth_1_1Features.html#a6eeed8a3139b88e66de13178e47386ca" title="osgEarth::Features::geometryToWkt" alt="" coords="161,32,396,61"/><area shape="rect" id="node11" href="classosgEarth_1_1Features_1_1Feature.html#a408ccc5953df252f6948d6901ecd9d76" title="osgEarth::Features::Feature::getAttrs" alt="" coords="160,85,397,115"/><area shape="rect" id="node13" href="classosgEarth_1_1Features_1_1Feature.html#aa0e4c6063baf88e8a32110bc3e39123a" title="osgEarth::Features::Feature::getFID" alt="" coords="163,139,395,168"/><area shape="rect" id="node15" href="classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="145,192,412,221"/><area shape="rect" id="node5" href="structOgrUtils.html#a0649bdba5f6cf92ec77e2a142edcfc71" title="OgrUtils::createOgrGeometry" alt="" coords="461,32,653,61"/><area shape="rect" id="node7" href="classosgEarth_1_1Symbology_1_1MultiGeometry.html#a97b8ca20db8dd9d87eb9e4ddecf2c87c" title="osgEarth::Symbology::MultiGeometry::getComponents" alt="" coords="703,5,1041,35"/><area shape="rect" id="node9" href="classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="739,59,1005,88"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_icgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_icgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_icgraph" id="osgearth__featureinfo_8cpp_a2e2affc5ede1313d9a6d03005ce29216_icgraph">
 <area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="307,5,357,35"/><area shape="rect" id="node5" href="osgearth__featureinfo_8cpp.html#a9e6aaac0b44eceb3693e4cd5a1e576fe" title="printAllFeatures" alt="" coords="145,31,257,60"/></map>
@@ -249,7 +423,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void printStats </td>
           <td>(</td>
-          <td class="paramtype">FeatureSource *&#160;</td>
+          <td class="paramtype"><a class="el" href="classosgEarth_1_1Features_1_1FeatureSource.html">FeatureSource</a> *&#160;</td>
           <td class="paramname"><em>features</em></td><td>)</td>
           <td></td>
         </tr>
@@ -258,19 +432,36 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00044">44</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Feature Count:  &quot;</span> &lt;&lt; features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a1eeb1b74d5ca16d6c6a0a15c6260df35">getFeatureCount</a>() &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Geometry Type:  &quot;</span> &lt;&lt; <a class="code" href="classosgEarth_1_1Symbology_1_1Geometry.html#a3c26f20748da289c096bfffbfecc26f3">osgEarth::Symbology::Geometry::toString</a>( features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a929f9ab4da3030ceed68e499fea5f2e5">getGeometryType</a>() ) &lt;&lt; std::endl;
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">//Print the schema</span>
+    <span class="keyword">const</span> <a class="code" href="namespaceosgEarth_1_1Features.html#a4fc4fc0470ea639c7b57516893151756">FeatureSchema</a> schema = features-&gt;<a class="code" href="classosgEarth_1_1Features_1_1FeatureSource.html#a909a94e6a8806dd27f4acc3058a948d3">getSchema</a>();
+    std::cout &lt;&lt; <span class="stringliteral">&quot;Schema:&quot;</span> &lt;&lt; std::endl;
+    <span class="keywordflow">for</span> (FeatureSchema::const_iterator itr = schema.begin(); itr != schema.end(); ++itr)
+    {
+        std::cout &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#ab9a167b09f80fec30995318fb94aee41">indent</a> &lt;&lt; itr-&gt;first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; <a class="code" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f">attributeTypeToString</a>(itr-&gt;second) &lt;&lt; std::endl;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+</pre></div>
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_cgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_cgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_cgraph" id="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_cgraph">
-<area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="133,5,280,35"/></map>
+<area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a687d00bae5efd6be739e8070fc38fb2f" title="attributeTypeToString" alt="" coords="229,5,376,35"/><area shape="rect" id="node5" href="classosgEarth_1_1Features_1_1FeatureSource.html#a1eeb1b74d5ca16d6c6a0a15c6260df35" title="osgEarth::Features::FeatureSource::getFeatureCount" alt="" coords="137,59,468,88"/><area shape="rect" id="node7" href="classosgEarth_1_1Features_1_1FeatureSource.html#a929f9ab4da3030ceed68e499fea5f2e5" title="osgEarth::Features::FeatureSource::getGeometryType" alt="" coords="133,112,472,141"/><area shape="rect" id="node9" href="classosgEarth_1_1Features_1_1FeatureSource.html#a909a94e6a8806dd27f4acc3058a948d3" title="osgEarth::Features::FeatureSource::getSchema" alt="" coords="153,165,452,195"/><area shape="rect" id="node11" href="classosgEarth_1_1Symbology_1_1Geometry.html#a3c26f20748da289c096bfffbfecc26f3" title="osgEarth::Symbology::Geometry::toString" alt="" coords="171,219,435,248"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_icgraph.png" border="0" usemap="#osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_icgraph" alt=""/></div>
 <map name="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_icgraph" id="osgearth__featureinfo_8cpp_ac82570b375785e9e4fd108b23882b8bc_icgraph">
 <area shape="rect" id="node3" href="osgearth__featureinfo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="133,5,184,35"/></map>
@@ -295,7 +486,24 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__featureinfo_8cpp_source.html#l00094">94</a> of file <a class="el" href="osgearth__featureinfo_8cpp_source.html">osgearth_featureinfo.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> ( !msg.empty() )
+    {
+        std::cout &lt;&lt; msg &lt;&lt; std::endl;
+    }
 
+    std::cout
+        &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_featureinfo [options] filename&quot;</span> &lt;&lt; std::endl
+        &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;    --printfeatures                   ; Prints all features in the source&quot;</span> &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;    --delete fid                      ; Deletes the given FID from the source.&quot;</span> &lt;&lt; std::endl
+        &lt;&lt; <span class="stringliteral">&quot;    --fid fid                         ; Displays the given FID.&quot;</span> &lt;&lt; std::endl
+        &lt;&lt; std::endl;
+
+    <span class="keywordflow">return</span> -1;
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
@@ -315,15 +523,6 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__featureinfo_8cpp.html">osgearth_featureinfo.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -338,6 +537,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

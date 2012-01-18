@@ -1,4 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6" title="seamless::makeEdgeRef" alt="" coords="223,5,391,35"/>
-<area shape="rect" id="node5" href="$namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b" title="seamless::safeCopy" alt="" coords="236,59,377,88"/>
+<area shape="rect" id="node3" href="$classseamless_1_1Patch.html#aaf9af454ba0fc3aa68db1ae9700dbdb4" title="seamless::Patch::getPatchSet" alt="" coords="236,5,436,35"/>
+<area shape="rect" id="node5" href="$classseamless_1_1PatchSet.html#a74e610d6cf0635e27bda4cedce30e79b" title="seamless::PatchSet::getResolution" alt="" coords="223,59,449,88"/>
+<area shape="rect" id="node7" href="$namespaceseamless.html#a9e1b3d49abbfab0b33e9879db6818aa6" title="seamless::makeEdgeRef" alt="" coords="252,112,420,141"/>
+<area shape="rect" id="node9" href="$namespaceseamless.html#ae0effba121f73eac1f8f9ce3f6ccb26b" title="seamless::safeCopy" alt="" coords="265,165,407,195"/>
+<area shape="rect" id="node11" href="$classseamless_1_1vector__ref.html#aa7f8d8c1534b5c611e2cfec65577376c" title="seamless::vector_ref::shape" alt="" coords="243,219,429,248"/>
+<area shape="rect" id="node13" href="$classseamless_1_1multi__array__ref.html#a1798f48439a9998604f30f12cf41c796" title="seamless::multi_array_ref\&lt; ElementType, Store, 1 \&gt;::shape" alt="" coords="499,219,869,248"/>
 </map>

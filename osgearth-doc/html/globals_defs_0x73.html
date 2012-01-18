@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,57 +127,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_defs_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_defs_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="globals_defs_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_defs_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>SAYBOOL
-: <a class="el" href="_capabilities_8cpp.html#a37447882970b83f32bfcd31bc687c709">Capabilities.cpp</a>
+: <a class="el" href="Capabilities_8cpp.html#a37447882970b83f32bfcd31bc687c709">Capabilities.cpp</a>
+</li>
+<li>SEAMLESS_AUTOBUFFER
+: <a class="el" href="AutoBuffer.html#a4f9b94b5e85b056a4a095f1f744a0f4f">AutoBuffer</a>
+</li>
+<li>SEAMLESS_EULER
+: <a class="el" href="Euler.html#a9754031632811d4d5a6d2e4baac60eed">Euler</a>
+</li>
+<li>SEAMLESS_GEOGRAPHIC
+: <a class="el" href="Geographic.html#aecac0a0c7ae1e1b6f7e99dec3aeefab3">Geographic</a>
+</li>
+<li>SEAMLESS_GEOPATCH
+: <a class="el" href="GeoPatch.html#af489be3e63f00acceea0de0055caa3c2">GeoPatch</a>
+</li>
+<li>SEAMLESS_MULTIARRAY
+: <a class="el" href="MultiArray.html#a6bc2c555cb57733a0fef62358052f199">MultiArray</a>
+</li>
+<li>SEAMLESS_PATCH
+: <a class="el" href="Patch.html#a865db9a3cf64138f88ea8b59254824d7">Patch</a>
+</li>
+<li>SEAMLESS_PATCHGROUP
+: <a class="el" href="PatchGroup.html#a23cb4fb08c731791e56526d19d66df37">PatchGroup</a>
+</li>
+<li>SEAMLESS_PATCHINFO
+: <a class="el" href="PatchInfo.html#a998847ba59837476ad92a4e44c26045b">PatchInfo</a>
+</li>
+<li>SEAMLESS_PATCHSET
+: <a class="el" href="PatchSet.html#a9851e54aea2682b326774033a0f4bb50">PatchSet</a>
+</li>
+<li>SEAMLESS_PROJECTED
+: <a class="el" href="Projected.html#a655af0c282d90983eb4d2d7af2c054f0">Projected</a>
+</li>
+<li>SEAMLESS_QSC
+: <a class="el" href="QSC.html#ac0aecbf9dac5183858745ecd17d7457e">QSC</a>
 </li>
 <li>SET_UNIFORM
-: <a class="el" href="_a_m_r_geometry_8cpp.html#aafc15f8a9931177a5dfd6fa224d17f4c">AMRGeometry.cpp</a>
+: <a class="el" href="AMRGeometry_8cpp.html#aafc15f8a9931177a5dfd6fa224d17f4c">AMRGeometry.cpp</a>
 </li>
 <li>SMALLEST
-: <a class="el" href="_cube_8cpp.html#ae646a8333d0e3b3c0f72846a08a993bc">Cube.cpp</a>
+: <a class="el" href="Cube_8cpp.html#ae646a8333d0e3b3c0f72846a08a993bc">Cube.cpp</a>
 </li>
 <li>STR_CUBE
-: <a class="el" href="_registry_8cpp.html#a533fd5562f39ab9e2660a98e6ec4e94b">Registry.cpp</a>
+: <a class="el" href="Registry_8cpp.html#a533fd5562f39ab9e2660a98e6ec4e94b">Registry.cpp</a>
 </li>
 <li>STR_GLOBAL_GEODETIC
-: <a class="el" href="_registry_8cpp.html#a88f1f4a303e1d0949a20d12430938d62">Registry.cpp</a>
+: <a class="el" href="Registry_8cpp.html#a88f1f4a303e1d0949a20d12430938d62">Registry.cpp</a>
 </li>
 <li>STR_GLOBAL_MERCATOR
-: <a class="el" href="_registry_8cpp.html#ad83d4fb52965dce3ebe53f8d4d6ba9f9">Registry.cpp</a>
+: <a class="el" href="Registry_8cpp.html#ad83d4fb52965dce3ebe53f8d4d6ba9f9">Registry.cpp</a>
 </li>
 <li>STR_LOCAL
-: <a class="el" href="_registry_8cpp.html#a583ed5a307e6ae555237951c6622a384">Registry.cpp</a>
+: <a class="el" href="Registry_8cpp.html#a583ed5a307e6ae555237951c6622a384">Registry.cpp</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -162,6 +205,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

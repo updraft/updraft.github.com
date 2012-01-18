@@ -1,3 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_ti_xml_parsing_data.html" title="TiXmlParsingData" alt="" coords="5,5,133,35"/>
+<area shape="rect" id="node1" href="$classosgEarth_1_1DrapeableNode.html" title="osgEarth::DrapeableNode" alt="" coords="7,85,177,115"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureNode.html" title="osgEarth::Features::FeatureNode" alt="" coords="253,32,469,61"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Annotation_1_1GeometryNode.html" title="osgEarth::Util::Annotation::GeometryNode" alt="" coords="228,85,495,115"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1ImageOverlay.html" title="osgEarth::Util::ImageOverlay" alt="" coords="267,139,456,168"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Annotation_1_1CircleNode.html" title="osgEarth::Util::Annotation::CircleNode" alt="" coords="547,5,792,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Annotation_1_1EllipseNode.html" title="osgEarth::Util::Annotation::EllipseNode" alt="" coords="544,59,795,88"/>
 </map>

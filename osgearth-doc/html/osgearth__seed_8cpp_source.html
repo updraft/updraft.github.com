@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__seed_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_seed/osgearth_seed.cpp</h1>  </div>
@@ -195,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00111"></a>00111     <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--max-level&quot;</span>, maxLevel));
 <a name="l00112"></a>00112     
 <a name="l00113"></a>00113     <span class="comment">//Read the bounds</span>
-<a name="l00114"></a>00114     Bounds bounds(0, 0, 0, 0);
+<a name="l00114"></a>00114     <a class="code" href="classosgEarth_1_1Bounds.html">Bounds</a> bounds(0, 0, 0, 0);
 <a name="l00115"></a>00115     <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;--bounds&quot;</span>, bounds.xMin(), bounds.yMin(), bounds.xMax(), bounds.yMax()));
 <a name="l00116"></a>00116     <span class="keywordflow">while</span> (args.read(<span class="stringliteral">&quot;-b&quot;</span>, bounds.xMin(), bounds.yMin(), bounds.xMax(), bounds.yMax()));
 <a name="l00117"></a>00117 
@@ -214,19 +230,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00130"></a>00130     <span class="keywordflow">if</span> ( !node.valid() )
 <a name="l00131"></a>00131         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
 <a name="l00132"></a>00132 
-<a name="l00133"></a>00133     MapNode* mapNode = MapNode::findMapNode( node.get() );
+<a name="l00133"></a>00133     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">MapNode::findMapNode</a>( node.get() );
 <a name="l00134"></a>00134     <span class="keywordflow">if</span> ( !mapNode )
 <a name="l00135"></a>00135         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
 <a name="l00136"></a>00136 
-<a name="l00137"></a>00137     CacheSeed seeder;
-<a name="l00138"></a>00138     seeder.setMinLevel( minLevel );
-<a name="l00139"></a>00139     seeder.setMaxLevel( maxLevel );
-<a name="l00140"></a>00140     seeder.setBounds( bounds );
+<a name="l00137"></a>00137     <a class="code" href="classosgEarth_1_1CacheSeed.html">CacheSeed</a> seeder;
+<a name="l00138"></a>00138     seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a2e80e67137c9bf11ddfcbae89cc8882c">setMinLevel</a>( minLevel );
+<a name="l00139"></a>00139     seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a1636bfaab6b044b9000fb072f8cd3fc9">setMaxLevel</a>( maxLevel );
+<a name="l00140"></a>00140     seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#a95d33ab4ccaafc97914bfe0f71d11668">setBounds</a>( bounds );
 <a name="l00141"></a>00141     <span class="keywordflow">if</span> (!quiet)
 <a name="l00142"></a>00142     {
-<a name="l00143"></a>00143         seeder.setProgressCallback(<span class="keyword">new</span> ConsoleProgressCallback);
+<a name="l00143"></a>00143         seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#aff04a2d8f3c56ab65e6e086d8a69a4df">setProgressCallback</a>(<span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ConsoleProgressCallback.html">ConsoleProgressCallback</a>);
 <a name="l00144"></a>00144     }
-<a name="l00145"></a>00145     seeder.seed( mapNode-&gt;getMap() );
+<a name="l00145"></a>00145     seeder.<a class="code" href="classosgEarth_1_1CacheSeed.html#abeac486824e4e45a61096b279e93b65e">seed</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
 <a name="l00146"></a>00146 
 <a name="l00147"></a>00147     <span class="keywordflow">return</span> 0;
 <a name="l00148"></a>00148 }
@@ -238,31 +254,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154     <span class="keywordflow">if</span> ( !node.valid() )
 <a name="l00155"></a>00155         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157     MapNode* mapNode = MapNode::findMapNode( node.get() );
+<a name="l00157"></a>00157     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">MapNode::findMapNode</a>( node.get() );
 <a name="l00158"></a>00158     <span class="keywordflow">if</span> ( !mapNode )
 <a name="l00159"></a>00159         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
 <a name="l00160"></a>00160 
-<a name="l00161"></a>00161     Map* map = mapNode-&gt;getMap();
-<a name="l00162"></a>00162     <span class="keyword">const</span> Cache* cache = map-&gt;getCache();
+<a name="l00161"></a>00161     <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>();
+<a name="l00162"></a>00162     <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Cache.html">Cache</a>* cache = map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9">getCache</a>();
 <a name="l00163"></a>00163 
 <a name="l00164"></a>00164     <span class="keywordflow">if</span> ( !cache )
 <a name="l00165"></a>00165         <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73">message</a>( <span class="stringliteral">&quot;Earth file does not contain a cache.&quot;</span> );
 <a name="l00166"></a>00166 
 <a name="l00167"></a>00167     std::cout 
-<a name="l00168"></a>00168         &lt;&lt; <span class="stringliteral">&quot;Cache config = &quot;</span> &lt;&lt; cache-&gt;getCacheOptions().getConfig().toString() &lt;&lt; std::endl;
+<a name="l00168"></a>00168         &lt;&lt; <span class="stringliteral">&quot;Cache config = &quot;</span> &lt;&lt; cache-&gt;<a class="code" href="classosgEarth_1_1Cache.html#a0ab19f1b4a34db3061226596026f67ba">getCacheOptions</a>().<a class="code" href="classosgEarth_1_1CacheOptions.html#a58bfde2290953aea85a56bda4a6cf9c4">getConfig</a>().<a class="code" href="classosgEarth_1_1Config.html#a1406b682afed108f9c10ffd09f18b464">toString</a>() &lt;&lt; std::endl;
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170     MapFrame mapf( mapNode-&gt;getMap() );
+<a name="l00170"></a>00170     <a class="code" href="classosgEarth_1_1MapFrame.html">MapFrame</a> mapf( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
 <a name="l00171"></a>00171 
-<a name="l00172"></a>00172     TerrainLayerVector layers;
-<a name="l00173"></a>00173     std::copy( mapf.imageLayers().begin(), mapf.imageLayers().end(), std::back_inserter(layers) );
-<a name="l00174"></a>00174     std::copy( mapf.elevationLayers().begin(), mapf.elevationLayers().end(), std::back_inserter(layers) );
+<a name="l00172"></a>00172     <a class="code" href="namespaceosgEarth.html#ad234a89c8e06029b766b237b1c657e39">TerrainLayerVector</a> layers;
+<a name="l00173"></a>00173     <a class="code" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed">std::copy</a>( mapf.imageLayers().begin(), mapf.imageLayers().end(), std::back_inserter(layers) );
+<a name="l00174"></a>00174     <a class="code" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html#aa89185796215b0f0669f5a44549b6eed">std::copy</a>( mapf.elevationLayers().begin(), mapf.elevationLayers().end(), std::back_inserter(layers) );
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176     <span class="keywordflow">for</span>( TerrainLayerVector::const_iterator i =layers.begin(); i != layers.end(); ++i )
 <a name="l00177"></a>00177     {
-<a name="l00178"></a>00178         TerrainLayer* layer = i-&gt;get();
-<a name="l00179"></a>00179         <span class="keyword">const</span> CacheSpec&amp; spec = layer-&gt;getCacheSpec();
+<a name="l00178"></a>00178         <a class="code" href="classosgEarth_1_1TerrainLayer.html">TerrainLayer</a>* layer = i-&gt;get();
+<a name="l00179"></a>00179         <span class="keyword">const</span> <a class="code" href="structosgEarth_1_1CacheSpec.html">CacheSpec</a>&amp; spec = layer-&gt;<a class="code" href="classosgEarth_1_1TerrainLayer.html#ac7bbb6252240f66f6589475cd3d2a7c0">getCacheSpec</a>();
 <a name="l00180"></a>00180         std::cout
-<a name="l00181"></a>00181             &lt;&lt; <span class="stringliteral">&quot;Layer = \&quot;&quot;</span> &lt;&lt; layer-&gt;getName() &lt;&lt; <span class="stringliteral">&quot;\&quot;, cacheId = &quot;</span> &lt;&lt; spec.cacheId() &lt;&lt; std::endl;
+<a name="l00181"></a>00181             &lt;&lt; <span class="stringliteral">&quot;Layer = \&quot;&quot;</span> &lt;&lt; layer-&gt;<a class="code" href="classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c">getName</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot;, cacheId = &quot;</span> &lt;&lt; spec.<a class="code" href="structosgEarth_1_1CacheSpec.html#a74395f8d7912eab234ba66e7537d7ba6">cacheId</a>() &lt;&lt; std::endl;
 <a name="l00182"></a>00182     }
 <a name="l00183"></a>00183 
 <a name="l00184"></a>00184     <span class="keywordflow">return</span> 0;
@@ -277,26 +293,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00193"></a>00193     <span class="keywordflow">if</span> ( !node.valid() )
 <a name="l00194"></a>00194         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Failed to read .earth file.&quot;</span> );
 <a name="l00195"></a>00195 
-<a name="l00196"></a>00196     MapNode* mapNode = MapNode::findMapNode( node.get() );
+<a name="l00196"></a>00196     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">MapNode::findMapNode</a>( node.get() );
 <a name="l00197"></a>00197     <span class="keywordflow">if</span> ( !mapNode )
 <a name="l00198"></a>00198         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> );
 <a name="l00199"></a>00199 
-<a name="l00200"></a>00200     Map* map = mapNode-&gt;getMap();
-<a name="l00201"></a>00201     <span class="keyword">const</span> Cache* cache = map-&gt;getCache();
+<a name="l00200"></a>00200     <a class="code" href="classosgEarth_1_1Map.html">Map</a>* map = mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>();
+<a name="l00201"></a>00201     <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Cache.html">Cache</a>* cache = map-&gt;<a class="code" href="classosgEarth_1_1Map.html#a84a02a614b4b6ed8d2aceebb8a8593d9">getCache</a>();
 <a name="l00202"></a>00202 
 <a name="l00203"></a>00203     <span class="keywordflow">if</span> ( !cache )
 <a name="l00204"></a>00204         <span class="keywordflow">return</span> <a class="code" href="osgearth__seed_8cpp.html#adfbe3c3520aedad87e99b1fa58e40f73">message</a>( <span class="stringliteral">&quot;Earth file does not contain a cache.&quot;</span> );
 <a name="l00205"></a>00205 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__seed_8cpp.html">osgearth_seed.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -311,6 +319,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

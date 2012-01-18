@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99" title="osgEarth::Util::Controls::Control::addEventHandler" alt="" coords="216,5,533,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#ac26e5d3af6a16e0c9b7a87f8d7f1a34f" title="osgEarth::Util::Annotation::AnnotationData::getName" alt="" coords="209,59,540,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#a3a37f0da4959ed497e72d90c74700536" title="osgEarth::Util::Annotation::AnnotationData::getViewpoint" alt="" coords="199,112,551,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e" title="osgEarth::Util::Controls::Control::setActiveColor" alt="" coords="601,215,903,244"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e" title="osgEarth::Util::Controls::Control::setMargin" alt="" coords="615,161,889,191"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a" title="osgEarth::Util::Controls::Control::setSize" alt="" coords="244,268,505,297"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="952,215,1195,244"/>
+<area shape="rect" id="node15" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="991,268,1156,297"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1244,215,1516,244"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125" title="osgEarth::Util::Controls::Control::setHeight" alt="" coords="616,321,888,351"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ba90386e0c068e8ba32d2f77802a0b" title="osgEarth::Util::Controls::Control::setWidth" alt="" coords="617,268,887,297"/>
+</map>

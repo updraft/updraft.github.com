@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ModelLayer.html#a75b3db75740239dda3621629f36e101a" title="osgEarth::ModelLayer::getOrCreateNode" alt="" coords="383,117,641,146"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1ModelLayer.html#a59861abf27a3dbeca3cd8ffed67eef78" title="osgEarth::ModelLayer::getOverlay" alt="" coords="403,209,621,238"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1MapNode.html#a85e1a20e9c7af2edd025dee6be14644a" title="osgEarth::MapNode::updateOverlayGraph" alt="" coords="380,262,644,292"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1ModelLayerOptions.html#a23132113ef18bc7ab5971a8b066f4401" title="osgEarth::ModelLayerOptions::enabled" alt="" coords="1031,77,1276,106"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="744,37,909,66"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ModelLayerOptions.html#a056dc6975cdbdb76ea75068c9bbecb97" title="osgEarth::ModelLayerOptions::lightingEnabled" alt="" coords="1008,156,1299,185"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1ModelLayer.html#a9407661224690f874bd82415a2ed99f4" title="osgEarth::ModelLayer::setEnabled" alt="" coords="716,90,937,120"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1ModelLayer.html#a5ca2f06ef61f2ba848991741a14a3364" title="osgEarth::ModelLayer::setLightingEnabled" alt="" coords="693,194,960,224"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1ModelLayerOptions.html#a1fa13c73fa96a9e97cc3129f9b95bbaa" title="osgEarth::ModelLayerOptions::overlay" alt="" coords="705,248,948,277"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoLocator.html#a125f2bd702f4a911c65c6fe9334c640a" title="osgEarth::GeoLocator::getGeographicFromGeocentric" alt="" coords="348,59,681,88"/>
+<area shape="rect" id="node11" href="$classCustomColorLayer.html#a761fdfb07388be6ac6438c2b96c7639d" title="CustomColorLayer::getImage" alt="" coords="419,112,611,141"/>
+<area shape="rect" id="node13" href="$classCustomColorLayer.html#ac9725adc85c194c7b4a4c99ed26d3d52" title="CustomColorLayer::getLocator" alt="" coords="415,165,615,195"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoLocator.html#a3d6d7da71a8187c45110890a550b5655" title="osgEarth::GeoLocator::GeoLocator" alt="" coords="740,5,964,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#afa0bd831daf0541cbbb161763ed9291f" title="osgEarth::GeoExtent::getBounds" alt="" coords="745,59,959,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoLocator.html#a0ed2730a383c6a42c1df8bb6b07fc6df" title="osgEarth::GeoLocator::getDataExtent" alt="" coords="732,112,972,141"/>
+</map>

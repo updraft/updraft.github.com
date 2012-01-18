@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html#a6cc718b73dc302103429bdb648e3f4ee" title="osgEarth::Util::Controls::CheckBoxControl::CheckBoxControl" alt="" coords="328,5,709,35"/>
+<area shape="rect" id="node5" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="452,59,585,88"/>
+<area shape="rect" id="node7" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="465,112,572,141"/>
+<area shape="rect" id="node11" href="$osgearth__toc_8cpp.html#aa71991ef036a5d30b262af0eeb75c09f" title="createLayerItem" alt="" coords="461,165,576,195"/>
+<area shape="rect" id="node17" href="$osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="493,219,544,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a" title="osgEarth::Util::Controls::Control::setSize" alt="" coords="388,272,649,301"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a62ebe858f8b3834365133f96b0b09f5d" title="osgEarth::Util::Controls::Control::setVertFill" alt="" coords="381,325,656,355"/>
+<area shape="rect" id="node9" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="804,112,855,141"/>
+<area shape="rect" id="node13" href="$osgearth__toc_8cpp.html#a46d27909d39c4375f3cb070f332fe4d1" title="updateControlPanel" alt="" coords="761,165,897,195"/>
+<area shape="rect" id="node15" href="$osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="949,165,1000,195"/>
+<area shape="rect" id="node21" href="$osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8" title="addMouseCoords" alt="" coords="768,219,891,248"/>
+<area shape="rect" id="node25" href="$structKMLUIBuilder.html#a52a37717c580305c2a8a552d7e28dfd0" title="KMLUIBuilder::apply" alt="" coords="759,272,900,301"/>
+<area shape="rect" id="node27" href="$osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="804,325,855,355"/>
+<area shape="rect" id="node23" href="$osgearth__viewer_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="949,219,1000,248"/>
+</map>

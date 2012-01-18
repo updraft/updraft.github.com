@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1TextureLayout.html#aba1cece66c799cdf7fa7b94a5ba880ff" title="osgEarth::TextureLayout::containsSecondarySlots" alt="" coords="579,5,893,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Registry.html#a8ebadcf08d3161838cb5d2d7e0dcdbb3" title="osgEarth::Registry::getCapabilities" alt="" coords="624,59,848,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Capabilities.html#aa0586203267c6ccbbb6b5bdf35570a57" title="osgEarth::Capabilities::getMaxFFPTextureUnits" alt="" coords="585,112,887,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Capabilities.html#a4a5058dbd84538cb7a3d1828220c6346" title="osgEarth::Capabilities::getMaxGPUTextureUnits" alt="" coords="584,165,888,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1TextureLayout.html#a80dd8997ff697d951e28cfa65c6e1a34" title="osgEarth::TextureLayout::getMaxUsedSlot" alt="" coords="601,219,871,248"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="643,272,829,301"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1VirtualProgram.html#ac6c553c45b72ce922747065d6a91f448" title="osgEarth::VirtualProgram::removeShader" alt="" coords="607,325,865,355"/>
+<area shape="rect" id="node28" href="$namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#ad9d5f9bf6a00c1663a6c452815cf5508" title="anonymous_namespace\{TextureCompositorMulti::cpp\}::s_createTextureFragShaderFunction" alt="" coords="457,379,1015,408"/>
+<area shape="rect" id="node36" href="$namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html#a6eef5408e3e880b71eee8805377cf40b" title="anonymous_namespace\{TextureCompositorMulti::cpp\}::s_createTextureVertexShader" alt="" coords="476,432,996,461"/>
+<area shape="rect" id="node40" href="$classosgEarth_1_1VirtualProgram.html#a0dde219eb0e46b7c3b019a65111b8a61" title="osgEarth::VirtualProgram::setShader" alt="" coords="619,485,853,515"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="1104,272,1291,301"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="1379,192,1707,221"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="1431,245,1655,275"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="1421,299,1664,328"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="1420,352,1665,381"/>
+<area shape="rect" id="node30" href="$classosgEarth_1_1TextureLayout.html#ad5425cbe91672e29c0d93ecc88c27683" title="osgEarth::TextureLayout::getRenderOrder" alt="" coords="1065,325,1329,355"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1TextureLayout.html#ad47e758523f496ca5cf4af789e87b42f" title="osgEarth::TextureLayout::getSlot" alt="" coords="1091,379,1304,408"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1TextureLayout.html#a6c7d8cebeb4b2b77ed8e9610001e0b09" title="osgEarth::TextureLayout::getTextureSlots" alt="" coords="1065,432,1329,461"/>
+</map>

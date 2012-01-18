@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('namespaces.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>Namespace List</h1>  </div>
@@ -84,24 +101,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock">Here is a list of all namespaces with brief descriptions:</div><table>
   <tr><td class="indexkey"><a class="el" href="namespaceagg.html">agg</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="namespaceosg_earth.html">osgEarth</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="namespaceosg_earth_1_1_drivers.html">osgEarth::Drivers</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="namespaceosg_earth_1_1_json.html">osgEarth::Json</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="namespaceosg_earth_1_1_util.html">osgEarth::Util</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="namespaceosg_earth_1_1_util_1_1_controls.html">osgEarth::Util::Controls</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Color_8cpp_03.html">anonymous_namespace{Color.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02CompositeTileSource_8cpp_03.html">anonymous_namespace{CompositeTileSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Controls_8cpp_03.html">anonymous_namespace{Controls.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02DebugTileSource_8cpp_03.html">anonymous_namespace{DebugTileSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html">anonymous_namespace{EarthManipulator.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ElevationLayer_8cpp_03.html">anonymous_namespace{ElevationLayer.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ExtrudeGeometryFilter_8cpp_03.html">anonymous_namespace{ExtrudeGeometryFilter.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02FeatureGeometryIndex_8cpp_03.html">anonymous_namespace{FeatureGeometryIndex.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02FeatureGeomModelSource_8cpp_03.html">anonymous_namespace{FeatureGeomModelSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02FeatureLabelModelSource_8cpp_03.html">anonymous_namespace{FeatureLabelModelSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02FeatureModelGraph_8cpp_03.html">anonymous_namespace{FeatureModelGraph.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02FeatureStencilModelSource_8cpp_03.html">anonymous_namespace{FeatureStencilModelSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Formatters_8cpp_03.html">anonymous_namespace{Formatters.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02GeometryCompiler_8cpp_03.html">anonymous_namespace{GeometryCompiler.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Graticule_8cpp_03.html">anonymous_namespace{Graticule.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02HTTPClient_8cpp_03.html">anonymous_namespace{HTTPClient.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ImageLayer_8cpp_03.html">anonymous_namespace{ImageLayer.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ImageUtils_8cpp_03.html">anonymous_namespace{ImageUtils.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Map_8cpp_03.html">anonymous_namespace{Map.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02MapNode_8cpp_03.html">anonymous_namespace{MapNode.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02MarkerResource_8cpp_03.html">anonymous_namespace{MarkerResource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02MeshConsolidator_8cpp_03.html">anonymous_namespace{MeshConsolidator.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02MeshSubdivider_8cpp_03.html">anonymous_namespace{MeshSubdivider.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02MultiPassTerrainTechnique_8cpp_03.html">anonymous_namespace{MultiPassTerrainTechnique.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02NodeUtils_8cpp_03.html">anonymous_namespace{NodeUtils.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ObjectLocator_8cpp_03.html">anonymous_namespace{ObjectLocator.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html">anonymous_namespace{osgearth_manip.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02OSGTileFactory_8cpp_03.html">anonymous_namespace{OSGTileFactory.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02OverlayDecorator_8cpp_03.html">anonymous_namespace{OverlayDecorator.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Random_8cpp_03.html">anonymous_namespace{Random.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ShaderComposition_8cpp_03.html">anonymous_namespace{ShaderComposition.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02ShaderUtils_8cpp_03.html">anonymous_namespace{ShaderUtils.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02SinglePassTerrainTechnique_8cpp_03.html">anonymous_namespace{SinglePassTerrainTechnique.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02SkyNode_8cpp_03.html">anonymous_namespace{SkyNode.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02SpatialData_8cpp_03.html">anonymous_namespace{SpatialData.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html">anonymous_namespace{SpatialReference.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02StreamingTile_8cpp_03.html">anonymous_namespace{StreamingTile.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02SubstituteModelFilter_8cpp_03.html">anonymous_namespace{SubstituteModelFilter.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02Terrain_8cpp_03.html">anonymous_namespace{Terrain.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02TextureCompositorMulti_8cpp_03.html">anonymous_namespace{TextureCompositorMulti.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02TransformFilter_8cpp_03.html">anonymous_namespace{TransformFilter.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02URI_8cpp_03.html">anonymous_namespace{URI.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02VirtualFeatureSource_8cpp_03.html">anonymous_namespace{VirtualFeatureSource.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceanonymous__namespace_02XmlUtils_8cpp_03.html">anonymous_namespace{XmlUtils.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosg.html">osg</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgDB.html">osgDB</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth.html">osgEarth</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Drivers.html">osgEarth::Drivers</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Features.html">osgEarth::Features</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Json.html">osgEarth::Json</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1ShaderComp.html">osgEarth::ShaderComp</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Symbology.html">osgEarth::Symbology</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Threading.html">osgEarth::Threading</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Util.html">osgEarth::Util</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Util_1_1Annotation.html">osgEarth::Util::Annotation</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarth_1_1Util_1_1Controls.html">osgEarth::Util::Controls</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarthFeatures.html">osgEarthFeatures</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceosgEarthSymbology.html">osgEarthSymbology</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="namespaceseamless.html">seamless</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Euler_8cpp_03.html">seamless::anonymous_namespace{Euler.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Geographic_8cpp_03.html">seamless::anonymous_namespace{Geographic.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html">seamless::anonymous_namespace{Patch.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02PatchSet_8cpp_03.html">seamless::anonymous_namespace{PatchSet.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02Projected_8cpp_03.html">seamless::anonymous_namespace{Projected.cpp}</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1anonymous__namespace_02QSC_8cpp_03.html">seamless::anonymous_namespace{QSC.cpp}</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1euler.html">seamless::euler</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="namespaceseamless_1_1qsc.html">seamless::qsc</a></td><td class="indexvalue"></td></tr>
 </table>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -116,6 +184,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:48 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

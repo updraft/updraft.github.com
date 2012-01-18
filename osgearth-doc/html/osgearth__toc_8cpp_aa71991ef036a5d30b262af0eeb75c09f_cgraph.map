@@ -1,0 +1,26 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99" title="osgEarth::Util::Controls::Control::addEventHandler" alt="" coords="171,5,488,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TerrainLayer.html#a02f9aaac89492153b97433acddaaf915" title="osgEarth::TerrainLayer::getEnabled" alt="" coords="216,59,443,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="223,112,436,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ImageLayer.html#a66a16b3bc57ebeeff19acab52f4eae30" title="osgEarth::ImageLayer::getOpacity" alt="" coords="219,165,440,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e" title="osgEarth::Util::Controls::Control::setActiveColor" alt="" coords="179,219,480,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="181,272,477,301"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="200,587,459,616"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="931,797,1224,827"/>
+<area shape="rect" id="node55" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125" title="osgEarth::Util::Controls::Control::setHeight" alt="" coords="193,325,465,355"/>
+<area shape="rect" id="node60" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ba90386e0c068e8ba32d2f77802a0b" title="osgEarth::Util::Controls::Control::setWidth" alt="" coords="195,379,464,408"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1291,403,1533,432"/>
+<area shape="rect" id="node17" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="617,275,783,304"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1583,403,1855,432"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="536,613,864,643"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a032f9d082c210ab3be4b2d689f038a50" title="osgEarth::Util::Controls::Grid::cell" alt="" coords="591,560,809,589"/>
+<area shape="rect" id="node51" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a8a69a4dbebaf67dca4c6cf0276aca812" title="osgEarth::Util::Controls::Grid::expandToInclude" alt="" coords="551,744,849,773"/>
+<area shape="rect" id="node53" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="564,507,836,536"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="940,480,1215,509"/>
+<area shape="rect" id="node30" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="995,533,1160,563"/>
+<area shape="rect" id="node32" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="913,587,1241,616"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="933,744,1221,773"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="944,640,1211,669"/>
+<area shape="rect" id="node37" href="$structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1323,744,1501,773"/>
+<area shape="rect" id="node39" href="$structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1329,797,1495,827"/>
+</map>

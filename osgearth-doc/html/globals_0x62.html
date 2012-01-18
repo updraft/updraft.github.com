@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -97,53 +127,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="globals_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="globals_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="globals_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="globals_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="globals_0x79.html#index_y"><span>y</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>BIN_ATMOSPHERE
-: <a class="el" href="_sky_node_8cpp.html#a32e7d15bcb49ad6bef258adacbb6ce0b">SkyNode.cpp</a>
+: <a class="el" href="SkyNode_8cpp.html#a32e7d15bcb49ad6bef258adacbb6ce0b">SkyNode.cpp</a>
 </li>
 <li>BIN_STARS
-: <a class="el" href="_sky_node_8cpp.html#a050ede54c74ffe8e92ca69c30abd1021">SkyNode.cpp</a>
+: <a class="el" href="SkyNode_8cpp.html#a050ede54c74ffe8e92ca69c30abd1021">SkyNode.cpp</a>
 </li>
 <li>BIN_SUN
-: <a class="el" href="_sky_node_8cpp.html#a7571e873c00c9c4619ba6722a0812de2">SkyNode.cpp</a>
+: <a class="el" href="SkyNode_8cpp.html#a7571e873c00c9c4619ba6722a0812de2">SkyNode.cpp</a>
+</li>
+<li>BLUE
+: <a class="el" href="rivers_2engine__droam_2Common.html#a79d10e672abb49ad63eeaa8aaef57c38">Common</a>
+</li>
+<li>build_vrt()
+: <a class="el" href="ReaderWriterGDAL_8cpp.html#aebb5d9c0c9beb918a5023662c07036a7">ReaderWriterGDAL.cpp</a>
 </li>
 <li>buildStyleSheet()
 : <a class="el" href="osgearth__featureeditor_8cpp.html#aee5c6636c319cf2d0887315b2eabab57">osgearth_featureeditor.cpp</a>
 </li>
 <li>builtinMimeTypeExtMappings
-: <a class="el" href="_mime_types_8cpp.html#a1d5ca01bf713f0b3702e5a23937dcd45">MimeTypes.cpp</a>
-, <a class="el" href="_registry_8cpp.html#a1d5ca01bf713f0b3702e5a23937dcd45">Registry.cpp</a>
+: <a class="el" href="Registry_8cpp.html#a1d5ca01bf713f0b3702e5a23937dcd45">Registry.cpp</a>
+, <a class="el" href="MimeTypes_8cpp.html#a1d5ca01bf713f0b3702e5a23937dcd45">MimeTypes.cpp</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -158,6 +175,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

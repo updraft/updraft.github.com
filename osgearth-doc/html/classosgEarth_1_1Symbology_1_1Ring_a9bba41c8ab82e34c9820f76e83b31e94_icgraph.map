@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1Ring.html#af8aaf11b1290fff03ae18e524a970ea4" title="osgEarth::Symbology::Ring::getSignedArea2D" alt="" coords="273,5,564,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Symbology_1_1Ring.html#ae61abca9f1245683dd5255196971128b" title="osgEarth::Symbology::Ring::rewind" alt="" coords="305,59,532,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Symbology_1_1Ring.html#a2928bed4fb2f5d691d52f5a6d326adb1" title="osgEarth::Symbology::Ring::Ring" alt="" coords="311,112,527,141"/>
+<area shape="rect" id="node7" href="$structOgrUtils.html#aaf29690108a4286ab749d559433f371c" title="OgrUtils::createPolygon" alt="" coords="615,59,775,88"/>
+</map>

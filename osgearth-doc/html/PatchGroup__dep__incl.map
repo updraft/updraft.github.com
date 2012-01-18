@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$PatchSet.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/PatchSet" alt="" coords="1192,83,1669,112"/>
+<area shape="rect" id="node16" href="$PatchGroup_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/PatchGroup.cpp" alt="" coords="24,160,541,189"/>
+<area shape="rect" id="node18" href="$PatchSet_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/PatchSet.cpp" alt="" coords="2762,160,3264,189"/>
+<area shape="rect" id="node28" href="$SeamlessPlugin_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessPlugin.cpp" alt="" coords="89,237,630,267"/>
+<area shape="rect" id="node5" href="$Geographic.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Geographic" alt="" coords="1693,160,2181,189"/>
+<area shape="rect" id="node9" href="$GeoPatch_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/GeoPatch.cpp" alt="" coords="2420,237,2926,267"/>
+<area shape="rect" id="node14" href="$Patch_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Patch.cpp" alt="" coords="2205,160,2688,189"/>
+<area shape="rect" id="node20" href="$Projected.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Projected" alt="" coords="1192,160,1669,189"/>
+<area shape="rect" id="node25" href="$SeamlessEngineNode.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessEngineNode" alt="" coords="616,160,1168,189"/>
+<area shape="rect" id="node7" href="$Geographic_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Geographic.cpp" alt="" coords="1780,237,2294,267"/>
+<area shape="rect" id="node11" href="$SeamlessEngineNode_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/SeamlessEngineNode.cpp" alt="" coords="654,237,1230,267"/>
+<area shape="rect" id="node22" href="$Projected_8cpp.html" title="/home/cube/sources/osgearth/src/osgEarthDrivers/engine_seamless/Projected.cpp" alt="" coords="1254,237,1756,267"/>
+</map>

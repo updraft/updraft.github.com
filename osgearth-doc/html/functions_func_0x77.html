@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +108,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="functions_func.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_func.html#index__"><span>_</span></a></li>
+      <li><a href="functions_func_0x61.html#index_a"><span>a</span></a></li>
       <li><a href="functions_func_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_func_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_func_0x64.html#index_d"><span>d</span></a></li>
@@ -87,6 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_0x6a.html#index_j"><span>j</span></a></li>
       <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
@@ -102,80 +134,179 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions_func_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_func_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_func_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_func_0x7a.html#index_z"><span>z</span></a></li>
       <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>wait()
+: <a class="el" href="classosgEarth_1_1Threading_1_1Event.html#aa3e9ffcefbd2a3acae5c5031d0cc6b7e">osgEarth::Threading::Event</a>
+, <a class="el" href="classosgEarth_1_1Threading_1_1MultiEvent.html#abd4182b35d16c43b7b171a7ef8eb1546">osgEarth::Threading::MultiEvent</a>
+</li>
+<li>waitAndReset()
+: <a class="el" href="classosgEarth_1_1Threading_1_1MultiEvent.html#aab184fca683f5c5e43b71b31a25cff21">osgEarth::Threading::MultiEvent</a>
+, <a class="el" href="classosgEarth_1_1Threading_1_1Event.html#a74ee111c6433e4a94867105373cc6dfe">osgEarth::Threading::Event</a>
+</li>
+<li>wallStyleName()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1ExtrusionSymbol.html#a40578d8c2c3d9e986d06e3a14990418a">osgEarth::Symbology::ExtrusionSymbol</a>
+</li>
+<li>wasCanceled()
+: <a class="el" href="classosgEarth_1_1TaskRequest.html#aa24a2a0f10cdf9ea995a67cc1b427b26">osgEarth::TaskRequest</a>
+</li>
 <li>WCS11Source()
-: <a class="el" href="class_w_c_s11_source.html#a488289530641a90e29bec750651585e0">WCS11Source</a>
+: <a class="el" href="classWCS11Source.html#a488289530641a90e29bec750651585e0">WCS11Source</a>
+</li>
+<li>WCSOptions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WCSOptions.html#afa6b879e1b0ae291892923963c4d289a">osgEarth::Drivers::WCSOptions</a>
 </li>
 <li>WCSSourceFactory()
-: <a class="el" href="class_w_c_s_source_factory.html#a65365b4ffa9da730eec7499f79fe5e88">WCSSourceFactory</a>
+: <a class="el" href="classWCSSourceFactory.html#a65365b4ffa9da730eec7499f79fe5e88">WCSSourceFactory</a>
+</li>
+<li>WFSCapabilities()
+: <a class="el" href="classosgEarth_1_1Util_1_1WFSCapabilities.html#a882fbe12c9a4bfc2e9b6b49251de0e3c">osgEarth::Util::WFSCapabilities</a>
+</li>
+<li>WFSCapabilitiesReader()
+: <a class="el" href="classosgEarth_1_1Util_1_1WFSCapabilitiesReader.html#a22c79b7c7f5ec14515d76a2559148926">osgEarth::Util::WFSCapabilitiesReader</a>
+</li>
+<li>WFSFeatureOptions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WFSFeatureOptions.html#a628024df7e012ebc57753076d7de4d2d">osgEarth::Drivers::WFSFeatureOptions</a>
 </li>
 <li>WFSFeatureSource()
-: <a class="el" href="class_w_f_s_feature_source.html#a656c68c5b39b9e41d0153c0a3f1ca060">WFSFeatureSource</a>
+: <a class="el" href="classWFSFeatureSource.html#a656c68c5b39b9e41d0153c0a3f1ca060">WFSFeatureSource</a>
 </li>
 <li>WFSFeatureSourceFactory()
-: <a class="el" href="class_w_f_s_feature_source_factory.html#a30dcecad2cced05c00a616b9915d560c">WFSFeatureSourceFactory</a>
+: <a class="el" href="classWFSFeatureSourceFactory.html#a30dcecad2cced05c00a616b9915d560c">WFSFeatureSourceFactory</a>
+</li>
+<li>WFSFeatureType()
+: <a class="el" href="classosgEarth_1_1Util_1_1WFSFeatureType.html#a3c074efec52184879eac9e3aab2d08e6">osgEarth::Util::WFSFeatureType</a>
 </li>
 <li>width()
-: <a class="el" href="classagg_1_1rendering__buffer.html#a1feb032c305fb7fcea896c2c25d51d5a">agg::rendering_buffer</a>
+: <a class="el" href="classosgEarth_1_1Bounds.html#ad873228dd722c94b69c82509334c8e4b">osgEarth::Bounds</a>
+, <a class="el" href="classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d">osgEarth::GeoExtent</a>
+, <a class="el" href="classagg_1_1rendering__buffer.html#a1feb032c305fb7fcea896c2c25d51d5a">agg::rendering_buffer</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1Stroke.html#a2be1f668428124248f6ca17ce649a705">osgEarth::Symbology::Stroke</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac2b8a27f06d254301edacb12beea248b">osgEarth::Util::Controls::Control</a>
+</li>
+<li>WMSCapabilities()
+: <a class="el" href="classosgEarth_1_1WMSCapabilities.html#aa443de23750f09d4e2aab08fbc383a78">osgEarth::WMSCapabilities</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1WMSCapabilities.html#a31d7bb922825ebcc588af3421af587c5">osgEarth::Util::WMSCapabilities</a>
+</li>
+<li>WMSCapabilitiesReader()
+: <a class="el" href="classosgEarth_1_1WMSCapabilitiesReader.html#a331c7ea23bf490a014a56d8f39b38c7c">osgEarth::WMSCapabilitiesReader</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1WMSCapabilitiesReader.html#a7d4bd821bbe594041c47b8d6a618515d">osgEarth::Util::WMSCapabilitiesReader</a>
+</li>
+<li>wmsFormat()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WMSOptions.html#ad6dbccbb33705ac48d0ef07aa7e52154">osgEarth::Drivers::WMSOptions</a>
+</li>
+<li>WMSLayer()
+: <a class="el" href="classosgEarth_1_1Util_1_1WMSLayer.html#aef9f043bc2e49070288e1f50f0aa623e">osgEarth::Util::WMSLayer</a>
+</li>
+<li>WMSOptions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WMSOptions.html#ae964a68ce5ab40128bb2ffef0fecf566">osgEarth::Drivers::WMSOptions</a>
 </li>
 <li>WMSSource()
-: <a class="el" href="class_w_m_s_source.html#af48d8ee9547081ffa2945e412d0a0135">WMSSource</a>
+: <a class="el" href="classWMSSource.html#af48d8ee9547081ffa2945e412d0a0135">WMSSource</a>
 </li>
 <li>WMSSourceFactory()
-: <a class="el" href="class_w_m_s_source_factory.html#ae8ee4a7225d3a31fc9f1ebddad44af74">WMSSourceFactory</a>
+: <a class="el" href="classWMSSourceFactory.html#ae8ee4a7225d3a31fc9f1ebddad44af74">WMSSourceFactory</a>
+</li>
+<li>WMSStyle()
+: <a class="el" href="classosgEarth_1_1Util_1_1WMSStyle.html#a4bdb34308cba0edd51c4f111aeefa445">osgEarth::Util::WMSStyle</a>
+</li>
+<li>wmsVersion()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WMSOptions.html#ade06057d7143094248409ac6c7435618">osgEarth::Drivers::WMSOptions</a>
+</li>
+<li>world2local()
+: <a class="el" href="classosgEarth_1_1Features_1_1FeaturesToNodeFilter.html#ae0a81f1aa0f2908e73c2ade4fa171962">osgEarth::Features::FeaturesToNodeFilter</a>
+</li>
+<li>worldPointToMapPoint()
+: <a class="el" href="classosgEarth_1_1Map.html#a8e362c3a2a963ddab71d6639a01ec0cb">osgEarth::Map</a>
+, <a class="el" href="classosgEarth_1_1MapInfo.html#a359e56411f68e830a31afc6611d4307c">osgEarth::MapInfo</a>
+</li>
+<li>WorldWindOptions()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1WorldWindOptions.html#a95a708892e7692f37e51d7bf7b0edcfb">osgEarth::Drivers::WorldWindOptions</a>
 </li>
 <li>WorldWindSource()
-: <a class="el" href="class_world_wind_source.html#ac7b15763ca711992ae2d1c7ae5ba979a">WorldWindSource</a>
+: <a class="el" href="classWorldWindSource.html#ac7b15763ca711992ae2d1c7ae5ba979a">WorldWindSource</a>
 </li>
 <li>write()
-: <a class="el" href="structosg_earth_1_1_stream_object.html#a6a2d6836658563225e115cd400a97a05">osgEarth::StreamObject</a>
+: <a class="el" href="classosgEarth_1_1TileMapReaderWriter.html#ace25127ca68e28272a3973a89882c485">osgEarth::TileMapReaderWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a2f3f5e628342848e015934201ec264c5">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__UNSIGNED__SHORT__5__5__5__1_00_01GLushort_01_4.html#a965d7a65702e01245d5324cb50339128">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_UNSIGNED_SHORT_5_5_5_1, GLushort &gt;</a>
+, <a class="el" href="structosgEarth_1_1StreamObject.html#a6a2d6836658563225e115cd400a97a05">osgEarth::StreamObject</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__DEPTH__COMPONENT_00_01T_01_4.html#ac7d15909e7ede2b076f463af3866d4a2">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_DEPTH_COMPONENT, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__LUMINANCE_00_01T_01_4.html#a7be16d2b063306523909cc258e8637f4">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_LUMINANCE, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__ALPHA_00_01T_01_4.html#ab977cec3d3f86b12548b866469b56c7a">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_ALPHA, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__LUMINANCE__ALPHA_00_01T_01_4.html#aaf3f1ef5438f8eee319c05bb717baa84">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_LUMINANCE_ALPHA, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__RGB_00_01T_01_4.html#a9ec0c127133de1682e8355048d460875">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_RGB, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__RGBA_00_01T_01_4.html#a055e7aa1148c12b739e261c221029009">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_RGBA, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__BGR_00_01T_01_4.html#ae489155ea9b6510f2e73373b462e180d">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_BGR, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__BGRA_00_01T_01_4.html#a897235c6a22092d8bfa77b5e4125efad">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_BGRA, T &gt;</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_010_00_01T_01_4.html#a19299f0ef0303d401c8acc5c47f0af52">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; 0, T &gt;</a>
+, <a class="el" href="classosgEarth_1_1TileBlacklist.html#acc14004e415ab4b6be021c6dab7cdc06">osgEarth::TileBlacklist</a>
+, <a class="el" href="structanonymous__namespace_02ImageUtils_8cpp_03_1_1ColorWriter_3_01GL__UNSIGNED__BYTE__3__3__2_00_01GLubyte_01_4.html#a0f9fcca0d574b98318deb7a6b2cdc817">anonymous_namespace{ImageUtils.cpp}::ColorWriter&lt; GL_UNSIGNED_BYTE_3_3_2, GLubyte &gt;</a>
+, <a class="el" href="classosgEarth_1_1TileMapReaderWriter.html#a15bcf79b8a5488f0b9714b06713ae272">osgEarth::TileMapReaderWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a5ac1a4fdf09b312f4b193d697c7d12fb">osgEarth::Json::StyledStreamWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1Writer.html#aca994af6e4ea5babf09423221fcc5fa9">osgEarth::Json::Writer</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1FastWriter.html#a0aa02fa69ed6b3c60f00596f1574e96a">osgEarth::Json::FastWriter</a>
+, <a class="el" href="classosgEarth_1_1TileBlacklist.html#a3995073a656fb0c7e5e3f434eb33bd22">osgEarth::TileBlacklist</a>
+</li>
+<li>writeArrayValue()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a87f06a141dbfe2d6c23379edc0826bec">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#ad29e2e11255e0c0f4c897ef967aa5a7b">osgEarth::Json::StyledStreamWriter</a>
+</li>
+<li>writeCommentAfterValueOnSameLine()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#ae363933db773aeba83381e8c10bedb89">osgEarth::Json::StyledStreamWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a6be44ff0f47e07d8ed1420b29e99176e">osgEarth::Json::StyledWriter</a>
+</li>
+<li>writeCommentBeforeValue()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#ac5f2c2f59dacd10abe20bb186d0393c6">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a67e1f787c877134179efe8f6c489951a">osgEarth::Json::StyledStreamWriter</a>
 </li>
 <li>writeFile()
-: <a class="el" href="class_reader_writer_zip_f_s.html#ab515878cfb1505ddc5783136d07c5214">ReaderWriterZipFS</a>
+: <a class="el" href="classReaderWriterZipFS.html#ab515878cfb1505ddc5783136d07c5214">ReaderWriterZipFS</a>
 </li>
 <li>writeHeightField()
-: <a class="el" href="class_reader_writer_zip_f_s.html#a3e442fdfddabc615c5f9b1eebb20cea1">ReaderWriterZipFS</a>
+: <a class="el" href="classReaderWriterZipFS.html#a3e442fdfddabc615c5f9b1eebb20cea1">ReaderWriterZipFS</a>
 </li>
 <li>writeImage()
-: <a class="el" href="class_reader_writer_zip_f_s.html#a6ab4042695ae59f139c119be0f376bd0">ReaderWriterZipFS</a>
+: <a class="el" href="classReaderWriterZipFS.html#a6ab4042695ae59f139c119be0f376bd0">ReaderWriterZipFS</a>
+</li>
+<li>writeIndent()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#ad6a44625042d45e1eaed91aa9f50a42d">osgEarth::Json::StyledStreamWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a39eac0fc6ac09741cf70b1b2939dab76">osgEarth::Json::StyledWriter</a>
+</li>
+<li>writeLock()
+: <a class="el" href="classosgEarth_1_1Threading_1_1ReadWriteMutex.html#a5523fe1781bf3b42cbc8eaf5243d40ed">osgEarth::Threading::ReadWriteMutex</a>
 </li>
 <li>writeNode()
-: <a class="el" href="class_reader_writer_earth.html#aeddc92fa289fcc59429a1525642865de">ReaderWriterEarth</a>
-, <a class="el" href="class_reader_writer_zip_f_s.html#aad4041c6fe529ea952f45e232a591a3c">ReaderWriterZipFS</a>
+: <a class="el" href="classReaderWriterEarth.html#aeddc92fa289fcc59429a1525642865de">ReaderWriterEarth</a>
+, <a class="el" href="classReaderWriterZipFS.html#aad4041c6fe529ea952f45e232a591a3c">ReaderWriterZipFS</a>
 </li>
 <li>writeObject()
-: <a class="el" href="class_reader_writer_zip_f_s.html#aa28a5ba8329bc2261d3de36652367927">ReaderWriterZipFS</a>
+: <a class="el" href="classReaderWriterZipFS.html#aa28a5ba8329bc2261d3de36652367927">ReaderWriterZipFS</a>
+</li>
+<li>writeUnlock()
+: <a class="el" href="classosgEarth_1_1Threading_1_1ReadWriteMutex.html#ab480986d947ce32757b89cca6ea9e21d">osgEarth::Threading::ReadWriteMutex</a>
+</li>
+<li>writeValue()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a6b033d609206cea6b77a0a6b5e295ce1">osgEarth::Json::StyledStreamWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#ab33421878c78b88b343991bbdd363fa3">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1FastWriter.html#a131391daa1e0d7d178d7738bdd6f3ca4">osgEarth::Json::FastWriter</a>
+</li>
+<li>writeWithIndent()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#addcd2758d9e7fb158dc5ad471dcf69d5">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a3da98fcae1146c9f74b7c697f2875079">osgEarth::Json::StyledStreamWriter</a>
+</li>
+<li>writeWorldFiles()
+: <a class="el" href="classosgEarth_1_1DiskCacheOptions.html#a8c6a5ad14c0d12bd8807a0efc73fc3e2">osgEarth::DiskCacheOptions</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -190,6 +321,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structDiamond.html#aa6782b05916e296943538332d1fe3abc" title="Diamond::dirty" alt="" coords="205,165,312,195"/>
+<area shape="rect" id="node25" href="$structDiamond.html#a5ae68b430b173c2fc5677a6444d7ec6c" title="Diamond::extendedBound" alt="" coords="173,219,344,248"/>
+<area shape="rect" id="node30" href="$classMeshManager.html#a27d41073dc8c25a91a2b2ad5887a2ddb" title="MeshManager::queueForMerge" alt="" coords="157,272,360,301"/>
+<area shape="rect" id="node32" href="$classMeshManager.html#aef113563928c68f6d46b4adc5e2f5d89" title="MeshManager::queueForSplit" alt="" coords="163,325,355,355"/>
+<area shape="rect" id="node34" href="$structDiamond.html#a85645bf231669dc38712b791961f895d" title="Diamond::visibleBound" alt="" coords="181,379,336,408"/>
+<area shape="rect" id="node5" href="$classMeshManager.html#ad166dbb08e9178a4d830847c91f711dc" title="MeshManager::queueForRefresh" alt="" coords="409,192,620,221"/>
+<area shape="rect" id="node7" href="$structDiamond.html#a99d5910fcf59bf2fb94ea4a4e15c0373" title="Diamond::refreshDrawable" alt="" coords="427,139,603,168"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1TileKey.html#a44441e91bc4f46b997456786a0b749a4" title="osgEarth::TileKey::getExtent" alt="" coords="671,59,860,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="672,112,859,141"/>
+<area shape="rect" id="node13" href="$structDiamond.html#aaa003d1932c27e6444e20ef2de94fa47" title="Diamond::node" alt="" coords="711,272,820,301"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="675,165,856,195"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="676,219,855,248"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="676,5,855,35"/>
+<area shape="rect" id="node15" href="$classMeshManager.html#aaabb61d8f0f173737b48dd238cbe9a4d" title="MeshManager::node" alt="" coords="965,272,1104,301"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="909,165,1160,195"/>
+<area shape="rect" id="node27" href="$structDiamond.html#a92f8386bf6603e5146d0df6b0db0693c" title="Diamond::computeBound" alt="" coords="431,272,599,301"/>
+</map>

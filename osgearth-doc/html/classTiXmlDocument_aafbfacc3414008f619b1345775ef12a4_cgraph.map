@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlNode.html#a708e7f953df61d4d2d12f73171550a4b" title="Delete all the children of this node. Does not affect &#39;this&#39;." alt="" coords="255,32,380,61"/>
+<area shape="rect" id="node5" href="$classTiXmlDocument.html#af69deeb984e060bd00f668460dec8ef2" title="TiXmlDocument::CopyTo" alt="" coords="232,85,403,115"/>
+<area shape="rect" id="node7" href="$classTiXmlNode.html#a4508cc3a2d7a98e96a54cc09c37a78a4" title="TiXmlNode::Clone" alt="" coords="473,32,601,61"/>
+<area shape="rect" id="node9" href="$classTiXmlNode.html#a1a881212554b759865f6cac79a851d38" title="TiXmlNode::LinkEndChild" alt="" coords="452,85,623,115"/>
+<area shape="rect" id="node25" href="$classTiXmlNode.html#af854baeba384f5fe9859f5aee03b548e" title="Navigate to a sibling node." alt="" coords="456,139,619,168"/>
+<area shape="rect" id="node11" href="$classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071" title="TiXmlNode::GetDocument" alt="" coords="672,19,848,48"/>
+<area shape="rect" id="node15" href="$classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de" title="TiXmlDocument::SetError" alt="" coords="675,85,845,115"/>
+<area shape="rect" id="node23" href="$classTiXmlNode.html#a57b99d5c97d67a42b9752f5210a1ba5e" title="TiXmlNode::Type" alt="" coords="699,139,821,168"/>
+<area shape="rect" id="node13" href="$classTiXmlNode.html#a8a4cda4b15c29f64cff419309aebed08" title="Cast to a more defined type. Will return null if not of the requested type." alt="" coords="899,5,1069,35"/>
+<area shape="rect" id="node17" href="$structTiXmlCursor.html#a1e6fa622b59dafb71b6efe595105dcdd" title="TiXmlCursor::Clear" alt="" coords="917,59,1051,88"/>
+<area shape="rect" id="node19" href="$classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05" title="TiXmlParsingData::Cursor" alt="" coords="897,112,1071,141"/>
+<area shape="rect" id="node21" href="$classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d" title="TiXmlParsingData::Stamp" alt="" coords="897,165,1071,195"/>
+</map>

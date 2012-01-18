@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="299,5,496,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="264,59,531,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1SpatialReference.html#a7b198b8e4dc79a8c4e04cee6b73c85c4" title="osgEarth::SpatialReference::isMercator" alt="" coords="272,112,523,141"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1SpatialReference.html#a0ce3be1257b24c5f359dd52a7216b2c1" title="osgEarth::SpatialReference::isProjected" alt="" coords="271,165,524,195"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1GeoExtent.html#a8151cbc0905e59c9d88e6fad5690a0ce" title="osgEarth::GeoExtent::isValid" alt="" coords="303,219,492,248"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="580,112,785,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="853,112,1067,141"/>
+<area shape="rect" id="node11" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1133,112,1544,141"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="589,192,776,221"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="592,245,773,275"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="835,245,1085,275"/>
+</map>

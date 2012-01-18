@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__tests_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -93,9 +110,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthDrivers/arcgis/ArcGISOptions&gt;</code><br/>
 <code>#include &lt;osgEarthDrivers/tms/TMSOptions&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_tests.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_tests.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__tests_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__tests_2osgearth__tests_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__tests_2osgearth__tests_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__tests_2osgearth__tests_8cpp">
 </map>
@@ -134,19 +153,103 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__tests_8cpp_source.html#l00040">40</a> of file <a class="el" href="osgearth__tests_8cpp_source.html">osgearth_tests.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  osg::ArgumentParser arguments(&amp;argc,argv);
+
+  <span class="comment">//One to one test.  Read a single 1 to 1 tile out of a MapLayer</span>
+  {
+      <a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html">GDALOptions</a> driverOpt;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95">url</a>() = <span class="stringliteral">&quot;../data/world.tif&quot;</span>;
+
+      <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_simple&quot;</span>;
+
+      osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
+
+      <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, layer-&gt;getProfile());
+          <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+          osgDB::writeImageFile(*image.getImage(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+  }
+
+  <span class="comment">//Mosaic test.  Request a tile in the global geodetic profile from a layer with a geographic SRS but a different tiling scheme.</span>
+  {
+      <a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html">ArcGISOptions</a> driverOpt;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8">url</a>() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
+
+      <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_mosaic&quot;</span>;
+
+      osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
+
+      <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, <a class="code" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09">osgEarth::Registry::instance</a>()-&gt;getGlobalGeodeticProfile());
+          <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+          osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+  }
+
+  <span class="comment">//Reprojection.  Request a UTM image from a global geodetic profile</span>
+  {
+      <a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html">ArcGISOptions</a> driverOpt;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8">url</a>() = <span class="stringliteral">&quot;http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer&quot;</span>;
+
+      <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_reprojected_utm&quot;</span>;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a18c8e5fb2aa65339b69dcab92b2ebedf">reprojectedTileSize</a>() = 512;
+
+      osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
+
+      <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, Profile::create(<span class="stringliteral">&quot;epsg:26917&quot;</span>, 560725, 4385762, 573866, 4400705));
+          <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+          osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+  }
+
+
+  <span class="comment">//Mercator.  Request a geodetic reprojected image from a mercator source</span>
+  {
+      <a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html">TMSOptions</a> driverOpt;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">url</a>() = <span class="stringliteral">&quot;http://tile.openstreetmap.org&quot;</span>;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#af9c81bbb1544320c9d15c447b22ade25">format</a>() = <span class="stringliteral">&quot;png&quot;</span>;
+      driverOpt.<a class="code" href="classosgEarth_1_1TileSourceOptions.html#a408fb6362b758888204763465a986346">tileSize</a>() = 256;
+      driverOpt.<a class="code" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#aa857627ab7015e5f810335ad6f2d4ecb">tmsType</a>() = <span class="stringliteral">&quot;google&quot;</span>;
+
+      <a class="code" href="classosgEarth_1_1ImageLayerOptions.html">ImageLayerOptions</a> layerOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f">driver</a>() = driverOpt;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903">name</a>() = <span class="stringliteral">&quot;test_mercator_reprojected&quot;</span>;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#a18c8e5fb2aa65339b69dcab92b2ebedf">reprojectedTileSize</a>() = 256;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#af7d8f5abac0df078b4888c420576798b">exactCropping</a>() = <span class="keyword">true</span>;
+      layerOpt.<a class="code" href="classosgEarth_1_1TerrainLayerOptions.html#ae1fd077446d87d31ff2c0d7ddad4a112">profile</a>() = <a class="code" href="classosgEarth_1_1ProfileOptions.html">ProfileOptions</a>( <span class="stringliteral">&quot;global-mercator&quot;</span> );
+
+      osg::ref_ptr&lt;ImageLayer&gt; layer = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1ImageLayer.html">ImageLayer</a>( layerOpt );
+
+          <span class="comment">//Request an image from the mercator source.  Should be reprojected to geodetic</span>
+          <a class="code" href="classosgEarth_1_1TileKey.html">TileKey</a> key(0, 0, 0, <a class="code" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09">osgEarth::Registry::instance</a>()-&gt;getGlobalGeodeticProfile());
+          <a class="code" href="classosgEarth_1_1GeoImage.html">GeoImage</a> image = layer-&gt;createImage( key );
+          <span class="keywordflow">if</span> (!image.<a class="code" href="classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3">isGeographic</a>())
+          {
+                  <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Error:  Should have reprojected image to geodetic but returned SRS is  &quot;</span> &lt;&lt; image.<a class="code" href="classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0">getSRS</a>()-&gt;<a class="code" href="classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333">getWKT</a>() &lt;&lt; std::endl;
+          }
+          osgDB::writeImageFile(*image.<a class="code" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978">getImage</a>(), layer-&gt;getName()+key.str() + std::string(<span class="stringliteral">&quot;.png&quot;</span>));
+  }
+
+  <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__tests_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__tests_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__tests_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__tests_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f" title="osgEarth::TerrainLayerOptions::driver" alt="" coords="145,5,383,35"/><area shape="rect" id="node5" href="classosgEarth_1_1TerrainLayerOptions.html#af7d8f5abac0df078b4888c420576798b" title="osgEarth::TerrainLayerOptions::exactCropping" alt="" coords="119,59,409,88"/><area shape="rect" id="node7" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#af9c81bbb1544320c9d15c447b22ade25" title="osgEarth::Drivers::TMSOptions::format" alt="" coords="139,112,389,141"/><area shape="rect" id="node9" href="classosgEarth_1_1GeoImage.html#a3e1f3406688972c792fe94b83e197978" title="osgEarth::GeoImage::getImage" alt="" coords="163,165,365,195"/><area shape="rect" id="node11" href="classosgEarth_1_1GeoImage.html#a8df3956101aaba42fc535382431b9ba0" title="osgEarth::GeoImage::getSRS" alt="" coords="167,219,361,248"/><area shape="rect" id="node15" href="classosgEarth_1_1SpatialReference.html#a62d6dc2c358aaeeba591954de0475333" title="osgEarth::SpatialReference::getWKT" alt="" coords="145,272,383,301"/><area shape="rect" id="node23" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="171,379,357,408"/><area shape="rect" id="node36" href="classosgEarth_1_1SpatialReference.html#adfb00834f8d96146b119add7ec2c93a3" title="osgEarth::SpatialReference::isGeographic" alt="" coords="131,325,397,355"/><area shape="rect" id="node39" href="classosgEarth_1_1TerrainLayerOptions.html#a6cf6026fbe54e25441fe155b5304b903" title="osgEarth::TerrainLayerOptions::name" alt="" coords="145,432,383,461"/><area shape="rect" id="node41" href="classosgEarth_1_1TerrainLayerOptions.html#ae1fd077446d87d31ff2c0d7ddad4a112" title="osgEarth::TerrainLayerOptions::profile" alt="" coords="143,485,385,515"/><area shape="rect" id="node43" href="classosgEarth_1_1TerrainLayerOptions.html#a18c8e5fb2aa65339b69dcab92b2ebedf" title="osgEarth::TerrainLayerOptions::reprojectedTileSize" alt="" coords="105,539,423,568"/><area shape="rect" id="node45" href="classosgEarth_1_1TileKey.html#aff6a958d86c7ac9a6300e0d9fa8aa72c" title="osgEarth::TileKey::str" alt="" coords="189,592,339,621"/><area shape="rect" id="node47" href="classosgEarth_1_1TileSourceOptions.html#a408fb6362b758888204763465a986346" title="osgEarth::TileSourceOptions::tileSize" alt="" coords="144,645,384,675"/><area shape="rect" id="node49" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#aa857627ab7015e5f810335ad6f2d4ecb" title="osgEarth::Drivers::TMSOptions::tmsType" alt="" coords="132,699,396,728"/><area shape="rect" id="node51" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d" title="osgEarth::Drivers::TMSOptions::url" alt="" coords="151,752,377,781"/><area shape="rect" id="node53" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8" title="osgEarth::Drivers::ArcGISOptions::url" alt="" coords="143,805,385,835"/><area shape="rect" id="node55" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95" title="osgEarth::Drivers::GDALOptions::url" alt="" coords="147,859,381,888"/><area shape="rect" id="node13" href="classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="477,219,675,248"/><area shape="rect" id="node17" href="classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="473,272,679,301"/><area shape="rect" id="node19" href="classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="785,272,999,301"/><area shape="rect" id="node21" href="namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1104,272,1515,301"/><area shape="rect" id="node25" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="483,379,669,408"/><area shape="rect" id="node27" href="classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="728,325,1056,355"/><area shape="rect" id="node30" href="classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="780,379,1004,408"/><area shape="rect" id="node32" href="classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="771,432,1013,461"/><area shape="rect" id="node34" href="classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="769,485,1015,515"/></map>
+</div>
+</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__tests_8cpp.html">osgearth_tests.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -161,6 +264,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

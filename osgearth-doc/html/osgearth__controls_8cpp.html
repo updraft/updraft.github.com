@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__controls_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -93,9 +110,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthUtil/EarthManipulator&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/Controls&gt;</code><br/>
 <code>#include &lt;osgEarthSymbology/Color&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_controls.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_controls.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__controls_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__controls_2osgearth__controls_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__controls_2osgearth__controls_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__controls_2osgearth__controls_8cpp">
 </map>
@@ -105,16 +124,17 @@ Include dependency graph for osgearth_controls.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_my_click_handler.html">MyClickHandler</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_my_slider_handler.html">MySliderHandler</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rotate_image.html">RotateImage</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMyClickHandler.html">MyClickHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMySliderHandler.html">MySliderHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRotateImage.html">RotateImage</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968">createControls</a> (ControlCanvas *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968">createControls</a> (<a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ImageControl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html">ImageControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__controls_8cpp.html#a535f4e7f82c5c38c4a79769173a5d68f">s_sliderLabel</a></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a8b004102d98b61bf6672fe35331f3968"></a><!-- doxytag: member="osgearth_controls.cpp::createControls" ref="a8b004102d98b61bf6672fe35331f3968" args="(ControlCanvas *)" -->
@@ -124,7 +144,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void createControls </td>
           <td>(</td>
-          <td class="paramtype">ControlCanvas *&#160;</td>
+          <td class="paramtype"><a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a> *&#160;</td>
           <td class="paramname"><em>cs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -133,10 +153,154 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__controls_8cpp_source.html#l00091">91</a> of file <a class="el" href="osgearth__controls_8cpp_source.html">osgearth_controls.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// a container centered on the screen, containing an image and a text label.</span>
+    {
+        <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* center = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695">setFrame</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html">RoundedFrame</a>() );
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa1d70a0c22dcaa99ce1c8afaf9892e7b">getFrame</a>()-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( 1,1,1,0.5 );
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_CENTER );
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+        <span class="comment">// Add an image:</span>
+        osg::ref_ptr&lt;osg::Image&gt; image;
+        <span class="keywordflow">if</span> ( HTTPClient::readImageFile(<span class="stringliteral">&quot;http://demo.pelicanmapping.com/rmweb/readymap_logo.png&quot;</span>, image) == HTTPClient::RESULT_OK )
+        {
+            <a class="code" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html">ImageControl</a>( image.get() );
+            <a class="code" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+            <a class="code" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html#ac8282fd4162ad38bb32e60fd079c08fc">setFixSizeForRotation</a>( <span class="keyword">true</span> );
+            <span class="comment">//imageCon-&gt;addEventHandler( new ImageRotationHandler );</span>
+            center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( <a class="code" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a> );
+            center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+        }
+
+        <span class="comment">// Add a text label:</span>
+        <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;osgEarth Controls Toolkit&quot;</span> );
+        label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a">setFont</a>( osgText::readFontFile( <span class="stringliteral">&quot;arialbd.ttf&quot;</span> ) );
+        label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b">setFontSize</a>( 24.0f );
+        label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+        label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 5 );
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( label );
+
+        <span class="comment">// Rotation slider</span>
+        <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* rotateBox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+        rotateBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( Control::ALIGN_CENTER );
+        rotateBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569">setHorizFill</a>( <span class="keyword">true</span> );
+        rotateBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( Color::Blue );
+        {
+            rotateBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Rotate: &quot;</span>) );
+
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>* rotateSlider = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>( -180.0, 180.0, 0.0 );
+            rotateSlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structRotateImage.html">RotateImage</a>() );
+            rotateSlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125">setHeight</a>( 8.0f );
+            rotateSlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569">setHorizFill</a>( <span class="keyword">true</span> );
+            rotateBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( rotateSlider );
+        }
+        center-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( rotateBox );
+
+        cs-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( center );
+    }
+
+    <span class="comment">// a simple vbox with absolute positioning in the upper left with two text labels.</span>
+    {
+        <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* ul = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+        ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5de436628d3db4df128500271eedd1b">setPosition</a>( 20, 20 );
+        ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+        {
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* title = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Upper left control&quot;</span>, 22, osg::Vec4f(1,1,0,1) );
+            ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( title );
+
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* content = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Here is some text in the upper left control&quot;</span> );
+            ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( content );
+
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* c2 = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+            c2-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+            {
+                <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>* slider = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>( 0, 100 );
+                slider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( .6,0,0,1 );
+                slider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125">setHeight</a>( 25 );
+                slider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ba90386e0c068e8ba32d2f77802a0b">setWidth</a>( 300 );
+                slider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structMySliderHandler.html">MySliderHandler</a>() );
+                c2-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( slider );
+
+                <a class="code" href="osgearth__controls_8cpp.html#a535f4e7f82c5c38c4a79769173a5d68f">s_sliderLabel</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>();
+                <a class="code" href="osgearth__controls_8cpp.html#a535f4e7f82c5c38c4a79769173a5d68f">s_sliderLabel</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_CENTER );
+                c2-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <a class="code" href="osgearth__controls_8cpp.html#a535f4e7f82c5c38c4a79769173a5d68f">s_sliderLabel</a> );        
+            }
+            ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( c2 );
+
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* c3 = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+            c3-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+            c3-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+            {
+                <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* c4 = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+                c4-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 5 );
+                {
+                    c4-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>( <span class="keyword">true</span> ) );
+                    c4-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Checkbox 1&quot;</span> ) );
+                }
+                c3-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( c4 );
+
+                <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* c5 = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+                c5-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 5 );
+                {
+                    c5-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>( <span class="keyword">false</span> ) );
+                    c5-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;Checkbox 2&quot;</span> ) );
+                }
+                c3-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( c5 );
+            }
+            ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( c3 );
+        }
+        cs-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( ul );
+
+        ul-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structMyClickHandler.html">MyClickHandler</a> );
+    }
+
+    <span class="comment">// a centered hbox container along the bottom on the screen.</span>
+    {
+        <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* bottom = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695">setFrame</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html">RoundedFrame</a>() );
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa1d70a0c22dcaa99ce1c8afaf9892e7b">getFrame</a>()-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 145 );
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_BOTTOM );
+        bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_CENTER );
+
+        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;4; ++i )
+        {
+            <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>();
+            std::stringstream buf;
+            buf &lt;&lt; <span class="stringliteral">&quot;Label_&quot;</span> &lt;&lt; i;
+            label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01">setText</a>( buf.str() );
+            label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+            label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( 1,1,1,0.4 );
+            bottom-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( label );
+
+            label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e">setActiveColor</a>(1,.3,.3,1);
+            label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structMyClickHandler.html">MyClickHandler</a> );
+        }
+
+        cs-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( bottom );
+    }
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_cgraph.png" border="0" usemap="#osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_cgraph" alt=""/></div>
+<map name="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_cgraph" id="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1" title="osgEarth::Util::Controls::ControlCanvas::addControl" alt="" coords="571,856,896,885"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3" title="osgEarth::Util::Controls::HBox::addControl" alt="" coords="192,505,461,535"/><area shape="rect" id="node20" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="996,133,1289,163"/><area shape="rect" id="node27" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="999,187,1287,216"/><area shape="rect" id="node37" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="192,571,461,600"/><area shape="rect" id="node42" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99" title="osgEarth::Util::Controls::Control::addEventHandler" alt="" coords="168,1561,485,1591"/><area shape="rect" id="node44" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa1d70a0c22dcaa99ce1c8afaf9892e7b" title="osgEarth::Util::Controls::Container::getFrame" alt="" coords="184,1615,469,1644"/><area shape="rect" id="node46" href="classosgEarth_1_1HTTPClient.html#a88cf773eb4b970e56749d3c7b703b26f" title="osgEarth::HTTPClient::readImageFile" alt="" coords="207,1508,447,1537"/><area shape="rect" id="node77" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e" title="osgEarth::Util::Controls::Control::setActiveColor" alt="" coords="992,1376,1293,1405"/><area shape="rect" id="node82" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="995,1163,1291,1192"/><area shape="rect" id="node86" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566" title="osgEarth::Util::Controls::Container::setChildSpacing" alt="" coords="571,1011,896,1040"/><area shape="rect" id="node89" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="161,395,492,424"/><area shape="rect" id="node93" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html#ac8282fd4162ad38bb32e60fd079c08fc" title="osgEarth::Util::Controls::ImageControl::setFixSizeForRotation" alt="" coords="543,1064,924,1093"/><area shape="rect" id="node96" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a" title="osgEarth::Util::Controls::LabelControl::setFont" alt="" coords="588,648,879,677"/><area shape="rect" id="node99" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b" title="osgEarth::Util::Controls::LabelControl::setFontSize" alt="" coords="575,701,892,731"/><area shape="rect" id="node102" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695" title="osgEarth::Util::Controls::Container::setFrame" alt="" coords="184,751,469,780"/><area shape="rect" id="node105" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125" title="osgEarth::Util::Controls::Control::setHeight" alt="" coords="1007,1323,1279,1352"/><area shape="rect" id="node110" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569" title="osgEarth::Util::Controls::Control::setHorizFill" alt="" coords="592,81,875,111"/><area shape="rect" id="node114" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ba90386e0c068e8ba32d2f77802a0b" title="osgEarth::Util::Controls::Control::setWidth" alt="" coords="1008,1109,1277,1139"/><area shape="rect" id="node119" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e" title="osgEarth::Util::Controls::Control::setMargin" alt="" coords="189,908,464,937"/><area shape="rect" id="node122" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932" title="osgEarth::Util::Controls::Control::setPadding" alt="" coords="185,961,468,991"/><area shape="rect" id="node125" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5de436628d3db4df128500271eedd1b" title="osgEarth::Util::Controls::Control::setPosition" alt="" coords="592,1219,875,1248"/><area shape="rect" id="node135" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01" title="osgEarth::Util::Controls::LabelControl::setText" alt="" coords="181,804,472,833"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1385,855,1628,884"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1703,855,1975,884"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="569,395,897,424"/><area shape="rect" id="node35" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="597,544,869,573"/><area shape="rect" id="node14" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="1005,395,1280,424"/><area shape="rect" id="node16" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1424,289,1589,319"/><area shape="rect" id="node18" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="979,499,1307,528"/><area shape="rect" id="node32" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="1009,341,1276,371"/><area shape="rect" id="node23" href="structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1417,160,1596,189"/><area shape="rect" id="node25" href="structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1424,107,1589,136"/><area shape="rect" id="node48" href="classosgEarth_1_1HTTPClient.html#ae540764fe1845156e2ad7d64d2c69e4f" title="osgEarth::HTTPClient::doReadImageFile" alt="" coords="603,1563,864,1592"/><area shape="rect" id="node71" href="classosgEarth_1_1HTTPClient.html#ade965ee3144c8534f140641a3d3fda30" title="osgEarth::HTTPClient::getClient" alt="" coords="628,1853,839,1883"/><area shape="rect" id="node50" href="classosgEarth_1_1HTTPClient.html#a96eb034cc7d6e5e36ff35acc8e9ab832" title="osgEarth::HTTPClient::doGet" alt="" coords="1045,1483,1240,1512"/><area shape="rect" id="node55" href="classosgEarth_1_1HTTPResponse.html#aed0c67a9a4fa5798feca919d03d90437" title="osgEarth::HTTPResponse::getCode" alt="" coords="1027,1693,1259,1723"/><area shape="rect" id="node57" href="classosgEarth_1_1HTTPResponse.html#ac0d57710f507b0233ce842de2d6f098f" title="osgEarth::HTTPResponse::getPartStream" alt="" coords="1009,1800,1276,1829"/><area shape="rect" id="node59" href="namespaceanonymous__namespace_02HTTPClient_8cpp_03.html#aded5b15bd1c39a55b5809d05ac3afa9d" title="anonymous_namespace\{HTTPClient::cpp\}::getReader" alt="" coords="975,1429,1311,1459"/><area shape="rect" id="node61" href="classosgEarth_1_1HTTPResponse.html#ab8b74fa42bdabd96f65a42d92c975c92" title="osgEarth::HTTPResponse::isCancelled" alt="" coords="1381,1693,1632,1723"/><area shape="rect" id="node63" href="classosgEarth_1_1HTTPResponse.html#aee5b1901831f84436647d578a9a3ee5b" title="osgEarth::HTTPResponse::isOK" alt="" coords="1036,1747,1249,1776"/><area shape="rect" id="node66" href="classosgEarth_1_1HTTPClient.html#ac22cb8b2413ffaba10ad6b577ca16abd" title="osgEarth::HTTPClient::isRecoverable" alt="" coords="1021,1536,1264,1565"/><area shape="rect" id="node69" href="classosgEarth_1_1ProgressCallback.html#aedcd142ead254722a42743bf476a92dd" title="osgEarth::ProgressCallback::setNeedsRetry" alt="" coords="1003,1589,1283,1619"/><area shape="rect" id="node52" href="classosgEarth_1_1HTTPClient.html#a0a0cc6d6e9d576920725aca23f8e1f1b" title="osgEarth::HTTPClient::decodeMultipartStream" alt="" coords="1360,1483,1653,1512"/><area shape="rect" id="node73" href="structosgEarth_1_1Threading_1_1PerThread.html#a677baa850da97a7dc22289e5d18b63bd" title="osgEarth::Threading::PerThread::get" alt="" coords="1027,1853,1259,1883"/><area shape="rect" id="node75" href="classosgEarth_1_1HTTPClient.html#a23a15a8f27ac926a86c2ef7bc7bfebcb" title="osgEarth::HTTPClient::HTTPClient" alt="" coords="1029,1907,1256,1936"/><area shape="rect" id="node80" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1424,1243,1589,1272"/><area shape="rect" id="node127" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5b3b9452ccb139e407f6a25b5b7b04a" title="osgEarth::Util::Controls::Control::setX" alt="" coords="1021,1269,1264,1299"/><area shape="rect" id="node131" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a06736d1ba48601a9c688d6f6f9266833" title="osgEarth::Util::Controls::Control::setY" alt="" coords="1021,1216,1264,1245"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_icgraph.png" border="0" usemap="#osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_icgraph" alt=""/></div>
 <map name="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_icgraph" id="osgearth__controls_8cpp_a8b004102d98b61bf6672fe35331f3968_icgraph">
 <area shape="rect" id="node3" href="osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="160,5,211,35"/></map>
@@ -171,13 +335,36 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__controls_8cpp_source.html#l00037">37</a> of file <a class="el" href="osgearth__controls_8cpp_source.html">osgearth_controls.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);       
+    osgViewer::Viewer viewer(arguments);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+    osg::Node* node = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> ( node )
+        root-&gt;addChild( node );
+
+    <span class="comment">// create a surface to house the controls</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* cs = ControlCanvas::get( &amp;viewer );
+    root-&gt;addChild( cs );
+
+    viewer.setSceneData( root );
+    viewer.setCameraManipulator( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a> );
+
+    <span class="comment">// create some controls.</span>
+    <a class="code" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968">createControls</a>( cs );
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__controls_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__controls_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__controls_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__controls_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="104,5,211,35"/></map>
+<area shape="rect" id="node3" href="osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="191,1215,297,1244"/><area shape="rect" id="node134" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123" title="osgEarth::Util::Controls::ControlCanvas::get" alt="" coords="104,1528,384,1558"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1" title="osgEarth::Util::Controls::ControlCanvas::addControl" alt="" coords="859,1135,1184,1164"/><area shape="rect" id="node11" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3" title="osgEarth::Util::Controls::HBox::addControl" alt="" coords="472,608,741,638"/><area shape="rect" id="node22" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="1284,51,1577,80"/><area shape="rect" id="node29" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="1287,104,1575,134"/><area shape="rect" id="node39" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="472,675,741,704"/><area shape="rect" id="node44" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99" title="osgEarth::Util::Controls::Control::addEventHandler" alt="" coords="448,924,765,954"/><area shape="rect" id="node46" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa1d70a0c22dcaa99ce1c8afaf9892e7b" title="osgEarth::Util::Controls::Container::getFrame" alt="" coords="464,978,749,1007"/><area shape="rect" id="node48" href="classosgEarth_1_1HTTPClient.html#a88cf773eb4b970e56749d3c7b703b26f" title="osgEarth::HTTPClient::readImageFile" alt="" coords="487,1031,727,1060"/><area shape="rect" id="node71" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e" title="osgEarth::Util::Controls::Control::setActiveColor" alt="" coords="1280,1603,1581,1632"/><area shape="rect" id="node76" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="1283,1656,1579,1686"/><area shape="rect" id="node80" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566" title="osgEarth::Util::Controls::Container::setChildSpacing" alt="" coords="859,1552,1184,1582"/><area shape="rect" id="node83" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="441,315,772,344"/><area shape="rect" id="node87" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html#ac8282fd4162ad38bb32e60fd079c08fc" title="osgEarth::Util::Controls::ImageControl::setFixSizeForRotation" alt="" coords="831,1188,1212,1218"/><area shape="rect" id="node90" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a" title="osgEarth::Util::Controls::LabelControl::setFont" alt="" coords="876,1242,1167,1271"/><area shape="rect" id="node93" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b" title="osgEarth::Util::Controls::LabelControl::setFontSize" alt="" coords="863,1295,1180,1324"/><area shape="rect" id="node96" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695" title="osgEarth::Util::Controls::Container::setFrame" alt="" coords="464,1343,749,1372"/><area shape="rect" id="node99" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125" title="osgEarth::Util::Controls::Control::setHeight" alt="" coords="1295,1710,1567,1739"/><area shape="rect" id="node104" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569" title="osgEarth::Util::Controls::Control::setHorizFill" alt="" coords="880,828,1163,858"/><area shape="rect" id="node108" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ba90386e0c068e8ba32d2f77802a0b" title="osgEarth::Util::Controls::Control::setWidth" alt="" coords="1296,1398,1565,1427"/><area shape="rect" id="node113" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e" title="osgEarth::Util::Controls::Control::setMargin" alt="" coords="469,1447,744,1476"/><area shape="rect" id="node116" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932" title="osgEarth::Util::Controls::Control::setPadding" alt="" coords="465,1500,748,1530"/><area shape="rect" id="node119" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5de436628d3db4df128500271eedd1b" title="osgEarth::Util::Controls::Control::setPosition" alt="" coords="880,1763,1163,1792"/><area shape="rect" id="node129" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01" title="osgEarth::Util::Controls::LabelControl::setText" alt="" coords="461,1084,752,1114"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1653,1295,1896,1324"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1951,1295,2223,1324"/><area shape="rect" id="node13" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="857,315,1185,344"/><area shape="rect" id="node37" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="885,648,1157,678"/><area shape="rect" id="node16" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="1293,208,1568,238"/><area shape="rect" id="node18" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1692,367,1857,396"/><area shape="rect" id="node20" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="1267,262,1595,291"/><area shape="rect" id="node34" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="1297,315,1564,344"/><area shape="rect" id="node25" href="structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1685,78,1864,107"/><area shape="rect" id="node27" href="structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1692,131,1857,160"/><area shape="rect" id="node50" href="classosgEarth_1_1HTTPClient.html#ae540764fe1845156e2ad7d64d2c69e4f" title="osgEarth::HTTPClient::doReadImageFile" alt="" coords="891,934,1152,963"/><area shape="rect" id="node69" href="classosgEarth_1_1HTTPClient.html#ade965ee3144c8534f140641a3d3fda30" title="osgEarth::HTTPClient::getClient" alt="" coords="916,1031,1127,1060"/><area shape="rect" id="node52" href="classosgEarth_1_1HTTPClient.html#a96eb034cc7d6e5e36ff35acc8e9ab832" title="osgEarth::HTTPClient::doGet" alt="" coords="1333,520,1528,550"/><area shape="rect" id="node55" href="classosgEarth_1_1HTTPResponse.html#aed0c67a9a4fa5798feca919d03d90437" title="osgEarth::HTTPResponse::getCode" alt="" coords="1315,880,1547,910"/><area shape="rect" id="node57" href="classosgEarth_1_1HTTPResponse.html#ac0d57710f507b0233ce842de2d6f098f" title="osgEarth::HTTPResponse::getPartStream" alt="" coords="1297,934,1564,963"/><area shape="rect" id="node59" href="namespaceanonymous__namespace_02HTTPClient_8cpp_03.html#aded5b15bd1c39a55b5809d05ac3afa9d" title="anonymous_namespace\{HTTPClient::cpp\}::getReader" alt="" coords="1263,987,1599,1016"/><area shape="rect" id="node61" href="classosgEarth_1_1HTTPResponse.html#ab8b74fa42bdabd96f65a42d92c975c92" title="osgEarth::HTTPResponse::isCancelled" alt="" coords="1649,752,1900,782"/><area shape="rect" id="node63" href="classosgEarth_1_1HTTPResponse.html#aee5b1901831f84436647d578a9a3ee5b" title="osgEarth::HTTPResponse::isOK" alt="" coords="1324,726,1537,755"/><area shape="rect" id="node66" href="classosgEarth_1_1HTTPClient.html#ac22cb8b2413ffaba10ad6b577ca16abd" title="osgEarth::HTTPClient::isRecoverable" alt="" coords="1309,1040,1552,1070"/><area shape="rect" id="node74" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1692,1683,1857,1712"/><area shape="rect" id="node121" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aa5b3b9452ccb139e407f6a25b5b7b04a" title="osgEarth::Util::Controls::Control::setX" alt="" coords="1309,1763,1552,1792"/><area shape="rect" id="node125" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a06736d1ba48601a9c688d6f6f9266833" title="osgEarth::Util::Controls::Control::setY" alt="" coords="1309,1816,1552,1846"/><area shape="rect" id="node136" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a0ead895b4a8e5972807293ee1336a9ab" title="osgEarth::Util::Controls::ControlCanvas::ControlCanvas" alt="" coords="432,1815,781,1844"/><area shape="rect" id="node138" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a5fd6aeb9e88aa39864c3b9c5afb7fc97" title="osgEarth::Util::Controls::ControlCanvas::init" alt="" coords="883,1816,1160,1846"/></map>
 </div>
 </p>
 
@@ -189,7 +376,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ImageControl* <a class="el" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a></td>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ImageControl.html">ImageControl</a>* <a class="el" href="osgearth__controls_8cpp.html#ad55dd89d5c5fee510d0b9b6237f642d6">s_imageControl</a></td>
         </tr>
       </table>
 </div>
@@ -199,16 +386,22 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a535f4e7f82c5c38c4a79769173a5d68f"></a><!-- doxytag: member="osgearth_controls.cpp::s_sliderLabel" ref="a535f4e7f82c5c38c4a79769173a5d68f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* <a class="el" href="osgearth__controls_8cpp.html#a535f4e7f82c5c38c4a79769173a5d68f">s_sliderLabel</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="osgearth__controls_8cpp_source.html#l00069">69</a> of file <a class="el" href="osgearth__controls_8cpp_source.html">osgearth_controls.cpp</a>.</p>
+
 </div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__controls_8cpp.html">osgearth_controls.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
+</div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -223,6 +416,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

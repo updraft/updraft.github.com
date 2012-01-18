@@ -1,0 +1,39 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#af4dc10f833fbccf33f138ae9d9ee4ac3" title="osgEarth::Symbology::TextSymbol::content" alt="" coords="411,45,685,75"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1Feature.html#a7e45df02c1660959d070d7f4603d4dcd" title="osgEarth::Features::Feature::eval" alt="" coords="440,99,656,128"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a8b3ab4ee20a8cc790e45138c44f602b1" title="osgEarth::Symbology::TextSymbol::fill" alt="" coords="425,152,671,181"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#adb937da4c5ef13b013b7d7f86546a75d" title="osgEarth::Symbology::TextSymbol::font" alt="" coords="421,205,675,235"/>
+<area shape="rect" id="node21" href="$structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="472,259,624,288"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Symbology_1_1Geometry.html#ae7e387b3f435029c00799c969ed6b390" title="osgEarth::Symbology::Geometry::getBounds" alt="" coords="407,312,689,341"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1SpatialReference.html#ad7d6ef0605664b77e8348df5324ea32f" title="osgEarth::SpatialReference::getEllipsoid" alt="" coords="420,365,676,395"/>
+<area shape="rect" id="node39" href="$classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="415,419,681,448"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1Symbology_1_1LineString.html#a9b5b6e9b331071d46fbf1a76eca84c7b" title="osgEarth::Symbology::LineString::getLength" alt="" coords="409,472,687,501"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1Symbology_1_1LineString.html#a15aaca980d8f483426582978d9c41561" title="osgEarth::Symbology::LineString::getSegment" alt="" coords="403,525,693,555"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1Features_1_1FeatureProfile.html#a7f2cf88a25569de112c7c929555e3943" title="osgEarth::Features::FeatureProfile::getSRS" alt="" coords="411,579,685,608"/>
+<area shape="rect" id="node50" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a12044f75418af11e87a616a78967e5b1" title="osgEarth::Symbology::Geometry::getType" alt="" coords="415,632,681,661"/>
+<area shape="rect" id="node52" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a253d33a89e58f5cbb49ebf3ecc815e65" title="osgEarth::Symbology::TextSymbol::halo" alt="" coords="420,685,676,715"/>
+<area shape="rect" id="node54" href="$classosgEarth_1_1Features_1_1FilterContext.html#a9e82cf1e5599687e0e4fa96b11632bb2" title="osgEarth::Features::FilterContext::inverseReferenceFrame" alt="" coords="367,739,729,768"/>
+<area shape="rect" id="node56" href="$classosgEarth_1_1Features_1_1FilterContext.html#acf61fdd826797b4b08c2cc074accd0fa" title="osgEarth::Features::FilterContext::isGeocentric" alt="" coords="400,792,696,821"/>
+<area shape="rect" id="node58" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="465,845,631,875"/>
+<area shape="rect" id="node60" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a2ee8bcca128aeb50d4d648411cfa8764" title="osgEarth::Symbology::TextSymbol::lineOrientation" alt="" coords="391,899,705,928"/>
+<area shape="rect" id="node62" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a31b00e981203367ea406df231ab456e7" title="osgEarth::Symbology::TextSymbol::linePlacement" alt="" coords="391,952,705,981"/>
+<area shape="rect" id="node64" href="$classosgEarth_1_1Features_1_1FilterContext.html#a6fdc74d6944a655fd8fe8e5ff298af57" title="osgEarth::Features::FilterContext::profile" alt="" coords="419,1005,677,1035"/>
+<area shape="rect" id="node66" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a2ebaddf98769da5c384657b9f982e152" title="osgEarth::Symbology::TextSymbol::removeDuplicateLabels" alt="" coords="364,1059,732,1088"/>
+<area shape="rect" id="node68" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a09d72da7c5ddb48bec7f5419ff7d898d" title="osgEarth::Symbology::TextSymbol::rotateToScreen" alt="" coords="387,1112,709,1141"/>
+<area shape="rect" id="node70" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a3e7ab832c2c56a2094ffe5c97e89937f" title="osgEarth::Symbology::TextSymbol::size" alt="" coords="420,1165,676,1195"/>
+<area shape="rect" id="node72" href="$classosgEarth_1_1Symbology_1_1TextSymbol.html#a41fe2ca10e0be988838d9d7355be3f4d" title="osgEarth::Symbology::TextSymbol::sizeMode" alt="" coords="404,1219,692,1248"/>
+<area shape="rect" id="node74" href="$classosgEarth_1_1Features_1_1FilterContext.html#a62aa3e76a35b38551d293e4660bb7559" title="osgEarth::Features::FilterContext::toWorld" alt="" coords="413,1272,683,1301"/>
+<area shape="rect" id="node76" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="465,1325,631,1355"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Symbology_1_1NumericExpression.html#ae9486f987f30f98584fa2b554518ac72" title="osgEarth::Symbology::NumericExpression::eval" alt="" coords="823,5,1124,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1Feature.html#ac783fc569e3cd918592c3f10c0060b97" title="osgEarth::Features::Feature::getDouble" alt="" coords="848,59,1099,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Symbology_1_1NumericExpression.html#a22bc3d49dae8cde7b472c2d9cba7689c" title="osgEarth::Symbology::NumericExpression::set" alt="" coords="827,112,1120,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Symbology_1_1NumericExpression.html#afa7d3a785487f743ce392268d92ef327" title="osgEarth::Symbology::NumericExpression::variables" alt="" coords="809,165,1137,195"/>
+<area shape="rect" id="node11" href="$namespaceosgEarth.html#a2c3b7223f6314c9d36e643c231f9123f" title="osgEarth::toLower" alt="" coords="1257,59,1385,88"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1MixinVector.html#a09e839d601931f13776d30648ecd97f0" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::begin" alt="" coords="781,245,1165,275"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1MixinVector.html#ad40d751f91c9b8637fc5a274e75cd8a7" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::end" alt="" coords="787,299,1160,328"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Bounds.html#a1fb3d4370745d4a4ad420eaa1b64dae3" title="osgEarth::Bounds::expandBy" alt="" coords="877,352,1069,381"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1SpatialReference.html#ad4674227fe46613b3f5821109a509714" title="osgEarth::SpatialReference::init" alt="" coords="871,405,1076,435"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1SpatialReference.html#ae8cda9f2cf24a92d09c58462c5fbd5e8" title="osgEarth::SpatialReference::_init" alt="" coords="1215,405,1428,435"/>
+<area shape="rect" id="node37" href="$namespaceanonymous__namespace_02SpatialReference_8cpp_03.html#a2d59d21c23228cfce0a56b2174727ee9" title="anonymous_namespace\{SpatialReference::cpp\}::getOGRAttrValue" alt="" coords="1477,405,1888,435"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1MixinVector.html#a29d1318457f75e1e0841d7e20f61dadb" title="osgEarth::MixinVector\&lt; osg::Vec3d, osg::Referenced \&gt;::size" alt="" coords="785,499,1161,528"/>
+</map>

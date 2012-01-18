@@ -1,0 +1,37 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="252,589,473,619"/>
+<area shape="rect" id="node5" href="$classEarthFileSerializer2.html#a276faeb62aacdd59653b527d4fdab154" title="EarthFileSerializer2::serialize" alt="" coords="268,643,457,672"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Config.html#a42fd51ceaf7fa4d89cb28bcdf3d9c5dd" title="osgEarth::Config::add" alt="" coords="611,5,760,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Config.html#a458c40400bb1519a2f3aab07af570414" title="osgEarth::Config::addChild" alt="" coords="915,84,1093,113"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Config.html#a26e03777150dfe4c2b9e5602165dad27" title="osgEarth::Config::attr" alt="" coords="612,163,759,192"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1ModelLayerOptions.html#a0db8860b9fde151576402fa73ba513b8" title="osgEarth::ModelLayerOptions::driver" alt="" coords="568,216,803,245"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1TerrainLayerOptions.html#a50caaefc27eb54a34b6ff5628c43c34f" title="osgEarth::TerrainLayerOptions::driver" alt="" coords="567,269,804,299"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1MapFrame.html#a2f1751fdcda89f7f575ed022d3d2c885" title="osgEarth::MapFrame::elevationLayers" alt="" coords="564,323,807,352"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80" title="osgEarth::Config::empty" alt="" coords="604,376,767,405"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1MapNode.html#aaf1d0f0c11d88481f102aa63048508cd" title="osgEarth::MapNode::externalConfig" alt="" coords="571,429,800,459"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1ModelLayerOptions.html#af9b5ecb5b6e4b6285907e1913e9edbef" title="osgEarth::ModelLayerOptions::getConfig" alt="" coords="556,536,815,565"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1ElevationLayerOptions.html#a83369665eac9ee03e2fd7406cf846bba" title="osgEarth::ElevationLayerOptions::getConfig" alt="" coords="547,747,824,776"/>
+<area shape="rect" id="node37" href="$classosgEarth_1_1ImageLayerOptions.html#ab674bb74839e9b6a253d37cd44bbbb02" title="osgEarth::ImageLayerOptions::getConfig" alt="" coords="556,483,815,512"/>
+<area shape="rect" id="node46" href="$classosgEarth_1_1MapNodeOptions.html#afd870c2be445783a9c3ec5bffada40dd" title="osgEarth::MapNodeOptions::getConfig" alt="" coords="563,643,808,672"/>
+<area shape="rect" id="node48" href="$classosgEarth_1_1Config.html#a5e8fece976ded6667239209f27139c6c" title="osgEarth::Config::key" alt="" coords="1169,644,1319,673"/>
+<area shape="rect" id="node54" href="$classosgEarth_1_1MapOptions.html#a48418b0cd332719900986c146ce2378c" title="osgEarth::MapOptions::getConfig" alt="" coords="577,589,793,619"/>
+<area shape="rect" id="node58" href="$classosgEarth_1_1ElevationLayer.html#a6c187ec6d866f74b7f212b31b1d55566" title="osgEarth::ElevationLayer::getElevationLayerOptions" alt="" coords="523,800,848,829"/>
+<area shape="rect" id="node60" href="$classosgEarth_1_1ImageLayer.html#a6fbc035cfa825c362ed96285cd5d0cb2" title="osgEarth::ImageLayer::getImageLayerOptions" alt="" coords="541,853,829,883"/>
+<area shape="rect" id="node62" href="$classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444" title="osgEarth::MapNode::getMap" alt="" coords="591,907,780,936"/>
+<area shape="rect" id="node64" href="$classosgEarth_1_1MapNode.html#a71c5e96ccedec45570122243cd3b5748" title="osgEarth::MapNode::getMapNodeOptions" alt="" coords="553,960,817,989"/>
+<area shape="rect" id="node66" href="$classosgEarth_1_1Map.html#a693567c847af460f6934b0fdb9242ab2" title="osgEarth::Map::getMapOptions" alt="" coords="584,1013,787,1043"/>
+<area shape="rect" id="node68" href="$classosgEarth_1_1ModelLayer.html#a45a4e14ad17daf050f47f37734e1431d" title="osgEarth::ModelLayer::getModelLayerOptions" alt="" coords="543,1067,828,1096"/>
+<area shape="rect" id="node70" href="$classosgEarth_1_1ModelLayer.html#a44669952891f84cd005613cb5f01b318" title="osgEarth::ModelLayer::getName" alt="" coords="580,1120,791,1149"/>
+<area shape="rect" id="node72" href="$classosgEarth_1_1TerrainLayer.html#a55830499ac602f6f8dac06de5f81da2c" title="osgEarth::TerrainLayer::getName" alt="" coords="579,1173,792,1203"/>
+<area shape="rect" id="node74" href="$classosgEarth_1_1MapFrame.html#a1445bd530fe5debcbda43377ad757cd4" title="osgEarth::MapFrame::imageLayers" alt="" coords="572,1227,799,1256"/>
+<area shape="rect" id="node77" href="$classosgEarth_1_1Config.html#a2b1377b5a4a543f48fc25c76dec78772" title="osgEarth::Config::merge" alt="" coords="604,109,767,139"/>
+<area shape="rect" id="node80" href="$classosgEarth_1_1MapFrame.html#a0625a20b65d799b31a5e977c1aff2a1e" title="osgEarth::MapFrame::modelLayers" alt="" coords="572,1280,799,1309"/>
+<area shape="rect" id="node13" href="$namespaceosgEarth.html#a0bcf40dbfb8d914b6322a874eb021f50" title="osgEarth::trim" alt="" coords="952,163,1056,192"/>
+<area shape="rect" id="node15" href="$namespaceosgEarth_1_1Json.html#ac78f55a4c4e91e3fd75de3ad98b50bef" title="osgEarth::Json::in" alt="" coords="1180,163,1308,192"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Config.html#a7634d2c4fc97a686d06265ca071744d7" title="osgEarth::Config::updateIfSet" alt="" coords="907,539,1101,568"/>
+<area shape="rect" id="node31" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="1161,513,1327,543"/>
+<area shape="rect" id="node33" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="1161,433,1327,463"/>
+<area shape="rect" id="node39" href="$namespaceosgEarth.html#a04940a2895d6b43a059ade2b1093c9b4" title="osgEarth::colorToString" alt="" coords="925,485,1083,515"/>
+<area shape="rect" id="node42" href="$classosgEarth_1_1Config.html#a033ec2ca4c45a64605b2f97e6c59b0b9" title="osgEarth::Config::update" alt="" coords="921,331,1087,360"/>
+<area shape="rect" id="node51" href="$classosgEarth_1_1Config.html#a303495252c7b0136d9bee941d903ebac" title="osgEarth::Config::updateObjIfSet" alt="" coords="897,592,1111,621"/>
+</map>

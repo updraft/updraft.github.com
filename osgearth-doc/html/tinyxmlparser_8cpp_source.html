@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('tinyxmlparser_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/osgEarth/tinyxmlparser.cpp</h1>  </div>
@@ -124,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040 <span class="comment">// Note tha &quot;PutString&quot; hardcodes the same list. This</span>
 <a name="l00041"></a>00041 <span class="comment">// is less flexible than it appears. Changing the entries</span>
 <a name="l00042"></a>00042 <span class="comment">// or order will break putstring.       </span>
-<a name="l00043"></a>00043 TiXmlBase::Entity TiXmlBase::entity[ NUM_ENTITY ] = 
+<a name="l00043"></a>00043 <a class="code" href="structTiXmlBase_1_1Entity.html">TiXmlBase::Entity</a> <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">TiXmlBase::entity</a>[ NUM_ENTITY ] = 
 <a name="l00044"></a>00044 {
 <a name="l00045"></a>00045         { <span class="stringliteral">&quot;&amp;amp;&quot;</span>,  5, <span class="charliteral">&#39;&amp;&#39;</span> },
 <a name="l00046"></a>00046         { <span class="stringliteral">&quot;&amp;lt;&quot;</span>,   4, <span class="charliteral">&#39;&lt;&#39;</span> },
@@ -147,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a><a class="code" href="tinyxmlparser_8cpp.html#a3cda92a178036c812663a7b75c5e04d0">00063</a> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tinyxmlparser_8cpp.html#a3cda92a178036c812663a7b75c5e04d0">TIXML_UTF_LEAD_1</a> = 0xbbU;
 <a name="l00064"></a><a class="code" href="tinyxmlparser_8cpp.html#a8e36ce25f81f009c066037e937da3a6a">00064</a> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="tinyxmlparser_8cpp.html#a8e36ce25f81f009c066037e937da3a6a">TIXML_UTF_LEAD_2</a> = 0xbfU;
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_ti_xml_base.html#ac8c86058137bdb4b413c3eca58f2d467">TiXmlBase::utf8ByteTable</a>[256] = 
+<a name="l00066"></a>00066 <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classTiXmlBase.html#ac8c86058137bdb4b413c3eca58f2d467">TiXmlBase::utf8ByteTable</a>[256] = 
 <a name="l00067"></a>00067 {
 <a name="l00068"></a>00068         <span class="comment">//      0       1       2       3       4       5       6       7       8       9       a       b       c       d       e       f</span>
 <a name="l00069"></a>00069                 1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      <span class="comment">// 0x00</span>
@@ -169,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00085"></a>00085 };
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b">00088</a> <span class="keywordtype">void</span> <a class="code" href="class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b">TiXmlBase::ConvertUTF32ToUTF8</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> input, <span class="keywordtype">char</span>* output, <span class="keywordtype">int</span>* length )
+<a name="l00088"></a><a class="code" href="classTiXmlBase.html#a07c765e3a7f979d343e646ea797b180b">00088</a> <span class="keywordtype">void</span> <a class="code" href="classTiXmlBase.html#a07c765e3a7f979d343e646ea797b180b">TiXmlBase::ConvertUTF32ToUTF8</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> input, <span class="keywordtype">char</span>* output, <span class="keywordtype">int</span>* length )
 <a name="l00089"></a>00089 {
 <a name="l00090"></a>00090         <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> BYTE_MASK = 0xBF;
 <a name="l00091"></a>00091         <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> BYTE_MARK = 0x80;
@@ -210,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126 }
 <a name="l00127"></a>00127 
 <a name="l00128"></a>00128 
-<a name="l00129"></a><a class="code" href="class_ti_xml_base.html#ae22522b2e8e1ac43102d16394f639fc8">00129</a> <span class="comment">/*static*/</span> <span class="keywordtype">int</span> <a class="code" href="class_ti_xml_base.html#ae22522b2e8e1ac43102d16394f639fc8">TiXmlBase::IsAlpha</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> anyByte, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> <span class="comment">/*encoding*/</span> )
+<a name="l00129"></a><a class="code" href="classTiXmlBase.html#ae22522b2e8e1ac43102d16394f639fc8">00129</a> <span class="comment">/*static*/</span> <span class="keywordtype">int</span> <a class="code" href="classTiXmlBase.html#ae22522b2e8e1ac43102d16394f639fc8">TiXmlBase::IsAlpha</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> anyByte, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> <span class="comment">/*encoding*/</span> )
 <a name="l00130"></a>00130 {
 <a name="l00131"></a>00131         <span class="comment">// This will only work for low-ascii, everything else is assumed to be a valid</span>
 <a name="l00132"></a>00132         <span class="comment">// letter. I&#39;m not sure this is the best approach, but it is quite tricky trying</span>
@@ -231,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00147"></a>00147 }
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149 
-<a name="l00150"></a><a class="code" href="class_ti_xml_base.html#a321919055c115c78ded17f85a793f368">00150</a> <span class="comment">/*static*/</span> <span class="keywordtype">int</span> <a class="code" href="class_ti_xml_base.html#a321919055c115c78ded17f85a793f368">TiXmlBase::IsAlphaNum</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> anyByte, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> <span class="comment">/*encoding*/</span> )
+<a name="l00150"></a><a class="code" href="classTiXmlBase.html#a321919055c115c78ded17f85a793f368">00150</a> <span class="comment">/*static*/</span> <span class="keywordtype">int</span> <a class="code" href="classTiXmlBase.html#a321919055c115c78ded17f85a793f368">TiXmlBase::IsAlphaNum</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> anyByte, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> <span class="comment">/*encoding*/</span> )
 <a name="l00151"></a>00151 {
 <a name="l00152"></a>00152         <span class="comment">// This will only work for low-ascii, everything else is assumed to be a valid</span>
 <a name="l00153"></a>00153         <span class="comment">// letter. I&#39;m not sure this is the best approach, but it is quite tricky trying</span>
@@ -252,45 +268,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00168"></a>00168 }
 <a name="l00169"></a>00169 
 <a name="l00170"></a>00170 
-<a name="l00171"></a><a class="code" href="class_ti_xml_parsing_data.html">00171</a> <span class="keyword">class </span><a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>
+<a name="l00171"></a><a class="code" href="classTiXmlParsingData.html">00171</a> <span class="keyword">class </span><a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>
 <a name="l00172"></a>00172 {
-<a name="l00173"></a><a class="code" href="class_ti_xml_parsing_data.html#a173617f6dfe902cf484ce5552b950475">00173</a>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>;
+<a name="l00173"></a><a class="code" href="classTiXmlParsingData.html#a173617f6dfe902cf484ce5552b950475">00173</a>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>;
 <a name="l00174"></a>00174   <span class="keyword">public</span>:
-<a name="l00175"></a>00175         <span class="keywordtype">void</span> <a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* now, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding );
+<a name="l00175"></a>00175         <span class="keywordtype">void</span> <a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* now, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding );
 <a name="l00176"></a>00176 
-<a name="l00177"></a><a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">00177</a>         <span class="keyword">const</span> <a class="code" href="struct_ti_xml_cursor.html">TiXmlCursor</a>&amp; <a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>()     { <span class="keywordflow">return</span> cursor; }
+<a name="l00177"></a><a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">00177</a>         <span class="keyword">const</span> <a class="code" href="structTiXmlCursor.html">TiXmlCursor</a>&amp; <a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>()     { <span class="keywordflow">return</span> <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>; }
 <a name="l00178"></a>00178 
 <a name="l00179"></a>00179   <span class="keyword">private</span>:
 <a name="l00180"></a>00180         <span class="comment">// Only used by the document!</span>
-<a name="l00181"></a>00181         <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* start, <span class="keywordtype">int</span> _tabsize, <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col )
+<a name="l00181"></a><a class="code" href="classTiXmlParsingData.html#aa5beaf71579a91d6942277f417899ab9">00181</a>         <a class="code" href="classTiXmlParsingData.html#aa5beaf71579a91d6942277f417899ab9">TiXmlParsingData</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* start, <span class="keywordtype">int</span> _tabsize, <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col )
 <a name="l00182"></a>00182         {
 <a name="l00183"></a>00183                 assert( start );
-<a name="l00184"></a>00184                 stamp = start;
-<a name="l00185"></a>00185                 tabsize = _tabsize;
-<a name="l00186"></a>00186                 cursor.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = row;
-<a name="l00187"></a>00187                 cursor.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = col;
+<a name="l00184"></a>00184                 <a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">stamp</a> = start;
+<a name="l00185"></a>00185                 <a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">tabsize</a> = _tabsize;
+<a name="l00186"></a>00186                 <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = row;
+<a name="l00187"></a>00187                 <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = col;
 <a name="l00188"></a>00188         }
 <a name="l00189"></a>00189 
-<a name="l00190"></a>00190         <a class="code" href="struct_ti_xml_cursor.html">TiXmlCursor</a>             cursor;
-<a name="l00191"></a>00191         <span class="keyword">const</span> <span class="keywordtype">char</span>*             stamp;
-<a name="l00192"></a>00192         <span class="keywordtype">int</span>                             tabsize;
+<a name="l00190"></a><a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">00190</a>         <a class="code" href="structTiXmlCursor.html">TiXmlCursor</a>             <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>;
+<a name="l00191"></a><a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">00191</a>         <span class="keyword">const</span> <span class="keywordtype">char</span>*             <a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">stamp</a>;
+<a name="l00192"></a><a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">00192</a>         <span class="keywordtype">int</span>                             <a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">tabsize</a>;
 <a name="l00193"></a>00193 };
 <a name="l00194"></a>00194 
 <a name="l00195"></a>00195 
-<a name="l00196"></a><a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">00196</a> <span class="keywordtype">void</span> <a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">TiXmlParsingData::Stamp</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* now, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00196"></a><a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">00196</a> <span class="keywordtype">void</span> <a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">TiXmlParsingData::Stamp</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* now, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00197"></a>00197 {
 <a name="l00198"></a>00198         assert( now );
 <a name="l00199"></a>00199 
 <a name="l00200"></a>00200         <span class="comment">// Do nothing if the tabsize is 0.</span>
-<a name="l00201"></a>00201         <span class="keywordflow">if</span> ( tabsize &lt; 1 )
+<a name="l00201"></a>00201         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">tabsize</a> &lt; 1 )
 <a name="l00202"></a>00202         {
 <a name="l00203"></a>00203                 <span class="keywordflow">return</span>;
 <a name="l00204"></a>00204         }
 <a name="l00205"></a>00205 
 <a name="l00206"></a>00206         <span class="comment">// Get the current row, column.</span>
-<a name="l00207"></a>00207         <span class="keywordtype">int</span> row = cursor.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>;
-<a name="l00208"></a>00208         <span class="keywordtype">int</span> col = cursor.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a>;
-<a name="l00209"></a>00209         <span class="keyword">const</span> <span class="keywordtype">char</span>* p = stamp;
+<a name="l00207"></a>00207         <span class="keywordtype">int</span> row = <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>;
+<a name="l00208"></a>00208         <span class="keywordtype">int</span> col = <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a>;
+<a name="l00209"></a>00209         <span class="keyword">const</span> <span class="keywordtype">char</span>* p = <a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">stamp</a>;
 <a name="l00210"></a>00210         assert( p );
 <a name="l00211"></a>00211 
 <a name="l00212"></a>00212         <span class="keywordflow">while</span> ( p &lt; now )
@@ -339,7 +355,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00255"></a>00255                                 ++p;
 <a name="l00256"></a>00256 
 <a name="l00257"></a>00257                                 <span class="comment">// Skip to next tab stop</span>
-<a name="l00258"></a>00258                                 col = (col / tabsize + 1) * tabsize;
+<a name="l00258"></a>00258                                 col = (col / <a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">tabsize</a> + 1) * <a class="code" href="classTiXmlParsingData.html#ab9d6aea2833e38aaef440e49c22a05ca">tabsize</a>;
 <a name="l00259"></a>00259                                 <span class="keywordflow">break</span>;
 <a name="l00260"></a>00260 
 <a name="l00261"></a>00261                         <span class="keywordflow">case</span> <a class="code" href="tinyxmlparser_8cpp.html#a37999e32163e2a3280bc0b8e1999774e">TIXML_UTF_LEAD_0</a>:
@@ -370,7 +386,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00286"></a>00286                                 <span class="keywordflow">if</span> ( encoding == <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a> )
 <a name="l00287"></a>00287                                 {
 <a name="l00288"></a>00288                                         <span class="comment">// Eat the 1 to 4 byte utf8 character.</span>
-<a name="l00289"></a>00289                                         <span class="keywordtype">int</span> step = <a class="code" href="class_ti_xml_base.html#ac8c86058137bdb4b413c3eca58f2d467">TiXmlBase::utf8ByteTable</a>[*((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*)p)];
+<a name="l00289"></a>00289                                         <span class="keywordtype">int</span> step = <a class="code" href="classTiXmlBase.html#ac8c86058137bdb4b413c3eca58f2d467">TiXmlBase::utf8ByteTable</a>[*((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*)p)];
 <a name="l00290"></a>00290                                         <span class="keywordflow">if</span> ( step == 0 )
 <a name="l00291"></a>00291                                                 step = 1;               <span class="comment">// Error case from bad encoding, but handle gracefully.</span>
 <a name="l00292"></a>00292                                         p += step;
@@ -386,16 +402,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00302"></a>00302                                 <span class="keywordflow">break</span>;
 <a name="l00303"></a>00303                 }
 <a name="l00304"></a>00304         }
-<a name="l00305"></a>00305         cursor.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = row;
-<a name="l00306"></a>00306         cursor.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = col;
-<a name="l00307"></a>00307         assert( cursor.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> &gt;= -1 );
-<a name="l00308"></a>00308         assert( cursor.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> &gt;= -1 );
-<a name="l00309"></a>00309         stamp = p;
-<a name="l00310"></a>00310         assert( stamp );
+<a name="l00305"></a>00305         <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = row;
+<a name="l00306"></a>00306         <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = col;
+<a name="l00307"></a>00307         assert( <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> &gt;= -1 );
+<a name="l00308"></a>00308         assert( <a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> &gt;= -1 );
+<a name="l00309"></a>00309         <a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">stamp</a> = p;
+<a name="l00310"></a>00310         assert( <a class="code" href="classTiXmlParsingData.html#a0e3c2ea5a8b738d733735ca0318fe4ff">stamp</a> );
 <a name="l00311"></a>00311 }
 <a name="l00312"></a>00312 
 <a name="l00313"></a>00313 
-<a name="l00314"></a><a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">00314</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">TiXmlBase::SkipWhiteSpace</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00314"></a><a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">00314</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">TiXmlBase::SkipWhiteSpace</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00315"></a>00315 {
 <a name="l00316"></a>00316         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l00317"></a>00317         {
@@ -430,7 +446,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00346"></a>00346                                 <span class="keywordflow">continue</span>;
 <a name="l00347"></a>00347                         }
 <a name="l00348"></a>00348 
-<a name="l00349"></a>00349                         <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )               <span class="comment">// Still using old rules for white space.</span>
+<a name="l00349"></a>00349                         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )               <span class="comment">// Still using old rules for white space.</span>
 <a name="l00350"></a>00350                                 ++p;
 <a name="l00351"></a>00351                         <span class="keywordflow">else</span>
 <a name="l00352"></a>00352                                 <span class="keywordflow">break</span>;
@@ -438,7 +454,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00354"></a>00354         }
 <a name="l00355"></a>00355         <span class="keywordflow">else</span>
 <a name="l00356"></a>00356         {
-<a name="l00357"></a>00357                 <span class="keywordflow">while</span> ( *p &amp;&amp; <a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
+<a name="l00357"></a>00357                 <span class="keywordflow">while</span> ( *p &amp;&amp; <a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
 <a name="l00358"></a>00358                         ++p;
 <a name="l00359"></a>00359         }
 <a name="l00360"></a>00360 
@@ -446,7 +462,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00362"></a>00362 }
 <a name="l00363"></a>00363 
 <a name="l00364"></a>00364 <span class="preprocessor">#ifdef TIXML_USE_STL</span>
-<a name="l00365"></a>00365 <span class="preprocessor"></span><span class="comment">/*static*/</span> <span class="keywordtype">bool</span> TiXmlBase::StreamWhiteSpace( std::istream * in, <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> * tag )
+<a name="l00365"></a>00365 <span class="preprocessor"></span><span class="comment">/*static*/</span> <span class="keywordtype">bool</span> TiXmlBase::StreamWhiteSpace( std::istream * <a class="code" href="namespaceosgEarth_1_1Json.html#ac78f55a4c4e91e3fd75de3ad98b50bef">in</a>, <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> * tag )
 <a name="l00366"></a>00366 {
 <a name="l00367"></a>00367         <span class="keywordflow">for</span>( ;; )
 <a name="l00368"></a>00368         {
@@ -454,7 +470,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00370"></a>00370 
 <a name="l00371"></a>00371                 <span class="keywordtype">int</span> c = in-&gt;peek();
 <a name="l00372"></a>00372                 <span class="comment">// At this scope, we can&#39;t get to a document. So fail silently.</span>
-<a name="l00373"></a>00373                 <span class="keywordflow">if</span> ( !<a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( c ) || c &lt;= 0 )
+<a name="l00373"></a>00373                 <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( c ) || c &lt;= 0 )
 <a name="l00374"></a>00374                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00375"></a>00375 
 <a name="l00376"></a>00376                 *tag += (char) in-&gt;get();
@@ -482,7 +498,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00398"></a>00398 <span class="comment">// One of TinyXML&#39;s more performance demanding functions. Try to keep the memory overhead down. The</span>
 <a name="l00399"></a>00399 <span class="comment">// &quot;assign&quot; optimization removes over 10% of the execution time.</span>
 <a name="l00400"></a>00400 <span class="comment">//</span>
-<a name="l00401"></a><a class="code" href="class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3">00401</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3">TiXmlBase::ReadName</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> * name, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00401"></a><a class="code" href="classTiXmlBase.html#a1c21a6ab5f7b503acd91f35f183734b3">00401</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlBase.html#a1c21a6ab5f7b503acd91f35f183734b3">TiXmlBase::ReadName</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> * name, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00402"></a>00402 {
 <a name="l00403"></a>00403         <span class="comment">// Oddly, not supported on some comilers,</span>
 <a name="l00404"></a>00404         <span class="comment">//name-&gt;clear();</span>
@@ -498,11 +514,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00414"></a>00414         <span class="comment">// hyphens, or colons. (Colons are valid ony for namespaces,</span>
 <a name="l00415"></a>00415         <span class="comment">// but tinyxml can&#39;t tell namespaces from names.)</span>
 <a name="l00416"></a>00416         <span class="keywordflow">if</span> (    p &amp;&amp; *p 
-<a name="l00417"></a>00417                  &amp;&amp; ( <a class="code" href="class_ti_xml_base.html#ae22522b2e8e1ac43102d16394f639fc8">IsAlpha</a>( (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) *p, encoding ) || *p == <span class="charliteral">&#39;_&#39;</span> ) )
+<a name="l00417"></a>00417                  &amp;&amp; ( <a class="code" href="classTiXmlBase.html#ae22522b2e8e1ac43102d16394f639fc8">IsAlpha</a>( (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) *p, encoding ) || *p == <span class="charliteral">&#39;_&#39;</span> ) )
 <a name="l00418"></a>00418         {
 <a name="l00419"></a>00419                 <span class="keyword">const</span> <span class="keywordtype">char</span>* start = p;
 <a name="l00420"></a>00420                 <span class="keywordflow">while</span>(          p &amp;&amp; *p
-<a name="l00421"></a>00421                                 &amp;&amp;      (               <a class="code" href="class_ti_xml_base.html#a321919055c115c78ded17f85a793f368">IsAlphaNum</a>( (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ) *p, encoding ) 
+<a name="l00421"></a>00421                                 &amp;&amp;      (               <a class="code" href="classTiXmlBase.html#a321919055c115c78ded17f85a793f368">IsAlphaNum</a>( (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ) *p, encoding ) 
 <a name="l00422"></a>00422                                                  || *p == <span class="charliteral">&#39;_&#39;</span>
 <a name="l00423"></a>00423                                                  || *p == <span class="charliteral">&#39;-&#39;</span>
 <a name="l00424"></a>00424                                                  || *p == <span class="charliteral">&#39;.&#39;</span>
@@ -519,7 +535,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00435"></a>00435         <span class="keywordflow">return</span> 0;
 <a name="l00436"></a>00436 }
 <a name="l00437"></a>00437 
-<a name="l00438"></a><a class="code" href="class_ti_xml_base.html#ac5c08bf3deffcda0bf8ce2958372b584">00438</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_base.html#ac5c08bf3deffcda0bf8ce2958372b584">TiXmlBase::GetEntity</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, <span class="keywordtype">int</span>* length, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00438"></a><a class="code" href="classTiXmlBase.html#ac5c08bf3deffcda0bf8ce2958372b584">00438</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlBase.html#ac5c08bf3deffcda0bf8ce2958372b584">TiXmlBase::GetEntity</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <span class="keywordtype">char</span>* <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, <span class="keywordtype">int</span>* length, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00439"></a>00439 {
 <a name="l00440"></a>00440         <span class="comment">// Presume an entity, and pull it out.</span>
 <a name="l00441"></a>00441     <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> ent;
@@ -585,7 +601,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00501"></a>00501                 <span class="keywordflow">if</span> ( encoding == <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a> )
 <a name="l00502"></a>00502                 {
 <a name="l00503"></a>00503                         <span class="comment">// convert the UCS to UTF-8</span>
-<a name="l00504"></a>00504                         <a class="code" href="class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b">ConvertUTF32ToUTF8</a>( ucs, value, length );
+<a name="l00504"></a>00504                         <a class="code" href="classTiXmlBase.html#a07c765e3a7f979d343e646ea797b180b">ConvertUTF32ToUTF8</a>( ucs, value, length );
 <a name="l00505"></a>00505                 }
 <a name="l00506"></a>00506                 <span class="keywordflow">else</span>
 <a name="l00507"></a>00507                 {
@@ -596,14 +612,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00512"></a>00512         }
 <a name="l00513"></a>00513 
 <a name="l00514"></a>00514         <span class="comment">// Now try to match it.</span>
-<a name="l00515"></a>00515         <span class="keywordflow">for</span>( i=0; i&lt;NUM_ENTITY; ++i )
+<a name="l00515"></a>00515         <span class="keywordflow">for</span>( i=0; i&lt;<a class="code" href="classTiXmlBase.html#a0ece57ce1f3253db59ce82377c75c295ab848893c6d03fcd8f42941d7079ccb47">NUM_ENTITY</a>; ++i )
 <a name="l00516"></a>00516         {
-<a name="l00517"></a>00517                 <span class="keywordflow">if</span> ( strncmp( entity[i].str, p, entity[i].strLength ) == 0 )
+<a name="l00517"></a>00517                 <span class="keywordflow">if</span> ( strncmp( <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].str, p, <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].strLength ) == 0 )
 <a name="l00518"></a>00518                 {
-<a name="l00519"></a>00519                         assert( strlen( entity[i].str ) == entity[i].strLength );
-<a name="l00520"></a>00520                         *value = entity[i].chr;
+<a name="l00519"></a>00519                         assert( strlen( <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].str ) == <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].strLength );
+<a name="l00520"></a>00520                         *value = <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].<a class="code" href="structTiXmlBase_1_1Entity.html#a2a7e1e68b93b4f76255c60c8fa7f738e">chr</a>;
 <a name="l00521"></a>00521                         *length = 1;
-<a name="l00522"></a>00522                         <span class="keywordflow">return</span> ( p + entity[i].strLength );
+<a name="l00522"></a>00522                         <span class="keywordflow">return</span> ( p + <a class="code" href="classTiXmlBase.html#aae956c75fedff20d337f7cc109c6b71a">entity</a>[i].strLength );
 <a name="l00523"></a>00523                 }
 <a name="l00524"></a>00524         }
 <a name="l00525"></a>00525 
@@ -615,7 +631,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00531"></a>00531 }
 <a name="l00532"></a>00532 
 <a name="l00533"></a>00533 
-<a name="l00534"></a><a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">00534</a> <span class="keywordtype">bool</span> <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">TiXmlBase::StringEqual</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p,
+<a name="l00534"></a><a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">00534</a> <span class="keywordtype">bool</span> <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">TiXmlBase::StringEqual</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p,
 <a name="l00535"></a>00535                                                          <span class="keyword">const</span> <span class="keywordtype">char</span>* tag,
 <a name="l00536"></a>00536                                                          <span class="keywordtype">bool</span> ignoreCase,
 <a name="l00537"></a>00537                                                          <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
@@ -632,7 +648,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00548"></a>00548 
 <a name="l00549"></a>00549         <span class="keywordflow">if</span> ( ignoreCase )
 <a name="l00550"></a>00550         {
-<a name="l00551"></a>00551                 <span class="keywordflow">while</span> ( *q &amp;&amp; *tag &amp;&amp; <a class="code" href="class_ti_xml_base.html#a799f17405a86a5c2029618e85f11a097">ToLower</a>( *q, encoding ) == <a class="code" href="class_ti_xml_base.html#a799f17405a86a5c2029618e85f11a097">ToLower</a>( *tag, encoding ) )
+<a name="l00551"></a>00551                 <span class="keywordflow">while</span> ( *q &amp;&amp; *tag &amp;&amp; <a class="code" href="classTiXmlBase.html#a799f17405a86a5c2029618e85f11a097">ToLower</a>( *q, encoding ) == <a class="code" href="classTiXmlBase.html#a799f17405a86a5c2029618e85f11a097">ToLower</a>( *tag, encoding ) )
 <a name="l00552"></a>00552                 {
 <a name="l00553"></a>00553                         ++q;
 <a name="l00554"></a>00554                         ++tag;
@@ -655,7 +671,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00571"></a>00571         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00572"></a>00572 }
 <a name="l00573"></a>00573 
-<a name="l00574"></a><a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">00574</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">TiXmlBase::ReadText</a>(        <span class="keyword">const</span> <span class="keywordtype">char</span>* p, 
+<a name="l00574"></a><a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">00574</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">TiXmlBase::ReadText</a>(        <span class="keyword">const</span> <span class="keywordtype">char</span>* p, 
 <a name="l00575"></a>00575                                                                         <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> * text, 
 <a name="l00576"></a>00576                                                                         <span class="keywordtype">bool</span> trimWhiteSpace, 
 <a name="l00577"></a>00577                                                                         <span class="keyword">const</span> <span class="keywordtype">char</span>* endTag, 
@@ -664,16 +680,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00580"></a>00580 {
 <a name="l00581"></a>00581     *text = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l00582"></a>00582         <span class="keywordflow">if</span> (    !trimWhiteSpace                 <span class="comment">// certain tags always keep whitespace</span>
-<a name="l00583"></a>00583                  || !condenseWhiteSpace )       <span class="comment">// if true, whitespace is always kept</span>
+<a name="l00583"></a>00583                  || !<a class="code" href="classTiXmlBase.html#a447a05f6a3edbb7892f66f9df8244a3d">condenseWhiteSpace</a> )       <span class="comment">// if true, whitespace is always kept</span>
 <a name="l00584"></a>00584         {
 <a name="l00585"></a>00585                 <span class="comment">// Keep all the white space.</span>
 <a name="l00586"></a>00586                 <span class="keywordflow">while</span> (    p &amp;&amp; *p
-<a name="l00587"></a>00587                                 &amp;&amp; !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, caseInsensitive, encoding )
+<a name="l00587"></a>00587                                 &amp;&amp; !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, caseInsensitive, encoding )
 <a name="l00588"></a>00588                           )
 <a name="l00589"></a>00589                 {
 <a name="l00590"></a>00590                         <span class="keywordtype">int</span> len;
 <a name="l00591"></a>00591                         <span class="keywordtype">char</span> cArr[4] = { 0, 0, 0, 0 };
-<a name="l00592"></a>00592                         p = <a class="code" href="class_ti_xml_base.html#a5b0fde72d6f662ae1fd6303195d2159b">GetChar</a>( p, cArr, &amp;len, encoding );
+<a name="l00592"></a>00592                         p = <a class="code" href="classTiXmlBase.html#a5b0fde72d6f662ae1fd6303195d2159b">GetChar</a>( p, cArr, &amp;len, encoding );
 <a name="l00593"></a>00593                         text-&gt;append( cArr, len );
 <a name="l00594"></a>00594                 }
 <a name="l00595"></a>00595         }
@@ -682,16 +698,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00598"></a>00598                 <span class="keywordtype">bool</span> whitespace = <span class="keyword">false</span>;
 <a name="l00599"></a>00599 
 <a name="l00600"></a>00600                 <span class="comment">// Remove leading white space:</span>
-<a name="l00601"></a>00601                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l00601"></a>00601                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l00602"></a>00602                 <span class="keywordflow">while</span> (    p &amp;&amp; *p
-<a name="l00603"></a>00603                                 &amp;&amp; !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, caseInsensitive, encoding ) )
+<a name="l00603"></a>00603                                 &amp;&amp; !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, caseInsensitive, encoding ) )
 <a name="l00604"></a>00604                 {
 <a name="l00605"></a>00605                         <span class="keywordflow">if</span> ( *p == <span class="charliteral">&#39;\r&#39;</span> || *p == <span class="charliteral">&#39;\n&#39;</span> )
 <a name="l00606"></a>00606                         {
 <a name="l00607"></a>00607                                 whitespace = <span class="keyword">true</span>;
 <a name="l00608"></a>00608                                 ++p;
 <a name="l00609"></a>00609                         }
-<a name="l00610"></a>00610                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
+<a name="l00610"></a>00610                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
 <a name="l00611"></a>00611                         {
 <a name="l00612"></a>00612                                 whitespace = <span class="keyword">true</span>;
 <a name="l00613"></a>00613                                 ++p;
@@ -707,7 +723,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00623"></a>00623                                 }
 <a name="l00624"></a>00624                                 <span class="keywordtype">int</span> len;
 <a name="l00625"></a>00625                                 <span class="keywordtype">char</span> cArr[4] = { 0, 0, 0, 0 };
-<a name="l00626"></a>00626                                 p = <a class="code" href="class_ti_xml_base.html#a5b0fde72d6f662ae1fd6303195d2159b">GetChar</a>( p, cArr, &amp;len, encoding );
+<a name="l00626"></a>00626                                 p = <a class="code" href="classTiXmlBase.html#a5b0fde72d6f662ae1fd6303195d2159b">GetChar</a>( p, cArr, &amp;len, encoding );
 <a name="l00627"></a>00627                                 <span class="keywordflow">if</span> ( len == 1 )
 <a name="l00628"></a>00628                                         (*text) += cArr[0];     <span class="comment">// more efficient</span>
 <a name="l00629"></a>00629                                 <span class="keywordflow">else</span>
@@ -733,7 +749,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00649"></a>00649 
 <a name="l00650"></a>00650         <span class="keywordflow">if</span> ( !StreamTo( in, <span class="charliteral">&#39;&lt;&#39;</span>, tag ) ) 
 <a name="l00651"></a>00651         {
-<a name="l00652"></a>00652                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5f2aee664733a20f13f6f77556b9fa85">TIXML_ERROR_PARSING_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00652"></a>00652                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5f2aee664733a20f13f6f77556b9fa85">TIXML_ERROR_PARSING_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00653"></a>00653                 <span class="keywordflow">return</span>;
 <a name="l00654"></a>00654         }
 <a name="l00655"></a>00655 
@@ -745,7 +761,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00661"></a>00661                         <span class="keywordtype">int</span> c = in-&gt;get();
 <a name="l00662"></a>00662                         <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l00663"></a>00663                         {
-<a name="l00664"></a>00664                                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00664"></a>00664                                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00665"></a>00665                                 <span class="keywordflow">break</span>;
 <a name="l00666"></a>00666                         }
 <a name="l00667"></a>00667                         (*tag) += (char) c;
@@ -756,12 +772,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00672"></a>00672                         <span class="comment">// We now have something we presume to be a node of </span>
 <a name="l00673"></a>00673                         <span class="comment">// some sort. Identify it, and call the node to</span>
 <a name="l00674"></a>00674                         <span class="comment">// continue streaming.</span>
-<a name="l00675"></a>00675                         <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* node = <a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( tag-&gt;c_str() + tagIndex, <a class="code" href="tinyxml_8h.html#ad5b8b092878e9010d6400cb6c13d4879">TIXML_DEFAULT_ENCODING</a> );
+<a name="l00675"></a>00675                         <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* node = <a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( tag-&gt;c_str() + tagIndex, <a class="code" href="tinyxml_8h.html#ad5b8b092878e9010d6400cb6c13d4879">TIXML_DEFAULT_ENCODING</a> );
 <a name="l00676"></a>00676 
 <a name="l00677"></a>00677                         <span class="keywordflow">if</span> ( node )
 <a name="l00678"></a>00678                         {
 <a name="l00679"></a>00679                                 node-&gt;StreamIn( in, tag );
-<a name="l00680"></a>00680                                 <span class="keywordtype">bool</span> isElement = node-&gt;<a class="code" href="class_ti_xml_node.html#a72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">ToElement</a>() != 0;
+<a name="l00680"></a>00680                                 <span class="keywordtype">bool</span> isElement = node-&gt;<a class="code" href="classTiXmlNode.html#a72abed96dc9667ab9e0a2a275301bb1c" title="Cast to a more defined type. Will return null if not of the requested type.">ToElement</a>() != 0;
 <a name="l00681"></a>00681                                 <span class="keyword">delete</span> node;
 <a name="l00682"></a>00682                                 node = 0;
 <a name="l00683"></a>00683 
@@ -774,46 +790,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00690"></a>00690                         }
 <a name="l00691"></a>00691                         <span class="keywordflow">else</span>
 <a name="l00692"></a>00692                         {
-<a name="l00693"></a>00693                                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48abcabc1b8efabeda1cc4352aa73d64390">TIXML_ERROR</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00693"></a>00693                                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55abcabc1b8efabeda1cc4352aa73d64390">TIXML_ERROR</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00694"></a>00694                                 <span class="keywordflow">return</span>;
 <a name="l00695"></a>00695                         }
 <a name="l00696"></a>00696                 }
 <a name="l00697"></a>00697         }
 <a name="l00698"></a>00698         <span class="comment">// We should have returned sooner.</span>
-<a name="l00699"></a>00699         <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48abcabc1b8efabeda1cc4352aa73d64390">TIXML_ERROR</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00699"></a>00699         <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55abcabc1b8efabeda1cc4352aa73d64390">TIXML_ERROR</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00700"></a>00700 }
 <a name="l00701"></a>00701 
 <a name="l00702"></a>00702 <span class="preprocessor">#endif</span>
 <a name="l00703"></a>00703 <span class="preprocessor"></span>
-<a name="l00704"></a><a class="code" href="class_ti_xml_document.html#a789ad2f06f93d52bdb5570b2f3670289">00704</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_document.html#a789ad2f06f93d52bdb5570b2f3670289">TiXmlDocument::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* prevData, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00704"></a><a class="code" href="classTiXmlDocument.html#a789ad2f06f93d52bdb5570b2f3670289">00704</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlDocument.html#a789ad2f06f93d52bdb5570b2f3670289">TiXmlDocument::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* prevData, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00705"></a>00705 {
-<a name="l00706"></a>00706         <a class="code" href="class_ti_xml_document.html#ac66b8c28db86363315712a3574e87c35">ClearError</a>();
+<a name="l00706"></a>00706         <a class="code" href="classTiXmlDocument.html#ac66b8c28db86363315712a3574e87c35">ClearError</a>();
 <a name="l00707"></a>00707 
 <a name="l00708"></a>00708         <span class="comment">// Parse away, at the document level. Since a document</span>
 <a name="l00709"></a>00709         <span class="comment">// contains nothing but other tags, most of what happens</span>
 <a name="l00710"></a>00710         <span class="comment">// here is skipping white space.</span>
 <a name="l00711"></a>00711         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l00712"></a>00712         {
-<a name="l00713"></a>00713                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00713"></a>00713                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00714"></a>00714                 <span class="keywordflow">return</span> 0;
 <a name="l00715"></a>00715         }
 <a name="l00716"></a>00716 
 <a name="l00717"></a>00717         <span class="comment">// Note that, for a document, this needs to come</span>
 <a name="l00718"></a>00718         <span class="comment">// before the while space skip, so that parsing</span>
 <a name="l00719"></a>00719         <span class="comment">// starts from the pointer we are given.</span>
-<a name="l00720"></a>00720         <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a1e6fa622b59dafb71b6efe595105dcdd">Clear</a>();
+<a name="l00720"></a>00720         <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a1e6fa622b59dafb71b6efe595105dcdd">Clear</a>();
 <a name="l00721"></a>00721         <span class="keywordflow">if</span> ( prevData )
 <a name="l00722"></a>00722         {
-<a name="l00723"></a>00723                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = prevData-&gt;cursor.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>;
-<a name="l00724"></a>00724                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = prevData-&gt;cursor.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a>;
+<a name="l00723"></a>00723                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = prevData-&gt;<a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>;
+<a name="l00724"></a>00724                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = prevData-&gt;<a class="code" href="classTiXmlParsingData.html#abee4c6c657f595182a4f8beda4fa1c7d">cursor</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a>;
 <a name="l00725"></a>00725         }
 <a name="l00726"></a>00726         <span class="keywordflow">else</span>
 <a name="l00727"></a>00727         {
-<a name="l00728"></a>00728                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = 0;
-<a name="l00729"></a>00729                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = 0;
+<a name="l00728"></a>00728                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a> = 0;
+<a name="l00729"></a>00729                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> = 0;
 <a name="l00730"></a>00730         }
-<a name="l00731"></a>00731         <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a> data( p, <a class="code" href="class_ti_xml_document.html#a612360241b85bad0826b2a9ae9cda561">TabSize</a>(), <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>, <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="struct_ti_xml_cursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> );
-<a name="l00732"></a>00732         <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data.<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l00731"></a>00731         <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a> data( p, <a class="code" href="classTiXmlDocument.html#a612360241b85bad0826b2a9ae9cda561">TabSize</a>(), <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5b54dd949820c2db061e2be41f3effb3">row</a>, <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a>.<a class="code" href="structTiXmlCursor.html#a5694d7ed2c4d20109d350c14c417969d">col</a> );
+<a name="l00732"></a>00732         <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data.<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l00733"></a>00733 
 <a name="l00734"></a>00734         <span class="keywordflow">if</span> ( encoding == <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> )
 <a name="l00735"></a>00735         {
@@ -824,24 +840,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00740"></a>00740                          &amp;&amp; *(pU+2) &amp;&amp; *(pU+2) == <a class="code" href="tinyxmlparser_8cpp.html#a8e36ce25f81f009c066037e937da3a6a">TIXML_UTF_LEAD_2</a> )
 <a name="l00741"></a>00741                 {
 <a name="l00742"></a>00742                         encoding = <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a>;
-<a name="l00743"></a>00743                         useMicrosoftBOM = <span class="keyword">true</span>;
+<a name="l00743"></a>00743                         <a class="code" href="classTiXmlDocument.html#a4d5400dec9bfb55c640428de33297886">useMicrosoftBOM</a> = <span class="keyword">true</span>;
 <a name="l00744"></a>00744                 }
 <a name="l00745"></a>00745         }
 <a name="l00746"></a>00746 
-<a name="l00747"></a>00747     p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l00747"></a>00747     p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l00748"></a>00748         <span class="keywordflow">if</span> ( !p )
 <a name="l00749"></a>00749         {
-<a name="l00750"></a>00750                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00750"></a>00750                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00751"></a>00751                 <span class="keywordflow">return</span> 0;
 <a name="l00752"></a>00752         }
 <a name="l00753"></a>00753 
 <a name="l00754"></a>00754         <span class="keywordflow">while</span> ( p &amp;&amp; *p )
 <a name="l00755"></a>00755         {
-<a name="l00756"></a>00756                 <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* node = <a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( p, encoding );
+<a name="l00756"></a>00756                 <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* node = <a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( p, encoding );
 <a name="l00757"></a>00757                 <span class="keywordflow">if</span> ( node )
 <a name="l00758"></a>00758                 {
-<a name="l00759"></a>00759                         p = node-&gt;<a class="code" href="class_ti_xml_base.html#a00e4edb0219d00a1379c856e5a1d2025">Parse</a>( p, &amp;data, encoding );
-<a name="l00760"></a>00760                         <a class="code" href="class_ti_xml_node.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( node );
+<a name="l00759"></a>00759                         p = node-&gt;<a class="code" href="classTiXmlBase.html#a00e4edb0219d00a1379c856e5a1d2025">Parse</a>( p, &amp;data, encoding );
+<a name="l00760"></a>00760                         <a class="code" href="classTiXmlNode.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( node );
 <a name="l00761"></a>00761                 }
 <a name="l00762"></a>00762                 <span class="keywordflow">else</span>
 <a name="l00763"></a>00763                 {
@@ -850,28 +866,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00766"></a>00766 
 <a name="l00767"></a>00767                 <span class="comment">// Did we get encoding info?</span>
 <a name="l00768"></a>00768                 <span class="keywordflow">if</span> (    encoding == <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a>
-<a name="l00769"></a>00769                          &amp;&amp; node-&gt;<a class="code" href="class_ti_xml_node.html#a9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">ToDeclaration</a>() )
+<a name="l00769"></a>00769                          &amp;&amp; node-&gt;<a class="code" href="classTiXmlNode.html#a9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">ToDeclaration</a>() )
 <a name="l00770"></a>00770                 {
-<a name="l00771"></a>00771                         <a class="code" href="class_ti_xml_declaration.html">TiXmlDeclaration</a>* dec = node-&gt;<a class="code" href="class_ti_xml_node.html#a9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">ToDeclaration</a>();
-<a name="l00772"></a>00772                         <span class="keyword">const</span> <span class="keywordtype">char</span>* enc = dec-&gt;<a class="code" href="class_ti_xml_declaration.html#a5d974231f9e9a2f0542f15f3a46cdb76" title="Encoding. Will return an empty string if none was found.">Encoding</a>();
+<a name="l00771"></a>00771                         <a class="code" href="classTiXmlDeclaration.html">TiXmlDeclaration</a>* dec = node-&gt;<a class="code" href="classTiXmlNode.html#a9f43e6984fc7d4afd6eb32714c6b7b72" title="Cast to a more defined type. Will return null if not of the requested type.">ToDeclaration</a>();
+<a name="l00772"></a>00772                         <span class="keyword">const</span> <span class="keywordtype">char</span>* enc = dec-&gt;<a class="code" href="classTiXmlDeclaration.html#a5d974231f9e9a2f0542f15f3a46cdb76" title="Encoding. Will return an empty string if none was found.">Encoding</a>();
 <a name="l00773"></a>00773                         assert( enc );
 <a name="l00774"></a>00774 
 <a name="l00775"></a>00775                         <span class="keywordflow">if</span> ( *enc == 0 )
 <a name="l00776"></a>00776                                 encoding = <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a>;
-<a name="l00777"></a>00777                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( enc, <span class="stringliteral">&quot;UTF-8&quot;</span>, <span class="keyword">true</span>, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> ) )
+<a name="l00777"></a>00777                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( enc, <span class="stringliteral">&quot;UTF-8&quot;</span>, <span class="keyword">true</span>, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> ) )
 <a name="l00778"></a>00778                                 encoding = <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a>;
-<a name="l00779"></a>00779                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( enc, <span class="stringliteral">&quot;UTF8&quot;</span>, <span class="keyword">true</span>, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> ) )
+<a name="l00779"></a>00779                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( enc, <span class="stringliteral">&quot;UTF8&quot;</span>, <span class="keyword">true</span>, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> ) )
 <a name="l00780"></a>00780                                 encoding = <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96af95195ddd184a603ec46225e87059d0a">TIXML_ENCODING_UTF8</a>; <span class="comment">// incorrect, but be nice</span>
 <a name="l00781"></a>00781                         <span class="keywordflow">else</span> 
 <a name="l00782"></a>00782                                 encoding = <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a6baf76361e2641bb52e08d8b4be412b1">TIXML_ENCODING_LEGACY</a>;
 <a name="l00783"></a>00783                 }
 <a name="l00784"></a>00784 
-<a name="l00785"></a>00785                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l00785"></a>00785                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l00786"></a>00786         }
 <a name="l00787"></a>00787 
 <a name="l00788"></a>00788         <span class="comment">// Was this empty?</span>
-<a name="l00789"></a>00789         <span class="keywordflow">if</span> ( !<a class="code" href="class_ti_xml_node.html#af749fb7f22010b80e8f904c32653d50e">firstChild</a> ) {
-<a name="l00790"></a>00790                 <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, encoding );
+<a name="l00789"></a>00789         <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlNode.html#af749fb7f22010b80e8f904c32653d50e">firstChild</a> ) {
+<a name="l00790"></a>00790                 <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ab345f3e42e6ae9cdedee2b95e4d461b9">TIXML_ERROR_DOCUMENT_EMPTY</a>, 0, 0, encoding );
 <a name="l00791"></a>00791                 <span class="keywordflow">return</span> 0;
 <a name="l00792"></a>00792         }
 <a name="l00793"></a>00793 
@@ -879,37 +895,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00795"></a>00795         <span class="keywordflow">return</span> p;
 <a name="l00796"></a>00796 }
 <a name="l00797"></a>00797 
-<a name="l00798"></a><a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">00798</a> <span class="keywordtype">void</span> <a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">TiXmlDocument::SetError</a>( <span class="keywordtype">int</span> err, <span class="keyword">const</span> <span class="keywordtype">char</span>* pError, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00798"></a><a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">00798</a> <span class="keywordtype">void</span> <a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">TiXmlDocument::SetError</a>( <span class="keywordtype">int</span> err, <span class="keyword">const</span> <span class="keywordtype">char</span>* pError, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00799"></a>00799 {       
 <a name="l00800"></a>00800         <span class="comment">// The first error in a chain is more accurate - don&#39;t set again!</span>
-<a name="l00801"></a>00801         <span class="keywordflow">if</span> ( error )
+<a name="l00801"></a>00801         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlDocument.html#a1ff6a063602f31acae6f37fc049d8bbd">error</a> )
 <a name="l00802"></a>00802                 <span class="keywordflow">return</span>;
 <a name="l00803"></a>00803 
-<a name="l00804"></a>00804         assert( err &gt; 0 &amp;&amp; err &lt; <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a14552894942250efcec6b00dc52fc48a">TIXML_ERROR_STRING_COUNT</a> );
-<a name="l00805"></a>00805         error   = <span class="keyword">true</span>;
-<a name="l00806"></a>00806         errorId = err;
-<a name="l00807"></a>00807         errorDesc = <a class="code" href="class_ti_xml_base.html#a7ac8feec4100e446b3d78e1ac0659700">errorString</a>[ errorId ];
+<a name="l00804"></a>00804         assert( err &gt; 0 &amp;&amp; err &lt; <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a14552894942250efcec6b00dc52fc48a">TIXML_ERROR_STRING_COUNT</a> );
+<a name="l00805"></a>00805         <a class="code" href="classTiXmlDocument.html#a1ff6a063602f31acae6f37fc049d8bbd">error</a>   = <span class="keyword">true</span>;
+<a name="l00806"></a>00806         <a class="code" href="classTiXmlDocument.html#acdef97a4bb80729ac6863dd54cee7eeb">errorId</a> = err;
+<a name="l00807"></a>00807         <a class="code" href="classTiXmlDocument.html#a2da9a95ba3f9c895a8d7f4de7122a642">errorDesc</a> = <a class="code" href="classTiXmlBase.html#a7ac8feec4100e446b3d78e1ac0659700">errorString</a>[ <a class="code" href="classTiXmlDocument.html#acdef97a4bb80729ac6863dd54cee7eeb">errorId</a> ];
 <a name="l00808"></a>00808 
-<a name="l00809"></a>00809         errorLocation.<a class="code" href="struct_ti_xml_cursor.html#a1e6fa622b59dafb71b6efe595105dcdd">Clear</a>();
+<a name="l00809"></a>00809         <a class="code" href="classTiXmlDocument.html#aa4030f989f1549f6b897147fc2851d1a">errorLocation</a>.<a class="code" href="structTiXmlCursor.html#a1e6fa622b59dafb71b6efe595105dcdd">Clear</a>();
 <a name="l00810"></a>00810         <span class="keywordflow">if</span> ( pError &amp;&amp; data )
 <a name="l00811"></a>00811         {
-<a name="l00812"></a>00812                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( pError, encoding );
-<a name="l00813"></a>00813                 errorLocation = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l00812"></a>00812                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( pError, encoding );
+<a name="l00813"></a>00813                 <a class="code" href="classTiXmlDocument.html#aa4030f989f1549f6b897147fc2851d1a">errorLocation</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l00814"></a>00814         }
 <a name="l00815"></a>00815 }
 <a name="l00816"></a>00816 
 <a name="l00817"></a>00817 
-<a name="l00818"></a><a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">00818</a> <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* <a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">TiXmlNode::Identify</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l00818"></a><a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">00818</a> <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* <a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">TiXmlNode::Identify</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l00819"></a>00819 {
-<a name="l00820"></a>00820         <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* returnNode = 0;
+<a name="l00820"></a>00820         <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* returnNode = 0;
 <a name="l00821"></a>00821 
-<a name="l00822"></a>00822         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l00822"></a>00822         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l00823"></a>00823         <span class="keywordflow">if</span>( !p || !*p || *p != <span class="charliteral">&#39;&lt;&#39;</span> )
 <a name="l00824"></a>00824         {
 <a name="l00825"></a>00825                 <span class="keywordflow">return</span> 0;
 <a name="l00826"></a>00826         }
 <a name="l00827"></a>00827 
-<a name="l00828"></a>00828         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l00828"></a>00828         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l00829"></a>00829 
 <a name="l00830"></a>00830         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l00831"></a>00831         {
@@ -928,56 +944,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00844"></a>00844         <span class="keyword">const</span> <span class="keywordtype">char</span>* dtdHeader = { <span class="stringliteral">&quot;&lt;!&quot;</span> };
 <a name="l00845"></a>00845         <span class="keyword">const</span> <span class="keywordtype">char</span>* cdataHeader = { <span class="stringliteral">&quot;&lt;![CDATA[&quot;</span> };
 <a name="l00846"></a>00846 
-<a name="l00847"></a>00847         <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, xmlHeader, <span class="keyword">true</span>, encoding ) )
+<a name="l00847"></a>00847         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, xmlHeader, <span class="keyword">true</span>, encoding ) )
 <a name="l00848"></a>00848         {
 <a name="l00849"></a>00849 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00850"></a>00850 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing Declaration\n&quot;</span> );
 <a name="l00851"></a>00851 <span class="preprocessor">                #endif</span>
-<a name="l00852"></a>00852 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_declaration.html">TiXmlDeclaration</a>();
+<a name="l00852"></a>00852 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="classTiXmlDeclaration.html">TiXmlDeclaration</a>();
 <a name="l00853"></a>00853         }
-<a name="l00854"></a>00854         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, commentHeader, <span class="keyword">false</span>, encoding ) )
+<a name="l00854"></a>00854         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, commentHeader, <span class="keyword">false</span>, encoding ) )
 <a name="l00855"></a>00855         {
 <a name="l00856"></a>00856 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00857"></a>00857 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing Comment\n&quot;</span> );
 <a name="l00858"></a>00858 <span class="preprocessor">                #endif</span>
-<a name="l00859"></a>00859 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_comment.html">TiXmlComment</a>();
+<a name="l00859"></a>00859 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="classTiXmlComment.html">TiXmlComment</a>();
 <a name="l00860"></a>00860         }
-<a name="l00861"></a>00861         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, cdataHeader, <span class="keyword">false</span>, encoding ) )
+<a name="l00861"></a>00861         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, cdataHeader, <span class="keyword">false</span>, encoding ) )
 <a name="l00862"></a>00862         {
 <a name="l00863"></a>00863 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00864"></a>00864 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing CDATA\n&quot;</span> );
 <a name="l00865"></a>00865 <span class="preprocessor">                #endif</span>
-<a name="l00866"></a>00866 <span class="preprocessor"></span>                <a class="code" href="class_ti_xml_text.html">TiXmlText</a>* text = <span class="keyword">new</span> <a class="code" href="class_ti_xml_text.html">TiXmlText</a>( <span class="stringliteral">&quot;&quot;</span> );
-<a name="l00867"></a>00867                 text-&gt;<a class="code" href="class_ti_xml_text.html#acb17ff7c5d09b2c839393445a3de5ea9" title="Turns on or off a CDATA representation of text.">SetCDATA</a>( <span class="keyword">true</span> );
+<a name="l00866"></a>00866 <span class="preprocessor"></span>                <a class="code" href="classTiXmlText.html">TiXmlText</a>* text = <span class="keyword">new</span> <a class="code" href="classTiXmlText.html">TiXmlText</a>( <span class="stringliteral">&quot;&quot;</span> );
+<a name="l00867"></a>00867                 text-&gt;<a class="code" href="classTiXmlText.html#acb17ff7c5d09b2c839393445a3de5ea9" title="Turns on or off a CDATA representation of text.">SetCDATA</a>( <span class="keyword">true</span> );
 <a name="l00868"></a>00868                 returnNode = text;
 <a name="l00869"></a>00869         }
-<a name="l00870"></a>00870         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, dtdHeader, <span class="keyword">false</span>, encoding ) )
+<a name="l00870"></a>00870         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, dtdHeader, <span class="keyword">false</span>, encoding ) )
 <a name="l00871"></a>00871         {
 <a name="l00872"></a>00872 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00873"></a>00873 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing Unknown(1)\n&quot;</span> );
 <a name="l00874"></a>00874 <span class="preprocessor">                #endif</span>
-<a name="l00875"></a>00875 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_unknown.html">TiXmlUnknown</a>();
+<a name="l00875"></a>00875 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="classTiXmlUnknown.html">TiXmlUnknown</a>();
 <a name="l00876"></a>00876         }
-<a name="l00877"></a>00877         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (    <a class="code" href="class_ti_xml_base.html#ae22522b2e8e1ac43102d16394f639fc8">IsAlpha</a>( *(p+1), encoding )
+<a name="l00877"></a>00877         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (    <a class="code" href="classTiXmlBase.html#ae22522b2e8e1ac43102d16394f639fc8">IsAlpha</a>( *(p+1), encoding )
 <a name="l00878"></a>00878                           || *(p+1) == <span class="charliteral">&#39;_&#39;</span> )
 <a name="l00879"></a>00879         {
 <a name="l00880"></a>00880 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00881"></a>00881 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing Element\n&quot;</span> );
 <a name="l00882"></a>00882 <span class="preprocessor">                #endif</span>
-<a name="l00883"></a>00883 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_node.html#ab6592e32cb9132be517cc12a70564c4b">TiXmlElement</a>( <span class="stringliteral">&quot;&quot;</span> );
+<a name="l00883"></a>00883 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="classTiXmlNode.html#ab6592e32cb9132be517cc12a70564c4b">TiXmlElement</a>( <span class="stringliteral">&quot;&quot;</span> );
 <a name="l00884"></a>00884         }
 <a name="l00885"></a>00885         <span class="keywordflow">else</span>
 <a name="l00886"></a>00886         {
 <a name="l00887"></a>00887 <span class="preprocessor">                #ifdef DEBUG_PARSER</span>
 <a name="l00888"></a>00888 <span class="preprocessor"></span>                        TIXML_LOG( <span class="stringliteral">&quot;XML parsing Unknown(2)\n&quot;</span> );
 <a name="l00889"></a>00889 <span class="preprocessor">                #endif</span>
-<a name="l00890"></a>00890 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_unknown.html">TiXmlUnknown</a>();
+<a name="l00890"></a>00890 <span class="preprocessor"></span>                returnNode = <span class="keyword">new</span> <a class="code" href="classTiXmlUnknown.html">TiXmlUnknown</a>();
 <a name="l00891"></a>00891         }
 <a name="l00892"></a>00892 
 <a name="l00893"></a>00893         <span class="keywordflow">if</span> ( returnNode )
 <a name="l00894"></a>00894         {
 <a name="l00895"></a>00895                 <span class="comment">// Set the parent, so it can report errors</span>
-<a name="l00896"></a>00896                 returnNode-&gt;<a class="code" href="class_ti_xml_node.html#a662c4de61244e4fa5bd4e2d8c63143a5">parent</a> = <span class="keyword">this</span>;
+<a name="l00896"></a>00896                 returnNode-&gt;<a class="code" href="classTiXmlNode.html#a662c4de61244e4fa5bd4e2d8c63143a5">parent</a> = <span class="keyword">this</span>;
 <a name="l00897"></a>00897         }
 <a name="l00898"></a>00898         <span class="keywordflow">return</span> returnNode;
 <a name="l00899"></a>00899 }
@@ -993,9 +1009,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00909"></a>00909                 <span class="keywordtype">int</span> c = in-&gt;get();
 <a name="l00910"></a>00910                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l00911"></a>00911                 {
-<a name="l00912"></a>00912                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l00912"></a>00912                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l00913"></a>00913                         <span class="keywordflow">if</span> ( document )
-<a name="l00914"></a>00914                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00914"></a>00914                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00915"></a>00915                         <span class="keywordflow">return</span>;
 <a name="l00916"></a>00916                 }
 <a name="l00917"></a>00917                 (*tag) += (char) c ;
@@ -1030,7 +1046,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00946"></a>00946                         <span class="keywordflow">if</span> ( in-&gt;good() &amp;&amp; in-&gt;peek() != <span class="charliteral">&#39;&lt;&#39;</span> ) 
 <a name="l00947"></a>00947                         {
 <a name="l00948"></a>00948                                 <span class="comment">// Yep, text.</span>
-<a name="l00949"></a>00949                                 <a class="code" href="class_ti_xml_text.html">TiXmlText</a> text( <span class="stringliteral">&quot;&quot;</span> );
+<a name="l00949"></a>00949                                 <a class="code" href="classTiXmlText.html">TiXmlText</a> text( <span class="stringliteral">&quot;&quot;</span> );
 <a name="l00950"></a>00950                                 text.StreamIn( in, tag );
 <a name="l00951"></a>00951 
 <a name="l00952"></a>00952                                 <span class="comment">// What follows text is a closing tag or another node.</span>
@@ -1055,9 +1071,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00971"></a>00971                                 <span class="keywordtype">int</span> c = in-&gt;peek();
 <a name="l00972"></a>00972                                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l00973"></a>00973                                 {
-<a name="l00974"></a>00974                                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l00974"></a>00974                                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l00975"></a>00975                                         <span class="keywordflow">if</span> ( document )
-<a name="l00976"></a>00976                                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l00976"></a>00976                                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l00977"></a>00977                                         <span class="keywordflow">return</span>;
 <a name="l00978"></a>00978                                 }
 <a name="l00979"></a>00979                                 
@@ -1078,7 +1094,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00994"></a>00994                                         }
 <a name="l00995"></a>00995                                 }
 <a name="l00996"></a>00996 
-<a name="l00997"></a>00997                                 <span class="keywordflow">if</span> ( !firstCharFound &amp;&amp; c != <span class="charliteral">&#39;&lt;&#39;</span> &amp;&amp; !<a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( c ) )
+<a name="l00997"></a>00997                                 <span class="keywordflow">if</span> ( !firstCharFound &amp;&amp; c != <span class="charliteral">&#39;&lt;&#39;</span> &amp;&amp; !<a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( c ) )
 <a name="l00998"></a>00998                                 {
 <a name="l00999"></a>00999                                         firstCharFound = <span class="keyword">true</span>;
 <a name="l01000"></a>01000                                         <span class="keywordflow">if</span> ( c == <span class="charliteral">&#39;/&#39;</span> )
@@ -1095,9 +1111,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01011"></a>01011                                 <span class="keywordtype">int</span> c = in-&gt;get();
 <a name="l01012"></a>01012                                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l01013"></a>01013                                 {
-<a name="l01014"></a>01014                                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01014"></a>01014                                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01015"></a>01015                                         <span class="keywordflow">if</span> ( document )
-<a name="l01016"></a>01016                                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l01016"></a>01016                                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l01017"></a>01017                                         <span class="keywordflow">return</span>;
 <a name="l01018"></a>01018                                 }
 <a name="l01019"></a>01019                                 assert( c == <span class="charliteral">&#39;&gt;&#39;</span> );
@@ -1110,7 +1126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01026"></a>01026                         {
 <a name="l01027"></a>01027                                 <span class="comment">// If not a closing tag, id it, and stream.</span>
 <a name="l01028"></a>01028                                 <span class="keyword">const</span> <span class="keywordtype">char</span>* tagloc = tag-&gt;c_str() + tagIndex;
-<a name="l01029"></a>01029                                 <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* node = <a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( tagloc, <a class="code" href="tinyxml_8h.html#ad5b8b092878e9010d6400cb6c13d4879">TIXML_DEFAULT_ENCODING</a> );
+<a name="l01029"></a>01029                                 <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* node = <a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( tagloc, <a class="code" href="tinyxml_8h.html#ad5b8b092878e9010d6400cb6c13d4879">TIXML_DEFAULT_ENCODING</a> );
 <a name="l01030"></a>01030                                 <span class="keywordflow">if</span> ( !node )
 <a name="l01031"></a>01031                                         <span class="keywordflow">return</span>;
 <a name="l01032"></a>01032                                 node-&gt;StreamIn( in, tag );
@@ -1124,53 +1140,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01040"></a>01040 }
 <a name="l01041"></a>01041 <span class="preprocessor">#endif</span>
 <a name="l01042"></a>01042 <span class="preprocessor"></span>
-<a name="l01043"></a><a class="code" href="class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b">01043</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_element.html#af95c9165159fd9dfdcc5b894a3fcf85b">TiXmlElement::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01043"></a><a class="code" href="classTiXmlElement.html#af95c9165159fd9dfdcc5b894a3fcf85b">01043</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlElement.html#af95c9165159fd9dfdcc5b894a3fcf85b">TiXmlElement::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01044"></a>01044 {
-<a name="l01045"></a>01045         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
-<a name="l01046"></a>01046         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01045"></a>01045         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01046"></a>01046         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01047"></a>01047 
 <a name="l01048"></a>01048         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01049"></a>01049         {
-<a name="l01050"></a>01050                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, 0, 0, encoding );
+<a name="l01050"></a>01050                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, 0, 0, encoding );
 <a name="l01051"></a>01051                 <span class="keywordflow">return</span> 0;
 <a name="l01052"></a>01052         }
 <a name="l01053"></a>01053 
 <a name="l01054"></a>01054         <span class="keywordflow">if</span> ( data )
 <a name="l01055"></a>01055         {
-<a name="l01056"></a>01056                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
-<a name="l01057"></a>01057                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01056"></a>01056                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
+<a name="l01057"></a>01057                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01058"></a>01058         }
 <a name="l01059"></a>01059 
 <a name="l01060"></a>01060         <span class="keywordflow">if</span> ( *p != <span class="charliteral">&#39;&lt;&#39;</span> )
 <a name="l01061"></a>01061         {
-<a name="l01062"></a>01062                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, p, data, encoding );
+<a name="l01062"></a>01062                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, p, data, encoding );
 <a name="l01063"></a>01063                 <span class="keywordflow">return</span> 0;
 <a name="l01064"></a>01064         }
 <a name="l01065"></a>01065 
-<a name="l01066"></a>01066         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p+1, encoding );
+<a name="l01066"></a>01066         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p+1, encoding );
 <a name="l01067"></a>01067 
 <a name="l01068"></a>01068         <span class="comment">// Read the name.</span>
 <a name="l01069"></a>01069         <span class="keyword">const</span> <span class="keywordtype">char</span>* pErr = p;
 <a name="l01070"></a>01070 
-<a name="l01071"></a>01071     p = <a class="code" href="class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3">ReadName</a>( p, &amp;<a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, encoding );
+<a name="l01071"></a>01071     p = <a class="code" href="classTiXmlBase.html#a1c21a6ab5f7b503acd91f35f183734b3">ReadName</a>( p, &amp;<a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, encoding );
 <a name="l01072"></a>01072         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01073"></a>01073         {
-<a name="l01074"></a>01074                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48adcc31ca78a9d507a88c9fafb3d18a3c4">TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME</a>, pErr, data, encoding );
+<a name="l01074"></a>01074                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55adcc31ca78a9d507a88c9fafb3d18a3c4">TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME</a>, pErr, data, encoding );
 <a name="l01075"></a>01075                 <span class="keywordflow">return</span> 0;
 <a name="l01076"></a>01076         }
 <a name="l01077"></a>01077 
 <a name="l01078"></a>01078     <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> endTag (<span class="stringliteral">&quot;&lt;/&quot;</span>);
-<a name="l01079"></a>01079         endTag += <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>;
+<a name="l01079"></a>01079         endTag += <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>;
 <a name="l01080"></a>01080 
 <a name="l01081"></a>01081         <span class="comment">// Check for and read attributes. Also look for an empty</span>
 <a name="l01082"></a>01082         <span class="comment">// tag or an end tag.</span>
 <a name="l01083"></a>01083         <span class="keywordflow">while</span> ( p &amp;&amp; *p )
 <a name="l01084"></a>01084         {
 <a name="l01085"></a>01085                 pErr = p;
-<a name="l01086"></a>01086                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01086"></a>01086                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01087"></a>01087                 <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01088"></a>01088                 {
-<a name="l01089"></a>01089                         <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, pErr, data, encoding );
+<a name="l01089"></a>01089                         <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, pErr, data, encoding );
 <a name="l01090"></a>01090                         <span class="keywordflow">return</span> 0;
 <a name="l01091"></a>01091                 }
 <a name="l01092"></a>01092                 <span class="keywordflow">if</span> ( *p == <span class="charliteral">&#39;/&#39;</span> )
@@ -1179,7 +1195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01095"></a>01095                         <span class="comment">// Empty tag.</span>
 <a name="l01096"></a>01096                         <span class="keywordflow">if</span> ( *p  != <span class="charliteral">&#39;&gt;&#39;</span> )
 <a name="l01097"></a>01097                         {
-<a name="l01098"></a>01098                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5f2aee664733a20f13f6f77556b9fa85">TIXML_ERROR_PARSING_EMPTY</a>, p, data, encoding );             
+<a name="l01098"></a>01098                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5f2aee664733a20f13f6f77556b9fa85">TIXML_ERROR_PARSING_EMPTY</a>, p, data, encoding );             
 <a name="l01099"></a>01099                                 <span class="keywordflow">return</span> 0;
 <a name="l01100"></a>01100                         }
 <a name="l01101"></a>01101                         <span class="keywordflow">return</span> (p+1);
@@ -1190,11 +1206,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01106"></a>01106                         <span class="comment">// Read the value -- which can include other</span>
 <a name="l01107"></a>01107                         <span class="comment">// elements -- read the end tag, and return.</span>
 <a name="l01108"></a>01108                         ++p;
-<a name="l01109"></a>01109                         p = <a class="code" href="class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41">ReadValue</a>( p, data, encoding );             <span class="comment">// Note this is an Element method, and will set the error if one happens.</span>
+<a name="l01109"></a>01109                         p = <a class="code" href="classTiXmlElement.html#ac786bce103042d3837c4cc2ff6967d41">ReadValue</a>( p, data, encoding );             <span class="comment">// Note this is an Element method, and will set the error if one happens.</span>
 <a name="l01110"></a>01110                         <span class="keywordflow">if</span> ( !p || !*p ) {
 <a name="l01111"></a>01111                                 <span class="comment">// We were looking for the end tag, but found nothing.</span>
 <a name="l01112"></a>01112                                 <span class="comment">// Fix for [ 1663758 ] Failure to report error on bad XML</span>
-<a name="l01113"></a>01113                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
+<a name="l01113"></a>01113                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
 <a name="l01114"></a>01114                                 <span class="keywordflow">return</span> 0;
 <a name="l01115"></a>01115                         }
 <a name="l01116"></a>01116 
@@ -1203,96 +1219,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01119"></a>01119                         <span class="comment">// &lt;/foo &gt; and</span>
 <a name="l01120"></a>01120                         <span class="comment">// &lt;/foo&gt; </span>
 <a name="l01121"></a>01121                         <span class="comment">// are both valid end tags.</span>
-<a name="l01122"></a>01122                         <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag.c_str(), <span class="keyword">false</span>, encoding ) )
+<a name="l01122"></a>01122                         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag.c_str(), <span class="keyword">false</span>, encoding ) )
 <a name="l01123"></a>01123                         {
 <a name="l01124"></a>01124                                 p += endTag.length();
-<a name="l01125"></a>01125                                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01125"></a>01125                                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01126"></a>01126                                 <span class="keywordflow">if</span> ( p &amp;&amp; *p &amp;&amp; *p == <span class="charliteral">&#39;&gt;&#39;</span> ) {
 <a name="l01127"></a>01127                                         ++p;
 <a name="l01128"></a>01128                                         <span class="keywordflow">return</span> p;
 <a name="l01129"></a>01129                                 }
-<a name="l01130"></a>01130                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
+<a name="l01130"></a>01130                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
 <a name="l01131"></a>01131                                 <span class="keywordflow">return</span> 0;
 <a name="l01132"></a>01132                         }
 <a name="l01133"></a>01133                         <span class="keywordflow">else</span>
 <a name="l01134"></a>01134                         {
-<a name="l01135"></a>01135                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
+<a name="l01135"></a>01135                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a175f7c72e2f9630bb96ef5137b325502">TIXML_ERROR_READING_END_TAG</a>, p, data, encoding );
 <a name="l01136"></a>01136                                 <span class="keywordflow">return</span> 0;
 <a name="l01137"></a>01137                         }
 <a name="l01138"></a>01138                 }
 <a name="l01139"></a>01139                 <span class="keywordflow">else</span>
 <a name="l01140"></a>01140                 {
 <a name="l01141"></a>01141                         <span class="comment">// Try to read an attribute:</span>
-<a name="l01142"></a>01142                         <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a>* attrib = <span class="keyword">new</span> <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a>();
+<a name="l01142"></a>01142                         <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a>* attrib = <span class="keyword">new</span> <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a>();
 <a name="l01143"></a>01143                         <span class="keywordflow">if</span> ( !attrib )
 <a name="l01144"></a>01144                         {
 <a name="l01145"></a>01145                                 <span class="keywordflow">return</span> 0;
 <a name="l01146"></a>01146                         }
 <a name="l01147"></a>01147 
-<a name="l01148"></a>01148                         attrib-&gt;<a class="code" href="class_ti_xml_attribute.html#ac12a94d4548302afb12f488ba101f7d1">SetDocument</a>( document );
+<a name="l01148"></a>01148                         attrib-&gt;<a class="code" href="classTiXmlAttribute.html#ac12a94d4548302afb12f488ba101f7d1">SetDocument</a>( document );
 <a name="l01149"></a>01149                         pErr = p;
-<a name="l01150"></a>01150                         p = attrib-&gt;<a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, encoding );
+<a name="l01150"></a>01150                         p = attrib-&gt;<a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, encoding );
 <a name="l01151"></a>01151 
 <a name="l01152"></a>01152                         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01153"></a>01153                         {
-<a name="l01154"></a>01154                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, pErr, data, encoding );
+<a name="l01154"></a>01154                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, pErr, data, encoding );
 <a name="l01155"></a>01155                                 <span class="keyword">delete</span> attrib;
 <a name="l01156"></a>01156                                 <span class="keywordflow">return</span> 0;
 <a name="l01157"></a>01157                         }
 <a name="l01158"></a>01158 
 <a name="l01159"></a>01159                         <span class="comment">// Handle the strange case of double attributes:</span>
 <a name="l01160"></a>01160 <span class="preprocessor">                        #ifdef TIXML_USE_STL</span>
-<a name="l01161"></a>01161 <span class="preprocessor"></span>                        <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a>* node = attributeSet.<a class="code" href="class_ti_xml_attribute_set.html#af3675cc2bfd0aea153cda1cfcdd1f77e">Find</a>( attrib-&gt;<a class="code" href="class_ti_xml_attribute.html#a64cee17bceb8232eb0736d26dd082d79">NameTStr</a>() );
+<a name="l01161"></a>01161 <span class="preprocessor"></span>                        <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a>* node = <a class="code" href="classTiXmlElement.html#a56d7e69380c3cc938bf213d2857791b2">attributeSet</a>.<a class="code" href="classTiXmlAttributeSet.html#af3675cc2bfd0aea153cda1cfcdd1f77e">Find</a>( attrib-&gt;<a class="code" href="classTiXmlAttribute.html#a64cee17bceb8232eb0736d26dd082d79">NameTStr</a>() );
 <a name="l01162"></a>01162 <span class="preprocessor">                        #else</span>
-<a name="l01163"></a>01163 <span class="preprocessor"></span>                        <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a>* node = attributeSet.<a class="code" href="class_ti_xml_attribute_set.html#af3675cc2bfd0aea153cda1cfcdd1f77e">Find</a>( attrib-&gt;<a class="code" href="class_ti_xml_attribute.html#a298a57287d305904ba6bd96ae6f78d3d" title="Return the name of this attribute.">Name</a>() );
+<a name="l01163"></a>01163 <span class="preprocessor"></span>                        <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a>* node = <a class="code" href="classTiXmlElement.html#a56d7e69380c3cc938bf213d2857791b2">attributeSet</a>.<a class="code" href="classTiXmlAttributeSet.html#af3675cc2bfd0aea153cda1cfcdd1f77e">Find</a>( attrib-&gt;<a class="code" href="classTiXmlAttribute.html#a298a57287d305904ba6bd96ae6f78d3d" title="Return the name of this attribute.">Name</a>() );
 <a name="l01164"></a>01164 <span class="preprocessor">                        #endif</span>
 <a name="l01165"></a>01165 <span class="preprocessor"></span>                        <span class="keywordflow">if</span> ( node )
 <a name="l01166"></a>01166                         {
-<a name="l01167"></a>01167                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, pErr, data, encoding );
+<a name="l01167"></a>01167                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a5cbfcf7fe5e67f0cd1aef98deac55dd2">TIXML_ERROR_PARSING_ELEMENT</a>, pErr, data, encoding );
 <a name="l01168"></a>01168                                 <span class="keyword">delete</span> attrib;
 <a name="l01169"></a>01169                                 <span class="keywordflow">return</span> 0;
 <a name="l01170"></a>01170                         }
 <a name="l01171"></a>01171 
-<a name="l01172"></a>01172                         attributeSet.<a class="code" href="class_ti_xml_attribute_set.html#a745e50ddaae3bee93e4589321e0b9c1a">Add</a>( attrib );
+<a name="l01172"></a>01172                         <a class="code" href="classTiXmlElement.html#a56d7e69380c3cc938bf213d2857791b2">attributeSet</a>.<a class="code" href="classTiXmlAttributeSet.html#a745e50ddaae3bee93e4589321e0b9c1a">Add</a>( attrib );
 <a name="l01173"></a>01173                 }
 <a name="l01174"></a>01174         }
 <a name="l01175"></a>01175         <span class="keywordflow">return</span> p;
 <a name="l01176"></a>01176 }
 <a name="l01177"></a>01177 
 <a name="l01178"></a>01178 
-<a name="l01179"></a><a class="code" href="class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41">01179</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_element.html#ac786bce103042d3837c4cc2ff6967d41">TiXmlElement::ReadValue</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01179"></a><a class="code" href="classTiXmlElement.html#ac786bce103042d3837c4cc2ff6967d41">01179</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlElement.html#ac786bce103042d3837c4cc2ff6967d41">TiXmlElement::ReadValue</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01180"></a>01180 {
-<a name="l01181"></a>01181         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01181"></a>01181         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01182"></a>01182 
 <a name="l01183"></a>01183         <span class="comment">// Read in text and elements in any order.</span>
 <a name="l01184"></a>01184         <span class="keyword">const</span> <span class="keywordtype">char</span>* pWithWhiteSpace = p;
-<a name="l01185"></a>01185         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01185"></a>01185         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01186"></a>01186 
 <a name="l01187"></a>01187         <span class="keywordflow">while</span> ( p &amp;&amp; *p )
 <a name="l01188"></a>01188         {
 <a name="l01189"></a>01189                 <span class="keywordflow">if</span> ( *p != <span class="charliteral">&#39;&lt;&#39;</span> )
 <a name="l01190"></a>01190                 {
 <a name="l01191"></a>01191                         <span class="comment">// Take what we have, make a text element.</span>
-<a name="l01192"></a>01192                         <a class="code" href="class_ti_xml_text.html">TiXmlText</a>* textNode = <span class="keyword">new</span> <a class="code" href="class_ti_xml_text.html">TiXmlText</a>( <span class="stringliteral">&quot;&quot;</span> );
+<a name="l01192"></a>01192                         <a class="code" href="classTiXmlText.html">TiXmlText</a>* textNode = <span class="keyword">new</span> <a class="code" href="classTiXmlText.html">TiXmlText</a>( <span class="stringliteral">&quot;&quot;</span> );
 <a name="l01193"></a>01193 
 <a name="l01194"></a>01194                         <span class="keywordflow">if</span> ( !textNode )
 <a name="l01195"></a>01195                         {
 <a name="l01196"></a>01196                             <span class="keywordflow">return</span> 0;
 <a name="l01197"></a>01197                         }
 <a name="l01198"></a>01198 
-<a name="l01199"></a>01199                         <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#ad4b1472531c647a25b1840a87ae42438" title="Return the current white space setting.">TiXmlBase::IsWhiteSpaceCondensed</a>() )
+<a name="l01199"></a>01199                         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#ad4b1472531c647a25b1840a87ae42438" title="Return the current white space setting.">TiXmlBase::IsWhiteSpaceCondensed</a>() )
 <a name="l01200"></a>01200                         {
-<a name="l01201"></a>01201                                 p = textNode-&gt;<a class="code" href="class_ti_xml_text.html#a8d2dcfa41fc73d3e62dacc2fcf633819">Parse</a>( p, data, encoding );
+<a name="l01201"></a>01201                                 p = textNode-&gt;<a class="code" href="classTiXmlText.html#a8d2dcfa41fc73d3e62dacc2fcf633819">Parse</a>( p, data, encoding );
 <a name="l01202"></a>01202                         }
 <a name="l01203"></a>01203                         <span class="keywordflow">else</span>
 <a name="l01204"></a>01204                         {
 <a name="l01205"></a>01205                                 <span class="comment">// Special case: we want to keep the white space</span>
 <a name="l01206"></a>01206                                 <span class="comment">// so that leading spaces aren&#39;t removed.</span>
-<a name="l01207"></a>01207                                 p = textNode-&gt;<a class="code" href="class_ti_xml_text.html#a8d2dcfa41fc73d3e62dacc2fcf633819">Parse</a>( pWithWhiteSpace, data, encoding );
+<a name="l01207"></a>01207                                 p = textNode-&gt;<a class="code" href="classTiXmlText.html#a8d2dcfa41fc73d3e62dacc2fcf633819">Parse</a>( pWithWhiteSpace, data, encoding );
 <a name="l01208"></a>01208                         }
 <a name="l01209"></a>01209 
-<a name="l01210"></a>01210                         <span class="keywordflow">if</span> ( !textNode-&gt;<a class="code" href="class_ti_xml_text.html#a1c120428e3b3cf24d79706e6d2b65aa6">Blank</a>() )
-<a name="l01211"></a>01211                                 <a class="code" href="class_ti_xml_node.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( textNode );
+<a name="l01210"></a>01210                         <span class="keywordflow">if</span> ( !textNode-&gt;<a class="code" href="classTiXmlText.html#a1c120428e3b3cf24d79706e6d2b65aa6">Blank</a>() )
+<a name="l01211"></a>01211                                 <a class="code" href="classTiXmlNode.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( textNode );
 <a name="l01212"></a>01212                         <span class="keywordflow">else</span>
 <a name="l01213"></a>01213                                 <span class="keyword">delete</span> textNode;
 <a name="l01214"></a>01214                 } 
@@ -1301,17 +1317,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01217"></a>01217                         <span class="comment">// We hit a &#39;&lt;&#39;</span>
 <a name="l01218"></a>01218                         <span class="comment">// Have we hit a new element or an end tag? This could also be</span>
 <a name="l01219"></a>01219                         <span class="comment">// a TiXmlText in the &quot;CDATA&quot; style.</span>
-<a name="l01220"></a>01220                         <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;&lt;/&quot;</span>, <span class="keyword">false</span>, encoding ) )
+<a name="l01220"></a>01220                         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;&lt;/&quot;</span>, <span class="keyword">false</span>, encoding ) )
 <a name="l01221"></a>01221                         {
 <a name="l01222"></a>01222                                 <span class="keywordflow">return</span> p;
 <a name="l01223"></a>01223                         }
 <a name="l01224"></a>01224                         <span class="keywordflow">else</span>
 <a name="l01225"></a>01225                         {
-<a name="l01226"></a>01226                                 <a class="code" href="class_ti_xml_node.html">TiXmlNode</a>* node = <a class="code" href="class_ti_xml_node.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( p, encoding );
+<a name="l01226"></a>01226                                 <a class="code" href="classTiXmlNode.html">TiXmlNode</a>* node = <a class="code" href="classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb">Identify</a>( p, encoding );
 <a name="l01227"></a>01227                                 <span class="keywordflow">if</span> ( node )
 <a name="l01228"></a>01228                                 {
-<a name="l01229"></a>01229                                         p = node-&gt;<a class="code" href="class_ti_xml_base.html#a00e4edb0219d00a1379c856e5a1d2025">Parse</a>( p, data, encoding );
-<a name="l01230"></a>01230                                         <a class="code" href="class_ti_xml_node.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( node );
+<a name="l01229"></a>01229                                         p = node-&gt;<a class="code" href="classTiXmlBase.html#a00e4edb0219d00a1379c856e5a1d2025">Parse</a>( p, data, encoding );
+<a name="l01230"></a>01230                                         <a class="code" href="classTiXmlNode.html#a1a881212554b759865f6cac79a851d38">LinkEndChild</a>( node );
 <a name="l01231"></a>01231                                 }                               
 <a name="l01232"></a>01232                                 <span class="keywordflow">else</span>
 <a name="l01233"></a>01233                                 {
@@ -1320,12 +1336,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01236"></a>01236                         }
 <a name="l01237"></a>01237                 }
 <a name="l01238"></a>01238                 pWithWhiteSpace = p;
-<a name="l01239"></a>01239                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01239"></a>01239                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01240"></a>01240         }
 <a name="l01241"></a>01241 
 <a name="l01242"></a>01242         <span class="keywordflow">if</span> ( !p )
 <a name="l01243"></a>01243         {
-<a name="l01244"></a>01244                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48afefdc75db23215e846605a2b5af0c2d3">TIXML_ERROR_READING_ELEMENT_VALUE</a>, 0, 0, encoding );
+<a name="l01244"></a>01244                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55afefdc75db23215e846605a2b5af0c2d3">TIXML_ERROR_READING_ELEMENT_VALUE</a>, 0, 0, encoding );
 <a name="l01245"></a>01245         }       
 <a name="l01246"></a>01246         <span class="keywordflow">return</span> p;
 <a name="l01247"></a>01247 }
@@ -1339,9 +1355,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01255"></a>01255                 <span class="keywordtype">int</span> c = in-&gt;get();      
 <a name="l01256"></a>01256                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l01257"></a>01257                 {
-<a name="l01258"></a>01258                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01258"></a>01258                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01259"></a>01259                         <span class="keywordflow">if</span> ( document )
-<a name="l01260"></a>01260                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l01260"></a>01260                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l01261"></a>01261                         <span class="keywordflow">return</span>;
 <a name="l01262"></a>01262                 }
 <a name="l01263"></a>01263                 (*tag) += (char) c;
@@ -1356,33 +1372,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01272"></a>01272 <span class="preprocessor">#endif</span>
 <a name="l01273"></a>01273 <span class="preprocessor"></span>
 <a name="l01274"></a>01274 
-<a name="l01275"></a><a class="code" href="class_ti_xml_unknown.html#aa51c2694e4177b5f0b5429ee5a81b58d">01275</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_unknown.html#aa51c2694e4177b5f0b5429ee5a81b58d">TiXmlUnknown::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01275"></a><a class="code" href="classTiXmlUnknown.html#aa51c2694e4177b5f0b5429ee5a81b58d">01275</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlUnknown.html#aa51c2694e4177b5f0b5429ee5a81b58d">TiXmlUnknown::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01276"></a>01276 {
-<a name="l01277"></a>01277         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
-<a name="l01278"></a>01278         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01277"></a>01277         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01278"></a>01278         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01279"></a>01279 
 <a name="l01280"></a>01280         <span class="keywordflow">if</span> ( data )
 <a name="l01281"></a>01281         {
-<a name="l01282"></a>01282                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
-<a name="l01283"></a>01283                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01282"></a>01282                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
+<a name="l01283"></a>01283                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01284"></a>01284         }
 <a name="l01285"></a>01285         <span class="keywordflow">if</span> ( !p || !*p || *p != <span class="charliteral">&#39;&lt;&#39;</span> )
 <a name="l01286"></a>01286         {
-<a name="l01287"></a>01287                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a24c814fdcf1d84704869e6f76b19cb6e">TIXML_ERROR_PARSING_UNKNOWN</a>, p, data, encoding );
+<a name="l01287"></a>01287                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a24c814fdcf1d84704869e6f76b19cb6e">TIXML_ERROR_PARSING_UNKNOWN</a>, p, data, encoding );
 <a name="l01288"></a>01288                 <span class="keywordflow">return</span> 0;
 <a name="l01289"></a>01289         }
 <a name="l01290"></a>01290         ++p;
-<a name="l01291"></a>01291     <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01291"></a>01291     <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01292"></a>01292 
 <a name="l01293"></a>01293         <span class="keywordflow">while</span> ( p &amp;&amp; *p &amp;&amp; *p != <span class="charliteral">&#39;&gt;&#39;</span> )
 <a name="l01294"></a>01294         {
-<a name="l01295"></a>01295                 <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> += *p;
+<a name="l01295"></a>01295                 <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> += *p;
 <a name="l01296"></a>01296                 ++p;
 <a name="l01297"></a>01297         }
 <a name="l01298"></a>01298 
 <a name="l01299"></a>01299         <span class="keywordflow">if</span> ( !p )
 <a name="l01300"></a>01300         {
-<a name="l01301"></a>01301                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a24c814fdcf1d84704869e6f76b19cb6e">TIXML_ERROR_PARSING_UNKNOWN</a>, 0, 0, encoding );
+<a name="l01301"></a>01301                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a24c814fdcf1d84704869e6f76b19cb6e">TIXML_ERROR_PARSING_UNKNOWN</a>, 0, 0, encoding );
 <a name="l01302"></a>01302         }
 <a name="l01303"></a>01303         <span class="keywordflow">if</span> ( *p == <span class="charliteral">&#39;&gt;&#39;</span> )
 <a name="l01304"></a>01304                 <span class="keywordflow">return</span> p+1;
@@ -1397,9 +1413,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01313"></a>01313                 <span class="keywordtype">int</span> c = in-&gt;get();      
 <a name="l01314"></a>01314                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l01315"></a>01315                 {
-<a name="l01316"></a>01316                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01316"></a>01316                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01317"></a>01317                         <span class="keywordflow">if</span> ( document )
-<a name="l01318"></a>01318                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l01318"></a>01318                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l01319"></a>01319                         <span class="keywordflow">return</span>;
 <a name="l01320"></a>01320                 }
 <a name="l01321"></a>01321 
@@ -1417,24 +1433,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01333"></a>01333 <span class="preprocessor">#endif</span>
 <a name="l01334"></a>01334 <span class="preprocessor"></span>
 <a name="l01335"></a>01335 
-<a name="l01336"></a><a class="code" href="class_ti_xml_comment.html#a43bddc18ac057734b41d84653b71d3e0">01336</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_comment.html#a43bddc18ac057734b41d84653b71d3e0">TiXmlComment::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01336"></a><a class="code" href="classTiXmlComment.html#a43bddc18ac057734b41d84653b71d3e0">01336</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlComment.html#a43bddc18ac057734b41d84653b71d3e0">TiXmlComment::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01337"></a>01337 {
-<a name="l01338"></a>01338         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
-<a name="l01339"></a>01339         <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01338"></a>01338         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01339"></a>01339         <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01340"></a>01340 
-<a name="l01341"></a>01341         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01341"></a>01341         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01342"></a>01342 
 <a name="l01343"></a>01343         <span class="keywordflow">if</span> ( data )
 <a name="l01344"></a>01344         {
-<a name="l01345"></a>01345                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
-<a name="l01346"></a>01346                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01345"></a>01345                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
+<a name="l01346"></a>01346                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01347"></a>01347         }
 <a name="l01348"></a>01348         <span class="keyword">const</span> <span class="keywordtype">char</span>* startTag = <span class="stringliteral">&quot;&lt;!--&quot;</span>;
 <a name="l01349"></a>01349         <span class="keyword">const</span> <span class="keywordtype">char</span>* endTag   = <span class="stringliteral">&quot;--&gt;&quot;</span>;
 <a name="l01350"></a>01350 
-<a name="l01351"></a>01351         <span class="keywordflow">if</span> ( !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
+<a name="l01351"></a>01351         <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
 <a name="l01352"></a>01352         {
-<a name="l01353"></a>01353                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a72e3072a44be499edb89593f6ce10f6c">TIXML_ERROR_PARSING_COMMENT</a>, p, data, encoding );
+<a name="l01353"></a>01353                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a72e3072a44be499edb89593f6ce10f6c">TIXML_ERROR_PARSING_COMMENT</a>, p, data, encoding );
 <a name="l01354"></a>01354                 <span class="keywordflow">return</span> 0;
 <a name="l01355"></a>01355         }
 <a name="l01356"></a>01356         p += strlen( startTag );
@@ -1457,11 +1473,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01373"></a>01373 <span class="comment">                                  &lt;!-- declarations for &lt;head&gt; &amp; &lt;body&gt; --&gt;</span>
 <a name="l01374"></a>01374 <span class="comment">        */</span>
 <a name="l01375"></a>01375 
-<a name="l01376"></a>01376     <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01376"></a>01376     <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01377"></a>01377         <span class="comment">// Keep all the white space.</span>
-<a name="l01378"></a>01378         <span class="keywordflow">while</span> ( p &amp;&amp; *p &amp;&amp; !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, <span class="keyword">false</span>, encoding ) )
+<a name="l01378"></a>01378         <span class="keywordflow">while</span> ( p &amp;&amp; *p &amp;&amp; !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, <span class="keyword">false</span>, encoding ) )
 <a name="l01379"></a>01379         {
-<a name="l01380"></a>01380                 <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>.append( p, 1 );
+<a name="l01380"></a>01380                 <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>.append( p, 1 );
 <a name="l01381"></a>01381                 ++p;
 <a name="l01382"></a>01382         }
 <a name="l01383"></a>01383         <span class="keywordflow">if</span> ( p &amp;&amp; *p ) 
@@ -1471,36 +1487,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01387"></a>01387 }
 <a name="l01388"></a>01388 
 <a name="l01389"></a>01389 
-<a name="l01390"></a><a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">01390</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">TiXmlAttribute::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01390"></a><a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">01390</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">TiXmlAttribute::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01391"></a>01391 {
-<a name="l01392"></a>01392         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01392"></a>01392         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01393"></a>01393         <span class="keywordflow">if</span> ( !p || !*p ) <span class="keywordflow">return</span> 0;
 <a name="l01394"></a>01394 
 <a name="l01395"></a>01395         <span class="keywordflow">if</span> ( data )
 <a name="l01396"></a>01396         {
-<a name="l01397"></a>01397                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
-<a name="l01398"></a>01398                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01397"></a>01397                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
+<a name="l01398"></a>01398                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01399"></a>01399         }
 <a name="l01400"></a>01400         <span class="comment">// Read the name, the &#39;=&#39; and the value.</span>
 <a name="l01401"></a>01401         <span class="keyword">const</span> <span class="keywordtype">char</span>* pErr = p;
-<a name="l01402"></a>01402         p = <a class="code" href="class_ti_xml_base.html#a1c21a6ab5f7b503acd91f35f183734b3">ReadName</a>( p, &amp;name, encoding );
+<a name="l01402"></a>01402         p = <a class="code" href="classTiXmlBase.html#a1c21a6ab5f7b503acd91f35f183734b3">ReadName</a>( p, &amp;<a class="code" href="classTiXmlAttribute.html#afcbe165f33f08cf9b24daa33f0ee951a">name</a>, encoding );
 <a name="l01403"></a>01403         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01404"></a>01404         {
-<a name="l01405"></a>01405                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, pErr, data, encoding );
+<a name="l01405"></a>01405                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, pErr, data, encoding );
 <a name="l01406"></a>01406                 <span class="keywordflow">return</span> 0;
 <a name="l01407"></a>01407         }
-<a name="l01408"></a>01408         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01408"></a>01408         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01409"></a>01409         <span class="keywordflow">if</span> ( !p || !*p || *p != <span class="charliteral">&#39;=&#39;</span> )
 <a name="l01410"></a>01410         {
-<a name="l01411"></a>01411                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
+<a name="l01411"></a>01411                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
 <a name="l01412"></a>01412                 <span class="keywordflow">return</span> 0;
 <a name="l01413"></a>01413         }
 <a name="l01414"></a>01414 
 <a name="l01415"></a>01415         ++p;    <span class="comment">// skip &#39;=&#39;</span>
-<a name="l01416"></a>01416         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
+<a name="l01416"></a>01416         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, encoding );
 <a name="l01417"></a>01417         <span class="keywordflow">if</span> ( !p || !*p )
 <a name="l01418"></a>01418         {
-<a name="l01419"></a>01419                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
+<a name="l01419"></a>01419                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
 <a name="l01420"></a>01420                 <span class="keywordflow">return</span> 0;
 <a name="l01421"></a>01421         }
 <a name="l01422"></a>01422         
@@ -1512,32 +1528,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01428"></a>01428         {
 <a name="l01429"></a>01429                 ++p;
 <a name="l01430"></a>01430                 end = <span class="stringliteral">&quot;\&#39;&quot;</span>;             <span class="comment">// single quote in string</span>
-<a name="l01431"></a>01431                 p = <a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, <span class="keyword">false</span>, end, <span class="keyword">false</span>, encoding );
+<a name="l01431"></a>01431                 p = <a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="classTiXmlAttribute.html#ae9e4e5f442347434b1da43954cc1b411">value</a>, <span class="keyword">false</span>, end, <span class="keyword">false</span>, encoding );
 <a name="l01432"></a>01432         }
 <a name="l01433"></a>01433         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( *p == DOUBLE_QUOTE )
 <a name="l01434"></a>01434         {
 <a name="l01435"></a>01435                 ++p;
 <a name="l01436"></a>01436                 end = <span class="stringliteral">&quot;\&quot;&quot;</span>;             <span class="comment">// double quote in string</span>
-<a name="l01437"></a>01437                 p = <a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, <span class="keyword">false</span>, end, <span class="keyword">false</span>, encoding );
+<a name="l01437"></a>01437                 p = <a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="classTiXmlAttribute.html#ae9e4e5f442347434b1da43954cc1b411">value</a>, <span class="keyword">false</span>, end, <span class="keyword">false</span>, encoding );
 <a name="l01438"></a>01438         }
 <a name="l01439"></a>01439         <span class="keywordflow">else</span>
 <a name="l01440"></a>01440         {
 <a name="l01441"></a>01441                 <span class="comment">// All attribute values should be in single or double quotes.</span>
 <a name="l01442"></a>01442                 <span class="comment">// But this is such a common error that the parser will try</span>
 <a name="l01443"></a>01443                 <span class="comment">// its best, even without them.</span>
-<a name="l01444"></a>01444                 <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01444"></a>01444                 <a class="code" href="classTiXmlAttribute.html#ae9e4e5f442347434b1da43954cc1b411">value</a> = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01445"></a>01445                 <span class="keywordflow">while</span> (    p &amp;&amp; *p                                                                                      <span class="comment">// existence</span>
-<a name="l01446"></a>01446                                 &amp;&amp; !<a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p )                                                          <span class="comment">// whitespace</span>
+<a name="l01446"></a>01446                                 &amp;&amp; !<a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p )                                                          <span class="comment">// whitespace</span>
 <a name="l01447"></a>01447                                 &amp;&amp; *p != <span class="charliteral">&#39;/&#39;</span> &amp;&amp; *p != <span class="charliteral">&#39;&gt;&#39;</span> )                                                     <span class="comment">// tag end</span>
 <a name="l01448"></a>01448                 {
 <a name="l01449"></a>01449                         <span class="keywordflow">if</span> ( *p == SINGLE_QUOTE || *p == DOUBLE_QUOTE ) {
 <a name="l01450"></a>01450                                 <span class="comment">// [ 1451649 ] Attribute values with trailing quotes not handled correctly</span>
 <a name="l01451"></a>01451                                 <span class="comment">// We did not have an opening quote but seem to have a </span>
 <a name="l01452"></a>01452                                 <span class="comment">// closing one. Give up and throw an error.</span>
-<a name="l01453"></a>01453                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
+<a name="l01453"></a>01453                                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a670fac23171b64829f90639cc3696d6e">TIXML_ERROR_READING_ATTRIBUTES</a>, p, data, encoding );
 <a name="l01454"></a>01454                                 <span class="keywordflow">return</span> 0;
 <a name="l01455"></a>01455                         }
-<a name="l01456"></a>01456                         <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> += *p;
+<a name="l01456"></a>01456                         <a class="code" href="classTiXmlAttribute.html#ae9e4e5f442347434b1da43954cc1b411">value</a> += *p;
 <a name="l01457"></a>01457                         ++p;
 <a name="l01458"></a>01458                 }
 <a name="l01459"></a>01459         }
@@ -1550,22 +1566,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01466"></a>01466         <span class="keywordflow">while</span> ( in-&gt;good() )
 <a name="l01467"></a>01467         {
 <a name="l01468"></a>01468                 <span class="keywordtype">int</span> c = in-&gt;peek();     
-<a name="l01469"></a>01469                 <span class="keywordflow">if</span> ( !cdata &amp;&amp; (c == <span class="charliteral">&#39;&lt;&#39;</span> ) ) 
+<a name="l01469"></a>01469                 <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlText.html#a1919a0467daf2cf5d099b225add5b9f1">cdata</a> &amp;&amp; (c == <span class="charliteral">&#39;&lt;&#39;</span> ) ) 
 <a name="l01470"></a>01470                 {
 <a name="l01471"></a>01471                         <span class="keywordflow">return</span>;
 <a name="l01472"></a>01472                 }
 <a name="l01473"></a>01473                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l01474"></a>01474                 {
-<a name="l01475"></a>01475                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01475"></a>01475                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01476"></a>01476                         <span class="keywordflow">if</span> ( document )
-<a name="l01477"></a>01477                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l01477"></a>01477                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l01478"></a>01478                         <span class="keywordflow">return</span>;
 <a name="l01479"></a>01479                 }
 <a name="l01480"></a>01480 
 <a name="l01481"></a>01481                 (*tag) += (char) c;
 <a name="l01482"></a>01482                 in-&gt;get();      <span class="comment">// &quot;commits&quot; the peek made above</span>
 <a name="l01483"></a>01483 
-<a name="l01484"></a>01484                 <span class="keywordflow">if</span> ( cdata &amp;&amp; c == <span class="charliteral">&#39;&gt;&#39;</span> &amp;&amp; tag-&gt;size() &gt;= 3 ) {
+<a name="l01484"></a>01484                 <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlText.html#a1919a0467daf2cf5d099b225add5b9f1">cdata</a> &amp;&amp; c == <span class="charliteral">&#39;&gt;&#39;</span> &amp;&amp; tag-&gt;size() &gt;= 3 ) {
 <a name="l01485"></a>01485                         <span class="keywordtype">size_t</span> len = tag-&gt;size();
 <a name="l01486"></a>01486                         <span class="keywordflow">if</span> ( (*tag)[len-2] == <span class="charliteral">&#39;]&#39;</span> &amp;&amp; (*tag)[len-3] == <span class="charliteral">&#39;]&#39;</span> ) {
 <a name="l01487"></a>01487                                 <span class="comment">// terminator of cdata.</span>
@@ -1576,42 +1592,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01492"></a>01492 }
 <a name="l01493"></a>01493 <span class="preprocessor">#endif</span>
 <a name="l01494"></a>01494 <span class="preprocessor"></span>
-<a name="l01495"></a><a class="code" href="class_ti_xml_text.html#a8d2dcfa41fc73d3e62dacc2fcf633819">01495</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_text.html#a8d2dcfa41fc73d3e62dacc2fcf633819">TiXmlText::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
+<a name="l01495"></a><a class="code" href="classTiXmlText.html#a8d2dcfa41fc73d3e62dacc2fcf633819">01495</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlText.html#a8d2dcfa41fc73d3e62dacc2fcf633819">TiXmlText::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> encoding )
 <a name="l01496"></a>01496 {
-<a name="l01497"></a>01497         <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l01498"></a>01498         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01497"></a>01497         <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01498"></a>01498         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01499"></a>01499 
 <a name="l01500"></a>01500         <span class="keywordflow">if</span> ( data )
 <a name="l01501"></a>01501         {
-<a name="l01502"></a>01502                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
-<a name="l01503"></a>01503                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01502"></a>01502                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, encoding );
+<a name="l01503"></a>01503                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01504"></a>01504         }
 <a name="l01505"></a>01505 
 <a name="l01506"></a>01506         <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> startTag = <span class="stringliteral">&quot;&lt;![CDATA[&quot;</span>;
 <a name="l01507"></a>01507         <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> endTag   = <span class="stringliteral">&quot;]]&gt;&quot;</span>;
 <a name="l01508"></a>01508 
-<a name="l01509"></a>01509         <span class="keywordflow">if</span> ( cdata || <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
+<a name="l01509"></a>01509         <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlText.html#a1919a0467daf2cf5d099b225add5b9f1">cdata</a> || <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
 <a name="l01510"></a>01510         {
-<a name="l01511"></a>01511                 cdata = <span class="keyword">true</span>;
+<a name="l01511"></a>01511                 <a class="code" href="classTiXmlText.html#a1919a0467daf2cf5d099b225add5b9f1">cdata</a> = <span class="keyword">true</span>;
 <a name="l01512"></a>01512 
-<a name="l01513"></a>01513                 <span class="keywordflow">if</span> ( !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
+<a name="l01513"></a>01513                 <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, startTag, <span class="keyword">false</span>, encoding ) )
 <a name="l01514"></a>01514                 {
-<a name="l01515"></a>01515                         document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48aab2c858631b5d38eae1e6675949b9cd4">TIXML_ERROR_PARSING_CDATA</a>, p, data, encoding );
+<a name="l01515"></a>01515                         document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55aab2c858631b5d38eae1e6675949b9cd4">TIXML_ERROR_PARSING_CDATA</a>, p, data, encoding );
 <a name="l01516"></a>01516                         <span class="keywordflow">return</span> 0;
 <a name="l01517"></a>01517                 }
 <a name="l01518"></a>01518                 p += strlen( startTag );
 <a name="l01519"></a>01519 
 <a name="l01520"></a>01520                 <span class="comment">// Keep all the white space, ignore the encoding, etc.</span>
 <a name="l01521"></a>01521                 <span class="keywordflow">while</span> (    p &amp;&amp; *p
-<a name="l01522"></a>01522                                 &amp;&amp; !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, <span class="keyword">false</span>, encoding )
+<a name="l01522"></a>01522                                 &amp;&amp; !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, endTag, <span class="keyword">false</span>, encoding )
 <a name="l01523"></a>01523                           )
 <a name="l01524"></a>01524                 {
-<a name="l01525"></a>01525                         <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> += *p;
+<a name="l01525"></a>01525                         <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a> += *p;
 <a name="l01526"></a>01526                         ++p;
 <a name="l01527"></a>01527                 }
 <a name="l01528"></a>01528 
 <a name="l01529"></a>01529                 <a class="code" href="tinyxml_8h.html#a92bada05fd84d9a0c9a5bbe53de26887">TIXML_STRING</a> dummy; 
-<a name="l01530"></a>01530                 p = <a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;dummy, <span class="keyword">false</span>, endTag, <span class="keyword">false</span>, encoding );
+<a name="l01530"></a>01530                 p = <a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;dummy, <span class="keyword">false</span>, endTag, <span class="keyword">false</span>, encoding );
 <a name="l01531"></a>01531                 <span class="keywordflow">return</span> p;
 <a name="l01532"></a>01532         }
 <a name="l01533"></a>01533         <span class="keywordflow">else</span>
@@ -1619,7 +1635,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01535"></a>01535                 <span class="keywordtype">bool</span> ignoreWhite = <span class="keyword">true</span>;
 <a name="l01536"></a>01536 
 <a name="l01537"></a>01537                 <span class="keyword">const</span> <span class="keywordtype">char</span>* end = <span class="stringliteral">&quot;&lt;&quot;</span>;
-<a name="l01538"></a>01538                 p = <a class="code" href="class_ti_xml_base.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, ignoreWhite, end, <span class="keyword">false</span>, encoding );
+<a name="l01538"></a>01538                 p = <a class="code" href="classTiXmlBase.html#aa646c74921aa33156968b802bbf5566e">ReadText</a>( p, &amp;<a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>, ignoreWhite, end, <span class="keyword">false</span>, encoding );
 <a name="l01539"></a>01539                 <span class="keywordflow">if</span> ( p )
 <a name="l01540"></a>01540                         <span class="keywordflow">return</span> p-1;     <span class="comment">// don&#39;t truncate the &#39;&lt;&#39;</span>
 <a name="l01541"></a>01541                 <span class="keywordflow">return</span> 0;
@@ -1634,9 +1650,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01550"></a>01550                 <span class="keywordtype">int</span> c = in-&gt;get();
 <a name="l01551"></a>01551                 <span class="keywordflow">if</span> ( c &lt;= 0 )
 <a name="l01552"></a>01552                 {
-<a name="l01553"></a>01553                         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01553"></a>01553                         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
 <a name="l01554"></a>01554                         <span class="keywordflow">if</span> ( document )
-<a name="l01555"></a>01555                                 document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
+<a name="l01555"></a>01555                                 document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55ade7edbad3a94a6c161cac2638f380e17">TIXML_ERROR_EMBEDDED_NULL</a>, 0, 0, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96a4f7cb4a48feb16284f2c1620454b3909">TIXML_ENCODING_UNKNOWN</a> );
 <a name="l01556"></a>01556                         <span class="keywordflow">return</span>;
 <a name="l01557"></a>01557                 }
 <a name="l01558"></a>01558                 (*tag) += (char) c;
@@ -1650,27 +1666,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01566"></a>01566 }
 <a name="l01567"></a>01567 <span class="preprocessor">#endif</span>
 <a name="l01568"></a>01568 <span class="preprocessor"></span>
-<a name="l01569"></a><a class="code" href="class_ti_xml_declaration.html#a9839ea97ed687a2b7342fd7b0f04361b">01569</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_ti_xml_declaration.html#a9839ea97ed687a2b7342fd7b0f04361b">TiXmlDeclaration::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="class_ti_xml_parsing_data.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> _encoding )
+<a name="l01569"></a><a class="code" href="classTiXmlDeclaration.html#a9839ea97ed687a2b7342fd7b0f04361b">01569</a> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTiXmlDeclaration.html#a9839ea97ed687a2b7342fd7b0f04361b">TiXmlDeclaration::Parse</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* p, <a class="code" href="classTiXmlParsingData.html">TiXmlParsingData</a>* data, <a class="code" href="tinyxml_8h.html#a88d51847a13ee0f4b4d320d03d2c4d96">TiXmlEncoding</a> _encoding )
 <a name="l01570"></a>01570 {
-<a name="l01571"></a>01571         p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, _encoding );
+<a name="l01571"></a>01571         p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, _encoding );
 <a name="l01572"></a>01572         <span class="comment">// Find the beginning, find the end, and look for</span>
 <a name="l01573"></a>01573         <span class="comment">// the stuff in-between.</span>
-<a name="l01574"></a>01574         <a class="code" href="class_ti_xml_document.html">TiXmlDocument</a>* document = <a class="code" href="class_ti_xml_node.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
-<a name="l01575"></a>01575         <span class="keywordflow">if</span> ( !p || !*p || !<a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;&lt;?xml&quot;</span>, <span class="keyword">true</span>, _encoding ) )
+<a name="l01574"></a>01574         <a class="code" href="classTiXmlDocument.html">TiXmlDocument</a>* document = <a class="code" href="classTiXmlNode.html#aa66f4ebcd175204a168ed7c2d7b43071">GetDocument</a>();
+<a name="l01575"></a>01575         <span class="keywordflow">if</span> ( !p || !*p || !<a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;&lt;?xml&quot;</span>, <span class="keyword">true</span>, _encoding ) )
 <a name="l01576"></a>01576         {
-<a name="l01577"></a>01577                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="class_ti_xml_document.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="class_ti_xml_base.html#a9a7e9344415956ab96e8c75f6a0bbd48a4c200f9d125027ab449e2be7be471ba0">TIXML_ERROR_PARSING_DECLARATION</a>, 0, 0, _encoding );
+<a name="l01577"></a>01577                 <span class="keywordflow">if</span> ( document ) document-&gt;<a class="code" href="classTiXmlDocument.html#a735c23e318597b920c94eae77fa206de">SetError</a>( <a class="code" href="classTiXmlBase.html#ab251e9d7b9102b9aedb2fdaed2ecfe55a4c200f9d125027ab449e2be7be471ba0">TIXML_ERROR_PARSING_DECLARATION</a>, 0, 0, _encoding );
 <a name="l01578"></a>01578                 <span class="keywordflow">return</span> 0;
 <a name="l01579"></a>01579         }
 <a name="l01580"></a>01580         <span class="keywordflow">if</span> ( data )
 <a name="l01581"></a>01581         {
-<a name="l01582"></a>01582                 data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, _encoding );
-<a name="l01583"></a>01583                 <a class="code" href="class_ti_xml_base.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="class_ti_xml_parsing_data.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
+<a name="l01582"></a>01582                 data-&gt;<a class="code" href="classTiXmlParsingData.html#a65cee8ab77a36c605db08c84b4c30a7d">Stamp</a>( p, _encoding );
+<a name="l01583"></a>01583                 <a class="code" href="classTiXmlBase.html#a0d992580f3bc264909f898e942677a3c">location</a> = data-&gt;<a class="code" href="classTiXmlParsingData.html#a56908a17d7d7a6b2e511e62cf1d40d05">Cursor</a>();
 <a name="l01584"></a>01584         }
 <a name="l01585"></a>01585         p += 5;
 <a name="l01586"></a>01586 
-<a name="l01587"></a>01587         version = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l01588"></a>01588         encoding = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l01589"></a>01589         standalone = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01587"></a>01587         <a class="code" href="classTiXmlDeclaration.html#ab9eb14dc9cb78e3a8a0636d5d6a5d04d">version</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01588"></a>01588         <a class="code" href="classTiXmlDeclaration.html#a24b8645d7696ec169bbb3fb7d30860cf">encoding</a> = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l01589"></a>01589         <a class="code" href="classTiXmlDeclaration.html#a52524bf1a0726104350fe4121d7fdff4">standalone</a> = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01590"></a>01590 
 <a name="l01591"></a>01591         <span class="keywordflow">while</span> ( p &amp;&amp; *p )
 <a name="l01592"></a>01592         {
@@ -1680,53 +1696,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01596"></a>01596                         <span class="keywordflow">return</span> p;
 <a name="l01597"></a>01597                 }
 <a name="l01598"></a>01598 
-<a name="l01599"></a>01599                 p = <a class="code" href="class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, _encoding );
-<a name="l01600"></a>01600                 <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;version&quot;</span>, <span class="keyword">true</span>, _encoding ) )
+<a name="l01599"></a>01599                 p = <a class="code" href="classTiXmlBase.html#ac0c3d66d8a9e6996a1fa016275e16875">SkipWhiteSpace</a>( p, _encoding );
+<a name="l01600"></a>01600                 <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;version&quot;</span>, <span class="keyword">true</span>, _encoding ) )
 <a name="l01601"></a>01601                 {
-<a name="l01602"></a>01602                         <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a> attrib;
-<a name="l01603"></a>01603                         p = attrib.<a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
-<a name="l01604"></a>01604                         version = attrib.<a class="code" href="class_ti_xml_attribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
+<a name="l01602"></a>01602                         <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a> attrib;
+<a name="l01603"></a>01603                         p = attrib.<a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
+<a name="l01604"></a>01604                         <a class="code" href="classTiXmlDeclaration.html#ab9eb14dc9cb78e3a8a0636d5d6a5d04d">version</a> = attrib.<a class="code" href="classTiXmlAttribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
 <a name="l01605"></a>01605                 }
-<a name="l01606"></a>01606                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;encoding&quot;</span>, <span class="keyword">true</span>, _encoding ) )
+<a name="l01606"></a>01606                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;encoding&quot;</span>, <span class="keyword">true</span>, _encoding ) )
 <a name="l01607"></a>01607                 {
-<a name="l01608"></a>01608                         <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a> attrib;
-<a name="l01609"></a>01609                         p = attrib.<a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
-<a name="l01610"></a>01610                         encoding = attrib.<a class="code" href="class_ti_xml_attribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
+<a name="l01608"></a>01608                         <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a> attrib;
+<a name="l01609"></a>01609                         p = attrib.<a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
+<a name="l01610"></a>01610                         <a class="code" href="classTiXmlDeclaration.html#a24b8645d7696ec169bbb3fb7d30860cf">encoding</a> = attrib.<a class="code" href="classTiXmlAttribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
 <a name="l01611"></a>01611                 }
-<a name="l01612"></a>01612                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;standalone&quot;</span>, <span class="keyword">true</span>, _encoding ) )
+<a name="l01612"></a>01612                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classTiXmlBase.html#a51631e6986179558b9e5850723ed165a">StringEqual</a>( p, <span class="stringliteral">&quot;standalone&quot;</span>, <span class="keyword">true</span>, _encoding ) )
 <a name="l01613"></a>01613                 {
-<a name="l01614"></a>01614                         <a class="code" href="class_ti_xml_attribute.html">TiXmlAttribute</a> attrib;
-<a name="l01615"></a>01615                         p = attrib.<a class="code" href="class_ti_xml_attribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
-<a name="l01616"></a>01616                         standalone = attrib.<a class="code" href="class_ti_xml_attribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
+<a name="l01614"></a>01614                         <a class="code" href="classTiXmlAttribute.html">TiXmlAttribute</a> attrib;
+<a name="l01615"></a>01615                         p = attrib.<a class="code" href="classTiXmlAttribute.html#ad62774421b814894b995af3b5d231dda">Parse</a>( p, data, _encoding );         
+<a name="l01616"></a>01616                         <a class="code" href="classTiXmlDeclaration.html#a52524bf1a0726104350fe4121d7fdff4">standalone</a> = attrib.<a class="code" href="classTiXmlAttribute.html#a0f874490eac8ca00ee0070765d0e97e3" title="Return the value of this attribute.">Value</a>();
 <a name="l01617"></a>01617                 }
 <a name="l01618"></a>01618                 <span class="keywordflow">else</span>
 <a name="l01619"></a>01619                 {
 <a name="l01620"></a>01620                         <span class="comment">// Read over whatever it is.</span>
-<a name="l01621"></a>01621                         <span class="keywordflow">while</span>( p &amp;&amp; *p &amp;&amp; *p != <span class="charliteral">&#39;&gt;&#39;</span> &amp;&amp; !<a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
+<a name="l01621"></a>01621                         <span class="keywordflow">while</span>( p &amp;&amp; *p &amp;&amp; *p != <span class="charliteral">&#39;&gt;&#39;</span> &amp;&amp; !<a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( *p ) )
 <a name="l01622"></a>01622                                 ++p;
 <a name="l01623"></a>01623                 }
 <a name="l01624"></a>01624         }
 <a name="l01625"></a>01625         <span class="keywordflow">return</span> 0;
 <a name="l01626"></a>01626 }
 <a name="l01627"></a>01627 
-<a name="l01628"></a><a class="code" href="class_ti_xml_text.html#a1c120428e3b3cf24d79706e6d2b65aa6">01628</a> <span class="keywordtype">bool</span> <a class="code" href="class_ti_xml_text.html#a1c120428e3b3cf24d79706e6d2b65aa6">TiXmlText::Blank</a>()<span class="keyword"> const</span>
+<a name="l01628"></a><a class="code" href="classTiXmlText.html#a1c120428e3b3cf24d79706e6d2b65aa6">01628</a> <span class="keywordtype">bool</span> <a class="code" href="classTiXmlText.html#a1c120428e3b3cf24d79706e6d2b65aa6">TiXmlText::Blank</a>()<span class="keyword"> const</span>
 <a name="l01629"></a>01629 <span class="keyword"></span>{
-<a name="l01630"></a>01630         <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> i=0; i&lt;<a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>.length(); i++ )
-<a name="l01631"></a>01631                 <span class="keywordflow">if</span> ( !<a class="code" href="class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( <a class="code" href="class_ti_xml_node.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>[i] ) )
+<a name="l01630"></a>01630         <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> i=0; i&lt;<a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>.length(); i++ )
+<a name="l01631"></a>01631                 <span class="keywordflow">if</span> ( !<a class="code" href="classTiXmlBase.html#af56296d561c0bab4bc8e198cdcf5c48e">IsWhiteSpace</a>( <a class="code" href="classTiXmlNode.html#aead528b3cedc33c16a6c539872c7cc8b">value</a>[i] ) )
 <a name="l01632"></a>01632                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l01633"></a>01633         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l01634"></a>01634 }
 <a name="l01635"></a>01635 
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="tinyxmlparser_8cpp.html">tinyxmlparser.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:17 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -1741,6 +1749,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:38 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

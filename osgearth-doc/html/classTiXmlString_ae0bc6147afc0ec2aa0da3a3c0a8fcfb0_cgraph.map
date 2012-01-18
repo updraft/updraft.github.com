@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlString.html#ac72f3d9149b7812c1e6c59402014d0d5" title="TiXmlString::assign" alt="" coords="208,136,344,165"/>
+<area shape="rect" id="node5" href="$classTiXmlString.html#a76e4d6aba7845f4cf9c02332a5fbf916" title="TiXmlString::capacity" alt="" coords="392,5,539,35"/>
+<area shape="rect" id="node7" href="$classTiXmlString.html#a694eacb51c43d8eba8aa7d4552b598ff" title="TiXmlString::init" alt="" coords="408,83,523,112"/>
+<area shape="rect" id="node10" href="$classTiXmlString.html#a5d70615367bf2920c25feddf6ac4ad30" title="TiXmlString::set_size" alt="" coords="392,136,539,165"/>
+<area shape="rect" id="node12" href="$classTiXmlString.html#a36417caceebe25352f53a87e8cd966b4" title="TiXmlString::start" alt="" coords="404,189,527,219"/>
+<area shape="rect" id="node14" href="$classTiXmlString.html#aa392cbc180752a79f007f4f9280c7762" title="TiXmlString::swap" alt="" coords="401,243,529,272"/>
+</map>

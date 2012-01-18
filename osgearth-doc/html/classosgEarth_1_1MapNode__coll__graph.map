@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="307,645,427,675"/>
+<area shape="rect" id="node10" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="683,580,848,609"/>
+<area shape="rect" id="node17" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Config \&gt;" alt="" coords="872,645,1061,675"/>
+<area shape="rect" id="node4" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,619,152,648"/>
+<area shape="rect" id="node6" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,672,157,701"/>
+<area shape="rect" id="node8" href="$classosgEarth_1_1MapNodeOptions.html" title="osgEarth::MapNodeOptions" alt="" coords="1953,491,2135,520"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="1128,543,1328,572"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProxySettings \&gt;" alt="" coords="1551,25,1783,55"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1ProxySettings.html" title="osgEarth::ProxySettings" alt="" coords="1147,25,1309,55"/>
+<area shape="rect" id="node20" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="1141,175,1315,204"/>
+<area shape="rect" id="node22" href="$classosgEarth_1_1TerrainOptions.html" title="osgEarth::TerrainOptions" alt="" coords="1584,411,1749,440"/>
+<area shape="rect" id="node28" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; float \&gt;" alt="" coords="279,255,455,284"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1LoadingPolicy.html" title="osgEarth::LoadingPolicy" alt="" coords="684,332,847,361"/>
+<area shape="rect" id="node30" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ElevationInterpolation \&gt;" alt="" coords="1091,436,1365,465"/>
+<area shape="rect" id="node32" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; LoadingPolicy \&gt;" alt="" coords="1112,332,1344,361"/>
+<area shape="rect" id="node36" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Mode \&gt;" alt="" coords="276,332,457,361"/>
+<area shape="rect" id="node39" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="284,420,449,449"/>
+<area shape="rect" id="node42" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CompositingTechnique \&gt;" alt="" coords="1087,489,1369,519"/>
+<area shape="rect" id="node44" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; unsigned \&gt;" alt="" coords="1565,491,1768,520"/>
+</map>

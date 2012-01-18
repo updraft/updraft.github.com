@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1ModelLayerOptions.html#a930b421f62653ffe2e30ff8ae67e2dd6" title="osgEarth::ModelLayerOptions::fromConfig" alt="" coords="369,5,636,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1ModelLayerOptions.html#a9583882c7322ea8d755647895a290ba8" title="osgEarth::ModelLayerOptions::name" alt="" coords="385,59,620,88"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1ModelLayerOptions.html#a1e5a57e57825717ec0146b9a78848271" title="osgEarth::ModelLayerOptions::setDefaults" alt="" coords="368,112,637,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Config.html#a95cece81f3d0f072ce4e83fdd9b7e665" title="osgEarth::Config::getIfSet" alt="" coords="687,5,860,35"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1optional.html#ab6d549a85b0bea66eab29423445f4572" title="osgEarth::optional::defaultValue" alt="" coords="911,5,1116,35"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1optional.html#a3a903b78968146555a904059e001d602" title="osgEarth::optional::init" alt="" coords="697,112,849,141"/>
+</map>

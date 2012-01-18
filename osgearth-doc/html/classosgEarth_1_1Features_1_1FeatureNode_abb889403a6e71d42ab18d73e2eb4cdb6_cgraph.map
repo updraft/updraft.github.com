@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Features_1_1FeatureNode.html#a68543ac7982fb8a6d13f304250edfaf1" title="osgEarth::Features::FeatureNode::init" alt="" coords="343,112,583,141"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1GeometryCompiler.html#a114764b07c672bac4131f7c4622cea9b" title="osgEarth::Features::GeometryCompiler::compile" alt="" coords="677,32,979,61"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="745,85,911,115"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Features_1_1GeometryCompilerOptions.html#ae653e19691a3c310ef48d7d5812375b8" title="osgEarth::Features::GeometryCompilerOptions::maxGranularity" alt="" coords="633,139,1023,168"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1DrapeableNode.html#a82cd441ada5bec14913a287583d2a8fc" title="osgEarth::DrapeableNode::setNode" alt="" coords="713,192,943,221"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1FeatureCursor.html#a2acffc4ee2f82d18d949d8b1375d5871" title="osgEarth::Features::FeatureCursor::fill" alt="" coords="1079,5,1324,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1FilterContext.html#a6fdc74d6944a655fd8fe8e5ff298af57" title="osgEarth::Features::FilterContext::profile" alt="" coords="1072,59,1331,88"/>
+</map>

@@ -1,8 +1,23 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="137,5,175,35"/>
-<area shape="rect" id="node7" href="$osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="129,59,183,88"/>
-<area shape="rect" id="node5" href="$osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="327,5,377,35"/>
-<area shape="rect" id="node9" href="$struct_layer_table.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="233,59,471,88"/>
-<area shape="rect" id="node14" href="$struct_layer_table.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="289,112,415,141"/>
-<area shape="rect" id="node11" href="$class_sqlite3_cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="521,85,660,115"/>
+<area shape="rect" id="node3" href="$classosgEarth_1_1Json_1_1Reader.html#acb314251f8970eacaf6c55fd2209e8a1" title="osgEarth::Json::Reader::addError" alt="" coords="129,213,345,243"/>
+<area shape="rect" id="node32" href="$osgearth__seed_8cpp.html#af4b11f03092036dcc7d19e0eaf644e88" title="list" alt="" coords="219,477,256,507"/>
+<area shape="rect" id="node42" href="$osgearth__seed_8cpp.html#a5474eb5fe707f69df07bc3256c116324" title="purge" alt="" coords="211,611,264,640"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Json_1_1Reader.html#a6f12e4ba3013e55ecb49ce3019ebff39" title="osgEarth::Json::Reader::addErrorAndRecover" alt="" coords="431,32,719,61"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Json_1_1Reader.html#a49b9c81c86f52ff01061eb9e23af9087" title="osgEarth::Json::Reader::readValue" alt="" coords="1107,32,1333,61"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1Json_1_1Reader.html#a3c1f6ac67b611f066e696f6e651d6197" title="osgEarth::Json::Reader::decodeDouble" alt="" coords="449,136,700,165"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1Json_1_1Reader.html#a3cf306f45ce2df7d7c83f981fc54a13b" title="osgEarth::Json::Reader::decodeNumber" alt="" coords="803,136,1059,165"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Json_1_1Reader.html#afbda33b83515c6ef65432d5e031890ca" title="osgEarth::Json::Reader::decodeString" alt="" coords="809,265,1052,295"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Json_1_1Reader.html#aba4d7f7900165edf2468e7c3ff8c5658" title="osgEarth::Json::Reader::decodeUnicodeEscapeSequence" alt="" coords="395,291,755,320"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Json_1_1Reader.html#ac774d3b3d88b3633b6a1d83c13a0ac2b" title="osgEarth::Json::Reader::expectToken" alt="" coords="453,344,696,373"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Json_1_1Reader.html#a5b7e122decc32bc123b5db448f18597c" title="osgEarth::Json::Reader::readArray" alt="" coords="819,32,1043,61"/>
+<area shape="rect" id="node14" href="$classosgEarth_1_1Json_1_1Reader.html#a43ea88cea32d8580ec7690ef4a76547a" title="osgEarth::Json::Reader::readObject" alt="" coords="1383,5,1612,35"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Json_1_1Reader.html#a3ee890974263f9aaed2a3027d8228b7f" title="Read a Value from a JSON document." alt="" coords="1397,59,1597,88"/>
+<area shape="rect" id="node34" href="$classosgEarth_1_1Features_1_1FeatureModelGraph.html#ac809b2ed223fa837dec5311909e63b43" title="osgEarth::Features::FeatureModelGraph::build" alt="" coords="429,504,720,533"/>
+<area shape="rect" id="node36" href="$classosgEarth_1_1Features_1_1FeatureTileSource.html#a80af978c5495abab5ab9779479162a07" title="osgEarth::Features::FeatureTileSource::createImage" alt="" coords="412,397,737,427"/>
+<area shape="rect" id="node38" href="$osgearth__seed_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="549,557,600,587"/>
+<area shape="rect" id="node40" href="$classosgEarth_1_1Features_1_1GeometryFeatureCursor.html#a8e1bbfce699cf352c8b984b1f84032c4" title="osgEarth::Features::GeometryFeatureCursor::nextFeature" alt="" coords="396,451,753,480"/>
+<area shape="rect" id="node44" href="$structLayerTable.html#ab73421eb54bab9384f8d086b5f3ed3dd" title="LayerTable::checkAndPurgeIfNeeded" alt="" coords="456,717,693,747"/>
+<area shape="rect" id="node49" href="$structLayerTable.html#a4bf3db12348df2b63f630a427a84e078" title="LayerTable::purge" alt="" coords="512,611,637,640"/>
+<area shape="rect" id="node52" href="$classSqlite3Cache.html#a90410529af647e1e89b7f538226bda8d" title="Sqlite3Cache::setImageSync" alt="" coords="479,664,671,693"/>
+<area shape="rect" id="node46" href="$classSqlite3Cache.html#aa929c5104c0260ec8e391457cd821b3b" title="Sqlite3Cache::purge" alt="" coords="861,664,1000,693"/>
 </map>

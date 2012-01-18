@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$EarthManipulator_8cpp.html#a0959f5ef4d02a7c323a6284c3ba87705" title="calcTangentPoint" alt="" coords="411,5,533,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aa412d8793e031d74860f58a99c860577" title="osgEarth::Util::EarthManipulator::getMyCoordinateFrame" alt="" coords="296,59,648,88"/>
+<area shape="rect" id="node9" href="$EarthManipulator_8cpp.html#ab49b57131a36a799c1f59f5552959d2d" title="getWindowPoint" alt="" coords="413,112,531,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a4d8261349c4969171d6a704148d139d3" title="osgEarth::Util::EarthManipulator::makeCenterRotation" alt="" coords="304,165,640,195"/>
+<area shape="rect" id="node13" href="$namespaceosgEarth.html#a0f809d677891f237413ac5485671a0de" title="osgEarth::notify" alt="" coords="415,219,529,248"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#ae8c30588a24f3b70da9e2e88b2b5c1c4" title="osgEarth::Util::EarthManipulator::recalculateLocalPitchAndAzimuth" alt="" coords="696,297,1107,327"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#a0e80654c897dcbba66d9001ff6695aba" title="osgEarth::Util::EarthManipulator::rotate" alt="" coords="348,323,596,352"/>
+<area shape="rect" id="node26" href="$EarthManipulator_8cpp.html#a80c81c3e96d0a90015536ef49e221c15" title="rotateAroundPoint" alt="" coords="409,376,535,405"/>
+<area shape="rect" id="node28" href="$classosgEarth_1_1Util_1_1EarthManipulator.html#aa2cd6268a3368b67c7fb86a64be87a80" title="osgEarth::Util::EarthManipulator::screenToWorld" alt="" coords="320,429,624,459"/>
+<area shape="rect" id="node5" href="$EarthManipulator_8cpp.html#a4d2138863db355e43a9d0d9ea603e69a" title="sphereInterection" alt="" coords="840,5,963,35"/>
+<area shape="rect" id="node15" href="$namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="819,219,984,248"/>
+<area shape="rect" id="node19" href="$namespaceanonymous__namespace_02EarthManipulator_8cpp_03.html#aaf8b4909bb5c6f9e41dc75d48682437a" title="anonymous_namespace\{EarthManipulator::cpp\}::s_getHPRFromQuat" alt="" coords="1156,297,1580,327"/>
+<area shape="rect" id="node21" href="$namespaceanonymous__namespace_02Controls_8cpp_03.html#ad4029349af79513030745a11f9832f72" title="anonymous_namespace\{Controls::cpp\}::rot" alt="" coords="1629,297,1901,327"/>
+</map>

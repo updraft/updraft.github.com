@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__measure_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -100,9 +117,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgEarthUtil/Viewpoint&gt;</code><br/>
 <code>#include &lt;osgEarthSymbology/Color&gt;</code><br/>
 <code>#include &lt;osgEarthUtil/MeasureTool&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_measure.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_measure.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__measure_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__measure_2osgearth__measure_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__measure_2osgearth__measure_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__measure_2osgearth__measure_8cpp">
 </map>
@@ -112,9 +131,9 @@ Include dependency graph for osgearth_measure.cpp:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_measure_tool_callback.html">MyMeasureToolCallback</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_toggle_path_handler.html">TogglePathHandler</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_toggle_mode_handler.html">ToggleModeHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyMeasureToolCallback.html">MyMeasureToolCallback</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTogglePathHandler.html">TogglePathHandler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToggleModeHandler.html">ToggleModeHandler</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="osgearth__measure_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
@@ -146,19 +165,119 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__measure_8cpp_source.html#l00094">94</a> of file <a class="el" href="osgearth__measure_8cpp_source.html">osgearth_measure.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc,argv);
+    osg::DisplaySettings::instance()-&gt;setMinimumNumStencilBits( 8 );
+
+    <span class="comment">// load the .earth file from the command line.</span>
+    osg::Node* earthNode = osgDB::readNodeFiles( arguments );
+    <span class="keywordflow">if</span> (!earthNode)
+    {
+        <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> 1;
+    }
+
+    <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = MapNode::findMapNode( earthNode );
+    <span class="keywordflow">if</span> ( !mapNode )
+    {
+        <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> &lt;&lt; std::endl;
+        <span class="keywordflow">return</span> 1;
+    }
+
+    earthNode-&gt;setNodeMask( 0x1 );
+
+
+    osgViewer::Viewer viewer(arguments);
+    
+    <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>* earthManip = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>();
+    viewer.setCameraManipulator( earthManip );
+
+    osg::Group* root = <span class="keyword">new</span> osg::Group();
+    root-&gt;addChild( earthNode );
+
+    <span class="comment">//Create the MeasureToolHandler</span>
+    <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>* measureTool = <span class="keyword">new</span> <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>(root, mapNode);    
+    measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ad5cfaf045fa0850e717084cecca820aa">setIntersectionMask</a>( 0x1 );
+    viewer.addEventHandler( measureTool );
+
+    <span class="comment">//Create some controls to interact with the measuretool</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>( &amp;viewer );
+    root-&gt;addChild( canvas );
+    canvas-&gt;setNodeMask( 0x1 &lt;&lt; 1 );
+
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( Control::ALIGN_CENTER );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0">setAbsorbEvents</a>( <span class="keyword">true</span> );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( Control::ALIGN_BOTTOM );
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695">setFrame</a>(<span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html">RoundedFrame</a>());
+
+    canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( grid );
+
+    <span class="comment">//Add a label to display the distance</span>
+    <span class="comment">// Add a text label:</span>
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>();
+    label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a">setFont</a>( osgText::readFontFile( <span class="stringliteral">&quot;arialbd.ttf&quot;</span> ) );
+    label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b">setFontSize</a>( 24.0f );
+    label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( Control::ALIGN_LEFT );    
+    label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01">setText</a>(<span class="stringliteral">&quot;Distance&quot;</span>);
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 0, label);
+
+    <span class="comment">//Add a callback to update the label when the distance changes</span>
+    measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ab27d7a24633df2f977ea4b58693fe02d">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="classMyMeasureToolCallback.html">MyMeasureToolCallback</a>(label) );
+    
+    <a class="code" href="classosgEarth_1_1Style.html">Style</a> style;
+    style.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = Color::Yellow;
+    measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#a398ecf957bd09b265aa092a90f38d655">setLineStyle</a>(style);
+
+    <span class="comment">//Add a checkbox to control if we are doing path based measurement or just point to point</span>
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Path&quot;</span>));
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>* checkBox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">false</span>);
+    checkBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>(Control::ALIGN_LEFT);
+    checkBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structTogglePathHandler.html">TogglePathHandler</a>(measureTool));
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 1, checkBox);
+
+    <span class="comment">//Add a toggle to set the mode of the measuring tool</span>
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Great Circle&quot;</span>));
+    <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>* mode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>);
+    mode-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>(Control::ALIGN_LEFT);
+    mode-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structToggleModeHandler.html">ToggleModeHandler</a>(measureTool));
+    grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 2, mode);
+
+
+    
+
+   
+    viewer.setSceneData( root );
+
+    <span class="comment">// add some stock OSG handlers:</span>
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::StatsHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::WindowSizeHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::ThreadingHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::LODScaleHandler());
+    viewer.addEventHandler(<span class="keyword">new</span> osgGA::StateSetManipulator(viewer.getCamera()-&gt;getOrCreateStateSet()));
+    viewer.addEventHandler(<span class="keyword">new</span> osgViewer::HelpHandler(arguments.getApplicationUsage()));
+
+    <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="osgearth__measure_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__measure_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="osgearth__measure_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__measure_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1" title="osgEarth::Util::Controls::ControlCanvas::addControl" alt="" coords="511,327,836,356"/><area shape="rect" id="node9" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99" title="osgEarth::Util::Controls::Control::addEventHandler" alt="" coords="124,122,441,151"/><area shape="rect" id="node11" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ab27d7a24633df2f977ea4b58693fe02d" title="osgEarth::Util::MeasureToolHandler::addEventHandler" alt="" coords="113,175,452,204"/><area shape="rect" id="node13" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0" title="osgEarth::MapNode::findMapNode" alt="" coords="172,228,393,258"/><area shape="rect" id="node15" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0" title="osgEarth::Util::Controls::Control::setAbsorbEvents" alt="" coords="124,282,441,311"/><area shape="rect" id="node17" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db" title="osgEarth::Util::Controls::Control::setBackColor" alt="" coords="135,746,431,775"/><area shape="rect" id="node22" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566" title="osgEarth::Util::Controls::Container::setChildSpacing" alt="" coords="511,380,836,410"/><area shape="rect" id="node25" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="117,538,448,567"/><area shape="rect" id="node36" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63" title="osgEarth::Util::Controls::Control::setHorizAlign" alt="" coords="904,174,1197,203"/><area shape="rect" id="node43" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e" title="osgEarth::Util::Controls::Control::setVertAlign" alt="" coords="907,227,1195,256"/><area shape="rect" id="node51" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="153,591,412,620"/><area shape="rect" id="node61" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a" title="osgEarth::Util::Controls::LabelControl::setFont" alt="" coords="905,954,1196,983"/><area shape="rect" id="node64" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b" title="osgEarth::Util::Controls::LabelControl::setFontSize" alt="" coords="515,1007,832,1036"/><area shape="rect" id="node67" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695" title="osgEarth::Util::Controls::Container::setFrame" alt="" coords="908,1058,1193,1087"/><area shape="rect" id="node71" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ad5cfaf045fa0850e717084cecca820aa" title="osgEarth::Util::MeasureToolHandler::setIntersectionMask" alt="" coords="105,850,460,879"/><area shape="rect" id="node73" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#a398ecf957bd09b265aa092a90f38d655" title="osgEarth::Util::MeasureToolHandler::setLineStyle" alt="" coords="128,903,437,932"/><area shape="rect" id="node75" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e" title="osgEarth::Util::Controls::Control::setMargin" alt="" coords="536,274,811,303"/><area shape="rect" id="node78" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932" title="osgEarth::Util::Controls::Control::setPadding" alt="" coords="909,747,1192,776"/><area shape="rect" id="node81" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01" title="osgEarth::Util::Controls::LabelControl::setText" alt="" coords="528,903,819,932"/><area shape="rect" id="node5" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#abee84996d9f8577a60c47ab9be769cd1" title="osgEarth::Util::Controls::Control::dirty" alt="" coords="1264,695,1507,724"/><area shape="rect" id="node7" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae56d29cff41ca34bb7980060b367a32c" title="osgEarth::Util::Controls::Control::getParent" alt="" coords="1556,695,1828,724"/><area shape="rect" id="node20" href="structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="591,799,756,828"/><area shape="rect" id="node27" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="509,484,837,514"/><area shape="rect" id="node32" href="structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="968,432,1133,462"/><area shape="rect" id="node30" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af1ca3871998ef3468060262262e92e86" title="osgEarth::Util::Controls::Control::horizAlign" alt="" coords="913,536,1188,566"/><area shape="rect" id="node34" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ab61d501bf5c9465d24522353fade35f1" title="osgEarth::Util::Controls::Container::mutable_children" alt="" coords="887,590,1215,619"/><area shape="rect" id="node48" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a74daaab1a304b0ee048f607282477a92" title="osgEarth::Util::Controls::Control::vertAlign" alt="" coords="917,643,1184,672"/><area shape="rect" id="node39" href="structosgEarth_1_1optional.html#abac1ffb58a490a5d8c30cc11fe6969bf" title="osgEarth::optional::isSetTo" alt="" coords="1296,227,1475,256"/><area shape="rect" id="node41" href="structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d" title="osgEarth::optional::unset" alt="" coords="1303,174,1468,203"/><area shape="rect" id="node54" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a032f9d082c210ab3be4b2d689f038a50" title="osgEarth::Util::Controls::Grid::cell" alt="" coords="564,695,783,724"/><area shape="rect" id="node57" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a8a69a4dbebaf67dca4c6cf0276aca812" title="osgEarth::Util::Controls::Grid::expandToInclude" alt="" coords="524,538,823,567"/><area shape="rect" id="node59" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a4ba432e352c5fe441b41c1ff107cd359" title="osgEarth::Util::Controls::Control::setParent" alt="" coords="537,591,809,620"/></map>
+</div>
+</p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__measure_8cpp.html">osgearth_measure.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -173,6 +292,8 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

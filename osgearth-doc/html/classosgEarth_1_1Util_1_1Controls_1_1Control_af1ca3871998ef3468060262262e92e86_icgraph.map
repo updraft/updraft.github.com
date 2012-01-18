@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a67f080cc134762eb587c0069d6e62e94" title="osgEarth::Util::Controls::Container::applyChildAligns" alt="" coords="328,231,656,260"/>
+<area shape="rect" id="node54" href="$classosgEarth_1_1Util_1_1Controls_1_1ControlNodeBin.html#a49775b91773326ebad49f0df71a84bd6" title="osgEarth::Util::Controls::ControlNodeBin::draw" alt="" coords="345,284,639,313"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3" title="osgEarth::Util::Controls::HBox::addControl" alt="" coords="739,73,1008,103"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40" title="osgEarth::Util::Controls::VBox::addControl" alt="" coords="739,177,1008,207"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#a25144e9d12a23524f4bf609f21fcd265" title="osgEarth::Util::Controls::Container::setChildHorizAlign" alt="" coords="704,231,1043,260"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99" title="osgEarth::Util::Controls::Container::setChildVertAlign" alt="" coords="708,284,1039,313"/>
+<area shape="rect" id="node39" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7" title="osgEarth::Util::Controls::Grid::setControl" alt="" coords="744,441,1003,471"/>
+<area shape="rect" id="node7" href="$osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29" title="createControlPanel" alt="" coords="1503,205,1636,235"/>
+<area shape="rect" id="node9" href="$osgearth__controls_8cpp.html#a8b004102d98b61bf6672fe35331f3968" title="createControls" alt="" coords="1219,73,1325,103"/>
+<area shape="rect" id="node11" href="$osgearth__controls_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1544,73,1595,103"/>
+<area shape="rect" id="node17" href="$namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114" title="anonymous_namespace\{osgearth_manip::cpp\}::createHelp" alt="" coords="1091,127,1453,156"/>
+<area shape="rect" id="node21" href="$osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1247,231,1297,260"/>
+<area shape="rect" id="node19" href="$osgearth__manip_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1544,127,1595,156"/>
+<area shape="rect" id="node29" href="$osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846" title="createControlPanel" alt="" coords="1205,284,1339,313"/>
+<area shape="rect" id="node34" href="$osgearth__featureeditor_8cpp.html#a0512f37ca615e5c75111ee1d8f8c8a1e" title="createToolBar" alt="" coords="1221,337,1323,367"/>
+<area shape="rect" id="node31" href="$osgearth__imageoverlay_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1544,284,1595,313"/>
+<area shape="rect" id="node36" href="$osgearth__featureeditor_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1544,337,1595,367"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#a6481a84518097ca479507ade97b4a770" title="osgEarth::Util::Controls::Grid::addControl" alt="" coords="1141,545,1403,575"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1Util_1_1Controls_1_1Grid.html#aef86ee35f5d7e87270ef27f251952d68" title="osgEarth::Util::Controls::Grid::addControls" alt="" coords="1137,599,1407,628"/>
+<area shape="rect" id="node46" href="$osgearth__toc_8cpp.html#aa71991ef036a5d30b262af0eeb75c09f" title="createLayerItem" alt="" coords="1215,441,1329,471"/>
+<area shape="rect" id="node48" href="$osgearth__toc_8cpp.html#a46d27909d39c4375f3cb070f332fe4d1" title="updateControlPanel" alt="" coords="1501,468,1637,497"/>
+<area shape="rect" id="node50" href="$osgearth__toc_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1685,468,1736,497"/>
+</map>

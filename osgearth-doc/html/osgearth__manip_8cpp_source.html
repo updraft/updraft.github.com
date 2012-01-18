@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__manip_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_manip/osgearth_manip.cpp</h1>  </div>
@@ -119,21 +135,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 <span class="keyword">using namespace </span>osgEarth::Util;
 <a name="l00036"></a>00036 <span class="keyword">using namespace </span>osgEarth::Util::Controls;
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="keyword">namespace</span>
+<a name="l00038"></a><a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html">00038</a> <span class="keyword">namespace</span>
 <a name="l00039"></a>00039 {
-<a name="l00040"></a>00040     <span class="keyword">class </span>SwitchHandler : <span class="keyword">public</span> osgGA::GUIEventHandler
+<a name="l00040"></a><a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html">00040</a>     <span class="keyword">class </span><a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html">SwitchHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
 <a name="l00041"></a>00041     {
 <a name="l00042"></a>00042     <span class="keyword">public</span>:
-<a name="l00043"></a>00043         SwitchHandler(<span class="keywordtype">char</span> key = 0) : <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>(key) {}
+<a name="l00043"></a><a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#ade24fdb5ce6883a6b818a558bd1c5cf6">00043</a>         <a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#ade24fdb5ce6883a6b818a558bd1c5cf6">SwitchHandler</a>(<span class="keywordtype">char</span> key = 0) : _key(key) {}
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045         <span class="keywordtype">bool</span> handle(<span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea,osgGA::GUIActionAdapter&amp; aa, osg::Object* <span class="keywordtype">object</span>, osg::NodeVisitor* <span class="comment">/*nv*/</span>)
+<a name="l00045"></a><a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#a99620b4c79c9d3912671acda65654231">00045</a>         <span class="keywordtype">bool</span> handle(<span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea,osgGA::GUIActionAdapter&amp; aa, osg::Object* <span class="keywordtype">object</span>, osg::NodeVisitor* <span class="comment">/*nv*/</span>)
 <a name="l00046"></a>00046         {
 <a name="l00047"></a>00047             <span class="keywordflow">if</span> (ea.getHandled() || ea.getEventType() != osgGA::GUIEventAdapter::KEYDOWN )
 <a name="l00048"></a>00048                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050             <span class="keywordflow">if</span> ( ea.getKey() == <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a> )
+<a name="l00050"></a>00050             <span class="keywordflow">if</span> ( ea.getKey() == _key )
 <a name="l00051"></a>00051             {
-<a name="l00052"></a>00052                 ControlCanvas* canvas = ControlCanvas::get(aa.asView());
+<a name="l00052"></a>00052                 <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>(aa.asView());
 <a name="l00053"></a>00053                 <span class="keywordflow">if</span> ( canvas )
 <a name="l00054"></a>00054                     canvas-&gt;setNodeMask( canvas-&gt;getNodeMask() ^ 0xFFFFFFFF );
 <a name="l00055"></a>00055             }
@@ -141,10 +157,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00057"></a>00057         }
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059     <span class="keyword">protected</span>:
-<a name="l00060"></a>00060         <span class="keywordtype">char</span> <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>;
+<a name="l00060"></a><a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#a8e1946c3f9614e36dc685de40d975315">00060</a>         <span class="keywordtype">char</span> <a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html#a8e1946c3f9614e36dc685de40d975315">_key</a>;
 <a name="l00061"></a>00061     };
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063     osg::Node* createHelp( osgViewer::View* view )
+<a name="l00063"></a><a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">00063</a>     osg::Node* <a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">createHelp</a>( osgViewer::View* view )
 <a name="l00064"></a>00064     {
 <a name="l00065"></a>00065         <span class="keyword">static</span> <span class="keywordtype">char</span> s_help[] = 
 <a name="l00066"></a>00066             <span class="stringliteral">&quot;left mouse: pan \n&quot;</span>
@@ -158,33 +174,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00074"></a>00074             <span class="stringliteral">&quot;u : toggle azimuth locking\n&quot;</span>
 <a name="l00075"></a>00075             <span class="stringliteral">&quot;h : toggle this help\n&quot;</span>;
 <a name="l00076"></a>00076 
-<a name="l00077"></a>00077         VBox* v = <span class="keyword">new</span> VBox();
-<a name="l00078"></a>00078         v-&gt;addControl( <span class="keyword">new</span> LabelControl( <span class="stringliteral">&quot;EarthManipulator&quot;</span>, osg::Vec4f(1,1,0,1) ) );
-<a name="l00079"></a>00079         v-&gt;addControl( <span class="keyword">new</span> LabelControl( s_help ) );
-<a name="l00080"></a>00080         ControlCanvas* canvas = ControlCanvas::get( view );
-<a name="l00081"></a>00081         canvas-&gt;addControl( v );
-<a name="l00082"></a>00082         canvas-&gt;setEventCallback(<span class="keyword">new</span> SwitchHandler(<span class="charliteral">&#39;h&#39;</span>));    
+<a name="l00077"></a>00077         <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* v = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+<a name="l00078"></a>00078         v-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( <span class="stringliteral">&quot;EarthManipulator&quot;</span>, osg::Vec4f(1,1,0,1) ) );
+<a name="l00079"></a>00079         v-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( s_help ) );
+<a name="l00080"></a>00080         <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( view );
+<a name="l00081"></a>00081         canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( v );
+<a name="l00082"></a>00082         canvas-&gt;setEventCallback(<span class="keyword">new</span> <a class="code" href="classanonymous__namespace_02osgearth__manip_8cpp_03_1_1SwitchHandler.html">SwitchHandler</a>(<span class="charliteral">&#39;h&#39;</span>));    
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084         <span class="keywordflow">return</span> canvas;
 <a name="l00085"></a>00085     }
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087     <span class="comment">// some preset viewpoints.</span>
-<a name="l00088"></a>00088     <span class="keyword">static</span> Viewpoint VPs[] = {
-<a name="l00089"></a>00089         Viewpoint( <span class="stringliteral">&quot;Africa&quot;</span>,        osg::Vec3d(    0.0,   0.0, 0.0 ), 0.0, -90.0, 10e6 ),
-<a name="l00090"></a>00090         Viewpoint( <span class="stringliteral">&quot;California&quot;</span>,    osg::Vec3d( -121.0,  34.0, 0.0 ), 0.0, -90.0, 6e6 ),
-<a name="l00091"></a>00091         Viewpoint( <span class="stringliteral">&quot;Europe&quot;</span>,        osg::Vec3d(    0.0,  45.0, 0.0 ), 0.0, -90.0, 4e6 ),
-<a name="l00092"></a>00092         Viewpoint( <span class="stringliteral">&quot;Washington DC&quot;</span>, osg::Vec3d(  -77.0,  38.0, 0.0 ), 0.0, -90.0, 1e6 ),
-<a name="l00093"></a>00093         Viewpoint( <span class="stringliteral">&quot;Australia&quot;</span>,     osg::Vec3d(  135.0, -20.0, 0.0 ), 0.0, -90.0, 2e6 ),
-<a name="l00094"></a>00094         Viewpoint( <span class="stringliteral">&quot;Boston&quot;</span>,        osg::Vec3d( -71.096936, 42.332771, 0 ), 0.0, -90, 1e5 )
+<a name="l00088"></a><a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#a4b4a92772e2861368fa2b94d18ee75dd">00088</a>     <span class="keyword">static</span> <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a> <a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#a4b4a92772e2861368fa2b94d18ee75dd">VPs</a>[] = {
+<a name="l00089"></a>00089         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;Africa&quot;</span>,        osg::Vec3d(    0.0,   0.0, 0.0 ), 0.0, -90.0, 10e6 ),
+<a name="l00090"></a>00090         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;California&quot;</span>,    osg::Vec3d( -121.0,  34.0, 0.0 ), 0.0, -90.0, 6e6 ),
+<a name="l00091"></a>00091         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;Europe&quot;</span>,        osg::Vec3d(    0.0,  45.0, 0.0 ), 0.0, -90.0, 4e6 ),
+<a name="l00092"></a>00092         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;Washington DC&quot;</span>, osg::Vec3d(  -77.0,  38.0, 0.0 ), 0.0, -90.0, 1e6 ),
+<a name="l00093"></a>00093         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;Australia&quot;</span>,     osg::Vec3d(  135.0, -20.0, 0.0 ), 0.0, -90.0, 2e6 ),
+<a name="l00094"></a>00094         <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( <span class="stringliteral">&quot;Boston&quot;</span>,        osg::Vec3d( -71.096936, 42.332771, 0 ), 0.0, -90, 1e5 )
 <a name="l00095"></a>00095     };
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097     <span class="comment">// a simple handler that demonstrates the &quot;viewpoint&quot; functionality in </span>
 <a name="l00098"></a>00098     <span class="comment">// osgEarthUtil::EarthManipulator. Press a number key to fly to a viewpoint.</span>
-<a name="l00099"></a>00099     <span class="keyword">struct </span>FlyToViewpointHandler : <span class="keyword">public</span> osgGA::GUIEventHandler 
+<a name="l00099"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html">00099</a>     <span class="keyword">struct </span><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html">FlyToViewpointHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler 
 <a name="l00100"></a>00100     {
-<a name="l00101"></a>00101         FlyToViewpointHandler( EarthManipulator* manip ) : _manip(manip) { }
+<a name="l00101"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html#a6080058b7138cf81fa4efb3be8f729c2">00101</a>         <a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html#a6080058b7138cf81fa4efb3be8f729c2">FlyToViewpointHandler</a>( <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>* manip ) : _manip(manip) { }
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
+<a name="l00103"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html#a7d54be3d5e273a823b66e535240c9161">00103</a>         <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
 <a name="l00104"></a>00104         {
 <a name="l00105"></a>00105             <span class="keywordflow">if</span> ( ea.getEventType() == ea.KEYDOWN &amp;&amp; ea.getKey() &gt;= <span class="charliteral">&#39;1&#39;</span> &amp;&amp; ea.getKey() &lt;= <span class="charliteral">&#39;6&#39;</span> )
 <a name="l00106"></a>00106             {
@@ -193,19 +209,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00109"></a>00109             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00110"></a>00110         }
 <a name="l00111"></a>00111 
-<a name="l00112"></a>00112         osg::observer_ptr&lt;EarthManipulator&gt; _manip;
+<a name="l00112"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html#a42d751b42e7ddd5fb94a6f52bef1e351">00112</a>         osg::observer_ptr&lt;EarthManipulator&gt; <a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1FlyToViewpointHandler.html#a42d751b42e7ddd5fb94a6f52bef1e351">_manip</a>;
 <a name="l00113"></a>00113     };
 <a name="l00114"></a>00114 
-<a name="l00115"></a>00115     <span class="keyword">struct </span>LockAzimuthHandler : <span class="keyword">public</span> osgGA::GUIEventHandler
+<a name="l00115"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html">00115</a>     <span class="keyword">struct </span><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html">LockAzimuthHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
 <a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         LockAzimuthHandler(<span class="keywordtype">char</span> key, EarthManipulator* manip)
-<a name="l00118"></a>00118             : <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>(key), _manip(manip)
+<a name="l00117"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a5f21f891966c2c36084c6f095ef3e38e">00117</a>         <a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html">LockAzimuthHandler</a>(<span class="keywordtype">char</span> key, <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>* manip)
+<a name="l00118"></a>00118             : _key(key), _manip(manip)
 <a name="l00119"></a>00119         {
 <a name="l00120"></a>00120         }
 <a name="l00121"></a>00121 
-<a name="l00122"></a>00122         <span class="keywordtype">bool</span> handle(<span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa)
+<a name="l00122"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a11279309b61f6264c9bd8fb187ed2c03">00122</a>         <span class="keywordtype">bool</span> handle(<span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa)
 <a name="l00123"></a>00123         {
-<a name="l00124"></a>00124             <span class="keywordflow">if</span> (ea.getEventType() == ea.KEYDOWN &amp;&amp; ea.getKey() == <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>)
+<a name="l00124"></a>00124             <span class="keywordflow">if</span> (ea.getEventType() == ea.KEYDOWN &amp;&amp; ea.getKey() == _key)
 <a name="l00125"></a>00125             {
 <a name="l00126"></a>00126                 <span class="keywordtype">bool</span> lockAzimuth
 <a name="l00127"></a>00127                     = _manip-&gt;getSettings()-&gt;getLockAzimuthWhilePanning();
@@ -215,15 +231,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00131"></a>00131             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00132"></a>00132         }
 <a name="l00133"></a>00133 
-<a name="l00134"></a>00134         <span class="keywordtype">void</span> getUsage(osg::ApplicationUsage&amp; <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>)<span class="keyword"> const</span>
+<a name="l00134"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a466b5f14bbcb55008ea2784d7e106d21">00134</a>         <span class="keywordtype">void</span> getUsage(osg::ApplicationUsage&amp; <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>)<span class="keyword"> const</span>
 <a name="l00135"></a>00135 <span class="keyword">        </span>{
 <a name="l00136"></a>00136             <span class="keyword">using namespace </span>std;
-<a name="l00137"></a>00137             usage.addKeyboardMouseBinding(<span class="keywordtype">string</span>(1, <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>),
+<a name="l00137"></a>00137             usage.addKeyboardMouseBinding(<span class="keywordtype">string</span>(1, _key),
 <a name="l00138"></a>00138                 <span class="keywordtype">string</span>(<span class="stringliteral">&quot;Toggle azimuth locking&quot;</span>));
 <a name="l00139"></a>00139         }
 <a name="l00140"></a>00140 
-<a name="l00141"></a>00141         <span class="keywordtype">char</span> <a class="code" href="_geographic_8cpp.html#aebd5fe5e12a2ae897f006b0544698b78">_key</a>;
-<a name="l00142"></a>00142         osg::ref_ptr&lt;EarthManipulator&gt; _manip;
+<a name="l00141"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a7fcc40facd95dbe017c54b636132770a">00141</a>         <span class="keywordtype">char</span> <a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a7fcc40facd95dbe017c54b636132770a">_key</a>;
+<a name="l00142"></a><a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a84038a30d8e9b050f72834a1779528cd">00142</a>         osg::ref_ptr&lt;EarthManipulator&gt; <a class="code" href="structanonymous__namespace_02osgearth__manip_8cpp_03_1_1LockAzimuthHandler.html#a84038a30d8e9b050f72834a1779528cd">_manip</a>;
 <a name="l00143"></a>00143 
 <a name="l00144"></a>00144     };
 <a name="l00145"></a>00145 
@@ -236,12 +252,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00152"></a>00152     osg::DisplaySettings::instance()-&gt;setMinimumNumStencilBits( 8 );
 <a name="l00153"></a>00153 
 <a name="l00154"></a>00154     <span class="comment">// install the programmable manipulator.</span>
-<a name="l00155"></a>00155     EarthManipulator* manip = <span class="keyword">new</span> EarthManipulator();
+<a name="l00155"></a>00155     <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>* manip = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>();
 <a name="l00156"></a>00156 
 <a name="l00157"></a>00157     osg::Node* earthNode = osgDB::readNodeFiles( arguments );
 <a name="l00158"></a>00158     <span class="keywordflow">if</span> (!earthNode)
 <a name="l00159"></a>00159     {
-<a name="l00160"></a>00160         OE_WARN &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
+<a name="l00160"></a>00160         <a class="code" href="Notify.html#a13b79c6470fc74594070bd2098afc9de">OE_WARN</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
 <a name="l00161"></a>00161         <span class="keywordflow">return</span> -1;
 <a name="l00162"></a>00162     }
 <a name="l00163"></a>00163 
@@ -249,33 +265,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00165"></a>00165 
 <a name="l00166"></a>00166     osg::Group* root = <span class="keyword">new</span> osg::Group();
 <a name="l00167"></a>00167     root-&gt;addChild( earthNode );
-<a name="l00168"></a>00168     root-&gt;addChild( createHelp(&amp;viewer) );
+<a name="l00168"></a>00168     root-&gt;addChild( <a class="code" href="namespaceanonymous__namespace_02osgearth__manip_8cpp_03.html#aeb5b3bda03e092861f66390f823e9114">createHelp</a>(&amp;viewer) );
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170     osgEarth::MapNode* mapNode = osgEarth::MapNode::findMapNode( earthNode );
+<a name="l00170"></a>00170     <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( earthNode );
 <a name="l00171"></a>00171     <span class="keywordflow">if</span> ( mapNode )
 <a name="l00172"></a>00172     {
 <a name="l00173"></a>00173         <span class="keywordflow">if</span> ( mapNode )
-<a name="l00174"></a>00174             manip-&gt;setNode( mapNode-&gt;getTerrainEngine() );
+<a name="l00174"></a>00174             manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#ac04e4204ab79440f3ea56a6551e55597">setNode</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb">getTerrainEngine</a>() );
 <a name="l00175"></a>00175 
-<a name="l00176"></a>00176         <span class="keywordflow">if</span> ( mapNode-&gt;getMap()-&gt;isGeocentric() )
+<a name="l00176"></a>00176         <span class="keywordflow">if</span> ( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960">isGeocentric</a>() )
 <a name="l00177"></a>00177         {
-<a name="l00178"></a>00178             manip-&gt;setHomeViewpoint( 
-<a name="l00179"></a>00179                 Viewpoint( osg::Vec3d( -90, 0, 0 ), 0.0, -90.0, 5e7 ) );
+<a name="l00178"></a>00178             manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a008fc79026e795d30735cf19dfc02474">setHomeViewpoint</a>( 
+<a name="l00179"></a>00179                 <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>( osg::Vec3d( -90, 0, 0 ), 0.0, -90.0, 5e7 ) );
 <a name="l00180"></a>00180 
 <a name="l00181"></a>00181             <span class="comment">// add a handler that will automatically calculate good clipping planes</span>
-<a name="l00182"></a>00182             viewer.addEventHandler( <span class="keyword">new</span> AutoClipPlaneHandler() );
+<a name="l00182"></a>00182             viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneHandler.html">AutoClipPlaneHandler</a>() );
 <a name="l00183"></a>00183         }
 <a name="l00184"></a>00184     }
 <a name="l00185"></a>00185 
 <a name="l00186"></a>00186     viewer.setSceneData( root );
 <a name="l00187"></a>00187     viewer.setCameraManipulator( manip );
 <a name="l00188"></a>00188 
-<a name="l00189"></a>00189     manip-&gt;getSettings()-&gt;bindMouse(
-<a name="l00190"></a>00190         EarthManipulator::ACTION_EARTH_DRAG,
+<a name="l00189"></a>00189     manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8">getSettings</a>()-&gt;bindMouse(
+<a name="l00190"></a>00190         <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a3de1f1ef699d137e4e1c8f9f27c34c29a1e494751ae534e2ebde70224c22d3224">EarthManipulator::ACTION_EARTH_DRAG</a>,
 <a name="l00191"></a>00191         osgGA::GUIEventAdapter::LEFT_MOUSE_BUTTON,
 <a name="l00192"></a>00192         osgGA::GUIEventAdapter::MODKEY_SHIFT );
 <a name="l00193"></a>00193 
-<a name="l00194"></a>00194     manip-&gt;getSettings()-&gt;setArcViewpointTransitions( <span class="keyword">true</span> );
+<a name="l00194"></a>00194     manip-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8">getSettings</a>()-&gt;setArcViewpointTransitions( <span class="keyword">true</span> );
 <a name="l00195"></a>00195     
 <a name="l00196"></a>00196     viewer.addEventHandler(<span class="keyword">new</span> FlyToViewpointHandler( manip ));
 <a name="l00197"></a>00197     viewer.addEventHandler(<span class="keyword">new</span> LockAzimuthHandler(<span class="charliteral">&#39;u&#39;</span>, manip));
@@ -294,14 +310,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00210"></a>00210 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__manip_8cpp.html">osgearth_manip.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -316,6 +324,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

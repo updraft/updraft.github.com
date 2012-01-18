@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -78,7 +108,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="functions_func.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_func.html#index__"><span>_</span></a></li>
+      <li><a href="functions_func_0x61.html#index_a"><span>a</span></a></li>
       <li><a href="functions_func_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_func_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_func_0x64.html#index_d"><span>d</span></a></li>
@@ -87,6 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_0x6a.html#index_j"><span>j</span></a></li>
       <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
@@ -102,64 +134,205 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x77.html#index_w"><span>w</span></a></li>
       <li><a href="functions_func_0x78.html#index_x"><span>x</span></a></li>
       <li><a href="functions_func_0x79.html#index_y"><span>y</span></a></li>
+      <li><a href="functions_func_0x7a.html#index_z"><span>z</span></a></li>
       <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('functions.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UnifiedCubeProfile()
+: <a class="el" href="classosgEarth_1_1UnifiedCubeProfile.html#a773cff233573969490b559d624b1ebde">osgEarth::UnifiedCubeProfile</a>
+</li>
+<li>unindent()
+: <a class="el" href="classosgEarth_1_1Json_1_1StyledWriter.html#a766e7ba52e6f60419e892c5783fd47d1">osgEarth::Json::StyledWriter</a>
+, <a class="el" href="classosgEarth_1_1Json_1_1StyledStreamWriter.html#a29c9290d1fe5e458862c41b15cc6976a">osgEarth::Json::StyledStreamWriter</a>
+</li>
+<li>unionWith()
+: <a class="el" href="classosgEarth_1_1Bounds.html#ad1f148b637d14fbc70ab03d5e8270369">osgEarth::Bounds</a>
+</li>
+<li>Units()
+: <a class="el" href="classosgEarth_1_1Units.html#ad62e88a31d46a6e593d6eeb6762405e8">osgEarth::Units</a>
+</li>
 <li>Unknown()
-: <a class="el" href="class_ti_xml_handle.html#a49675b74357ba2aae124657a9a1ef465">TiXmlHandle</a>
+: <a class="el" href="classTiXmlHandle.html#a49675b74357ba2aae124657a9a1ef465">TiXmlHandle</a>
+</li>
+<li>unregisterEngine()
+: <a class="el" href="classOSGTerrainEngineNode.html#ad30f28610eb2c9dad89251cfa62345f7">OSGTerrainEngineNode</a>
 </li>
 <li>unregisterGraph()
-: <a class="el" href="structosg_earth_feature_model_pseudo_loader.html#a8c45bb41b454ae61c521837bec18f8ee">osgEarthFeatureModelPseudoLoader</a>
+: <a class="el" href="structosgEarthFeatureModelPseudoLoader.html#a8c45bb41b454ae61c521837bec18f8ee">osgEarthFeatureModelPseudoLoader</a>
+</li>
+<li>unset()
+: <a class="el" href="structosgEarth_1_1optional.html#accde75fd530c9e33bb6c4a636e8c290d">osgEarth::optional&lt; T &gt;</a>
 </li>
 <li>update()
-: <a class="el" href="struct_query_tile_handler.html#acd4e0219843b3b29c9ec1c7f39205e5d">QueryTileHandler</a>
-, <a class="el" href="struct_geometry_point_symbolizer.html#a520af92b71bb9fd5acdbefdbc2cf4312">GeometryPointSymbolizer</a>
-, <a class="el" href="struct_query_elevation_handler.html#a7248491218afd8ed18337163073669ee">QueryElevationHandler</a>
-, <a class="el" href="class_sync_image_sequence.html#a532e7c0f9df41b49d019035048ee2dcc">SyncImageSequence</a>
+: <a class="el" href="classosgEarth_1_1Config.html#a98bd860008f48db60c9e85c27c3366cb">osgEarth::Config</a>
+, <a class="el" href="classDRoamNode.html#a2a7480a470d5f5b5d23f8479b4f64f8f">DRoamNode</a>
+, <a class="el" href="classMeshManager.html#adaaf589067ef0e73a3f215e9a9cf4ad1">MeshManager</a>
+, <a class="el" href="classSyncImageSequence.html#a532e7c0f9df41b49d019035048ee2dcc">SyncImageSequence</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a8d3eed1945613c517ddeebbef43d490b">osgEarth::Util::Controls::ControlCanvas</a>
+, <a class="el" href="classosgEarth_1_1Util_1_1ObjectLocatorNode.html#af1fa6c21a989d219679f1fd152438b26">osgEarth::Util::ObjectLocatorNode</a>
+, <a class="el" href="structQueryElevationHandler.html#a7248491218afd8ed18337163073669ee">QueryElevationHandler</a>
+, <a class="el" href="structQueryTileHandler.html#acd4e0219843b3b29c9ec1c7f39205e5d">QueryTileHandler</a>
+, <a class="el" href="structGeometryPointSymbolizer.html#a520af92b71bb9fd5acdbefdbc2cf4312">GeometryPointSymbolizer</a>
+, <a class="el" href="classosgEarth_1_1Config.html#a033ec2ca4c45a64605b2f97e6c59b0b9">osgEarth::Config</a>
 </li>
 <li>updateAccessTime()
-: <a class="el" href="struct_layer_table.html#a91475032cfff01014916ed9923c5ab16">LayerTable</a>
+: <a class="el" href="structLayerTable.html#a91475032cfff01014916ed9923c5ab16">LayerTable</a>
 </li>
 <li>updateAccessTimePool()
-: <a class="el" href="struct_layer_table.html#aae63a2472b8d215ae6ad2aea6237b290">LayerTable</a>
+: <a class="el" href="structLayerTable.html#aae63a2472b8d215ae6ad2aea6237b290">LayerTable</a>
 </li>
 <li>updateAccessTimeSync()
-: <a class="el" href="class_sqlite3_cache.html#acbae38c85f41b2587cda83978aafa4d9">Sqlite3Cache</a>
+: <a class="el" href="classSqlite3Cache.html#acbae38c85f41b2587cda83978aafa4d9">Sqlite3Cache</a>
 </li>
 <li>updateAccessTimeSyncPool()
-: <a class="el" href="class_sqlite3_cache.html#ab3f46e1a54e231c29c03ed4af9ee57c8">Sqlite3Cache</a>
+: <a class="el" href="classSqlite3Cache.html#ab3f46e1a54e231c29c03ed4af9ee57c8">Sqlite3Cache</a>
+</li>
+<li>updateBudgetRemaining()
+: <a class="el" href="classCustomTerrain.html#aa6474b4af2c3bf84177ae135a450cbf5">CustomTerrain</a>
+</li>
+<li>updateCamera()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a52a6bc2a13bee280ba3c4625d64c3ddb">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>updateChild()
+: <a class="el" href="classosgEarth_1_1Config.html#a00475dd5e78d349aea95f3921826fa70">osgEarth::Config</a>
+</li>
+<li>updateDraggers()
+: <a class="el" href="classosgEarth_1_1Util_1_1ImageOverlayEditor.html#a19f7914e87f353d5bfff614ff201b53c">osgEarth::Util::ImageOverlayEditor</a>
+</li>
+<li>updateElevation()
+: <a class="el" href="classOSGTerrainEngineNode.html#a8bc8f1263d97e161ceb4bec1483188bd">OSGTerrainEngineNode</a>
+</li>
+<li>updateGeometry()
+: <a class="el" href="classMultiPassTerrainTechnique.html#a7925e25c36484bbd58a87eba222388dc">MultiPassTerrainTechnique</a>
+</li>
+<li>updateHandCam()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a48929d38272cf7511bad9b6c71b424c7">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>updateIfSet()
+: <a class="el" href="classosgEarth_1_1Config.html#a7634d2c4fc97a686d06265ca071744d7">osgEarth::Config</a>
+</li>
+<li>updateImagery()
+: <a class="el" href="classCustomTile.html#a21348d5572220e77756aa60a61cc7516">CustomTile</a>
+, <a class="el" href="classStreamingTile.html#a0db8a9b2d174bee80dbf2400afdc53b7">StreamingTile</a>
+</li>
+<li>updateImageUniforms()
+: <a class="el" href="classosgEarth_1_1TerrainEngineNode.html#a3844514e5d9c6ab7ddf2817c37f1efa7">osgEarth::TerrainEngineNode</a>
 </li>
 <li>UpdateLabelCallback()
-: <a class="el" href="struct_update_label_callback.html#aee5bed0c9b9e584cdba8af4c05fce263">UpdateLabelCallback</a>
+: <a class="el" href="structUpdateLabelCallback.html#aee5bed0c9b9e584cdba8af4c05fce263">UpdateLabelCallback</a>
+</li>
+<li>UpdateLightingUniformsHelper()
+: <a class="el" href="classosgEarth_1_1UpdateLightingUniformsHelper.html#a35327ab7c9d9435e372f9bbb5db05d28">osgEarth::UpdateLightingUniformsHelper</a>
+</li>
+<li>updateMasterStateSet()
+: <a class="el" href="classosgEarth_1_1TextureCompositorTechnique.html#a73dd2bcd6e498e45b0600b69d795e47b">osgEarth::TextureCompositorTechnique</a>
+, <a class="el" href="classosgEarth_1_1TextureCompositor.html#a18ad1606e825c1f574ac699257307a6f">osgEarth::TextureCompositor</a>
+, <a class="el" href="classosgEarth_1_1TextureCompositorMultiTexture.html#a09f36589d31ae7d0a274186a0c76dbb9">osgEarth::TextureCompositorMultiTexture</a>
+</li>
+<li>updateNonSerializable()
+: <a class="el" href="classosgEarth_1_1Config.html#a544b8b2a93fca98298225e1e3725dbef">osgEarth::Config</a>
+</li>
+<li>updateObjIfSet()
+: <a class="el" href="classosgEarth_1_1Config.html#a303495252c7b0136d9bee941d903ebac">osgEarth::Config</a>
+</li>
+<li>updateOverlayGraph()
+: <a class="el" href="classosgEarth_1_1MapNode.html#a85e1a20e9c7af2edd025dee6be14644a">osgEarth::MapNode</a>
+</li>
+<li>updateRTTCamera()
+: <a class="el" href="classosgEarth_1_1OverlayDecorator.html#a601fc06c1551c801e9ba4f2a33b6559e">osgEarth::OverlayDecorator</a>
+</li>
+<li>updateSetViewpoint()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a9b7b6ff45e91f68f7fdcfcdb952e9ffe">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>updateTaskServiceThreads()
+: <a class="el" href="classCustomTerrain.html#a2a2e8a124055bd6319b7e9e484ab0230">CustomTerrain</a>
+, <a class="el" href="classStreamingTerrain.html#ae0dc4eef32a37a5d2c79a54e53fe9a79">StreamingTerrain</a>
+</li>
+<li>updateTether()
+: <a class="el" href="classosgEarth_1_1Util_1_1EarthManipulator.html#aaeee8d8e340b5453778853f5dbe569fc">osgEarth::Util::EarthManipulator</a>
+</li>
+<li>updateTextureCombining()
+: <a class="el" href="classOSGTerrainEngineNode.html#aff93c95786628db43ad9d7608cffc4ad">OSGTerrainEngineNode</a>
+</li>
+<li>updateTransparency()
+: <a class="el" href="classMultiPassTerrainTechnique.html#aa4691e3140cd2e2575a52c704f17f00b">MultiPassTerrainTechnique</a>
+</li>
+<li>updateTraversal()
+: <a class="el" href="classTerrain.html#a9ad47ff455864209d044fc9f514a3917">Terrain</a>
+, <a class="el" href="classStreamingTerrain.html#abec4dd0941a5da4fe93a87f9c1c68288">StreamingTerrain</a>
+</li>
+<li>updateTraverse()
+: <a class="el" href="classosgEarth_1_1UpdateLightingUniformsHelper.html#ac344ac89ddc29bab69e99936918a7fff">osgEarth::UpdateLightingUniformsHelper</a>
+</li>
+<li>URI()
+: <a class="el" href="classosgEarth_1_1URI.html#a5b105b773a4006012388f89b59c85c9d">osgEarth::URI</a>
+</li>
+<li>uri()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1MarkerResource.html#af5ffede0da7353a2845bfffe38d85a2c">osgEarth::Symbology::MarkerResource</a>
+</li>
+<li>URI()
+: <a class="el" href="classosgEarth_1_1URI.html#ac66eeec539f8db6a15d31f2203df5eb6">osgEarth::URI</a>
+</li>
+<li>uriContext()
+: <a class="el" href="classosgEarth_1_1Config.html#afd5cbf7058d97b88643e1b29b147e6a7">osgEarth::Config</a>
+, <a class="el" href="classosgEarth_1_1Features_1_1Session.html#a6a20e45f3caf771987f150d2e5184bf3">osgEarth::Features::Session</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1StringExpression.html#af4197144fe953fc8186cdb76e5fb569c">osgEarth::Symbology::StringExpression</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1Symbol.html#ad7d218d253e34bdceba6b42e7331d1f4">osgEarth::Symbology::Symbol</a>
+</li>
+<li>URIContext()
+: <a class="el" href="classosgEarth_1_1URIContext.html#a0405b86e81f5884d2e1736c79ea04282">osgEarth::URIContext</a>
+</li>
+<li>uriContext()
+: <a class="el" href="classosgEarth_1_1Symbology_1_1StyleSheet.html#a9e902b95d013758e74e397ddeca69ff5">osgEarth::Symbology::StyleSheet</a>
+</li>
+<li>URIStream()
+: <a class="el" href="classosgEarth_1_1URIStream.html#abcd588e4f902998c577ace66c3086b89">osgEarth::URIStream</a>
+</li>
+<li>url()
+: <a class="el" href="classosgEarth_1_1Drivers_1_1TileServiceOptions.html#a8272e4c2862f990471da67d1ed552b7b">osgEarth::Drivers::TileServiceOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WFSFeatureOptions.html#ac312d6e63da7a188ca8ed94796a22b59">osgEarth::Drivers::WFSFeatureOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#ad2b6a8ba43549bee07ebdcb48d6d571d">osgEarth::Drivers::TMSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureLabelModelOptions.html#afc63f15e48a012a1d647adf68c40bc50">osgEarth::Drivers::FeatureLabelModelOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#a6732c5490d1fda0e2ba30c2cb6728af0">osgEarth::Drivers::VPBOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureSubModelOptions.html#ac63f25764a39d6ba1001445684b59d16">osgEarth::Drivers::FeatureSubModelOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WCSOptions.html#add7fc4486c6a39d73689a0dffea15e5b">osgEarth::Drivers::WCSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1OSGOptions.html#a0c93d1ef9dfa8060be552ea9279cb2c3">osgEarth::Drivers::OSGOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1TileCacheOptions.html#afa308796a41798b32bd9dc0dfc1d28e7">osgEarth::Drivers::TileCacheOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#a0318257846af3f3ba38b2c73d504ceda">osgEarth::Drivers::GDALOptions</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1MarkerSymbol.html#ab2df4ad3d15d52b8d866c995cb7ab5a7">osgEarth::Symbology::MarkerSymbol</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WCSOptions.html#ac777d5580466b68c4497223ae17cea5c">osgEarth::Drivers::WCSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1TileServiceOptions.html#a452f485f44d931ba59f57409fc71d53e">osgEarth::Drivers::TileServiceOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WFSFeatureOptions.html#af863aadc51007e85e23cc3712b8571be">osgEarth::Drivers::WFSFeatureOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1WMSOptions.html#a099a1595fcc6acbcb6f28d79705db126">osgEarth::Drivers::WMSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a215f564f1264187dd7b716afd1700df8">osgEarth::Drivers::OGRFeatureOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1TMSOptions.html#adc435775a2a176ac54822aa2e640fed7">osgEarth::Drivers::TMSOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#a4aa5f776ee6cfbd235bbba644364c5a8">osgEarth::Drivers::ArcGISOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1VPBOptions.html#ab033ee0fd60090543642e846d4502c12">osgEarth::Drivers::VPBOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1ArcGISOptions.html#ab70b1c85b4ec712226571aee43c44e47">osgEarth::Drivers::ArcGISOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1OSGOptions.html#ab248c94bd33c6da86a5d0783aa23b216">osgEarth::Drivers::OSGOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1GDALOptions.html#aecef554e8c2f89222ee960e636f77e95">osgEarth::Drivers::GDALOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1TileCacheOptions.html#a3b701e647866b35fe1e250412f7c9106">osgEarth::Drivers::TileCacheOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureLabelModelOptions.html#a11444704ec556d31621906a984796fea">osgEarth::Drivers::FeatureLabelModelOptions</a>
+, <a class="el" href="classosgEarth_1_1Symbology_1_1MarkerSymbol.html#a6c3110c547a922efcdf7ecd5b56f2c08">osgEarth::Symbology::MarkerSymbol</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1OGRFeatureOptions.html#a3953bdbabe763a5f48ec122d3332b3ef">osgEarth::Drivers::OGRFeatureOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1SimpleModelOptions.html#a2c0b38423f4707489b40074bb40dffd9">osgEarth::Drivers::SimpleModelOptions</a>
+, <a class="el" href="classosgEarth_1_1Drivers_1_1FeatureSubModelOptions.html#ae19b63d6e6c78ddf3020e90ccf046021">osgEarth::Drivers::FeatureSubModelOptions</a>
+</li>
+<li>userName()
+: <a class="el" href="classosgEarth_1_1ProxySettings.html#af21928ad7471f26cc55b3f4e2891da77">osgEarth::ProxySettings</a>
+</li>
+<li>usesShaderComposition()
+: <a class="el" href="classosgEarth_1_1TextureCompositorMultiTexture.html#a04a1e6c7c33655dcc18ebdbb9df9c27a">osgEarth::TextureCompositorMultiTexture</a>
+, <a class="el" href="classosgEarth_1_1TextureCompositor.html#ab7a9336f87cda5e79e8f20f01a169e14">osgEarth::TextureCompositor</a>
+, <a class="el" href="classosgEarth_1_1TextureCompositorTechnique.html#a02668857bf3f98d5488be08dbe7f81fd">osgEarth::TextureCompositorTechnique</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -174,6 +347,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:43 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

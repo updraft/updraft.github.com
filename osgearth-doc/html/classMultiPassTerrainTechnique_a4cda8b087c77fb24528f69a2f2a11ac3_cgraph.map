@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTile.html#a36219d91d8b17471099bcc5c4bc1b2ed" title="Tile::getElevationLayer" alt="" coords="332,5,487,35"/>
+<area shape="rect" id="node5" href="$classCustomColorLayer.html#a761fdfb07388be6ac6438c2b96c7639d" title="CustomColorLayer::getImage" alt="" coords="313,59,505,88"/>
+<area shape="rect" id="node7" href="$classCustomColorLayer.html#ac9725adc85c194c7b4a4c99ed26d3d52" title="CustomColorLayer::getLocator" alt="" coords="309,112,509,141"/>
+<area shape="rect" id="node9" href="$classTerrain.html#afc533f56374093322731448e6a4b813e" title="Terrain::getSampleRatio" alt="" coords="328,165,491,195"/>
+<area shape="rect" id="node11" href="$classTile.html#a7c0c83673975b5474d61a9845a0cd02b" title="Tile::getTerrain" alt="" coords="355,219,464,248"/>
+<area shape="rect" id="node13" href="$classCustomColorLayer.html#af539b1957865fd51e5eb75ef7bd497ed" title="CustomColorLayer::getUID" alt="" coords="319,272,500,301"/>
+<area shape="rect" id="node15" href="$classTerrain.html#a9137bf26a5edaf11515e74aa58a6caf4" title="Terrain::getVerticalScale" alt="" coords="327,325,492,355"/>
+</map>

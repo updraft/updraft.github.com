@@ -1,0 +1,26 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1HTTPClient.html#a205703a6769c8b11ae32fe3a8d4469e7" title="osgEarth::HTTPClient::doDownload" alt="" coords="271,419,500,448"/>
+<area shape="rect" id="node35" href="$classosgEarth_1_1HTTPClient.html#ade965ee3144c8534f140641a3d3fda30" title="osgEarth::HTTPClient::getClient" alt="" coords="280,525,491,555"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1HTTPClient.html#a96eb034cc7d6e5e36ff35acc8e9ab832" title="osgEarth::HTTPClient::doGet" alt="" coords="587,245,781,275"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1HTTPResponse.html#a94edaa653b3b500fbfde370df606bc1d" title="osgEarth::HTTPResponse::getNumParts" alt="" coords="553,365,815,395"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1HTTPResponse.html#ac0d57710f507b0233ce842de2d6f098f" title="osgEarth::HTTPResponse::getPartStream" alt="" coords="551,419,817,448"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1HTTPResponse.html#aee5b1901831f84436647d578a9a3ee5b" title="osgEarth::HTTPResponse::isOK" alt="" coords="577,472,791,501"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1HTTPClient.html#a0a0cc6d6e9d576920725aca23f8e1f1b" title="osgEarth::HTTPClient::decodeMultipartStream" alt="" coords="867,5,1160,35"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#ac10ed828e5fb151d8cabf856e1fc3d3e" title="osgEarth::optional::get" alt="" coords="937,59,1089,88"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1HTTPRequest.html#a97fc1c3354ed0c55e47355a4d3967528" title="osgEarth::HTTPRequest::getURL" alt="" coords="904,112,1123,141"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1ProxySettings.html#a8f92db2fddac0305fc7a63a746b184fd" title="osgEarth::ProxySettings::hostName" alt="" coords="897,165,1129,195"/>
+<area shape="rect" id="node17" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="931,219,1096,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1ProxySettings.html#aad3d04605be63e0f846e6ab1f3bbbd73" title="osgEarth::ProxySettings::password" alt="" coords="900,272,1127,301"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1ProxySettings.html#ade63397477c470931b6c866b3e842cdc" title="osgEarth::ProxySettings::port" alt="" coords="916,325,1111,355"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1HTTPClient.html#a3261da970cd4a52b5eca1297e326874e" title="osgEarth::HTTPClient::readOptions" alt="" coords="899,379,1128,408"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1ProxySettings.html#a3324d11f27c341a33df59a0a3224101d" title="osgEarth::ProxySettings::userName" alt="" coords="897,432,1129,461"/>
+<area shape="rect" id="node9" href="$HTTPClient_8cpp.html#aa51d7af850424bfaff8e3ce9ba94fe30" title="tokenize_str" alt="" coords="1301,5,1395,35"/>
+<area shape="rect" id="node33" href="$classosgEarth_1_1HTTPResponse.html#ab8b74fa42bdabd96f65a42d92c975c92" title="osgEarth::HTTPResponse::isCancelled" alt="" coords="888,485,1139,515"/>
+<area shape="rect" id="node37" href="$structosgEarth_1_1Threading_1_1PerThread.html#a677baa850da97a7dc22289e5d18b63bd" title="osgEarth::Threading::PerThread::get" alt="" coords="568,525,800,555"/>
+<area shape="rect" id="node39" href="$classosgEarth_1_1HTTPClient.html#a23a15a8f27ac926a86c2ef7bc7bfebcb" title="osgEarth::HTTPClient::HTTPClient" alt="" coords="571,579,797,608"/>
+<area shape="rect" id="node41" href="$HTTPClient_8cpp.html#ac7e9a73231af27eae2565fdbc3b140f0" title="CurlProgressCallback" alt="" coords="939,565,1088,595"/>
+<area shape="rect" id="node47" href="$namespaceosgEarth.html#aace606a64b020bbf8cd64a8ab34bb6c8" title="osgEarth::StreamObjectReadCallback" alt="" coords="892,619,1135,648"/>
+<area shape="rect" id="node43" href="$classosgEarth_1_1ProgressCallback.html#abe0f8bf93f93716f3aad268c0fe4c1e7" title="osgEarth::ProgressCallback::isCanceled" alt="" coords="1219,512,1477,541"/>
+<area shape="rect" id="node45" href="$classosgEarth_1_1ProgressCallback.html#a5c9ed1704337456d1ce9633201fb2842" title="osgEarth::ProgressCallback::reportProgress" alt="" coords="1209,565,1487,595"/>
+<area shape="rect" id="node49" href="$structosgEarth_1_1StreamObject.html#a6a2d6836658563225e115cd400a97a05" title="osgEarth::StreamObject::write" alt="" coords="1249,619,1447,648"/>
+</map>

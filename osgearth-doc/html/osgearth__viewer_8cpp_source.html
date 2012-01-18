@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__viewer_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_viewer/osgearth_viewer.cpp</h1>  </div>
@@ -128,67 +144,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00044"></a>00044 <span class="keywordtype">int</span>
 <a name="l00045"></a><a class="code" href="osgearth__viewer_8cpp.html#ac885deb384473f74ae790d4be56a1f4d">00045</a> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="keyword">const</span> std::string&amp; msg )
 <a name="l00046"></a>00046 {
-<a name="l00047"></a>00047     OE_NOTICE &lt;&lt; msg &lt;&lt; std::endl;
-<a name="l00048"></a>00048     OE_NOTICE &lt;&lt; std::endl;
-<a name="l00049"></a>00049     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_viewer [options] file.earth&quot;</span> &lt;&lt; std::endl;
-<a name="l00050"></a>00050     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;   --sky           : activates the atmospheric model&quot;</span> &lt;&lt; std::endl;
-<a name="l00051"></a>00051     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;   --autoclip      : activates the auto clip-plane handler&quot;</span> &lt;&lt; std::endl;
-<a name="l00052"></a>00052     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;   --dms           : format coordinates as degrees/minutes/seconds&quot;</span> &lt;&lt; std::endl;
-<a name="l00053"></a>00053     OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;   --mgrs          : format coordinates as MGRS&quot;</span> &lt;&lt; std::endl;
+<a name="l00047"></a>00047     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; msg &lt;&lt; std::endl;
+<a name="l00048"></a>00048     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; std::endl;
+<a name="l00049"></a>00049     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;USAGE: osgearth_viewer [options] file.earth&quot;</span> &lt;&lt; std::endl;
+<a name="l00050"></a>00050     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;   --sky           : activates the atmospheric model&quot;</span> &lt;&lt; std::endl;
+<a name="l00051"></a>00051     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;   --autoclip      : activates the auto clip-plane handler&quot;</span> &lt;&lt; std::endl;
+<a name="l00052"></a>00052     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;   --dms           : format coordinates as degrees/minutes/seconds&quot;</span> &lt;&lt; std::endl;
+<a name="l00053"></a>00053     <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;   --mgrs          : format coordinates as MGRS&quot;</span> &lt;&lt; std::endl;
 <a name="l00054"></a>00054     
 <a name="l00055"></a>00055         
 <a name="l00056"></a>00056     <span class="keywordflow">return</span> -1;
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keyword">static</span> EarthManipulator* s_manip         =0L;
-<a name="l00060"></a>00060 <span class="keyword">static</span> Control*          s_controlPanel  =0L;
-<a name="l00061"></a>00061 <span class="keyword">static</span> SkyNode*          s_sky           =0L;
-<a name="l00062"></a>00062 <span class="keyword">static</span> <span class="keywordtype">bool</span>              s_dms           =<span class="keyword">false</span>;
-<a name="l00063"></a>00063 <span class="keyword">static</span> <span class="keywordtype">bool</span>              s_mgrs          =<span class="keyword">false</span>;
+<a name="l00059"></a><a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">00059</a> <span class="keyword">static</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>* <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a>         =0L;
+<a name="l00060"></a><a class="code" href="osgearth__viewer_8cpp.html#afca03fb88350e4438a1bf569347399e8">00060</a> <span class="keyword">static</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>*          <a class="code" href="osgearth__viewer_8cpp.html#afca03fb88350e4438a1bf569347399e8">s_controlPanel</a>  =0L;
+<a name="l00061"></a><a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">00061</a> <span class="keyword">static</span> <a class="code" href="classosgEarth_1_1Util_1_1SkyNode.html">SkyNode</a>*          <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a>           =0L;
+<a name="l00062"></a><a class="code" href="osgearth__viewer_8cpp.html#abb2321a57b4026c675ca3a187aff8389">00062</a> <span class="keyword">static</span> <span class="keywordtype">bool</span>              <a class="code" href="osgearth__viewer_8cpp.html#abb2321a57b4026c675ca3a187aff8389">s_dms</a>           =<span class="keyword">false</span>;
+<a name="l00063"></a><a class="code" href="osgearth__viewer_8cpp.html#a4444fea1c3ec84b3be1be9376167b270">00063</a> <span class="keyword">static</span> <span class="keywordtype">bool</span>              <a class="code" href="osgearth__viewer_8cpp.html#a4444fea1c3ec84b3be1be9376167b270">s_mgrs</a>          =<span class="keyword">false</span>;
 <a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="struct_sky_slider_handler.html">00065</a> <span class="keyword">struct </span><a class="code" href="struct_sky_slider_handler.html">SkySliderHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00065"></a><a class="code" href="structSkySliderHandler.html">00065</a> <span class="keyword">struct </span><a class="code" href="structSkySliderHandler.html">SkySliderHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00066"></a>00066 {
-<a name="l00067"></a><a class="code" href="struct_sky_slider_handler.html#adf3aeeece6d56d6358093544070832c6">00067</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onValueChanged( <span class="keyword">class</span> Control* control, <span class="keywordtype">float</span> value )
+<a name="l00067"></a><a class="code" href="structSkySliderHandler.html#adf3aeeece6d56d6358093544070832c6">00067</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onValueChanged( <span class="keyword">class</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">float</span> value )
 <a name="l00068"></a>00068     {
-<a name="l00069"></a>00069         s_sky-&gt;setDateTime( 2011, 3, 6, value );
+<a name="l00069"></a>00069         <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1SkyNode.html#a5a93f07675313f771ca2ad236c3b7f29">setDateTime</a>( 2011, 3, 6, value );
 <a name="l00070"></a>00070     }
 <a name="l00071"></a>00071 };
 <a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="struct_toggle_node_handler.html">00073</a> <span class="keyword">struct </span><a class="code" href="struct_toggle_node_handler.html">ToggleNodeHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00073"></a><a class="code" href="structToggleNodeHandler.html">00073</a> <span class="keyword">struct </span><a class="code" href="structToggleNodeHandler.html">ToggleNodeHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00074"></a>00074 {
-<a name="l00075"></a><a class="code" href="struct_toggle_node_handler.html#a168be49befef67a2698a44c0bf7fc141">00075</a>     <a class="code" href="struct_toggle_node_handler.html#a168be49befef67a2698a44c0bf7fc141">ToggleNodeHandler</a>( osg::Node* node ) : _node(node) { }
+<a name="l00075"></a><a class="code" href="structToggleNodeHandler.html#a168be49befef67a2698a44c0bf7fc141">00075</a>     <a class="code" href="structToggleNodeHandler.html#a168be49befef67a2698a44c0bf7fc141">ToggleNodeHandler</a>( osg::Node* node ) : _node(node) { }
 <a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="struct_toggle_node_handler.html#aefa289b70ad209b1e23aaf9c296ad48c">00077</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onValueChanged( <span class="keyword">class</span> Control* control, <span class="keywordtype">bool</span> value )
+<a name="l00077"></a><a class="code" href="structToggleNodeHandler.html#aefa289b70ad209b1e23aaf9c296ad48c">00077</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onValueChanged( <span class="keyword">class</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">bool</span> value )
 <a name="l00078"></a>00078     {
 <a name="l00079"></a>00079         osg::ref_ptr&lt;osg::Node&gt; safeNode = _node.get();
 <a name="l00080"></a>00080         <span class="keywordflow">if</span> ( safeNode.valid() )
 <a name="l00081"></a>00081             safeNode-&gt;setNodeMask( value ? ~0 : 0 );
 <a name="l00082"></a>00082     }
 <a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="struct_toggle_node_handler.html#ae870198ba05ab8c192916b207026032c">00084</a>     osg::observer_ptr&lt;osg::Node&gt; <a class="code" href="struct_toggle_node_handler.html#ae870198ba05ab8c192916b207026032c">_node</a>;
+<a name="l00084"></a><a class="code" href="structToggleNodeHandler.html#ae870198ba05ab8c192916b207026032c">00084</a>     osg::observer_ptr&lt;osg::Node&gt; <a class="code" href="structToggleNodeHandler.html#ae870198ba05ab8c192916b207026032c">_node</a>;
 <a name="l00085"></a>00085 };
 <a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="struct_click_viewpoint_handler.html">00087</a> <span class="keyword">struct </span><a class="code" href="struct_click_viewpoint_handler.html">ClickViewpointHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00087"></a><a class="code" href="structClickViewpointHandler.html">00087</a> <span class="keyword">struct </span><a class="code" href="structClickViewpointHandler.html">ClickViewpointHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00088"></a>00088 {
-<a name="l00089"></a><a class="code" href="struct_click_viewpoint_handler.html#af72cb5b911958281483fb782b30242d6">00089</a>     <a class="code" href="struct_click_viewpoint_handler.html#af72cb5b911958281483fb782b30242d6">ClickViewpointHandler</a>( <span class="keyword">const</span> Viewpoint&amp; vp ) : _vp(vp) { }
-<a name="l00090"></a><a class="code" href="struct_click_viewpoint_handler.html#ad3644cdc85e0280ae9b4b91e9fb5ae59">00090</a>     Viewpoint <a class="code" href="struct_click_viewpoint_handler.html#ad3644cdc85e0280ae9b4b91e9fb5ae59">_vp</a>;
+<a name="l00089"></a><a class="code" href="structClickViewpointHandler.html#af72cb5b911958281483fb782b30242d6">00089</a>     <a class="code" href="structClickViewpointHandler.html#af72cb5b911958281483fb782b30242d6">ClickViewpointHandler</a>( <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>&amp; vp ) : _vp(vp) { }
+<a name="l00090"></a><a class="code" href="structClickViewpointHandler.html#ad3644cdc85e0280ae9b4b91e9fb5ae59">00090</a>     <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a> <a class="code" href="structClickViewpointHandler.html#ad3644cdc85e0280ae9b4b91e9fb5ae59">_vp</a>;
 <a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="struct_click_viewpoint_handler.html#abab423a63328f7f47c18faa49b63e6c1">00092</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onClick( <span class="keyword">class</span> Control* control )
+<a name="l00092"></a><a class="code" href="structClickViewpointHandler.html#abab423a63328f7f47c18faa49b63e6c1">00092</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onClick( <span class="keyword">class</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control )
 <a name="l00093"></a>00093     {
-<a name="l00094"></a>00094         s_manip-&gt;setViewpoint( _vp, 4.5 );
+<a name="l00094"></a>00094         <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#af2d299a4e7a689feeede98cd994a47d1">setViewpoint</a>( _vp, 4.5 );
 <a name="l00095"></a>00095     }
 <a name="l00096"></a>00096 };
 <a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="struct_mouse_coords_handler.html">00098</a> <span class="keyword">struct </span><a class="code" href="struct_mouse_coords_handler.html">MouseCoordsHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
+<a name="l00098"></a><a class="code" href="structMouseCoordsHandler.html">00098</a> <span class="keyword">struct </span><a class="code" href="structMouseCoordsHandler.html">MouseCoordsHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
 <a name="l00099"></a>00099 {
-<a name="l00100"></a><a class="code" href="struct_mouse_coords_handler.html#a02845c6953aad6316658d46ccaf3141f">00100</a>     <a class="code" href="struct_mouse_coords_handler.html">MouseCoordsHandler</a>( LabelControl* label, osgEarth::MapNode* mapNode )
+<a name="l00100"></a><a class="code" href="structMouseCoordsHandler.html#a02845c6953aad6316658d46ccaf3141f">00100</a>     <a class="code" href="structMouseCoordsHandler.html">MouseCoordsHandler</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label, <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode )
 <a name="l00101"></a>00101         : _label( label ),
 <a name="l00102"></a>00102           _mapNode( mapNode )
 <a name="l00103"></a>00103     {
-<a name="l00104"></a>00104         _mapNodePath.push_back( mapNode-&gt;getTerrainEngine() );
+<a name="l00104"></a>00104         _mapNodePath.push_back( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad2879d42de301a1be63a57193eb821fb">getTerrainEngine</a>() );
 <a name="l00105"></a>00105     }
 <a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="struct_mouse_coords_handler.html#a64002613ad708254c2f310de017cf0f2">00107</a>     <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
+<a name="l00107"></a><a class="code" href="structMouseCoordsHandler.html#a64002613ad708254c2f310de017cf0f2">00107</a>     <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
 <a name="l00108"></a>00108     {
 <a name="l00109"></a>00109         osgViewer::View* view = <span class="keyword">static_cast&lt;</span>osgViewer::View*<span class="keyword">&gt;</span>(aa.asView());
 <a name="l00110"></a>00110         <span class="keywordflow">if</span> (ea.getEventType() == ea.MOVE || ea.getEventType() == ea.DRAG)
@@ -206,22 +222,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00122"></a>00122 
 <a name="l00123"></a>00123                 std::stringstream ss;
 <a name="l00124"></a>00124 
-<a name="l00125"></a>00125                 <span class="keywordflow">if</span> ( s_mgrs )
+<a name="l00125"></a>00125                 <span class="keywordflow">if</span> ( <a class="code" href="osgearth__viewer_8cpp.html#a4444fea1c3ec84b3be1be9376167b270">s_mgrs</a> )
 <a name="l00126"></a>00126                 {
-<a name="l00127"></a>00127                     MGRSFormatter f( MGRSFormatter::PRECISION_1M );
-<a name="l00128"></a>00128                     ss &lt;&lt; <span class="stringliteral">&quot;MGRS: &quot;</span> &lt;&lt; f.format(lla.y(), lla.x()) &lt;&lt; <span class="stringliteral">&quot;   &quot;</span>;
+<a name="l00127"></a>00127                     <a class="code" href="classosgEarth_1_1Util_1_1MGRSFormatter.html">MGRSFormatter</a> f( <a class="code" href="classosgEarth_1_1Util_1_1MGRSFormatter.html#a87f8ce904290399a3391e51673c23e9bab4218fafc692749e14989b77ad60c534">MGRSFormatter::PRECISION_1M</a> );
+<a name="l00128"></a>00128                     ss &lt;&lt; <span class="stringliteral">&quot;MGRS: &quot;</span> &lt;&lt; f.<a class="code" href="classosgEarth_1_1Util_1_1MGRSFormatter.html#a2405374a8d256b61a98fbb60f7e7295c">format</a>(lla.y(), lla.x()) &lt;&lt; <span class="stringliteral">&quot;   &quot;</span>;
 <a name="l00129"></a>00129                 }
 <a name="l00130"></a>00130                  <span class="comment">// lat/long</span>
 <a name="l00131"></a>00131                 {
-<a name="l00132"></a>00132                     LatLongFormatter::AngularFormat fFormat = s_dms?
-<a name="l00133"></a>00133                         LatLongFormatter::FORMAT_DEGREES_MINUTES_SECONDS :
-<a name="l00134"></a>00134                         LatLongFormatter::FORMAT_DECIMAL_DEGREES;
+<a name="l00132"></a>00132                     <a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html#a1f12ff2a8053c79c4a2ba82f83b515a0">LatLongFormatter::AngularFormat</a> fFormat = <a class="code" href="osgearth__viewer_8cpp.html#abb2321a57b4026c675ca3a187aff8389">s_dms</a>?
+<a name="l00133"></a>00133                         <a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html#a1f12ff2a8053c79c4a2ba82f83b515a0a12093807c5b16a7386d6a97e7f0486d0">LatLongFormatter::FORMAT_DEGREES_MINUTES_SECONDS</a> :
+<a name="l00134"></a>00134                         <a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html#a1f12ff2a8053c79c4a2ba82f83b515a0a57ae6f47fe9e78bbaeb783dad66375f0">LatLongFormatter::FORMAT_DECIMAL_DEGREES</a>;
 <a name="l00135"></a>00135                     
-<a name="l00136"></a>00136                     LatLongFormatter f( fFormat );
+<a name="l00136"></a>00136                     <a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html">LatLongFormatter</a> f( fFormat );
 <a name="l00137"></a>00137 
 <a name="l00138"></a>00138                     ss 
-<a name="l00139"></a>00139                         &lt;&lt; <span class="stringliteral">&quot;Lat: &quot;</span> &lt;&lt; f.format( Angular(lla.y(),Units::DEGREES), 4 ) &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>
-<a name="l00140"></a>00140                         &lt;&lt; <span class="stringliteral">&quot;Lon: &quot;</span> &lt;&lt; f.format( Angular(lla.x(),Units::DEGREES), 5 );
+<a name="l00139"></a>00139                         &lt;&lt; <span class="stringliteral">&quot;Lat: &quot;</span> &lt;&lt; f.<a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html#a42f50299f617d1bbbf78429e16cefee9">format</a>( <a class="code" href="structosgEarth_1_1Angular.html">Angular</a>(lla.y(),<a class="code" href="classosgEarth_1_1Units.html#a16be533006b6254a89fd28a82783e68d">Units::DEGREES</a>), 4 ) &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>
+<a name="l00140"></a>00140                         &lt;&lt; <span class="stringliteral">&quot;Lon: &quot;</span> &lt;&lt; f.<a class="code" href="classosgEarth_1_1Util_1_1LatLongFormatter.html#a42f50299f617d1bbbf78429e16cefee9">format</a>( <a class="code" href="structosgEarth_1_1Angular.html">Angular</a>(lla.x(),<a class="code" href="classosgEarth_1_1Units.html#a16be533006b6254a89fd28a82783e68d">Units::DEGREES</a>), 5 );
 <a name="l00141"></a>00141                 }
 <a name="l00142"></a>00142 
 <a name="l00143"></a>00143                 _label-&gt;setText( ss.str() );
@@ -235,9 +251,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00151"></a>00151         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00152"></a>00152     }
 <a name="l00153"></a>00153 
-<a name="l00154"></a><a class="code" href="struct_mouse_coords_handler.html#acbf4541b805738b61747d92a587e6857">00154</a>     osg::ref_ptr&lt; LabelControl &gt; <a class="code" href="struct_mouse_coords_handler.html#acbf4541b805738b61747d92a587e6857">_label</a>;
-<a name="l00155"></a><a class="code" href="struct_mouse_coords_handler.html#a85fcdff90d73653981897756c3529d26">00155</a>     MapNode*                     <a class="code" href="struct_mouse_coords_handler.html#a85fcdff90d73653981897756c3529d26">_mapNode</a>;
-<a name="l00156"></a><a class="code" href="struct_mouse_coords_handler.html#a57090c5e6b8f10c31c0d880b3e0b3a54">00156</a>     osg::NodePath                <a class="code" href="struct_mouse_coords_handler.html#a57090c5e6b8f10c31c0d880b3e0b3a54">_mapNodePath</a>;
+<a name="l00154"></a><a class="code" href="structMouseCoordsHandler.html#acbf4541b805738b61747d92a587e6857">00154</a>     osg::ref_ptr&lt; LabelControl &gt; <a class="code" href="structMouseCoordsHandler.html#acbf4541b805738b61747d92a587e6857">_label</a>;
+<a name="l00155"></a><a class="code" href="structMouseCoordsHandler.html#a85fcdff90d73653981897756c3529d26">00155</a>     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>*                     <a class="code" href="structMouseCoordsHandler.html#a85fcdff90d73653981897756c3529d26">_mapNode</a>;
+<a name="l00156"></a><a class="code" href="structMouseCoordsHandler.html#a57090c5e6b8f10c31c0d880b3e0b3a54">00156</a>     osg::NodePath                <a class="code" href="structMouseCoordsHandler.html#a57090c5e6b8f10c31c0d880b3e0b3a54">_mapNodePath</a>;
 <a name="l00157"></a>00157 };
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159 
@@ -245,97 +261,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00161"></a>00161 <span class="keywordtype">void</span>
 <a name="l00162"></a><a class="code" href="osgearth__viewer_8cpp.html#af13a68596b38f2660f1cef8e18b71e29">00162</a> <a class="code" href="osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846">createControlPanel</a>( osgViewer::View* view, std::vector&lt;Viewpoint&gt;&amp; vps )
 <a name="l00163"></a>00163 {
-<a name="l00164"></a>00164     ControlCanvas* canvas = ControlCanvas::get( view );
+<a name="l00164"></a>00164     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( view );
 <a name="l00165"></a>00165 
-<a name="l00166"></a>00166     VBox* <a class="code" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> = <span class="keyword">new</span> VBox();
-<a name="l00167"></a>00167     main-&gt;setBackColor(0,0,0,0.5);
-<a name="l00168"></a>00168     main-&gt;setMargin( 10 );
-<a name="l00169"></a>00169     main-&gt;setPadding( 10 );
-<a name="l00170"></a>00170     main-&gt;setChildSpacing( 10 );
-<a name="l00171"></a>00171     main-&gt;setAbsorbEvents( <span class="keyword">true</span> );
-<a name="l00172"></a>00172     main-&gt;setVertAlign( Control::ALIGN_BOTTOM );
+<a name="l00166"></a>00166     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>* <a class="code" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html">VBox</a>();
+<a name="l00167"></a>00167     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);
+<a name="l00168"></a>00168     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+<a name="l00169"></a>00169     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+<a name="l00170"></a>00170     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+<a name="l00171"></a>00171     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0">setAbsorbEvents</a>( <span class="keyword">true</span> );
+<a name="l00172"></a>00172     main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">Control::ALIGN_BOTTOM</a> );
 <a name="l00173"></a>00173 
 <a name="l00174"></a>00174     <span class="keywordflow">if</span> ( vps.size() &gt; 0 )
 <a name="l00175"></a>00175     {
 <a name="l00176"></a>00176         <span class="comment">// the viewpoint container:</span>
-<a name="l00177"></a>00177         Grid* g = <span class="keyword">new</span> Grid();
-<a name="l00178"></a>00178         g-&gt;setChildSpacing( 0 );
-<a name="l00179"></a>00179         g-&gt;setChildVertAlign( Control::ALIGN_CENTER );
+<a name="l00177"></a>00177         <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* g = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+<a name="l00178"></a>00178         g-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 0 );
+<a name="l00179"></a>00179         g-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1ab3b34efd4acd09720e1ef6441c0ad6fe">Control::ALIGN_CENTER</a> );
 <a name="l00180"></a>00180 
 <a name="l00181"></a>00181         <span class="keywordtype">unsigned</span> i;
 <a name="l00182"></a>00182         <span class="keywordflow">for</span>( i=0; i&lt;vps.size(); ++i )
 <a name="l00183"></a>00183         {
-<a name="l00184"></a>00184             <span class="keyword">const</span> Viewpoint&amp; vp = vps[i];
+<a name="l00184"></a>00184             <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>&amp; vp = vps[i];
 <a name="l00185"></a>00185             std::stringstream buf;
 <a name="l00186"></a>00186             buf &lt;&lt; (i+1);
-<a name="l00187"></a>00187             Control* num = <span class="keyword">new</span> LabelControl(buf.str(), 16.0f, osg::Vec4f(1,1,0,1));
-<a name="l00188"></a>00188             num-&gt;setPadding( 4 );
-<a name="l00189"></a>00189             g-&gt;setControl( 0, i, num );
+<a name="l00187"></a>00187             <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* num = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(buf.str(), 16.0f, osg::Vec4f(1,1,0,1));
+<a name="l00188"></a>00188             num-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 4 );
+<a name="l00189"></a>00189             g-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, i, num );
 <a name="l00190"></a>00190 
-<a name="l00191"></a>00191             Control* vpc = <span class="keyword">new</span> LabelControl(vp.getName().empty() ? <span class="stringliteral">&quot;&lt;no name&gt;&quot;</span> : vp.getName(), 16.0f);
-<a name="l00192"></a>00192             vpc-&gt;setPadding( 4 );
-<a name="l00193"></a>00193             vpc-&gt;setHorizFill( <span class="keyword">true</span> );
-<a name="l00194"></a>00194             vpc-&gt;setActiveColor( Color::Blue );
-<a name="l00195"></a>00195             vpc-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_click_viewpoint_handler.html">ClickViewpointHandler</a>(vp) );
-<a name="l00196"></a>00196             g-&gt;setControl( 1, i, vpc );
+<a name="l00191"></a>00191             <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* vpc = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(vp.<a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html#ac4c43cd40ee64c5b2d9ac53a7e79a938">getName</a>().empty() ? <span class="stringliteral">&quot;&lt;no name&gt;&quot;</span> : vp.<a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html#ac4c43cd40ee64c5b2d9ac53a7e79a938">getName</a>(), 16.0f);
+<a name="l00192"></a>00192             vpc-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 4 );
+<a name="l00193"></a>00193             vpc-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569">setHorizFill</a>( <span class="keyword">true</span> );
+<a name="l00194"></a>00194             vpc-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e">setActiveColor</a>( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html#a7bc662a92370952bf21058bc7d1e7965">Color::Blue</a> );
+<a name="l00195"></a>00195             vpc-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structClickViewpointHandler.html">ClickViewpointHandler</a>(vp) );
+<a name="l00196"></a>00196             g-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, i, vpc );
 <a name="l00197"></a>00197         }
-<a name="l00198"></a>00198         main-&gt;addControl( g );
+<a name="l00198"></a>00198         main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( g );
 <a name="l00199"></a>00199     }
 <a name="l00200"></a>00200 
 <a name="l00201"></a>00201     <span class="comment">// sky time slider:</span>
-<a name="l00202"></a>00202     <span class="keywordflow">if</span> ( s_sky )
+<a name="l00202"></a>00202     <span class="keywordflow">if</span> ( <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a> )
 <a name="l00203"></a>00203     {
-<a name="l00204"></a>00204         HBox* skyBox = <span class="keyword">new</span> HBox();
-<a name="l00205"></a>00205         skyBox-&gt;setChildVertAlign( Control::ALIGN_CENTER );
-<a name="l00206"></a>00206         skyBox-&gt;setChildSpacing( 10 );
-<a name="l00207"></a>00207         skyBox-&gt;setHorizFill( <span class="keyword">true</span> );
+<a name="l00204"></a>00204         <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>* skyBox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html">HBox</a>();
+<a name="l00205"></a>00205         skyBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1ab3b34efd4acd09720e1ef6441c0ad6fe">Control::ALIGN_CENTER</a> );
+<a name="l00206"></a>00206         skyBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+<a name="l00207"></a>00207         skyBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569">setHorizFill</a>( <span class="keyword">true</span> );
 <a name="l00208"></a>00208 
-<a name="l00209"></a>00209         skyBox-&gt;addControl( <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Time: &quot;</span>, 16) );
+<a name="l00209"></a>00209         skyBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Time: &quot;</span>, 16) );
 <a name="l00210"></a>00210 
-<a name="l00211"></a>00211         HSliderControl* skySlider = <span class="keyword">new</span> HSliderControl( 0.0f, 24.0f, 18.0f );
-<a name="l00212"></a>00212         skySlider-&gt;setBackColor( Color::Gray );
-<a name="l00213"></a>00213         skySlider-&gt;setHeight( 12 );
-<a name="l00214"></a>00214         skySlider-&gt;setHorizFill( <span class="keyword">true</span>, 200 );
-<a name="l00215"></a>00215         skySlider-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_sky_slider_handler.html">SkySliderHandler</a> );
-<a name="l00216"></a>00216         skyBox-&gt;addControl( skySlider );
+<a name="l00211"></a>00211         <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>* skySlider = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HSliderControl.html">HSliderControl</a>( 0.0f, 24.0f, 18.0f );
+<a name="l00212"></a>00212         skySlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html#af2dd026627915f6b0ed9763d0023b28b">Color::Gray</a> );
+<a name="l00213"></a>00213         skySlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a914e22e23e3173b2e8e0131bf55b9125">setHeight</a>( 12 );
+<a name="l00214"></a>00214         skySlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a45d62e59bb375b917c937939776f7569">setHorizFill</a>( <span class="keyword">true</span>, 200 );
+<a name="l00215"></a>00215         skySlider-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structSkySliderHandler.html">SkySliderHandler</a> );
+<a name="l00216"></a>00216         skyBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1HBox.html#af970676ea904a6e27478aaac675979b3">addControl</a>( skySlider );
 <a name="l00217"></a>00217 
-<a name="l00218"></a>00218         main-&gt;addControl( skyBox );
+<a name="l00218"></a>00218         main-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1VBox.html#af6179d9e8b779a87f0e0f5f0f1312d40">addControl</a>( skyBox );
 <a name="l00219"></a>00219     }
 <a name="l00220"></a>00220     
-<a name="l00221"></a>00221     canvas-&gt;addControl( main );
+<a name="l00221"></a>00221     canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( main );
 <a name="l00222"></a>00222 
-<a name="l00223"></a>00223     s_controlPanel = <a class="code" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>;
+<a name="l00223"></a>00223     <a class="code" href="osgearth__viewer_8cpp.html#afca03fb88350e4438a1bf569347399e8">s_controlPanel</a> = <a class="code" href="osgearth__annotation_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>;
 <a name="l00224"></a>00224 }
 <a name="l00225"></a>00225 
-<a name="l00229"></a><a class="code" href="struct_k_m_l_u_i_builder.html">00229</a> <span class="keyword">struct </span><a class="code" href="struct_k_m_l_u_i_builder.html">KMLUIBuilder</a> : <span class="keyword">public</span> osg::NodeVisitor
+<a name="l00229"></a><a class="code" href="structKMLUIBuilder.html">00229</a> <span class="keyword">struct </span><a class="code" href="structKMLUIBuilder.html">KMLUIBuilder</a> : <span class="keyword">public</span> osg::NodeVisitor
 <a name="l00230"></a>00230 {
-<a name="l00231"></a><a class="code" href="struct_k_m_l_u_i_builder.html#a8cc5caa54f909ea11a438d77b214bce2">00231</a>     <a class="code" href="struct_k_m_l_u_i_builder.html">KMLUIBuilder</a>( ControlCanvas* canvas ) : osg::NodeVisitor(osg::NodeVisitor::TRAVERSE_ALL_CHILDREN), _canvas(canvas)
+<a name="l00231"></a><a class="code" href="structKMLUIBuilder.html#a8cc5caa54f909ea11a438d77b214bce2">00231</a>     <a class="code" href="structKMLUIBuilder.html">KMLUIBuilder</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas ) : osg::NodeVisitor(osg::NodeVisitor::TRAVERSE_ALL_CHILDREN), _canvas(canvas)
 <a name="l00232"></a>00232     {
-<a name="l00233"></a>00233         _grid = <span class="keyword">new</span> Grid();
+<a name="l00233"></a>00233         _grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
 <a name="l00234"></a>00234         _grid-&gt;setAbsorbEvents( <span class="keyword">true</span> );
 <a name="l00235"></a>00235         _grid-&gt;setPadding( 5 );
-<a name="l00236"></a>00236         _grid-&gt;setVertAlign( Control::ALIGN_TOP );
-<a name="l00237"></a>00237         _grid-&gt;setHorizAlign( Control::ALIGN_LEFT );
-<a name="l00238"></a>00238         _grid-&gt;setBackColor( Color(Color::Black,0.5) );
+<a name="l00236"></a>00236         _grid-&gt;setVertAlign( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a6a262a1cc0167fd55c62abdb417d5183">Control::ALIGN_TOP</a> );
+<a name="l00237"></a>00237         _grid-&gt;setHorizAlign( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aac9cc19c01d29206a1453a72cecf4152">Control::ALIGN_LEFT</a> );
+<a name="l00238"></a>00238         _grid-&gt;setBackColor( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html">Color</a>(<a class="code" href="structosgEarth_1_1Symbology_1_1Color.html#ad4282315e214e01f5c2cc046c3a3d8f4">Color::Black</a>,0.5) );
 <a name="l00239"></a>00239         _canvas-&gt;addControl( _grid );
 <a name="l00240"></a>00240     }
 <a name="l00241"></a>00241 
-<a name="l00242"></a><a class="code" href="struct_k_m_l_u_i_builder.html#a52a37717c580305c2a8a552d7e28dfd0">00242</a>     <span class="keywordtype">void</span> apply( osg::Node&amp; node )
+<a name="l00242"></a><a class="code" href="structKMLUIBuilder.html#a52a37717c580305c2a8a552d7e28dfd0">00242</a>     <span class="keywordtype">void</span> apply( osg::Node&amp; node )
 <a name="l00243"></a>00243     {
-<a name="l00244"></a>00244         AnnotationData* data = <span class="keyword">dynamic_cast&lt;</span>AnnotationData*<span class="keyword">&gt;</span>( node.getUserData() );
+<a name="l00244"></a>00244         <a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html">AnnotationData</a>* data = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html">AnnotationData</a>*<span class="keyword">&gt;</span>( node.getUserData() );
 <a name="l00245"></a>00245         <span class="keywordflow">if</span> ( data )
 <a name="l00246"></a>00246         {
-<a name="l00247"></a>00247             ControlVector row;
-<a name="l00248"></a>00248             CheckBoxControl* cb = <span class="keyword">new</span> CheckBoxControl( node.getNodeMask() != 0, <span class="keyword">new</span> <a class="code" href="struct_toggle_node_handler.html">ToggleNodeHandler</a>( &amp;node ) );
-<a name="l00249"></a>00249             cb-&gt;setSize( 12, 12 );
+<a name="l00247"></a>00247             <a class="code" href="namespaceosgEarth_1_1Util_1_1Controls.html#a78b0ac85b48e1ab625b94e120f2ddf95">ControlVector</a> row;
+<a name="l00248"></a>00248             <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>* cb = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>( node.getNodeMask() != 0, <span class="keyword">new</span> <a class="code" href="structToggleNodeHandler.html">ToggleNodeHandler</a>( &amp;node ) );
+<a name="l00249"></a>00249             cb-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a">setSize</a>( 12, 12 );
 <a name="l00250"></a>00250             row.push_back( cb );
-<a name="l00251"></a>00251             std::string name = data-&gt;getName().empty() ? <span class="stringliteral">&quot;&lt;unnamed&gt;&quot;</span> : data-&gt;getName();
-<a name="l00252"></a>00252             LabelControl* label = <span class="keyword">new</span> LabelControl( name, 14.0f );
-<a name="l00253"></a>00253             label-&gt;setMargin(Gutter(0,0,0,(this-&gt;getNodePath().size()-3)*20));
-<a name="l00254"></a>00254             <span class="keywordflow">if</span> ( data-&gt;getViewpoint() )
+<a name="l00251"></a>00251             std::string name = data-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#ac26e5d3af6a16e0c9b7a87f8d7f1a34f">getName</a>().empty() ? <span class="stringliteral">&quot;&lt;unnamed&gt;&quot;</span> : data-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#ac26e5d3af6a16e0c9b7a87f8d7f1a34f">getName</a>();
+<a name="l00252"></a>00252             <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>( name, 14.0f );
+<a name="l00253"></a>00253             label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>(<a class="code" href="structosgEarth_1_1Util_1_1Controls_1_1Gutter.html">Gutter</a>(0,0,0,(this-&gt;getNodePath().size()-3)*20));
+<a name="l00254"></a>00254             <span class="keywordflow">if</span> ( data-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#a3a37f0da4959ed497e72d90c74700536">getViewpoint</a>() )
 <a name="l00255"></a>00255             {
-<a name="l00256"></a>00256                 label-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_click_viewpoint_handler.html">ClickViewpointHandler</a>(*data-&gt;getViewpoint()) );
-<a name="l00257"></a>00257                 label-&gt;setActiveColor( Color::Blue );
+<a name="l00256"></a>00256                 label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structClickViewpointHandler.html">ClickViewpointHandler</a>(*data-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Annotation_1_1AnnotationData.html#a3a37f0da4959ed497e72d90c74700536">getViewpoint</a>()) );
+<a name="l00257"></a>00257                 label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ac615d9733410fbb685e9a3d6d9ea5a3e">setActiveColor</a>( <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html#a7bc662a92370952bf21058bc7d1e7965">Color::Blue</a> );
 <a name="l00258"></a>00258             }
 <a name="l00259"></a>00259             row.push_back( label );
 <a name="l00260"></a>00260             _grid-&gt;addControls( row );
@@ -343,54 +359,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00262"></a>00262         traverse(node);
 <a name="l00263"></a>00263     }
 <a name="l00264"></a>00264 
-<a name="l00265"></a><a class="code" href="struct_k_m_l_u_i_builder.html#ac093d592bf62a0e34ce52f456047e10f">00265</a>     ControlCanvas* <a class="code" href="struct_k_m_l_u_i_builder.html#ac093d592bf62a0e34ce52f456047e10f">_canvas</a>;
-<a name="l00266"></a><a class="code" href="struct_k_m_l_u_i_builder.html#af5fb74748d6ca589eb1eed806ea4c669">00266</a>     Grid*          <a class="code" href="struct_k_m_l_u_i_builder.html#af5fb74748d6ca589eb1eed806ea4c669">_grid</a>;
+<a name="l00265"></a><a class="code" href="structKMLUIBuilder.html#ac093d592bf62a0e34ce52f456047e10f">00265</a>     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* <a class="code" href="structKMLUIBuilder.html#ac093d592bf62a0e34ce52f456047e10f">_canvas</a>;
+<a name="l00266"></a><a class="code" href="structKMLUIBuilder.html#af5fb74748d6ca589eb1eed806ea4c669">00266</a>     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>*          <a class="code" href="structKMLUIBuilder.html#af5fb74748d6ca589eb1eed806ea4c669">_grid</a>;
 <a name="l00267"></a>00267 };
 <a name="l00268"></a>00268 
-<a name="l00269"></a><a class="code" href="osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8">00269</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8">addMouseCoords</a>(osgViewer::Viewer* viewer, osgEarth::MapNode* mapNode)
+<a name="l00269"></a><a class="code" href="osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8">00269</a> <span class="keywordtype">void</span> <a class="code" href="osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8">addMouseCoords</a>(osgViewer::Viewer* viewer, <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode)
 <a name="l00270"></a>00270 {
-<a name="l00271"></a>00271     ControlCanvas* canvas = ControlCanvas::get( viewer );
-<a name="l00272"></a>00272     LabelControl* mouseCoords = <span class="keyword">new</span> LabelControl();
-<a name="l00273"></a>00273     mouseCoords-&gt;setHorizAlign(Control::ALIGN_CENTER );
-<a name="l00274"></a>00274     mouseCoords-&gt;setVertAlign(Control::ALIGN_BOTTOM );
-<a name="l00275"></a>00275     mouseCoords-&gt;setBackColor(0,0,0,0.5);    
-<a name="l00276"></a>00276     mouseCoords-&gt;setSize(400,50);
-<a name="l00277"></a>00277     mouseCoords-&gt;setMargin( 10 );
-<a name="l00278"></a>00278     canvas-&gt;addControl( mouseCoords );
+<a name="l00271"></a>00271     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( viewer );
+<a name="l00272"></a>00272     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* mouseCoords = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>();
+<a name="l00273"></a>00273     mouseCoords-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1ab3b34efd4acd09720e1ef6441c0ad6fe">Control::ALIGN_CENTER</a> );
+<a name="l00274"></a>00274     mouseCoords-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">Control::ALIGN_BOTTOM</a> );
+<a name="l00275"></a>00275     mouseCoords-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);    
+<a name="l00276"></a>00276     mouseCoords-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a027eeb8f46d609c4a12fb1172310e20a">setSize</a>(400,50);
+<a name="l00277"></a>00277     mouseCoords-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+<a name="l00278"></a>00278     canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( mouseCoords );
 <a name="l00279"></a>00279 
-<a name="l00280"></a>00280     viewer-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_mouse_coords_handler.html">MouseCoordsHandler</a>(mouseCoords, mapNode ) );
+<a name="l00280"></a>00280     viewer-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="structMouseCoordsHandler.html">MouseCoordsHandler</a>(mouseCoords, mapNode ) );
 <a name="l00281"></a>00281 }
 <a name="l00282"></a>00282 
-<a name="l00283"></a><a class="code" href="struct_viewpoint_handler.html">00283</a> <span class="keyword">struct </span><a class="code" href="struct_viewpoint_handler.html">ViewpointHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
+<a name="l00283"></a><a class="code" href="structViewpointHandler.html">00283</a> <span class="keyword">struct </span><a class="code" href="structViewpointHandler.html">ViewpointHandler</a> : <span class="keyword">public</span> osgGA::GUIEventHandler
 <a name="l00284"></a>00284 {
-<a name="l00285"></a><a class="code" href="struct_viewpoint_handler.html#a5ac52a9ec9c45d6435c289fbde352af2">00285</a>     <a class="code" href="struct_viewpoint_handler.html">ViewpointHandler</a>( <span class="keyword">const</span> std::vector&lt;Viewpoint&gt;&amp; viewpoints )
+<a name="l00285"></a><a class="code" href="structViewpointHandler.html#a5ac52a9ec9c45d6435c289fbde352af2">00285</a>     <a class="code" href="structViewpointHandler.html">ViewpointHandler</a>( <span class="keyword">const</span> std::vector&lt;Viewpoint&gt;&amp; viewpoints )
 <a name="l00286"></a>00286         : _viewpoints( viewpoints ) { }
 <a name="l00287"></a>00287 
-<a name="l00288"></a><a class="code" href="struct_viewpoint_handler.html#a6448e208a16dd48fc51bef27440fedeb">00288</a>     <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
+<a name="l00288"></a><a class="code" href="structViewpointHandler.html#a6448e208a16dd48fc51bef27440fedeb">00288</a>     <span class="keywordtype">bool</span> handle( <span class="keyword">const</span> osgGA::GUIEventAdapter&amp; ea, osgGA::GUIActionAdapter&amp; aa )
 <a name="l00289"></a>00289     {
 <a name="l00290"></a>00290         <span class="keywordflow">if</span> ( ea.getEventType() == ea.KEYDOWN )
 <a name="l00291"></a>00291         {
 <a name="l00292"></a>00292             <span class="keywordtype">int</span> index = (int)ea.getKey() - (int)<span class="charliteral">&#39;1&#39;</span>;
 <a name="l00293"></a>00293             <span class="keywordflow">if</span> ( index &gt;= 0 &amp;&amp; index &lt; (<span class="keywordtype">int</span>)_viewpoints.size() )
 <a name="l00294"></a>00294             {
-<a name="l00295"></a>00295                 s_manip-&gt;setViewpoint( _viewpoints[index], 4.5 );
+<a name="l00295"></a>00295                 <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#af2d299a4e7a689feeede98cd994a47d1">setViewpoint</a>( _viewpoints[index], 4.5 );
 <a name="l00296"></a>00296             }
 <a name="l00297"></a>00297             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ea.getKey() == <span class="charliteral">&#39;v&#39;</span> )
 <a name="l00298"></a>00298             {
-<a name="l00299"></a>00299                 Viewpoint vp = s_manip-&gt;getViewpoint();
-<a name="l00300"></a>00300                 XmlDocument xml( vp.getConfig() );
-<a name="l00301"></a>00301                 xml.store( std::cout );
+<a name="l00299"></a>00299                 <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a> vp = <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a29b0e7356c6f72e6e1e0926286f6644d">getViewpoint</a>();
+<a name="l00300"></a>00300                 <a class="code" href="classosgEarth_1_1XmlDocument.html">XmlDocument</a> xml( vp.<a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html#a62fb6532e3b4884fc78554290158d402">getConfig</a>() );
+<a name="l00301"></a>00301                 xml.<a class="code" href="classosgEarth_1_1XmlDocument.html#a6b326f0f6617ab8d34d49bb849ee9743">store</a>( std::cout );
 <a name="l00302"></a>00302                 std::cout &lt;&lt; std::endl;
 <a name="l00303"></a>00303             }
 <a name="l00304"></a>00304             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ea.getKey() == <span class="charliteral">&#39;?&#39;</span> )
 <a name="l00305"></a>00305             {
-<a name="l00306"></a>00306                 s_controlPanel-&gt;setVisible( !s_controlPanel-&gt;visible() );
+<a name="l00306"></a>00306                 <a class="code" href="osgearth__viewer_8cpp.html#afca03fb88350e4438a1bf569347399e8">s_controlPanel</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aca0b4bd8ff5e508a5e4797b1b5bb4534">setVisible</a>( !<a class="code" href="osgearth__viewer_8cpp.html#afca03fb88350e4438a1bf569347399e8">s_controlPanel</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ad0ae1170326deed17ef6502b3475c325">visible</a>() );
 <a name="l00307"></a>00307             }
 <a name="l00308"></a>00308         }
 <a name="l00309"></a>00309         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00310"></a>00310     }
 <a name="l00311"></a>00311 
-<a name="l00312"></a><a class="code" href="struct_viewpoint_handler.html#aa2093055724898cbd96a7cfde1ccee79">00312</a>     std::vector&lt;Viewpoint&gt; <a class="code" href="struct_viewpoint_handler.html#aa2093055724898cbd96a7cfde1ccee79">_viewpoints</a>;
+<a name="l00312"></a><a class="code" href="structViewpointHandler.html#aa2093055724898cbd96a7cfde1ccee79">00312</a>     std::vector&lt;Viewpoint&gt; <a class="code" href="structViewpointHandler.html#aa2093055724898cbd96a7cfde1ccee79">_viewpoints</a>;
 <a name="l00313"></a>00313 };
 <a name="l00314"></a>00314 
 <a name="l00315"></a>00315 <span class="keywordtype">int</span>
@@ -402,8 +418,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00321"></a>00321 
 <a name="l00322"></a>00322     <span class="keywordtype">bool</span> useAutoClip  = arguments.read( <span class="stringliteral">&quot;--autoclip&quot;</span> );
 <a name="l00323"></a>00323     <span class="keywordtype">bool</span> useSky       = arguments.read( <span class="stringliteral">&quot;--sky&quot;</span> );
-<a name="l00324"></a>00324     s_dms             = arguments.read( <span class="stringliteral">&quot;--dms&quot;</span> );
-<a name="l00325"></a>00325     s_mgrs            = arguments.read( <span class="stringliteral">&quot;--mgrs&quot;</span> );
+<a name="l00324"></a>00324     <a class="code" href="osgearth__viewer_8cpp.html#abb2321a57b4026c675ca3a187aff8389">s_dms</a>             = arguments.read( <span class="stringliteral">&quot;--dms&quot;</span> );
+<a name="l00325"></a>00325     <a class="code" href="osgearth__viewer_8cpp.html#a4444fea1c3ec84b3be1be9376167b270">s_mgrs</a>            = arguments.read( <span class="stringliteral">&quot;--mgrs&quot;</span> );
 <a name="l00326"></a>00326 
 <a name="l00327"></a>00327     std::string kmlFile;
 <a name="l00328"></a>00328     arguments.read( <span class="stringliteral">&quot;--kml&quot;</span>, kmlFile );
@@ -413,38 +429,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00332"></a>00332     <span class="keywordflow">if</span> (!earthNode)
 <a name="l00333"></a>00333         <span class="keywordflow">return</span> <a class="code" href="osgearth__annotation_8cpp.html#a0c2ae8a349dcb4ee981a199a687bf549">usage</a>( <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> );
 <a name="l00334"></a>00334     
-<a name="l00335"></a>00335     s_manip = <span class="keyword">new</span> EarthManipulator();
-<a name="l00336"></a>00336     s_manip-&gt;getSettings()-&gt;setArcViewpointTransitions( <span class="keyword">true</span> );
-<a name="l00337"></a>00337     viewer.setCameraManipulator( s_manip );
+<a name="l00335"></a>00335     <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>();
+<a name="l00336"></a>00336     <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html#a078cfd56832aa59c3c3cd9cc6431a0e8">getSettings</a>()-&gt;setArcViewpointTransitions( <span class="keyword">true</span> );
+<a name="l00337"></a>00337     viewer.setCameraManipulator( <a class="code" href="osgearth__viewer_8cpp.html#a045fdc2b6c785e475f23045811155078">s_manip</a> );
 <a name="l00338"></a>00338 
 <a name="l00339"></a>00339     osg::Group* root = <span class="keyword">new</span> osg::Group();
 <a name="l00340"></a>00340     root-&gt;addChild( earthNode );
 <a name="l00341"></a>00341 
 <a name="l00342"></a>00342     <span class="comment">// create a graticule and clip plane handler.</span>
-<a name="l00343"></a>00343     Graticule* graticule = 0L;
-<a name="l00344"></a>00344     osgEarth::MapNode* mapNode = osgEarth::MapNode::findMapNode( earthNode );
+<a name="l00343"></a>00343     <a class="code" href="classosgEarth_1_1Util_1_1Graticule.html">Graticule</a>* graticule = 0L;
+<a name="l00344"></a>00344     <a class="code" href="classosgEarth_1_1MapNode.html">osgEarth::MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">osgEarth::MapNode::findMapNode</a>( earthNode );
 <a name="l00345"></a>00345     <span class="keywordflow">if</span> ( mapNode )
 <a name="l00346"></a>00346     {
-<a name="l00347"></a>00347         <span class="keyword">const</span> Config&amp; externals = mapNode-&gt;externalConfig();
+<a name="l00347"></a>00347         <span class="keyword">const</span> <a class="code" href="classosgEarth_1_1Config.html">Config</a>&amp; externals = mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#aaf1d0f0c11d88481f102aa63048508cd">externalConfig</a>();
 <a name="l00348"></a>00348 
-<a name="l00349"></a>00349         <span class="keywordflow">if</span> ( mapNode-&gt;getMap()-&gt;isGeocentric() )
+<a name="l00349"></a>00349         <span class="keywordflow">if</span> ( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>()-&gt;<a class="code" href="classosgEarth_1_1Map.html#aa84a08fbbe14e7bfff2ec5d8c8e53960">isGeocentric</a>() )
 <a name="l00350"></a>00350         {
 <a name="l00351"></a>00351             <span class="comment">// Sky model.</span>
-<a name="l00352"></a>00352             Config skyConf = externals.child( <span class="stringliteral">&quot;sky&quot;</span> );
-<a name="l00353"></a>00353             <span class="keywordflow">if</span> ( !skyConf.empty() )
+<a name="l00352"></a>00352             <a class="code" href="classosgEarth_1_1Config.html">Config</a> skyConf = externals.<a class="code" href="classosgEarth_1_1Config.html#ac88bd62e7ac78d498981c3cf9f948b7c">child</a>( <span class="stringliteral">&quot;sky&quot;</span> );
+<a name="l00353"></a>00353             <span class="keywordflow">if</span> ( !skyConf.<a class="code" href="classosgEarth_1_1Config.html#a6946240ddbee0080de1fd6d2d93ccd80">empty</a>() )
 <a name="l00354"></a>00354                 useSky = <span class="keyword">true</span>;
 <a name="l00355"></a>00355 
 <a name="l00356"></a>00356             <span class="keywordflow">if</span> ( useSky )
 <a name="l00357"></a>00357             {
-<a name="l00358"></a>00358                 <span class="keywordtype">double</span> hours = skyConf.value( <span class="stringliteral">&quot;hours&quot;</span>, 12.0 );
-<a name="l00359"></a>00359                 s_sky = <span class="keyword">new</span> SkyNode( mapNode-&gt;getMap() );
-<a name="l00360"></a>00360                 s_sky-&gt;setDateTime( 2011, 3, 6, hours );
-<a name="l00361"></a>00361                 s_sky-&gt;attach( &amp;viewer );
-<a name="l00362"></a>00362                 root-&gt;addChild( s_sky );
+<a name="l00358"></a>00358                 <span class="keywordtype">double</span> hours = skyConf.<a class="code" href="classosgEarth_1_1Config.html#ab19f29b67dfeaf1b2ea58266f6e7b901">value</a>( <span class="stringliteral">&quot;hours&quot;</span>, 12.0 );
+<a name="l00359"></a>00359                 <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a> = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1SkyNode.html">SkyNode</a>( mapNode-&gt;<a class="code" href="classosgEarth_1_1MapNode.html#ad97119153966e1fc8029ebd5642d0444">getMap</a>() );
+<a name="l00360"></a>00360                 <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1SkyNode.html#a5a93f07675313f771ca2ad236c3b7f29">setDateTime</a>( 2011, 3, 6, hours );
+<a name="l00361"></a>00361                 <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a>-&gt;<a class="code" href="classosgEarth_1_1Util_1_1SkyNode.html#a50ca2c8f928a252fa99c4da752fd79cc">attach</a>( &amp;viewer );
+<a name="l00362"></a>00362                 root-&gt;addChild( <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a> );
 <a name="l00363"></a>00363             }
 <a name="l00364"></a>00364 
-<a name="l00365"></a>00365             <span class="keywordflow">if</span> ( externals.hasChild(<span class="stringliteral">&quot;autoclip&quot;</span>) )
-<a name="l00366"></a>00366                 useAutoClip = externals.child(<span class="stringliteral">&quot;autoclip&quot;</span>).boolValue( useAutoClip );
+<a name="l00365"></a>00365             <span class="keywordflow">if</span> ( externals.<a class="code" href="classosgEarth_1_1Config.html#a5a4d1a93190f1b90d6661e7b966e02f6">hasChild</a>(<span class="stringliteral">&quot;autoclip&quot;</span>) )
+<a name="l00366"></a>00366                 useAutoClip = externals.<a class="code" href="classosgEarth_1_1Config.html#ac88bd62e7ac78d498981c3cf9f948b7c">child</a>(<span class="stringliteral">&quot;autoclip&quot;</span>).<a class="code" href="classosgEarth_1_1Config.html#af718f06b3c40c73286c35276a19e5aa6">boolValue</a>( useAutoClip );
 <a name="l00367"></a>00367 
 <a name="l00368"></a>00368             <span class="comment">// the AutoClipPlaneHandler will automatically adjust the near/far clipping</span>
 <a name="l00369"></a>00369             <span class="comment">// planes based on your view of the horizon. This prevents near clipping issues</span>
@@ -452,24 +468,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00371"></a>00371             <span class="comment">// close to the ground, you may not need this.</span>
 <a name="l00372"></a>00372             <span class="keywordflow">if</span> ( useSky || useAutoClip )
 <a name="l00373"></a>00373             {
-<a name="l00374"></a>00374                 viewer.getCamera()-&gt;addEventCallback( <span class="keyword">new</span> AutoClipPlaneCallback() );
+<a name="l00374"></a>00374                 viewer.getCamera()-&gt;addEventCallback( <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1AutoClipPlaneCallback.html">AutoClipPlaneCallback</a>() );
 <a name="l00375"></a>00375             }
 <a name="l00376"></a>00376         }
 <a name="l00377"></a>00377 
 <a name="l00378"></a>00378         <span class="comment">// read in viewpoints, if any</span>
 <a name="l00379"></a>00379         std::vector&lt;Viewpoint&gt; viewpoints;
-<a name="l00380"></a>00380         <span class="keyword">const</span> ConfigSet children = externals.children(<span class="stringliteral">&quot;viewpoint&quot;</span>);
+<a name="l00380"></a>00380         <span class="keyword">const</span> <a class="code" href="namespaceosgEarth.html#a5b6055e77f072fa39caec4d0f3ba03bc">ConfigSet</a> children = externals.<a class="code" href="classosgEarth_1_1Config.html#a719c1a8834791318bf2be9ec46f2b55d">children</a>(<span class="stringliteral">&quot;viewpoint&quot;</span>);
 <a name="l00381"></a>00381         <span class="keywordflow">if</span> ( children.size() &gt; 0 )
 <a name="l00382"></a>00382         {
 <a name="l00383"></a>00383             <span class="keywordflow">for</span>( ConfigSet::const_iterator i = children.begin(); i != children.end(); ++i )
-<a name="l00384"></a>00384                 viewpoints.push_back( Viewpoint(*i) );
+<a name="l00384"></a>00384                 viewpoints.push_back( <a class="code" href="classosgEarth_1_1Util_1_1Viewpoint.html">Viewpoint</a>(*i) );
 <a name="l00385"></a>00385 
-<a name="l00386"></a>00386             viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_viewpoint_handler.html">ViewpointHandler</a>(viewpoints) );
+<a name="l00386"></a>00386             viewer.addEventHandler( <span class="keyword">new</span> <a class="code" href="structViewpointHandler.html">ViewpointHandler</a>(viewpoints) );
 <a name="l00387"></a>00387         }
 <a name="l00388"></a>00388 
 <a name="l00389"></a>00389         <span class="comment">// Add a control panel to the scene</span>
-<a name="l00390"></a>00390         root-&gt;addChild( ControlCanvas::get( &amp;viewer ) );
-<a name="l00391"></a>00391         <span class="keywordflow">if</span> ( viewpoints.size() &gt; 0 || s_sky )
+<a name="l00390"></a>00390         root-&gt;addChild( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>( &amp;viewer ) );
+<a name="l00391"></a>00391         <span class="keywordflow">if</span> ( viewpoints.size() &gt; 0 || <a class="code" href="osgearth__viewer_8cpp.html#a88fb63b496c6baba395df7e8b2ed1c03">s_sky</a> )
 <a name="l00392"></a>00392             <a class="code" href="osgearth__imageoverlay_8cpp.html#a086a5ffee0c9fcb39608657f27ec4846">createControlPanel</a>(&amp;viewer, viewpoints);
 <a name="l00393"></a>00393 
 <a name="l00394"></a>00394         <a class="code" href="osgearth__viewer_8cpp.html#a60b39e9a3bd1ddaa4008c8fb507512d8">addMouseCoords</a>( &amp;viewer, mapNode );
@@ -477,15 +493,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00396"></a>00396         <span class="comment">// Load a KML file if specified</span>
 <a name="l00397"></a>00397         <span class="keywordflow">if</span> ( !kmlFile.empty() )
 <a name="l00398"></a>00398         {
-<a name="l00399"></a>00399             KMLOptions kmlo;
-<a name="l00400"></a>00400             kmlo.defaultIconImage() = URI(<span class="stringliteral">&quot;http://www.osgearth.org/chrome/site/pushpin_yellow.png&quot;</span>).readImage();
+<a name="l00399"></a>00399             <a class="code" href="classosgEarth_1_1Drivers_1_1KMLOptions.html">KMLOptions</a> kmlo;
+<a name="l00400"></a>00400             kmlo.<a class="code" href="classosgEarth_1_1Drivers_1_1KMLOptions.html#a2dfd76730de5da216d3bdbaab101e082">defaultIconImage</a>() = <a class="code" href="classosgEarth_1_1URI.html">URI</a>(<span class="stringliteral">&quot;http://www.osgearth.org/chrome/site/pushpin_yellow.png&quot;</span>).<a class="code" href="classosgEarth_1_1URI.html#a81c0c986fe0bc1e0274634c24a67ff86">readImage</a>();
 <a name="l00401"></a>00401 
-<a name="l00402"></a>00402             osg::Node* kml = KML::load( URI(kmlFile), mapNode, kmlo );
+<a name="l00402"></a>00402             osg::Node* kml = <a class="code" href="classosgEarth_1_1Drivers_1_1KML.html#ab5fda7ff2c54667f1f8f54ecbf0af626">KML::load</a>( <a class="code" href="classosgEarth_1_1URI.html">URI</a>(kmlFile), mapNode, kmlo );
 <a name="l00403"></a>00403             <span class="keywordflow">if</span> ( kml )
 <a name="l00404"></a>00404             {
 <a name="l00405"></a>00405                 root-&gt;addChild( kml );
 <a name="l00406"></a>00406 
-<a name="l00407"></a>00407                 <a class="code" href="struct_k_m_l_u_i_builder.html">KMLUIBuilder</a> uibuilder( ControlCanvas::get(&amp;viewer) );
+<a name="l00407"></a>00407                 <a class="code" href="structKMLUIBuilder.html">KMLUIBuilder</a> uibuilder( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#aec36b31e58e93be2bd364b9662f53123">ControlCanvas::get</a>(&amp;viewer) );
 <a name="l00408"></a>00408                 root-&gt;accept( uibuilder );                
 <a name="l00409"></a>00409             }
 <a name="l00410"></a>00410         }
@@ -508,14 +524,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00427"></a>00427 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__viewer_8cpp.html">osgearth_viewer.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -530,6 +538,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

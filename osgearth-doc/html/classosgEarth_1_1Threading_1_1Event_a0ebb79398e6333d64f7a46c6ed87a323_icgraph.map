@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html#a3c8d94613ba9354b8e5a15282cf57e04" title="osgEarth::Threading::ReadWriteMutex::decrementReaderCount" alt="" coords="263,32,652,61"/>
+<area shape="rect" id="node13" href="$structosgEarth_1_1ParallelTask.html#ad3cad278ace28105ac355ab6f74e4ee3" title="osgEarth::ParallelTask::operator()" alt="" coords="349,85,565,115"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html#a9672dcbe242584cc104c66c3f9f193b9" title="osgEarth::Threading::ReadWriteMutex::ReadWriteMutex" alt="" coords="283,139,632,168"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html#ab480986d947ce32757b89cca6ea9e21d" title="osgEarth::Threading::ReadWriteMutex::writeUnlock" alt="" coords="296,192,619,221"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html#aa563f875aa102089461cb8b5f8fa3933" title="osgEarth::Threading::ReadWriteMutex::readLock" alt="" coords="733,5,1040,35"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Threading_1_1ReadWriteMutex.html#acca01053f574434aa5f85f1944830c69" title="osgEarth::Threading::ReadWriteMutex::readUnlock" alt="" coords="728,59,1045,88"/>
+<area shape="rect" id="node7" href="$structosgEarth_1_1Threading_1_1ScopedReadLock.html#a08421a94c25654dcc4ebfed4bc2fe698" title="osgEarth::Threading::ScopedReadLock::ScopedReadLock" alt="" coords="1125,5,1485,35"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1Threading_1_1ScopedReadLock.html#a9ac4931728e267313a67e280c688966c" title="osgEarth::Threading::ScopedReadLock::~ScopedReadLock" alt="" coords="1121,59,1489,88"/>
+<area shape="rect" id="node19" href="$structosgEarth_1_1Threading_1_1ScopedWriteLock.html#a53201eeac985a28028836cdb3885e6d0" title="osgEarth::Threading::ScopedWriteLock::~ScopedWriteLock" alt="" coords="703,192,1071,221"/>
+</map>

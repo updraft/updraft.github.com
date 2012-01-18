@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1TerrainOptions.html#afc5ffd520aa073af45bf983e638344e8" title="osgEarth::TerrainOptions::elevationInterpolation" alt="" coords="400,5,699,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1TerrainEngineNode.html#a719bff8ddb0f444f5f7e19c4a71bc9e3" title="osgEarth::TerrainEngineNode::getMap" alt="" coords="428,59,671,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1MapFrame.html#a8b12dbd02827521d57fc8c67a6e587f1" title="osgEarth::MapFrame::getProfile" alt="" coords="447,112,652,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Profile.html#a7864541930b61a87cf27dc5fe3fb3a4c" title="osgEarth::Profile::getRootKeys" alt="" coords="448,165,651,195"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1TerrainOptions.html#a0f236c2d488b132d63622c4b45a861f1" title="osgEarth::TerrainOptions::heightFieldSampleRatio" alt="" coords="393,219,705,248"/>
+<area shape="rect" id="node13" href="$classOSGTerrainEngineNode.html#a5c6a6bba61075e6b5246edda77f1f34c" title="OSGTerrainEngineNode::installShaders" alt="" coords="424,272,675,301"/>
+<area shape="rect" id="node25" href="$structosgEarth_1_1optional.html#aa094207bf2b22a4848989cd017dc4365" title="osgEarth::optional::isSet" alt="" coords="467,325,632,355"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1TerrainOptions.html#ac5d9d1d0388cff6212c65df00c862b36" title="osgEarth::TerrainOptions::loadingPolicy" alt="" coords="424,379,675,408"/>
+<area shape="rect" id="node29" href="$classosgEarth_1_1Drivers_1_1OSGTerrainOptions.html#a17e017ce20d37f7faa94d2478f368075" title="osgEarth::Drivers::OSGTerrainOptions::quickReleaseGLObjects" alt="" coords="352,432,747,461"/>
+<area shape="rect" id="node31" href="$classCustomTerrainTechnique.html#a397f7b301607fa948ac4fb9832b7cf5e" title="CustomTerrainTechnique::setOptimizeTriangleOrientation" alt="" coords="372,485,727,515"/>
+<area shape="rect" id="node33" href="$classTerrain.html#ae92eb29954fff7602683d09885f52d89" title="Terrain::setSampleRatio" alt="" coords="468,539,631,568"/>
+<area shape="rect" id="node35" href="$classTerrain.html#ad3b43832040e5725e1c242535061f75b" title="Terrain::setTechniquePrototype" alt="" coords="448,592,651,621"/>
+<area shape="rect" id="node37" href="$classTerrain.html#ae7d5d2878649a0ee973b6dc173d80b07" title="Terrain::setVerticalScale" alt="" coords="467,645,632,675"/>
+<area shape="rect" id="node39" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="467,699,632,728"/>
+<area shape="rect" id="node41" href="$classosgEarth_1_1TerrainOptions.html#af2a17dc02b09c09f94cdcbdc18f6574f" title="osgEarth::TerrainOptions::verticalScale" alt="" coords="424,752,675,781"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1ShaderFactory.html#abeb41314dddbe0324320f1cd3b72b741" title="osgEarth::ShaderFactory::createDefaultLightingFragmentShader" alt="" coords="795,165,1189,195"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1ShaderFactory.html#a38726c967238c9daf7c54418687b367c" title="osgEarth::ShaderFactory::createDefaultLightingVertexShader" alt="" coords="804,219,1180,248"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1ShaderFactory.html#a3790b1780f1a1cbd10d7c9f4dcd7c171" title="osgEarth::ShaderFactory::createDefaultTextureFragmentShader" alt="" coords="796,272,1188,301"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1ShaderFactory.html#a41e85fc338b7da99e9121223dad93ae6" title="osgEarth::ShaderFactory::createDefaultTextureVertexShader" alt="" coords="804,325,1180,355"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1MapFrame.html#a1445bd530fe5debcbda43377ad757cd4" title="osgEarth::MapFrame::imageLayers" alt="" coords="879,379,1105,408"/>
+</map>

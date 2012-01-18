@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$namespaceanonymous__namespace_02Graticule_8cpp_03.html#abf5b9d6f02f98a55469cf2813cf95154" title="anonymous_namespace\{Graticule::cpp\}::createTextTransform" alt="" coords="317,5,699,35"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Profile.html#af8ce182ba0e6f0e362046e593068955e" title="osgEarth::Profile::getExtent" alt="" coords="417,59,599,88"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Util_1_1Graticule.html#a6b7ed533381c01661c346da9ee67be43" title="osgEarth::Util::Graticule::getID" alt="" coords="407,112,609,141"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1Graticule.html#a8feb876238f8a888e5484dee544c62a7" title="osgEarth::Util::Graticule::getLevel" alt="" coords="399,165,617,195"/>
+<area shape="rect" id="node13" href="$classosgEarth_1_1Util_1_1Graticule.html#a71368dd238d222ab254f4cc6f49410bc" title="osgEarth::Util::Graticule::getNumLevels" alt="" coords="381,219,635,248"/>
+<area shape="rect" id="node15" href="$classosgEarth_1_1Profile.html#a74622647d0d05b6823225a752ed7652b" title="osgEarth::Profile::getSRS" alt="" coords="421,272,595,301"/>
+<area shape="rect" id="node19" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="415,325,601,355"/>
+<area shape="rect" id="node21" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="417,379,599,408"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1GeoExtent.html#ac421fa06a19aac8423f81ca35c4f507b" title="osgEarth::GeoExtent::xMin" alt="" coords="419,432,597,461"/>
+<area shape="rect" id="node27" href="$classosgEarth_1_1GeoExtent.html#a7d9c1d5fc6c411bb01964350dcb48a8c" title="osgEarth::GeoExtent::yMin" alt="" coords="419,485,597,515"/>
+<area shape="rect" id="node5" href="$namespaceanonymous__namespace_02Controls_8cpp_03.html#ad4029349af79513030745a11f9832f72" title="anonymous_namespace\{Controls::cpp\}::rot" alt="" coords="747,5,1019,35"/>
+<area shape="rect" id="node17" href="$classosgEarth_1_1GeoExtent.html#a77766059cde5244c2bc309cfa50800c3" title="osgEarth::GeoExtent::getSRS" alt="" coords="784,272,981,301"/>
+<area shape="rect" id="node23" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="757,379,1008,408"/>
+</map>

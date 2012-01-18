@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Symbology_1_1Geometry.html#a2acdc217bdd9871ec7d2d9a36e334314" title="osgEarth::Symbology::Geometry::buffer" alt="" coords="311,5,564,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1Features_1_1Feature.html#a2027c4708491dc48da4091b0ab7e8c57" title="osgEarth::Features::Feature::getGeometry" alt="" coords="304,59,571,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1Features_1_1BufferFilter.html#a92bda4eb1da36b9e13117df6252de758" title="osgEarth::Features::BufferFilter::isSupported" alt="" coords="296,112,579,141"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1Features_1_1Feature.html#a1e0af304a8e5207c48b7088431db2c0b" title="osgEarth::Features::Feature::setGeometry" alt="" coords="304,165,571,195"/>
+<area shape="rect" id="node11" href="$structosgEarth_1_1optional.html#a9e71f677728602dc521d7102c9be7820" title="osgEarth::optional::value" alt="" coords="355,219,520,248"/>
+</map>

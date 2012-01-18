@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classseamless_1_1Projected.html#a3e7a91e57257d0352905789ac8f96596" title="seamless::Projected::createPatch" alt="" coords="321,5,540,35"/>
+<area shape="rect" id="node5" href="$namespaceseamless_1_1anonymous__namespace_02Patch_8cpp_03.html#abe6bf389a040399a8e90312a4f33f354" title="seamless::anonymous_namespace\{Patch::cpp\}::getEdge" alt="" coords="253,59,608,88"/>
+<area shape="rect" id="node13" href="$namespaceseamless.html#a0d14e267bc2972085cb5343d1d61ed4d" title="seamless::transferEdges" alt="" coords="348,112,513,141"/>
+<area shape="rect" id="node7" href="$classseamless_1_1Patch.html#af25c15cc173e6324e8cf65a00c9b942f" title="seamless::Patch::getEdgeError" alt="" coords="657,59,860,88"/>
+<area shape="rect" id="node9" href="$classseamless_1_1Patch.html#ad5612101be8918d6a3fba1ab29019bf4" title="seamless::Patch::getPatchError" alt="" coords="912,32,1120,61"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1Util_1_1GeoCell.html#a038943dff9f9181d2aa8fefb241111eb" title="osgEarth::Util::GeoCell::traverse" alt="" coords="911,85,1121,115"/>
+</map>

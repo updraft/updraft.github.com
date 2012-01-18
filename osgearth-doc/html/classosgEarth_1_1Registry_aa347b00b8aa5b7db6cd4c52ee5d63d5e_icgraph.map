@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Map.html#a63e65da3e4d6d60cab5f7d174e55a688" title="osgEarth::Map::calculateProfile" alt="" coords="367,5,569,35"/>
+<area shape="rect" id="node5" href="$classOGRFeatureSource.html#af5c49ec06bdacce2b41add9fc610274c" title="OGRFeatureSource::createFeatureProfile" alt="" coords="337,59,599,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1TileMap.html#a5dcf9aa81810e5fb4d6b1ecd507eea0c" title="osgEarth::TileMap::createProfile" alt="" coords="364,112,572,141"/>
+<area shape="rect" id="node18" href="$TMS_8cpp.html#a056bc1f1b2b95401c61128fee63d0e1d" title="tileMapToXmlDocument" alt="" coords="684,164,847,193"/>
+<area shape="rect" id="node22" href="$classGeodeticManifold.html#a537d31b47129976c66d64d7e3100009c" title="GeodeticManifold::GeodeticManifold" alt="" coords="352,216,584,245"/>
+<area shape="rect" id="node24" href="$classosgEarth_1_1Registry.html#af0514abf004fbb1755f74a9ea4f2cc15" title="osgEarth::Registry::getNamedProfile" alt="" coords="351,269,585,299"/>
+<area shape="rect" id="node28" href="$classWMSSource.html#aed8dad95e1fc24ed51b87116fa006bf7" title="WMSSource::initialize" alt="" coords="393,323,543,352"/>
+<area shape="rect" id="node30" href="$classGDALTileSource.html#a9fb5b232e7c2158f53938fe08d55d3a6" title="GDALTileSource::initialize" alt="" coords="381,376,555,405"/>
+<area shape="rect" id="node32" href="$classArcGISSource.html#a045bb7277033a1f17105834b38b7948f" title="ArcGISSource::initialize" alt="" coords="388,429,548,459"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1TileMap.html#aa85c65c7074c1f6fadb9b97340ae6f6e" title="osgEarth::TileMap::generateTileSets" alt="" coords="648,60,883,89"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1TileMap.html#a02cc20d7b48d73ef21d915df434628c0" title="osgEarth::TileMap::create" alt="" coords="967,85,1137,115"/>
+<area shape="rect" id="node14" href="$classTMSSource.html#a49e9c9f0ff0e7b0754772f63ddcdb869" title="TMSSource::initialize" alt="" coords="1269,59,1416,88"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1DiskCache.html#ae88ec5e306829701508f88ac3a225920" title="osgEarth::DiskCache::storeProperties" alt="" coords="1221,112,1464,141"/>
+<area shape="rect" id="node20" href="$classosgEarth_1_1TileMapReaderWriter.html#ace25127ca68e28272a3973a89882c485" title="osgEarth::TileMapReaderWriter::write" alt="" coords="932,164,1172,193"/>
+<area shape="rect" id="node26" href="$classosgEarth_1_1Profile.html#a36828ab40c6dfc20e77846fa00ee7fd6" title="osgEarth::Profile::create" alt="" coords="684,269,847,299"/>
+</map>

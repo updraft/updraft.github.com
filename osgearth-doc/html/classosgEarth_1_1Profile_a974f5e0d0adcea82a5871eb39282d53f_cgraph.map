@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classosgEarth_1_1Profile.html#af8ce182ba0e6f0e362046e593068955e" title="osgEarth::Profile::getExtent" alt="" coords="272,5,453,35"/>
+<area shape="rect" id="node5" href="$classosgEarth_1_1GeoExtent.html#a8151cbc0905e59c9d88e6fad5690a0ce" title="osgEarth::GeoExtent::isValid" alt="" coords="268,59,457,88"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1GeoExtent.html#a9ed09180cbcdd15321ced7b24f4c4c9d" title="osgEarth::GeoExtent::height" alt="" coords="507,32,693,61"/>
+<area shape="rect" id="node9" href="$classosgEarth_1_1GeoExtent.html#a1161940ef6756ba732ff7fc7da21db2d" title="osgEarth::GeoExtent::width" alt="" coords="509,85,691,115"/>
+<area shape="rect" id="node11" href="$classosgEarth_1_1GeoExtent.html#a744d26309f6eddfd74b72a01c159dc79" title="osgEarth::GeoExtent::crossesDateLine" alt="" coords="741,85,992,115"/>
+</map>

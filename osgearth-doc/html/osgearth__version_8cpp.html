@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__version_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -90,9 +107,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osg/ApplicationUsage&gt;</code><br/>
 <code>#include &lt;osgEarth/Version&gt;</code><br/>
 <code>#include &lt;osgEarth/Registry&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_version.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_version.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__version_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__version_2osgearth__version_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__version_2osgearth__version_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__version_2osgearth__version_8cpp">
 </map>
@@ -131,28 +150,80 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__version_8cpp_source.html#l00029">29</a> of file <a class="el" href="osgearth__version_8cpp_source.html">osgearth_version.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    osg::ArgumentParser arguments(&amp;argc, argv);
+    arguments.getApplicationUsage()-&gt;setCommandLineUsage(arguments.getApplicationName() + <span class="stringliteral">&quot; [options]&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;-h or --help&quot;</span>,                   <span class="stringliteral">&quot;Display this information&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--caps&quot;</span>,                         <span class="stringliteral">&quot;Print out system capabilities&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--version-number&quot;</span>,               <span class="stringliteral">&quot;Print out version number only&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--major-number&quot;</span>,                 <span class="stringliteral">&quot;Print out major version number only&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--minor-number&quot;</span>,                 <span class="stringliteral">&quot;Print out minor version number only&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--patch-number&quot;</span>,                 <span class="stringliteral">&quot;Print out patch version number only&quot;</span>);
+    arguments.getApplicationUsage()-&gt;addCommandLineOption(<span class="stringliteral">&quot;--so-number &quot;</span>,                   <span class="stringliteral">&quot;Print out shared object version number only&quot;</span>);    
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+    <span class="comment">// if user request help write it out to cout.</span>
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;-h&quot;</span>) || arguments.read(<span class="stringliteral">&quot;--help&quot;</span>))
+    {
+        cout &lt;&lt; arguments.getApplicationUsage()-&gt;getCommandLineUsage() &lt;&lt; endl;
+        arguments.getApplicationUsage()-&gt;write(cout, arguments.getApplicationUsage()-&gt;getCommandLineOptions());
+        <span class="keywordflow">return</span> 1;
+    }
+
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--version-number&quot;</span>))
+    {
+        cout &lt;&lt; <a class="code" href="Version.html#a5e80acd267ef9cdc5b81300279196926">osgEarthGetVersion</a>() &lt;&lt; endl;
+        <span class="keywordflow">return</span> 0;
+    }
+
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--major-number&quot;</span>))
+    {
+        cout &lt;&lt; <a class="code" href="Version.html#aa92537df4b06b0ea02a717df5aeda0ca">OSGEARTH_MAJOR_VERSION</a> &lt;&lt; endl;
+        <span class="keywordflow">return</span> 0;
+    }
+
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--minor-number&quot;</span>))
+    {
+        cout &lt;&lt; <a class="code" href="Version.html#a85b6568e9a05f48d781b7d0e8b4cfd66">OSGEARTH_MINOR_VERSION</a> &lt;&lt; endl;
+        <span class="keywordflow">return</span> 0;
+    }
+
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--patch-number&quot;</span>))
+    {
+        cout &lt;&lt; <a class="code" href="Version.html#a77a8c583f638324d888139d6ca394d40">OSGEARTH_PATCH_VERSION</a> &lt;&lt; endl;
+        <span class="keywordflow">return</span> 0;
+    }
+
+    <span class="keywordflow">if</span> (arguments.read(<span class="stringliteral">&quot;--soversion-number&quot;</span>) || arguments.read(<span class="stringliteral">&quot;--so-number&quot;</span>) )
+    {
+        cout &lt;&lt; <a class="code" href="Version.html#a03c3058a51f19adc5091f78819e2dd2d">osgEarthGetSOVersion</a>() &lt;&lt; endl;
+        <span class="keywordflow">return</span> 0;
+    }    
+
+    cout &lt;&lt; <a class="code" href="Version.html#a4d3c6cda79395dff02bcc2bffc71f75c">osgEarthGetLibraryName</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="Version.html#a5e80acd267ef9cdc5b81300279196926">osgEarthGetVersion</a>() &lt;&lt; endl &lt;&lt; endl;
+
+    <span class="keywordflow">if</span> ( arguments.read(<span class="stringliteral">&quot;--caps&quot;</span>) )
+    {
+        <a class="code" href="namespaceosgEarth.html#ab26f99240d39cde17d977fcbda659c66">osgEarth::setNotifyLevel</a>( osg::INFO );
+        <a class="code" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09">osgEarth::Registry::instance</a>()-&gt;getCapabilities();
+    }
+
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__version_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__version_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__version_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__version_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="_version_8cpp.html#a711838800addd5572de6d47084f78b6c" title="osgEarthGetLibraryName" alt="" coords="105,5,273,35"/><area shape="rect" id="node5" href="_version_8cpp.html#ab816cb3d3f4118478676d68f6a3d6859" title="osgEarthGetSOVersion" alt="" coords="111,59,268,88"/><area shape="rect" id="node7" href="_version_8cpp.html#a07af022655e42f13f6e8f6968aaba120" title="osgEarthGetVersion" alt="" coords="120,112,259,141"/></map>
+<area shape="rect" id="node3" href="classosgEarth_1_1Registry.html#a92d21da82224d40008d7218eac280c09" title="osgEarth::Registry::instance" alt="" coords="105,85,292,115"/><area shape="rect" id="node16" href="Version.html#a4d3c6cda79395dff02bcc2bffc71f75c" title="osgEarthGetLibraryName" alt="" coords="115,139,283,168"/><area shape="rect" id="node18" href="Version.html#a03c3058a51f19adc5091f78819e2dd2d" title="osgEarthGetSOVersion" alt="" coords="120,192,277,221"/><area shape="rect" id="node20" href="Version.html#a5e80acd267ef9cdc5b81300279196926" title="osgEarthGetVersion" alt="" coords="129,245,268,275"/><area shape="rect" id="node22" href="namespaceosgEarth.html#ab26f99240d39cde17d977fcbda659c66" title="osgEarth::setNotifyLevel" alt="" coords="116,299,281,328"/><area shape="rect" id="node5" href="classosgEarth_1_1Registry.html#acb15d8aa051bf36ea92a86ee6c00bc3c" title="osgEarth::Registry::Registry" alt="" coords="343,85,529,115"/><area shape="rect" id="node7" href="classosgEarth_1_1Registry.html#a5a56910fe4fcb016cbae8e7728e8bf47" title="osgEarth::Registry::addMimeTypeExtensionMapping" alt="" coords="579,5,907,35"/><area shape="rect" id="node10" href="classosgEarth_1_1DiskCacheOptions.html#a89cba75c20b7201cebec071d7e68883c" title="osgEarth::DiskCacheOptions::path" alt="" coords="631,59,855,88"/><area shape="rect" id="node12" href="classosgEarth_1_1Registry.html#a958fd3968bf858d536d8468a330c66da" title="osgEarth::Registry::setCacheOverride" alt="" coords="621,112,864,141"/><area shape="rect" id="node14" href="classosgEarth_1_1DiskCacheOptions.html#af3b83ff8d6fb16c2f8688b51cbeceea2" title="osgEarth::DiskCacheOptions::setPath" alt="" coords="620,165,865,195"/><area shape="rect" id="node24" href="namespaceosgEarth.html#a213fdd4d8e5f76a54c30a0d47f0956bb" title="osgEarth::initNotifyLevel" alt="" coords="353,299,519,328"/></map>
 </div>
 </p>
 
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__version_8cpp.html">osgearth_version.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -167,6 +238,8 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

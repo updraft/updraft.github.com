@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_ti_xml_base.html#a5b0fde72d6f662ae1fd6303195d2159b" title="TiXmlBase::GetChar" alt="" coords="231,5,372,35"/>
-<area shape="rect" id="node9" href="$class_ti_xml_base.html#af56296d561c0bab4bc8e198cdcf5c48e" title="TiXmlBase::IsWhiteSpace" alt="" coords="445,84,621,113"/>
-<area shape="rect" id="node11" href="$class_ti_xml_base.html#ac0c3d66d8a9e6996a1fa016275e16875" title="TiXmlBase::SkipWhiteSpace" alt="" coords="207,109,396,139"/>
-<area shape="rect" id="node14" href="$class_ti_xml_base.html#a51631e6986179558b9e5850723ed165a" title="TiXmlBase::StringEqual" alt="" coords="221,163,381,192"/>
-<area shape="rect" id="node5" href="$class_ti_xml_base.html#ac5c08bf3deffcda0bf8ce2958372b584" title="TiXmlBase::GetEntity" alt="" coords="459,5,608,35"/>
-<area shape="rect" id="node7" href="$class_ti_xml_base.html#a07c765e3a7f979d343e646ea797b180b" title="TiXmlBase::ConvertUTF32ToUTF8" alt="" coords="671,5,897,35"/>
-<area shape="rect" id="node16" href="$class_ti_xml_base.html#a799f17405a86a5c2029618e85f11a097" title="TiXmlBase::ToLower" alt="" coords="461,163,605,192"/>
-</map>

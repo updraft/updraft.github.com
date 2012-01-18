@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classTiXmlNode.html#ac1e3a8e7578be463b04617786120c2bb" title="TiXmlNode::Identify" alt="" coords="211,85,349,115"/>
+<area shape="rect" id="node5" href="$classTiXmlDocument.html#a789ad2f06f93d52bdb5570b2f3670289" title="TiXmlDocument::Parse" alt="" coords="407,59,564,88"/>
+<area shape="rect" id="node11" href="$classTiXmlElement.html#ac786bce103042d3837c4cc2ff6967d41" title="TiXmlElement::ReadValue" alt="" coords="397,112,573,141"/>
+<area shape="rect" id="node7" href="$classosgEarth_1_1XmlDocument.html#abe920eb01a1e40874e6689fb64633f9a" title="osgEarth::XmlDocument::load" alt="" coords="621,5,819,35"/>
+<area shape="rect" id="node9" href="$classTiXmlDocument.html#a41f6fe7200864d1dca663d230caf8db6" title="TiXmlDocument::LoadFile" alt="" coords="633,59,807,88"/>
+<area shape="rect" id="node13" href="$classTiXmlElement.html#af95c9165159fd9dfdcc5b894a3fcf85b" title="TiXmlElement::Parse" alt="" coords="647,112,793,141"/>
+</map>

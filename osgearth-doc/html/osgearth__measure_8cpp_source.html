@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -63,20 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__measure_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <h1>/home/cube/sources/osgearth/src/applications/osgearth_measure/osgearth_measure.cpp</h1>  </div>
@@ -122,54 +138,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038 <span class="keyword">using namespace </span>osgEarth::Util::Controls;
 <a name="l00039"></a>00039 <span class="keyword">using namespace </span>osgEarth::Symbology;
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="class_my_measure_tool_callback.html">00041</a> <span class="keyword">class </span><a class="code" href="class_my_measure_tool_callback.html">MyMeasureToolCallback</a> : <span class="keyword">public</span> MeasureToolHandler::MeasureToolEventHandler
+<a name="l00041"></a><a class="code" href="classMyMeasureToolCallback.html">00041</a> <span class="keyword">class </span><a class="code" href="classMyMeasureToolCallback.html">MyMeasureToolCallback</a> : <span class="keyword">public</span> <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>::MeasureToolEventHandler
 <a name="l00042"></a>00042 {
 <a name="l00043"></a>00043 <span class="keyword">public</span>:
-<a name="l00044"></a><a class="code" href="class_my_measure_tool_callback.html#a71919e8e107cd18fed9d68f1ceb6c892">00044</a>     <a class="code" href="class_my_measure_tool_callback.html">MyMeasureToolCallback</a>(LabelControl* label):
+<a name="l00044"></a><a class="code" href="classMyMeasureToolCallback.html#a71919e8e107cd18fed9d68f1ceb6c892">00044</a>     <a class="code" href="classMyMeasureToolCallback.html">MyMeasureToolCallback</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label):
 <a name="l00045"></a>00045       _label(label)
 <a name="l00046"></a>00046     {
 <a name="l00047"></a>00047     }
 <a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="class_my_measure_tool_callback.html#a737c39801a45479463eb8a8ef6bcb017">00049</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDistanceChanged(MeasureToolHandler* sender, <span class="keywordtype">double</span> distance)
+<a name="l00049"></a><a class="code" href="classMyMeasureToolCallback.html#a737c39801a45479463eb8a8ef6bcb017">00049</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDistanceChanged(<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>* sender, <span class="keywordtype">double</span> distance)
 <a name="l00050"></a>00050     {
 <a name="l00051"></a>00051         std::stringstream ss;
 <a name="l00052"></a>00052         ss &lt;&lt; <span class="stringliteral">&quot;Distance = &quot;</span> &lt;&lt; std::setprecision(10) &lt;&lt; distance &lt;&lt; <span class="stringliteral">&quot;m&quot;</span> &lt;&lt; std::endl;        
 <a name="l00053"></a>00053         _label-&gt;setText( ss.str() );
 <a name="l00054"></a>00054     }
-<a name="l00055"></a><a class="code" href="class_my_measure_tool_callback.html#ada4ceba2b717c66a3090209d71f73290">00055</a>     LabelControl* <a class="code" href="class_my_measure_tool_callback.html#ada4ceba2b717c66a3090209d71f73290">_label</a>;
+<a name="l00055"></a><a class="code" href="classMyMeasureToolCallback.html#ada4ceba2b717c66a3090209d71f73290">00055</a>     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* <a class="code" href="classMyMeasureToolCallback.html#ada4ceba2b717c66a3090209d71f73290">_label</a>;
 <a name="l00056"></a>00056 };
 <a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="struct_toggle_path_handler.html">00058</a> <span class="keyword">struct </span><a class="code" href="struct_toggle_path_handler.html">TogglePathHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00058"></a><a class="code" href="structTogglePathHandler.html">00058</a> <span class="keyword">struct </span><a class="code" href="structTogglePathHandler.html">TogglePathHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00059"></a>00059 {
-<a name="l00060"></a><a class="code" href="struct_toggle_path_handler.html#a58f562e83e4e037263c0e631c786c201">00060</a>     <a class="code" href="struct_toggle_path_handler.html">TogglePathHandler</a>( MeasureToolHandler* tool) :
+<a name="l00060"></a><a class="code" href="structTogglePathHandler.html#a58f562e83e4e037263c0e631c786c201">00060</a>     <a class="code" href="structTogglePathHandler.html">TogglePathHandler</a>( <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>* tool) :
 <a name="l00061"></a>00061     _tool( tool )
 <a name="l00062"></a>00062     { }
 <a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="struct_toggle_path_handler.html#a51225e3dd3e3664caacec25037c0260a">00064</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="struct_toggle_path_handler.html#a51225e3dd3e3664caacec25037c0260a">onValueChanged</a>(Control* control, <span class="keywordtype">bool</span> value) {
+<a name="l00064"></a><a class="code" href="structTogglePathHandler.html#a51225e3dd3e3664caacec25037c0260a">00064</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structTogglePathHandler.html#a51225e3dd3e3664caacec25037c0260a">onValueChanged</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">bool</span> value) {
 <a name="l00065"></a>00065         _tool-&gt;setIsPath( value );
 <a name="l00066"></a>00066     }
 <a name="l00067"></a>00067 
-<a name="l00068"></a><a class="code" href="struct_toggle_path_handler.html#abaa0bf76c20fca4cfbf208cc46cef713">00068</a>     osg::ref_ptr&lt;MeasureToolHandler&gt; <a class="code" href="struct_toggle_path_handler.html#abaa0bf76c20fca4cfbf208cc46cef713">_tool</a>;
+<a name="l00068"></a><a class="code" href="structTogglePathHandler.html#abaa0bf76c20fca4cfbf208cc46cef713">00068</a>     osg::ref_ptr&lt;MeasureToolHandler&gt; <a class="code" href="structTogglePathHandler.html#abaa0bf76c20fca4cfbf208cc46cef713">_tool</a>;
 <a name="l00069"></a>00069 };
 <a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="struct_toggle_mode_handler.html">00071</a> <span class="keyword">struct </span><a class="code" href="struct_toggle_mode_handler.html">ToggleModeHandler</a> : <span class="keyword">public</span> ControlEventHandler
+<a name="l00071"></a><a class="code" href="structToggleModeHandler.html">00071</a> <span class="keyword">struct </span><a class="code" href="structToggleModeHandler.html">ToggleModeHandler</a> : <span class="keyword">public</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlEventHandler.html">ControlEventHandler</a>
 <a name="l00072"></a>00072 {
-<a name="l00073"></a><a class="code" href="struct_toggle_mode_handler.html#aae251389cbfde94a629ff56dc52b2218">00073</a>     <a class="code" href="struct_toggle_mode_handler.html">ToggleModeHandler</a>( MeasureToolHandler* tool) :
+<a name="l00073"></a><a class="code" href="structToggleModeHandler.html#aae251389cbfde94a629ff56dc52b2218">00073</a>     <a class="code" href="structToggleModeHandler.html">ToggleModeHandler</a>( <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>* tool) :
 <a name="l00074"></a>00074     _tool( tool )
 <a name="l00075"></a>00075     { }
 <a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="struct_toggle_mode_handler.html#aa42849cd257aa4776d477f0ef551b145">00077</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="struct_toggle_mode_handler.html#aa42849cd257aa4776d477f0ef551b145">onValueChanged</a>(Control* control, <span class="keywordtype">bool</span> value) {
-<a name="l00078"></a>00078         <span class="keywordflow">if</span> (_tool-&gt;getGeoInterpolation() == GEOINTERP_GREAT_CIRCLE)
+<a name="l00077"></a><a class="code" href="structToggleModeHandler.html#aa42849cd257aa4776d477f0ef551b145">00077</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structToggleModeHandler.html#aa42849cd257aa4776d477f0ef551b145">onValueChanged</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html">Control</a>* control, <span class="keywordtype">bool</span> value) {
+<a name="l00078"></a>00078         <span class="keywordflow">if</span> (_tool-&gt;getGeoInterpolation() == <a class="code" href="namespaceosgEarth.html#ac8769c4bff433281e6dd9744acfedf7babb74ef2806a2541207be3e513ab2ad60">GEOINTERP_GREAT_CIRCLE</a>)
 <a name="l00079"></a>00079         {
-<a name="l00080"></a>00080             _tool-&gt;setGeoInterpolation( GEOINTERP_RHUMB_LINE);
+<a name="l00080"></a>00080             _tool-&gt;setGeoInterpolation( <a class="code" href="namespaceosgEarth.html#ac8769c4bff433281e6dd9744acfedf7bac0446a4dc0f687174de82048f3a212dc">GEOINTERP_RHUMB_LINE</a>);
 <a name="l00081"></a>00081         }
 <a name="l00082"></a>00082         <span class="keywordflow">else</span>
 <a name="l00083"></a>00083         {
-<a name="l00084"></a>00084             _tool-&gt;setGeoInterpolation( GEOINTERP_GREAT_CIRCLE);
+<a name="l00084"></a>00084             _tool-&gt;setGeoInterpolation( <a class="code" href="namespaceosgEarth.html#ac8769c4bff433281e6dd9744acfedf7babb74ef2806a2541207be3e513ab2ad60">GEOINTERP_GREAT_CIRCLE</a>);
 <a name="l00085"></a>00085         }        
 <a name="l00086"></a>00086     }
 <a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="struct_toggle_mode_handler.html#a2b99a88255dedb819a19750235eec9fd">00088</a>     osg::ref_ptr&lt;MeasureToolHandler&gt; <a class="code" href="struct_toggle_mode_handler.html#a2b99a88255dedb819a19750235eec9fd">_tool</a>;
+<a name="l00088"></a><a class="code" href="structToggleModeHandler.html#a2b99a88255dedb819a19750235eec9fd">00088</a>     osg::ref_ptr&lt;MeasureToolHandler&gt; <a class="code" href="structToggleModeHandler.html#a2b99a88255dedb819a19750235eec9fd">_tool</a>;
 <a name="l00089"></a>00089 };
 <a name="l00090"></a>00090 
 <a name="l00091"></a>00091 
@@ -184,14 +200,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00100"></a>00100     osg::Node* earthNode = osgDB::readNodeFiles( arguments );
 <a name="l00101"></a>00101     <span class="keywordflow">if</span> (!earthNode)
 <a name="l00102"></a>00102     {
-<a name="l00103"></a>00103         OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
+<a name="l00103"></a>00103         <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Unable to load earth model.&quot;</span> &lt;&lt; std::endl;
 <a name="l00104"></a>00104         <span class="keywordflow">return</span> 1;
 <a name="l00105"></a>00105     }
 <a name="l00106"></a>00106 
-<a name="l00107"></a>00107     MapNode* mapNode = MapNode::findMapNode( earthNode );
+<a name="l00107"></a>00107     <a class="code" href="classosgEarth_1_1MapNode.html">MapNode</a>* mapNode = <a class="code" href="classosgEarth_1_1MapNode.html#a2832313530afb8e8fd32b3d5f3e779e0">MapNode::findMapNode</a>( earthNode );
 <a name="l00108"></a>00108     <span class="keywordflow">if</span> ( !mapNode )
 <a name="l00109"></a>00109     {
-<a name="l00110"></a>00110         OE_NOTICE &lt;&lt; <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> &lt;&lt; std::endl;
+<a name="l00110"></a>00110         <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Input file was not a .earth file&quot;</span> &lt;&lt; std::endl;
 <a name="l00111"></a>00111         <span class="keywordflow">return</span> 1;
 <a name="l00112"></a>00112     }
 <a name="l00113"></a>00113 
@@ -200,63 +216,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117     osgViewer::Viewer viewer(arguments);
 <a name="l00118"></a>00118     
-<a name="l00119"></a>00119     osgEarth::Util::EarthManipulator* earthManip = <span class="keyword">new</span> EarthManipulator();
+<a name="l00119"></a>00119     <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">osgEarth::Util::EarthManipulator</a>* earthManip = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1EarthManipulator.html">EarthManipulator</a>();
 <a name="l00120"></a>00120     viewer.setCameraManipulator( earthManip );
 <a name="l00121"></a>00121 
 <a name="l00122"></a>00122     osg::Group* root = <span class="keyword">new</span> osg::Group();
 <a name="l00123"></a>00123     root-&gt;addChild( earthNode );
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125     <span class="comment">//Create the MeasureToolHandler</span>
-<a name="l00126"></a>00126     MeasureToolHandler* measureTool = <span class="keyword">new</span> MeasureToolHandler(root, mapNode);    
-<a name="l00127"></a>00127     measureTool-&gt;setIntersectionMask( 0x1 );
+<a name="l00126"></a>00126     <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>* measureTool = <span class="keyword">new</span> <a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html">MeasureToolHandler</a>(root, mapNode);    
+<a name="l00127"></a>00127     measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ad5cfaf045fa0850e717084cecca820aa">setIntersectionMask</a>( 0x1 );
 <a name="l00128"></a>00128     viewer.addEventHandler( measureTool );
 <a name="l00129"></a>00129 
 <a name="l00130"></a>00130     <span class="comment">//Create some controls to interact with the measuretool</span>
-<a name="l00131"></a>00131     ControlCanvas* canvas = <span class="keyword">new</span> ControlCanvas( &amp;viewer );
+<a name="l00131"></a>00131     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>* canvas = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html">ControlCanvas</a>( &amp;viewer );
 <a name="l00132"></a>00132     root-&gt;addChild( canvas );
 <a name="l00133"></a>00133     canvas-&gt;setNodeMask( 0x1 &lt;&lt; 1 );
 <a name="l00134"></a>00134 
-<a name="l00135"></a>00135     Grid* grid = <span class="keyword">new</span> Grid();
-<a name="l00136"></a>00136     grid-&gt;setBackColor(0,0,0,0.5);
-<a name="l00137"></a>00137     grid-&gt;setMargin( 10 );
-<a name="l00138"></a>00138     grid-&gt;setPadding( 10 );
-<a name="l00139"></a>00139     grid-&gt;setChildSpacing( 10 );
-<a name="l00140"></a>00140     grid-&gt;setChildVertAlign( Control::ALIGN_CENTER );
-<a name="l00141"></a>00141     grid-&gt;setAbsorbEvents( <span class="keyword">true</span> );
-<a name="l00142"></a>00142     grid-&gt;setVertAlign( Control::ALIGN_BOTTOM );
-<a name="l00143"></a>00143     grid-&gt;setFrame(<span class="keyword">new</span> RoundedFrame());
+<a name="l00135"></a>00135     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>* grid = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html">Grid</a>();
+<a name="l00136"></a>00136     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab8ab00ba754c1f538bd1d324777bb1db">setBackColor</a>(0,0,0,0.5);
+<a name="l00137"></a>00137     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a59c8eb940d12b5996c9dbdbdd938568e">setMargin</a>( 10 );
+<a name="l00138"></a>00138     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#a7045fab1e4a2ccbbba74ecab9a510932">setPadding</a>( 10 );
+<a name="l00139"></a>00139     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#a570511c0f95b56243643dc93d2ddc566">setChildSpacing</a>( 10 );
+<a name="l00140"></a>00140     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#ae057e2ec91bdce4dd4b27e247da31c99">setChildVertAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1ab3b34efd4acd09720e1ef6441c0ad6fe">Control::ALIGN_CENTER</a> );
+<a name="l00141"></a>00141     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ab2b9b7fd435db4e2cbdae99af89e72d0">setAbsorbEvents</a>( <span class="keyword">true</span> );
+<a name="l00142"></a>00142     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#aec303898eda7f20576e3bff212303f5e">setVertAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1a260718b945ad1e02495524477f0c3c9e">Control::ALIGN_BOTTOM</a> );
+<a name="l00143"></a>00143     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Container.html#aa85a61e261bf6e74db5550a7534d4695">setFrame</a>(<span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1RoundedFrame.html">RoundedFrame</a>());
 <a name="l00144"></a>00144 
-<a name="l00145"></a>00145     canvas-&gt;addControl( grid );
+<a name="l00145"></a>00145     canvas-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1ControlCanvas.html#a48989497c74f4a7b196bbf8ab86e9ad1">addControl</a>( grid );
 <a name="l00146"></a>00146 
 <a name="l00147"></a>00147     <span class="comment">//Add a label to display the distance</span>
 <a name="l00148"></a>00148     <span class="comment">// Add a text label:</span>
-<a name="l00149"></a>00149     LabelControl* label = <span class="keyword">new</span> LabelControl();
-<a name="l00150"></a>00150     label-&gt;setFont( osgText::readFontFile( <span class="stringliteral">&quot;arialbd.ttf&quot;</span> ) );
-<a name="l00151"></a>00151     label-&gt;setFontSize( 24.0f );
-<a name="l00152"></a>00152     label-&gt;setHorizAlign( Control::ALIGN_LEFT );    
-<a name="l00153"></a>00153     label-&gt;setText(<span class="stringliteral">&quot;Distance&quot;</span>);
-<a name="l00154"></a>00154     grid-&gt;setControl( 0, 0, label);
+<a name="l00149"></a>00149     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>* label = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>();
+<a name="l00150"></a>00150     label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8c9989f2e0d708750eec6c17a527e24a">setFont</a>( osgText::readFontFile( <span class="stringliteral">&quot;arialbd.ttf&quot;</span> ) );
+<a name="l00151"></a>00151     label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a09a5cbe3b99a29486ed04733e954f27b">setFontSize</a>( 24.0f );
+<a name="l00152"></a>00152     label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>( <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aac9cc19c01d29206a1453a72cecf4152">Control::ALIGN_LEFT</a> );    
+<a name="l00153"></a>00153     label-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html#a8457c28b1d573aca5fe12b0e0401de01">setText</a>(<span class="stringliteral">&quot;Distance&quot;</span>);
+<a name="l00154"></a>00154     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 0, label);
 <a name="l00155"></a>00155 
 <a name="l00156"></a>00156     <span class="comment">//Add a callback to update the label when the distance changes</span>
-<a name="l00157"></a>00157     measureTool-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="class_my_measure_tool_callback.html">MyMeasureToolCallback</a>(label) );
+<a name="l00157"></a>00157     measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#ab27d7a24633df2f977ea4b58693fe02d">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="classMyMeasureToolCallback.html">MyMeasureToolCallback</a>(label) );
 <a name="l00158"></a>00158     
-<a name="l00159"></a>00159     Style style;
-<a name="l00160"></a>00160     style.getOrCreate&lt;LineSymbol&gt;()-&gt;stroke()-&gt;color() = Color::Yellow;
-<a name="l00161"></a>00161     measureTool-&gt;setLineStyle(style);
+<a name="l00159"></a>00159     <a class="code" href="classosgEarth_1_1Style.html">Style</a> style;
+<a name="l00160"></a>00160     style.getOrCreate&lt;<a class="code" href="classosgEarth_1_1Symbology_1_1LineSymbol.html">LineSymbol</a>&gt;()-&gt;stroke()-&gt;color() = <a class="code" href="structosgEarth_1_1Symbology_1_1Color.html#af66a864ee41ffae4b710a2595baa8a2e">Color::Yellow</a>;
+<a name="l00161"></a>00161     measureTool-&gt;<a class="code" href="structosgEarth_1_1Util_1_1MeasureToolHandler.html#a398ecf957bd09b265aa092a90f38d655">setLineStyle</a>(style);
 <a name="l00162"></a>00162 
 <a name="l00163"></a>00163     <span class="comment">//Add a checkbox to control if we are doing path based measurement or just point to point</span>
-<a name="l00164"></a>00164     grid-&gt;setControl( 0, 1, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Path&quot;</span>));
-<a name="l00165"></a>00165     CheckBoxControl* checkBox = <span class="keyword">new</span> CheckBoxControl(<span class="keyword">false</span>);
-<a name="l00166"></a>00166     checkBox-&gt;setHorizAlign(Control::ALIGN_LEFT);
-<a name="l00167"></a>00167     checkBox-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_toggle_path_handler.html">TogglePathHandler</a>(measureTool));
-<a name="l00168"></a>00168     grid-&gt;setControl( 1, 1, checkBox);
+<a name="l00164"></a>00164     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 1, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Path&quot;</span>));
+<a name="l00165"></a>00165     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>* checkBox = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">false</span>);
+<a name="l00166"></a>00166     checkBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aac9cc19c01d29206a1453a72cecf4152">Control::ALIGN_LEFT</a>);
+<a name="l00167"></a>00167     checkBox-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structTogglePathHandler.html">TogglePathHandler</a>(measureTool));
+<a name="l00168"></a>00168     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 1, checkBox);
 <a name="l00169"></a>00169 
 <a name="l00170"></a>00170     <span class="comment">//Add a toggle to set the mode of the measuring tool</span>
-<a name="l00171"></a>00171     grid-&gt;setControl( 0, 2, <span class="keyword">new</span> LabelControl(<span class="stringliteral">&quot;Great Circle&quot;</span>));
-<a name="l00172"></a>00172     CheckBoxControl* mode = <span class="keyword">new</span> CheckBoxControl(<span class="keyword">true</span>);
-<a name="l00173"></a>00173     mode-&gt;setHorizAlign(Control::ALIGN_LEFT);
-<a name="l00174"></a>00174     mode-&gt;addEventHandler( <span class="keyword">new</span> <a class="code" href="struct_toggle_mode_handler.html">ToggleModeHandler</a>(measureTool));
-<a name="l00175"></a>00175     grid-&gt;setControl( 1, 2, mode);
+<a name="l00171"></a>00171     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 0, 2, <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1LabelControl.html">LabelControl</a>(<span class="stringliteral">&quot;Great Circle&quot;</span>));
+<a name="l00172"></a>00172     <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>* mode = <span class="keyword">new</span> <a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1CheckBoxControl.html">CheckBoxControl</a>(<span class="keyword">true</span>);
+<a name="l00173"></a>00173     mode-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#afe3552937ae7f0d9ae37007684208d63">setHorizAlign</a>(<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#ae6b9ead0b1ff50ca15f87d8a722922f1aac9cc19c01d29206a1453a72cecf4152">Control::ALIGN_LEFT</a>);
+<a name="l00174"></a>00174     mode-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Control.html#af96954f7c18f44731a2db6eb00df5e99">addEventHandler</a>( <span class="keyword">new</span> <a class="code" href="structToggleModeHandler.html">ToggleModeHandler</a>(measureTool));
+<a name="l00175"></a>00175     grid-&gt;<a class="code" href="classosgEarth_1_1Util_1_1Controls_1_1Grid.html#af3de0e23f2473bf365f64f0229466ab7">setControl</a>( 1, 2, mode);
 <a name="l00176"></a>00176 
 <a name="l00177"></a>00177 
 <a name="l00178"></a>00178     
@@ -276,14 +292,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00192"></a>00192 }
 </pre></div></div>
 </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__measure_8cpp.html">osgearth_measure.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:15 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -298,6 +306,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:35 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

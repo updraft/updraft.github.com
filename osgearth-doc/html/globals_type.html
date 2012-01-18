@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -75,53 +105,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('globals.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
 &#160;<ul>
+<li>AMRDrawableList
+: <a class="el" href="AMRGeometry.html#aaad1704c2f8207e577522387107fbb97">AMRGeometry</a>
+</li>
+<li>AMRTriangleList
+: <a class="el" href="AMRGeometry.html#aba0064c0ee3cad477e1c6d6a7196435e">AMRGeometry</a>
+</li>
+<li>AncestorIndex
+: <a class="el" href="rivers_2engine__droam_2Common.html#a49de0debddd4f4aee0ce830fb4ecb020">Common</a>
+</li>
+<li>ChildIndex
+: <a class="el" href="rivers_2engine__droam_2Common.html#af758888672f3414ac075d2e2a482a903">Common</a>
+</li>
+<li>ColorLayersByUID
+: <a class="el" href="Tile.html#a69e705aa9d311b81c5de241954028a6b">Tile</a>
+, <a class="el" href="CustomTile.html#a69e705aa9d311b81c5de241954028a6b">CustomTile</a>
+</li>
+<li>DiamondJobList
+: <a class="el" href="MeshManager.html#a5d05bbf005a4a4de7f394bf218e10e22">MeshManager</a>
+</li>
+<li>DiamondJobOrderedSet
+: <a class="el" href="MeshManager.html#a7484225c34f5ea685eb90c7d0abf4c00">MeshManager</a>
+</li>
+<li>DiamondJobQDeque
+: <a class="el" href="MeshManager.html#a17fb26ba2a06756744e4174ab11b67a1">MeshManager</a>
+</li>
+<li>DiamondJobQueue
+: <a class="el" href="MeshManager.html#a61c2806755a1fa754414114506bf94df">MeshManager</a>
+</li>
+<li>DiamondPriorityQueue
+: <a class="el" href="MeshManager.html#a815dd57f3deaaac16142167b56a20021">MeshManager</a>
+</li>
+<li>DiamondQueue
+: <a class="el" href="MeshManager.html#ad087b342d0afcd532c22b9cde9ea6643">MeshManager</a>
+</li>
 <li>EngineNodeCache
-: <a class="el" href="_o_s_g_terrain_engine_node_8cpp.html#a25f09a0e73e0a0030a15d2961324606c">OSGTerrainEngineNode.cpp</a>
+: <a class="el" href="OSGTerrainEngineNode_8cpp.html#a25f09a0e73e0a0030a15d2961324606c">OSGTerrainEngineNode.cpp</a>
 </li>
 <li>GeometrySymbolicNode
 : <a class="el" href="osgearth__symbology_8cpp.html#a483357b252e51706fd776ee5f4830ca7">osgearth_symbology.cpp</a>
 </li>
 <li>GraticuleRegistry
-: <a class="el" href="_graticule_8cpp.html#a3ebdf3730800461669a9ad5e096525a3">Graticule.cpp</a>
+: <a class="el" href="Graticule_8cpp.html#a3ebdf3730800461669a9ad5e096525a3">Graticule.cpp</a>
 </li>
 <li>ImageList
 : <a class="el" href="osgearth__ocean_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">osgearth_ocean.cpp</a>
-, <a class="el" href="_ocean_surface_node_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">OceanSurfaceNode.cpp</a>
+, <a class="el" href="OceanSurfaceNode_8cpp.html#a346d68e53f9b33081517f7045e82b5ca">OceanSurfaceNode.cpp</a>
 </li>
 <li>LayerTablesByName
-: <a class="el" href="_sqlite3_cache_8cpp.html#ab4c3e380718b3ebc1a7ed02d2abbf5d3">Sqlite3Cache.cpp</a>
+: <a class="el" href="Sqlite3Cache_8cpp.html#ab4c3e380718b3ebc1a7ed02d2abbf5d3">Sqlite3Cache.cpp</a>
+</li>
+<li>Level
+: <a class="el" href="rivers_2engine__droam_2Common.html#abe08e330dab3140c34f1df2af8c190cd">Common</a>
 </li>
 <li>MapServiceLayerList
-: <a class="el" href="_map_service_8h.html#ac3896c967d697cfc5520681f34dc0837">MapService.h</a>
+: <a class="el" href="MapService_8h.html#ac3896c967d697cfc5520681f34dc0837">MapService.h</a>
 </li>
 <li>MarkerToFeatures
-: <a class="el" href="_substitute_model_filter_8cpp.html#a99876178ed2b2525a15752b7f12786b9">SubstituteModelFilter.cpp</a>
+: <a class="el" href="SubstituteModelFilter_8cpp.html#a99876178ed2b2525a15752b7f12786b9">SubstituteModelFilter.cpp</a>
+</li>
+<li>NodeIndex
+: <a class="el" href="rivers_2engine__droam_2Common.html#a15280048c91257326bb356142ebe4ee6">Common</a>
+</li>
+<li>Orientation
+: <a class="el" href="Diamond.html#a5f4337b82a15b3df46c2894a738a798c">Diamond</a>
+</li>
+<li>TravNumber
+: <a class="el" href="rivers_2engine__droam_2Common.html#ab7c6048a30397e8adb167a787a07cde8">Common</a>
 </li>
 </ul>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:21 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -136,6 +191,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:03:02 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>

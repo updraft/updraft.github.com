@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classosgEarth_1_1ConfigOptions.html" title="osgEarth::ConfigOptions" alt="" coords="477,259,643,288"/>
+<area shape="rect" id="node18" href="$classosgEarth_1_1DriverConfigOptions.html" title="osgEarth::DriverConfigOptions" alt="" coords="776,259,976,288"/>
+<area shape="rect" id="node25" href="$classosgEarth_1_1ProfileOptions.html" title="osgEarth::ProfileOptions" alt="" coords="1164,163,1327,192"/>
+<area shape="rect" id="node4" href="$classosgEarth_1_1Config.html" title="osgEarth::Config" alt="" coords="275,259,395,288"/>
+<area shape="rect" id="node6" href="$structosgEarth_1_1Properties.html" title="osgEarth::Properties" alt="" coords="11,232,152,261"/>
+<area shape="rect" id="node8" href="$classosgEarth_1_1URIContext.html" title="osgEarth::URIContext" alt="" coords="5,285,157,315"/>
+<area shape="rect" id="node10" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CoordinateSystemType \&gt;" alt="" coords="1461,416,1749,445"/>
+<area shape="rect" id="node12" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; std::string \&gt;" alt="" coords="772,11,980,40"/>
+<area shape="rect" id="node14" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; CacheOptions \&gt;" alt="" coords="1488,285,1723,315"/>
+<area shape="rect" id="node16" href="$classosgEarth_1_1CacheOptions.html" title="osgEarth::CacheOptions" alt="" coords="1163,285,1328,315"/>
+<area shape="rect" id="node21" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; bool \&gt;" alt="" coords="789,312,963,341"/>
+<area shape="rect" id="node23" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; ProfileOptions \&gt;" alt="" coords="1489,212,1721,241"/>
+<area shape="rect" id="node29" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; Bounds \&gt;" alt="" coords="779,97,973,127"/>
+<area shape="rect" id="node31" href="$classosgEarth_1_1Bounds.html" title="osgEarth::Bounds" alt="" coords="497,97,623,127"/>
+<area shape="rect" id="node33" href="$structosgEarth_1_1optional.html" title="osgEarth::optional\&lt; int \&gt;" alt="" coords="793,155,959,184"/>
+</map>

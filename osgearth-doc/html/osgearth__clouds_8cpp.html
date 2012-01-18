@@ -6,13 +6,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript">
-$(document).ready(initResizable);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='searchBox.OnSelectItem(0);'>
@@ -20,13 +13,50 @@ $(document).ready(initResizable);
 <script type="text/javascript"><!--
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 --></script>
+<script type="text/javascript">
+function hasClass(ele,cls) {
+  return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+
+function toggleVisibility(linkObj) {
+ var base = linkObj.getAttribute('id');
+ var summary = document.getElementById(base + '-summary');
+ var content = document.getElementById(base + '-content');
+ var trigger = document.getElementById(base + '-trigger');
+ if ( hasClass(linkObj,'closed') ) {
+   summary.style.display = 'none';
+   content.style.display = 'block';
+   trigger.src = 'open.png';
+   removeClass(linkObj,'closed');
+   addClass(linkObj,'opened');
+ } else if ( hasClass(linkObj,'opened') ) {
+   summary.style.display = 'block';
+   content.style.display = 'none';
+   trigger.src = 'closed.png';
+   removeClass(linkObj,'opened');
+   addClass(linkObj,'closed');
+ }
+ return false;
+}
+</script>
 <div id="top">
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">osgEarth</div>
+   <div id="projectname">osgEarth&#160;<span id="projectnumber">2.1.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -64,19 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('osgearth__clouds_8cpp.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -102,9 +119,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;osgDB/WriteFile&gt;</code><br/>
 <code>#include &lt;osgText/Text&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for osgearth_clouds.cpp:</div>
-<div class="dyncontent">
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for osgearth_clouds.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__clouds_8cpp__incl.png" border="0" usemap="#_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__clouds_2osgearth__clouds_8cpp" alt=""/></div>
 <map name="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__clouds_2osgearth__clouds_8cpp" id="_2home_2cube_2sources_2osgearth_2src_2applications_2osgearth__clouds_2osgearth__clouds_8cpp">
 </map>
@@ -135,19 +154,97 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__clouds_8cpp_source.html#l00071">71</a> of file <a class="el" href="osgearth__clouds_8cpp_source.html">osgearth_clouds.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  <span class="comment">//Try to read from the WorldWind server</span>
+  osg::ref_ptr&lt;osg::Image&gt; image = osgDB::readImageFile(<span class="stringliteral">&quot;http://worldwind25.arc.nasa.gov/GlobalClouds/GlobalClouds.aspx?.jpg&quot;</span>);
+  <span class="keywordflow">if</span> (image.valid())
+  {
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Read clouds from WorldWind server&quot;</span> &lt;&lt; std::endl;
+  }
+  <span class="keywordflow">else</span>
+  {
+    <span class="comment">//Just try to load clouds.jpg from the data directory.</span>
+    <span class="comment">//Note: You must append the osgearth\data folder to your OSG_FILE_PATH</span>
+    <span class="comment">//or just copy the clouds.jpg where current osg data is.</span>
+    image = osgDB::readImageFile(<span class="stringliteral">&quot;clouds.jpg&quot;</span>);
+  }
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+  <span class="keywordflow">if</span> (!image.valid())
+  {
+    <a class="code" href="Notify.html#a29c29c62ae325bf5871ce5b1695c1720">OE_NOTICE</a> &lt;&lt; <span class="stringliteral">&quot;Could not read clouds image &quot;</span> &lt;&lt; std::endl;
+    <span class="keywordflow">return</span> <a class="code" href="Export.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+  }
+
+  <span class="comment">//Convert the black and white data to RGBA</span>
+  image = <a class="code" href="osgearth__clouds_8cpp.html#a6ffeb5d9d971dfdac2dbb4ac8cf31aaf">makeRGBA</a>(image.get());
+  <span class="keywordtype">double</span> min_lon = -180.0;
+  <span class="keywordtype">double</span> min_lat = -90.0;
+  <span class="keywordtype">double</span> max_lon = 180.0;
+  <span class="keywordtype">double</span> max_lat = 90;
+
+  osgTerrain::TerrainTile* tile = <span class="keyword">new</span> osgTerrain::TerrainTile();
+
+  osgTerrain::Locator* locator = <span class="keyword">new</span> osgTerrain::Locator();
+  locator-&gt;setCoordinateSystemType( osgTerrain::Locator::GEOCENTRIC );
+
+  locator-&gt;setTransformAsExtents(
+    osg::DegreesToRadians( min_lon ),
+    osg::DegreesToRadians( min_lat ),
+    osg::DegreesToRadians( max_lon ),
+    osg::DegreesToRadians( max_lat ));
+
+  osg::HeightField *hf = <span class="keyword">new</span> osg::HeightField();
+  hf-&gt;allocate(64,64);
+  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;hf-&gt;getHeightList().size(); i++ ) hf-&gt;getHeightList()[i] = 0.0;
+
+  hf-&gt;setOrigin( osg::Vec3d( min_lon, min_lat, 0.0 ) );
+  hf-&gt;setXInterval( (max_lon - min_lon)/(<span class="keywordtype">double</span>)(hf-&gt;getNumColumns()-1) );
+  hf-&gt;setYInterval( (max_lat - min_lat)/(<span class="keywordtype">double</span>)(hf-&gt;getNumRows()-1) );
+  hf-&gt;setBorderWidth( 0 );
+
+  osgTerrain::HeightFieldLayer* hf_layer = <span class="keyword">new</span> osgTerrain::HeightFieldLayer();
+  hf_layer-&gt;setLocator( locator );
+  hf_layer-&gt;setHeightField( hf );
+
+  osgTerrain::ImageLayer* img_layer = <span class="keyword">new</span> osgTerrain::ImageLayer( image.get() );
+  img_layer-&gt;setLocator( locator );
+  tile-&gt;setColorLayer( 0, img_layer );
+
+  tile-&gt;setLocator( locator );
+  tile-&gt;setTerrainTechnique( <span class="keyword">new</span> osgTerrain::GeometryTechnique() );
+  tile-&gt;setElevationLayer( hf_layer );
+  tile-&gt;setRequiresNormals( <span class="keyword">true</span> );
+
+  tile-&gt;getOrCreateStateSet()-&gt;setAttributeAndModes(<span class="keyword">new</span> CullFace(CullFace::BACK), StateAttribute::ON);
+  tile-&gt;getOrCreateStateSet()-&gt;setMode(GL_LIGHTING, StateAttribute::OFF);
+
+  <span class="keywordtype">double</span> scale = 1.01;
+  osg::MatrixTransform* mt = <span class="keyword">new</span> osg::MatrixTransform;
+  mt-&gt;setMatrix(osg::Matrixd::scale(scale, scale, scale));
+  mt-&gt;addChild(tile);
+
+  osg::LOD *lod = <span class="keyword">new</span> LOD;
+  lod-&gt;addChild(mt, maxRange, FLT_MAX);
+
+  <span class="keywordflow">return</span> lod;
+}
+</pre></div>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_cgraph.png" border="0" usemap="#osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_cgraph" alt=""/></div>
 <map name="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_cgraph" id="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_cgraph">
 <area shape="rect" id="node3" href="osgearth__clouds_8cpp.html#a6ffeb5d9d971dfdac2dbb4ac8cf31aaf" title="makeRGBA" alt="" coords="153,5,244,35"/></map>
 </div>
 </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_icgraph.png" border="0" usemap="#osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_icgraph" alt=""/></div>
 <map name="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_icgraph" id="osgearth__clouds_8cpp_a434ab4400fba2a5581650670132dc991_icgraph">
 <area shape="rect" id="node3" href="osgearth__clouds_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="152,5,203,35"/></map>
@@ -182,10 +279,34 @@ Here is the caller graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__clouds_8cpp_source.html#l00147">147</a> of file <a class="el" href="osgearth__clouds_8cpp_source.html">osgearth_clouds.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  osg::ArgumentParser arguments(&amp;argc,argv);
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
+  <span class="comment">// construct the viewer.</span>
+  osgViewer::Viewer viewer(arguments);
+
+  osg::Group* group = <span class="keyword">new</span> osg::Group;
+
+  osg::ref_ptr&lt;osg::Node&gt; loadedModel = osgDB::readNodeFiles(arguments);
+  <span class="keywordflow">if</span> (loadedModel.valid())
+  {
+    group-&gt;addChild(loadedModel.get());
+  }
+
+  group-&gt;addChild(<a class="code" href="osgearth__clouds_8cpp.html#a434ab4400fba2a5581650670132dc991">createClouds</a>(osg::WGS_84_RADIUS_EQUATOR * 2.0));
+
+  <span class="comment">// set the scene to render</span>
+  viewer.setSceneData(group);
+
+  <span class="comment">// run the viewers frame loop</span>
+  <span class="keywordflow">return</span> viewer.run();
+}
+</pre></div>
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__clouds_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#osgearth__clouds_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="osgearth__clouds_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="osgearth__clouds_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
 <area shape="rect" id="node3" href="osgearth__clouds_8cpp.html#a434ab4400fba2a5581650670132dc991" title="createClouds" alt="" coords="104,5,203,35"/><area shape="rect" id="node5" href="osgearth__clouds_8cpp.html#a6ffeb5d9d971dfdac2dbb4ac8cf31aaf" title="makeRGBA" alt="" coords="252,5,343,35"/></map>
@@ -210,10 +331,33 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="osgearth__clouds_8cpp_source.html#l00048">48</a> of file <a class="el" href="osgearth__clouds_8cpp_source.html">osgearth_clouds.cpp</a>.</p>
+<div class="fragment"><pre class="fragment">{
+  osg::Image* result = <span class="keyword">new</span> osg::Image;
+  result-&gt;allocateImage(image-&gt;s(), image-&gt;t(), image-&gt;r(), GL_RGBA, GL_UNSIGNED_BYTE);
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
+  <span class="keywordflow">if</span> (image-&gt;getPixelFormat() == GL_LUMINANCE)
+  {
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> r = 0; r &lt; image-&gt;t(); ++r)
+    {
+      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; image-&gt;s(); ++c)
+      {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> val = *image-&gt;data(c, r);
+        result-&gt;data(c,r)[0] = val;
+        result-&gt;data(c,r)[1] = val;
+        result-&gt;data(c,r)[2] = val;
+        result-&gt;data(c,r)[3] = val;
+      }
+    }
+  }
+
+  <span class="keywordflow">return</span> result;
+}
+</pre></div>
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="osgearth__clouds_8cpp_a6ffeb5d9d971dfdac2dbb4ac8cf31aaf_icgraph.png" border="0" usemap="#osgearth__clouds_8cpp_a6ffeb5d9d971dfdac2dbb4ac8cf31aaf_icgraph" alt=""/></div>
 <map name="osgearth__clouds_8cpp_a6ffeb5d9d971dfdac2dbb4ac8cf31aaf_icgraph" id="osgearth__clouds_8cpp_a6ffeb5d9d971dfdac2dbb4ac8cf31aaf_icgraph">
 <area shape="rect" id="node3" href="osgearth__clouds_8cpp.html#a434ab4400fba2a5581650670132dc991" title="createClouds" alt="" coords="147,5,245,35"/><area shape="rect" id="node5" href="osgearth__clouds_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="293,5,344,35"/></map>
@@ -223,15 +367,6 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div>
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="osgearth__clouds_8cpp.html">osgearth_clouds.cpp</a>      </li>
-      <li class="footer">Generated on Tue Jan 17 2012 18:35:20 for osgEarth by&#160;
-<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
-    </ul>
-  </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -246,6 +381,8 @@ Here is the caller graph for this function:</div>
 </iframe>
 </div>
 
-
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jan 18 2012 15:02:42 for osgEarth by&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
 </html>
