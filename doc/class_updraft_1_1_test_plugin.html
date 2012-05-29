@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -121,8 +122,7 @@ Inheritance diagram for Updraft::TestPlugin:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#afe79aefd8c719231702df3660f3fd25c">showHelp</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#acde317789a70bd7036cae8714eb67401">mapLayerDisplayed</a> (osg::Node *layer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#ac21f327ce6463b6d22012aa4f9fb0da8">mapLayerHidden</a> (osg::Node *layer)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a7d46c47072f4c1833389007b7c16d6c7">mapLayerDisplayed</a> (int id, bool value)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a9853e6775e3fc88b5f38079d6b3b911c">TestPlugin</a> ()</td></tr>
@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the plugin is loaded.  <a href="#a8dbfefc2d2f2ec3cac9f210c473e0dbc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#ac934dfe9f6cd85441fcb0961b45ffc04">deinitialize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the plugin is unloaded.  <a href="#ac934dfe9f6cd85441fcb0961b45ffc04"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a098b01f93f52d8edf93248b445c959ed">fileOpen</a> (QString filename, QList&lt; int &gt; roles)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a4d6cf1279332fc6deb08e4eab28d353e">fileIdentification</a> (QString filename)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#ac07a52efc472abbb7eee876a5a0ae617">fileOpen</a> (const QString &amp;filename, int roleId)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a4d7b9632347a4470fda76e8a08bd23b4">fileIdentification</a> (QStringList *roles, QString *importDirectory, const QString &amp;filename)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#ad76d6f806d2c5954733b8f00fdded1ba">createTab</a> (QString title)</td></tr>
@@ -146,6 +146,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a8cd02fd6192bf8de03a0ab6884e48dcf">helpAction3</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a28e0a95adbf1c7911efd6c3c2c76266d">myMenu</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a0912425b6aa8ca67a370f134efca08f2">mapLayerGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; int, <br class="typebreak"/>
+<a class="el" href="class_updraft_1_1_map_layer_interface.html">Updraft::MapLayerInterface</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_test_plugin.html#a8aade03a250f017ae624390d359e59b3">mapLayers</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9853e6775e3fc88b5f38079d6b3b911c"></a><!-- doxytag: member="Updraft::TestPlugin::TestPlugin" ref="a9853e6775e3fc88b5f38079d6b3b911c" args="()" -->
@@ -218,43 +220,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4d6cf1279332fc6deb08e4eab28d353e"></a><!-- doxytag: member="Updraft::TestPlugin::fileIdentification" ref="a4d6cf1279332fc6deb08e4eab28d353e" args="(QString filename)" -->
+<a class="anchor" id="a4d7b9632347a4470fda76e8a08bd23b4"></a><!-- doxytag: member="Updraft::TestPlugin::fileIdentification" ref="a4d7b9632347a4470fda76e8a08bd23b4" args="(QStringList *roles, QString *importDirectory, const QString &amp;filename)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList <a class="el" href="class_updraft_1_1_test_plugin.html#a4d6cf1279332fc6deb08e4eab28d353e">Updraft::TestPlugin::fileIdentification</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_test_plugin.html#a4d7b9632347a4470fda76e8a08bd23b4">Updraft::TestPlugin::fileIdentification</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramtype">QStringList *&#160;</td>
+          <td class="paramname"><em>roles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>importDirectory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Asking a plugin to identify data in a file. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>List of role descriptions. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_updraft_1_1_test_plugin.html#a098b01f93f52d8edf93248b445c959ed">fileOpen()</a> </dd></dl>
-
-<p>Reimplemented from <a class="el" href="class_updraft_1_1_plugin_base.html#a3d8f605b018a67240ee3c0560b74badc">Updraft::PluginBase</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a098b01f93f52d8edf93248b445c959ed"></a><!-- doxytag: member="Updraft::TestPlugin::fileOpen" ref="a098b01f93f52d8edf93248b445c959ed" args="(QString filename, QList&lt; int &gt; roles)" -->
+<a class="anchor" id="ac07a52efc472abbb7eee876a5a0ae617"></a><!-- doxytag: member="Updraft::TestPlugin::fileOpen" ref="ac07a52efc472abbb7eee876a5a0ae617" args="(const QString &amp;filename, int roleId)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_updraft_1_1_test_plugin.html#a098b01f93f52d8edf93248b445c959ed">Updraft::TestPlugin::fileOpen</a> </td>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_test_plugin.html#ac07a52efc472abbb7eee876a5a0ae617">Updraft::TestPlugin::fileOpen</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QList&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>roles</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>roleId</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -268,12 +281,13 @@ Private Attributes</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Was opening successful? </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">roles</td><td>List of role indices (roles are returned by <a class="el" href="class_updraft_1_1_test_plugin.html#a4d6cf1279332fc6deb08e4eab28d353e">fileIdentification()</a>.) </td></tr>
+    <tr><td class="paramname">filename</td><td>full path to a file </td></tr>
+    <tr><td class="paramname">roleId</td><td>identification of role being opened </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="class_updraft_1_1_plugin_base.html#a21d9b08e0fd1b7ab1dcd514e7bdf496e">Updraft::PluginBase</a>.</p>
+<p>Reimplemented from <a class="el" href="class_updraft_1_1_plugin_base.html#af1fee62cc878e37889706bccf2024972">Updraft::PluginBase</a>.</p>
 
 </div>
 </div>
@@ -336,33 +350,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acde317789a70bd7036cae8714eb67401"></a><!-- doxytag: member="Updraft::TestPlugin::mapLayerDisplayed" ref="acde317789a70bd7036cae8714eb67401" args="(osg::Node *layer)" -->
+<a class="anchor" id="a7d46c47072f4c1833389007b7c16d6c7"></a><!-- doxytag: member="Updraft::TestPlugin::mapLayerDisplayed" ref="a7d46c47072f4c1833389007b7c16d6c7" args="(int id, bool value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_test_plugin.html#acde317789a70bd7036cae8714eb67401">Updraft::TestPlugin::mapLayerDisplayed</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_test_plugin.html#a7d46c47072f4c1833389007b7c16d6c7">Updraft::TestPlugin::mapLayerDisplayed</a> </td>
           <td>(</td>
-          <td class="paramtype">osg::Node *&#160;</td>
-          <td class="paramname"><em>layer</em></td><td>)</td>
-          <td><code> [slot]</code></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
         </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac21f327ce6463b6d22012aa4f9fb0da8"></a><!-- doxytag: member="Updraft::TestPlugin::mapLayerHidden" ref="ac21f327ce6463b6d22012aa4f9fb0da8" args="(osg::Node *layer)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_test_plugin.html#ac21f327ce6463b6d22012aa4f9fb0da8">Updraft::TestPlugin::mapLayerHidden</a> </td>
-          <td>(</td>
-          <td class="paramtype">osg::Node *&#160;</td>
-          <td class="paramname"><em>layer</em></td><td>)</td>
-          <td><code> [slot]</code></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -439,6 +446,19 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8aade03a250f017ae624390d359e59b3"></a><!-- doxytag: member="Updraft::TestPlugin::mapLayers" ref="a8aade03a250f017ae624390d359e59b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, <a class="el" href="class_updraft_1_1_map_layer_interface.html">Updraft::MapLayerInterface</a>*&gt; <a class="el" href="class_updraft_1_1_test_plugin.html#a8aade03a250f017ae624390d359e59b3">Updraft::TestPlugin::mapLayers</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a28e0a95adbf1c7911efd6c3c2c76266d"></a><!-- doxytag: member="Updraft::TestPlugin::myMenu" ref="a28e0a95adbf1c7911efd6c3c2c76266d" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -477,7 +497,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_test_plugin.html">TestPlugin</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Mon Jan 23 2012 11:06:37 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

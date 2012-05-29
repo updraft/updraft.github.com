@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['load',['load',['../class_updraft_1_1_core_1_1_plugin_manager.html#aa1ae04c45c2cbf5588f26527f6586970',1,'Updraft::Core::PluginManager']]]
+  ['lambda12',['Lambda12',['../class_geographic_lib_1_1_geodesic.html#ac658c110cc29a15426bfbafa6a74e50f',1,'GeographicLib::Geodesic']]],
+  ['lang',['lang',['../class_updraft_1_1_core_1_1_translation_language_editor.html#a19d016f7a1c4fb3c46e237d0cbc6aebe',1,'Updraft::Core::TranslationLanguageEditor']]],
+  ['languagechanged',['languageChanged',['../class_updraft_1_1_core_1_1_translation_manager.html#ab921a261c09bb3a8340abeedb7677a0c',1,'Updraft::Core::TranslationManager']]],
+  ['lat_5fradians',['lat_radians',['../class_updraft_1_1_util_1_1_location.html#a7c4afe2cf91e9386d065be6430774703',1,'Updraft::Util::Location']]],
+  ['latfromdms',['latFromDMS',['../class_updraft_1_1_util_1_1_location.html#a2167960d68886465a44fb4b94a0b9cd7',1,'Updraft::Util::Location']]],
+  ['latitude',['Latitude',['../class_geographic_lib_1_1_geodesic_line.html#a00a291e94d0c688a168a58623a360659',1,'GeographicLib::GeodesicLine']]],
+  ['lattodms',['latToDMS',['../class_updraft_1_1_util_1_1_location.html#a276196bd75455ef335c2b690e28e6160',1,'Updraft::Util::Location']]],
+  ['leaveevent',['leaveEvent',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4685ec30e55eabd8d429007e98212f71',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['lengths',['Lengths',['../class_geographic_lib_1_1_geodesic.html#a28aedb7024073f7fabe6836becedbe9a',1,'GeographicLib::Geodesic']]],
+  ['lightclear',['lightClear',['../class_updraft_1_1_core_1_1_menu.html#af8fb6743989b0d0b6a1c08201bd243ec',1,'Updraft::Core::Menu']]],
+  ['line',['Line',['../class_geographic_lib_1_1_geodesic.html#a3ac241c18897bb9bec4b839d7e1a7c59',1,'GeographicLib::Geodesic']]],
+  ['linearfunc',['LinearFunc',['../class_updraft_1_1_util_1_1_linear_func.html#a61711d2aa632cc5e7e7b182a33584623',1,'Updraft::Util::LinearFunc::LinearFunc()'],['../class_updraft_1_1_util_1_1_linear_func.html#ae5843188808f8b4cff08fb46f7462828',1,'Updraft::Util::LinearFunc::LinearFunc(qreal slope, qreal yIntercept)'],['../class_updraft_1_1_util_1_1_linear_func.html#a33a1d7e78d2543ff2b3d28f81d3d81b0',1,'Updraft::Util::LinearFunc::LinearFunc(qreal x0, qreal y0, qreal x1, qreal y1)']]],
+  ['load',['load',['../class_updraft_1_1_core_1_1_plugin_manager.html#a54da4b1234c97f678575593a111acbd6',1,'Updraft::Core::PluginManager::load()'],['../class_updraft_1_1_igc_1_1_igc_file.html#ae80203fc88ec818022b637a1973679f3',1,'Updraft::Igc::IgcFile::load(const QString &amp;path, QTextCodec *codec=0)'],['../class_updraft_1_1_igc_1_1_igc_file.html#a7d5162035554a42577b44e58d6d37490',1,'Updraft::Igc::IgcFile::load(QIODevice *file, QTextCodec *codec=0)'],['../class_updraft_1_1_t_p_file_cup_adapter.html#ad2095708e85db1a5ca5e27bdd7fde835',1,'Updraft::TPFileCupAdapter::load()']]],
+  ['loadfile',['loadFile',['../class_updraft_1_1_cup_1_1_cup_loader.html#af205c8d8055e4a3f85319f20ffbbfb66',1,'Updraft::Cup::CupLoader']]],
+  ['loadigc',['loadIgc',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a5ff0bbcd55652c9a5f1d23471ef223ef',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['loadimportedfiles',['loadImportedFiles',['../class_updraft_1_1_airspaces_1_1_airspaces.html#a0ceedf9684d062e70a80405bfbc26e72',1,'Updraft::Airspaces::Airspaces::loadImportedFiles()'],['../class_updraft_1_1_turn_points.html#ae694de7dc2d81e9d07d4e80c306d11b4',1,'Updraft::TurnPoints::loadImportedFiles()']]],
+  ['loadlanguage',['loadLanguage',['../class_updraft_1_1_core_1_1_translation_manager.html#a180556904e47c6aba0cf6f26fe45a5c2',1,'Updraft::Core::TranslationManager']]],
+  ['loadonerecord',['loadOneRecord',['../class_updraft_1_1_igc_1_1_igc_file.html#a3cf27de86711b95a01f45a9920aed167',1,'Updraft::Igc::IgcFile']]],
+  ['loadsettings',['loadSettings',['../class_updraft_1_1_core_1_1_settings_model.html#aa00554776ab3614d3aa9c78358309bc6',1,'Updraft::Core::SettingsModel']]],
+  ['loadtestfile',['loadTestFile',['../class_updraft_1_1_igc_1_1_test_1_1_test_igc.html#a40cb3ad5a436770fb26479e0ae22ebf4',1,'Updraft::Igc::Test::TestIgc']]],
+  ['loadtranslationfile',['loadTranslationFile',['../class_updraft_1_1_core_1_1_translation_manager.html#aac9ae0a5da34e58b222d8c0b11cb434d',1,'Updraft::Core::TranslationManager']]],
+  ['localcoloring',['LocalColoring',['../class_updraft_1_1_igc_viewer_1_1_local_coloring.html#a8b2679323a5ea2dd2103c4fd767e07a4',1,'Updraft::IgcViewer::LocalColoring']]],
+  ['location',['Location',['../class_updraft_1_1_util_1_1_location.html#a0afa6dcf486f3cc334a88fa50034f956',1,'Updraft::Util::Location']]],
+  ['log1p',['log1p',['../class_geographic_lib_1_1_math.html#a98f91be9f712885bbd653674e68244d6',1,'GeographicLib::Math::log1p(double x)'],['../class_geographic_lib_1_1_math.html#aee8b226975a8b69808e3b1ca3bf0adb3',1,'GeographicLib::Math::log1p(float x)']]],
+  ['lon_5fradians',['lon_radians',['../class_updraft_1_1_util_1_1_location.html#ab3ffab0691272f1712b129e4bc11aa10',1,'Updraft::Util::Location']]],
+  ['lonfromdms',['lonFromDMS',['../class_updraft_1_1_util_1_1_location.html#a6188da5d00ddec13afe95afcbf6af7a3',1,'Updraft::Util::Location']]],
+  ['longitude',['Longitude',['../class_geographic_lib_1_1_geodesic_line.html#ac567ccf20c683319370f4c747f23966a',1,'GeographicLib::GeodesicLine']]],
+  ['lontodms',['lonToDMS',['../class_updraft_1_1_util_1_1_location.html#a44a8fda34909924a6c32ae8af4650f78',1,'Updraft::Util::Location']]]
 ];

@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -123,10 +124,18 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#abd03913b36779f0912863d79a921ae17">createMenu</a> (QString title)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an entry in the main menu.  <a href="#abd03913b36779f0912863d79a921ae17"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_menu_interface.html">MenuInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#adfbf758e1ca93f2f4e331babc3daafbc">getSystemMenu</a> (<a class="el" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a> menu)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">createMapLayerGroup</a> (const QString &amp;title)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_updraft_1_1_util_1_1_ellipsoid.html">Util::Ellipsoid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#af5b3b46bb1b716d8fc54d158fba77ccf">getEllipsoid</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current <a class="el" href="class_updraft_1_1_util_1_1_ellipsoid.html">Updraft::Util::Ellipsoid</a> used for measurements.  <a href="#af5b3b46bb1b716d8fc54d158fba77ccf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a30efb3320b0a321a70c4eb029cbb21f1">createMapLayerGroup</a> (const QString &amp;title)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#afae5048bf9e7d3c892329ae59bdd83fb">createTab</a> (QWidget *content, QString title)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a21083a7d28fc511c9e81a8033045fac7">removeTab</a> (<a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *tab)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#ab17deed92a0c57a569233eccb89adcd1">registerFiletype</a> (QString extension, QString description, <a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9">FileCategory</a> category)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a1411695d01bd7d332450a88cd341fbbf">registerFiletype</a> (const <a class="el" href="struct_updraft_1_1_file_registration.html">FileRegistration</a> &amp;registration)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a5be6b6a4a5a2a944f1005cb30faa5eab">getDataDirectory</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#aee3d33d180a8e06e7bb5fecaff00763c">addSettingsGroup</a> (const QString &amp;groupId, const QString &amp;description, const QString &amp;icon=&quot;:/core/icons/configure.png&quot;)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#adc166a6f2773f1f566e8fa0cdc6fd844">addSetting</a> (const QString &amp;settingId, const QString &amp;description, QVariant initValue, bool hidden=false)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#a923f3418ef955bd5a8779cfac89fb6ee">getSimpleGroup</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the basic node group for drawing.  <a href="#a923f3418ef955bd5a8779cfac89fb6ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_interface.html#aad2a55dc95090ddf9c99a64df2c23fbb">registerOsgNode</a> (osg::Node *node, <a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *mapObject)=0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Exposes core functionalities to plugins. A call to methods of this interface automagically contains a pointer to calling plugin (this is ensured in <a class="el" href="coreimplementation_8cpp.html">core/coreimplementation.cpp</a>) </p>
@@ -148,12 +157,108 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a6d458210ae7985a49ea2fc8209e2eccd"></a><!-- doxytag: member="Updraft::CoreInterface::createMapLayerGroup" ref="a6d458210ae7985a49ea2fc8209e2eccd" args="(const QString &amp;title)=0" -->
+<a class="anchor" id="adc166a6f2773f1f566e8fa0cdc6fd844"></a><!-- doxytag: member="Updraft::CoreInterface::addSetting" ref="adc166a6f2773f1f566e8fa0cdc6fd844" args="(const QString &amp;settingId, const QString &amp;description, QVariant initValue, bool hidden=false)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a>* <a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">Updraft::CoreInterface::createMapLayerGroup</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a>* <a class="el" href="class_updraft_1_1_core_interface.html#adc166a6f2773f1f566e8fa0cdc6fd844">Updraft::CoreInterface::addSetting</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>settingId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVariant&#160;</td>
+          <td class="paramname"><em>initValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hidden</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adds a setting into the settings dialog. If the setting already exists, its value is not set to the provided value but instead, the value is read from the existing setting. Ownership of the setting interface is transfered to the caller of this function. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settingId</td><td>Identifier for the setting, prepended with a ':' and the settings group identifier, where this setting will reside. If the group with the given identifier does not exist, a new one will be created with a default icon and name identical to the identifier. </td></tr>
+    <tr><td class="paramname">description</td><td>Description of the setting. This will be displayed in the settings dialog. </td></tr>
+    <tr><td class="paramname">initValue</td><td>This is the initial value for the setting if it is newly created. </td></tr>
+    <tr><td class="paramname">hidden</td><td>Whether the setting should be hidden or displayed in the settings dialog. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Interface for setting and reading the setting value. In case of failure, NULL is returned. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad0737a76cdfb4c5d9cccb43fbcb4291f">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee3d33d180a8e06e7bb5fecaff00763c"></a><!-- doxytag: member="Updraft::CoreInterface::addSettingsGroup" ref="aee3d33d180a8e06e7bb5fecaff00763c" args="(const QString &amp;groupId, const QString &amp;description, const QString &amp;icon=&quot;:/core/icons/configure.png&quot;)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#aee3d33d180a8e06e7bb5fecaff00763c">Updraft::CoreInterface::addSettingsGroup</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>groupId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>icon</em> = <code>&quot;:/core/icons/configure.png&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adds a group into the settings dialog. If a setting group with the given ID already exists, its description and icon are changed to the new ones. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groupId</td><td>An identifier of the group to create or change description. </td></tr>
+    <tr><td class="paramname">description</td><td>Description of the group. This is displayed in the dialog next to the settings icon. </td></tr>
+    <tr><td class="paramname">icon</td><td>The icon of the settings group. Default is a wrench icon. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad85fdfb6d21920581cf9e1148d464ee0">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30efb3320b0a321a70c4eb029cbb21f1"></a><!-- doxytag: member="Updraft::CoreInterface::createMapLayerGroup" ref="a30efb3320b0a321a70c4eb029cbb21f1" args="(const QString &amp;title)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="el" href="class_updraft_1_1_core_interface.html#a30efb3320b0a321a70c4eb029cbb21f1">Updraft::CoreInterface::createMapLayerGroup</a> </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>title</em></td><td>)</td>
@@ -162,16 +267,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates map layer group and adds it to the tree view in the left pane. To remove <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> use C++ delete. </p>
+<p>Creates map layer group and adds it to the tree view in the left pane. To remove MapLayerGroup use C++ delete. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">title</td><td>label for the item in the tree view </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the new <a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the new MapLayerGroup </dd></dl>
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#af241ab64eab17ce2538889d81293c8ff">Updraft::Core::CoreImplementation</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a42f05686f43471eaecb9200fae42257c">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
@@ -226,6 +331,46 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5be6b6a4a5a2a944f1005cb30faa5eab"></a><!-- doxytag: member="Updraft::CoreInterface::getDataDirectory" ref="a5be6b6a4a5a2a944f1005cb30faa5eab" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QString <a class="el" href="class_updraft_1_1_core_interface.html#a5be6b6a4a5a2a944f1005cb30faa5eab">Updraft::CoreInterface::getDataDirectory</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets path of the application data directory. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Full path to the application directory </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a0a01cb12fd609612ba1bf45feef208cc">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5b3b46bb1b716d8fc54d158fba77ccf"></a><!-- doxytag: member="Updraft::CoreInterface::getEllipsoid" ref="af5b3b46bb1b716d8fc54d158fba77ccf" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="class_updraft_1_1_util_1_1_ellipsoid.html">Util::Ellipsoid</a>* <a class="el" href="class_updraft_1_1_core_interface.html#af5b3b46bb1b716d8fc54d158fba77ccf">Updraft::CoreInterface::getEllipsoid</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the current <a class="el" href="class_updraft_1_1_util_1_1_ellipsoid.html">Updraft::Util::Ellipsoid</a> used for measurements. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a82a46f50468f1eee8eef7ed36d06a20c">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="acc4d5438c2f18af000cbd265a7d3abeb"></a><!-- doxytag: member="Updraft::CoreInterface::getMainWindow" ref="acc4d5438c2f18af000cbd265a7d3abeb" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -243,6 +388,26 @@ Public Member Functions</h2></td></tr>
 <p>Returns main window pointer. Used for example for modal dialogs. </p>
 
 <p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ac80791158340df16f2653e98076b68c8">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a923f3418ef955bd5a8779cfac89fb6ee"></a><!-- doxytag: member="Updraft::CoreInterface::getSimpleGroup" ref="a923f3418ef955bd5a8779cfac89fb6ee" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual osg::Group* <a class="el" href="class_updraft_1_1_core_interface.html#a923f3418ef955bd5a8779cfac89fb6ee">Updraft::CoreInterface::getSimpleGroup</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the pointer to the basic node group for drawing. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a3b69b04d9891257f0927c63e6eb2b576">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
@@ -272,27 +437,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab17deed92a0c57a569233eccb89adcd1"></a><!-- doxytag: member="Updraft::CoreInterface::registerFiletype" ref="ab17deed92a0c57a569233eccb89adcd1" args="(QString extension, QString description, FileCategory category)=0" -->
+<a class="anchor" id="a1411695d01bd7d332450a88cd341fbbf"></a><!-- doxytag: member="Updraft::CoreInterface::registerFiletype" ref="a1411695d01bd7d332450a88cd341fbbf" args="(const FileRegistration &amp;registration)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#ab17deed92a0c57a569233eccb89adcd1">Updraft::CoreInterface::registerFiletype</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#a1411695d01bd7d332450a88cd341fbbf">Updraft::CoreInterface::registerFiletype</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>extension</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_updraft_1_1_file_registration.html">FileRegistration</a> &amp;&#160;</td>
+          <td class="paramname"><em>registration</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This plugin knows how to open the file! </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Identifier of the newly registered filetype </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a143b17996f98b0bc5bd11424589452b4">Updraft::Core::CoreImplementation</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad2a55dc95090ddf9c99a64df2c23fbb"></a><!-- doxytag: member="Updraft::CoreInterface::registerOsgNode" ref="aad2a55dc95090ddf9c99a64df2c23fbb" args="(osg::Node *node, MapObject *mapObject)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_core_interface.html#aad2a55dc95090ddf9c99a64df2c23fbb">Updraft::CoreInterface::registerOsgNode</a> </td>
+          <td>(</td>
+          <td class="paramtype">osg::Node *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>description</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9">FileCategory</a>&#160;</td>
-          <td class="paramname"><em>category</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *&#160;</td>
+          <td class="paramname"><em>mapObject</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -302,10 +482,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This plugin knows how to open the file! </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Identifier of the newly registered filetype </dd></dl>
+<p>Registers the osg node into <a class="el" href="namespace_updraft.html">Updraft</a> for mouse picking. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node that should be registered </td></tr>
+    <tr><td class="paramname">mapObject</td><td>The map object that this node represents when clicked </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#aa1bc6244b7c2bb4cbf235a6a100777e0">Updraft::Core::CoreImplementation</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a0abf5520ac37bb616890e044564f588a">Updraft::Core::CoreImplementation</a>.</p>
 
 </div>
 </div>
@@ -339,7 +525,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -353,7 +539,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_interface.html">CoreInterface</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Tue May 29 2012 14:05:33 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

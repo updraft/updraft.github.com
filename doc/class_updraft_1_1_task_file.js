@@ -1,0 +1,26 @@
+var class_updraft_1_1_task_file =
+[
+    [ "StorageState", "class_updraft_1_1_task_file.html#a3ca680d2eb07a668f5e386b586848aff", null ],
+    [ "TaskFile", "class_updraft_1_1_task_file.html#a678e1af98f52c6639c89d3802017432a", null ],
+    [ "TaskFile", "class_updraft_1_1_task_file.html#ae191a71d3a6bbbf29c17f380954beca0", null ],
+    [ "beginEdit", "class_updraft_1_1_task_file.html#ab058e92fa2faaef0d223802fb51510b1", null ],
+    [ "beginRead", "class_updraft_1_1_task_file.html#a659e35391683083f5a40faab0f2bfbc2", null ],
+    [ "dataChanged", "class_updraft_1_1_task_file.html#af0ad1c8b22331b6e2854c978eec09415", null ],
+    [ "endEdit", "class_updraft_1_1_task_file.html#a97419bdb2a40b4e8a807125d0a1a95d9", null ],
+    [ "endRead", "class_updraft_1_1_task_file.html#a78322ffc52a5508aba7bf5a7c9fe74e0", null ],
+    [ "getFileName", "class_updraft_1_1_task_file.html#ae77e80647e318f44b8660d30b4edcd7b", null ],
+    [ "getFilePath", "class_updraft_1_1_task_file.html#af9087ed6aceddcbc7329621e0c4fea8b", null ],
+    [ "getStorageState", "class_updraft_1_1_task_file.html#af458daa615377c1eb775ee48c14fb09c", null ],
+    [ "isFirstInHistory", "class_updraft_1_1_task_file.html#a9eeb5330a76e74f10406751c81f4d13d", null ],
+    [ "isLastInHistory", "class_updraft_1_1_task_file.html#a912247de182ebde6984b7761f00ae0e0", null ],
+    [ "redo", "class_updraft_1_1_task_file.html#a15344f9c0e38095a2dc625b1fe294d4f", null ],
+    [ "save", "class_updraft_1_1_task_file.html#a8ad4b0103d146928d4d2b64cee571332", null ],
+    [ "saveAs", "class_updraft_1_1_task_file.html#adce5b179d3b5cb7c9df6987e1616eea9", null ],
+    [ "storageStateChanged", "class_updraft_1_1_task_file.html#ae64ba9d9dbf627f14d8bb7fdd2112239", null ],
+    [ "undo", "class_updraft_1_1_task_file.html#a91362dbd68f60c23443bf9ac7ef5e89a", null ],
+    [ "updateOnUndoRedo", "class_updraft_1_1_task_file.html#adfff767890a528b3f80a25dd511d2527", null ],
+    [ "dataHistory", "class_updraft_1_1_task_file.html#af5a5af46981f1ba8d82be8299df42756", null ],
+    [ "filePath", "class_updraft_1_1_task_file.html#a4ebecad22f6907d1a42ad1eb93ac5541", null ],
+    [ "locked", "class_updraft_1_1_task_file.html#a28d364f6f9938623e48909299b1035b3", null ],
+    [ "storageState", "class_updraft_1_1_task_file.html#a626d5672e7ccb45cf27097979f7ba37c", null ]
+];

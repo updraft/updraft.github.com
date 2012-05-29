@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['g',['G',['../struct_open_airspace_1_1_airspace_1_1_s_p__str.html#a23c3165f36d17faab9108be6dd4767a1',1,'OpenAirspace::Airspace::SP_str::G()'],['../struct_open_airspace_1_1_airspace_1_1_s_b__str.html#a95234569c260b8bc6c40d2fcd88eb789',1,'OpenAirspace::Airspace::SB_str::G()']]],
+  ['g_5fcore',['g_core',['../namespace_updraft.html#ad9a4ba9a4276fb9ddf39f0a05cbd1105',1,'Updraft::g_core()'],['../namespace_updraft_1_1_airspaces.html#ac652750df38ce220da4d1677619862a8',1,'Updraft::Airspaces::g_core()']]],
+  ['geodesic',['geodesic',['../class_updraft_1_1_util_1_1_ellipsoid.html#a18f43885a5e41790699b0e1c5e9359ba',1,'Updraft::Util::Ellipsoid']]],
+  ['geom',['geom',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a5067d43bd0d2176d4303c3c08c73167c',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['geometry',['geometry',['../class_open_airspace_1_1_airspace.html#ab0248af168d00365021b3c3ce040b627',1,'OpenAirspace::Airspace']]],
+  ['gliderid_5f',['gliderId_',['../class_updraft_1_1_igc_1_1_igc_file.html#ac00ebbd0e7d3e966568c6185e7499b6f',1,'Updraft::Igc::IgcFile']]],
+  ['glidertype_5f',['gliderType_',['../class_updraft_1_1_igc_1_1_igc_file.html#a3828b930859bb5ecc7dcf951175fcce3',1,'Updraft::Igc::IgcFile']]],
+  ['globalmax_5f',['globalMax_',['../class_updraft_1_1_igc_viewer_1_1_igc_info.html#a4744a2c4169e71bf5b5300a6e68e27c2',1,'Updraft::IgcViewer::IgcInfo']]],
+  ['globalmin_5f',['globalMin_',['../class_updraft_1_1_igc_viewer_1_1_igc_info.html#a0157ab98083ec814893585c17af2b609',1,'Updraft::IgcViewer::IgcInfo']]],
+  ['globalrobustmax_5f',['globalRobustMax_',['../class_updraft_1_1_igc_viewer_1_1_igc_info.html#ac10aa455112b98af82e13919d69a868d',1,'Updraft::IgcViewer::IgcInfo']]],
+  ['globalrobustmin_5f',['globalRobustMin_',['../class_updraft_1_1_igc_viewer_1_1_igc_info.html#ab23fe001a4c2f24c28a7856a704fd65a',1,'Updraft::IgcViewer::IgcInfo']]],
+  ['gnd',['GND',['../class_updraft_1_1_airspaces_1_1oa_engine.html#add2846a4797cfc40dcff78386a1c7f76',1,'Updraft::Airspaces::oaEngine::GND()'],['../namespace_updraft_1_1_airspaces.html#a7e6d01546982e409b45caf4b8bd54f9f',1,'Updraft::Airspaces::GND()']]],
+  ['gps_5f',['gps_',['../class_updraft_1_1_igc_1_1_igc_file.html#a3124204e7a477bc8318bee013545ca68',1,'Updraft::Igc::IgcFile']]],
+  ['gpsloc',['gpsLoc',['../struct_updraft_1_1_igc_1_1_fix.html#a74d137599586aeeba81f54c63ba79d46',1,'Updraft::Igc::Fix']]],
+  ['gradient',['gradient',['../class_updraft_1_1_igc_viewer_1_1_default_coloring.html#ab320700082ba64090bbf648e82daa65e',1,'Updraft::IgcViewer::DefaultColoring::gradient()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a4c3870965a76992dd1e6f9db862b2f70',1,'Updraft::IgcViewer::OpenedFile::gradient()']]],
+  ['graphicswindow',['graphicsWindow',['../class_updraft_1_1_core_1_1_scene_manager.html#a5860ca488f2bf194204e0361e403e3a4',1,'Updraft::Core::SceneManager']]],
+  ['graphpicture',['graphPicture',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa73e85d3c2d6aba2cc23e4c62504087c',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['ground_5fspeed_5fpen',['GROUND_SPEED_PEN',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a1c22e95455561e6b78a162eb67296035',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['groundspeedaxes',['groundSpeedAxes',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0c890ac2b1d8e9ba38e35f94fc5b459a',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['groundspeedinfo',['groundSpeedInfo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a18eaddb247630b1ba8b17aecfd081661',1,'Updraft::IgcViewer::OpenedFile::groundSpeedInfo()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a1a16359e882d85ebd17f7f33e42b09df',1,'Updraft::IgcViewer::PlotWidget::groundSpeedInfo()']]],
+  ['groundspeedplotpainter',['groundSpeedPlotPainter',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a27a856a6f825e05dc34f106c91ecaddb',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['group',['group',['../class_updraft_1_1_task_layer.html#a4c8fa59384a9026c596f453f29a32c24',1,'Updraft::TaskLayer::group()'],['../class_updraft_1_1_t_p_layer.html#ae66f401567c9e231604dae193a11907b',1,'Updraft::TPLayer::group()']]],
+  ['groupchangeinprogress',['groupChangeInProgress',['../class_updraft_1_1_core_1_1_settings_top_view.html#a6e3f540a7824bf1febadd371f082cd3f',1,'Updraft::Core::SettingsTopView']]]
+];

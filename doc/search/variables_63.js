@@ -1,7 +1,25 @@
 var searchData=
 [
+  ['c',['c',['../class_updraft_1_1_core_1_1_color_editor.html#a67da5acac447d11aa6d563c9a0ac3e09',1,'Updraft::Core::ColorEditor::c()'],['../class_updraft_1_1_igc_viewer_1_1_constant_coloring.html#aef15971f051b2290a36dad0a2458f5f7',1,'Updraft::IgcViewer::ConstantColoring::c()']]],
   ['camera',['camera',['../class_updraft_1_1_core_1_1_scene_manager.html#a125252fbffe85d44408b23405fee270e',1,'Updraft::Core::SceneManager']]],
-  ['category',['category',['../struct_updraft_1_1_core_1_1_file_type.html#a930c9a6e5b3d8dc5f5d61c2d5a7cb1c2',1,'Updraft::Core::FileType']]],
-  ['core',['core',['../class_updraft_1_1_plugin_base.html#af5b7cabf35e492947c21224343a02b05',1,'Updraft::PluginBase']]],
-  ['custommenus',['customMenus',['../class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1',1,'Updraft::Core::MainWindow']]]
+  ['category',['category',['../struct_updraft_1_1_file_registration.html#afc2fa56a00a5bacdc1b87e6b9c662791',1,'Updraft::FileRegistration']]],
+  ['centre',['centre',['../class_open_airspace_1_1_polygon.html#acb8495cf8b14a8f10d8d1e8f99600d1d',1,'OpenAirspace::Polygon::centre()'],['../class_open_airspace_1_1_arc_i.html#a6730befd400dc392b35e33c589404d1e',1,'OpenAirspace::ArcI::centre()'],['../class_open_airspace_1_1_arc_i_i.html#a5591e4da7abcfaf93b51d2a4a70fb161',1,'OpenAirspace::ArcII::centre()'],['../class_open_airspace_1_1_circle.html#a9189b191bf6e62619862bb1c2e439602',1,'OpenAirspace::Circle::centre()']]],
+  ['children',['children',['../class_updraft_1_1_core_1_1_settings_item.html#a68c28bb7dfd00061d3f1c790ff45c8e8',1,'Updraft::Core::SettingsItem']]],
+  ['closeframe',['closeFrame',['../class_updraft_1_1_task_point_button.html#a6fef50dd2a5d3190b43f91ec55feba39',1,'Updraft::TaskPointButton']]],
+  ['closeframelayout',['closeFrameLayout',['../class_updraft_1_1_task_point_button.html#a6beaff516298ca583c5142247b526ae7',1,'Updraft::TaskPointButton']]],
+  ['code',['code',['../struct_updraft_1_1_cup_1_1_t_p_entry.html#ad429693ba79fd1ff9ec4c5ca550f41e2',1,'Updraft::Cup::TPEntry::code()'],['../class_updraft_1_1_task_point.html#a250c21ae3c0d63c72604ae9090dc6413',1,'Updraft::TaskPoint::code()'],['../struct_updraft_1_1_turn_point.html#a90a8a25d11e063697c9492dd73a52614',1,'Updraft::TurnPoint::code()']]],
+  ['col',['col',['../class_updraft_1_1_airspaces_1_1oa_engine.html#ae9f65d19b0498cce2a4076d3df361771',1,'Updraft::Airspaces::oaEngine']]],
+  ['colorings',['colorings',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a6cdb05709d74d1af5f82bd77d85a8953',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['colorscombo',['colorsCombo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a3dbe80de20a95910a844aada7835ed6d',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['competitionclass_5f',['competitionClass_',['../class_updraft_1_1_igc_1_1_igc_file.html#ac1b80aa51a0960a260b8221bd47cb57f',1,'Updraft::Igc::IgcFile']]],
+  ['competitionid_5f',['competitionId_',['../class_updraft_1_1_igc_1_1_igc_file.html#aa6fe20a05ff6a1897fb5b9334a18fc47',1,'Updraft::Igc::IgcFile']]],
+  ['coretranslator',['coreTranslator',['../class_updraft_1_1_core_1_1_translation_manager.html#ae734f08d077ff8e655c8b2cdd2ae64fa',1,'Updraft::Core::TranslationManager']]],
+  ['country',['country',['../struct_updraft_1_1_cup_1_1_t_p_entry.html#aae7232210ecbd8a089b0be0542cc5090',1,'Updraft::Cup::TPEntry']]],
+  ['cupfile',['cupFile',['../class_updraft_1_1_cup_1_1_cup_loader.html#a7a15796c20f9586e7d257297c04f0cbe',1,'Updraft::Cup::CupLoader::cupFile()'],['../class_updraft_1_1_t_p_file_cup_adapter.html#a5ee372e69eac56991bb9e35001d78f62',1,'Updraft::TPFileCupAdapter::cupFile()']]],
+  ['cuptpsreg',['cupTPsReg',['../class_updraft_1_1_turn_points.html#a60ef3431f85baaebef5889a07e7e649b',1,'Updraft::TurnPoints']]],
+  ['currentcoloring',['currentColoring',['../class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#af2341b04cf05fcb3df177b9fcc6c7a37',1,'Updraft::IgcViewer::IgcViewer::currentColoring()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#aecc9e59e94eb82350af4df56145f5e39',1,'Updraft::IgcViewer::OpenedFile::currentColoring()']]],
+  ['currentitem',['currentItem',['../class_updraft_1_1_data_history.html#aba7975e7c9d8a317a2fdeb227366b072',1,'Updraft::DataHistory']]],
+  ['currentmarkers',['currentMarkers',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a50929a407cc8923c9f76b2c2ca43adac',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['custommenus',['customMenus',['../class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1',1,'Updraft::Core::MainWindow']]],
+  ['cw',['CW',['../class_open_airspace_1_1_airspace.html#a174d282e56597dadbbcd57579584c535',1,'OpenAirspace::Airspace::CW()'],['../class_open_airspace_1_1_arc_i.html#a0dd69c4d59df15db9fbca76659108b89',1,'OpenAirspace::ArcI::cw()'],['../class_open_airspace_1_1_arc_i_i.html#ad4995e7e5f646da6bda0b1865871b9f4',1,'OpenAirspace::ArcII::cw()']]]
 ];

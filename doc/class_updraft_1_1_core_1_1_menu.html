@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -121,8 +122,13 @@ Inheritance diagram for Updraft::Core::Menu:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a916809b981930e317254c30b7cae9785">Menu</a> (QMenu *setMenu, bool ownsQMenu)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#afc9ea783df83d76b0cf357c23493b1e3">~Menu</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#aed827c86b9a221d0252585cc3ac86624">insertAction</a> (int position, QAction *action)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#af8fb6743989b0d0b6a1c08201bd243ec">lightClear</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#adcc8eed1c450300716def12ddae82817">clear</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the whole menu and destroys the owned actions.  <a href="#adcc8eed1c450300716def12ddae82817"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a3e32de7b7d46cc482bc88d41e62084b5">insertAction</a> (int position, QAction *action, bool own=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a07b87ba983890143c32ee5035882a673">appendAction</a> (QAction *action, bool own=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#aa651593dff65a8b828901897c881c707">getQMenu</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#ac3d35368817ebe06b9865bb43bca277d">giveQMenu</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a49849abf5a6abc79199a5034f27c486a">reorganizeMenu</a> ()</td></tr>
@@ -133,6 +139,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#aab40b38064c94c8f73a34d77cffded85">ownsMenu</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMultiMap&lt; int, QAction * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a023c2c858e1f8c21e540d8eca871616e">actions</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All the actions sorted by priority. Used for inserting a new action.  <a href="#a023c2c858e1f8c21e540d8eca871616e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QAction * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_menu.html#a1a60b931729defdd27887b2c78d8650e">ownedActions</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Actions that this menu owns and should be erased when the menu is erased.  <a href="#a1a60b931729defdd27887b2c78d8650e"></a><br/></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a916809b981930e317254c30b7cae9785"></a><!-- doxytag: member="Updraft::Core::Menu::Menu" ref="a916809b981930e317254c30b7cae9785" args="(QMenu *setMenu, bool ownsQMenu)" -->
@@ -186,6 +194,63 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a07b87ba983890143c32ee5035882a673"></a><!-- doxytag: member="Updraft::Core::Menu::appendAction" ref="a07b87ba983890143c32ee5035882a673" args="(QAction *action, bool own=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a07b87ba983890143c32ee5035882a673">Updraft::Core::Menu::appendAction</a> </td>
+          <td>(</td>
+          <td class="paramtype">QAction *&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>own</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Append action to the last place of this menu. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td>The action to be appended </td></tr>
+    <tr><td class="paramname">own</td><td>Whether the menu should own the given action </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_menu_interface.html#afbe402c20592d6e513e8ae4ca8d1a668">Updraft::MenuInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcc8eed1c450300716def12ddae82817"></a><!-- doxytag: member="Updraft::Core::Menu::clear" ref="adcc8eed1c450300716def12ddae82817" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_menu.html#adcc8eed1c450300716def12ddae82817">Updraft::Core::Menu::clear</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Clears the whole menu and destroys the owned actions. </p>
+
+<p>Reimplemented from <a class="el" href="class_updraft_1_1_menu_interface.html#a77814cb70af515bb68258fee3c231153">Updraft::MenuInterface</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa651593dff65a8b828901897c881c707"></a><!-- doxytag: member="Updraft::Core::Menu::getQMenu" ref="aa651593dff65a8b828901897c881c707" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -202,12 +267,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aed827c86b9a221d0252585cc3ac86624"></a><!-- doxytag: member="Updraft::Core::Menu::insertAction" ref="aed827c86b9a221d0252585cc3ac86624" args="(int position, QAction *action)" -->
+<a class="anchor" id="ac3d35368817ebe06b9865bb43bca277d"></a><!-- doxytag: member="Updraft::Core::Menu::giveQMenu" ref="ac3d35368817ebe06b9865bb43bca277d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_menu.html#aed827c86b9a221d0252585cc3ac86624">Updraft::Core::Menu::insertAction</a> </td>
+          <td class="memname">QMenu * <a class="el" href="class_updraft_1_1_core_1_1_menu.html#ac3d35368817ebe06b9865bb43bca277d">Updraft::Core::Menu::giveQMenu</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the contained QMenu and creates a new empty one. The ownership of the menu is transferred to the caller. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e32de7b7d46cc482bc88d41e62084b5"></a><!-- doxytag: member="Updraft::Core::Menu::insertAction" ref="a3e32de7b7d46cc482bc88d41e62084b5" args="(int position, QAction *action, bool own=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a3e32de7b7d46cc482bc88d41e62084b5">Updraft::Core::Menu::insertAction</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>position</em>, </td>
@@ -216,7 +298,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QAction *&#160;</td>
-          <td class="paramname"><em>action</em>&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>own</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -234,7 +322,24 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_updraft_1_1_menu_interface.html#a697cf2e86ef0a60617df5bd927f910bd">Updraft::MenuInterface</a>.</p>
+<p>Implements <a class="el" href="class_updraft_1_1_menu_interface.html#ae80e16e924a9fea958d6628c9b0da366">Updraft::MenuInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af8fb6743989b0d0b6a1c08201bd243ec"></a><!-- doxytag: member="Updraft::Core::Menu::lightClear" ref="af8fb6743989b0d0b6a1c08201bd243ec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_menu.html#af8fb6743989b0d0b6a1c08201bd243ec">Updraft::Core::Menu::lightClear</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Clears the actions from the menu, but does not destroy the owned actions. </p>
 
 </div>
 </div>
@@ -285,6 +390,21 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1a60b931729defdd27887b2c78d8650e"></a><!-- doxytag: member="Updraft::Core::Menu::ownedActions" ref="a1a60b931729defdd27887b2c78d8650e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QAction*&gt; <a class="el" href="class_updraft_1_1_core_1_1_menu.html#a1a60b931729defdd27887b2c78d8650e">Updraft::Core::Menu::ownedActions</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Actions that this menu owns and should be erased when the menu is erased. </p>
+
+</div>
+</div>
 <a class="anchor" id="aab40b38064c94c8f73a34d77cffded85"></a><!-- doxytag: member="Updraft::Core::Menu::ownsMenu" ref="aab40b38064c94c8f73a34d77cffded85" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +429,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -324,7 +444,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

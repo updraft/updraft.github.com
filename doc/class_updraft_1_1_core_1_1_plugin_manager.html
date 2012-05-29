@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -115,18 +116,21 @@ Data Structures</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a3e0c0b1a504c1b6b5510ca60ac3a76b9">PluginManager</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor loads static plugins.  <a href="#a3e0c0b1a504c1b6b5510ca60ac3a76b9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2e5816b5b54a2c265b80c2b79b598238">~PluginManager</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa1ae04c45c2cbf5588f26527f6586970">load</a> (QString fileName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a1d3a07f47b59acc33016dda1429eb313">getPlugin</a> (QString name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">finishInit</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af53fe3c701258141bf2cba75605f56df">getPlugin</a> (const QString &amp;name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to plugin object.  <a href="#af53fe3c701258141bf2cba75605f56df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QDir&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2eb4c726c17a728df4aae1171b20781b">getPluginDir</a> (const QString &amp;name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return directory with plugin data.  <a href="#a2eb4c726c17a728df4aae1171b20781b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a643dfc2411d3ec6d57b9b43238efb297">getAllPlugins</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return list of all loaded plugins.  <a href="#a643dfc2411d3ec6d57b9b43238efb297"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af0cff5f280ed442c82fc1dc5a9438224">finishLoading</a> (QPluginLoader *loader, QObject *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">LoadedPlugin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ab3342febe9b91a5fc1ccd33b23e87659">findByPointer</a> (<a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *pointer)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a54da4b1234c97f678575593a111acbd6">load</a> (const QString &amp;fileName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a61c27e83ec95da86d6a42882342ec7bd">finishLoading</a> (QObject *obj, const QDir &amp;dir)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">LoadedPlugin</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a9ce8855bc73d1d813dcca68307b76097">plugins</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">LoadedPlugin</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ab024071fb260a771fd65fbf8d9f07d28">plugins</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3e0c0b1a504c1b6b5510ca60ac3a76b9"></a><!-- doxytag: member="Updraft::Core::PluginManager::PluginManager" ref="a3e0c0b1a504c1b6b5510ca60ac3a76b9" args="()" -->
@@ -137,13 +141,13 @@ Private Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a3e0c0b1a504c1b6b5510ca60ac3a76b9">Updraft::Core::PluginManager::PluginManager</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [explicit]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Constructor loads static plugins. </p>
+<p>Load all the plugins but don't create core interface for them and don't initialize them yet. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">finishInit()</a>; must be called after both <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html">PluginManager</a> and <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html">TranslationManager</a> are created! </dd></dl>
 
 </div>
 </div>
@@ -164,38 +168,38 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ab3342febe9b91a5fc1ccd33b23e87659"></a><!-- doxytag: member="Updraft::Core::PluginManager::findByPointer" ref="ab3342febe9b91a5fc1ccd33b23e87659" args="(PluginBase *pointer)" -->
+<a class="anchor" id="aa80ed0b0a8488473f416fd9c0f64944e"></a><!-- doxytag: member="Updraft::Core::PluginManager::finishInit" ref="aa80ed0b0a8488473f416fd9c0f64944e" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">PluginManager::LoadedPlugin</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ab3342febe9b91a5fc1ccd33b23e87659">Updraft::Core::PluginManager::findByPointer</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">Updraft::Core::PluginManager::finishInit</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td>
-          <td class="paramname"><em>pointer</em></td><td>)</td>
-          <td><code> [private]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Finalize the initialization. Used to break the circular dependency between plugin manager and translation manager. This method must be called after all other top level objects are ready to avoid problems with not yet working core interface methods. </p>
 
 </div>
 </div>
-<a class="anchor" id="af0cff5f280ed442c82fc1dc5a9438224"></a><!-- doxytag: member="Updraft::Core::PluginManager::finishLoading" ref="af0cff5f280ed442c82fc1dc5a9438224" args="(QPluginLoader *loader, QObject *obj)" -->
+<a class="anchor" id="a61c27e83ec95da86d6a42882342ec7bd"></a><!-- doxytag: member="Updraft::Core::PluginManager::finishLoading" ref="a61c27e83ec95da86d6a42882342ec7bd" args="(QObject *obj, const QDir &amp;dir)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af0cff5f280ed442c82fc1dc5a9438224">Updraft::Core::PluginManager::finishLoading</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a>* <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a61c27e83ec95da86d6a42882342ec7bd">Updraft::Core::PluginManager::finishLoading</a> </td>
           <td>(</td>
-          <td class="paramtype">QPluginLoader *&#160;</td>
-          <td class="paramname"><em>loader</em>, </td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>obj</em>&#160;</td>
+          <td class="paramtype">const QDir &amp;&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,11 +213,12 @@ Private Attributes</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to loaded plugin or NULL. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">loader</td><td>Plugin loader that was used for getting the plugin or NULL for static plugins. </td></tr>
     <tr><td class="paramname">obj</td><td>Loaded plugin before casting to <a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a>. Can be NULL if loading failed (this will be logged). </td></tr>
+    <tr><td class="paramname">dir</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2eb4c726c17a728df4aae1171b20781b" title="Return directory with plugin data.">getPluginDir()</a> </dd></dl>
 
 </div>
 </div>
@@ -231,16 +236,18 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Return list of all loaded plugins. </p>
+
 </div>
 </div>
-<a class="anchor" id="a1d3a07f47b59acc33016dda1429eb313"></a><!-- doxytag: member="Updraft::Core::PluginManager::getPlugin" ref="a1d3a07f47b59acc33016dda1429eb313" args="(QString name)" -->
+<a class="anchor" id="af53fe3c701258141bf2cba75605f56df"></a><!-- doxytag: member="Updraft::Core::PluginManager::getPlugin" ref="af53fe3c701258141bf2cba75605f56df" args="(const QString &amp;name)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a1d3a07f47b59acc33016dda1429eb313">Updraft::Core::PluginManager::getPlugin</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af53fe3c701258141bf2cba75605f56df">Updraft::Core::PluginManager::getPlugin</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
@@ -248,18 +255,39 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Return pointer to plugin object. </p>
+
 </div>
 </div>
-<a class="anchor" id="aa1ae04c45c2cbf5588f26527f6586970"></a><!-- doxytag: member="Updraft::Core::PluginManager::load" ref="aa1ae04c45c2cbf5588f26527f6586970" args="(QString fileName)" -->
+<a class="anchor" id="a2eb4c726c17a728df4aae1171b20781b"></a><!-- doxytag: member="Updraft::Core::PluginManager::getPluginDir" ref="a2eb4c726c17a728df4aae1171b20781b" args="(const QString &amp;name)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa1ae04c45c2cbf5588f26527f6586970">Updraft::Core::PluginManager::load</a> </td>
+          <td class="memname">QDir <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2eb4c726c17a728df4aae1171b20781b">Updraft::Core::PluginManager::getPluginDir</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return directory with plugin data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a54da4b1234c97f678575593a111acbd6"></a><!-- doxytag: member="Updraft::Core::PluginManager::load" ref="a54da4b1234c97f678575593a111acbd6" args="(const QString &amp;fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> * <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a54da4b1234c97f678575593a111acbd6">Updraft::Core::PluginManager::load</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -269,12 +297,12 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
-<a class="anchor" id="a9ce8855bc73d1d813dcca68307b76097"></a><!-- doxytag: member="Updraft::Core::PluginManager::plugins" ref="a9ce8855bc73d1d813dcca68307b76097" args="" -->
+<a class="anchor" id="ab024071fb260a771fd65fbf8d9f07d28"></a><!-- doxytag: member="Updraft::Core::PluginManager::plugins" ref="ab024071fb260a771fd65fbf8d9f07d28" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QHash&lt;QString, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">LoadedPlugin</a>*&gt; <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a9ce8855bc73d1d813dcca68307b76097">Updraft::Core::PluginManager::plugins</a><code> [private]</code></td>
+          <td class="memname">QMap&lt;QString, <a class="el" href="struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html">LoadedPlugin</a>*&gt; <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#ab024071fb260a771fd65fbf8d9f07d28">Updraft::Core::PluginManager::plugins</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -293,7 +321,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -308,7 +336,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html">PluginManager</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

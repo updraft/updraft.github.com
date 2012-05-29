@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,31 +120,39 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a288686c4e44f167b1a5fa957815ef210">createMenu</a> (QString title)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#acdaab38a848d3b405820add3003adcb6">removeMenu</a> (<a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *menu)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a5ca874055f4ef223023287c90dfad55b">setMapWidget</a> (QWidget *widget)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a26188d4e95709fc944a3ac4cb75b757d">createMapLayerGroup</a> (const QString &amp;title)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab4422f2ec239e6a729351505ab884348">getMapWidget</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a49d29410f09874f8d6237e4f72c2803e">createMapLayerGroup</a> (const QString &amp;title, osg::Group *nodeGroup, osgEarth::MapNode *map)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1ef8965a54868046b7a611bf63849451">contextMenuEvent</a> (QContextMenuEvent *event)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac086f5368419bfbcecee334da846314f">tabClose</a> (int index)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when tab in the bottom pane is closed using the little cross.  <a href="#ac086f5368419bfbcecee334da846314f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aff0d62e3fdef077fa8cfcb5fcc459fab">tabCloseRequested</a> (int index)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a4456bca05b38ff6a678f1858ba40bad1">tabRemoved</a> (QWidget *tab)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when tab has been removed from the bottom pane.  <a href="#a4456bca05b38ff6a678f1858ba40bad1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab7d382b6cc7a59ee3015b90bff965fea">tabSwitch</a> (int index)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles switchin an active tab in the bottom pane.  <a href="#ab7d382b6cc7a59ee3015b90bff965fea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#afe3b1406db3b75eaff6a09e7d0e5cf22">openFile</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle File-&gt;Open... menu action.  <a href="#afe3b1406db3b75eaff6a09e7d0e5cf22"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a433351fed2325660e1c2e83a82030e2a">importFile</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle File-&gt;Import... menu action.  <a href="#a433351fed2325660e1c2e83a82030e2a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles File-&gt;Open... menu action.  <a href="#afe3b1406db3b75eaff6a09e7d0e5cf22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ad8374d245cf965bc802feb21d75b8931">appExit</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles File-&gt;Exit menu action.  <a href="#ad8374d245cf965bc802feb21d75b8931"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ad10a1914074c588f91cd1baac34b01d1">openUserDoc</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles Help-&gt;User Documentation menu action.  <a href="#ad10a1914074c588f91cd1baac34b01d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0d5ba5b73e43b3c940e2023f24c3c791">showAboutDialog</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles Help-&gt;About... menu action.  <a href="#a0d5ba5b73e43b3c940e2023f24c3c791"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a24f8183598fa35271a87fab689815348">standardMenuItems</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ade404fdbbfa1714a960e0532947febfb">tabsVisibility</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">ui</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">menuFile</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a99f4892f1c40dc9521ddaf2969d80e7c">menuEdit</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">menuView</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">menuTools</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#af2e109864eb1a9d1a525e5f4e617a1dd">menuHelp</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">menuContext</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">menuMapObject</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Tab</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">activeTab</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSet&lt; <a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">customMenus</a></td></tr>
 </table>
@@ -182,6 +191,24 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad8374d245cf965bc802feb21d75b8931"></a><!-- doxytag: member="Updraft::Core::MainWindow::appExit" ref="ad8374d245cf965bc802feb21d75b8931" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ad8374d245cf965bc802feb21d75b8931">Updraft::Core::MainWindow::appExit</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles File-&gt;Exit menu action. </p>
+
+</div>
+</div>
 <a class="anchor" id="a1ef8965a54868046b7a611bf63849451"></a><!-- doxytag: member="Updraft::Core::MainWindow::contextMenuEvent" ref="a1ef8965a54868046b7a611bf63849451" args="(QContextMenuEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
@@ -199,21 +226,37 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a26188d4e95709fc944a3ac4cb75b757d"></a><!-- doxytag: member="Updraft::Core::MainWindow::createMapLayerGroup" ref="a26188d4e95709fc944a3ac4cb75b757d" args="(const QString &amp;title)" -->
+<a class="anchor" id="a49d29410f09874f8d6237e4f72c2803e"></a><!-- doxytag: member="Updraft::Core::MainWindow::createMapLayerGroup" ref="a49d29410f09874f8d6237e4f72c2803e" args="(const QString &amp;title, osg::Group *nodeGroup, osgEarth::MapNode *map)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_map_layer_group.html">MapLayerGroup</a> * <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a26188d4e95709fc944a3ac4cb75b757d">Updraft::Core::MainWindow::createMapLayerGroup</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> * <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a49d29410f09874f8d6237e4f72c2803e">Updraft::Core::MainWindow::createMapLayerGroup</a> </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em></td><td>)</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">osg::Group *&#160;</td>
+          <td class="paramname"><em>nodeGroup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">osgEarth::MapNode *&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method creates new map layer group. It is wrapped by <a class="el" href="class_updraft_1_1_core_interface.html#a6d458210ae7985a49ea2fc8209e2eccd">CoreInterface::createMapLayerGroup</a>. </p>
+<p>This method creates new map layer group. It is wrapped by <a class="el" href="class_updraft_1_1_core_interface.html#a30efb3320b0a321a70c4eb029cbb21f1">CoreInterface::createMapLayerGroup</a>. </p>
 
 </div>
 </div>
@@ -262,6 +305,22 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab4422f2ec239e6a729351505ab884348"></a><!-- doxytag: member="Updraft::Core::MainWindow::getMapWidget" ref="ab4422f2ec239e6a729351505ab884348" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget * <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab4422f2ec239e6a729351505ab884348">Updraft::Core::MainWindow::getMapWidget</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6e87dadcb44490fb7340dafa356d011f"></a><!-- doxytag: member="Updraft::Core::MainWindow::getSystemMenu" ref="a6e87dadcb44490fb7340dafa356d011f" args="(SystemMenu menu)" -->
 <div class="memitem">
 <div class="memproto">
@@ -279,24 +338,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a433351fed2325660e1c2e83a82030e2a"></a><!-- doxytag: member="Updraft::Core::MainWindow::importFile" ref="a433351fed2325660e1c2e83a82030e2a" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a433351fed2325660e1c2e83a82030e2a">Updraft::Core::MainWindow::importFile</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Handle File-&gt;Import... menu action. </p>
-
-</div>
-</div>
 <a class="anchor" id="afe3b1406db3b75eaff6a09e7d0e5cf22"></a><!-- doxytag: member="Updraft::Core::MainWindow::openFile" ref="afe3b1406db3b75eaff6a09e7d0e5cf22" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -311,7 +352,25 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Handle File-&gt;Open... menu action. </p>
+<p>Handles File-&gt;Open... menu action. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad10a1914074c588f91cd1baac34b01d1"></a><!-- doxytag: member="Updraft::Core::MainWindow::openUserDoc" ref="ad10a1914074c588f91cd1baac34b01d1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ad10a1914074c588f91cd1baac34b01d1">Updraft::Core::MainWindow::openUserDoc</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles Help-&gt;User Documentation menu action. </p>
 
 </div>
 </div>
@@ -349,6 +408,24 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0d5ba5b73e43b3c940e2023f24c3c791"></a><!-- doxytag: member="Updraft::Core::MainWindow::showAboutDialog" ref="a0d5ba5b73e43b3c940e2023f24c3c791" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0d5ba5b73e43b3c940e2023f24c3c791">Updraft::Core::MainWindow::showAboutDialog</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Handles Help-&gt;About... menu action. </p>
+
+</div>
+</div>
 <a class="anchor" id="a24f8183598fa35271a87fab689815348"></a><!-- doxytag: member="Updraft::Core::MainWindow::standardMenuItems" ref="a24f8183598fa35271a87fab689815348" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -362,16 +439,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add the standard menu items to menu. This includes Open / Save, Help ... </p>
+<p>Adds the standard menu items to menu. This includes Open File, Exit, Help ... </p>
 
 </div>
 </div>
-<a class="anchor" id="ac086f5368419bfbcecee334da846314f"></a><!-- doxytag: member="Updraft::Core::MainWindow::tabClose" ref="ac086f5368419bfbcecee334da846314f" args="(int index)" -->
+<a class="anchor" id="aff0d62e3fdef077fa8cfcb5fcc459fab"></a><!-- doxytag: member="Updraft::Core::MainWindow::tabCloseRequested" ref="aff0d62e3fdef077fa8cfcb5fcc459fab" args="(int index)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac086f5368419bfbcecee334da846314f">Updraft::Core::MainWindow::tabClose</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aff0d62e3fdef077fa8cfcb5fcc459fab">Updraft::Core::MainWindow::tabCloseRequested</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -380,8 +457,43 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Called when any tab is about to close. Posts signal to appropriate tab. </p>
 
-<p>Called when tab in the bottom pane is closed using the little cross. </p>
+</div>
+</div>
+<a class="anchor" id="a4456bca05b38ff6a678f1858ba40bad1"></a><!-- doxytag: member="Updraft::Core::MainWindow::tabRemoved" ref="a4456bca05b38ff6a678f1858ba40bad1" args="(QWidget *tab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a4456bca05b38ff6a678f1858ba40bad1">Updraft::Core::MainWindow::tabRemoved</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when tab has been removed from the bottom pane. </p>
+
+</div>
+</div>
+<a class="anchor" id="ade404fdbbfa1714a960e0532947febfb"></a><!-- doxytag: member="Updraft::Core::MainWindow::tabsVisibility" ref="ade404fdbbfa1714a960e0532947febfb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ade404fdbbfa1714a960e0532947febfb">Updraft::Core::MainWindow::tabsVisibility</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adjusts the visibility of the bottom pane. Shows it when there are any tabs to display, otherwise hides it. </p>
 
 </div>
 </div>
@@ -444,19 +556,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a99f4892f1c40dc9521ddaf2969d80e7c"></a><!-- doxytag: member="Updraft::Core::MainWindow::menuEdit" ref="a99f4892f1c40dc9521ddaf2969d80e7c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a99f4892f1c40dc9521ddaf2969d80e7c">Updraft::Core::MainWindow::menuEdit</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a5e57efe52ccb894e8e59c374c0d96c91"></a><!-- doxytag: member="Updraft::Core::MainWindow::menuFile" ref="a5e57efe52ccb894e8e59c374c0d96c91" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -483,12 +582,38 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac716a94dab8121a793d3320dbbe02d7d"></a><!-- doxytag: member="Updraft::Core::MainWindow::menuMapObject" ref="ac716a94dab8121a793d3320dbbe02d7d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">Updraft::Core::MainWindow::menuMapObject</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1949502098570d7f6e9f98c1e931774b"></a><!-- doxytag: member="Updraft::Core::MainWindow::menuTools" ref="a1949502098570d7f6e9f98c1e931774b" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">Updraft::Core::MainWindow::menuTools</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a204d7ddeb18fa0d641d8974497342fcf"></a><!-- doxytag: member="Updraft::Core::MainWindow::menuView" ref="a204d7ddeb18fa0d641d8974497342fcf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">Updraft::Core::MainWindow::menuView</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -520,7 +645,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -535,7 +660,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>
