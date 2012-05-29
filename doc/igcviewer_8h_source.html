@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Updraft project
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Free glider flightpath visualisation tool.</div>
   </td>
@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -102,32 +103,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="igcviewer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef UPDRAFT_SRC_PLUGINS_IGCVIEWER_IGCVIEWER_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define UPDRAFT_SRC_PLUGINS_IGCVIEWER_IGCVIEWER_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtGui&gt;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;../../pluginbase.h&quot;</span>
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">namespace </span>Updraft {
-<a name="l00008"></a>00008 <span class="keyword">namespace </span>Core {
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QColor&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QList&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QPair&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;../../pluginbase.h&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;../../mapobject.h&quot;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="class_updraft_1_1_core_1_1_igc_viewer.html">00010</a> <span class="keyword">class </span>Q_DECL_EXPORT <a class="code" href="class_updraft_1_1_core_1_1_igc_viewer.html">IgcViewer</a>: <span class="keyword">public</span> QObject, <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_plugin_base.html">PluginBase</a> {
-<a name="l00011"></a>00011   Q_OBJECT
-<a name="l00012"></a>00012   Q_INTERFACES(<a class="code" href="class_updraft_1_1_plugin_base.html">Updraft::PluginBase</a>)
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014  <span class="keyword">public</span>:
-<a name="l00015"></a>00015   QString getName();
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017   <span class="keywordtype">unsigned</span> getPriority();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019   <span class="keywordtype">void</span> initialize();
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021   <span class="keywordtype">void</span> deinitialize();
-<a name="l00022"></a>00022  <span class="keyword">private</span>:
-<a name="l00023"></a>00023 };
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 }  <span class="comment">// End namespace Core</span>
-<a name="l00026"></a>00026 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00010"></a>00010 <span class="keyword">namespace </span>Updraft {
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>IgcViewer {
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">class </span>OpenedFile;
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html">00015</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html">IGCMapObject</a> : <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_map_object.html">MapObject</a> {
+<a name="l00016"></a>00016  <span class="keyword">private</span>:
+<a name="l00017"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a1f808714a8fd236ddc9ded2aa7a6cfc2">00017</a>   <a class="code" href="class_updraft_1_1_igc_viewer_1_1_opened_file.html" title="Helper class representing a single opened IGC file.">OpenedFile</a>* <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a1f808714a8fd236ddc9ded2aa7a6cfc2">file</a>;
+<a name="l00018"></a>00018  <span class="keyword">public</span>:
+<a name="l00019"></a>00019   <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a3f67025ad8f7335700c4f410e87fc847">IGCMapObject</a>(QString objectName_, <a class="code" href="class_updraft_1_1_igc_viewer_1_1_opened_file.html" title="Helper class representing a single opened IGC file.">OpenedFile</a>* file_);
+<a name="l00020"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a3f67025ad8f7335700c4f410e87fc847">00020</a>   <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a3f67025ad8f7335700c4f410e87fc847">IGCMapObject</a>() {}
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022   <span class="comment">// Use this method for comparing class name.</span>
+<a name="l00023"></a>00023   <span class="comment">// \return Name of this class.</span>
+<a name="l00024"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#aed5f3b7a61fa68097dcd6fe98cc9122b">00024</a>   <span class="keyword">static</span> QString <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#aed5f3b7a61fa68097dcd6fe98cc9122b">getClassName</a>() { <span class="keywordflow">return</span> <span class="stringliteral">&quot;IGCMapObject&quot;</span>; }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#ae900510f80874c793312f4d25d350a4a">00026</a>   QString <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#ae900510f80874c793312f4d25d350a4a" title="Returns a name of the class for runtime type identification.">getObjectTypeName</a>() { <span class="keywordflow">return</span> <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#aed5f3b7a61fa68097dcd6fe98cc9122b">getClassName</a>(); }
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#endif  // UPDRAFT_SRC_PLUGINS_IGCVIEWER_IGCVIEWER_H_</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span>
+<a name="l00028"></a>00028   <a class="code" href="class_updraft_1_1_igc_viewer_1_1_opened_file.html" title="Helper class representing a single opened IGC file.">OpenedFile</a>* <a class="code" href="class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html#a9b6c1de04d99e2acfec9031137edf2f4">getFile</a>();
+<a name="l00029"></a>00029 };
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html">00031</a> <span class="keyword">class </span>Q_DECL_EXPORT <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html">IgcViewer</a>: <span class="keyword">public</span> QObject, <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_plugin_base.html">PluginBase</a> {
+<a name="l00032"></a>00032   Q_OBJECT
+<a name="l00033"></a>00033   Q_INTERFACES(<a class="code" href="class_updraft_1_1_plugin_base.html">Updraft::PluginBase</a>)
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035  <span class="keyword">public</span>:
+<a name="l00036"></a>00036   QString getName();
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038   <span class="keywordtype">void</span> initialize(<a class="code" href="class_updraft_1_1_core_interface.html">CoreInterface</a> *coreInterface);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040   <span class="keywordtype">void</span> deinitialize();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042   <span class="keywordtype">bool</span> fileOpen(<span class="keyword">const</span> QString &amp;filename, <span class="keywordtype">int</span> roleId);
+<a name="l00043"></a>00043   <span class="keywordtype">void</span> fileIdentification(QStringList *roles,
+<a name="l00044"></a>00044     QString *importDirectory, <span class="keyword">const</span> QString &amp;filename);
+<a name="l00045"></a>00045 
+<a name="l00047"></a>00047   <span class="keywordtype">bool</span> wantsToHandleClick(<a class="code" href="class_updraft_1_1_map_object.html">MapObject</a>* obj);
+<a name="l00048"></a>00048 
+<a name="l00050"></a>00050   <span class="keywordtype">void</span> handleClick(<a class="code" href="class_updraft_1_1_map_object.html">MapObject</a>* obj, <span class="keyword">const</span> <a class="code" href="class_updraft_1_1_event_info.html">EventInfo</a>* evt);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052  <span class="keyword">private</span> slots:
+<a name="l00055"></a>00055   <span class="keywordtype">void</span> coloringChanged(<span class="keywordtype">int</span> i);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057  <span class="keyword">private</span>:
+<a name="l00060"></a>00060   <span class="keywordtype">void</span> fileClose(<a class="code" href="class_updraft_1_1_igc_viewer_1_1_opened_file.html" title="Helper class representing a single opened IGC file.">OpenedFile</a>* f);
+<a name="l00061"></a>00061 
+<a name="l00063"></a>00063   QColor findAutomaticColor();
+<a name="l00064"></a>00064 
+<a name="l00066"></a>00066   <span class="keywordtype">void</span> freeAutomaticColor(QColor c);
+<a name="l00067"></a>00067 
+<a name="l00069"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#af2341b04cf05fcb3df177b9fcc6c7a37">00069</a>   <span class="keywordtype">int</span> <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#af2341b04cf05fcb3df177b9fcc6c7a37" title="Currently selected coloring.">currentColoring</a>;
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#afff07e857eed6c52695ac7196f38a066">00071</a>   QList&lt;QPair&lt;QColor, int&gt; &gt; <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#afff07e857eed6c52695ac7196f38a066">automaticColors</a>;
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#a660beb36984ad44bdd3601a68310a82b">00073</a>   QMap&lt;QString, OpenedFile*&gt; <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#a660beb36984ad44bdd3601a68310a82b">opened</a>;
+<a name="l00074"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#aea26f5803c13fe11331a32f51928d743">00074</a>   <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#aea26f5803c13fe11331a32f51928d743">mapLayerGroup</a>;
+<a name="l00075"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#ab72d54ea8d40dd879bd2b4c7494eefd2">00075</a>   QVector&lt;MapObject*&gt; <a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#ab72d54ea8d40dd879bd2b4c7494eefd2">mapObjects</a>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a><a class="code" href="class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#a20f07685af06b69d83dba1f3e110b4a4">00077</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_igc_viewer_1_1_opened_file.html" title="Helper class representing a single opened IGC file.">OpenedFile</a>;
+<a name="l00078"></a>00078 };
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 }  <span class="comment">// End namespace IgcViewer</span>
+<a name="l00081"></a>00081 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="preprocessor">#endif  // UPDRAFT_SRC_PLUGINS_IGCVIEWER_IGCVIEWER_H_</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -135,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -148,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="igcviewer_8h.html">igcviewer.h</a>      </li>
 
-    <li class="footer">Generated on Wed Dec 28 2011 12:55:15 for Updraft project by
+    <li class="footer">Generated on Tue May 29 2012 14:05:31 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

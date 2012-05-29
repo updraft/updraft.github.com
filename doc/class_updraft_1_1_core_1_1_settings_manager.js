@@ -1,0 +1,26 @@
+var class_updraft_1_1_core_1_1_settings_manager =
+[
+    [ "SettingsManager", "class_updraft_1_1_core_1_1_settings_manager.html#afb8a30578d9cc74a9d857d23d103603b", null ],
+    [ "~SettingsManager", "class_updraft_1_1_core_1_1_settings_manager.html#a4b20f93eace10e4e2acaa64cc17194cc", null ],
+    [ "addGroup", "class_updraft_1_1_core_1_1_settings_manager.html#ae9d1fa4b79b5efd940461af976ee75f5", null ],
+    [ "addGroupInternal", "class_updraft_1_1_core_1_1_settings_manager.html#a4c66cd97bf0bbf4896b25f65f0b66830", null ],
+    [ "addSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a4ebdb5e291621a3d1d8744e350a907dc", null ],
+    [ "checkSettingsXml", "class_updraft_1_1_core_1_1_settings_manager.html#ab0f5a96304d46ceaca47b95dbfd466a9", null ],
+    [ "createSettingsXml", "class_updraft_1_1_core_1_1_settings_manager.html#ac97f22586d1e504d2dc42eafa5fa0e32", null ],
+    [ "execDialog", "class_updraft_1_1_core_1_1_settings_manager.html#a7835bc438fe26908c28cf6014ec4813e", null ],
+    [ "finishInit", "class_updraft_1_1_core_1_1_settings_manager.html#a76782cdb97fff40ec930657251be98c5", null ],
+    [ "getGroup", "class_updraft_1_1_core_1_1_settings_manager.html#aade407d7223afdcf6af6453aa8a72c53", null ],
+    [ "getSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a42d64d2a5552ee778f162437aabdf2bf", null ],
+    [ "getSettingsFilename", "class_updraft_1_1_core_1_1_settings_manager.html#a9b8cf5976f1d696d44505fdaa21937ce", null ],
+    [ "itemValueChanged", "class_updraft_1_1_core_1_1_settings_manager.html#ad3097cd08ef8831434594f6bee0352f5", null ],
+    [ "registerSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a7f6e675a206a28800cbb813e174e4e73", null ],
+    [ "resetToDefaults", "class_updraft_1_1_core_1_1_settings_manager.html#ac46975ccf488d3ec4256c8066439685b", null ],
+    [ "unregisterSetting", "class_updraft_1_1_core_1_1_settings_manager.html#ac159390aaeada257ab2d4641764552dc", null ],
+    [ "BasicSetting", "class_updraft_1_1_core_1_1_settings_manager.html#ab9d9cddb5f44d362ca5aeebb3fbdb697", null ],
+    [ "dialog", "class_updraft_1_1_core_1_1_settings_manager.html#a80b0383d4c728872b9e838c9ac777ee5", null ],
+    [ "idRegExp", "class_updraft_1_1_core_1_1_settings_manager.html#a449aa36b1a01f9284b816e5bd3558946", null ],
+    [ "model", "class_updraft_1_1_core_1_1_settings_manager.html#afd1311689e77ea2468b8dfccfb153ac7", null ],
+    [ "settings", "class_updraft_1_1_core_1_1_settings_manager.html#a518f8e70236b564935135b48f10c8779", null ],
+    [ "settingsAction", "class_updraft_1_1_core_1_1_settings_manager.html#a6de1fd279b9616ab0cf51dc617ce2442", null ],
+    [ "settingsFile", "class_updraft_1_1_core_1_1_settings_manager.html#aecff94c9288ec08a2db0e19de9fa39a9", null ]
+];

@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['updraft',['Updraft',['../class_updraft_1_1_core_1_1_updraft.html#a62f55d815dcf83bc08cc3390aa7a8284',1,'Updraft::Core::Updraft']]]
+  ['uncheckalladdtpbuttons',['uncheckAllAddTpButtons',['../class_updraft_1_1_task_decl_panel.html#a08dc86855bf295fbb3dd710c0187abf5',1,'Updraft::TaskDeclPanel']]],
+  ['undo',['undo',['../class_updraft_1_1_task_file.html#a91362dbd68f60c23443bf9ac7ef5e89a',1,'Updraft::TaskFile::undo()'],['../class_updraft_1_1_task_layer.html#a1a0de9606c6131ec6b603e9e80e7b020',1,'Updraft::TaskLayer::undo()']]],
+  ['undobuttonpushed',['undoButtonPushed',['../class_updraft_1_1_task_decl_panel.html#a60e763685e49d3461c05f61f0df73617',1,'Updraft::TaskDeclPanel']]],
+  ['unloadfiles',['unloadFiles',['../class_updraft_1_1_task_declaration.html#a6bbd2fc6cf4ac5ecd1d9f46db163bff1',1,'Updraft::TaskDeclaration::unloadFiles()'],['../class_updraft_1_1_turn_points.html#af335297da705b9c6bc8bc3a075cbeb9b',1,'Updraft::TurnPoints::unloadFiles()']]],
+  ['unregisterosgnode',['unregisterOsgNode',['../class_updraft_1_1_core_1_1_scene_manager.html#ada60dff668d5c2449055ff6dfc94b8cf',1,'Updraft::Core::SceneManager']]],
+  ['unregistersetting',['unregisterSetting',['../class_updraft_1_1_core_1_1_settings_manager.html#ac159390aaeada257ab2d4641764552dc',1,'Updraft::Core::SettingsManager']]],
+  ['untilt',['untilt',['../class_updraft_1_1_core_1_1_map_manipulator.html#ab8ef6511425bf6fd901e26468e35555b',1,'Updraft::Core::MapManipulator::untilt()'],['../class_updraft_1_1_core_1_1_scene_manager.html#a97af9c65d03ccc7a6506f261ef6c1b99',1,'Updraft::Core::SceneManager::untilt()']]],
+  ['updateaddtpbutton',['updateAddTpButton',['../class_updraft_1_1_task_decl_panel.html#a868624969c2f6765d08657ea74877db5',1,'Updraft::TaskDeclPanel']]],
+  ['updatebuffer',['updateBuffer',['../class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a1195708c09558bd9ed0b3db1d3b8b0db',1,'Updraft::IgcViewer::PlotPainter']]],
+  ['updatebuttons',['updateButtons',['../class_updraft_1_1_task_decl_panel.html#add1e33198acdb9fc663a4d67b99c2fc4',1,'Updraft::TaskDeclPanel']]],
+  ['updatecameraortho',['updateCameraOrtho',['../class_updraft_1_1_core_1_1_scene_manager.html#a53722e447b6b448e5a2ad72a7e7e8516',1,'Updraft::Core::SceneManager']]],
+  ['updatecameraperspective',['updateCameraPerspective',['../class_updraft_1_1_core_1_1_scene_manager.html#a1eb95f0e63ecdbc6051a59bf5686b3c5',1,'Updraft::Core::SceneManager']]],
+  ['updatecurrentinfo',['updateCurrentInfo',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a40bff2fc086c7bfd5bbd222015414726',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['updateonundoredo',['updateOnUndoRedo',['../class_updraft_1_1_task_file.html#adfff767890a528b3f80a25dd511d2527',1,'Updraft::TaskFile']]],
+  ['updatepickedtexts',['updatePickedTexts',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa76c598dbc94a77d314db6a666d5e3be',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['updatescales',['updateScales',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a9498064544ffb85bee28ca57e60c82c8',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['updatesummarylabel',['updateSummaryLabel',['../class_updraft_1_1_task_decl_panel.html#aab79b53c7115c84630606109d20fab8b',1,'Updraft::TaskDeclPanel']]],
+  ['updatetext',['updateText',['../class_updraft_1_1_igc_viewer_1_1_i_g_c_text_widget.html#a94d002dffac93a877062db3f234e6e51',1,'Updraft::IgcViewer::IGCTextWidget::updateText()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a9e03ae9009596eda7993d06608344b9f',1,'Updraft::IgcViewer::PlotWidget::updateText()']]],
+  ['updatetpbutton',['updateTpButton',['../class_updraft_1_1_task_decl_panel.html#a285c41904283f570d8283d3f0f803413',1,'Updraft::TaskDeclPanel']]],
+  ['updraft',['Updraft',['../class_updraft_1_1_core_1_1_updraft.html#a62f55d815dcf83bc08cc3390aa7a8284',1,'Updraft::Core::Updraft']]],
+  ['updraftarcgistilesource',['UpdraftArcGisTileSource',['../class_updraft_1_1_core_1_1_updraft_arc_gis_tile_source.html#a6acc1a1349a8deabdcb2a774d6e9ef9d',1,'Updraft::Core::UpdraftArcGisTileSource']]],
+  ['ups_5fk0',['UPS_k0',['../class_geographic_lib_1_1_constants.html#a3fe287ab1a0847f5392c1aaf9c5e635a',1,'GeographicLib::Constants::UPS_k0()'],['../class_geographic_lib_1_1_constants.html#a49d415263ee320d1a63a857f784439a3',1,'GeographicLib::Constants::UPS_k0()']]],
+  ['utm_5fk0',['UTM_k0',['../class_geographic_lib_1_1_constants.html#ab5cc487ab160c0a213fdf8e12cde198a',1,'GeographicLib::Constants::UTM_k0()'],['../class_geographic_lib_1_1_constants.html#aebbe37ebfb407a851f72caa95e5dc94f',1,'GeographicLib::Constants::UTM_k0()']]]
 ];

@@ -1,4 +1,23 @@
 var searchData=
 [
-  ['widget',['widget',['../class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683',1,'Updraft::Core::Tab']]]
+  ['w',['W',['../class_open_airspace_1_1_airspace.html#a933f90892b34162e17cf1a0a21495e97aa3a523d380106d4c7a2eca6cb342c688',1,'OpenAirspace::Airspace']]],
+  ['wantstohandleclick',['wantsToHandleClick',['../class_updraft_1_1_plugin_base.html#af16928f4b20fa40e7473eb7227766606',1,'Updraft::PluginBase::wantsToHandleClick()'],['../class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#ab0b52928da0295b1f5c6f4d4881bf04d',1,'Updraft::IgcViewer::IgcViewer::wantsToHandleClick()'],['../class_updraft_1_1_task_declaration.html#a0cb7728653de8464b19daedfa42782ee',1,'Updraft::TaskDeclaration::wantsToHandleClick()'],['../class_updraft_1_1_turn_points.html#a146ebe2c144f8459ee9312e14de7fffc',1,'Updraft::TurnPoints::wantsToHandleClick()']]],
+  ['waypointstyle',['WaypointStyle',['../namespace_updraft.html#a7a2e5311daebda8c5906afd807e703be',1,'Updraft']]],
+  ['wgs84',['WGS84',['../class_geographic_lib_1_1_geodesic.html#ae918bb7e1555fba38483449cbbac0ca1',1,'GeographicLib::Geodesic']]],
+  ['wgs84_5fa',['WGS84_a',['../class_geographic_lib_1_1_constants.html#ae12127984ac6713823746d917b4abfa7',1,'GeographicLib::Constants::WGS84_a()'],['../class_geographic_lib_1_1_constants.html#a53f39f52837f47490fbdf7332a37dd8b',1,'GeographicLib::Constants::WGS84_a()']]],
+  ['wgs84_5ff',['WGS84_f',['../class_geographic_lib_1_1_constants.html#acc5244425bb484594be51b27d56cd335',1,'GeographicLib::Constants::WGS84_f()'],['../class_geographic_lib_1_1_constants.html#acd335c7f28440e0774666cedffed84f0',1,'GeographicLib::Constants::WGS84_f()']]],
+  ['wgs84_5fgm',['WGS84_GM',['../class_geographic_lib_1_1_constants.html#af7806106d7bd289bb63d5290e79c87a6',1,'GeographicLib::Constants']]],
+  ['wgs84_5fomega',['WGS84_omega',['../class_geographic_lib_1_1_constants.html#a98c114d5a6ca42d3e4ece8595a0c2180',1,'GeographicLib::Constants']]],
+  ['wgs84_5fr',['WGS84_r',['../class_geographic_lib_1_1_constants.html#a199810de7ff3351be6473d20ef045789',1,'GeographicLib::Constants']]],
+  ['wgs84equatradius',['WGS84EquatRadius',['../class_updraft_1_1_util_1_1_units.html#aa528bf8f390a3c98c26838820d427dbc',1,'Updraft::Util::Units']]],
+  ['wgs84flattening',['WGS84Flattening',['../class_updraft_1_1_util_1_1_units.html#a4ac924cf76ed2bec8de6da0382e6e704',1,'Updraft::Util::Units']]],
+  ['wi',['Wi',['../class_open_airspace_1_1_airspace.html#a506faaecefbcaf3ea4bd2279a912f183',1,'OpenAirspace::Airspace']]],
+  ['widget',['widget',['../class_updraft_1_1_core_1_1_tab.html#a968352af8e02511f4b4fe400f98f9683',1,'Updraft::Core::Tab']]],
+  ['width',['width',['../struct_open_airspace_1_1_airspace_1_1_s_p__str.html#a8ad999164ce1937edbfb57b7d0d860d5',1,'OpenAirspace::Airspace::SP_str::width()'],['../class_updraft_1_1_airspaces_1_1oa_engine.html#a6e824f88e6a7771a99b3abe85e7b566f',1,'Updraft::Airspaces::oaEngine::width()']]],
+  ['wire_5fopacity_5fbottom',['WIRE_OPACITY_BOTTOM',['../class_updraft_1_1_airspaces_1_1oa_engine.html#a68677726057c5c5e95082626ca740988',1,'Updraft::Airspaces::oaEngine']]],
+  ['wire_5fopacity_5ftop',['WIRE_OPACITY_TOP',['../class_updraft_1_1_airspaces_1_1oa_engine.html#ad17bc0fa3b396e3bbca34b3e5aecebe4',1,'Updraft::Airspaces::oaEngine']]],
+  ['words_5fbigendian',['WORDS_BIGENDIAN',['../_math_8hpp.html#a82e69009d3cd108c8aad8afe44fb1132',1,'Math.hpp']]],
+  ['wrong',['Wrong',['../class_updraft_1_1_igc_1_1_test_1_1_wrong.html',1,'Updraft::Igc::Test']]],
+  ['wrong_2ecpp',['wrong.cpp',['../wrong_8cpp.html',1,'']]],
+  ['wrong_2eh',['wrong.h',['../wrong_8h.html',1,'']]]
 ];

@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['loader',['loader',['../struct_updraft_1_1_core_1_1_plugin_manager_1_1_loaded_plugin.html#a36c7a74c4bc76d6c17c96f213b24ce76',1,'Updraft::Core::PluginManager::LoadedPlugin']]]
+  ['label_5fpen',['LABEL_PEN',['../class_updraft_1_1_igc_viewer_1_1_axis_label.html#af741557fcea7818eb381297bfb04bdb5',1,'Updraft::IgcViewer::AxisLabel::LABEL_PEN()'],['../class_updraft_1_1_igc_viewer_1_1_text_label.html#a53e1fcb8a545a9c72bc1dc8d09737753',1,'Updraft::IgcViewer::TextLabel::LABEL_PEN()'],['../class_updraft_1_1_igc_viewer_1_1_time_label.html#a3f92d478735f682d0dbe68bcb8df4b72',1,'Updraft::IgcViewer::TimeLabel::LABEL_PEN()'],['../class_updraft_1_1_igc_viewer_1_1_picked_label.html#a5fe311c58be270cc93b0f6e5afb4fe2d',1,'Updraft::IgcViewer::PickedLabel::LABEL_PEN()']]],
+  ['labelcolour',['labelColour',['../class_updraft_1_1_t_p_layer.html#ae41a4f2ef0c29590f1bda61f0c03d10a',1,'Updraft::TPLayer']]],
+  ['labeldrawdist',['labelDrawDist',['../class_updraft_1_1_t_p_layer.html#a1f29ebf2e8f13abb910c5bc381386de5',1,'Updraft::TPLayer']]],
+  ['labelmaxscale',['labelMaxScale',['../class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77',1,'Updraft::TPLayer']]],
+  ['labelminscale',['labelMinScale',['../class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4',1,'Updraft::TPLayer']]],
+  ['labels',['labels',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ad45ad6fad9c7c41b2508615c6b442638',1,'Updraft::IgcViewer::PlotWidget']]],
+  ['languagesetting',['languageSetting',['../class_updraft_1_1_core_1_1_translation_manager.html#a65734ef8d68ee4665c5dffc6b3fede6d',1,'Updraft::Core::TranslationManager']]],
+  ['lasthour',['lastHour',['../class_updraft_1_1_igc_viewer_1_1_plot_axes.html#ac0a6034a235a9dcf3e340da14c19500d',1,'Updraft::IgcViewer::PlotAxes']]],
+  ['lat',['lat',['../struct_open_airspace_1_1_coordinate.html#aacb42d232b60bf606558b96cc6ef5c56',1,'OpenAirspace::Coordinate::lat()'],['../class_updraft_1_1_util_1_1_location.html#ac3fc39850655f6b178f97a82b4009510',1,'Updraft::Util::Location::lat()']]],
+  ['layer',['layer',['../class_updraft_1_1_core_1_1_elevation_map_layer.html#ac1010034bc0a3813923db269eda87869',1,'Updraft::Core::ElevationMapLayer::layer()'],['../class_updraft_1_1_core_1_1_image_map_layer.html#a05b897102d38a02b52b4a9bb94100c7e',1,'Updraft::Core::ImageMapLayer::layer()'],['../class_updraft_1_1_core_1_1_model_map_layer.html#a434553fe44a13554b5f437f08e8ea9b5',1,'Updraft::Core::ModelMapLayer::layer()']]],
+  ['layers',['layers',['../class_updraft_1_1_core_1_1_map_service.html#a792090a06568c7663ee846295cbf52f2',1,'Updraft::Core::MapService::layers()'],['../class_updraft_1_1_core_1_1_scene_manager.html#a32dc2ad196e80873b6df57be8009b146',1,'Updraft::Core::SceneManager::layers()'],['../class_updraft_1_1_task_declaration.html#acd20a06cfcd61c5bb7c702734d82b502',1,'Updraft::TaskDeclaration::layers()'],['../class_updraft_1_1_turn_points.html#a8381a8bb3b99290ef599544c5abf6e62',1,'Updraft::TurnPoints::layers()']]],
+  ['lblsize',['lblSize',['../class_updraft_1_1_t_p_layer.html#ab097788dc4bb18a7a1df24e831dedf58',1,'Updraft::TPLayer']]],
+  ['linx',['linX',['../class_updraft_1_1_igc_viewer_1_1_plot_axes.html#a6dbdf65599a212710b3a3b88b7ce0ab7',1,'Updraft::IgcViewer::PlotAxes']]],
+  ['liny',['linY',['../class_updraft_1_1_igc_viewer_1_1_plot_axes.html#ac961e9f96dbeaca8febf143483167d01',1,'Updraft::IgcViewer::PlotAxes']]],
+  ['listwidget',['listWidget',['../class_updraft_1_1_core_1_1_map_layer_group.html#a614e8a0fa39d6ec9af235d2620a7f5d5',1,'Updraft::Core::MapLayerGroup']]],
+  ['ln10',['LN10',['../namespace_updraft_1_1_igc_viewer.html#a8d42140a6faf5100b824f6549544ce2f',1,'Updraft::IgcViewer']]],
+  ['location',['location',['../struct_updraft_1_1_cup_1_1_t_p_entry.html#a81d44e120ced4232e34c9c7a7ca514ff',1,'Updraft::Cup::TPEntry::location()'],['../struct_updraft_1_1_igc_viewer_1_1_track_fix.html#a8c2f9a081593f20364b555689d1822c6',1,'Updraft::IgcViewer::TrackFix::location()'],['../class_updraft_1_1_task_point.html#a1a1c272d57a644615e3c7ccde826e072',1,'Updraft::TaskPoint::location()'],['../struct_updraft_1_1_turn_point.html#a4ac2d774028c0f1b10eb3b469bfd0504',1,'Updraft::TurnPoint::location()']]],
+  ['locked',['locked',['../class_updraft_1_1_task_file.html#a28d364f6f9938623e48909299b1035b3',1,'Updraft::TaskFile']]],
+  ['lon',['lon',['../struct_open_airspace_1_1_coordinate.html#a0fcb3305f9541832c0b8d65b696af964',1,'OpenAirspace::Coordinate::lon()'],['../class_updraft_1_1_util_1_1_location.html#a38037547a27a5e7c0bc766a732edd843',1,'Updraft::Util::Location::lon()']]]
 ];
