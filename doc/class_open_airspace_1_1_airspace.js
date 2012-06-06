@@ -1,7 +1,7 @@
 var class_open_airspace_1_1_airspace =
 [
     [ "ACType", "class_open_airspace_1_1_airspace.html#a933f90892b34162e17cf1a0a21495e97", null ],
-    [ "Airspace", "class_open_airspace_1_1_airspace.html#a849ffdb18933566f602626c622aede33", null ],
+    [ "Airspace", "class_open_airspace_1_1_airspace.html#a7427de031067c1627171b6a320d62f94", null ],
     [ "~Airspace", "class_open_airspace_1_1_airspace.html#a1c7582aae82b99533af029671141f93e", null ],
     [ "GetAirWay", "class_open_airspace_1_1_airspace.html#a85589552b096b831130e4595112feed5", null ],
     [ "GetBrush", "class_open_airspace_1_1_airspace.html#a8c0223b9d4ab3d6a41092b108e4fc2ea", null ],

@@ -118,6 +118,7 @@ Public Slots</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a605061d96819917a17bb147eec602615">SettingsTopView</a> (QWidget *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#abcc607b1804fefb756623b60210cb17d">setBottom</a> (<a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html">SettingsBottomView</a> *b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a795f83e848674cdbcc0ede32212e783a">setModel</a> (QAbstractItemModel *model)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-slots"></a>
 Protected Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a9df990ca3f51c5e45260381c1c2e5ed8">dataChanged</a> (const QModelIndex &amp;topLeft, const QModelIndex &amp;bottomRight)</td></tr>
@@ -127,6 +128,11 @@ Protected Slots</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a3ae8d70357843f0534f616a6408e6d9a">groupIsHidden</a> (int row)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether the group is a group with hidden settings.  <a href="#a3ae8d70357843f0534f616a6408e6d9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a7e4c4b32954e3e567e6b3237040bda3a">groupIsEmpty</a> (int row)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Says whether the group has any data yet.  <a href="#a7e4c4b32954e3e567e6b3237040bda3a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#aff92450d41bb0bfb8b17c1650ae9e3cc">hideGroup</a> (int row)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the settings group in the given row.  <a href="#aff92450d41bb0bfb8b17c1650ae9e3cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a26e29357c7acc7d63c27691e8313419a">displayGroup</a> (int row)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QRegExp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a4693b40b4084c3cfb7549003940a5e35">hiddenGroupRegExp</a></td></tr>
@@ -207,6 +213,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a26e29357c7acc7d63c27691e8313419a"></a><!-- doxytag: member="Updraft::Core::SettingsTopView::displayGroup" ref="a26e29357c7acc7d63c27691e8313419a" args="(int row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a26e29357c7acc7d63c27691e8313419a">Updraft::Core::SettingsTopView::displayGroup</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Displays the settings grou in the given row. If the group does not contain any settings, it stays hidden. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7e4c4b32954e3e567e6b3237040bda3a"></a><!-- doxytag: member="Updraft::Core::SettingsTopView::groupIsEmpty" ref="a7e4c4b32954e3e567e6b3237040bda3a" args="(int row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a7e4c4b32954e3e567e6b3237040bda3a">Updraft::Core::SettingsTopView::groupIsEmpty</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Says whether the group has any data yet. </p>
+
+</div>
+</div>
 <a class="anchor" id="a3ae8d70357843f0534f616a6408e6d9a"></a><!-- doxytag: member="Updraft::Core::SettingsTopView::groupIsHidden" ref="a3ae8d70357843f0534f616a6408e6d9a" args="(int row)" -->
 <div class="memitem">
 <div class="memproto">
@@ -223,6 +266,25 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Tells whether the group is a group with hidden settings. </p>
+
+</div>
+</div>
+<a class="anchor" id="aff92450d41bb0bfb8b17c1650ae9e3cc"></a><!-- doxytag: member="Updraft::Core::SettingsTopView::hideGroup" ref="aff92450d41bb0bfb8b17c1650ae9e3cc" args="(int row)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#aff92450d41bb0bfb8b17c1650ae9e3cc">Updraft::Core::SettingsTopView::hideGroup</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Hides the settings group in the given row. </p>
 
 </div>
 </div>
@@ -269,6 +331,23 @@ Private Attributes</h2></td></tr>
           <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html">SettingsBottomView</a> *&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
           <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a795f83e848674cdbcc0ede32212e783a"></a><!-- doxytag: member="Updraft::Core::SettingsTopView::setModel" ref="a795f83e848674cdbcc0ede32212e783a" args="(QAbstractItemModel *model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html#a795f83e848674cdbcc0ede32212e783a">Updraft::Core::SettingsTopView::setModel</a> </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractItemModel *&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -372,7 +451,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_settings_top_view.html">SettingsTopView</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:51 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

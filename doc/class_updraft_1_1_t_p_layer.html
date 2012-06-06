@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a7c002dc668ac6eb9fbd0b586347f1d47">TPLayer</a> (bool displayed_, osgEarth::Util::ObjectPlacer *objectPlacer_, const <a class="el" href="class_updraft_1_1_t_p_file.html">TPFile</a> *file_, const QString &amp;<a class="el" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">dataDir</a>, <a class="el" href="class_updraft_1_1_turn_points.html">TurnPoints</a> *parent_, const QVector&lt; <a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> * &gt; &amp;settings)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a21d8fd3e2689e64bd9123f7440e0b524">TPLayer</a> (bool displayed_, osgEarth::Util::ObjectPlacer *objectPlacer_, const <a class="el" href="class_updraft_1_1_t_p_file.html">TPFile</a> *file_, <a class="el" href="class_updraft_1_1_turn_points.html">TurnPoints</a> *parent_, const QVector&lt; <a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> * &gt; &amp;settings)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#acc1efcb9ff5c114ae5688c70c751a6cd">~TPLayer</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#ae3c36016dd2bf5f385b71a2218e32199">getNode</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a8183d03443790e629144d7292fc61c7b">getLblNode</a> () const </td></tr>
@@ -135,11 +135,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceosg_earth.html">osgEarth</a> placer for placing objects to specific geo.coordinates  <a href="#a657589560522665c7610c79c0fbbeadb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_updraft_1_1_t_p_file.html">TPFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a37a01f3584c064fdc2c61510e6300616">file</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a7b2395c5ba58cb0c0397e4d6ec3cc8df">displayed</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">dataDir</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_turn_points.html">TurnPoints</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#aa706dc83b2154d692a467a92442b991b">parent</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_updraft_1_1_t_p_map_object.html">TPMapObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a3ab713084fb41dd20bfd77937f6047a8">mapObjects</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">osg::Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#ae41a4f2ef0c29590f1bda61f0c03d10a">labelColour</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Colour of the label setting.  <a href="#ae41a4f2ef0c29590f1bda61f0c03d10a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4">labelMinScale</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Text min/max visibility setting.  <a href="#a21d791590b98eb080c81ac104e9c0df4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77">labelMaxScale</a></td></tr>
@@ -150,12 +147,12 @@ Private Attributes</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Class storing a turn-points layer. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7c002dc668ac6eb9fbd0b586347f1d47"></a><!-- doxytag: member="Updraft::TPLayer::TPLayer" ref="a7c002dc668ac6eb9fbd0b586347f1d47" args="(bool displayed_, osgEarth::Util::ObjectPlacer *objectPlacer_, const TPFile *file_, const QString &amp;dataDir, TurnPoints *parent_, const QVector&lt; SettingInterface * &gt; &amp;settings)" -->
+<a class="anchor" id="a21d8fd3e2689e64bd9123f7440e0b524"></a><!-- doxytag: member="Updraft::TPLayer::TPLayer" ref="a21d8fd3e2689e64bd9123f7440e0b524" args="(bool displayed_, osgEarth::Util::ObjectPlacer *objectPlacer_, const TPFile *file_, TurnPoints *parent_, const QVector&lt; SettingInterface * &gt; &amp;settings)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_t_p_layer.html#a7c002dc668ac6eb9fbd0b586347f1d47">Updraft::TPLayer::TPLayer</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_t_p_layer.html#a21d8fd3e2689e64bd9123f7440e0b524">Updraft::TPLayer::TPLayer</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>displayed_</em>, </td>
@@ -171,12 +168,6 @@ Private Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_updraft_1_1_t_p_file.html">TPFile</a> *&#160;</td>
           <td class="paramname"><em>file_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>dataDir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -436,19 +427,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
-<a class="anchor" id="a4cfcd4f1e485c256f4cd5e93d9903cf6"></a><!-- doxytag: member="Updraft::TPLayer::dataDir" ref="a4cfcd4f1e485c256f4cd5e93d9903cf6" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString <a class="el" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">Updraft::TPLayer::dataDir</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a7b2395c5ba58cb0c0397e4d6ec3cc8df"></a><!-- doxytag: member="Updraft::TPLayer::displayed" ref="a7b2395c5ba58cb0c0397e4d6ec3cc8df" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -487,21 +465,6 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>osg Node representing this turn-points layer </p>
-
-</div>
-</div>
-<a class="anchor" id="ae41a4f2ef0c29590f1bda61f0c03d10a"></a><!-- doxytag: member="Updraft::TPLayer::labelColour" ref="ae41a4f2ef0c29590f1bda61f0c03d10a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">osg::Vec4 <a class="el" href="class_updraft_1_1_t_p_layer.html#ae41a4f2ef0c29590f1bda61f0c03d10a">Updraft::TPLayer::labelColour</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Colour of the label setting. </p>
 
 </div>
 </div>
@@ -628,7 +591,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_t_p_layer.html">TPLayer</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

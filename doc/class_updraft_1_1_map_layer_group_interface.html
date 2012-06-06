@@ -100,12 +100,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Updraft::MapLayerGroupInterface Class Reference</div>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Updraft::MapLayerGroupInterface" -->
+<!-- doxytag: class="Updraft::MapLayerGroupInterface" --><!-- doxytag: inherits="Updraft::MapLayerInterface" -->
 <p><code>#include &lt;<a class="el" href="maplayergroupinterface_8h_source.html">maplayergroupinterface.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Updraft::MapLayerGroupInterface:</div>
@@ -113,36 +114,28 @@ Inheritance diagram for Updraft::MapLayerGroupInterface:</div>
  <div class="center">
   <img src="class_updraft_1_1_map_layer_group_interface.png" usemap="#Updraft::MapLayerGroupInterface_map" alt=""/>
   <map id="Updraft::MapLayerGroupInterface_map" name="Updraft::MapLayerGroupInterface_map">
-<area href="class_updraft_1_1_core_1_1_map_layer_group.html" alt="Updraft::Core::MapLayerGroup" shape="rect" coords="0,56,202,80"/>
+<area href="class_updraft_1_1_map_layer_interface.html" alt="Updraft::MapLayerInterface" shape="rect" coords="0,0,202,24"/>
+<area href="class_updraft_1_1_core_1_1_map_layer_group.html" alt="Updraft::Core::MapLayerGroup" shape="rect" coords="0,112,202,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#ad0ddceb0342f601739caee056af33371">~MapLayerGroupInterface</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual QVector<br class="typebreak"/>
-&lt; <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a0eb7d2438c17bcb21291a97ff709bedd">insertMapLayerGroup</a> (QVector&lt; QPair&lt; osg::Node *, QString &gt; &gt; *mapLayerGroup, const QString &amp;title, int pos=-1)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a7ff389414a51985c94a5ffd91b75d7a7">createMapLayerGroup</a> (const QString &amp;title, int pos=-1)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a845a10bf1c9130e320daef1352d70393">createMapLayer</a> (osg::Node *layer, const QString &amp;title, int pos=-1)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a138939812fd4b11db70a31bbe45d69fb">insertMapLayer</a> (<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer, int pos=-1)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the map layer as a child of this group.  <a href="#a138939812fd4b11db70a31bbe45d69fb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#ad054388c4c96a132f7da28dabfa4e9be">removeMapLayer</a> (<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes map layer.  <a href="#ad054388c4c96a132f7da28dabfa4e9be"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a0c62cffc9a8cdee9966b28abea214008">setMapLayerTitle</a> (<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer, const QString &amp;title)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets title of the map layer (displayed in the left pane).  <a href="#a0c62cffc9a8cdee9966b28abea214008"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual osgEarth::MapNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#ace37388b9dbb0b3dbd3ed07373caa940">getMapNode</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mapNode.  <a href="#ace37388b9dbb0b3dbd3ed07373caa940"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a45a55b697925fbb0698f331c32bd7cc7">getNodeGroup</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the osg group associated with this map layer group.  <a href="#a45a55b697925fbb0698f331c32bd7cc7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 osgEarth::Util::ObjectPlacer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a77934f74f6892d03f2830283e08b8342">getObjectPlacer</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the placer associated with the mapNode.  <a href="#a77934f74f6892d03f2830283e08b8342"></a><br/></td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">insertMapLayer</a> (osg::Node *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a28b8638959b43b5450e98621ca15860e">insertMapLayer</a> (osgEarth::ImageLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a79372c70adac51cef12ae79a9232b3c2">insertMapLayer</a> (osgEarth::ElevationLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a39c3b1a3e90fb9914175f495affb015b">insertMapLayer</a> (osgEarth::ModelLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">insertExistingMapLayer</a> (osg::Node *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aa3c770646b8746f7876da2b9f5b621e9">insertExistingMapLayer</a> (osgEarth::ImageLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a4e4f0166bc6ed7b05bf6c3b3fe0246ff">insertExistingMapLayer</a> (osgEarth::ElevationLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a227591a5e8f9a85bfce0e133043be116">insertExistingMapLayer</a> (osgEarth::ModelLayer *layer, const QString &amp;title, int pos=-1)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aefe9fbf86dff93ccf122a75efffdc2e7">createMapLayerNoInsert</a> (osg::Node *layer, const QString &amp;title, int pos=-1)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add map layer without adding it to scene.  <a href="#aefe9fbf86dff93ccf122a75efffdc2e7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a99a5f69802c16f7d74a906b6ddd169a1">Core::SceneManager</a></td></tr>
@@ -168,12 +161,123 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ace37388b9dbb0b3dbd3ed07373caa940"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::getMapNode" ref="ace37388b9dbb0b3dbd3ed07373caa940" args="()=0" -->
+<a class="anchor" id="a845a10bf1c9130e320daef1352d70393"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::createMapLayer" ref="a845a10bf1c9130e320daef1352d70393" args="(osg::Node *layer, const QString &amp;title, int pos=&#45;1)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual osgEarth::MapNode* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#ace37388b9dbb0b3dbd3ed07373caa940">Updraft::MapLayerGroupInterface::getMapNode</a> </td>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a845a10bf1c9130e320daef1352d70393">Updraft::MapLayerGroupInterface::createMapLayer</a> </td>
+          <td>(</td>
+          <td class="paramtype">osg::Node *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a new map layer containing the node and add it as a child of this group. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new layer. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ab6b126825d96ffc6ad87e3ce21e79ff1">Updraft::Core::MapLayerGroup</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ff389414a51985c94a5ffd91b75d7a7"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::createMapLayerGroup" ref="a7ff389414a51985c94a5ffd91b75d7a7" args="(const QString &amp;title, int pos=&#45;1)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a7ff389414a51985c94a5ffd91b75d7a7">Updraft::MapLayerGroupInterface::createMapLayerGroup</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a map layer group and add it as a sub item to this. To remove MapLayerGroup use C++ delete. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>label for the item in the tree view </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the new MapLayerGroup </dd></dl>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#abd08ca64e3b2f860ba9593811cbb437c">Updraft::Core::MapLayerGroup</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aefe9fbf86dff93ccf122a75efffdc2e7"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::createMapLayerNoInsert" ref="aefe9fbf86dff93ccf122a75efffdc2e7" args="(osg::Node *layer, const QString &amp;title, int pos=&#45;1)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aefe9fbf86dff93ccf122a75efffdc2e7">Updraft::MapLayerGroupInterface::createMapLayerNoInsert</a> </td>
+          <td>(</td>
+          <td class="paramtype">osg::Node *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add map layer without adding it to scene. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#aaa2b2c7f7fb1311d086a5f3b5601dd83">Updraft::Core::MapLayerGroup</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45a55b697925fbb0698f331c32bd7cc7"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::getNodeGroup" ref="a45a55b697925fbb0698f331c32bd7cc7" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual osg::Group* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a45a55b697925fbb0698f331c32bd7cc7">Updraft::MapLayerGroupInterface::getNodeGroup</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -182,9 +286,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns the mapNode. </p>
+<p>Returns the osg group associated with this map layer group. </p>
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a4c85cb0f804ebdb8b477e61426af4689">Updraft::Core::MapLayerGroup</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a52fb0b04cb1bdce5b67465cd5b70d180">Updraft::Core::MapLayerGroup</a>.</p>
 
 </div>
 </div>
@@ -208,206 +312,15 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a67bc8cf07bbe3b628791c6ac6a5af614"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertExistingMapLayer" ref="a67bc8cf07bbe3b628791c6ac6a5af614" args="(osg::Node *layer, const QString &amp;title, int pos=&#45;1)=0" -->
+<a class="anchor" id="a138939812fd4b11db70a31bbe45d69fb"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayer" ref="a138939812fd4b11db70a31bbe45d69fb" args="(MapLayerInterface *layer, int pos=&#45;1)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">Updraft::MapLayerGroupInterface::insertExistingMapLayer</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a138939812fd4b11db70a31bbe45d69fb">Updraft::MapLayerGroupInterface::insertMapLayer</a> </td>
           <td>(</td>
-          <td class="paramtype">osg::Node *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td>
           <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private, pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Add map layer without adding it to scene. </p>
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ab065746e5c9b4ac3c288d1a4e58e56ba">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3c770646b8746f7876da2b9f5b621e9"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertExistingMapLayer" ref="aa3c770646b8746f7876da2b9f5b621e9" args="(osgEarth::ImageLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">Updraft::MapLayerGroupInterface::insertExistingMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ImageLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private, pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a409d0174d81a51fdfa40c4ed2f5be664">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4e4f0166bc6ed7b05bf6c3b3fe0246ff"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertExistingMapLayer" ref="a4e4f0166bc6ed7b05bf6c3b3fe0246ff" args="(osgEarth::ElevationLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">Updraft::MapLayerGroupInterface::insertExistingMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ElevationLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private, pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae940cff833970e576543cc5ef5d2d088">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a227591a5e8f9a85bfce0e133043be116"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertExistingMapLayer" ref="a227591a5e8f9a85bfce0e133043be116" args="(osgEarth::ModelLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">Updraft::MapLayerGroupInterface::insertExistingMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ModelLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private, pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a666454f81c4096e29f95a8afd2568f7b">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aad026922810c2286b4f888994b956341"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayer" ref="aad026922810c2286b4f888994b956341" args="(osg::Node *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">Updraft::MapLayerGroupInterface::insertMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osg::Node *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Inserts map layer into this group. insertMapLayer adds new QTreeWidgetItem. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>Desired position of layer in the tree view values &lt; 0, or bigger than number of layers already in the group append the layer at the end. </td></tr>
-    <tr><td class="paramname">layer</td><td>Pointer representing this layer. </td></tr>
-    <tr><td class="paramname">title</td><td>Name of the layer; caption of the tree item. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a28b8638959b43b5450e98621ca15860e"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayer" ref="a28b8638959b43b5450e98621ca15860e" args="(osgEarth::ImageLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">Updraft::MapLayerGroupInterface::insertMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ImageLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -424,121 +337,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae3aa7d5f502cad9ace32a9325b94f878">Updraft::Core::MapLayerGroup</a>.</p>
+<p>Insert the map layer as a child of this group. </p>
 
-</div>
-</div>
-<a class="anchor" id="a79372c70adac51cef12ae79a9232b3c2"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayer" ref="a79372c70adac51cef12ae79a9232b3c2" args="(osgEarth::ElevationLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">Updraft::MapLayerGroupInterface::insertMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ElevationLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2c34bdcd492311f188c45eec5776eb2e">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a39c3b1a3e90fb9914175f495affb015b"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayer" ref="a39c3b1a3e90fb9914175f495affb015b" args="(osgEarth::ModelLayer *layer, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">Updraft::MapLayerGroupInterface::insertMapLayer</a> </td>
-          <td>(</td>
-          <td class="paramtype">osgEarth::ModelLayer *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#aacdb4087e966e9e2963fdf8bdd3fe698">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0eb7d2438c17bcb21291a97ff709bedd"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::insertMapLayerGroup" ref="a0eb7d2438c17bcb21291a97ff709bedd" args="(QVector&lt; QPair&lt; osg::Node *, QString &gt; &gt; *mapLayerGroup, const QString &amp;title, int pos=&#45;1)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual QVector&lt;<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>*&gt;* <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a0eb7d2438c17bcb21291a97ff709bedd">Updraft::MapLayerGroupInterface::insertMapLayerGroup</a> </td>
-          <td>(</td>
-          <td class="paramtype">QVector&lt; QPair&lt; osg::Node *, QString &gt; &gt; *&#160;</td>
-          <td class="paramname"><em>mapLayerGroup</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Insert map layer group to the map. insertMapLayer adds new QTreeWidgetItem. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>desired position of layer in the tree view values &lt; 0, or bigger than number of layers already in the group append the layer at the end. </td></tr>
-    <tr><td class="paramname">mapLayerGroup</td><td>List of nodes and its titles. </td></tr>
-    <tr><td class="paramname">title</td><td>name of the layer; caption of the tree item </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a63f518d67cd853130e25a5d3b077b4ee">Updraft::Core::MapLayerGroup</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a4242d8c262a524fef7414e04f167e9b7">Updraft::Core::MapLayerGroup</a>.</p>
 
 </div>
 </div>
@@ -556,41 +357,9 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Removes map layer. </p>
+<p>Remove the map layer from this group, but don't delete it. Ownership of the layer is transfered to caller of this method. </p>
 
 <p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a17b5c61b1b8bdceafcdc0a2a847687b8">Updraft::Core::MapLayerGroup</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0c62cffc9a8cdee9966b28abea214008"></a><!-- doxytag: member="Updraft::MapLayerGroupInterface::setMapLayerTitle" ref="a0c62cffc9a8cdee9966b28abea214008" args="(MapLayerInterface *layer, const QString &amp;title)=0" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a0c62cffc9a8cdee9966b28abea214008">Updraft::MapLayerGroupInterface::setMapLayerTitle</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td>
-          <td class="paramname"><em>layer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [pure virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets title of the map layer (displayed in the left pane). </p>
-
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2a41f1715d686aea40679556c9f605dc">Updraft::Core::MapLayerGroup</a>.</p>
 
 </div>
 </div>
@@ -645,7 +414,7 @@ Friends</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:33 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:49 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

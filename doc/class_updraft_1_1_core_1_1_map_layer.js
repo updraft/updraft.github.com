@@ -1,12 +1,29 @@
 var class_updraft_1_1_core_1_1_map_layer =
 [
+    [ "MapLayer", "class_updraft_1_1_core_1_1_map_layer.html#a188f943293dc57f049b6a17020c8eb30", null ],
+    [ "~MapLayer", "class_updraft_1_1_core_1_1_map_layer.html#af8f1e621d50ef0f2203e875d909e89c6", null ],
+    [ "MapLayer", "class_updraft_1_1_core_1_1_map_layer.html#a74026c1e9af0e08ebaf9c6681f3cae6d", null ],
     [ "checked", "class_updraft_1_1_core_1_1_map_layer.html#a7d246690251c671401684743b25f0bd5", null ],
     [ "connectCheckedToVisibility", "class_updraft_1_1_core_1_1_map_layer.html#a0970a9634c4115a66cfb6506796667d2", null ],
     [ "connectSignalChecked", "class_updraft_1_1_core_1_1_map_layer.html#a5445a70d96bc985a1fad461b165e0bf7", null ],
-    [ "connectSignalDisplayed", "class_updraft_1_1_core_1_1_map_layer.html#a6e06ac616bedd4674a76b0ec9a3f63b7", null ],
+    [ "connectSignalContextMenuRequested", "class_updraft_1_1_core_1_1_map_layer.html#af0cbc07237072fca5845ba2681c6955c", null ],
     [ "connectSlotSetVisibility", "class_updraft_1_1_core_1_1_map_layer.html#a4f6daf49470967a93f5d7392405db4f8", null ],
-    [ "displayed", "class_updraft_1_1_core_1_1_map_layer.html#a77f08f319c08118f28460324a8c75c46", null ],
+    [ "contextMenuRequested", "class_updraft_1_1_core_1_1_map_layer.html#a972f6ca3887ef9360cd865ffdf544914", null ],
+    [ "deleteActionSlot", "class_updraft_1_1_core_1_1_map_layer.html#a854957cdb87cc3cd26339a2d3008079a", null ],
     [ "emitChecked", "class_updraft_1_1_core_1_1_map_layer.html#a3f26f69f3753c921ee27aa7bc4dfe3cf", null ],
-    [ "emitDisplayed", "class_updraft_1_1_core_1_1_map_layer.html#a01e28ea36d5f441fb48565a3fec722d0", null ],
-    [ "setVisibility", "class_updraft_1_1_core_1_1_map_layer.html#a54cc6d741e016b5db145a655d00932f1", null ]
+    [ "emitContextMenuRequested", "class_updraft_1_1_core_1_1_map_layer.html#a65ea5b47fe78acb41aba357408685391", null ],
+    [ "getDeleteAction", "class_updraft_1_1_core_1_1_map_layer.html#abec13a34d7a51f0ec79289ac9cb0ef1a", null ],
+    [ "getTreeItem", "class_updraft_1_1_core_1_1_map_layer.html#a31a0045c4a042710704395985f08b4bc", null ],
+    [ "inserted", "class_updraft_1_1_core_1_1_map_layer.html#a0dbdaa03f463a0e09521930b9cb0c90d", null ],
+    [ "setCheckable", "class_updraft_1_1_core_1_1_map_layer.html#a2a8ff8e28f4fa4766aba98616cfacd3b", null ],
+    [ "setChecked", "class_updraft_1_1_core_1_1_map_layer.html#a3a146e03a1cda54bf7d1e68d3b64973b", null ],
+    [ "setDisabled", "class_updraft_1_1_core_1_1_map_layer.html#ad3820e54b09c5cd57de8f27259230afd", null ],
+    [ "setFilePath", "class_updraft_1_1_core_1_1_map_layer.html#a85b007d504a9b75584c3ea8bca1df93b", null ],
+    [ "setTitle", "class_updraft_1_1_core_1_1_map_layer.html#a7ba30d37197eb0829926834a4c9d1961", null ],
+    [ "setVisibility", "class_updraft_1_1_core_1_1_map_layer.html#a4ea1843452bb2176383983e151084ecc", null ],
+    [ "deleteAction", "class_updraft_1_1_core_1_1_map_layer.html#a791947246ac05280f0223927f7ed1dc0", null ],
+    [ "deleteFilePath", "class_updraft_1_1_core_1_1_map_layer.html#a9acd9cb1357067a894d0c0779398e1d0", null ],
+    [ "ownsTreeItem", "class_updraft_1_1_core_1_1_map_layer.html#ac050af3ac19af9dbd9587a9c2b9921fe", null ],
+    [ "parent", "class_updraft_1_1_core_1_1_map_layer.html#a8baa31d1f571438f8b020fb3b2f6efac", null ],
+    [ "treeItem", "class_updraft_1_1_core_1_1_map_layer.html#a538581303a6933ab1813bd7d9cca6073", null ]
 ];

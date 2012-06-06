@@ -116,73 +116,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="keyword">namespace </span>Updraft {
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">class </span>MapLayerGroup;
+<a name="l00017"></a>00017 <span class="keyword">namespace </span>Core {
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>Core {
-<a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">00021</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow {
-<a name="l00022"></a>00022   Q_OBJECT
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024  <span class="keyword">public</span>:
-<a name="l00025"></a>00025   <span class="keyword">explicit</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aba166ac6c87173a25c6744827a34017d">MainWindow</a>(QWidget *parent = 0);
-<a name="l00026"></a>00026   <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a60442453b0c203b9a9643deb797f1cf7">~MainWindow</a>();
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a6e87dadcb44490fb7340dafa356d011f">getSystemMenu</a>(<a class="code" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a> menu);
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030   <a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#adabbad21b3e453d8e61ef95120ae018a">createTab</a>(QWidget* content, QString title);
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a288686c4e44f167b1a5fa957815ef210">createMenu</a>(QString title);
-<a name="l00033"></a>00033   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#acdaab38a848d3b405820add3003adcb6">removeMenu</a>(<a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* menu);
-<a name="l00034"></a>00034   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5ca874055f4ef223023287c90dfad55b">setMapWidget</a>(QWidget *widget);
-<a name="l00035"></a>00035   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ab4422f2ec239e6a729351505ab884348">getMapWidget</a>();
-<a name="l00036"></a>00036 
-<a name="l00039"></a>00039   <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a49d29410f09874f8d6237e4f72c2803e">createMapLayerGroup</a>(<span class="keyword">const</span> QString &amp;title,
-<a name="l00040"></a>00040     osg::Group* nodeGroup, osgEarth::MapNode* map);
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042  <span class="keyword">private</span> slots:
-<a name="l00045"></a>00045   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aff0d62e3fdef077fa8cfcb5fcc459fab">tabCloseRequested</a>(<span class="keywordtype">int</span> index);
+<a name="l00019"></a>00019 <span class="keyword">class </span>MapLayerGroup;
+<a name="l00020"></a>00020 <span class="keyword">class </span>MapLayer;
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">00022</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow {
+<a name="l00023"></a>00023   Q_OBJECT
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025  <span class="keyword">public</span>:
+<a name="l00026"></a>00026   <span class="keyword">explicit</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aba166ac6c87173a25c6744827a34017d">MainWindow</a>(QWidget *parent = 0);
+<a name="l00027"></a>00027   <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a60442453b0c203b9a9643deb797f1cf7">~MainWindow</a>();
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a6e87dadcb44490fb7340dafa356d011f">getSystemMenu</a>(<a class="code" href="namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2">SystemMenu</a> menu);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031   <a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#adabbad21b3e453d8e61ef95120ae018a">createTab</a>(QWidget* content, QString title);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a288686c4e44f167b1a5fa957815ef210">createMenu</a>(QString title);
+<a name="l00034"></a>00034   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#acdaab38a848d3b405820add3003adcb6">removeMenu</a>(<a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* menu);
+<a name="l00035"></a>00035   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5ca874055f4ef223023287c90dfad55b">setMapWidget</a>(QWidget *widget);
+<a name="l00036"></a>00036   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ab4422f2ec239e6a729351505ab884348">getMapWidget</a>();
+<a name="l00037"></a>00037 
+<a name="l00039"></a>00039   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ab2e113ce8f6562e096a2c67988ece554" title="Returns the invisible top level MapLayerGroup.">getInvisibleRootMapLayerGroup</a>();
+<a name="l00040"></a>00040 
+<a name="l00042"></a>00042   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#af9fdc6b37c866915e79aa607c967b292" title="Add a map layer and its tree widget item to the list of map layers.">registerMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer);
+<a name="l00043"></a>00043 
+<a name="l00045"></a>00045   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a154c898186cf38c0d7d332395cc6be8b" title="Remove a map layer and its tree widget item from the list of map layers.">unregisterMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer);
 <a name="l00046"></a>00046 
-<a name="l00048"></a>00048   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a4456bca05b38ff6a678f1858ba40bad1" title="Called when tab has been removed from the bottom pane.">tabRemoved</a>(QWidget* tab);
-<a name="l00049"></a>00049 
-<a name="l00051"></a>00051   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ab7d382b6cc7a59ee3015b90bff965fea" title="Handles switchin an active tab in the bottom pane.">tabSwitch</a>(<span class="keywordtype">int</span> index);
-<a name="l00052"></a>00052 
-<a name="l00054"></a>00054   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#afe3b1406db3b75eaff6a09e7d0e5cf22" title="Handles File-&gt;Open... menu action.">openFile</a>();
-<a name="l00055"></a>00055 
-<a name="l00057"></a>00057   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ad8374d245cf965bc802feb21d75b8931" title="Handles File-&gt;Exit menu action.">appExit</a>();
-<a name="l00058"></a>00058 
-<a name="l00060"></a>00060   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ad10a1914074c588f91cd1baac34b01d1" title="Handles Help-&gt;User Documentation menu action.">openUserDoc</a>();
-<a name="l00061"></a>00061 
-<a name="l00063"></a>00063   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0d5ba5b73e43b3c940e2023f24c3c791" title="Handles Help-&gt;About... menu action.">showAboutDialog</a>();
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065  <span class="keyword">protected</span>:
-<a name="l00066"></a>00066   <span class="comment">// TODO(cestmir): Just a temporary method to test context menu</span>
-<a name="l00067"></a>00067   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1ef8965a54868046b7a611bf63849451">contextMenuEvent</a>(QContextMenuEvent* event);
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069  <span class="keyword">private</span>:
-<a name="l00072"></a>00072   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a24f8183598fa35271a87fab689815348">standardMenuItems</a>();
-<a name="l00073"></a>00073 
-<a name="l00076"></a>00076   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ade404fdbbfa1714a960e0532947febfb">tabsVisibility</a>();
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">00078</a>   Ui::MainWindow *<a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">ui</a>;
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">00080</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">menuFile</a>;
-<a name="l00081"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">00081</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">menuView</a>;
-<a name="l00082"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">00082</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">menuTools</a>;
-<a name="l00083"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#af2e109864eb1a9d1a525e5f4e617a1dd">00083</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#af2e109864eb1a9d1a525e5f4e617a1dd">menuHelp</a>;
-<a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">00085</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">menuContext</a>;
-<a name="l00086"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">00086</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">menuMapObject</a>;
+<a name="l00047"></a>00047  <span class="keyword">private</span> slots:
+<a name="l00050"></a>00050   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aff0d62e3fdef077fa8cfcb5fcc459fab">tabCloseRequested</a>(<span class="keywordtype">int</span> index);
+<a name="l00051"></a>00051 
+<a name="l00053"></a>00053   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a4456bca05b38ff6a678f1858ba40bad1" title="Called when tab has been removed from the bottom pane.">tabRemoved</a>(QWidget* tab);
+<a name="l00054"></a>00054 
+<a name="l00056"></a>00056   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ab7d382b6cc7a59ee3015b90bff965fea" title="Handles switchin an active tab in the bottom pane.">tabSwitch</a>(<span class="keywordtype">int</span> index);
+<a name="l00057"></a>00057 
+<a name="l00059"></a>00059   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#afe3b1406db3b75eaff6a09e7d0e5cf22" title="Handles File-&gt;Open... menu action.">openFile</a>();
+<a name="l00060"></a>00060 
+<a name="l00062"></a>00062   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ad8374d245cf965bc802feb21d75b8931" title="Handles File-&gt;Exit menu action.">appExit</a>();
+<a name="l00063"></a>00063 
+<a name="l00065"></a>00065   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ad10a1914074c588f91cd1baac34b01d1" title="Handles Help-&gt;User Documentation menu action.">openUserDoc</a>();
+<a name="l00066"></a>00066 
+<a name="l00068"></a>00068   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0d5ba5b73e43b3c940e2023f24c3c791" title="Handles Help-&gt;About... menu action.">showAboutDialog</a>();
+<a name="l00069"></a>00069 
+<a name="l00071"></a>00071   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ac6ba51f535dd6bac9d0938c79ce3d60b" title="Item in map layer tree widget was changed (= checked / unchecked)">mapLayerItemChanged</a>(QTreeWidgetItem *item);
+<a name="l00072"></a>00072 
+<a name="l00075"></a>00075   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#afd6348d438dc4378b29b9834a2d70b01">mapLayerContextMenuRequested</a>(<span class="keyword">const</span> QPoint&amp; pos);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077  <span class="keyword">protected</span>:
+<a name="l00078"></a>00078   <span class="comment">// TODO(cestmir): Just a temporary method to test context menu</span>
+<a name="l00079"></a>00079   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1ef8965a54868046b7a611bf63849451">contextMenuEvent</a>(QContextMenuEvent* event);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081  <span class="keyword">private</span>:
+<a name="l00084"></a>00084   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a24f8183598fa35271a87fab689815348">standardMenuItems</a>();
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a11614bd739c7655a04884c025be02fc8">00086</a>   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> *<a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a11614bd739c7655a04884c025be02fc8">invisibleRootMapLayerGroup</a>;
 <a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">00088</a>   <a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">activeTab</a>;
-<a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">00090</a>   QSet&lt;Menu*&gt; <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">customMenus</a>;
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 }  <span class="comment">// End namespace Core</span>
-<a name="l00094"></a>00094 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_MAINWINDOW_H_</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span>
+<a name="l00090"></a>00090   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ade404fdbbfa1714a960e0532947febfb">tabsVisibility</a>();
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">00092</a>   Ui::MainWindow *<a class="code" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">ui</a>;
+<a name="l00093"></a>00093 
+<a name="l00094"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">00094</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">menuFile</a>;
+<a name="l00095"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">00095</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">menuView</a>;
+<a name="l00096"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">00096</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a1949502098570d7f6e9f98c1e931774b">menuTools</a>;
+<a name="l00097"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#af2e109864eb1a9d1a525e5f4e617a1dd">00097</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#af2e109864eb1a9d1a525e5f4e617a1dd">menuHelp</a>;
+<a name="l00098"></a>00098 
+<a name="l00099"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">00099</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae86f2600a7ad2173fda3a997f6e51ba4">menuContext</a>;
+<a name="l00100"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">00100</a>   <a class="code" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">menuMapObject</a>;
+<a name="l00101"></a>00101 
+<a name="l00102"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">00102</a>   <a class="code" href="class_updraft_1_1_core_1_1_tab.html">Tab</a>* <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">activeTab</a>;
+<a name="l00103"></a>00103 
+<a name="l00104"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">00104</a>   QSet&lt;Menu*&gt; <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">customMenus</a>;
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae5ec487626726efba3e4cf45cd4c9c41">00106</a>   QMap&lt;QTreeWidgetItem*, MapLayerInterface *&gt; <a class="code" href="class_updraft_1_1_core_1_1_main_window.html#ae5ec487626726efba3e4cf45cd4c9c41">mapLayers</a>;
+<a name="l00107"></a>00107 };
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 }  <span class="comment">// End namespace Core</span>
+<a name="l00110"></a>00110 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_MAINWINDOW_H_</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -203,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="mainwindow_8h.html">mainwindow.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:30 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:46 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

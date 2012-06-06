@@ -8,6 +8,7 @@ var class_updraft_1_1_core_1_1_basic_setting =
     [ "invalidate", "class_updraft_1_1_core_1_1_basic_setting.html#a84bd6befa92de828c6614771dbd3c396", null ],
     [ "set", "class_updraft_1_1_core_1_1_basic_setting.html#a563b17bf3ce959fe28ba91440c153e1d", null ],
     [ "setDescription", "class_updraft_1_1_core_1_1_basic_setting.html#ac7dbc5e73b1784473fe291ddde8272ff", null ],
+    [ "setNeedsRestart", "class_updraft_1_1_core_1_1_basic_setting.html#a86b07788811cdaf5c459ea82f871be09", null ],
     [ "valueChanged", "class_updraft_1_1_core_1_1_basic_setting.html#a1d79e00931bcd6a8621b0eb0b9ab59bf", null ],
     [ "SettingsDelegate", "class_updraft_1_1_core_1_1_basic_setting.html#a24cc12c56e127057107bb63f74f91cfd", null ],
     [ "SettingsManager", "class_updraft_1_1_core_1_1_basic_setting.html#a25fcdead40f9dfeb5f43fdbc41664480", null ],

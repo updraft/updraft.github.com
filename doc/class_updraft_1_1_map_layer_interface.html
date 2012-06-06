@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Updraft::MapLayerInterface Class Reference</div>  </div>
@@ -114,34 +114,51 @@ Inheritance diagram for Updraft::MapLayerInterface:</div>
  <div class="center">
   <img src="class_updraft_1_1_map_layer_interface.png" usemap="#Updraft::MapLayerInterface_map" alt=""/>
   <map id="Updraft::MapLayerInterface_map" name="Updraft::MapLayerInterface_map">
-<area href="class_updraft_1_1_core_1_1_map_layer.html" alt="Updraft::Core::MapLayer" shape="rect" coords="319,56,522,80"/>
-<area href="class_updraft_1_1_core_1_1_elevation_map_layer.html" alt="Updraft::Core::ElevationMapLayer" shape="rect" coords="0,112,203,136"/>
-<area href="class_updraft_1_1_core_1_1_image_map_layer.html" alt="Updraft::Core::ImageMapLayer" shape="rect" coords="213,112,416,136"/>
-<area href="class_updraft_1_1_core_1_1_model_map_layer.html" alt="Updraft::Core::ModelMapLayer" shape="rect" coords="426,112,629,136"/>
-<area href="class_updraft_1_1_core_1_1_node_map_layer.html" alt="Updraft::Core::NodeMapLayer" shape="rect" coords="639,112,842,136"/>
+<area href="class_updraft_1_1_core_1_1_map_layer.html" alt="Updraft::Core::MapLayer" shape="rect" coords="106,56,308,80"/>
+<area href="class_updraft_1_1_map_layer_group_interface.html" alt="Updraft::MapLayerGroupInterface" shape="rect" coords="424,56,626,80"/>
+<area href="class_updraft_1_1_core_1_1_map_layer_group.html" alt="Updraft::Core::MapLayerGroup" shape="rect" coords="0,112,202,136"/>
+<area href="class_updraft_1_1_core_1_1_node_map_layer.html" alt="Updraft::Core::NodeMapLayer" shape="rect" coords="212,112,414,136"/>
+<area href="class_updraft_1_1_core_1_1_map_layer_group.html" alt="Updraft::Core::MapLayerGroup" shape="rect" coords="424,112,626,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a3d1cfdace1879c0c3c4261858a7e281f">~MapLayerInterface</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#abf29566384de3d39975453cec7487d6e">connectSignalDisplayed</a> (const QObject *receiver, const char *method)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a8e40215c235993c23dc8fa3b534d2da4">connectSignalChecked</a> (const QObject *receiver, const char *method)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a608433820acb8e43b1abb0d14f5a0371">connectSignalContextMenuRequested</a> (const QObject *receiver, const char *method)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a96f1b3f6d3ab67a6d4a98f5d18ea71a5">connectSlotSetVisibility</a> (const QObject *sender, const char *method)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a39a966b64e88ddb498fd02fab09c8cab">connectCheckedToVisibility</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a39ca6cfc2ec4176857f16ab38fca8106">setVisible</a> (bool value)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets visibility to the layer.  <a href="#a39ca6cfc2ec4176857f16ab38fca8106"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a8482840210517eb84f18a2071e2484f6">setTitle</a> (const QString &amp;title)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the title of this map layer.  <a href="#a8482840210517eb84f18a2071e2484f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#afa16531fac32e0d1c0c2b612defd3915">setChecked</a> (bool value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check or uncheck the tree view checkbox.  <a href="#afa16531fac32e0d1c0c2b612defd3915"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a04ab2eda2cd471d1ab7e5e4f5df04817">setCheckable</a> (bool value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to disable the check box.  <a href="#a04ab2eda2cd471d1ab7e5e4f5df04817"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#aa993134098d30fc49111e60397414f37">setVisibility</a> (bool value)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets visibility to the layer.  <a href="#aa993134098d30fc49111e60397414f37"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a28caf38a424272b1c67e43d918a47078">isVisible</a> ()=0</td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#af9b781e4d4583ceaa7a8739469a10c3c">setFilePath</a> (const QString &amp;path)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the path used by getDeleteAction.  <a href="#af9b781e4d4583ceaa7a8739469a10c3c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a2fbe402c4ce5edac83f23baf449565c5">getDeleteAction</a> ()=0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#ab6ff4bd10df04f6567f9579bafeb76f7">emitChecked</a> (bool value)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a489ecb73f4e16db395c780172b87d6a3">emitDisplayed</a> (bool value)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a75d4d37871ae627c7a978cff880e8cfc">emitContextMenuRequested</a> (const QPoint &amp;pos)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a312d843bc35036b7ee505f163966a63b">addToScene</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the map layer to the osg group of the map layer group.  <a href="#a312d843bc35036b7ee505f163966a63b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a947caef0a861666d8b0b988a611c2b62">removeFromScene</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the layer from the osg group of the map layer group.  <a href="#a947caef0a861666d8b0b988a611c2b62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#aae2ca3860d70cac01a2343117a397da5">getTreeItem</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the tree widget item corresponding to this map layer.  <a href="#aae2ca3860d70cac01a2343117a397da5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#ad362556b712d4f1973dac0ecf7359a6e">inserted</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *parent)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the map layer that it was inserted into a group.  <a href="#ad362556b712d4f1973dac0ecf7359a6e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a7479b77c5909fc173823c493fffb6d52">setDisabled</a> (bool disabled)=0</td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a99a5f69802c16f7d74a906b6ddd169a1">Core::SceneManager</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a8b9a14a7248ae982cc4cf93ca600013c">Core::MapLayerGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_map_layer_interface.html#a9b78015945384be9b683cf4f5a95931f">Core::MainWindow</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>An interface to a map layer that is used by plugins. More about map layers </p>
@@ -173,13 +190,15 @@ Friends</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *&#160;</td>
           <td class="paramname"><em>group</em></td><td>)</td>
-          <td><code> [private, pure virtual]</code></td>
+          <td><code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_elevation_map_layer.html#a6fc7e8a41570adae1a766fb5566e7b7d">Updraft::Core::ElevationMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_image_map_layer.html#a657ede3d19b23b5980fadc8df7c6c529">Updraft::Core::ImageMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_model_map_layer.html#ac8334d18182f0dc90876c16c7c5b7796">Updraft::Core::ModelMapLayer</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a894ea6aef770b94c6e35c1715a797a37">Updraft::Core::NodeMapLayer</a>.</p>
+<p>Add the map layer to the osg group of the map layer group. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#adb67d3e48ddca36d0ff8c0e23b26d61f">Updraft::Core::MapLayerGroup</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a894ea6aef770b94c6e35c1715a797a37">Updraft::Core::NodeMapLayer</a>.</p>
 
 </div>
 </div>
@@ -226,19 +245,19 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Connects to a signal checked(MapLayerInterface*, bool): map layer is selected / diselected in the left panel. </p>
+<p>Connects to a signal checked(bool, MapLayerInterface*): map layer is selected / diselected in the left panel. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
 
 <p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a5445a70d96bc985a1fad461b165e0bf7">Updraft::Core::MapLayer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abf29566384de3d39975453cec7487d6e"></a><!-- doxytag: member="Updraft::MapLayerInterface::connectSignalDisplayed" ref="abf29566384de3d39975453cec7487d6e" args="(const QObject *receiver, const char *method)=0" -->
+<a class="anchor" id="a608433820acb8e43b1abb0d14f5a0371"></a><!-- doxytag: member="Updraft::MapLayerInterface::connectSignalContextMenuRequested" ref="a608433820acb8e43b1abb0d14f5a0371" args="(const QObject *receiver, const char *method)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#abf29566384de3d39975453cec7487d6e">Updraft::MapLayerInterface::connectSignalDisplayed</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a608433820acb8e43b1abb0d14f5a0371">Updraft::MapLayerInterface::connectSignalContextMenuRequested</a> </td>
           <td>(</td>
           <td class="paramtype">const QObject *&#160;</td>
           <td class="paramname"><em>receiver</em>, </td>
@@ -257,10 +276,10 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Connects to a signal displayed(MapLayerInterface*, bool): map layer shown / hidden state in the scene has been changed. </p>
+<p>Connects to a signal contextMenuRequested(QPoint, MapLayerInterface*) </p>
 <dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a6e06ac616bedd4674a76b0ec9a3f63b7">Updraft::Core::MapLayer</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#af0cbc07237072fca5845ba2681c6955c">Updraft::Core::MapLayer</a>.</p>
 
 </div>
 </div>
@@ -288,7 +307,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Connects to a slot setVisibility(bool) -- map layer sets the visibility to the layer in the scene graph. </p>
+<p>Connects to a slot <a class="el" href="class_updraft_1_1_map_layer_interface.html#aa993134098d30fc49111e60397414f37" title="Sets visibility to the layer.">setVisibility(bool)</a> -- map layer sets the visibility to the layer in the scene graph. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd>QObject::connect() </dd></dl>
 
 <p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a4f6daf49470967a93f5d7392405db4f8">Updraft::Core::MapLayer</a>.</p>
@@ -304,7 +323,7 @@ Friends</h2></td></tr>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
-          <td><code> [private, pure virtual]</code></td>
+          <td><code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -314,22 +333,82 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a489ecb73f4e16db395c780172b87d6a3"></a><!-- doxytag: member="Updraft::MapLayerInterface::emitDisplayed" ref="a489ecb73f4e16db395c780172b87d6a3" args="(bool value)=0" -->
+<a class="anchor" id="a75d4d37871ae627c7a978cff880e8cfc"></a><!-- doxytag: member="Updraft::MapLayerInterface::emitContextMenuRequested" ref="a75d4d37871ae627c7a978cff880e8cfc" args="(const QPoint &amp;pos)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a489ecb73f4e16db395c780172b87d6a3">Updraft::MapLayerInterface::emitDisplayed</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a75d4d37871ae627c7a978cff880e8cfc">Updraft::MapLayerInterface::emitContextMenuRequested</a> </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td><code> [private, pure virtual]</code></td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a01e28ea36d5f441fb48565a3fec722d0">Updraft::Core::MapLayer</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a65ea5b47fe78acb41aba357408685391">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fbe402c4ce5edac83f23baf449565c5"></a><!-- doxytag: member="Updraft::MapLayerInterface::getDeleteAction" ref="a2fbe402c4ce5edac83f23baf449565c5" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QAction* <a class="el" href="class_updraft_1_1_map_layer_interface.html#a2fbe402c4ce5edac83f23baf449565c5">Updraft::MapLayerInterface::getDeleteAction</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return a QAction that will delete the file selected by setFilePath. Used for deleting imported files. Only makes sense after setFilePath was called. The action's triggered() signal deletes the selected file and this map layer group. For a single map layer, the same QAction is returned every time. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#abec13a34d7a51f0ec79289ac9cb0ef1a">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae2ca3860d70cac01a2343117a397da5"></a><!-- doxytag: member="Updraft::MapLayerInterface::getTreeItem" ref="aae2ca3860d70cac01a2343117a397da5" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QTreeWidgetItem* <a class="el" href="class_updraft_1_1_map_layer_interface.html#aae2ca3860d70cac01a2343117a397da5">Updraft::MapLayerInterface::getTreeItem</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return the tree widget item corresponding to this map layer. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a31a0045c4a042710704395985f08b4bc">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad362556b712d4f1973dac0ecf7359a6e"></a><!-- doxytag: member="Updraft::MapLayerInterface::inserted" ref="ad362556b712d4f1973dac0ecf7359a6e" args="(Core::MapLayerGroup *parent)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#ad362556b712d4f1973dac0ecf7359a6e">Updraft::MapLayerInterface::inserted</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Notify the map layer that it was inserted into a group. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ab1d359a93f49d1d56857a33a41b0d81c">Updraft::Core::MapLayerGroup</a>, and <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a0dbdaa03f463a0e09521930b9cb0c90d">Updraft::Core::MapLayer</a>.</p>
 
 </div>
 </div>
@@ -347,7 +426,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_elevation_map_layer.html#a3c2e5812b82e20fa14943dc18c50335f">Updraft::Core::ElevationMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_image_map_layer.html#aac5ceebcd9c413443b3f7751152b69ee">Updraft::Core::ImageMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_model_map_layer.html#a8a4b206812c945b790f810ce33ef05f7">Updraft::Core::ModelMapLayer</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a92bb79866d8149b0c3cd27860c00d052">Updraft::Core::NodeMapLayer</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a138d598f88d721a17d7f317c707b70d1">Updraft::Core::MapLayerGroup</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a92bb79866d8149b0c3cd27860c00d052">Updraft::Core::NodeMapLayer</a>.</p>
 
 </div>
 </div>
@@ -360,22 +439,128 @@ Friends</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *&#160;</td>
           <td class="paramname"><em>group</em></td><td>)</td>
-          <td><code> [private, pure virtual]</code></td>
+          <td><code> [protected, pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_elevation_map_layer.html#ad1d673c8ba57e129b0548d937b8403b3">Updraft::Core::ElevationMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_image_map_layer.html#ac065ee2ebb7e3b93ebe22d13aaf1d58a">Updraft::Core::ImageMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_model_map_layer.html#acbe80f6b95ea5954159c880f0ffdde3f">Updraft::Core::ModelMapLayer</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a1096eca3c73eb7efdbeb0a00c8766047">Updraft::Core::NodeMapLayer</a>.</p>
+<p>Remove the layer from the osg group of the map layer group. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a5a7bbe73cb3602766d4865108999d3ce">Updraft::Core::MapLayerGroup</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a1096eca3c73eb7efdbeb0a00c8766047">Updraft::Core::NodeMapLayer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a39ca6cfc2ec4176857f16ab38fca8106"></a><!-- doxytag: member="Updraft::MapLayerInterface::setVisible" ref="a39ca6cfc2ec4176857f16ab38fca8106" args="(bool value)=0" -->
+<a class="anchor" id="a04ab2eda2cd471d1ab7e5e4f5df04817"></a><!-- doxytag: member="Updraft::MapLayerInterface::setCheckable" ref="a04ab2eda2cd471d1ab7e5e4f5df04817" args="(bool value)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a39ca6cfc2ec4176857f16ab38fca8106">Updraft::MapLayerInterface::setVisible</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a04ab2eda2cd471d1ab7e5e4f5df04817">Updraft::MapLayerInterface::setCheckable</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allows to disable the check box. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a2a8ff8e28f4fa4766aba98616cfacd3b">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa16531fac32e0d1c0c2b612defd3915"></a><!-- doxytag: member="Updraft::MapLayerInterface::setChecked" ref="afa16531fac32e0d1c0c2b612defd3915" args="(bool value)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#afa16531fac32e0d1c0c2b612defd3915">Updraft::MapLayerInterface::setChecked</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check or uncheck the tree view checkbox. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a3a146e03a1cda54bf7d1e68d3b64973b">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7479b77c5909fc173823c493fffb6d52"></a><!-- doxytag: member="Updraft::MapLayerInterface::setDisabled" ref="a7479b77c5909fc173823c493fffb6d52" args="(bool disabled)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a7479b77c5909fc173823c493fffb6d52">Updraft::MapLayerInterface::setDisabled</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disabled</em></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae68cb26f7467790de4482c8e3ed11212">Updraft::Core::MapLayerGroup</a>, and <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#ad3820e54b09c5cd57de8f27259230afd">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9b781e4d4583ceaa7a8739469a10c3c"></a><!-- doxytag: member="Updraft::MapLayerInterface::setFilePath" ref="af9b781e4d4583ceaa7a8739469a10c3c" args="(const QString &amp;path)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#af9b781e4d4583ceaa7a8739469a10c3c">Updraft::MapLayerInterface::setFilePath</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the path used by getDeleteAction. </p>
+<p>Deleting imported files. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a85b007d504a9b75584c3ea8bca1df93b">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8482840210517eb84f18a2071e2484f6"></a><!-- doxytag: member="Updraft::MapLayerInterface::setTitle" ref="a8482840210517eb84f18a2071e2484f6" args="(const QString &amp;title)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#a8482840210517eb84f18a2071e2484f6">Updraft::MapLayerInterface::setTitle</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Change the title of this map layer. </p>
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a7ba30d37197eb0829926834a4c9d1961">Updraft::Core::MapLayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa993134098d30fc49111e60397414f37"></a><!-- doxytag: member="Updraft::MapLayerInterface::setVisibility" ref="aa993134098d30fc49111e60397414f37" args="(bool value)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_map_layer_interface.html#aa993134098d30fc49111e60397414f37">Updraft::MapLayerInterface::setVisibility</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -387,17 +572,17 @@ Friends</h2></td></tr>
 
 <p>Sets visibility to the layer. </p>
 
-<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_elevation_map_layer.html#af7caefa9825c35b18a69bf2e82ce3d72">Updraft::Core::ElevationMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_image_map_layer.html#a30d547459026e633158f6a85cf7e2389">Updraft::Core::ImageMapLayer</a>, <a class="el" href="class_updraft_1_1_core_1_1_model_map_layer.html#a80cb307f794a1b781074ae4f16ce3e44">Updraft::Core::ModelMapLayer</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a037e9c32852c69a65ff748e5d2c4fd61">Updraft::Core::NodeMapLayer</a>.</p>
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html#a1a1ac0995aa3549d01da01ec2ac0b948">Updraft::Core::MapLayerGroup</a>, <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a4ea1843452bb2176383983e151084ecc">Updraft::Core::MapLayer</a>, and <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8c965797947be2a5248bb19cae6281d5">Updraft::Core::NodeMapLayer</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
-<a class="anchor" id="a8b9a14a7248ae982cc4cf93ca600013c"></a><!-- doxytag: member="Updraft::MapLayerInterface::Core::MapLayerGroup" ref="a8b9a14a7248ae982cc4cf93ca600013c" args="" -->
+<a class="anchor" id="a9b78015945384be9b683cf4f5a95931f"></a><!-- doxytag: member="Updraft::MapLayerInterface::Core::MainWindow" ref="a9b78015945384be9b683cf4f5a95931f" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a><code> [friend]</code></td>
+          <td class="memname">friend class <a class="el" href="class_updraft_1_1_core_1_1_main_window.html">Core::MainWindow</a><code> [friend]</code></td>
         </tr>
       </table>
 </div>
@@ -405,12 +590,12 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a99a5f69802c16f7d74a906b6ddd169a1"></a><!-- doxytag: member="Updraft::MapLayerInterface::Core::SceneManager" ref="a99a5f69802c16f7d74a906b6ddd169a1" args="" -->
+<a class="anchor" id="a8b9a14a7248ae982cc4cf93ca600013c"></a><!-- doxytag: member="Updraft::MapLayerInterface::Core::MapLayerGroup" ref="a8b9a14a7248ae982cc4cf93ca600013c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html">Core::SceneManager</a><code> [friend]</code></td>
+          <td class="memname">friend class <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a><code> [friend]</code></td>
         </tr>
       </table>
 </div>
@@ -442,7 +627,7 @@ Friends</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:33 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

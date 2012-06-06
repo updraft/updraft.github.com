@@ -103,92 +103,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="maplayergroup_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef UPDRAFT_SRC_CORE_UI_MAPLAYERGROUP_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define UPDRAFT_SRC_CORE_UI_MAPLAYERGROUP_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtGui&gt;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;../../maplayergroupinterface.h&quot;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;../maplayer.h&quot;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="keyword">namespace </span>Updraft {
-<a name="l00009"></a>00009 <span class="keyword">namespace </span>Core {
-<a name="l00010"></a>00010 
-<a name="l00015"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">00015</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> {
-<a name="l00016"></a>00016   Q_OBJECT
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018  <span class="keyword">public</span>:
-<a name="l00023"></a>00023   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#aece715d8313cd619a58600fa6cff8d98">MapLayerGroup</a>(QTreeWidget *widget, <span class="keyword">const</span> QString &amp;grouptitle,
-<a name="l00024"></a>00024     osg::Group* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a83f5c46473ea161722104d010fa8e08b" title="Pointer to the subtree of the scene associated with this layer.">nodeGroup</a>, osgEarth::MapNode* map);
-<a name="l00025"></a>00025 
-<a name="l00028"></a>00028   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2add11fb3c0da5b79a6aa2bd3d8d2af9">~MapLayerGroup</a>();
-<a name="l00029"></a>00029 
-<a name="l00032"></a>00032   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">insertMapLayer</a>
-<a name="l00033"></a>00033     (osg::Node* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00034"></a>00034   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">insertMapLayer</a>
-<a name="l00035"></a>00035     (osgEarth::ImageLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00036"></a>00036   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">insertMapLayer</a>
-<a name="l00037"></a>00037     (osgEarth::ElevationLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00038"></a>00038   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">insertMapLayer</a>
-<a name="l00039"></a>00039     (osgEarth::ModelLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041   QVector&lt;MapLayerInterface*&gt;* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a63f518d67cd853130e25a5d3b077b4ee">insertMapLayerGroup</a>
-<a name="l00042"></a>00042     (QVector&lt;QPair&lt;osg::Node*, QString&gt; &gt;* mapLayerGroup,
-<a name="l00043"></a>00043     <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a17b5c61b1b8bdceafcdc0a2a847687b8" title="Removes map layer.">removeMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer);
+<a name="l00004"></a>00004 <span class="preprocessor">#pragma warning(push)</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#pragma warning(disable:4250)</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;osg/ref_ptr&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;../../maplayergroupinterface.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;../maplayer.h&quot;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="namespaceosg.html">00013</a> <span class="keyword">namespace </span>osg {
+<a name="l00014"></a>00014   <span class="keyword">class </span>Group;
+<a name="l00015"></a>00015 }
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">namespace </span>Updraft {
+<a name="l00018"></a>00018 <span class="keyword">namespace </span>Core {
+<a name="l00019"></a>00019 
+<a name="l00024"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">00024</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> : <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer.html">MapLayer</a>, <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> {
+<a name="l00025"></a>00025   Q_OBJECT
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027  <span class="keyword">public</span>:
+<a name="l00032"></a>00032   <span class="keyword">explicit</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a8bd90833fc537e8d4c5fa38d320ee417">MapLayerGroup</a>(<span class="keyword">const</span> QString &amp;title);
+<a name="l00033"></a>00033 
+<a name="l00036"></a>00036   <span class="keyword">explicit</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a8bd90833fc537e8d4c5fa38d320ee417">MapLayerGroup</a>(QTreeWidgetItem *item);
+<a name="l00037"></a>00037 
+<a name="l00040"></a>00040   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2add11fb3c0da5b79a6aa2bd3d8d2af9">~MapLayerGroup</a>();
+<a name="l00041"></a>00041 
+<a name="l00044"></a>00044   <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#abd08ca64e3b2f860ba9593811cbb437c">createMapLayerGroup</a>(<span class="keyword">const</span> QString &amp;title,
+<a name="l00045"></a>00045     <span class="keywordtype">int</span> pos = -1);
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2a41f1715d686aea40679556c9f605dc" title="Sets title of the map layer (displayed in the left pane).">setMapLayerTitle</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keyword">const</span> QString &amp;title);
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049   osg::Group* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a52fb0b04cb1bdce5b67465cd5b70d180">getNodeGroup</a>();
-<a name="l00050"></a>00050   osgEarth::MapNode* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a4c85cb0f804ebdb8b477e61426af4689" title="Returns the mapNode.">getMapNode</a>();
-<a name="l00051"></a>00051   osgEarth::Util::ObjectPlacer* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a578aea6f66d5d1878f36d9429407fe3d" title="Returns the placer associated with the mapNode.">getObjectPlacer</a>();
+<a name="l00050"></a>00050   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ab6b126825d96ffc6ad87e3ce21e79ff1">createMapLayer</a>(osg::Node* layer, <span class="keyword">const</span> QString&amp; title,
+<a name="l00051"></a>00051     <span class="keywordtype">int</span> pos = -1);
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053  <span class="keyword">private</span> slots:
-<a name="l00057"></a>00057   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3c9c9e5434e9302db9c7e68163c46fcd">itemChanged</a>(QTreeWidgetItem *item, <span class="keywordtype">int</span> column);
-<a name="l00058"></a>00058 
-<a name="l00060"></a>00060   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a2f9435afc09bec11fde1e5b77ec6f660" title="if any map layer emmited the signal it was changed">mapLayerVisibilityChanged</a>(<span class="keywordtype">bool</span> value,
-<a name="l00061"></a>00061     <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer);
+<a name="l00054"></a>00054   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a4242d8c262a524fef7414e04f167e9b7" title="Insert the map layer as a child of this group.">insertMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keywordtype">int</span> pos = -1);
+<a name="l00055"></a>00055 
+<a name="l00058"></a>00058   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a17b5c61b1b8bdceafcdc0a2a847687b8">removeMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer);
+<a name="l00059"></a>00059 
+<a name="l00061"></a>00061   osg::Group* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a52fb0b04cb1bdce5b67465cd5b70d180" title="Returns the osg group associated with this map layer group.">getNodeGroup</a>();
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063  <span class="keyword">private</span>:
-<a name="l00064"></a>00064   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a1b52302782427e844451ddb44c730563">changeLayersVisibility</a>(QTreeWidgetItem *item, <span class="keywordtype">int</span> column,
-<a name="l00065"></a>00065     <span class="keywordtype">bool</span> value);
-<a name="l00066"></a>00066 
-<a name="l00068"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a614e8a0fa39d6ec9af235d2620a7f5d5">00068</a>   QTreeWidget* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a614e8a0fa39d6ec9af235d2620a7f5d5" title="widget to draw the list of the map layers">listWidget</a>;
-<a name="l00070"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ad9c506c62cf780b94bcdc2d144def01e">00070</a>   QTreeWidgetItem *<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ad9c506c62cf780b94bcdc2d144def01e" title="top level item">treeItem</a>;
-<a name="l00071"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae85111ccfae58ad43b470188e3f6b6b5">00071</a>   <span class="keyword">typedef</span> QMap&lt;QTreeWidgetItem*, MapLayerInterface*&gt; <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae85111ccfae58ad43b470188e3f6b6b5">TMapLayers</a>;
-<a name="l00072"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#af7845fe44fe2ce37f5a1964322d5fa9c">00072</a>   <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae85111ccfae58ad43b470188e3f6b6b5">TMapLayers</a> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#af7845fe44fe2ce37f5a1964322d5fa9c">mapLayers</a>;
-<a name="l00073"></a>00073 
-<a name="l00075"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a83f5c46473ea161722104d010fa8e08b">00075</a>   osg::Group* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a83f5c46473ea161722104d010fa8e08b" title="Pointer to the subtree of the scene associated with this layer.">nodeGroup</a>;
-<a name="l00076"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a088be905f03f3238021b5820ec4a1fc9">00076</a>   osgEarth::MapNode* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a088be905f03f3238021b5820ec4a1fc9">mapNode</a>;
-<a name="l00077"></a>00077 
-<a name="l00079"></a>00079   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ac12881fc41a0b19f22cc3058ac29b497" title="Creates the TreeWidgetItem once the first map layer is added.">displayTree</a>();
-<a name="l00080"></a>00080   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a30ee864e059badb1547ddb114924dad6">hideTree</a>();
-<a name="l00081"></a>00081 
-<a name="l00085"></a>00085   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a3b139bd966777783c949eff7cac1b016">insertMapLayer</a>
-<a name="l00086"></a>00086     (<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keyword">const</span> QString&amp; title,
-<a name="l00087"></a>00087     <span class="keywordtype">int</span> pos = -1, QTreeWidgetItem* toTree = NULL);
-<a name="l00088"></a>00088 
-<a name="l00090"></a>00090   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a63f518d67cd853130e25a5d3b077b4ee">insertMapLayerGroup</a>
-<a name="l00091"></a>00091     (QVector&lt;MapLayerInterface*&gt;* layerGroup,
-<a name="l00092"></a>00092     <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00093"></a>00093 
-<a name="l00097"></a>00097   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a5cef5dd35663fec2448337f66275d2b5">addIntoList</a>(QTreeWidgetItem* item,
-<a name="l00098"></a>00098     <span class="keywordtype">int</span> pos, QTreeWidgetItem* toTree = NULL);
-<a name="l00099"></a>00099 
-<a name="l00101"></a>00101   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a11085b2f159303f690f09bd88d7e0885" title="Functions to add map layer without adding it to scene.">insertExistingMapLayer</a>
-<a name="l00102"></a>00102     (<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00103"></a>00103   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a11085b2f159303f690f09bd88d7e0885" title="Functions to add map layer without adding it to scene.">insertExistingMapLayer</a>
-<a name="l00104"></a>00104     (osg::Node* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00105"></a>00105   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a11085b2f159303f690f09bd88d7e0885" title="Functions to add map layer without adding it to scene.">insertExistingMapLayer</a>
-<a name="l00106"></a>00106     (osgEarth::ImageLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00107"></a>00107   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a11085b2f159303f690f09bd88d7e0885" title="Functions to add map layer without adding it to scene.">insertExistingMapLayer</a>
-<a name="l00108"></a>00108     (osgEarth::ElevationLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00109"></a>00109   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a11085b2f159303f690f09bd88d7e0885" title="Functions to add map layer without adding it to scene.">insertExistingMapLayer</a>
-<a name="l00110"></a>00110     (osgEarth::ModelLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
-<a name="l00111"></a>00111 };
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 }  <span class="comment">// End namespace Core</span>
-<a name="l00114"></a>00114 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_MAPLAYERGROUP_H_</span>
-<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00063"></a>00063   osgEarth::Util::ObjectPlacer* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a578aea6f66d5d1878f36d9429407fe3d" title="Returns the placer associated with the mapNode.">getObjectPlacer</a>();
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a1a1ac0995aa3549d01da01ec2ac0b948" title="Sets visibility to the layer.">setVisibility</a>(<span class="keywordtype">bool</span> value);
+<a name="l00066"></a>00066   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a138d598f88d721a17d7f317c707b70d1">isVisible</a>();
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068  <span class="keyword">private</span>:
+<a name="l00069"></a>00069   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#adb67d3e48ddca36d0ff8c0e23b26d61f" title="Add the map layer to the osg group of the map layer group.">addToScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>* group);
+<a name="l00070"></a>00070   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#a5a7bbe73cb3602766d4865108999d3ce" title="Remove the layer from the osg group of the map layer group.">removeFromScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>* group);
+<a name="l00071"></a>00071   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ab1d359a93f49d1d56857a33a41b0d81c" title="Notify the map layer that it was inserted into a group.">inserted</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer.html#a8baa31d1f571438f8b020fb3b2f6efac">parent</a>);
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#ae68cb26f7467790de4482c8e3ed11212">setDisabled</a>(<span class="keywordtype">bool</span> disabled);
+<a name="l00074"></a>00074 
+<a name="l00075"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#af38e8bcdd0b9d508150de3e3c48c14b7">00075</a>   QSet&lt;MapLayerInterface*&gt; <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#af38e8bcdd0b9d508150de3e3c48c14b7">mapLayers</a>;
+<a name="l00076"></a>00076 
+<a name="l00078"></a><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#aac6aa0dc4c39e5902b83df2b85f75a03">00078</a>   osg::ref_ptr&lt;osg::Group&gt; <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#aac6aa0dc4c39e5902b83df2b85f75a03" title="Pointer to the subtree of the scene associated with this layer.">nodeGroup</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080   <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html#aaa2b2c7f7fb1311d086a5f3b5601dd83" title="Add map layer without adding it to scene.">createMapLayerNoInsert</a>
+<a name="l00081"></a>00081     (osg::Node* mapLayer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1);
+<a name="l00082"></a>00082 };
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 }  <span class="comment">// End namespace Core</span>
+<a name="l00085"></a>00085 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#pragma warning(pop)  // C2450</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a>00089 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_MAPLAYERGROUP_H_</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -209,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="maplayergroup_8h.html">maplayergroup.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:30 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:46 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

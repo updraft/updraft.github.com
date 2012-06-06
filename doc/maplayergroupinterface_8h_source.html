@@ -112,66 +112,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010   <span class="keyword">class </span>Group;
 <a name="l00011"></a>00011 }
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="namespaceosg_earth.html">00013</a> <span class="keyword">namespace </span>osgEarth {
+<a name="l00013"></a>00013 <span class="keyword">namespace </span>osgEarth {
 <a name="l00014"></a>00014   <span class="keyword">class </span>MapNode;
-<a name="l00015"></a>00015   <span class="keyword">class </span>ImageLayer;
-<a name="l00016"></a>00016   <span class="keyword">class </span>ElevationLayer;
-<a name="l00017"></a>00017   <span class="keyword">class </span>ModelLayer;
-<a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="namespaceosg_earth_1_1_util.html">00019</a>   <span class="keyword">namespace </span>Util {
-<a name="l00020"></a>00020     <span class="keyword">class </span>ObjectPlacer;
-<a name="l00021"></a>00021   }
-<a name="l00022"></a>00022 }
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">namespace </span>Updraft {
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">namespace </span>Core {
-<a name="l00027"></a>00027   <span class="keyword">class </span>MapManager;
-<a name="l00028"></a>00028   <span class="keyword">class </span>SceneManager;
-<a name="l00029"></a>00029 }
-<a name="l00030"></a>00030 
-<a name="l00035"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html">00035</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> {
-<a name="l00036"></a>00036  <span class="keyword">public</span>:
-<a name="l00037"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad0ddceb0342f601739caee056af33371">00037</a>   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad0ddceb0342f601739caee056af33371">~MapLayerGroupInterface</a>() {}
-<a name="l00038"></a>00038 
-<a name="l00047"></a>00047   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">insertMapLayer</a>
-<a name="l00048"></a>00048     (osg::Node* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00049"></a>00049   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">insertMapLayer</a>
-<a name="l00050"></a>00050     (osgEarth::ImageLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00051"></a>00051   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">insertMapLayer</a>
-<a name="l00052"></a>00052     (osgEarth::ElevationLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00053"></a>00053   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#aad026922810c2286b4f888994b956341">insertMapLayer</a>
-<a name="l00054"></a>00054     (osgEarth::ModelLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00056"></a>00056 
-<a name="l00064"></a>00064   <span class="keyword">virtual</span> QVector&lt;MapLayerInterface*&gt;* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a0eb7d2438c17bcb21291a97ff709bedd">insertMapLayerGroup</a>
-<a name="l00065"></a>00065     (QVector&lt;QPair&lt;osg::Node*, QString&gt; &gt; * mapLayerGroup,
-<a name="l00066"></a>00066     <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00067"></a>00067 
-<a name="l00069"></a>00069   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad054388c4c96a132f7da28dabfa4e9be" title="Removes map layer.">removeMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer) = 0;
-<a name="l00070"></a>00070 
-<a name="l00072"></a>00072   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a0c62cffc9a8cdee9966b28abea214008" title="Sets title of the map layer (displayed in the left pane).">setMapLayerTitle</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keyword">const</span> QString &amp;title) = 0;
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016   <span class="keyword">namespace </span>Util {
+<a name="l00017"></a>00017     <span class="keyword">class </span>ObjectPlacer;
+<a name="l00018"></a>00018   }
+<a name="l00019"></a>00019 }
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="keyword">namespace </span>Updraft {
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">namespace </span>Core {
+<a name="l00024"></a>00024   <span class="keyword">class </span>MapManager;
+<a name="l00025"></a>00025   <span class="keyword">class </span>SceneManager;
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00032"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html">00032</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>: <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> {
+<a name="l00033"></a>00033  <span class="keyword">public</span>:
+<a name="l00034"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad0ddceb0342f601739caee056af33371">00034</a>   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad0ddceb0342f601739caee056af33371">~MapLayerGroupInterface</a>() {}
+<a name="l00035"></a>00035 
+<a name="l00040"></a>00040   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a7ff389414a51985c94a5ffd91b75d7a7">createMapLayerGroup</a>(<span class="keyword">const</span> QString &amp;title,
+<a name="l00041"></a>00041     <span class="keywordtype">int</span> pos = -1) = 0;
+<a name="l00042"></a>00042 
+<a name="l00046"></a>00046   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a845a10bf1c9130e320daef1352d70393">createMapLayer</a>(osg::Node* layer,
+<a name="l00047"></a>00047     <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
+<a name="l00048"></a>00048 
+<a name="l00050"></a>00050   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a138939812fd4b11db70a31bbe45d69fb" title="Insert the map layer as a child of this group.">insertMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer, <span class="keywordtype">int</span> pos = -1) = 0;
+<a name="l00051"></a>00051 
+<a name="l00054"></a>00054   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ad054388c4c96a132f7da28dabfa4e9be">removeMapLayer</a>(<a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* layer) = 0;
+<a name="l00055"></a>00055 
+<a name="l00057"></a>00057   <span class="keyword">virtual</span> osg::Group* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a45a55b697925fbb0698f331c32bd7cc7" title="Returns the osg group associated with this map layer group.">getNodeGroup</a>() = 0;
+<a name="l00058"></a>00058 
+<a name="l00060"></a>00060   <span class="keyword">virtual</span> osgEarth::Util::ObjectPlacer* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a77934f74f6892d03f2830283e08b8342" title="Returns the placer associated with the mapNode.">getObjectPlacer</a>() = 0;
+<a name="l00061"></a>00061 
+<a name="l00062"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a99a5f69802c16f7d74a906b6ddd169a1">00062</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_scene_manager.html" title="SceneManager class is a wrapper of the scene, and the scene graph.">Core::SceneManager</a>;
+<a name="l00063"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a466cb56f68a94f360bbb8863f2c0089c">00063</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_manager.html">Core::MapManager</a>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065  <span class="keyword">private</span>:
+<a name="l00066"></a>00066   <span class="comment">// TODO(Kuba): Get rid of this method.</span>
+<a name="l00068"></a>00068 <span class="comment"></span>  <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#aefe9fbf86dff93ccf122a75efffdc2e7" title="Add map layer without adding it to scene.">createMapLayerNoInsert</a>
+<a name="l00069"></a>00069     (osg::Node* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 }  <span class="comment">// End namespace Updraft</span>
 <a name="l00073"></a>00073 
-<a name="l00075"></a>00075   <span class="keyword">virtual</span> osgEarth::MapNode* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#ace37388b9dbb0b3dbd3ed07373caa940" title="Returns the mapNode.">getMapNode</a>() = 0;
-<a name="l00076"></a>00076 
-<a name="l00078"></a>00078   <span class="keyword">virtual</span> osgEarth::Util::ObjectPlacer* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a77934f74f6892d03f2830283e08b8342" title="Returns the placer associated with the mapNode.">getObjectPlacer</a>() = 0;
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a99a5f69802c16f7d74a906b6ddd169a1">00080</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_scene_manager.html" title="SceneManager class is a wrapper of the scene, and the scene graph.">Core::SceneManager</a>;
-<a name="l00081"></a><a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a466cb56f68a94f360bbb8863f2c0089c">00081</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_manager.html">Core::MapManager</a>;
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083  <span class="keyword">private</span>:
-<a name="l00086"></a>00086   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">insertExistingMapLayer</a>
-<a name="l00087"></a>00087     (osg::Node* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00088"></a>00088   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">insertExistingMapLayer</a>
-<a name="l00089"></a>00089     (osgEarth::ImageLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00090"></a>00090   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">insertExistingMapLayer</a>
-<a name="l00091"></a>00091     (osgEarth::ElevationLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00092"></a>00092   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>* <a class="code" href="class_updraft_1_1_map_layer_group_interface.html#a67bc8cf07bbe3b628791c6ac6a5af614">insertExistingMapLayer</a>
-<a name="l00093"></a>00093     (osgEarth::ModelLayer* layer, <span class="keyword">const</span> QString&amp; title, <span class="keywordtype">int</span> pos = -1) = 0;
-<a name="l00095"></a>00095 };
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099 <span class="preprocessor">#endif  // UPDRAFT_SRC_MAPLAYERGROUPINTERFACE_H_</span>
+<a name="l00074"></a>00074 <span class="preprocessor">#endif  // UPDRAFT_SRC_MAPLAYERGROUPINTERFACE_H_</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -192,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="maplayergroupinterface_8h.html">maplayergroupinterface.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:31 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:47 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

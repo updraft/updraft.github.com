@@ -1,5 +1,6 @@
 var namespace_updraft =
 [
+    [ "MapMapObject", "class_updraft_1_1_map_map_object.html", null ],
     [ "CoreInterface", "class_updraft_1_1_core_interface.html", null ],
     [ "EventInfo", "class_updraft_1_1_event_info.html", null ],
     [ "FileRegistration", "struct_updraft_1_1_file_registration.html", null ],

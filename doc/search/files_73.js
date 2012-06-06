@@ -16,5 +16,7 @@ var searchData=
   ['settingstopview_2ecpp',['settingstopview.cpp',['../settingstopview_8cpp.html',1,'']]],
   ['settingstopview_2eh',['settingstopview.h',['../settingstopview_8h.html',1,'']]],
   ['splashscreen_2ecpp',['splashscreen.cpp',['../splashscreen_8cpp.html',1,'']]],
-  ['splashscreen_2eh',['splashscreen.h',['../splashscreen_8h.html',1,'']]]
+  ['splashscreen_2eh',['splashscreen.h',['../splashscreen_8h.html',1,'']]],
+  ['statesaver_2ecpp',['statesaver.cpp',['../statesaver_8cpp.html',1,'']]],
+  ['statesaver_2eh',['statesaver.h',['../statesaver_8h.html',1,'']]]
 ];

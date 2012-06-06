@@ -100,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -115,6 +116,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a0f6eb63d45e94f6ce75988efeed01467">commit</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c1aab737ea2467e8930f31f26a1f00a">reset</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a1587d119457a578add519e9f9624b6fb">restartInfo</a> (bool needsRestart)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a847fc5e00738e2540109226c49516539">SettingsBottomView</a> (QWidget *parent)</td></tr>
@@ -137,12 +141,16 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac9060781f9ee9237798016d470e148b9">createEditors</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a8bcc44664d36780c5275d81290a418ec">createEditorForIndex</a> (const QModelIndex &amp;index)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#aa851077cde5e0135656088e94a1a4e41">paintEvent</a> (QPaintEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af567c0a74394cd62948c719d00c80cf4">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c58b28e6398236a851c0a6597f82f67">horizontalOffset</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c1cd298d13645195ef07e3316a22365">isIndexHidden</a> (const QModelIndex &amp;index) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a78f599abbfa9bb7561191904172a54e8">getSettingDescription</a> (const QModelIndex &amp;settingIndex) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af02b7ba3651a416347a1401292ebadff">settingNeedsRestart</a> (const QModelIndex &amp;settingIndex) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac71f3211c4baee97953107abc41373d9">moveCursor</a> (CursorAction cursorAction, Qt::KeyboardModifiers modifiers)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a34e4855bdb8cad1b8fc815d5aad36869">setSelection</a> (const QRect &amp;rect, QItemSelectionModel::SelectionFlags flags)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a333a29f0b201bd450c616f7a8f6e9841">verticalOffset</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QRegion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a951b3277b04ff8b9a365c712525eff13">visualRegionForSelection</a> (const QItemSelection &amp;selection) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a3db7c3e23ccae98829c9950b5b3f2892">someSettingNeedsRestart</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStackedWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a6f010213750508cab39d36b6b0039064">stack</a></td></tr>
@@ -296,6 +304,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a78f599abbfa9bb7561191904172a54e8"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::getSettingDescription" ref="a78f599abbfa9bb7561191904172a54e8" args="(const QModelIndex &amp;settingIndex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString <a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a78f599abbfa9bb7561191904172a54e8">Updraft::Core::SettingsBottomView::getSettingDescription</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>settingIndex</em></td><td>)</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5c58b28e6398236a851c0a6597f82f67"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::horizontalOffset" ref="a5c58b28e6398236a851c0a6597f82f67" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -399,6 +424,40 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af567c0a74394cd62948c719d00c80cf4"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::resizeEvent" ref="af567c0a74394cd62948c719d00c80cf4" args="(QResizeEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af567c0a74394cd62948c719d00c80cf4">Updraft::Core::SettingsBottomView::resizeEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1587d119457a578add519e9f9624b6fb"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::restartInfo" ref="a1587d119457a578add519e9f9624b6fb" args="(bool needsRestart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a1587d119457a578add519e9f9624b6fb">Updraft::Core::SettingsBottomView::restartInfo</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>needsRestart</em></td><td>)</td>
+          <td><code> [signal]</code></td>
         </tr>
       </table>
 </div>
@@ -527,6 +586,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af02b7ba3651a416347a1401292ebadff"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::settingNeedsRestart" ref="af02b7ba3651a416347a1401292ebadff" args="(const QModelIndex &amp;settingIndex) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af02b7ba3651a416347a1401292ebadff">Updraft::Core::SettingsBottomView::settingNeedsRestart</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>settingIndex</em></td><td>)</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aeab17550b170feb1aca52b6d46c2b868"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::setTopIndex" ref="aeab17550b170feb1aca52b6d46c2b868" args="(const QModelIndex &amp;index)" -->
 <div class="memitem">
 <div class="memproto">
@@ -537,6 +613,22 @@ Private Attributes</h2></td></tr>
           <td class="paramtype">const QModelIndex &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3db7c3e23ccae98829c9950b5b3f2892"></a><!-- doxytag: member="Updraft::Core::SettingsBottomView::someSettingNeedsRestart" ref="a3db7c3e23ccae98829c9950b5b3f2892" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a3db7c3e23ccae98829c9950b5b3f2892">Updraft::Core::SettingsBottomView::someSettingNeedsRestart</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -651,7 +743,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_settings_bottom_view.html">SettingsBottomView</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:51 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

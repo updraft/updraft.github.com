@@ -123,6 +123,7 @@ Inheritance diagram for Updraft::Airspaces::Airspaces:</div>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#aa9468f26ee7e36172d617465540b289d">mapLayerDisplayed</a> (bool value, <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *sender)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a365561d9e1251253f5e49e60acb52b2d">reloadAirspaces</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#ac527433ad8739636209125db538f3607">contextMenuRequested</a> (QPoint pos, <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *sender)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a72c68422968f689765380e837e1eba33">Airspaces</a> ()</td></tr>
@@ -140,7 +141,6 @@ Private Types</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_updraft_1_1_file_registration.html">FileRegistration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a93d6ea08f124549c764b1fa18a2a6624">OAirspaceFileReg</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registration for loading <a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html">Airspaces</a> from <a class="el" href="namespace_open_airspace.html">OpenAirspace</a> file.  <a href="#a93d6ea08f124549c764b1fa18a2a6624"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a3d38864dbfb28d87fa15565e5c726d2f">mapLayers</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; QPair&lt; osg::Node <br class="typebreak"/>
 *, QString &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#ab65024e3ce6ace4398d6ced811eef1c6">mapNodes</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a829654681ba8c1777dde94fbeae88794">mapLayerGroup</a></td></tr>
@@ -183,6 +183,33 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac527433ad8739636209125db538f3607"></a><!-- doxytag: member="Updraft::Airspaces::Airspaces::contextMenuRequested" ref="ac527433ad8739636209125db538f3607" args="(QPoint pos, MapLayerInterface *sender)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#ac527433ad8739636209125db538f3607">Updraft::Airspaces::Airspaces::contextMenuRequested</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a41207f70cb8f787f8a3a0b172908d211"></a><!-- doxytag: member="Updraft::Airspaces::Airspaces::deinitialize" ref="a41207f70cb8f787f8a3a0b172908d211" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -359,19 +386,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3d38864dbfb28d87fa15565e5c726d2f"></a><!-- doxytag: member="Updraft::Airspaces::Airspaces::mapLayers" ref="a3d38864dbfb28d87fa15565e5c726d2f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector&lt;<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a>*&gt;* <a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html#a3d38864dbfb28d87fa15565e5c726d2f">Updraft::Airspaces::Airspaces::mapLayers</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ab65024e3ce6ace4398d6ced811eef1c6"></a><!-- doxytag: member="Updraft::Airspaces::Airspaces::mapNodes" ref="ab65024e3ce6ace4398d6ced811eef1c6" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +440,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_airspaces.html">Airspaces</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_airspaces_1_1_airspaces.html">Airspaces</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

@@ -105,45 +105,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QList&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QString&gt;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QStandardItemModel&gt;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;../coreinterface.h&quot;</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>Updraft {
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">class </span>PluginBase;
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">namespace </span>Core {
-<a name="l00015"></a>00015 
-<a name="l00018"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html">00018</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html">FileTypeManager</a> {
-<a name="l00019"></a>00019  <span class="keyword">public</span>:
-<a name="l00020"></a>00020   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#af0ff7f2553e6e908149e6bd9b8ac58db">registerFiletype</a>(<span class="keyword">const</span> <a class="code" href="struct_updraft_1_1_file_registration.html">FileRegistration</a> &amp;registration);
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#ae00d5231fa0fd362c07a1fe778a45f7c">openFile</a>(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> showDialog = <span class="keyword">true</span>) <span class="keyword">const</span>;
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a6fdf78d46fba2f82f571c503c12aedab">openFileDialog</a>(<span class="keyword">const</span> QString &amp;caption) <span class="keyword">const</span>;
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026  <span class="keyword">private</span>:
-<a name="l00027"></a>00027   <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager_1_1_file_open_option.html" title="Represents a single option to open a file.">FileOpenOption</a>;
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a10c682314ffa124fec3b186d9eea1e2b">getOpenOptions</a>(QString path, QStandardItemModel* out) <span class="keyword">const</span>;
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#ae60237c7a55cba21019a11fc7efe35f2">importFile</a>(QString *newPath,
-<a name="l00032"></a>00032     <span class="keyword">const</span> QString &amp;importDirectory, <span class="keyword">const</span> QString &amp;srcPath) <span class="keyword">const</span>;
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a2e3891e02461a1fbf4221197ffaceb45">openFileInternal</a>(<span class="keyword">const</span> QString &amp;path,
-<a name="l00035"></a>00035     QStandardItemModel <span class="keyword">const</span>* model) <span class="keyword">const</span>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a4e0c0d53a348fed6c9bd9b85d1980d4d">00037</a>   QList&lt;FileRegistration&gt; <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a4e0c0d53a348fed6c9bd9b85d1980d4d">registered</a>;
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a0ac1de38c37ae2272f64264cb9c238e9">00039</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_open_dialog.html">FileOpenDialog</a>;
-<a name="l00040"></a>00040 };
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 }  <span class="comment">// End namespace Core</span>
-<a name="l00043"></a>00043 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QDir&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;QStandardItemModel&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;../coreinterface.h&quot;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>Updraft {
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">class </span>PluginBase;
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>Core {
+<a name="l00016"></a>00016 
+<a name="l00019"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html">00019</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html">FileTypeManager</a> {
+<a name="l00020"></a>00020  <span class="keyword">public</span>:
+<a name="l00021"></a>00021   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#af0ff7f2553e6e908149e6bd9b8ac58db">registerFiletype</a>(<span class="keyword">const</span> <a class="code" href="struct_updraft_1_1_file_registration.html">FileRegistration</a> &amp;registration);
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#ae00d5231fa0fd362c07a1fe778a45f7c">openFile</a>(<span class="keyword">const</span> QString &amp;path, <span class="keywordtype">bool</span> showDialog = <span class="keyword">true</span>) <span class="keyword">const</span>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a8f032389d9904d0f30ea43d758a12679">openFileDialog</a>(<span class="keyword">const</span> QString &amp;caption);
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027   QDir <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#ab46c159ddfbacc94fb4962e4485d349c">lastDirectory</a>();
+<a name="l00028"></a>00028   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#aff7f834b5e0718dd9a7307fe1068ab2f">setLastDirectory</a>(<span class="keyword">const</span> QDir&amp; dir);
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030  <span class="keyword">private</span>:
+<a name="l00031"></a>00031   <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager_1_1_file_open_option.html" title="Represents a single option to open a file.">FileOpenOption</a>;
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a10c682314ffa124fec3b186d9eea1e2b">getOpenOptions</a>(QString path, QStandardItemModel* out) <span class="keyword">const</span>;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#ae60237c7a55cba21019a11fc7efe35f2">importFile</a>(QString *newPath,
+<a name="l00036"></a>00036     <span class="keyword">const</span> QString &amp;importDirectory, <span class="keyword">const</span> QString &amp;srcPath) <span class="keyword">const</span>;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a2e3891e02461a1fbf4221197ffaceb45">openFileInternal</a>(<span class="keyword">const</span> QString &amp;path,
+<a name="l00039"></a>00039     QStandardItemModel <span class="keyword">const</span>* model) <span class="keyword">const</span>;
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a4e0c0d53a348fed6c9bd9b85d1980d4d">00041</a>   QList&lt;FileRegistration&gt; <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a4e0c0d53a348fed6c9bd9b85d1980d4d">registered</a>;
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a0ac1de38c37ae2272f64264cb9c238e9">00043</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_file_open_dialog.html">FileOpenDialog</a>;
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_FILETYPEMANAGER_H_</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00045"></a><a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a6dc247db210ef3e677278fc66c354e78">00045</a>   QString <a class="code" href="class_updraft_1_1_core_1_1_file_type_manager.html#a6dc247db210ef3e677278fc66c354e78">lastFileOpenDir</a>;
+<a name="l00046"></a>00046 };
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 }  <span class="comment">// End namespace Core</span>
+<a name="l00049"></a>00049 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_FILETYPEMANAGER_H_</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -164,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="filetypemanager_8h.html">filetypemanager.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:30 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:46 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

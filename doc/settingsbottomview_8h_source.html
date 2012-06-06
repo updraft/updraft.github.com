@@ -133,36 +133,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a0f6eb63d45e94f6ce75988efeed01467">commit</a>();
 <a name="l00033"></a>00033   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c1aab737ea2467e8930f31f26a1f00a">reset</a>();
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035  <span class="keyword">protected</span>:
-<a name="l00036"></a>00036   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac9060781f9ee9237798016d470e148b9">createEditors</a>();
-<a name="l00037"></a>00037   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a8bcc44664d36780c5275d81290a418ec">createEditorForIndex</a>(<span class="keyword">const</span> QModelIndex&amp; index);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#aa851077cde5e0135656088e94a1a4e41">paintEvent</a>(QPaintEvent * event);
-<a name="l00040"></a>00040   <span class="keywordtype">int</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c58b28e6398236a851c0a6597f82f67">horizontalOffset</a>() <span class="keyword">const</span>;
-<a name="l00041"></a>00041   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c1cd298d13645195ef07e3316a22365">isIndexHidden</a>(<span class="keyword">const</span> QModelIndex &amp; index) <span class="keyword">const</span>;
-<a name="l00042"></a>00042   QModelIndex <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac71f3211c4baee97953107abc41373d9">moveCursor</a>(CursorAction cursorAction,
-<a name="l00043"></a>00043     Qt::KeyboardModifiers modifiers);
-<a name="l00044"></a>00044   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a34e4855bdb8cad1b8fc815d5aad36869">setSelection</a>(<span class="keyword">const</span> QRect &amp; rect,
-<a name="l00045"></a>00045     QItemSelectionModel::SelectionFlags flags);
-<a name="l00046"></a>00046   <span class="keywordtype">int</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a333a29f0b201bd450c616f7a8f6e9841">verticalOffset</a>() <span class="keyword">const</span>;
-<a name="l00047"></a>00047   QRegion <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a951b3277b04ff8b9a365c712525eff13">visualRegionForSelection</a>(<span class="keyword">const</span> QItemSelection &amp; selection) <span class="keyword">const</span>;
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049  <span class="keyword">protected</span> slots:
-<a name="l00050"></a>00050   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a312943f8717ddd02f2baabf49089ebe5">commitData</a>(QWidget* editor);
-<a name="l00051"></a>00051   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ab2de76cd3da4633825731d2d6c1f75ca">dataChanged</a>(<span class="keyword">const</span> QModelIndex&amp; topLeft, <span class="keyword">const</span> QModelIndex&amp; bottomRight);
-<a name="l00052"></a>00052   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a2fc13a9dca0711bddbd19430e601d6ca">rowsInserted</a>(<span class="keyword">const</span> QModelIndex&amp; parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054  <span class="keyword">private</span>:
-<a name="l00056"></a><a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a6f010213750508cab39d36b6b0039064">00056</a>   QStackedWidget* <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a6f010213750508cab39d36b6b0039064" title="Stack of the top-level widgets.">stack</a>;
-<a name="l00057"></a>00057 
-<a name="l00059"></a><a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a02c4943eb33affeed7f59ae2960cb0d3">00059</a>   QModelIndex <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a02c4943eb33affeed7f59ae2960cb0d3" title="A helper index used when reacting to a setting data row insertion.">insertionIndex</a>;
-<a name="l00060"></a>00060 };
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 }  <span class="comment">// End namespace Core</span>
-<a name="l00063"></a>00063 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_SETTINGSBOTTOMVIEW_H_</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span>
+<a name="l00035"></a>00035  signals:
+<a name="l00036"></a>00036   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a1587d119457a578add519e9f9624b6fb">restartInfo</a>(<span class="keywordtype">bool</span> needsRestart);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038  <span class="keyword">protected</span>:
+<a name="l00039"></a>00039   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac9060781f9ee9237798016d470e148b9">createEditors</a>();
+<a name="l00040"></a>00040   QWidget* <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a8bcc44664d36780c5275d81290a418ec">createEditorForIndex</a>(<span class="keyword">const</span> QModelIndex&amp; index);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#aa851077cde5e0135656088e94a1a4e41">paintEvent</a>(QPaintEvent* event);
+<a name="l00043"></a>00043   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af567c0a74394cd62948c719d00c80cf4">resizeEvent</a>(QResizeEvent* event);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <span class="keywordtype">int</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c58b28e6398236a851c0a6597f82f67">horizontalOffset</a>() <span class="keyword">const</span>;
+<a name="l00046"></a>00046   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c1cd298d13645195ef07e3316a22365">isIndexHidden</a>(<span class="keyword">const</span> QModelIndex &amp; index) <span class="keyword">const</span>;
+<a name="l00047"></a>00047   QString <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a78f599abbfa9bb7561191904172a54e8">getSettingDescription</a>(<span class="keyword">const</span> QModelIndex&amp; settingIndex) <span class="keyword">const</span>;
+<a name="l00048"></a>00048   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#af02b7ba3651a416347a1401292ebadff">settingNeedsRestart</a>(<span class="keyword">const</span> QModelIndex&amp; settingIndex) <span class="keyword">const</span>;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050   QModelIndex <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ac71f3211c4baee97953107abc41373d9">moveCursor</a>(CursorAction cursorAction,
+<a name="l00051"></a>00051     Qt::KeyboardModifiers modifiers);
+<a name="l00052"></a>00052   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a34e4855bdb8cad1b8fc815d5aad36869">setSelection</a>(<span class="keyword">const</span> QRect &amp; rect,
+<a name="l00053"></a>00053     QItemSelectionModel::SelectionFlags flags);
+<a name="l00054"></a>00054   <span class="keywordtype">int</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a333a29f0b201bd450c616f7a8f6e9841">verticalOffset</a>() <span class="keyword">const</span>;
+<a name="l00055"></a>00055   QRegion <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a951b3277b04ff8b9a365c712525eff13">visualRegionForSelection</a>(<span class="keyword">const</span> QItemSelection &amp; selection) <span class="keyword">const</span>;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a3db7c3e23ccae98829c9950b5b3f2892">someSettingNeedsRestart</a>();
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059  <span class="keyword">protected</span> slots:
+<a name="l00060"></a>00060   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a312943f8717ddd02f2baabf49089ebe5">commitData</a>(QWidget* editor);
+<a name="l00061"></a>00061   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#ab2de76cd3da4633825731d2d6c1f75ca">dataChanged</a>(<span class="keyword">const</span> QModelIndex&amp; topLeft, <span class="keyword">const</span> QModelIndex&amp; bottomRight);
+<a name="l00062"></a>00062   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a2fc13a9dca0711bddbd19430e601d6ca">rowsInserted</a>(<span class="keyword">const</span> QModelIndex&amp; parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064  <span class="keyword">private</span>:
+<a name="l00066"></a><a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a6f010213750508cab39d36b6b0039064">00066</a>   QStackedWidget* <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a6f010213750508cab39d36b6b0039064" title="Stack of the top-level widgets.">stack</a>;
+<a name="l00067"></a>00067 
+<a name="l00069"></a><a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a02c4943eb33affeed7f59ae2960cb0d3">00069</a>   QModelIndex <a class="code" href="class_updraft_1_1_core_1_1_settings_bottom_view.html#a02c4943eb33affeed7f59ae2960cb0d3" title="A helper index used when reacting to a setting data row insertion.">insertionIndex</a>;
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 }  <span class="comment">// End namespace Core</span>
+<a name="l00073"></a>00073 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_UI_SETTINGSBOTTOMVIEW_H_</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -183,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="settingsbottomview_8h.html">settingsbottomview.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:30 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:46 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

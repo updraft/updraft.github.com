@@ -104,47 +104,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define UPDRAFT_SRC_MAPLAYERINTERFACE_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="keyword">class </span>QObject;
-<a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">namespace </span>Updraft {
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="keyword">namespace </span>Core {
-<a name="l00009"></a>00009   <span class="keyword">class </span>MapLayerGroup;
-<a name="l00010"></a>00010   <span class="keyword">class </span>SceneManager;
-<a name="l00011"></a>00011 }
-<a name="l00012"></a>00012 
-<a name="l00015"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html">00015</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> {
-<a name="l00016"></a>00016  <span class="keyword">public</span>:
-<a name="l00017"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a3d1cfdace1879c0c3c4261858a7e281f">00017</a>   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a3d1cfdace1879c0c3c4261858a7e281f">~MapLayerInterface</a>() {}
-<a name="l00018"></a>00018 
-<a name="l00022"></a>00022   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#abf29566384de3d39975453cec7487d6e">connectSignalDisplayed</a>(<span class="keyword">const</span> QObject* receiver,
-<a name="l00023"></a>00023     <span class="keyword">const</span> <span class="keywordtype">char</span> *method) = 0;
-<a name="l00024"></a>00024 
-<a name="l00028"></a>00028   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a8e40215c235993c23dc8fa3b534d2da4">connectSignalChecked</a>(<span class="keyword">const</span> QObject* receiver,
-<a name="l00029"></a>00029     <span class="keyword">const</span> <span class="keywordtype">char</span> *method) = 0;
-<a name="l00030"></a>00030 
-<a name="l00034"></a>00034   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a96f1b3f6d3ab67a6d4a98f5d18ea71a5">connectSlotSetVisibility</a>(<span class="keyword">const</span> QObject* sender,
-<a name="l00035"></a>00035     <span class="keyword">const</span> <span class="keywordtype">char</span> *method) = 0;
-<a name="l00036"></a>00036 
-<a name="l00041"></a>00041   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a39a966b64e88ddb498fd02fab09c8cab">connectCheckedToVisibility</a>() = 0;
-<a name="l00042"></a>00042 
-<a name="l00044"></a>00044   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a39ca6cfc2ec4176857f16ab38fca8106" title="Sets visibility to the layer.">setVisible</a>(<span class="keywordtype">bool</span> value) = 0;
+<a name="l00005"></a>00005 <span class="keyword">class </span>QTreeWidgetItem;
+<a name="l00006"></a>00006 <span class="keyword">class </span>QPoint;
+<a name="l00007"></a>00007 <span class="keyword">class </span>QAction;
+<a name="l00008"></a>00008 <span class="keyword">class </span>QString;
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="keyword">namespace </span>Updraft {
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="keyword">namespace </span>Core {
+<a name="l00013"></a>00013   <span class="keyword">class </span>MapLayerGroup;
+<a name="l00014"></a>00014   <span class="keyword">class </span>MainWindow;
+<a name="l00015"></a>00015 }
+<a name="l00016"></a>00016 
+<a name="l00019"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html">00019</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> {
+<a name="l00020"></a>00020  <span class="keyword">public</span>:
+<a name="l00021"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a3d1cfdace1879c0c3c4261858a7e281f">00021</a>   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a3d1cfdace1879c0c3c4261858a7e281f">~MapLayerInterface</a>() {}
+<a name="l00022"></a>00022 
+<a name="l00026"></a>00026   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a8e40215c235993c23dc8fa3b534d2da4">connectSignalChecked</a>(<span class="keyword">const</span> QObject* receiver,
+<a name="l00027"></a>00027     <span class="keyword">const</span> <span class="keywordtype">char</span> *method) = 0;
+<a name="l00028"></a>00028 
+<a name="l00031"></a>00031   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a608433820acb8e43b1abb0d14f5a0371">connectSignalContextMenuRequested</a>(<span class="keyword">const</span> QObject* receiver,
+<a name="l00032"></a>00032     <span class="keyword">const</span> <span class="keywordtype">char</span>* method) = 0;
+<a name="l00033"></a>00033 
+<a name="l00037"></a>00037   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a96f1b3f6d3ab67a6d4a98f5d18ea71a5">connectSlotSetVisibility</a>(<span class="keyword">const</span> QObject* sender,
+<a name="l00038"></a>00038     <span class="keyword">const</span> <span class="keywordtype">char</span> *method) = 0;
+<a name="l00039"></a>00039 
+<a name="l00044"></a>00044   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a39a966b64e88ddb498fd02fab09c8cab">connectCheckedToVisibility</a>() = 0;
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a28caf38a424272b1c67e43d918a47078">isVisible</a>() = 0;
-<a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a99a5f69802c16f7d74a906b6ddd169a1">00048</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_scene_manager.html" title="SceneManager class is a wrapper of the scene, and the scene graph.">Core::SceneManager</a>;
-<a name="l00049"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a8b9a14a7248ae982cc4cf93ca600013c">00049</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a>;
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051  <span class="keyword">private</span>:
-<a name="l00052"></a>00052   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#ab6ff4bd10df04f6567f9579bafeb76f7">emitChecked</a>(<span class="keywordtype">bool</span> value) = 0;
-<a name="l00053"></a>00053   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a489ecb73f4e16db395c780172b87d6a3">emitDisplayed</a>(<span class="keywordtype">bool</span> value) = 0;
+<a name="l00047"></a>00047   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a8482840210517eb84f18a2071e2484f6" title="Change the title of this map layer.">setTitle</a>(<span class="keyword">const</span> QString&amp; title) = 0;
+<a name="l00048"></a>00048 
+<a name="l00050"></a>00050   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#afa16531fac32e0d1c0c2b612defd3915" title="Check or uncheck the tree view checkbox.">setChecked</a>(<span class="keywordtype">bool</span> value) = 0;
+<a name="l00051"></a>00051 
+<a name="l00053"></a>00053   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a04ab2eda2cd471d1ab7e5e4f5df04817" title="Allows to disable the check box.">setCheckable</a>(<span class="keywordtype">bool</span> value) = 0;
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a312d843bc35036b7ee505f163966a63b">addToScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group) = 0;
-<a name="l00056"></a>00056   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a947caef0a861666d8b0b988a611c2b62">removeFromScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group) = 0;
-<a name="l00057"></a>00057 };
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00056"></a>00056   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#aa993134098d30fc49111e60397414f37" title="Sets visibility to the layer.">setVisibility</a>(<span class="keywordtype">bool</span> value) = 0;
+<a name="l00057"></a>00057 
 <a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="preprocessor">#endif  // UPDRAFT_SRC_MAPLAYERINTERFACE_H_</span>
+<a name="l00062"></a>00062   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#af9b781e4d4583ceaa7a8739469a10c3c" title="Sets the path used by getDeleteAction.">setFilePath</a>(<span class="keyword">const</span> QString&amp; path) = 0;
+<a name="l00063"></a>00063 
+<a name="l00071"></a>00071   <span class="keyword">virtual</span> QAction* <a class="code" href="class_updraft_1_1_map_layer_interface.html#a2fbe402c4ce5edac83f23baf449565c5">getDeleteAction</a>() = 0;
+<a name="l00072"></a>00072 
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a28caf38a424272b1c67e43d918a47078">isVisible</a>() = 0;
+<a name="l00076"></a>00076 
+<a name="l00077"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a8b9a14a7248ae982cc4cf93ca600013c">00077</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a>;
+<a name="l00078"></a><a class="code" href="class_updraft_1_1_map_layer_interface.html#a9b78015945384be9b683cf4f5a95931f">00078</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_main_window.html">Core::MainWindow</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080  <span class="keyword">protected</span>:
+<a name="l00081"></a>00081   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#ab6ff4bd10df04f6567f9579bafeb76f7">emitChecked</a>(<span class="keywordtype">bool</span> value) = 0;
+<a name="l00082"></a>00082   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a75d4d37871ae627c7a978cff880e8cfc">emitContextMenuRequested</a>(<span class="keyword">const</span> QPoint&amp; pos) = 0;
+<a name="l00083"></a>00083 
+<a name="l00085"></a>00085   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a312d843bc35036b7ee505f163966a63b" title="Add the map layer to the osg group of the map layer group.">addToScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group) = 0;
+<a name="l00086"></a>00086 
+<a name="l00088"></a>00088   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a947caef0a861666d8b0b988a611c2b62" title="Remove the layer from the osg group of the map layer group.">removeFromScene</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a> *group) = 0;
+<a name="l00089"></a>00089 
+<a name="l00091"></a>00091   <span class="keyword">virtual</span> QTreeWidgetItem* <a class="code" href="class_updraft_1_1_map_layer_interface.html#aae2ca3860d70cac01a2343117a397da5" title="Return the tree widget item corresponding to this map layer.">getTreeItem</a>() = 0;
+<a name="l00092"></a>00092 
+<a name="l00094"></a>00094   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#ad362556b712d4f1973dac0ecf7359a6e" title="Notify the map layer that it was inserted into a group.">inserted</a>(<a class="code" href="class_updraft_1_1_core_1_1_map_layer_group.html">Core::MapLayerGroup</a>* parent) = 0;
+<a name="l00095"></a>00095   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_map_layer_interface.html#a7479b77c5909fc173823c493fffb6d52">setDisabled</a>(<span class="keywordtype">bool</span> disabled) = 0;
+<a name="l00096"></a>00096 };
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 <span class="preprocessor">#endif  // UPDRAFT_SRC_MAPLAYERINTERFACE_H_</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -165,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="maplayerinterface_8h.html">maplayerinterface.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:31 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:47 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

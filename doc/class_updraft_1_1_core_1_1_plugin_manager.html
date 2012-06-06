@@ -117,7 +117,6 @@ Data Structures</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a3e0c0b1a504c1b6b5510ca60ac3a76b9">PluginManager</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2e5816b5b54a2c265b80c2b79b598238">~PluginManager</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">finishInit</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#af53fe3c701258141bf2cba75605f56df">getPlugin</a> (const QString &amp;name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to plugin object.  <a href="#af53fe3c701258141bf2cba75605f56df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QDir&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#a2eb4c726c17a728df4aae1171b20781b">getPluginDir</a> (const QString &amp;name)</td></tr>
@@ -146,8 +145,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Load all the plugins but don't create core interface for them and don't initialize them yet. </p>
-<dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">finishInit()</a>; must be called after both <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html">PluginManager</a> and <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html">TranslationManager</a> are created! </dd></dl>
+<p>Load all the plugins but don't create core interface for them and initialize them. </p>
 
 </div>
 </div>
@@ -168,23 +166,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa80ed0b0a8488473f416fd9c0f64944e"></a><!-- doxytag: member="Updraft::Core::PluginManager::finishInit" ref="aa80ed0b0a8488473f416fd9c0f64944e" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html#aa80ed0b0a8488473f416fd9c0f64944e">Updraft::Core::PluginManager::finishInit</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Finalize the initialization. Used to break the circular dependency between plugin manager and translation manager. This method must be called after all other top level objects are ready to avoid problems with not yet working core interface methods. </p>
-
-</div>
-</div>
 <a class="anchor" id="a61c27e83ec95da86d6a42882342ec7bd"></a><!-- doxytag: member="Updraft::Core::PluginManager::finishLoading" ref="a61c27e83ec95da86d6a42882342ec7bd" args="(QObject *obj, const QDir &amp;dir)" -->
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +317,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_plugin_manager.html">PluginManager</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

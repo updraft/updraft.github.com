@@ -11,6 +11,7 @@ var class_updraft_1_1_core_1_1_settings_manager =
     [ "finishInit", "class_updraft_1_1_core_1_1_settings_manager.html#a76782cdb97fff40ec930657251be98c5", null ],
     [ "getGroup", "class_updraft_1_1_core_1_1_settings_manager.html#aade407d7223afdcf6af6453aa8a72c53", null ],
     [ "getSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a42d64d2a5552ee778f162437aabdf2bf", null ],
+    [ "getSettingsDir", "class_updraft_1_1_core_1_1_settings_manager.html#a96f35c8d838535931cd2c706d2240836", null ],
     [ "getSettingsFilename", "class_updraft_1_1_core_1_1_settings_manager.html#a9b8cf5976f1d696d44505fdaa21937ce", null ],
     [ "itemValueChanged", "class_updraft_1_1_core_1_1_settings_manager.html#ad3097cd08ef8831434594f6bee0352f5", null ],
     [ "registerSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a7f6e675a206a28800cbb813e174e4e73", null ],

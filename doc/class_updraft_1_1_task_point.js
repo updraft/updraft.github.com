@@ -8,6 +8,7 @@ var class_updraft_1_1_task_point =
     [ "getName", "class_updraft_1_1_task_point.html#a960e71b53180aceb8b454a1e41775ead", null ],
     [ "setAssignedArea", "class_updraft_1_1_task_point.html#ac4e966cfceef24551cc61e507623488c", null ],
     [ "setLocation", "class_updraft_1_1_task_point.html#a68eb9a0a40b13f6b2a9a1be1116ccd68", null ],
+    [ "setName", "class_updraft_1_1_task_point.html#a919a363deac0b06e49e9c2ed33df3c60", null ],
     [ "setTP", "class_updraft_1_1_task_point.html#a3673992e81737ace5d49be87e0171f9c", null ],
     [ "toDom", "class_updraft_1_1_task_point.html#a6232f262f8a71bcb877f1e962bbffd00", null ],
     [ "area", "class_updraft_1_1_task_point.html#ae310b4fdf5f9a7ebe3f92753bb8b11fa", null ],

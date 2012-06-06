@@ -19,7 +19,7 @@ var searchData=
   ['altimetersetting_5f',['altimeterSetting_',['../class_updraft_1_1_igc_1_1_igc_file.html#aef050dcdcb3272c499cc2f0668131e3a',1,'Updraft::Igc::IgcFile']]],
   ['altitude_5fpen',['ALTITUDE_PEN',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a54aca2c49b1d8b6603300dba26ac932d',1,'Updraft::IgcViewer::PlotWidget']]],
   ['altitudeaxes',['altitudeAxes',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6949bb1a9b1fae64d97cb8f00de6058d',1,'Updraft::IgcViewer::PlotWidget']]],
-  ['altitudeinfo',['altitudeInfo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#aa7f503bc330ca831f1fdafffbcdf08e3',1,'Updraft::IgcViewer::OpenedFile::altitudeInfo()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa0376843ab15246f74351654ff237624',1,'Updraft::IgcViewer::PlotWidget::altitudeInfo()']]],
+  ['altitudeinfo',['altitudeInfo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a2c217634d173837fdca7d52164f74df3',1,'Updraft::IgcViewer::OpenedFile::altitudeInfo()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a32ca14501aa59e1d3f8aaf1004c8b9ac',1,'Updraft::IgcViewer::PlotWidget::altitudeInfo()']]],
   ['altitudeplotpainter',['altitudePlotPainter',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aaf3fd79edd88af810a40f736b2385fcf',1,'Updraft::IgcViewer::PlotWidget']]],
   ['an',['AN',['../class_open_airspace_1_1_airspace.html#ad53485014ee142f5edd336b3f849188c',1,'OpenAirspace::Airspace']]],
   ['arc_5fgranularity',['ARC_GRANULARITY',['../namespace_updraft_1_1_airspaces.html#a7dffb067cb4e6d07ea87d9e292c987fc',1,'Updraft::Airspaces']]],

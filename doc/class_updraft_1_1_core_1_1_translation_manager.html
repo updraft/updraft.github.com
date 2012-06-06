@@ -101,8 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-slots">Private Slots</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
@@ -115,38 +113,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a2fffc83e485e9cc49ec830bae9b3384f">TranslationManager</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#acc293cd2fd9b684288d45fbe494888c9">translate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a576c443080b6138410af74fbd2c96ea1">availableLanguages</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">List all available languages.  <a href="#a576c443080b6138410af74fbd2c96ea1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ab907fb9268f1c1a1ff2a9de41e5734c0">addTranslations</a> (const QDir &amp;dir)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef QPair&lt; <a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> <br class="typebreak"/>
-*, QTranslator * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aad2b4b076ccca900d7dc6a779483535b">PluginTranslator</a></td></tr>
-<tr><td colspan="2"><h2><a name="pri-slots"></a>
-Private Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ab921a261c09bb3a8340abeedb7677a0c">languageChanged</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a180556904e47c6aba0cf6f26fe45a5c2">loadLanguage</a> (const QString &amp;lang)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all the languages to the translator.  <a href="#a180556904e47c6aba0cf6f26fe45a5c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aac9ae0a5da34e58b222d8c0b11cb434d">loadTranslationFile</a> (QTranslator *translator, const QDir &amp;dir, const QString &amp;lang)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to load a single translation file.  <a href="#aac9ae0a5da34e58b222d8c0b11cb434d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef QPair&lt; QDir, <br class="typebreak"/>
+QTranslator * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a6783e6ac6b2d6d38c40d9bc2918e78be">DirTranslator</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aad2b4b076ccca900d7dc6a779483535b">PluginTranslator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ac9b16dbe1ce70e0aca7d1f8dcfd24a42">pluginTranslators</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QTranslator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ae734f08d077ff8e655c8b2cdd2ae64fa">coreTranslator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a6783e6ac6b2d6d38c40d9bc2918e78be">DirTranslator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aa92e518b4b1c5f29cbb16f1e195a1157">dirTranslators</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a65734ef8d68ee4665c5dffc6b3fede6d">languageSetting</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ab9b58cb5778505aefa5d4950551c1e29">defaultLanguage</a> = &quot;english&quot;</td></tr>
 </table>
 <hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="aad2b4b076ccca900d7dc6a779483535b"></a><!-- doxytag: member="Updraft::Core::TranslationManager::PluginTranslator" ref="aad2b4b076ccca900d7dc6a779483535b" args="" -->
+<a class="anchor" id="a6783e6ac6b2d6d38c40d9bc2918e78be"></a><!-- doxytag: member="Updraft::Core::TranslationManager::DirTranslator" ref="a6783e6ac6b2d6d38c40d9bc2918e78be" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef QPair&lt;<a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *, QTranslator *&gt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aad2b4b076ccca900d7dc6a779483535b">Updraft::Core::TranslationManager::PluginTranslator</a><code> [private]</code></td>
+          <td class="memname">typedef QPair&lt;QDir, QTranslator*&gt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a6783e6ac6b2d6d38c40d9bc2918e78be">Updraft::Core::TranslationManager::DirTranslator</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -172,6 +160,24 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab907fb9268f1c1a1ff2a9de41e5734c0"></a><!-- doxytag: member="Updraft::Core::TranslationManager::addTranslations" ref="ab907fb9268f1c1a1ff2a9de41e5734c0" args="(const QDir &amp;dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ab907fb9268f1c1a1ff2a9de41e5734c0">Updraft::Core::TranslationManager::addTranslations</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QDir &amp;&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add a directory with translation and attempt to load a language from it. </p>
+
+</div>
+</div>
 <a class="anchor" id="a576c443080b6138410af74fbd2c96ea1"></a><!-- doxytag: member="Updraft::Core::TranslationManager::availableLanguages" ref="a576c443080b6138410af74fbd2c96ea1" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -190,107 +196,7 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab921a261c09bb3a8340abeedb7677a0c"></a><!-- doxytag: member="Updraft::Core::TranslationManager::languageChanged" ref="ab921a261c09bb3a8340abeedb7677a0c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ab921a261c09bb3a8340abeedb7677a0c">Updraft::Core::TranslationManager::languageChanged</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Called when the language setting changes. Sets the language and calls the <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#acc293cd2fd9b684288d45fbe494888c9">translate()</a> method on updraft singleton (= the whole application). </p>
-
-</div>
-</div>
-<a class="anchor" id="a180556904e47c6aba0cf6f26fe45a5c2"></a><!-- doxytag: member="Updraft::Core::TranslationManager::loadLanguage" ref="a180556904e47c6aba0cf6f26fe45a5c2" args="(const QString &amp;lang)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a180556904e47c6aba0cf6f26fe45a5c2">Updraft::Core::TranslationManager::loadLanguage</a> </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>lang</em></td><td>)</td>
-          <td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Load all the languages to the translator. </p>
-
-</div>
-</div>
-<a class="anchor" id="aac9ae0a5da34e58b222d8c0b11cb434d"></a><!-- doxytag: member="Updraft::Core::TranslationManager::loadTranslationFile" ref="aac9ae0a5da34e58b222d8c0b11cb434d" args="(QTranslator *translator, const QDir &amp;dir, const QString &amp;lang)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aac9ae0a5da34e58b222d8c0b11cb434d">Updraft::Core::TranslationManager::loadTranslationFile</a> </td>
-          <td>(</td>
-          <td class="paramtype">QTranslator *&#160;</td>
-          <td class="paramname"><em>translator</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QDir &amp;&#160;</td>
-          <td class="paramname"><em>dir</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>lang</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Attempt to load a single translation file. </p>
-
-</div>
-</div>
-<a class="anchor" id="acc293cd2fd9b684288d45fbe494888c9"></a><!-- doxytag: member="Updraft::Core::TranslationManager::translate" ref="acc293cd2fd9b684288d45fbe494888c9" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#acc293cd2fd9b684288d45fbe494888c9">Updraft::Core::TranslationManager::translate</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <hr/><h2>Field Documentation</h2>
-<a class="anchor" id="ae734f08d077ff8e655c8b2cdd2ae64fa"></a><!-- doxytag: member="Updraft::Core::TranslationManager::coreTranslator" ref="ae734f08d077ff8e655c8b2cdd2ae64fa" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QTranslator* <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ae734f08d077ff8e655c8b2cdd2ae64fa">Updraft::Core::TranslationManager::coreTranslator</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ab9b58cb5778505aefa5d4950551c1e29"></a><!-- doxytag: member="Updraft::Core::TranslationManager::defaultLanguage" ref="ab9b58cb5778505aefa5d4950551c1e29" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -304,12 +210,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a65734ef8d68ee4665c5dffc6b3fede6d"></a><!-- doxytag: member="Updraft::Core::TranslationManager::languageSetting" ref="a65734ef8d68ee4665c5dffc6b3fede6d" args="" -->
+<a class="anchor" id="aa92e518b4b1c5f29cbb16f1e195a1157"></a><!-- doxytag: member="Updraft::Core::TranslationManager::dirTranslators" ref="aa92e518b4b1c5f29cbb16f1e195a1157" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a>* <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a65734ef8d68ee4665c5dffc6b3fede6d">Updraft::Core::TranslationManager::languageSetting</a><code> [private]</code></td>
+          <td class="memname">QList&lt;<a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a6783e6ac6b2d6d38c40d9bc2918e78be">DirTranslator</a>&gt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aa92e518b4b1c5f29cbb16f1e195a1157">Updraft::Core::TranslationManager::dirTranslators</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -317,12 +223,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac9b16dbe1ce70e0aca7d1f8dcfd24a42"></a><!-- doxytag: member="Updraft::Core::TranslationManager::pluginTranslators" ref="ac9b16dbe1ce70e0aca7d1f8dcfd24a42" args="" -->
+<a class="anchor" id="a65734ef8d68ee4665c5dffc6b3fede6d"></a><!-- doxytag: member="Updraft::Core::TranslationManager::languageSetting" ref="a65734ef8d68ee4665c5dffc6b3fede6d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#aad2b4b076ccca900d7dc6a779483535b">PluginTranslator</a>&gt; <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#ac9b16dbe1ce70e0aca7d1f8dcfd24a42">Updraft::Core::TranslationManager::pluginTranslators</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a>* <a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html#a65734ef8d68ee4665c5dffc6b3fede6d">Updraft::Core::TranslationManager::languageSetting</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -356,7 +262,7 @@ Static Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_translation_manager.html">TranslationManager</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:51 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>
