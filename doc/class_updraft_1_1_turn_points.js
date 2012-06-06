@@ -4,7 +4,9 @@ var class_updraft_1_1_turn_points =
     [ "TurnPoints", "class_updraft_1_1_turn_points.html#a883a8fce9314b2dc854e6d1a36887f3f", null ],
     [ "~TurnPoints", "class_updraft_1_1_turn_points.html#afc293dd2c0ad15c0487d673c5096d957", null ],
     [ "addLayer", "class_updraft_1_1_turn_points.html#a7d74c0083cd35e917e9daafd5b690966", null ],
+    [ "contextMenuRequested", "class_updraft_1_1_turn_points.html#ae1bb7a197929f95a3dc4803ddfc43be0", null ],
     [ "deinitialize", "class_updraft_1_1_turn_points.html#abf6419fb531d0c87e1f6bced77d1c449", null ],
+    [ "deleteTpLayer", "class_updraft_1_1_turn_points.html#af57dd8053c1e8ee2e62d8f2ba5dbcbea", null ],
     [ "fileIdentification", "class_updraft_1_1_turn_points.html#aa0b874bc13e803983900e0a755090625", null ],
     [ "fileOpen", "class_updraft_1_1_turn_points.html#a2a39ac46bbe813e2dc2a056aaee4b050", null ],
     [ "fillContextMenu", "class_updraft_1_1_turn_points.html#a21d1c5cd2cf910d463dc3f755ba3ebf1", null ],
@@ -17,6 +19,7 @@ var class_updraft_1_1_turn_points =
     [ "wantsToHandleClick", "class_updraft_1_1_turn_points.html#a146ebe2c144f8459ee9312e14de7fffc", null ],
     [ "cupTPsReg", "class_updraft_1_1_turn_points.html#a60ef3431f85baaebef5889a07e7e649b", null ],
     [ "layers", "class_updraft_1_1_turn_points.html#a8381a8bb3b99290ef599544c5abf6e62", null ],
+    [ "layerToDelete", "class_updraft_1_1_turn_points.html#a7504a92d05bf3e45e6ff57d10e10dc7e", null ],
     [ "mapLayerGroup", "class_updraft_1_1_turn_points.html#ad1fb193071dac4bc561a8933ffe11843", null ],
     [ "settings", "class_updraft_1_1_turn_points.html#aea147bb8766f4d5bad948d63269e9244", null ]
 ];

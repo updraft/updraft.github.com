@@ -121,34 +121,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019   <span class="keywordtype">void</span> <span class="keyword">set</span>(<span class="keyword">const</span> QVariant&amp; newValue);
 <a name="l00020"></a>00020   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#ac7dbc5e73b1784473fe291ddde8272ff">setDescription</a>(<span class="keyword">const</span> QString&amp; newDescription);
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#ab259f66b8fdbb739d16926b8c4b9847d">callOnValueChanged</a>(QObject* slotOwner, <span class="keyword">const</span> <span class="keywordtype">char</span>* slot);
+<a name="l00022"></a>00022   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a86b07788811cdaf5c459ea82f871be09">setNeedsRestart</a>(<span class="keywordtype">bool</span> needsRestart);
 <a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a25fcdead40f9dfeb5f43fdbc41664480">00024</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>;
-<a name="l00025"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a24cc12c56e127057107bb63f74f91cfd">00025</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_settings_delegate.html">SettingsDelegate</a>;
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027  signals:
-<a name="l00028"></a>00028   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a1d79e00931bcd6a8621b0eb0b9ab59bf">valueChanged</a>();
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030  <span class="keyword">private</span>:
-<a name="l00031"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#af4d1bce87fe41a04478daf3ad92db52d">00031</a>   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#af4d1bce87fe41a04478daf3ad92db52d">emitValueChanged</a>() {
-<a name="l00032"></a>00032     emit <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a1d79e00931bcd6a8621b0eb0b9ab59bf">valueChanged</a>();
-<a name="l00033"></a>00033   }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035   <span class="comment">// Only SettingsManager can construct this class</span>
-<a name="l00036"></a>00036   <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#ad97f8b115830a0899896617f155d628b">BasicSetting</a>(<a class="code" href="class_updraft_1_1_core_1_1_settings_item.html">SettingsItem</a>* settingItem, <a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>* mgr);
-<a name="l00037"></a>00037 
-<a name="l00039"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a84bd6befa92de828c6614771dbd3c396">00039</a>   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a84bd6befa92de828c6614771dbd3c396" title="Invalidates the item pointer.">invalidate</a>() { <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16" title="Pointer to the value item.">item</a> = NULL; }
-<a name="l00040"></a>00040 
-<a name="l00042"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16">00042</a>   <a class="code" href="class_updraft_1_1_core_1_1_settings_item.html">SettingsItem</a>* <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16" title="Pointer to the value item.">item</a>;
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a625091aea668f20fbfd4c2069e8ba558">00044</a>   <a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>* <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a625091aea668f20fbfd4c2069e8ba558">settingsManager</a>;
-<a name="l00045"></a>00045 };
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 }  <span class="comment">// End namespace Core</span>
-<a name="l00048"></a>00048 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_BASICSETTING_H_</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span>
+<a name="l00024"></a>00024   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#ab259f66b8fdbb739d16926b8c4b9847d">callOnValueChanged</a>(QObject* slotOwner, <span class="keyword">const</span> <span class="keywordtype">char</span>* slot);
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a25fcdead40f9dfeb5f43fdbc41664480">00026</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>;
+<a name="l00027"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a24cc12c56e127057107bb63f74f91cfd">00027</a>   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_core_1_1_settings_delegate.html">SettingsDelegate</a>;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029  signals:
+<a name="l00030"></a>00030   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a1d79e00931bcd6a8621b0eb0b9ab59bf">valueChanged</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032  <span class="keyword">private</span>:
+<a name="l00033"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#af4d1bce87fe41a04478daf3ad92db52d">00033</a>   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#af4d1bce87fe41a04478daf3ad92db52d">emitValueChanged</a>() {
+<a name="l00034"></a>00034     emit <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a1d79e00931bcd6a8621b0eb0b9ab59bf">valueChanged</a>();
+<a name="l00035"></a>00035   }
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037   <span class="comment">// Only SettingsManager can construct this class</span>
+<a name="l00038"></a>00038   <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#ad97f8b115830a0899896617f155d628b">BasicSetting</a>(<a class="code" href="class_updraft_1_1_core_1_1_settings_item.html">SettingsItem</a>* settingItem, <a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>* mgr);
+<a name="l00039"></a>00039 
+<a name="l00041"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a84bd6befa92de828c6614771dbd3c396">00041</a>   <span class="keywordtype">void</span> <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a84bd6befa92de828c6614771dbd3c396" title="Invalidates the item pointer.">invalidate</a>() { <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16" title="Pointer to the value item.">item</a> = NULL; }
+<a name="l00042"></a>00042 
+<a name="l00044"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16">00044</a>   <a class="code" href="class_updraft_1_1_core_1_1_settings_item.html">SettingsItem</a>* <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a4907c02f075593c321ad4798f076ed16" title="Pointer to the value item.">item</a>;
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a625091aea668f20fbfd4c2069e8ba558">00046</a>   <a class="code" href="class_updraft_1_1_core_1_1_settings_manager.html">SettingsManager</a>* <a class="code" href="class_updraft_1_1_core_1_1_basic_setting.html#a625091aea668f20fbfd4c2069e8ba558">settingsManager</a>;
+<a name="l00047"></a>00047 };
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 }  <span class="comment">// End namespace Core</span>
+<a name="l00050"></a>00050 }  <span class="comment">// End namespace Updraft</span>
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="preprocessor">#endif  // UPDRAFT_SRC_CORE_BASICSETTING_H_</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -169,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="basicsetting_8h.html">basicsetting.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:30 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:46 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

@@ -122,6 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_setting_interface.html#ab5e081728ddae28caa025b21d6e16a37">get</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_setting_interface.html#a166c257e1115b2ed68b41fbfdefef36c">set</a> (const QVariant &amp;value)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_setting_interface.html#a06f2ea810ce6f21b5aa15ab426b8dd58">setDescription</a> (const QString &amp;newDescription)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_setting_interface.html#a6306637ac3ef7ec1fdad2aceed690874">setNeedsRestart</a> (bool needsRestart)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_setting_interface.html#a625b417c0730ca5591a1e946892a1873">callOnValueChanged</a> (QObject *slotOwner, const char *slot)=0</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -227,6 +228,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6306637ac3ef7ec1fdad2aceed690874"></a><!-- doxytag: member="Updraft::SettingInterface::setNeedsRestart" ref="a6306637ac3ef7ec1fdad2aceed690874" args="(bool needsRestart)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_updraft_1_1_setting_interface.html#a6306637ac3ef7ec1fdad2aceed690874">Updraft::SettingInterface::setNeedsRestart</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>needsRestart</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_updraft_1_1_core_1_1_basic_setting.html#a86b07788811cdaf5c459ea82f871be09">Updraft::Core::BasicSetting</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="settinginterface_8h_source.html">settinginterface.h</a></li>
 </ul>
@@ -251,7 +271,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

@@ -114,15 +114,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a40bff2fc086c7bfd5bbd222015414726">updateCurrentInfo</a> (const QString &amp;text)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends text statistics of the fix the mouse is pointing at.  <a href="#a40bff2fc086c7bfd5bbd222015414726"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a9e03ae9009596eda7993d06608344b9f">updateText</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a7e22b2e3b3046e11c16b964cfd12a81d">timeWasPicked</a> (QTime time)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa652d1bbfeb1bade43337081b0a6d8b5">fixWasPicked</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A signal when a user pickes out a fix.  <a href="#aa652d1bbfeb1bade43337081b0a6d8b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6a6fb8c354e8646d0462c8ccc106c540">fixIsPointedAt</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A signal upon mouse move over fix.  <a href="#a6a6fb8c354e8646d0462c8ccc106c540"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0c475cac28448cf1477ceb5a2a65b4c5">clearMarkers</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A signal when the users clears the picked fixes.  <a href="#a0c475cac28448cf1477ceb5a2a65b4c5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ac0c30129cfae7a9f637772db87333813">PlotWidget</a> (<a class="el" href="class_updraft_1_1_igc_viewer_1_1_track_data.html">TrackData</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#af694bfbf6d881c682714b0b5e42d9131">trackData</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa0376843ab15246f74351654ff237624">altitudeInfo</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa8bd2a0a742380a9d8e870f1d246c093">verticalSpeedInfo</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a1a16359e882d85ebd17f7f33e42b09df">groundSpeedInfo</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a041b34e79371bc9ebde634159c14683d">addPickedTime</a> (QTime time)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4afc8722cc63d5a6dc6016b966c18712">setPickedLine</a> (int x)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the line to position x, and returns the time of the pick  <a href="#a4afc8722cc63d5a6dc6016b966c18712"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a8c78b4a1aaf95f25ed4860595ea1fdf9">PlotWidget</a> (<a class="el" href="class_updraft_1_1_igc_viewer_1_1_segment_info.html">SegmentInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a956ad01a5db703fbf4da514f6a7957e4">segmentInfo</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a32ca14501aa59e1d3f8aaf1004c8b9ac">altitudeInfo</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0728a67062f573fa2243ce407dac0c78">verticalSpeedInfo</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0aa9630dfad4803b868fb64d0b16fc61">groundSpeedInfo</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aeec2422c37e4aa8c39a6ba53e502f083">addPickedFix</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A fix of given index was picked.  <a href="#aeec2422c37e4aa8c39a6ba53e502f083"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ab88fd312ee8c9282496ec2086180c363">addPickedLine</a> (int x)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a53e4c38cf5113697b89fc70cc4b00b6b">getSegmentsStatTexts</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a68429b21462da6dbb8daf31c386882ea">getPointsStatTexts</a> ()</td></tr>
@@ -133,19 +137,29 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6581bf7955b71cba0ce090fd053ff399">mousePressEvent</a> (QMouseEvent *mouseEvent)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4685ec30e55eabd8d429007e98212f71">leaveEvent</a> (QEvent *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4685ec30e55eabd8d429007e98212f71">leaveEvent</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a98826f26912182eaae35d988f5a46cd3">resizeEvent</a> (QResizeEvent *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a98826f26912182eaae35d988f5a46cd3">resizeEvent</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ad6f3fd433fd7b0962fa0ae4c0372092d">sizeHint</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#acf91e0df07aed5b61728df478d8008ef">redrawGraphPicture</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a62479ebc30fb2da18c2a13194d9b7b68">createPointStatText</a> (QTime time, int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#abad482c33bbf69e11c1138b1c8377c3d">xLine</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa76c598dbc94a77d314db6a666d5e3be">updatePickedTexts</a> (int i)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4f3022d1d664ccead32f3d0ffc055410">createPointStatText</a> (int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#abad482c33bbf69e11c1138b1c8377c3d">xLine</a>, int fixListIndex)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a8aa910d69c9a65bb17fbd526eb85d2da">createSegmentStatText</a> (int startPointIndex, int endPointIndex)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa76c598dbc94a77d314db6a666d5e3be">updatePickedTexts</a> (int i)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6eae69b69df2d8f619515f4bd0d16c6f">resetStats</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the statistics to the default version.  <a href="#a6eae69b69df2d8f619515f4bd0d16c6f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ab46fe01f01557ae0f2ad26c2ece3f36c">getTimeFromSecs</a> (int timeInSecs)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create time from secs. The value of secs can be bigger than 24*3600.  <a href="#ab46fe01f01557ae0f2ad26c2ece3f36c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a2de866c461c0abac2b43bb9c844f7223">chooseFixIndex</a> (int start, int end)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick out which fix of the fixes at given pixel should be picked out.  <a href="#a2de866c461c0abac2b43bb9c844f7223"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#abad482c33bbf69e11c1138b1c8377c3d">xLine</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The coordinate to draw the vertical line where the mouse points.  <a href="#abad482c33bbf69e11c1138b1c8377c3d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a489d693a681bac88e2df68db3783bde5">pickedPoints</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Time [in seconds] of the picked point.  <a href="#a489d693a681bac88e2df68db3783bde5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ae301aaea305e2810b7fbf50b4ac25265">pickedFixes</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of picked fixes.  <a href="#ae301aaea305e2810b7fbf50b4ac25265"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6944b4956b64c0ea37213e185de977df">pickedPositions</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordered list of the x coordinates of the picked positions.  <a href="#a6944b4956b64c0ea37213e185de977df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a5bf3e410d1d23d9b350c81b9a08cb181">segmentsStatTexts</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aae3f050f0e688767f9d3207a49cd3a03">pickedPointsStatTexts</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics texts for picked fixes.  <a href="#a5bf3e410d1d23d9b350c81b9a08cb181"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#adde343d2a209826a4a944630fff7bea7">pickedFixesStatTexts</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics texts for segments between picked fixes.  <a href="#adde343d2a209826a4a944630fff7bea7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QImage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa73e85d3c2d6aba2cc23e4c62504087c">graphPicture</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_label.html">Label</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ad45ad6fad9c7c41b2508615c6b442638">labels</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html">PickedLabel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a8a954bd7b371a0a2350dd8a5b04a5ae9">pickedLabel</a></td></tr>
@@ -155,10 +169,10 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_altitude_plot_painter.html">AltitudePlotPainter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aaf3fd79edd88af810a40f736b2385fcf">altitudePlotPainter</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_vertical_speed_plot_painter.html">VerticalSpeedPlotPainter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a5c1c60c2631a0b964d7ac16863d63964">verticalSpeedPlotPainter</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_ground_speed_plot_painter.html">GroundSpeedPlotPainter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a27a856a6f825e05dc34f106c91ecaddb">groundSpeedPlotPainter</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_track_data.html">TrackData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#af694bfbf6d881c682714b0b5e42d9131">trackData</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa0376843ab15246f74351654ff237624">altitudeInfo</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa8bd2a0a742380a9d8e870f1d246c093">verticalSpeedInfo</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a1a16359e882d85ebd17f7f33e42b09df">groundSpeedInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_segment_info.html">SegmentInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a956ad01a5db703fbf4da514f6a7957e4">segmentInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a32ca14501aa59e1d3f8aaf1004c8b9ac">altitudeInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0728a67062f573fa2243ce407dac0c78">verticalSpeedInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0aa9630dfad4803b868fb64d0b16fc61">groundSpeedInfo</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a25df2135aed3cd8c3df3fe206eeb8655">mouseOver</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the mouse if over the graph(!) - not widget.  <a href="#a25df2135aed3cd8c3df3fe206eeb8655"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
@@ -174,32 +188,32 @@ Static Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ac7ddc69c490bda7ab53cc56d40a07b8d">MOUSE_LINE_PICKED_PEN</a> = QPen(QColor(200, 200, 200))</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac0c30129cfae7a9f637772db87333813"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::PlotWidget" ref="ac0c30129cfae7a9f637772db87333813" args="(TrackData *trackData, IgcInfo *altitudeInfo, IgcInfo *verticalSpeedInfo, IgcInfo *groundSpeedInfo)" -->
+<a class="anchor" id="a8c78b4a1aaf95f25ed4860595ea1fdf9"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::PlotWidget" ref="a8c78b4a1aaf95f25ed4860595ea1fdf9" args="(SegmentInfo *segmentInfo, FixInfo *altitudeInfo, FixInfo *verticalSpeedInfo, FixInfo *groundSpeedInfo)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ac0c30129cfae7a9f637772db87333813">Updraft::IgcViewer::PlotWidget::PlotWidget</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a8c78b4a1aaf95f25ed4860595ea1fdf9">Updraft::IgcViewer::PlotWidget::PlotWidget</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_track_data.html">TrackData</a> *&#160;</td>
-          <td class="paramname"><em>trackData</em>, </td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_segment_info.html">SegmentInfo</a> *&#160;</td>
+          <td class="paramname"><em>segmentInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td>
           <td class="paramname"><em>altitudeInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td>
           <td class="paramname"><em>verticalSpeedInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td>
           <td class="paramname"><em>groundSpeedInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -214,6 +228,25 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aeec2422c37e4aa8c39a6ba53e502f083"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::addPickedFix" ref="aeec2422c37e4aa8c39a6ba53e502f083" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aeec2422c37e4aa8c39a6ba53e502f083">Updraft::IgcViewer::PlotWidget::addPickedFix</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A fix of given index was picked. </p>
+
+</div>
+</div>
 <a class="anchor" id="ab88fd312ee8c9282496ec2086180c363"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::addPickedLine" ref="ab88fd312ee8c9282496ec2086180c363" args="(int x)" -->
 <div class="memitem">
 <div class="memproto">
@@ -228,23 +261,36 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>User clicked on position x on the graph, and picked one of the fixes that is at that position. Which fix is picked if multiple fixes are on that position is decided by the method <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a2de866c461c0abac2b43bb9c844f7223" title="Pick out which fix of the fixes at given pixel should be picked out.">chooseFixIndex(int start, int end)</a>; </p>
 
 </div>
 </div>
-<a class="anchor" id="a041b34e79371bc9ebde634159c14683d"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::addPickedTime" ref="a041b34e79371bc9ebde634159c14683d" args="(QTime time)" -->
+<a class="anchor" id="a2de866c461c0abac2b43bb9c844f7223"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::chooseFixIndex" ref="a2de866c461c0abac2b43bb9c844f7223" args="(int start, int end)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a041b34e79371bc9ebde634159c14683d">Updraft::IgcViewer::PlotWidget::addPickedTime</a> </td>
+          <td class="memname">int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a2de866c461c0abac2b43bb9c844f7223">Updraft::IgcViewer::PlotWidget::chooseFixIndex</a> </td>
           <td>(</td>
-          <td class="paramtype">QTime&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Pick out which fix of the fixes at given pixel should be picked out. </p>
 
 </div>
 </div>
@@ -262,23 +308,25 @@ Static Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>A signal when the users clears the picked fixes. </p>
+
 </div>
 </div>
-<a class="anchor" id="a62479ebc30fb2da18c2a13194d9b7b68"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::createPointStatText" ref="a62479ebc30fb2da18c2a13194d9b7b68" args="(QTime time, int xLine)" -->
+<a class="anchor" id="a4f3022d1d664ccead32f3d0ffc055410"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::createPointStatText" ref="a4f3022d1d664ccead32f3d0ffc055410" args="(int xLine, int fixListIndex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a62479ebc30fb2da18c2a13194d9b7b68">Updraft::IgcViewer::PlotWidget::createPointStatText</a> </td>
+          <td class="memname">QString <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4f3022d1d664ccead32f3d0ffc055410">Updraft::IgcViewer::PlotWidget::createPointStatText</a> </td>
           <td>(</td>
-          <td class="paramtype">QTime&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xLine</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>xLine</em>&#160;</td>
+          <td class="paramname"><em>fixListIndex</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -315,6 +363,44 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6a6fb8c354e8646d0462c8ccc106c540"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::fixIsPointedAt" ref="a6a6fb8c354e8646d0462c8ccc106c540" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6a6fb8c354e8646d0462c8ccc106c540">Updraft::IgcViewer::PlotWidget::fixIsPointedAt</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A signal upon mouse move over fix. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa652d1bbfeb1bade43337081b0a6d8b5"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::fixWasPicked" ref="aa652d1bbfeb1bade43337081b0a6d8b5" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa652d1bbfeb1bade43337081b0a6d8b5">Updraft::IgcViewer::PlotWidget::fixWasPicked</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A signal when a user pickes out a fix. </p>
 
 </div>
 </div>
@@ -364,6 +450,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Create time from secs. The value of secs can be bigger than 24*3600. </p>
 
 </div>
 </div>
@@ -451,6 +539,24 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6eae69b69df2d8f619515f4bd0d16c6f"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::resetStats" ref="a6eae69b69df2d8f619515f4bd0d16c6f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6eae69b69df2d8f619515f4bd0d16c6f">Updraft::IgcViewer::PlotWidget::resetStats</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resets the statistics to the default version. </p>
+
+</div>
+</div>
 <a class="anchor" id="a98826f26912182eaae35d988f5a46cd3"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::resizeEvent" ref="a98826f26912182eaae35d988f5a46cd3" args="(QResizeEvent *resizeEvent)" -->
 <div class="memitem">
 <div class="memproto">
@@ -468,35 +574,15 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4afc8722cc63d5a6dc6016b966c18712"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::setPickedLine" ref="a4afc8722cc63d5a6dc6016b966c18712" args="(int x)" -->
+<a class="anchor" id="ad6f3fd433fd7b0962fa0ae4c0372092d"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::sizeHint" ref="ad6f3fd433fd7b0962fa0ae4c0372092d" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4afc8722cc63d5a6dc6016b966c18712">Updraft::IgcViewer::PlotWidget::setPickedLine</a> </td>
+          <td class="memname">QSize <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ad6f3fd433fd7b0962fa0ae4c0372092d">Updraft::IgcViewer::PlotWidget::sizeHint</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>sets the line to position x, and returns the time of the pick </p>
-
-</div>
-</div>
-<a class="anchor" id="a7e22b2e3b3046e11c16b964cfd12a81d"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::timeWasPicked" ref="a7e22b2e3b3046e11c16b964cfd12a81d" args="(QTime time)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a7e22b2e3b3046e11c16b964cfd12a81d">Updraft::IgcViewer::PlotWidget::timeWasPicked</a> </td>
-          <td>(</td>
-          <td class="paramtype">QTime&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td><code> [signal]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -519,6 +605,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Sends text statistics of the fix the mouse is pointing at. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa76c598dbc94a77d314db6a666d5e3be"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::updatePickedTexts" ref="aa76c598dbc94a77d314db6a666d5e3be" args="(int i)" -->
@@ -535,6 +623,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Update picked texts when a new fix was added at the position `i` in the `pickedFixes` list. </p>
 
 </div>
 </div>
@@ -551,6 +640,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Send a signal that the vectors with the statistics texts (for points and segments) has been changed. </p>
 
 </div>
 </div>
@@ -581,12 +671,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa0376843ab15246f74351654ff237624"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::altitudeInfo" ref="aa0376843ab15246f74351654ff237624" args="" -->
+<a class="anchor" id="a32ca14501aa59e1d3f8aaf1004c8b9ac"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::altitudeInfo" ref="a32ca14501aa59e1d3f8aaf1004c8b9ac" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa0376843ab15246f74351654ff237624">Updraft::IgcViewer::PlotWidget::altitudeInfo</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a32ca14501aa59e1d3f8aaf1004c8b9ac">Updraft::IgcViewer::PlotWidget::altitudeInfo</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -659,12 +749,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1a16359e882d85ebd17f7f33e42b09df"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::groundSpeedInfo" ref="a1a16359e882d85ebd17f7f33e42b09df" args="" -->
+<a class="anchor" id="a0aa9630dfad4803b868fb64d0b16fc61"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::groundSpeedInfo" ref="a0aa9630dfad4803b868fb64d0b16fc61" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a1a16359e882d85ebd17f7f33e42b09df">Updraft::IgcViewer::PlotWidget::groundSpeedInfo</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0aa9630dfad4803b868fb64d0b16fc61">Updraft::IgcViewer::PlotWidget::groundSpeedInfo</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -767,6 +857,36 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae301aaea305e2810b7fbf50b4ac25265"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedFixes" ref="ae301aaea305e2810b7fbf50b4ac25265" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a>&gt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ae301aaea305e2810b7fbf50b4ac25265">Updraft::IgcViewer::PlotWidget::pickedFixes</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The set of picked fixes. </p>
+
+</div>
+</div>
+<a class="anchor" id="adde343d2a209826a4a944630fff7bea7"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedFixesStatTexts" ref="adde343d2a209826a4a944630fff7bea7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#adde343d2a209826a4a944630fff7bea7">Updraft::IgcViewer::PlotWidget::pickedFixesStatTexts</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Statistics texts for segments between picked fixes. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8a954bd7b371a0a2350dd8a5b04a5ae9"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedLabel" ref="a8a954bd7b371a0a2350dd8a5b04a5ae9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -780,31 +900,27 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a489d693a681bac88e2df68db3783bde5"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedPoints" ref="a489d693a681bac88e2df68db3783bde5" args="" -->
+<a class="anchor" id="a6944b4956b64c0ea37213e185de977df"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedPositions" ref="a6944b4956b64c0ea37213e185de977df" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;<a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a>&gt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a489d693a681bac88e2df68db3783bde5">Updraft::IgcViewer::PlotWidget::pickedPoints</a><code> [private]</code></td>
+          <td class="memname">QList&lt;int&gt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a6944b4956b64c0ea37213e185de977df">Updraft::IgcViewer::PlotWidget::pickedPositions</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Time [in seconds] of the picked point. </p>
-<p>The coordinate to draw the vertical line at a picked location</p>
-<ul>
-<li>when user clicked on the graph. </li>
-</ul>
+<p>Ordered list of the x coordinates of the picked positions. </p>
 
 </div>
 </div>
-<a class="anchor" id="aae3f050f0e688767f9d3207a49cd3a03"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::pickedPointsStatTexts" ref="aae3f050f0e688767f9d3207a49cd3a03" args="" -->
+<a class="anchor" id="a956ad01a5db703fbf4da514f6a7957e4"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::segmentInfo" ref="a956ad01a5db703fbf4da514f6a7957e4" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;QString&gt; <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aae3f050f0e688767f9d3207a49cd3a03">Updraft::IgcViewer::PlotWidget::pickedPointsStatTexts</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_segment_info.html">SegmentInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a956ad01a5db703fbf4da514f6a7957e4">Updraft::IgcViewer::PlotWidget::segmentInfo</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -823,18 +939,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="af694bfbf6d881c682714b0b5e42d9131"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::trackData" ref="af694bfbf6d881c682714b0b5e42d9131" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_track_data.html">TrackData</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#af694bfbf6d881c682714b0b5e42d9131">Updraft::IgcViewer::PlotWidget::trackData</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Statistics texts for picked fixes. </p>
 
 </div>
 </div>
@@ -864,12 +969,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa8bd2a0a742380a9d8e870f1d246c093"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::verticalSpeedInfo" ref="aa8bd2a0a742380a9d8e870f1d246c093" args="" -->
+<a class="anchor" id="a0728a67062f573fa2243ce407dac0c78"></a><!-- doxytag: member="Updraft::IgcViewer::PlotWidget::verticalSpeedInfo" ref="a0728a67062f573fa2243ce407dac0c78" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa8bd2a0a742380a9d8e870f1d246c093">Updraft::IgcViewer::PlotWidget::verticalSpeedInfo</a><code> [private]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0728a67062f573fa2243ce407dac0c78">Updraft::IgcViewer::PlotWidget::verticalSpeedInfo</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -931,7 +1036,7 @@ Static Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_igc_viewer.html">IgcViewer</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_widget.html">PlotWidget</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:36 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:52 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

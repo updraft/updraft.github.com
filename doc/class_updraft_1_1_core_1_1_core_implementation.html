@@ -131,12 +131,17 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a24dde3f1b0a4d704daf2db9decc71d20">createTab</a> (QWidget *content, QString title)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a2300b1a3453a9167a9e3df90d1a1660a">removeTab</a> (<a class="el" href="class_updraft_1_1_tab_interface.html">TabInterface</a> *tab)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a143b17996f98b0bc5bd11424589452b4">registerFiletype</a> (const <a class="el" href="struct_updraft_1_1_file_registration.html">FileRegistration</a> &amp;registration)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a0a01cb12fd609612ba1bf45feef208cc">getDataDirectory</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QDir&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad1101c47d4cfed9678baf6db2f1c0dcf">getDataDirectory</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QDir&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad7a9cc40f227a99d37636255d55aa1e9">getStaticDataDirectory</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad85fdfb6d21920581cf9e1148d464ee0">addSettingsGroup</a> (const QString &amp;groupId, const QString &amp;description, const QString &amp;icon)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad0737a76cdfb4c5d9cccb43fbcb4291f">addSetting</a> (const QString &amp;settingId, const QString &amp;description, QVariant initValue, bool hidden)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a3b69b04d9891257f0927c63e6eb2b576">getSimpleGroup</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the basic node group for drawing.  <a href="#a3b69b04d9891257f0927c63e6eb2b576"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a0abf5520ac37bb616890e044564f588a">registerOsgNode</a> (osg::Node *node, <a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *mapObject)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ElevationManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a9dac429201b47f601da795c60ad71c69">getElevationManager</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an elevation manager for the scene, to request elevation data from.  <a href="#a9dac429201b47f601da795c60ad71c69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const osg::EllipsoidModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a457d302b55d5c106e0e133b783baeb8c">getCurrentMapEllipsoid</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ellipsoid model associated with the active map.  <a href="#a457d302b55d5c106e0e133b783baeb8c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_plugin_base.html">PluginBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a908edee221b8f71b89405ebc99180f73">plugin</a></td></tr>
@@ -272,7 +277,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates map layer group and adds it to the tree view in the left pane. To remove <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> use C++ delete. </p>
+<p>Creates map layer group and adds it to the tree view in the left pane. The group returned by this function is a root group; for sub groups use <a class="el" href="class_updraft_1_1_map_layer_group_interface.html#a7ff389414a51985c94a5ffd91b75d7a7">MapLayerGroupInterface::createMapLayerGroup</a>. To remove <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> use C++ operator delete. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">title</td><td>label for the item in the tree view </td></tr>
@@ -336,12 +341,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0a01cb12fd609612ba1bf45feef208cc"></a><!-- doxytag: member="Updraft::Core::CoreImplementation::getDataDirectory" ref="a0a01cb12fd609612ba1bf45feef208cc" args="()" -->
+<a class="anchor" id="a457d302b55d5c106e0e133b783baeb8c"></a><!-- doxytag: member="Updraft::Core::CoreImplementation::getCurrentMapEllipsoid" ref="a457d302b55d5c106e0e133b783baeb8c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a0a01cb12fd609612ba1bf45feef208cc">Updraft::Core::CoreImplementation::getDataDirectory</a> </td>
+          <td class="memname">const osg::EllipsoidModel * <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a457d302b55d5c106e0e133b783baeb8c">Updraft::Core::CoreImplementation::getCurrentMapEllipsoid</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the ellipsoid model associated with the active map. </p>
+
+<p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a38a605d9fa3eeaf4d3c26505b3f1ec68">Updraft::CoreInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1101c47d4cfed9678baf6db2f1c0dcf"></a><!-- doxytag: member="Updraft::Core::CoreImplementation::getDataDirectory" ref="ad1101c47d4cfed9678baf6db2f1c0dcf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDir <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad1101c47d4cfed9678baf6db2f1c0dcf">Updraft::Core::CoreImplementation::getDataDirectory</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -350,9 +375,29 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Gets path of the application data directory. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Full path to the application directory </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QDir with the full path to the application directory </dd></dl>
 
-<p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a5be6b6a4a5a2a944f1005cb30faa5eab">Updraft::CoreInterface</a>.</p>
+<p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a96c7217115596e08d47618ff770e50cc">Updraft::CoreInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dac429201b47f601da795c60ad71c69"></a><!-- doxytag: member="Updraft::Core::CoreImplementation::getElevationManager" ref="a9dac429201b47f601da795c60ad71c69" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgEarth::Util::ElevationManager * <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#a9dac429201b47f601da795c60ad71c69">Updraft::Core::CoreImplementation::getElevationManager</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns an elevation manager for the scene, to request elevation data from. </p>
+
+<p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a93d1362040402800ac6e03543f29313a">Updraft::CoreInterface</a>.</p>
 
 </div>
 </div>
@@ -413,6 +458,26 @@ Private Attributes</h2></td></tr>
 <p>Returns the pointer to the basic node group for drawing. </p>
 
 <p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a923f3418ef955bd5a8779cfac89fb6ee">Updraft::CoreInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7a9cc40f227a99d37636255d55aa1e9"></a><!-- doxytag: member="Updraft::Core::CoreImplementation::getStaticDataDirectory" ref="ad7a9cc40f227a99d37636255d55aa1e9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDir <a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html#ad7a9cc40f227a99d37636255d55aa1e9">Updraft::Core::CoreImplementation::getStaticDataDirectory</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets path of the immutable application data directory. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>QDir with the full path to the static data directory </dd></dl>
+
+<p>Implements <a class="el" href="class_updraft_1_1_core_interface.html#a3c68a65ae93e4d0222531de1f03005f5">Updraft::CoreInterface</a>.</p>
 
 </div>
 </div>
@@ -560,7 +625,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_core_implementation.html">CoreImplementation</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

@@ -121,29 +121,58 @@ Inheritance diagram for Updraft::Core::NodeMapLayer:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#af10b8d5f801f12570674168611dc94c8">NodeMapLayer</a> (osg::Node *<a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8cdc5c0d5a3671907445607c27da0425">node</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a037e9c32852c69a65ff748e5d2c4fd61">setVisible</a> (bool value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets visibility to the layer.  <a href="#a037e9c32852c69a65ff748e5d2c4fd61"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a976c9f43d34893abe38eb310e0b11614">NodeMapLayer</a> (const QString &amp;title, osg::Node *<a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8cdc5c0d5a3671907445607c27da0425">node</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a83fa54b4e677bf29be7fc8b0fcbad76c">~NodeMapLayer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8c965797947be2a5248bb19cae6281d5">setVisibility</a> (bool value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets visibility to the layer.  <a href="#a8c965797947be2a5248bb19cae6281d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a92bb79866d8149b0c3cd27860c00d052">isVisible</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a894ea6aef770b94c6e35c1715a797a37">addToScene</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> *group)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the map layer to the osg group of the map layer group.  <a href="#a894ea6aef770b94c6e35c1715a797a37"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a1096eca3c73eb7efdbeb0a00c8766047">removeFromScene</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> *group)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the layer from the osg group of the map layer group.  <a href="#a1096eca3c73eb7efdbeb0a00c8766047"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::ref_ptr&lt; osg::Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8cdc5c0d5a3671907445607c27da0425">node</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af10b8d5f801f12570674168611dc94c8"></a><!-- doxytag: member="Updraft::Core::NodeMapLayer::NodeMapLayer" ref="af10b8d5f801f12570674168611dc94c8" args="(osg::Node *node)" -->
+<a class="anchor" id="a976c9f43d34893abe38eb310e0b11614"></a><!-- doxytag: member="Updraft::Core::NodeMapLayer::NodeMapLayer" ref="a976c9f43d34893abe38eb310e0b11614" args="(const QString &amp;title, osg::Node *node)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#af10b8d5f801f12570674168611dc94c8">Updraft::Core::NodeMapLayer::NodeMapLayer</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a976c9f43d34893abe38eb310e0b11614">Updraft::Core::NodeMapLayer::NodeMapLayer</a> </td>
           <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">osg::Node *&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
-          <td><code> [explicit]</code></td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83fa54b4e677bf29be7fc8b0fcbad76c"></a><!-- doxytag: member="Updraft::Core::NodeMapLayer::~NodeMapLayer" ref="a83fa54b4e677bf29be7fc8b0fcbad76c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a83fa54b4e677bf29be7fc8b0fcbad76c">Updraft::Core::NodeMapLayer::~NodeMapLayer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -166,6 +195,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Add the map layer to the osg group of the map layer group. </p>
 
 <p>Implements <a class="el" href="class_updraft_1_1_map_layer_interface.html#a312d843bc35036b7ee505f163966a63b">Updraft::MapLayerInterface</a>.</p>
 
@@ -204,16 +235,18 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Remove the layer from the osg group of the map layer group. </p>
+
 <p>Implements <a class="el" href="class_updraft_1_1_map_layer_interface.html#a947caef0a861666d8b0b988a611c2b62">Updraft::MapLayerInterface</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a037e9c32852c69a65ff748e5d2c4fd61"></a><!-- doxytag: member="Updraft::Core::NodeMapLayer::setVisible" ref="a037e9c32852c69a65ff748e5d2c4fd61" args="(bool value)" -->
+<a class="anchor" id="a8c965797947be2a5248bb19cae6281d5"></a><!-- doxytag: member="Updraft::Core::NodeMapLayer::setVisibility" ref="a8c965797947be2a5248bb19cae6281d5" args="(bool value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a037e9c32852c69a65ff748e5d2c4fd61">Updraft::Core::NodeMapLayer::setVisible</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html#a8c965797947be2a5248bb19cae6281d5">Updraft::Core::NodeMapLayer::setVisibility</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -225,7 +258,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sets visibility to the layer. </p>
 
-<p>Implements <a class="el" href="class_updraft_1_1_map_layer_interface.html#a39ca6cfc2ec4176857f16ab38fca8106">Updraft::MapLayerInterface</a>.</p>
+<p>Implements <a class="el" href="class_updraft_1_1_core_1_1_map_layer.html#a4ea1843452bb2176383983e151084ecc">Updraft::Core::MapLayer</a>.</p>
 
 </div>
 </div>
@@ -269,7 +302,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_node_map_layer.html">NodeMapLayer</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

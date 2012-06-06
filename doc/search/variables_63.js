@@ -13,13 +13,13 @@ var searchData=
   ['colorscombo',['colorsCombo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a3dbe80de20a95910a844aada7835ed6d',1,'Updraft::IgcViewer::OpenedFile']]],
   ['competitionclass_5f',['competitionClass_',['../class_updraft_1_1_igc_1_1_igc_file.html#ac1b80aa51a0960a260b8221bd47cb57f',1,'Updraft::Igc::IgcFile']]],
   ['competitionid_5f',['competitionId_',['../class_updraft_1_1_igc_1_1_igc_file.html#aa6fe20a05ff6a1897fb5b9334a18fc47',1,'Updraft::Igc::IgcFile']]],
-  ['coretranslator',['coreTranslator',['../class_updraft_1_1_core_1_1_translation_manager.html#ae734f08d077ff8e655c8b2cdd2ae64fa',1,'Updraft::Core::TranslationManager']]],
   ['country',['country',['../struct_updraft_1_1_cup_1_1_t_p_entry.html#aae7232210ecbd8a089b0be0542cc5090',1,'Updraft::Cup::TPEntry']]],
   ['cupfile',['cupFile',['../class_updraft_1_1_cup_1_1_cup_loader.html#a7a15796c20f9586e7d257297c04f0cbe',1,'Updraft::Cup::CupLoader::cupFile()'],['../class_updraft_1_1_t_p_file_cup_adapter.html#a5ee372e69eac56991bb9e35001d78f62',1,'Updraft::TPFileCupAdapter::cupFile()']]],
   ['cuptpsreg',['cupTPsReg',['../class_updraft_1_1_turn_points.html#a60ef3431f85baaebef5889a07e7e649b',1,'Updraft::TurnPoints']]],
   ['currentcoloring',['currentColoring',['../class_updraft_1_1_igc_viewer_1_1_igc_viewer.html#af2341b04cf05fcb3df177b9fcc6c7a37',1,'Updraft::IgcViewer::IgcViewer::currentColoring()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#aecc9e59e94eb82350af4df56145f5e39',1,'Updraft::IgcViewer::OpenedFile::currentColoring()']]],
+  ['currentdatadirectory',['currentDataDirectory',['../class_updraft_1_1_core_1_1_updraft.html#aafab69632ce5846c1d7eb27b8ef8d42e',1,'Updraft::Core::Updraft']]],
   ['currentitem',['currentItem',['../class_updraft_1_1_data_history.html#aba7975e7c9d8a317a2fdeb227366b072',1,'Updraft::DataHistory']]],
-  ['currentmarkers',['currentMarkers',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a50929a407cc8923c9f76b2c2ca43adac',1,'Updraft::IgcViewer::OpenedFile']]],
+  ['currentmarker',['currentMarker',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#ac04643a9ca32847715fcd7066bd2e8e4',1,'Updraft::IgcViewer::OpenedFile']]],
   ['custommenus',['customMenus',['../class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1',1,'Updraft::Core::MainWindow']]],
   ['cw',['CW',['../class_open_airspace_1_1_airspace.html#a174d282e56597dadbbcd57579584c535',1,'OpenAirspace::Airspace::CW()'],['../class_open_airspace_1_1_arc_i.html#a0dd69c4d59df15db9fbca76659108b89',1,'OpenAirspace::ArcI::cw()'],['../class_open_airspace_1_1_arc_i_i.html#ad4995e7e5f646da6bda0b1865871b9f4',1,'OpenAirspace::ArcII::cw()']]]
 ];

@@ -121,7 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#acdaab38a848d3b405820add3003adcb6">removeMenu</a> (<a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *menu)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a5ca874055f4ef223023287c90dfad55b">setMapWidget</a> (QWidget *widget)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab4422f2ec239e6a729351505ab884348">getMapWidget</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a49d29410f09874f8d6237e4f72c2803e">createMapLayerGroup</a> (const QString &amp;title, osg::Group *nodeGroup, osgEarth::MapNode *map)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab2e113ce8f6562e096a2c67988ece554">getInvisibleRootMapLayerGroup</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the invisible top level <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>.  <a href="#ab2e113ce8f6562e096a2c67988ece554"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#af9fdc6b37c866915e79aa607c967b292">registerMapLayer</a> (<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a map layer and its tree widget item to the list of map layers.  <a href="#af9fdc6b37c866915e79aa607c967b292"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a154c898186cf38c0d7d332395cc6be8b">unregisterMapLayer</a> (<a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a map layer and its tree widget item from the list of map layers.  <a href="#a154c898186cf38c0d7d332395cc6be8b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a1ef8965a54868046b7a611bf63849451">contextMenuEvent</a> (QContextMenuEvent *event)</td></tr>
@@ -140,12 +145,16 @@ Private Slots</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles Help-&gt;User Documentation menu action.  <a href="#ad10a1914074c588f91cd1baac34b01d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0d5ba5b73e43b3c940e2023f24c3c791">showAboutDialog</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles Help-&gt;About... menu action.  <a href="#a0d5ba5b73e43b3c940e2023f24c3c791"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac6ba51f535dd6bac9d0938c79ce3d60b">mapLayerItemChanged</a> (QTreeWidgetItem *item)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Item in map layer tree widget was changed (= checked / unchecked)  <a href="#ac6ba51f535dd6bac9d0938c79ce3d60b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#afd6348d438dc4378b29b9834a2d70b01">mapLayerContextMenuRequested</a> (const QPoint &amp;pos)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a24f8183598fa35271a87fab689815348">standardMenuItems</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ade404fdbbfa1714a960e0532947febfb">tabsVisibility</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a11614bd739c7655a04884c025be02fc8">invisibleRootMapLayerGroup</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#aee6db94cdaf44e1319cdb0b4d69754fe">ui</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a5e57efe52ccb894e8e59c374c0d96c91">menuFile</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a204d7ddeb18fa0d641d8974497342fcf">menuView</a></td></tr>
@@ -155,6 +164,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac716a94dab8121a793d3320dbbe02d7d">menuMapObject</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_tab.html">Tab</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e">activeTab</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSet&lt; <a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">customMenus</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; QTreeWidgetItem <br class="typebreak"/>
+*, <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae5ec487626726efba3e4cf45cd4c9c41">mapLayers</a></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aba166ac6c87173a25c6744827a34017d"></a><!-- doxytag: member="Updraft::Core::MainWindow::MainWindow" ref="aba166ac6c87173a25c6744827a34017d" args="(QWidget *parent=0)" -->
@@ -226,40 +237,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a49d29410f09874f8d6237e4f72c2803e"></a><!-- doxytag: member="Updraft::Core::MainWindow::createMapLayerGroup" ref="a49d29410f09874f8d6237e4f72c2803e" args="(const QString &amp;title, osg::Group *nodeGroup, osgEarth::MapNode *map)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> * <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a49d29410f09874f8d6237e4f72c2803e">Updraft::Core::MainWindow::createMapLayerGroup</a> </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">osg::Group *&#160;</td>
-          <td class="paramname"><em>nodeGroup</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">osgEarth::MapNode *&#160;</td>
-          <td class="paramname"><em>map</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This method creates new map layer group. It is wrapped by <a class="el" href="class_updraft_1_1_core_interface.html#a30efb3320b0a321a70c4eb029cbb21f1">CoreInterface::createMapLayerGroup</a>. </p>
-
-</div>
-</div>
 <a class="anchor" id="a288686c4e44f167b1a5fa957815ef210"></a><!-- doxytag: member="Updraft::Core::MainWindow::createMenu" ref="a288686c4e44f167b1a5fa957815ef210" args="(QString title)" -->
 <div class="memitem">
 <div class="memproto">
@@ -305,6 +282,24 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab2e113ce8f6562e096a2c67988ece554"></a><!-- doxytag: member="Updraft::Core::MainWindow::getInvisibleRootMapLayerGroup" ref="ab2e113ce8f6562e096a2c67988ece554" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a> * <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ab2e113ce8f6562e096a2c67988ece554">Updraft::Core::MainWindow::getInvisibleRootMapLayerGroup</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the invisible top level <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="ab4422f2ec239e6a729351505ab884348"></a><!-- doxytag: member="Updraft::Core::MainWindow::getMapWidget" ref="ab4422f2ec239e6a729351505ab884348" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -335,6 +330,43 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd6348d438dc4378b29b9834a2d70b01"></a><!-- doxytag: member="Updraft::Core::MainWindow::mapLayerContextMenuRequested" ref="afd6348d438dc4378b29b9834a2d70b01" args="(const QPoint &amp;pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#afd6348d438dc4378b29b9834a2d70b01">Updraft::Core::MainWindow::mapLayerContextMenuRequested</a> </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Map layer tree view requested context menu. Finds thee map layer and send the event to it. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac6ba51f535dd6bac9d0938c79ce3d60b"></a><!-- doxytag: member="Updraft::Core::MainWindow::mapLayerItemChanged" ref="ac6ba51f535dd6bac9d0938c79ce3d60b" args="(QTreeWidgetItem *item)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ac6ba51f535dd6bac9d0938c79ce3d60b">Updraft::Core::MainWindow::mapLayerItemChanged</a> </td>
+          <td>(</td>
+          <td class="paramtype">QTreeWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td><code> [private, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Item in map layer tree widget was changed (= checked / unchecked) </p>
 
 </div>
 </div>
@@ -371,6 +403,25 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Handles Help-&gt;User Documentation menu action. </p>
+
+</div>
+</div>
+<a class="anchor" id="af9fdc6b37c866915e79aa607c967b292"></a><!-- doxytag: member="Updraft::Core::MainWindow::registerMapLayer" ref="af9fdc6b37c866915e79aa607c967b292" args="(MapLayerInterface *layer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#af9fdc6b37c866915e79aa607c967b292">Updraft::Core::MainWindow::registerMapLayer</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a map layer and its tree widget item to the list of map layers. </p>
 
 </div>
 </div>
@@ -516,6 +567,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a154c898186cf38c0d7d332395cc6be8b"></a><!-- doxytag: member="Updraft::Core::MainWindow::unregisterMapLayer" ref="a154c898186cf38c0d7d332395cc6be8b" args="(MapLayerInterface *layer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a154c898186cf38c0d7d332395cc6be8b">Updraft::Core::MainWindow::unregisterMapLayer</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remove a map layer and its tree widget item from the list of map layers. </p>
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="ae66da362bab86c95e6cdfa003172412e"></a><!-- doxytag: member="Updraft::Core::MainWindow::activeTab" ref="ae66da362bab86c95e6cdfa003172412e" args="" -->
 <div class="memitem">
@@ -536,6 +606,32 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">QSet&lt;<a class="el" href="class_updraft_1_1_core_1_1_menu.html">Menu</a>*&gt; <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a0a0cf90d4abda5f3b8d7b1c6f51f52d1">Updraft::Core::MainWindow::customMenus</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11614bd739c7655a04884c025be02fc8"></a><!-- doxytag: member="Updraft::Core::MainWindow::invisibleRootMapLayerGroup" ref="a11614bd739c7655a04884c025be02fc8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>* <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#a11614bd739c7655a04884c025be02fc8">Updraft::Core::MainWindow::invisibleRootMapLayerGroup</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae5ec487626726efba3e4cf45cd4c9c41"></a><!-- doxytag: member="Updraft::Core::MainWindow::mapLayers" ref="ae5ec487626726efba3e4cf45cd4c9c41" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QTreeWidgetItem*, <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *&gt; <a class="el" href="class_updraft_1_1_core_1_1_main_window.html#ae5ec487626726efba3e4cf45cd4c9c41">Updraft::Core::MainWindow::mapLayers</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -660,7 +756,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_main_window.html">MainWindow</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:51 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

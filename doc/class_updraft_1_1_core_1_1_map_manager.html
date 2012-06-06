@@ -112,14 +112,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#acd051267775b0b91ceb3009c2a4811bd">MapManager</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#ab68f66ef613d156c189585be29607baa">MapManager</a> (QString earthFile)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> with map created from the earth file.  <a href="#ab68f66ef613d156c189585be29607baa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#ac6f067c8090560073bb274eca0907cca">MapManager</a> (QString earthFile, QString mapName)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> with map created from the earth file.  <a href="#ac6f067c8090560073bb274eca0907cca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a8d1000a7d3fc662232625312ed477ba1">getName</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgEarth::MapNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#aa84be844cf8b737921ed97da32007c35">getMapNode</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgEarth::Map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a79de17447d47ff3c26da11ceb0bb61f5">getMap</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#ae4843bfe5f3c59ac4e838e3f0d59e831">getManipulator</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a440a5bf7cf595d1228af97ee80a4b354">setManipulator</a> (<a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> *newManipulator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a5c645f315bff4cafb1d559e2962a2ce2">hasElevation</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a7a8285e4277e0ea2d3099080b54f0380">getMapObject</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a5be75b04fccb49c474179f383879ae5f">getMapLayers</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the map layers from the map.  <a href="#a5be75b04fccb49c474179f383879ae5f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#aaf3bdf6fff04db8e86d60509cbc85543">fillMapLayerGroup</a> (<a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *group)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; osgEarth::ImageLayer * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a451511e39e3c6ef5ec1159f3a972b6c4">getImageLayers</a> ()</td></tr>
@@ -135,6 +138,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgEarth::Map *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#adfb29bb56d18063ecc421685495559f3">map</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a0b32db54d45525b284fa1cdadd70f180">mapLayers</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a27b58751abbffc2b7a0a079a7eb48af7">mapLayerGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osg::ref_ptr&lt; <a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a89423f882e508a578ee46a9c064c2d45">manipulator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_map_object.html">MapMapObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a5c15801165f3a31c3413856e36cdbaae">mapObject</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Map manager is a class providing functions to manipulate with the map. </p>
@@ -155,7 +160,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab68f66ef613d156c189585be29607baa"></a><!-- doxytag: member="Updraft::Core::MapManager::MapManager" ref="ab68f66ef613d156c189585be29607baa" args="(QString earthFile)" -->
+<a class="anchor" id="ac6f067c8090560073bb274eca0907cca"></a><!-- doxytag: member="Updraft::Core::MapManager::MapManager" ref="ac6f067c8090560073bb274eca0907cca" args="(QString earthFile, QString mapName)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -163,8 +168,18 @@ Private Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#acd051267775b0b91ceb3009c2a4811bd">Updraft::Core::MapManager::MapManager</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>earthFile</em></td><td>)</td>
-          <td><code> [explicit]</code></td>
+          <td class="paramname"><em>earthFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>mapName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [explicit]</code></td>
         </tr>
       </table>
 </div>
@@ -175,23 +190,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aaf3bdf6fff04db8e86d60509cbc85543"></a><!-- doxytag: member="Updraft::Core::MapManager::fillMapLayerGroup" ref="aaf3bdf6fff04db8e86d60509cbc85543" args="(MapLayerGroupInterface *group)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#aaf3bdf6fff04db8e86d60509cbc85543">Updraft::Core::MapManager::fillMapLayerGroup</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_map_layer_group_interface.html">MapLayerGroupInterface</a> *&#160;</td>
-          <td class="paramname"><em>group</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a0e6de83d9a786f016049ec1c51b7c5c7"></a><!-- doxytag: member="Updraft::Core::MapManager::getElevationLayers" ref="a0e6de83d9a786f016049ec1c51b7c5c7" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -225,6 +223,22 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets a list of ImageLayers in the map. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae4843bfe5f3c59ac4e838e3f0d59e831"></a><!-- doxytag: member="Updraft::Core::MapManager::getManipulator" ref="ae4843bfe5f3c59ac4e838e3f0d59e831" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> * <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#ae4843bfe5f3c59ac4e838e3f0d59e831">Updraft::Core::MapManager::getManipulator</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -278,6 +292,22 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7a8285e4277e0ea2d3099080b54f0380"></a><!-- doxytag: member="Updraft::Core::MapManager::getMapObject" ref="a7a8285e4277e0ea2d3099080b54f0380" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> * <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a7a8285e4277e0ea2d3099080b54f0380">Updraft::Core::MapManager::getMapObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a42cdfd63db12a3ca082fb3612769d63c"></a><!-- doxytag: member="Updraft::Core::MapManager::getModelLayers" ref="a42cdfd63db12a3ca082fb3612769d63c" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +342,53 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5c645f315bff4cafb1d559e2962a2ce2"></a><!-- doxytag: member="Updraft::Core::MapManager::hasElevation" ref="a5c645f315bff4cafb1d559e2962a2ce2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a5c645f315bff4cafb1d559e2962a2ce2">Updraft::Core::MapManager::hasElevation</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a440a5bf7cf595d1228af97ee80a4b354"></a><!-- doxytag: member="Updraft::Core::MapManager::setManipulator" ref="a440a5bf7cf595d1228af97ee80a4b354" args="(MapManipulator *newManipulator)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a440a5bf7cf595d1228af97ee80a4b354">Updraft::Core::MapManager::setManipulator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> *&#160;</td>
+          <td class="paramname"><em>newManipulator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a89423f882e508a578ee46a9c064c2d45"></a><!-- doxytag: member="Updraft::Core::MapManager::manipulator" ref="a89423f882e508a578ee46a9c064c2d45" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osg::ref_ptr&lt;<a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a>&gt; <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a89423f882e508a578ee46a9c064c2d45">Updraft::Core::MapManager::manipulator</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="adfb29bb56d18063ecc421685495559f3"></a><!-- doxytag: member="Updraft::Core::MapManager::map" ref="adfb29bb56d18063ecc421685495559f3" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -365,6 +441,19 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5c15801165f3a31c3413856e36cdbaae"></a><!-- doxytag: member="Updraft::Core::MapManager::mapObject" ref="a5c15801165f3a31c3413856e36cdbaae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_map_map_object.html">MapMapObject</a> <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html#a5c15801165f3a31c3413856e36cdbaae">Updraft::Core::MapManager::mapObject</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/core/<a class="el" href="mapmanager_8h_source.html">mapmanager.h</a></li>
 <li>src/core/<a class="el" href="mapmanager_8cpp.html">mapmanager.cpp</a></li>
@@ -391,7 +480,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

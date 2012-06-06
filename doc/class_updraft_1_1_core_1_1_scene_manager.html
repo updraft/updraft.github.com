@@ -129,8 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root of the scene.  <a href="#aa223f3d736142491f2eaeba56ce4fc4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgEarth::MapNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae87a1f2a51b476d6924574900c1d6096">getMapNode</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a32f1d98f935e9d3bd12504c383f06d5c">getMapManager</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> instance associated with the map.  <a href="#a32f1d98f935e9d3bd12504c383f06d5c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#adf2dafa55c41c20eb3f82a72f4ef59bb">newGroup</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a55a3f0d29a304fab86b52da8538075a5">removeGroup</a> (osg::Group *group)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the group from the root.  <a href="#a55a3f0d29a304fab86b52da8538075a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a6e4b5cfdf871f8d089cf41be8c7045ab">getSimpleGroup</a> ()</td></tr>
@@ -138,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a78cd1d5799dd75d169ef2e1a23d2742c">registerOsgNode</a> (osg::Node *node, <a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *mapObject)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ada60dff668d5c2449055ff6dfc94b8cf">unregisterOsgNode</a> (osg::Node *node)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a04afae7589283af750879def5f570cf1">getNodeMapObject</a> (osg::Node *node)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ElevationManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a4ea6b76a7b12fbf0c16df48de66d70a3">getElevationManager</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const osg::EllipsoidModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#af5173c298052b93609cd6038159ad5b0">getCurrentMapEllipsoid</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ObjectPlacer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a16301625afc7875fd80006bf9834af20">getObjectPlacer</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a967f684e147ee1982fab6a34c100fc7b">checkedMap</a> (bool value, <a class="el" href="class_updraft_1_1_map_layer_interface.html">MapLayerInterface</a> *layer)</td></tr>
@@ -149,18 +150,18 @@ Private Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the menu items in main window.  <a href="#a7080c279a2e763fbc35eba01ae0e72dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae640529f76b92f53a756e0a160882352">mapLayerGroup</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the map layer group and fill it with maps.  <a href="#ae640529f76b92f53a756e0a160882352"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ElevationManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae58e30c0e2251abefdba54a75de81a6c">createElevationManager</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::GraphicsContext::Traits *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#abf900b0124276d569265b3a8717ba729">createGraphicsTraits</a> (int x, int y, int w, int h, const std::string &amp;name=&quot;&quot;, bool windowDecoration=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgQt::GraphicsWindowQt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#aac59d879566c7cb8fa9fe32f8239554a">createGraphicsWindow</a> (osg::GraphicsContext::Traits *traits)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Camera *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a6cba8afa78fe5bba4bab248ce25f6212">createCamera</a> (osg::GraphicsContext::Traits *traits)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::Viewpoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a40663550d635d303c7159d58d4e15d12">getHomePosition</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Viewpoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a40663550d635d303c7159d58d4e15d12">getHomePosition</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::Viewpoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ad656ecf78b205cdc55b0454331faaea7">getInitialPosition</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a2ab16de46fd299cca4e4e4438a5b0dad">startInitialAnimation</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ab22323dcab0eff594834b1042c664280">insertMenuItems</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae07d97aea6d2077673be85fecd408169">getAspectRatio</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a53722e447b6b448e5a2ad72a7e7e8516">updateCameraOrtho</a> (osg::Camera *<a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a125252fbffe85d44408b23405fee270e">camera</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a1eb95f0e63ecdbc6051a59bf5686b3c5">updateCameraPerspective</a> (osg::Camera *<a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a125252fbffe85d44408b23405fee270e">camera</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ObjectPlacer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a91ca766ae56a25a4a7359e7395388f4a">placer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgViewer::Viewer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a9b4517fcf9df8504573127d0766bccf3">viewer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a830f27a1fa45fb84cfc721237458c389">sceneRoot</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::ClearNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a3ae90861308f1a5aab1cb379bdbbc07a">background</a></td></tr>
@@ -172,12 +173,12 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a7e1f682dc20a6ff5c2e6c626e62359ff">activeMapIndex</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osg::Camera *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a125252fbffe85d44408b23405fee270e">camera</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae2090d3b1bdb2493887dd656d6915c02">manipulator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">osgEarth::Util::ElevationManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a18d540e2c4c8e2d7b0cfd7f6302a557a">elevationManager</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">osgQt::GraphicsWindowQt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a5860ca488f2bf194204e0361e403e3a4">graphicsWindow</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ac4437a534b938fc3dbd80855bad89ff7">timer</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer that triggers the drawing procedure.  <a href="#ac4437a534b938fc3dbd80855bad89ff7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QHash&lt; osg::Node *, <a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a469c7405aaa52a454446add3e5229622">pickingMap</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of osg nodes registered for mouse picking.  <a href="#a469c7405aaa52a454446add3e5229622"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a1094b6a1be59b7495511be9d40f0c0a3">isCameraPerspective</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html" title="SceneManager class is a wrapper of the scene, and the scene graph.">SceneManager</a> class is a wrapper of the scene, and the scene graph. </p>
@@ -251,6 +252,22 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">osg::GraphicsContext::Traits *&#160;</td>
           <td class="paramname"><em>traits</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae58e30c0e2251abefdba54a75de81a6c"></a><!-- doxytag: member="Updraft::Core::SceneManager::createElevationManager" ref="ae58e30c0e2251abefdba54a75de81a6c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgEarth::Util::ElevationManager * <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#ae58e30c0e2251abefdba54a75de81a6c">Updraft::Core::SceneManager::createElevationManager</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td><code> [private]</code></td>
         </tr>
       </table>
@@ -361,6 +378,40 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af5173c298052b93609cd6038159ad5b0"></a><!-- doxytag: member="Updraft::Core::SceneManager::getCurrentMapEllipsoid" ref="af5173c298052b93609cd6038159ad5b0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const osg::EllipsoidModel * <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#af5173c298052b93609cd6038159ad5b0">Updraft::Core::SceneManager::getCurrentMapEllipsoid</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the ellipsiod model associated with current active map. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4ea6b76a7b12fbf0c16df48de66d70a3"></a><!-- doxytag: member="Updraft::Core::SceneManager::getElevationManager" ref="a4ea6b76a7b12fbf0c16df48de66d70a3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgEarth::Util::ElevationManager * <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a4ea6b76a7b12fbf0c16df48de66d70a3">Updraft::Core::SceneManager::getElevationManager</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns an elevation manager associated with the map that has elevation layer. </p>
+
+</div>
+</div>
 <a class="anchor" id="a40663550d635d303c7159d58d4e15d12"></a><!-- doxytag: member="Updraft::Core::SceneManager::getHomePosition" ref="a40663550d635d303c7159d58d4e15d12" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -406,8 +457,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Returns the <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> instance associated with the map. </p>
+<p>Returns the <a class="el" href="class_updraft_1_1_core_1_1_map_manager.html">MapManager</a> instance associated with currently displayed map. </p>
 
 </div>
 </div>
@@ -450,6 +500,22 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Pointer to the <a class="el" href="class_updraft_1_1_map_object.html">MapObject</a> that contains the registration info for the given node, if the node was registered. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a16301625afc7875fd80006bf9834af20"></a><!-- doxytag: member="Updraft::Core::SceneManager::getObjectPlacer" ref="a16301625afc7875fd80006bf9834af20" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgEarth::Util::ObjectPlacer * <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a16301625afc7875fd80006bf9834af20">Updraft::Core::SceneManager::getObjectPlacer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -556,23 +622,6 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Create the menu items in main window. </p>
-
-</div>
-</div>
-<a class="anchor" id="adf2dafa55c41c20eb3f82a72f4ef59bb"></a><!-- doxytag: member="Updraft::Core::SceneManager::newGroup" ref="adf2dafa55c41c20eb3f82a72f4ef59bb" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">osg::Group * <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#adf2dafa55c41c20eb3f82a72f4ef59bb">Updraft::Core::SceneManager::newGroup</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Creates an empty osg::Group, and adds it to the root. There is always one group associated with one <a class="el" href="class_updraft_1_1_core_1_1_map_layer_group.html">MapLayerGroup</a>. </p>
 
 </div>
 </div>
@@ -718,40 +767,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a53722e447b6b448e5a2ad72a7e7e8516"></a><!-- doxytag: member="Updraft::Core::SceneManager::updateCameraOrtho" ref="a53722e447b6b448e5a2ad72a7e7e8516" args="(osg::Camera *camera)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a53722e447b6b448e5a2ad72a7e7e8516">Updraft::Core::SceneManager::updateCameraOrtho</a> </td>
-          <td>(</td>
-          <td class="paramtype">osg::Camera *&#160;</td>
-          <td class="paramname"><em>camera</em></td><td>)</td>
-          <td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1eb95f0e63ecdbc6051a59bf5686b3c5"></a><!-- doxytag: member="Updraft::Core::SceneManager::updateCameraPerspective" ref="a1eb95f0e63ecdbc6051a59bf5686b3c5" args="(osg::Camera *camera)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a1eb95f0e63ecdbc6051a59bf5686b3c5">Updraft::Core::SceneManager::updateCameraPerspective</a> </td>
-          <td>(</td>
-          <td class="paramtype">osg::Camera *&#160;</td>
-          <td class="paramname"><em>camera</em></td><td>)</td>
-          <td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="a7e1f682dc20a6ff5c2e6c626e62359ff"></a><!-- doxytag: member="Updraft::Core::SceneManager::activeMapIndex" ref="a7e1f682dc20a6ff5c2e6c626e62359ff" args="" -->
 <div class="memitem">
@@ -794,12 +809,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5860ca488f2bf194204e0361e403e3a4"></a><!-- doxytag: member="Updraft::Core::SceneManager::graphicsWindow" ref="a5860ca488f2bf194204e0361e403e3a4" args="" -->
+<a class="anchor" id="a18d540e2c4c8e2d7b0cfd7f6302a557a"></a><!-- doxytag: member="Updraft::Core::SceneManager::elevationManager" ref="a18d540e2c4c8e2d7b0cfd7f6302a557a" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">osgQt::GraphicsWindowQt* <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a5860ca488f2bf194204e0361e403e3a4">Updraft::Core::SceneManager::graphicsWindow</a><code> [private]</code></td>
+          <td class="memname">osgEarth::Util::ElevationManager* <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a18d540e2c4c8e2d7b0cfd7f6302a557a">Updraft::Core::SceneManager::elevationManager</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -807,12 +822,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1094b6a1be59b7495511be9d40f0c0a3"></a><!-- doxytag: member="Updraft::Core::SceneManager::isCameraPerspective" ref="a1094b6a1be59b7495511be9d40f0c0a3" args="" -->
+<a class="anchor" id="a5860ca488f2bf194204e0361e403e3a4"></a><!-- doxytag: member="Updraft::Core::SceneManager::graphicsWindow" ref="a5860ca488f2bf194204e0361e403e3a4" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a1094b6a1be59b7495511be9d40f0c0a3">Updraft::Core::SceneManager::isCameraPerspective</a><code> [private]</code></td>
+          <td class="memname">osgQt::GraphicsWindowQt* <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a5860ca488f2bf194204e0361e403e3a4">Updraft::Core::SceneManager::graphicsWindow</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -884,6 +899,19 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Map of osg nodes registered for mouse picking. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91ca766ae56a25a4a7359e7395388f4a"></a><!-- doxytag: member="Updraft::Core::SceneManager::placer" ref="a91ca766ae56a25a4a7359e7395388f4a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">osgEarth::Util::ObjectPlacer* <a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html#a91ca766ae56a25a4a7359e7395388f4a">Updraft::Core::SceneManager::placer</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -967,7 +995,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_scene_manager.html">SceneManager</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

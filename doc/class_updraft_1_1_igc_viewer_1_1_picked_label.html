@@ -121,7 +121,7 @@ Inheritance diagram for Updraft::IgcViewer::PickedLabel:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a2146ef0e87177c730ea13b88a5768eee">draw</a> (QPainter *painter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a18f9a32f7ac18e8d438bec1dd06abc56">PickedLabel</a> (QList&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a> &gt; *p, QList&lt; QString &gt; *t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a58481a72c8b4535ff6d141ea9136793f">PickedLabel</a> (QList&lt; int &gt; *p, QList&lt; QString &gt; *t)</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Qt::Orientations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a311cc96f84589292c28f0703c976b37c">expandingDirections</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#af34659745e162ba303de30644153dbb8">maximumSize</a> () const </td></tr>
@@ -129,25 +129,25 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aa3915a2b8671b2a4a55bb70266fef7e6">sizeHint</a> () const </td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#ae1ead0396fff0158ecee4e81bdad940d">pickedPositions</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a20cf325af011e7e11eaddf94634fe1be">pickedPositions</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a9cc2120ea64e1b3e067f7ac80fb0ec04">texts</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aa1958b38e49f453a64db458ba1186512">MIN_WIDTH</a> = 100</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a7037850a5558b2df81d5e128124f2b2d">MIN_HEIGHT</a> = 60</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aade4f3a66fc4e00a73ae98a71fa4edd4">TEXT_WIDTH</a> = 100</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a7037850a5558b2df81d5e128124f2b2d">MIN_HEIGHT</a> = 70</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aade4f3a66fc4e00a73ae98a71fa4edd4">TEXT_WIDTH</a> = 67</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#ac58407c9b65608b5c4786dd30a1fcba0">SPACE</a> = 2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a5fe311c58be270cc93b0f6e5afb4fe2d">LABEL_PEN</a> = QPen(Qt::white)</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a18f9a32f7ac18e8d438bec1dd06abc56"></a><!-- doxytag: member="Updraft::IgcViewer::PickedLabel::PickedLabel" ref="a18f9a32f7ac18e8d438bec1dd06abc56" args="(QList&lt; PickData &gt; *p, QList&lt; QString &gt; *t)" -->
+<a class="anchor" id="a58481a72c8b4535ff6d141ea9136793f"></a><!-- doxytag: member="Updraft::IgcViewer::PickedLabel::PickedLabel" ref="a58481a72c8b4535ff6d141ea9136793f" args="(QList&lt; int &gt; *p, QList&lt; QString &gt; *t)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a18f9a32f7ac18e8d438bec1dd06abc56">Updraft::IgcViewer::PickedLabel::PickedLabel</a> </td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a58481a72c8b4535ff6d141ea9136793f">Updraft::IgcViewer::PickedLabel::PickedLabel</a> </td>
           <td>(</td>
-          <td class="paramtype">QList&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a> &gt; *&#160;</td>
+          <td class="paramtype">QList&lt; int &gt; *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -279,7 +279,7 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a7037850a5558b2df81d5e128124f2b2d">Updraft::IgcViewer::PickedLabel::MIN_HEIGHT</a> = 60<code> [static, private]</code></td>
+          <td class="memname">const int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a7037850a5558b2df81d5e128124f2b2d">Updraft::IgcViewer::PickedLabel::MIN_HEIGHT</a> = 70<code> [static, private]</code></td>
         </tr>
       </table>
 </div>
@@ -300,12 +300,12 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae1ead0396fff0158ecee4e81bdad940d"></a><!-- doxytag: member="Updraft::IgcViewer::PickedLabel::pickedPositions" ref="ae1ead0396fff0158ecee4e81bdad940d" args="" -->
+<a class="anchor" id="a20cf325af011e7e11eaddf94634fe1be"></a><!-- doxytag: member="Updraft::IgcViewer::PickedLabel::pickedPositions" ref="a20cf325af011e7e11eaddf94634fe1be" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;<a class="el" href="struct_updraft_1_1_igc_viewer_1_1_pick_data.html">PickData</a>&gt;* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#ae1ead0396fff0158ecee4e81bdad940d">Updraft::IgcViewer::PickedLabel::pickedPositions</a><code> [private]</code></td>
+          <td class="memname">QList&lt;int&gt;* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#a20cf325af011e7e11eaddf94634fe1be">Updraft::IgcViewer::PickedLabel::pickedPositions</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -331,7 +331,7 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aade4f3a66fc4e00a73ae98a71fa4edd4">Updraft::IgcViewer::PickedLabel::TEXT_WIDTH</a> = 100<code> [static, private]</code></td>
+          <td class="memname">const int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html#aade4f3a66fc4e00a73ae98a71fa4edd4">Updraft::IgcViewer::PickedLabel::TEXT_WIDTH</a> = 67<code> [static, private]</code></td>
         </tr>
       </table>
 </div>
@@ -378,7 +378,7 @@ Static Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_igc_viewer.html">IgcViewer</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_picked_label.html">PickedLabel</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:36 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:52 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

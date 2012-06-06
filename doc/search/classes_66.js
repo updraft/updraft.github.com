@@ -5,5 +5,6 @@ var searchData=
   ['fileregistration',['FileRegistration',['../struct_updraft_1_1_file_registration.html',1,'Updraft']]],
   ['filerolesdialog',['FileRolesDialog',['../class_file_roles_dialog.html',1,'']]],
   ['filetypemanager',['FileTypeManager',['../class_updraft_1_1_core_1_1_file_type_manager.html',1,'Updraft::Core']]],
-  ['fix',['Fix',['../struct_updraft_1_1_igc_1_1_fix.html',1,'Updraft::Igc']]]
+  ['fix',['Fix',['../struct_updraft_1_1_igc_1_1_fix.html',1,'Updraft::Igc']]],
+  ['fixinfo',['FixInfo',['../class_updraft_1_1_igc_viewer_1_1_fix_info.html',1,'Updraft::IgcViewer']]]
 ];

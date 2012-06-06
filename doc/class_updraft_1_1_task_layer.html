@@ -139,15 +139,15 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_task_decl_panel.html">TaskDeclPanel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a6d0a613e9b09b1988615780c1bac2d14">getTaskDeclPanel</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a902b1621df11e03145a4360054164f12">isTabSelected</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a722156fbefa5b7c48aa63fc1d0bc94e9">newTaskPoint</a> (const <a class="el" href="struct_updraft_1_1_turn_point.html">TurnPoint</a> *tp)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new task point.  <a href="#a722156fbefa5b7c48aa63fc1d0bc94e9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a8413378ca613bde96687b54e4111090a">save</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves file. If the path is not set, file dialog is invoked.  <a href="#a8413378ca613bde96687b54e4111090a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new task point from a turn-point.  <a href="#a722156fbefa5b7c48aa63fc1d0bc94e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a11f7daa0f53414b18e0128c95763cf3f">newTaskPoint</a> (const <a class="el" href="class_updraft_1_1_util_1_1_location.html">Util::Location</a> &amp;loc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new task point on the map.  <a href="#a11f7daa0f53414b18e0128c95763cf3f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a07778d47dfdf0f839f4572b0b3c7e535">save</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a1a0de9606c6131ec6b603e9e80e7b020">undo</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves forward in file history.  <a href="#a1a0de9606c6131ec6b603e9e80e7b020"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a888e8a331b244f52f49cf8a52e89de2e">redo</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves back in file history.  <a href="#a888e8a331b244f52f49cf8a52e89de2e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a0e325a8a1ee0f729b401f575478a1c62">saveAs</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes save as dialog and saves file.  <a href="#a0e325a8a1ee0f729b401f575478a1c62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a578283d311e68405b0348a22374af19c">saveAs</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_task_layer.html#a4d030e7e481795a1f0729bb6eef03b52">DrawLines</a> (osg::Geode *geode)</td></tr>
@@ -458,7 +458,26 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates a new task point. </p>
+<p>Creates a new task point from a turn-point. </p>
+
+</div>
+</div>
+<a class="anchor" id="a11f7daa0f53414b18e0128c95763cf3f"></a><!-- doxytag: member="Updraft::TaskLayer::newTaskPoint" ref="a11f7daa0f53414b18e0128c95763cf3f" args="(const Util::Location &amp;loc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_task_layer.html#a722156fbefa5b7c48aa63fc1d0bc94e9">Updraft::TaskLayer::newTaskPoint</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_updraft_1_1_util_1_1_location.html">Util::Location</a> &amp;&#160;</td>
+          <td class="paramname"><em>loc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates a new task point on the map. </p>
 
 </div>
 </div>
@@ -480,12 +499,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8413378ca613bde96687b54e4111090a"></a><!-- doxytag: member="Updraft::TaskLayer::save" ref="a8413378ca613bde96687b54e4111090a" args="()" -->
+<a class="anchor" id="a07778d47dfdf0f839f4572b0b3c7e535"></a><!-- doxytag: member="Updraft::TaskLayer::save" ref="a07778d47dfdf0f839f4572b0b3c7e535" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_task_layer.html#a8413378ca613bde96687b54e4111090a">Updraft::TaskLayer::save</a> </td>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_task_layer.html#a07778d47dfdf0f839f4572b0b3c7e535">Updraft::TaskLayer::save</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -493,17 +512,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>Saves file. If the path is not set, file dialog is invoked. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True on success. False on fail or cancell. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a0e325a8a1ee0f729b401f575478a1c62"></a><!-- doxytag: member="Updraft::TaskLayer::saveAs" ref="a0e325a8a1ee0f729b401f575478a1c62" args="()" -->
+<a class="anchor" id="a578283d311e68405b0348a22374af19c"></a><!-- doxytag: member="Updraft::TaskLayer::saveAs" ref="a578283d311e68405b0348a22374af19c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_task_layer.html#a0e325a8a1ee0f729b401f575478a1c62">Updraft::TaskLayer::saveAs</a> </td>
+          <td class="memname">bool <a class="el" href="class_updraft_1_1_task_layer.html#a578283d311e68405b0348a22374af19c">Updraft::TaskLayer::saveAs</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -511,8 +530,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>Invokes save as dialog and saves file. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True on success. False on fail or cancell. </dd></dl>
 
 </div>
 </div>
@@ -784,7 +803,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft.html">Updraft</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_task_layer.html">TaskLayer</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

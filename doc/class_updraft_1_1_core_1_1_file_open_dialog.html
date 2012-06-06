@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html#ab56d8aa9b6448762fc98ec742542d59d">openIt</a> (const QString &amp;caption)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html#aa8f147fe619798ff9bd7897a462ccc6d">openIt</a> (const QString &amp;caption, const QString &amp;dir=QString())</td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html#aaff30f6d59754709620571ef0a3fc3c0">getFilters</a> ()</td></tr>
@@ -135,16 +135,26 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab56d8aa9b6448762fc98ec742542d59d"></a><!-- doxytag: member="Updraft::Core::FileOpenDialog::openIt" ref="ab56d8aa9b6448762fc98ec742542d59d" args="(const QString &amp;caption)" -->
+<a class="anchor" id="aa8f147fe619798ff9bd7897a462ccc6d"></a><!-- doxytag: member="Updraft::Core::FileOpenDialog::openIt" ref="aa8f147fe619798ff9bd7897a462ccc6d" args="(const QString &amp;caption, const QString &amp;dir=QString())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html#ab56d8aa9b6448762fc98ec742542d59d">Updraft::Core::FileOpenDialog::openIt</a> </td>
+          <td class="memname">QString <a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html#aa8f147fe619798ff9bd7897a462ccc6d">Updraft::Core::FileOpenDialog::openIt</a> </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>caption</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td class="paramname"><em>caption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>dir</em> = <code>QString()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -153,9 +163,11 @@ Static Private Member Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">caption</td><td>Title of the file open dialog. </td></tr>
+    <tr><td class="paramname">dir</td><td>Directory first shown in the dialog. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>First selected file. This is only used to retrieve the dir for the next appearance of the file dialog. </dd></dl>
 
 </div>
 </div>
@@ -185,7 +197,7 @@ Static Private Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_file_open_dialog.html">FileOpenDialog</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:35 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:51 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

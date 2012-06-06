@@ -6,7 +6,7 @@ var searchData=
   ['value',['value',['../struct_updraft_1_1_igc_viewer_1_1_data.html#ac44705da48fe528d639208f8c5144550',1,'Updraft::IgcViewer::Data']]],
   ['vertical_5fspeed_5fpen',['VERTICAL_SPEED_PEN',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a815b426fe027f495c98c0cdeb7115511',1,'Updraft::IgcViewer::PlotWidget']]],
   ['verticalspeedaxes',['verticalSpeedAxes',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#ad8db7f3bbaf2cd9a7ae3652928a2cf1e',1,'Updraft::IgcViewer::PlotWidget']]],
-  ['verticalspeedinfo',['verticalSpeedInfo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#aef77c9c39b2f6392331fe1e1fb048230',1,'Updraft::IgcViewer::OpenedFile::verticalSpeedInfo()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa8bd2a0a742380a9d8e870f1d246c093',1,'Updraft::IgcViewer::PlotWidget::verticalSpeedInfo()']]],
+  ['verticalspeedinfo',['verticalSpeedInfo',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#ac476a568d90f742b7cd106af9f86ef3f',1,'Updraft::IgcViewer::OpenedFile::verticalSpeedInfo()'],['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a0728a67062f573fa2243ce407dac0c78',1,'Updraft::IgcViewer::PlotWidget::verticalSpeedInfo()']]],
   ['verticalspeedplotpainter',['verticalSpeedPlotPainter',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a5c1c60c2631a0b964d7ac16863d63964',1,'Updraft::IgcViewer::PlotWidget']]],
   ['viewer',['viewer',['../class_updraft_1_1_core_1_1_scene_manager.html#a9b4517fcf9df8504573127d0766bccf3',1,'Updraft::Core::SceneManager::viewer()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#a0ea77cb73164b3149afd02a222a71e11',1,'Updraft::IgcViewer::OpenedFile::viewer()']]]
 ];

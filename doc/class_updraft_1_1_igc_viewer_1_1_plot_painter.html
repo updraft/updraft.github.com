@@ -127,13 +127,10 @@ Public Slots</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a3d120769b9b09f8adfeb3ca6768a20cb">~PlotPainter</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#add3727b8333c31287b71a705e0bcabac">init</a> (<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_axes.html">PlotAxes</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a6d6fb23da693bc24d4387b3d765fa229">axes</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a30e9b3bbebfa23ef671db3fc2eb287ba">info</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#adae2b6cc6b6db11e840c89607d3c5ce7">init</a> (<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_axes.html">PlotAxes</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a6d6fb23da693bc24d4387b3d765fa229">axes</a>, <a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a0b82534af05431c0473a9b5d5d085d6e">info</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a86dbdc7042a81ba1b08b4aba906a3e7a">draw</a> (QPainter *<a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#aeab2f580bc813f2338cd6171fe4f9bc5">painter</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a8e739d8295f472388af8b2488731295a">getValueAtPixelX</a> (int x)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a69217c61e64723cea3fc0b9738b545f9">getMeanValueAtPixels</a> (int start, int end)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#ad9b73cd821110f4c16a15450741eee84">getIndexAtPixelX</a> (int x)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a5b02ae712aa610dd045c26e36d0589c2">getTimeAtPixelX</a> (int x)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns time at pixel x in seconds  <a href="#a5b02ae712aa610dd045c26e36d0589c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#af1c12dcb81fcc9aee6d7890194f5a68a">getRangeAtPixel</a> (int x, int *startIndex, int *endIndex)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index range of the igc info for pixel x.  <a href="#af1c12dcb81fcc9aee6d7890194f5a68a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#ace76780aefdbcdab28c7bb1f9e0bdf0e">getMinX</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a315f983e1b04bf9ccf05dcd8157b3451">getMaxX</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
@@ -145,7 +142,7 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPainter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#aeab2f580bc813f2338cd6171fe4f9bc5">painter</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_axes.html">PlotAxes</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a6d6fb23da693bc24d4387b3d765fa229">axes</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a30e9b3bbebfa23ef671db3fc2eb287ba">info</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a0b82534af05431c0473a9b5d5d085d6e">info</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPolygonF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#ada5eb31a805f9dfefa487c9145b1d983">buffer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_updraft_1_1_igc_viewer_1_1_data.html">Data</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a157d102a94e0ad98530150099d2b694b">dataValues</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QVector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a95ac40162b2a40df025898ba0f799ec2">indexes</a></td></tr>
@@ -238,23 +235,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad9b73cd821110f4c16a15450741eee84"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getIndexAtPixelX" ref="ad9b73cd821110f4c16a15450741eee84" args="(int x)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#ad9b73cd821110f4c16a15450741eee84">Updraft::IgcViewer::PlotPainter::getIndexAtPixelX</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a315f983e1b04bf9ccf05dcd8157b3451"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getMaxX" ref="a315f983e1b04bf9ccf05dcd8157b3451" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -264,33 +244,6 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a69217c61e64723cea3fc0b9738b545f9"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getMeanValueAtPixels" ref="a69217c61e64723cea3fc0b9738b545f9" args="(int start, int end)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">qreal <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a69217c61e64723cea3fc0b9738b545f9">Updraft::IgcViewer::PlotPainter::getMeanValueAtPixels</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>end</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -314,48 +267,47 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5b02ae712aa610dd045c26e36d0589c2"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getTimeAtPixelX" ref="a5b02ae712aa610dd045c26e36d0589c2" args="(int x)" -->
+<a class="anchor" id="af1c12dcb81fcc9aee6d7890194f5a68a"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getRangeAtPixel" ref="af1c12dcb81fcc9aee6d7890194f5a68a" args="(int x, int *startIndex, int *endIndex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">qreal <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a5b02ae712aa610dd045c26e36d0589c2">Updraft::IgcViewer::PlotPainter::getTimeAtPixelX</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#af1c12dcb81fcc9aee6d7890194f5a68a">Updraft::IgcViewer::PlotPainter::getRangeAtPixel</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>startIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>endIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>returns time at pixel x in seconds </p>
+<p>Returns the index range of the igc info for pixel x. </p>
 
 </div>
 </div>
-<a class="anchor" id="a8e739d8295f472388af8b2488731295a"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::getValueAtPixelX" ref="a8e739d8295f472388af8b2488731295a" args="(int x)" -->
+<a class="anchor" id="adae2b6cc6b6db11e840c89607d3c5ce7"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::init" ref="adae2b6cc6b6db11e840c89607d3c5ce7" args="(PlotAxes *axes, FixInfo *info)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">qreal <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a8e739d8295f472388af8b2488731295a">Updraft::IgcViewer::PlotPainter::getValueAtPixelX</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="add3727b8333c31287b71a705e0bcabac"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::init" ref="add3727b8333c31287b71a705e0bcabac" args="(PlotAxes *axes, IgcInfo *info)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#add3727b8333c31287b71a705e0bcabac">Updraft::IgcViewer::PlotPainter::init</a> </td>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#adae2b6cc6b6db11e840c89607d3c5ce7">Updraft::IgcViewer::PlotPainter::init</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_axes.html">PlotAxes</a> *&#160;</td>
           <td class="paramname"><em>axes</em>, </td>
@@ -363,7 +315,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a> *&#160;</td>
           <td class="paramname"><em>info</em>&#160;</td>
         </tr>
         <tr>
@@ -446,12 +398,12 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a30e9b3bbebfa23ef671db3fc2eb287ba"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::info" ref="a30e9b3bbebfa23ef671db3fc2eb287ba" args="" -->
+<a class="anchor" id="a0b82534af05431c0473a9b5d5d085d6e"></a><!-- doxytag: member="Updraft::IgcViewer::PlotPainter::info" ref="a0b82534af05431c0473a9b5d5d085d6e" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_igc_info.html">IgcInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a30e9b3bbebfa23ef671db3fc2eb287ba">Updraft::IgcViewer::PlotPainter::info</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_fix_info.html">FixInfo</a>* <a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a0b82534af05431c0473a9b5d5d085d6e">Updraft::IgcViewer::PlotPainter::info</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -498,7 +450,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_igc_viewer.html">IgcViewer</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_igc_viewer_1_1_plot_painter.html">PlotPainter</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:36 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:52 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

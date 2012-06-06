@@ -101,6 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Updraft::Core::MapManipulator Class Reference</div>  </div>
@@ -112,11 +113,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a68d3b7cfcde057ff87b822e2d17bf534">MapManipulator</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a803d5eb58be63c7a7d4244b63541355d">~MapManipulator</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#aff339ab7e6d96465334223a5fe831940">resetNorth</a> (double duration)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#ab8ef6511425bf6fd901e26468e35555b">untilt</a> (double duration)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a4bba785e9ad1588778b412cdd5f1775b">updateCameraProjection</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a17ab3011493f68748f4454daa0bf79bb">mouseZoomSensitivityChanged</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a37fdef1c25b466cbc956ca99f5e6ef89">bindKeyboardEvents</a> (Settings *settings)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a193e7af15408028c9ffe6dba246642d3">bindMouseEvents</a> (Settings *settings)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_updraft_1_1_setting_interface.html">SettingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#ad0de203c40a66edc371b739ac46fac92">mouseZoomSensitivity</a></td></tr>
@@ -138,7 +145,57 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a803d5eb58be63c7a7d4244b63541355d"></a><!-- doxytag: member="Updraft::Core::MapManipulator::~MapManipulator" ref="a803d5eb58be63c7a7d4244b63541355d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a803d5eb58be63c7a7d4244b63541355d">Updraft::Core::MapManipulator::~MapManipulator</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a37fdef1c25b466cbc956ca99f5e6ef89"></a><!-- doxytag: member="Updraft::Core::MapManipulator::bindKeyboardEvents" ref="a37fdef1c25b466cbc956ca99f5e6ef89" args="(Settings *settings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a37fdef1c25b466cbc956ca99f5e6ef89">Updraft::Core::MapManipulator::bindKeyboardEvents</a> </td>
+          <td>(</td>
+          <td class="paramtype">Settings *&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a193e7af15408028c9ffe6dba246642d3"></a><!-- doxytag: member="Updraft::Core::MapManipulator::bindMouseEvents" ref="a193e7af15408028c9ffe6dba246642d3" args="(Settings *settings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a193e7af15408028c9ffe6dba246642d3">Updraft::Core::MapManipulator::bindMouseEvents</a> </td>
+          <td>(</td>
+          <td class="paramtype">Settings *&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a17ab3011493f68748f4454daa0bf79bb"></a><!-- doxytag: member="Updraft::Core::MapManipulator::mouseZoomSensitivityChanged" ref="a17ab3011493f68748f4454daa0bf79bb" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +246,22 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4bba785e9ad1588778b412cdd5f1775b"></a><!-- doxytag: member="Updraft::Core::MapManipulator::updateCameraProjection" ref="a4bba785e9ad1588778b412cdd5f1775b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html#a4bba785e9ad1588778b412cdd5f1775b">Updraft::Core::MapManipulator::updateCameraProjection</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="ad0de203c40a66edc371b739ac46fac92"></a><!-- doxytag: member="Updraft::Core::MapManipulator::mouseZoomSensitivity" ref="ad0de203c40a66edc371b739ac46fac92" args="" -->
 <div class="memitem">
@@ -229,7 +302,7 @@ Private Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_updraft_1_1_core.html">Core</a>      </li>
       <li class="navelem"><a class="el" href="class_updraft_1_1_core_1_1_map_manipulator.html">MapManipulator</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:34 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:50 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>

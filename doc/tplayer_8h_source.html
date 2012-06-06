@@ -129,8 +129,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 
 <a name="l00029"></a><a class="code" href="class_updraft_1_1_t_p_layer.html">00029</a> <span class="keyword">class </span><a class="code" href="class_updraft_1_1_t_p_layer.html" title="Class storing a turn-points layer.">TPLayer</a> {
 <a name="l00030"></a>00030  <span class="keyword">public</span>:
-<a name="l00031"></a>00031   <a class="code" href="class_updraft_1_1_t_p_layer.html#a7c002dc668ac6eb9fbd0b586347f1d47">TPLayer</a>(<span class="keywordtype">bool</span> displayed_, osgEarth::Util::ObjectPlacer* objectPlacer_,
-<a name="l00032"></a>00032     <span class="keyword">const</span> <a class="code" href="class_updraft_1_1_t_p_file.html" title="Interface for a turn-points file.">TPFile</a> *file_, <span class="keyword">const</span> QString &amp;<a class="code" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">dataDir</a>, <a class="code" href="class_updraft_1_1_turn_points.html">TurnPoints</a>* parent_,
+<a name="l00031"></a>00031   <a class="code" href="class_updraft_1_1_t_p_layer.html#a21d8fd3e2689e64bd9123f7440e0b524">TPLayer</a>(<span class="keywordtype">bool</span> displayed_, osgEarth::Util::ObjectPlacer* objectPlacer_,
+<a name="l00032"></a>00032     <span class="keyword">const</span> <a class="code" href="class_updraft_1_1_t_p_file.html" title="Interface for a turn-points file.">TPFile</a> *file_, <a class="code" href="class_updraft_1_1_turn_points.html">TurnPoints</a>* parent_,
 <a name="l00033"></a>00033     <span class="keyword">const</span> QVector&lt;SettingInterface*&gt;&amp; settings);
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035   <span class="keyword">virtual</span> <a class="code" href="class_updraft_1_1_t_p_layer.html#acc1efcb9ff5c114ae5688c70c751a6cd">~TPLayer</a>();
@@ -165,28 +165,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00082"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a37a01f3584c064fdc2c61510e6300616">00082</a>   <span class="keyword">const</span> <a class="code" href="class_updraft_1_1_t_p_file.html" title="Interface for a turn-points file.">TPFile</a> *<a class="code" href="class_updraft_1_1_t_p_layer.html#a37a01f3584c064fdc2c61510e6300616">file</a>;
 <a name="l00083"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a7b2395c5ba58cb0c0397e4d6ec3cc8df">00083</a>   <span class="keywordtype">bool</span> <a class="code" href="class_updraft_1_1_t_p_layer.html#a7b2395c5ba58cb0c0397e4d6ec3cc8df">displayed</a>;
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085   <span class="comment">// Path to application data directory.</span>
-<a name="l00086"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">00086</a>   QString <a class="code" href="class_updraft_1_1_t_p_layer.html#a4cfcd4f1e485c256f4cd5e93d9903cf6">dataDir</a>;
-<a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#aa706dc83b2154d692a467a92442b991b">00088</a>   <a class="code" href="class_updraft_1_1_turn_points.html">TurnPoints</a>* <a class="code" href="class_updraft_1_1_t_p_layer.html#aa706dc83b2154d692a467a92442b991b">parent</a>;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090   <span class="comment">// TODO(cestmir): Serves for destructor purposes. Remove in future</span>
-<a name="l00091"></a>00091   <span class="comment">// when real turnpoint MapObjects are implemented</span>
-<a name="l00092"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a3ab713084fb41dd20bfd77937f6047a8">00092</a>   QList&lt;TPMapObject*&gt; <a class="code" href="class_updraft_1_1_t_p_layer.html#a3ab713084fb41dd20bfd77937f6047a8">mapObjects</a>;
-<a name="l00093"></a>00093 
-<a name="l00095"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#ae41a4f2ef0c29590f1bda61f0c03d10a">00095</a>   osg::Vec4 <a class="code" href="class_updraft_1_1_t_p_layer.html#ae41a4f2ef0c29590f1bda61f0c03d10a" title="Colour of the label setting.">labelColour</a>;
-<a name="l00096"></a>00096 
-<a name="l00098"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4">00098</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4" title="Text min/max visibility setting.">labelMinScale</a>;
-<a name="l00099"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77">00099</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77">labelMaxScale</a>;
+<a name="l00085"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#aa706dc83b2154d692a467a92442b991b">00085</a>   <a class="code" href="class_updraft_1_1_turn_points.html">TurnPoints</a>* <a class="code" href="class_updraft_1_1_t_p_layer.html#aa706dc83b2154d692a467a92442b991b">parent</a>;
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087   <span class="comment">// TODO(cestmir): Serves for destructor purposes. Remove in future</span>
+<a name="l00088"></a>00088   <span class="comment">// when real turnpoint MapObjects are implemented</span>
+<a name="l00089"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a3ab713084fb41dd20bfd77937f6047a8">00089</a>   QList&lt;TPMapObject*&gt; <a class="code" href="class_updraft_1_1_t_p_layer.html#a3ab713084fb41dd20bfd77937f6047a8">mapObjects</a>;
+<a name="l00090"></a>00090 
+<a name="l00092"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4">00092</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a21d791590b98eb080c81ac104e9c0df4" title="Text min/max visibility setting.">labelMinScale</a>;
+<a name="l00093"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77">00093</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a66f983c564cf85e2fcbcffa93aa71b77">labelMaxScale</a>;
+<a name="l00094"></a>00094 
+<a name="l00099"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a1f29ebf2e8f13abb910c5bc381386de5">00099</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a1f29ebf2e8f13abb910c5bc381386de5">labelDrawDist</a>;
 <a name="l00100"></a>00100 
-<a name="l00105"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#a1f29ebf2e8f13abb910c5bc381386de5">00105</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#a1f29ebf2e8f13abb910c5bc381386de5">labelDrawDist</a>;
+<a name="l00102"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#ab097788dc4bb18a7a1df24e831dedf58">00102</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#ab097788dc4bb18a7a1df24e831dedf58" title="Label font size.">lblSize</a>;
+<a name="l00103"></a>00103 };
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 }  <span class="comment">// End namespace Updraft</span>
 <a name="l00106"></a>00106 
-<a name="l00108"></a><a class="code" href="class_updraft_1_1_t_p_layer.html#ab097788dc4bb18a7a1df24e831dedf58">00108</a>   qreal <a class="code" href="class_updraft_1_1_t_p_layer.html#ab097788dc4bb18a7a1df24e831dedf58" title="Label font size.">lblSize</a>;
-<a name="l00109"></a>00109 };
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 }  <span class="comment">// End namespace Updraft</span>
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 <span class="preprocessor">#endif  // UPDRAFT_SRC_PLUGINS_TURNPOINTS_TPLAYER_H_</span>
+<a name="l00107"></a>00107 <span class="preprocessor">#endif  // UPDRAFT_SRC_PLUGINS_TURNPOINTS_TPLAYER_H_</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -207,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="tplayer_8h.html">tplayer.h</a>      </li>
 
-    <li class="footer">Generated on Tue May 29 2012 14:05:31 for Updraft project by
+    <li class="footer">Generated on Wed Jun 6 2012 11:11:47 for Updraft project by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6 </li>
    </ul>
