@@ -11,7 +11,7 @@ var searchData=
   ['updateaddtpbutton',['updateAddTpButton',['../class_updraft_1_1_task_decl_panel.html#a868624969c2f6765d08657ea74877db5',1,'Updraft::TaskDeclPanel']]],
   ['updatebuffer',['updateBuffer',['../class_updraft_1_1_igc_viewer_1_1_plot_painter.html#a1195708c09558bd9ed0b3db1d3b8b0db',1,'Updraft::IgcViewer::PlotPainter']]],
   ['updatebuttons',['updateButtons',['../class_updraft_1_1_task_decl_panel.html#add1e33198acdb9fc663a4d67b99c2fc4',1,'Updraft::TaskDeclPanel']]],
-  ['updatecameraprojection',['updateCameraProjection',['../class_updraft_1_1_core_1_1_map_manipulator.html#a4bba785e9ad1588778b412cdd5f1775b',1,'Updraft::Core::MapManipulator']]],
+  ['updatecameraprojection',['updateCameraProjection',['../class_updraft_1_1_core_1_1_map_manipulator.html#a4bba785e9ad1588778b412cdd5f1775b',1,'Updraft::Core::MapManipulator::updateCameraProjection()'],['../class_updraft_1_1_core_1_1_scene_manager.html#aee2669a9139a8ee475c5072df6630113',1,'Updraft::Core::SceneManager::updateCameraProjection()']]],
   ['updatecurrentinfo',['updateCurrentInfo',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a40bff2fc086c7bfd5bbd222015414726',1,'Updraft::IgcViewer::PlotWidget']]],
   ['updateonundoredo',['updateOnUndoRedo',['../class_updraft_1_1_task_file.html#adfff767890a528b3f80a25dd511d2527',1,'Updraft::TaskFile']]],
   ['updatepickedtexts',['updatePickedTexts',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#aa76c598dbc94a77d314db6a666d5e3be',1,'Updraft::IgcViewer::PlotWidget']]],

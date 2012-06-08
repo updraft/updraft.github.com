@@ -77,8 +77,8 @@ var hierarchy =
     [ "Updraft::Core::MapManager", "class_updraft_1_1_core_1_1_map_manager.html", null ],
     [ "Updraft::Core::MapManipulator", "class_updraft_1_1_core_1_1_map_manipulator.html", null ],
     [ "Updraft::MapObject", "class_updraft_1_1_map_object.html", [
+      [ "Updraft::Core::MapMapObject", "class_updraft_1_1_core_1_1_map_map_object.html", null ],
       [ "Updraft::IgcViewer::IGCMapObject", "class_updraft_1_1_igc_viewer_1_1_i_g_c_map_object.html", null ],
-      [ "Updraft::MapMapObject", "class_updraft_1_1_map_map_object.html", null ],
       [ "Updraft::TPMapObject", "class_updraft_1_1_t_p_map_object.html", null ]
     ] ],
     [ "GeographicLib::Math", "class_geographic_lib_1_1_math.html", null ],

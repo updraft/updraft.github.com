@@ -13,6 +13,7 @@ var searchData=
   ['bg_5fcolor',['BG_COLOR',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4726d111c747c80c7b05112d83ba4373',1,'Updraft::IgcViewer::PlotWidget']]],
   ['bigendian',['bigendian',['../class_geographic_lib_1_1_math.html#ab14e512a1867b98ecb38e9175426596c',1,'GeographicLib::Math']]],
   ['bindkeyboardevents',['bindKeyboardEvents',['../class_updraft_1_1_core_1_1_map_manipulator.html#a37fdef1c25b466cbc956ca99f5e6ef89',1,'Updraft::Core::MapManipulator']]],
+  ['bindmanipulator',['bindManipulator',['../class_updraft_1_1_core_1_1_map_manager.html#adc16a90e6d006b6dbf1df4ea6b699b4f',1,'Updraft::Core::MapManager']]],
   ['bindmouseevents',['bindMouseEvents',['../class_updraft_1_1_core_1_1_map_manipulator.html#a193e7af15408028c9ffe6dba246642d3',1,'Updraft::Core::MapManipulator']]],
   ['bottom',['bottom',['../class_updraft_1_1_core_1_1_settings_top_view.html#a15d267be63e86cabec2bbfe27bd7c7b2',1,'Updraft::Core::SettingsTopView']]],
   ['bottom_5fface',['BOTTOM_FACE',['../class_updraft_1_1_airspaces_1_1oa_engine.html#a2e9cd57e812e1d7e10de65ca45d03701',1,'Updraft::Airspaces::oaEngine']]],

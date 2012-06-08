@@ -59,7 +59,7 @@ var annotated =
     [ "Updraft::MapLayerInterface", "class_updraft_1_1_map_layer_interface.html", "class_updraft_1_1_map_layer_interface" ],
     [ "Updraft::Core::MapManager", "class_updraft_1_1_core_1_1_map_manager.html", "class_updraft_1_1_core_1_1_map_manager" ],
     [ "Updraft::Core::MapManipulator", "class_updraft_1_1_core_1_1_map_manipulator.html", "class_updraft_1_1_core_1_1_map_manipulator" ],
-    [ "Updraft::MapMapObject", "class_updraft_1_1_map_map_object.html", "class_updraft_1_1_map_map_object" ],
+    [ "Updraft::Core::MapMapObject", "class_updraft_1_1_core_1_1_map_map_object.html", "class_updraft_1_1_core_1_1_map_map_object" ],
     [ "Updraft::MapObject", "class_updraft_1_1_map_object.html", "class_updraft_1_1_map_object" ],
     [ "GeographicLib::Math", "class_geographic_lib_1_1_math.html", "class_geographic_lib_1_1_math" ],
     [ "Updraft::Core::Menu", "class_updraft_1_1_core_1_1_menu.html", "class_updraft_1_1_core_1_1_menu" ],

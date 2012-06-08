@@ -10,6 +10,7 @@ var searchData=
   ['activetab',['activeTab',['../class_updraft_1_1_core_1_1_main_window.html#ae66da362bab86c95e6cdfa003172412e',1,'Updraft::Core::MainWindow']]],
   ['addbuttons',['addButtons',['../class_updraft_1_1_task_decl_panel.html#a4f8df586085b1b01e51470b1f80e8589',1,'Updraft::TaskDeclPanel']]],
   ['addtptext',['addTpText',['../class_updraft_1_1_task_decl_panel.html#a171be051b226f5b939e5928b85e5d32e',1,'Updraft::TaskDeclPanel']]],
+  ['advancedgroupregexp',['advancedGroupRegExp',['../class_updraft_1_1_core_1_1_settings_top_view.html#a46020e75ad4ca6e1d91f5982c46f3966',1,'Updraft::Core::SettingsTopView']]],
   ['ah',['AH',['../class_open_airspace_1_1_airspace.html#ae221fff1f5d3d1f2bad925db691d69b6',1,'OpenAirspace::Airspace']]],
   ['airportfreq',['airportFreq',['../struct_updraft_1_1_turn_point.html#a6583e6d7d9fb99086edaaa371e29b02c',1,'Updraft::TurnPoint']]],
   ['al',['AL',['../class_open_airspace_1_1_airspace.html#a372766432cf32a7a65c577d388e8c96c',1,'OpenAirspace::Airspace']]],

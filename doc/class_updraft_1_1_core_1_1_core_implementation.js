@@ -1,8 +1,8 @@
 var class_updraft_1_1_core_1_1_core_implementation =
 [
     [ "CoreImplementation", "class_updraft_1_1_core_1_1_core_implementation.html#a2a4a31d73c4b78c98b8a137700308295", null ],
-    [ "addSetting", "class_updraft_1_1_core_1_1_core_implementation.html#ad0737a76cdfb4c5d9cccb43fbcb4291f", null ],
-    [ "addSettingsGroup", "class_updraft_1_1_core_1_1_core_implementation.html#ad85fdfb6d21920581cf9e1148d464ee0", null ],
+    [ "addSetting", "class_updraft_1_1_core_1_1_core_implementation.html#a9abcfab57bc93fb9b3b6a4e96be68c95", null ],
+    [ "addSettingsGroup", "class_updraft_1_1_core_1_1_core_implementation.html#a089104741a2046ee1370444307540f22", null ],
     [ "createMapLayerGroup", "class_updraft_1_1_core_1_1_core_implementation.html#a42f05686f43471eaecb9200fae42257c", null ],
     [ "createMenu", "class_updraft_1_1_core_1_1_core_implementation.html#afabebf3da86093bec16fd1007b69bcb1", null ],
     [ "createTab", "class_updraft_1_1_core_1_1_core_implementation.html#a24dde3f1b0a4d704daf2db9decc71d20", null ],
@@ -11,8 +11,8 @@ var class_updraft_1_1_core_1_1_core_implementation =
     [ "getElevationManager", "class_updraft_1_1_core_1_1_core_implementation.html#a9dac429201b47f601da795c60ad71c69", null ],
     [ "getEllipsoid", "class_updraft_1_1_core_1_1_core_implementation.html#a82a46f50468f1eee8eef7ed36d06a20c", null ],
     [ "getMainWindow", "class_updraft_1_1_core_1_1_core_implementation.html#ac80791158340df16f2653e98076b68c8", null ],
+    [ "getResourcesDirectory", "class_updraft_1_1_core_1_1_core_implementation.html#a8f04bcafa50242a421f8d0f7506ceba5", null ],
     [ "getSimpleGroup", "class_updraft_1_1_core_1_1_core_implementation.html#a3b69b04d9891257f0927c63e6eb2b576", null ],
-    [ "getStaticDataDirectory", "class_updraft_1_1_core_1_1_core_implementation.html#ad7a9cc40f227a99d37636255d55aa1e9", null ],
     [ "getSystemMenu", "class_updraft_1_1_core_1_1_core_implementation.html#a3be6acc9d82bb9eb97e81b3052166940", null ],
     [ "registerFiletype", "class_updraft_1_1_core_1_1_core_implementation.html#a143b17996f98b0bc5bd11424589452b4", null ],
     [ "registerOsgNode", "class_updraft_1_1_core_1_1_core_implementation.html#a0abf5520ac37bb616890e044564f588a", null ],

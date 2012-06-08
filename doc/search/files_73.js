@@ -9,6 +9,7 @@ var searchData=
   ['settingsdelegate_2eh',['settingsdelegate.h',['../settingsdelegate_8h.html',1,'']]],
   ['settingsdialog_2ecpp',['settingsdialog.cpp',['../settingsdialog_8cpp.html',1,'']]],
   ['settingsdialog_2eh',['settingsdialog.h',['../settingsdialog_8h.html',1,'']]],
+  ['settingsgrouptype_2eh',['settingsgrouptype.h',['../settingsgrouptype_8h.html',1,'']]],
   ['settingsmanager_2ecpp',['settingsmanager.cpp',['../settingsmanager_8cpp.html',1,'']]],
   ['settingsmanager_2eh',['settingsmanager.h',['../settingsmanager_8h.html',1,'']]],
   ['settingsmodel_2ecpp',['settingsmodel.cpp',['../settingsmodel_8cpp.html',1,'']]],

@@ -2,7 +2,7 @@ var class_updraft_1_1_core_1_1_settings_model =
 [
     [ "SettingsModel", "class_updraft_1_1_core_1_1_settings_model.html#a20903a47c1fcbd7290749bc30a7c58c7", null ],
     [ "~SettingsModel", "class_updraft_1_1_core_1_1_settings_model.html#a049336aad835246bc54d70fac3062212", null ],
-    [ "columnCount", "class_updraft_1_1_core_1_1_settings_model.html#a569336e36f15bc8c0218e82d816d49b2", null ],
+    [ "columnCount", "class_updraft_1_1_core_1_1_settings_model.html#a77210085d9d0799d926cd51abaab6e03", null ],
     [ "data", "class_updraft_1_1_core_1_1_settings_model.html#a732238ded84a15f02aeb5971c0f2f4d4", null ],
     [ "dataRoleToString", "class_updraft_1_1_core_1_1_settings_model.html#abf6a9d695131d12a2f8864f41db73353", null ],
     [ "index", "class_updraft_1_1_core_1_1_settings_model.html#a2c15a80401806b3674a74e911c7a0baa", null ],
@@ -12,7 +12,7 @@ var class_updraft_1_1_core_1_1_settings_model =
     [ "itemChanged", "class_updraft_1_1_core_1_1_settings_model.html#a0723e104ee49c0a654f649987d3a82d5", null ],
     [ "itemFromIndex", "class_updraft_1_1_core_1_1_settings_model.html#a6886cc65ecc285bc558fbb2f320e461d", null ],
     [ "loadSettings", "class_updraft_1_1_core_1_1_settings_model.html#aa00554776ab3614d3aa9c78358309bc6", null ],
-    [ "parent", "class_updraft_1_1_core_1_1_settings_model.html#a3c79423c0f1dffdb18e3f4c0db92f9e6", null ],
+    [ "parent", "class_updraft_1_1_core_1_1_settings_model.html#aa4ec1876fc8da7adcd7de41858c4eb6f", null ],
     [ "reinitializeData", "class_updraft_1_1_core_1_1_settings_model.html#aff24980e77a03f030cbb73864efe162f", null ],
     [ "rowCount", "class_updraft_1_1_core_1_1_settings_model.html#a234dde13172bc018081aa156464ab625", null ],
     [ "saveSettings", "class_updraft_1_1_core_1_1_settings_model.html#a27a0d3c7dd6af2643fc903446677e17c", null ],

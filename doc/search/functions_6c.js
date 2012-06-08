@@ -8,6 +8,7 @@ var searchData=
   ['latfromradians',['latFromRadians',['../class_updraft_1_1_util_1_1_location.html#aeab6d81013d8b77c7fa882e976b2dd51',1,'Updraft::Util::Location']]],
   ['latitude',['Latitude',['../class_geographic_lib_1_1_geodesic_line.html#a00a291e94d0c688a168a58623a360659',1,'GeographicLib::GeodesicLine']]],
   ['lattodms',['latToDMS',['../class_updraft_1_1_util_1_1_location.html#a276196bd75455ef335c2b690e28e6160',1,'Updraft::Util::Location']]],
+  ['lattostring',['latToString',['../class_updraft_1_1_util_1_1_location.html#aa6d5f47430f5cd6f1685054420db7bbf',1,'Updraft::Util::Location']]],
   ['leaveevent',['leaveEvent',['../class_updraft_1_1_igc_viewer_1_1_plot_widget.html#a4685ec30e55eabd8d429007e98212f71',1,'Updraft::IgcViewer::PlotWidget']]],
   ['lengths',['Lengths',['../class_geographic_lib_1_1_geodesic.html#a28aedb7024073f7fabe6836becedbe9a',1,'GeographicLib::Geodesic']]],
   ['lightclear',['lightClear',['../class_updraft_1_1_core_1_1_menu.html#af8fb6743989b0d0b6a1c08201bd243ec',1,'Updraft::Core::Menu']]],
@@ -27,5 +28,6 @@ var searchData=
   ['lonfromdms',['lonFromDMS',['../class_updraft_1_1_util_1_1_location.html#a6188da5d00ddec13afe95afcbf6af7a3',1,'Updraft::Util::Location']]],
   ['lonfromradians',['lonFromRadians',['../class_updraft_1_1_util_1_1_location.html#ab2126d29083a883989138c800d853a76',1,'Updraft::Util::Location']]],
   ['longitude',['Longitude',['../class_geographic_lib_1_1_geodesic_line.html#ac567ccf20c683319370f4c747f23966a',1,'GeographicLib::GeodesicLine']]],
-  ['lontodms',['lonToDMS',['../class_updraft_1_1_util_1_1_location.html#a44a8fda34909924a6c32ae8af4650f78',1,'Updraft::Util::Location']]]
+  ['lontodms',['lonToDMS',['../class_updraft_1_1_util_1_1_location.html#a44a8fda34909924a6c32ae8af4650f78',1,'Updraft::Util::Location']]],
+  ['lontostring',['lonToString',['../class_updraft_1_1_util_1_1_location.html#a0365f1e1a89b7fc5e1bda0bfcce029ff',1,'Updraft::Util::Location']]]
 ];

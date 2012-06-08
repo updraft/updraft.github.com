@@ -1,7 +1,7 @@
 var class_open_airspace_1_1_circle =
 [
     [ "Circle", "class_open_airspace_1_1_circle.html#a2bf834313bbae6352ac9116e60c3741a", null ],
-    [ "Circle", "class_open_airspace_1_1_circle.html#a4f705e6154ebca5c95a9ba4ce5a095af", null ],
+    [ "Circle", "class_open_airspace_1_1_circle.html#ae2a383523f91b4fa81922255b768efb4", null ],
     [ "~Circle", "class_open_airspace_1_1_circle.html#a58195225df4526bd8d535786064022e7", null ],
     [ "Centre", "class_open_airspace_1_1_circle.html#aceb11481aeb6f623cc09a7a5e53de38a", null ],
     [ "GetGType", "class_open_airspace_1_1_circle.html#ab467145a0e8258eab44811a3d72a0c62", null ],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tab',['Tab',['../class_updraft_1_1_core_1_1_tab.html',1,'Updraft::Core']]],
-  ['tab',['tab',['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#add7db66f9a6020722666df60c34383c8',1,'Updraft::IgcViewer::OpenedFile::tab()'],['../class_updraft_1_1_task_layer.html#a1257f9acb2015460c4aa6be94627fe7d',1,'Updraft::TaskLayer::tab()'],['../class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22',1,'Updraft::Core::Tab::Tab()']]],
+  ['tab',['Tab',['../class_updraft_1_1_core_1_1_tab.html#ab87cb5815de64a14a468b0cd7ce3ce22',1,'Updraft::Core::Tab::Tab()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#add7db66f9a6020722666df60c34383c8',1,'Updraft::IgcViewer::OpenedFile::tab()'],['../class_updraft_1_1_task_layer.html#a1257f9acb2015460c4aa6be94627fe7d',1,'Updraft::TaskLayer::tab()']]],
   ['tab_2ecpp',['tab.cpp',['../tab_8cpp.html',1,'']]],
   ['tab_2eh',['tab.h',['../tab_8h.html',1,'']]],
   ['tabcloserequested',['tabCloseRequested',['../class_updraft_1_1_core_1_1_main_window.html#aff0d62e3fdef077fa8cfcb5fcc459fab',1,'Updraft::Core::MainWindow::tabCloseRequested()'],['../class_updraft_1_1_core_1_1_tab.html#aa416e810ac9389dcb7279234d0875993',1,'Updraft::Core::Tab::tabCloseRequested()']]],
@@ -144,7 +144,7 @@ var searchData=
   ['translationlanguageeditor_2ecpp',['translationlanguageeditor.cpp',['../translationlanguageeditor_8cpp.html',1,'']]],
   ['translationlanguageeditor_2eh',['translationlanguageeditor.h',['../translationlanguageeditor_8h.html',1,'']]],
   ['translationmanager',['TranslationManager',['../class_updraft_1_1_core_1_1_translation_manager.html',1,'Updraft::Core']]],
-  ['translationmanager',['TranslationManager',['../class_updraft_1_1_core_1_1_translation_manager.html#a2fffc83e485e9cc49ec830bae9b3384f',1,'Updraft::Core::TranslationManager::TranslationManager()'],['../class_updraft_1_1_core_1_1_updraft.html#a19a07c35ead7cdd6b429e00368c8d91d',1,'Updraft::Core::Updraft::translationManager()']]],
+  ['translationmanager',['translationManager',['../class_updraft_1_1_core_1_1_updraft.html#a19a07c35ead7cdd6b429e00368c8d91d',1,'Updraft::Core::Updraft::translationManager()'],['../class_updraft_1_1_core_1_1_translation_manager.html#a2fffc83e485e9cc49ec830bae9b3384f',1,'Updraft::Core::TranslationManager::TranslationManager()']]],
   ['translationmanager_2ecpp',['translationmanager.cpp',['../translationmanager_8cpp.html',1,'']]],
   ['translationmanager_2eh',['translationmanager.h',['../translationmanager_8h.html',1,'']]],
   ['treeitem',['treeItem',['../class_updraft_1_1_core_1_1_map_layer.html#a538581303a6933ab1813bd7d9cca6073',1,'Updraft::Core::MapLayer']]],
@@ -158,7 +158,7 @@ var searchData=
   ['turnpoint',['turnPoint',['../class_updraft_1_1_t_p_map_object.html#a7c56020d69a60de6111c4b7b8ea8ae6c',1,'Updraft::TPMapObject']]],
   ['turnpoint_2eh',['turnpoint.h',['../turnpoint_8h.html',1,'']]],
   ['turnpoints',['TurnPoints',['../class_updraft_1_1_turn_points.html',1,'Updraft']]],
-  ['turnpoints',['turnPoints',['../class_updraft_1_1_cup_1_1_cup_file.html#af5f570f1c422d12aa9f1c2c3b75a9376',1,'Updraft::Cup::CupFile::turnPoints()'],['../class_updraft_1_1_turn_points.html#a883a8fce9314b2dc854e6d1a36887f3f',1,'Updraft::TurnPoints::TurnPoints()']]],
+  ['turnpoints',['TurnPoints',['../class_updraft_1_1_turn_points.html#a883a8fce9314b2dc854e6d1a36887f3f',1,'Updraft::TurnPoints::TurnPoints()'],['../class_updraft_1_1_cup_1_1_cup_file.html#af5f570f1c422d12aa9f1c2c3b75a9376',1,'Updraft::Cup::CupFile::turnPoints()']]],
   ['turnpoints_2ecpp',['turnpoints.cpp',['../turnpoints_8cpp.html',1,'']]],
   ['turnpoints_2eh',['turnpoints.h',['../turnpoints_8h.html',1,'']]],
   ['type',['type',['../class_updraft_1_1_event_info.html#ab94c0a9f8bae360d0c712b46eef999b3',1,'Updraft::EventInfo::type()'],['../struct_updraft_1_1_igc_1_1_event.html#a4b654cf00e8cbb0edf9bfd0856ca0f21',1,'Updraft::Igc::Event::type()'],['../class_updraft_1_1_util_1_1_ellipsoid.html#a464ac12d188f5f31891012435fe7b9fd',1,'Updraft::Util::Ellipsoid::type()'],['../struct_updraft_1_1_turn_point.html#a8cac03877b1d127a345a9fd32fc263da',1,'Updraft::TurnPoint::type()'],['../class_updraft_1_1_core_1_1_file_type_manager_1_1_file_open_option.html#ac8daee38ccaec98459b676ac0bd1086c',1,'Updraft::Core::FileTypeManager::FileOpenOption::type()']]],

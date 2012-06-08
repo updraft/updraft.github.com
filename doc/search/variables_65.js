@@ -1,6 +1,7 @@
 var searchData=
 [
   ['earth_5fradius_5fin_5fmeters',['EARTH_RADIUS_IN_METERS',['../namespace_updraft_1_1_airspaces.html#a73d22032884c93ff26f3acbf1b770d08',1,'Updraft::Airspaces']]],
+  ['earthfilename',['earthFileName',['../class_updraft_1_1_core_1_1_map_manager.html#a8dd9aa63c5332a2571b77de8c683c5de',1,'Updraft::Core::MapManager']]],
   ['elev_5ftile_5fresolution',['ELEV_TILE_RESOLUTION',['../class_updraft_1_1_airspaces_1_1oa_engine.html#ad64e8bdd0cfe755ee571e913e6f0875a',1,'Updraft::Airspaces::oaEngine']]],
   ['elevationman',['elevationMan',['../class_updraft_1_1_airspaces_1_1oa_engine.html#aa2d21ec1cf6b75c528a5484dac7a97e5',1,'Updraft::Airspaces::oaEngine']]],
   ['elevationmanager',['elevationManager',['../class_updraft_1_1_core_1_1_scene_manager.html#a18d540e2c4c8e2d7b0cfd7f6302a557a',1,'Updraft::Core::SceneManager']]],

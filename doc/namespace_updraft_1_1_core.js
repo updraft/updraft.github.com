@@ -10,6 +10,7 @@ var namespace_updraft_1_1_core =
     [ "MapLayer", "class_updraft_1_1_core_1_1_map_layer.html", null ],
     [ "MapManager", "class_updraft_1_1_core_1_1_map_manager.html", null ],
     [ "MapManipulator", "class_updraft_1_1_core_1_1_map_manipulator.html", null ],
+    [ "MapMapObject", "class_updraft_1_1_core_1_1_map_map_object.html", null ],
     [ "NodeMapLayer", "class_updraft_1_1_core_1_1_node_map_layer.html", null ],
     [ "PickAction", "class_updraft_1_1_core_1_1_pick_action.html", null ],
     [ "PickHandler", "class_updraft_1_1_core_1_1_pick_handler.html", null ],

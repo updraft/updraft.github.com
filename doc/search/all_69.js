@@ -1,7 +1,7 @@
 var searchData=
 [
   ['icon',['icon',['../class_updraft_1_1_core_1_1_settings_item.html#afa29313f08c776488d82acf88576ec79',1,'Updraft::Core::SettingsItem']]],
-  ['id',['id',['../class_updraft_1_1_igc_viewer_1_1_track_id_fix_info.html#abcf9cdc4e5421486c16243900faa900e',1,'Updraft::IgcViewer::TrackIdFixInfo']]],
+  ['id',['id',['../class_updraft_1_1_core_1_1_map_layer.html#a998d4e8041baaad09f9875455eb6d285',1,'Updraft::Core::MapLayer::id()'],['../class_updraft_1_1_igc_viewer_1_1_track_id_fix_info.html#abcf9cdc4e5421486c16243900faa900e',1,'Updraft::IgcViewer::TrackIdFixInfo::id()']]],
   ['idregexp',['idRegExp',['../class_updraft_1_1_core_1_1_settings_manager.html#a449aa36b1a01f9284b816e5bd3558946',1,'Updraft::Core::SettingsManager']]],
   ['igc',['igc',['../class_updraft_1_1_igc_1_1_test_1_1_test_igc.html#a49eee29b6e519e89c9bab7af04ec27db',1,'Updraft::Igc::Test::TestIgc']]],
   ['igc_2ecpp',['igc.cpp',['../igc_8cpp.html',1,'']]],

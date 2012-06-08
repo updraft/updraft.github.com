@@ -2,9 +2,9 @@ var class_updraft_1_1_core_1_1_settings_manager =
 [
     [ "SettingsManager", "class_updraft_1_1_core_1_1_settings_manager.html#afb8a30578d9cc74a9d857d23d103603b", null ],
     [ "~SettingsManager", "class_updraft_1_1_core_1_1_settings_manager.html#a4b20f93eace10e4e2acaa64cc17194cc", null ],
-    [ "addGroup", "class_updraft_1_1_core_1_1_settings_manager.html#ae9d1fa4b79b5efd940461af976ee75f5", null ],
+    [ "addGroup", "class_updraft_1_1_core_1_1_settings_manager.html#a7a413691dfb7a08c8aaf457ad5fd3608", null ],
     [ "addGroupInternal", "class_updraft_1_1_core_1_1_settings_manager.html#a4c66cd97bf0bbf4896b25f65f0b66830", null ],
-    [ "addSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a4ebdb5e291621a3d1d8744e350a907dc", null ],
+    [ "addSetting", "class_updraft_1_1_core_1_1_settings_manager.html#a762d0bf890264a223b9719c12de9dcef", null ],
     [ "checkSettingsXml", "class_updraft_1_1_core_1_1_settings_manager.html#ab0f5a96304d46ceaca47b95dbfd466a9", null ],
     [ "createSettingsXml", "class_updraft_1_1_core_1_1_settings_manager.html#ac97f22586d1e504d2dc42eafa5fa0e32", null ],
     [ "execDialog", "class_updraft_1_1_core_1_1_settings_manager.html#a7835bc438fe26908c28cf6014ec4813e", null ],

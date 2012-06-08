@@ -7,7 +7,7 @@ var searchData=
   ['maplayerinterface',['MapLayerInterface',['../class_updraft_1_1_map_layer_interface.html',1,'Updraft']]],
   ['mapmanager',['MapManager',['../class_updraft_1_1_core_1_1_map_manager.html',1,'Updraft::Core']]],
   ['mapmanipulator',['MapManipulator',['../class_updraft_1_1_core_1_1_map_manipulator.html',1,'Updraft::Core']]],
-  ['mapmapobject',['MapMapObject',['../class_updraft_1_1_map_map_object.html',1,'Updraft']]],
+  ['mapmapobject',['MapMapObject',['../class_updraft_1_1_core_1_1_map_map_object.html',1,'Updraft::Core']]],
   ['mapobject',['MapObject',['../class_updraft_1_1_map_object.html',1,'Updraft']]],
   ['math',['Math',['../class_geographic_lib_1_1_math.html',1,'GeographicLib']]],
   ['menu',['Menu',['../class_updraft_1_1_core_1_1_menu.html',1,'Updraft::Core']]],

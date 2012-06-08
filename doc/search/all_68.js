@@ -11,6 +11,7 @@ var searchData=
   ['hidecheckboxtoggled',['hideCheckboxToggled',['../class_updraft_1_1_core_1_1_settings_dialog.html#a9a6fd5e2f32dbef3129ee181bb2d43e4',1,'Updraft::Core::SettingsDialog']]],
   ['hidegroup',['hideGroup',['../class_updraft_1_1_core_1_1_settings_top_view.html#aff92450d41bb0bfb8b17c1650ae9e3cc',1,'Updraft::Core::SettingsTopView']]],
   ['hidesplash',['hideSplash',['../class_updraft_1_1_core_1_1_updraft.html#aed4fe22dac7d1f3e31e98616a339963b',1,'Updraft::Core::Updraft']]],
+  ['homepositionsetting',['homePositionSetting',['../class_updraft_1_1_core_1_1_scene_manager.html#a5369a623a1eca61db671cda0d6698709',1,'Updraft::Core::SceneManager']]],
   ['horizontaloffset',['horizontalOffset',['../class_updraft_1_1_core_1_1_settings_bottom_view.html#a5c58b28e6398236a851c0a6597f82f67',1,'Updraft::Core::SettingsBottomView']]],
   ['hue',['hue',['../class_updraft_1_1_util_1_1_gradient.html#ad99eecbbc62a36dca75800746b53ead0',1,'Updraft::Util::Gradient']]],
   ['hypot',['hypot',['../class_geographic_lib_1_1_math.html#a718fffa5a531a134b3dc66c2b86441ea',1,'GeographicLib::Math::hypot(double x, double y)'],['../class_geographic_lib_1_1_math.html#ad0417626dec93714e317f2d6ba97da99',1,'GeographicLib::Math::hypot(float x, float y)']]]

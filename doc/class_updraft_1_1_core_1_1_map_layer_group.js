@@ -14,6 +14,8 @@ var class_updraft_1_1_core_1_1_map_layer_group =
     [ "isVisible", "class_updraft_1_1_core_1_1_map_layer_group.html#a138d598f88d721a17d7f317c707b70d1", null ],
     [ "removeFromScene", "class_updraft_1_1_core_1_1_map_layer_group.html#a5a7bbe73cb3602766d4865108999d3ce", null ],
     [ "removeMapLayer", "class_updraft_1_1_core_1_1_map_layer_group.html#a17b5c61b1b8bdceafcdc0a2a847687b8", null ],
+    [ "restoreState", "class_updraft_1_1_core_1_1_map_layer_group.html#aacfad11ea13ebda07065a8c820d17fc1", null ],
+    [ "saveState", "class_updraft_1_1_core_1_1_map_layer_group.html#ae4ed002f9cf35f8e9288ddb34c8d801c", null ],
     [ "setDisabled", "class_updraft_1_1_core_1_1_map_layer_group.html#ae68cb26f7467790de4482c8e3ed11212", null ],
     [ "setVisibility", "class_updraft_1_1_core_1_1_map_layer_group.html#a1a1ac0995aa3549d01da01ec2ac0b948", null ],
     [ "mapLayers", "class_updraft_1_1_core_1_1_map_layer_group.html#af38e8bcdd0b9d508150de3e3c48c14b7", null ],

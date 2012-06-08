@@ -1,6 +1,7 @@
 var searchData=
 [
   ['sat',['sat',['../class_updraft_1_1_util_1_1_gradient.html#af56080b36ad728159dec1c6e47ce2000',1,'Updraft::Util::Gradient']]],
+  ['saveviewpoint',['saveViewpoint',['../class_updraft_1_1_core_1_1_scene_manager.html#a3eb7ace158581177bca17055842a6f6f',1,'Updraft::Core::SceneManager']]],
   ['sb',['SB',['../class_open_airspace_1_1_airspace.html#a62e39ca0a9d50cab073d2f083f0b4a4e',1,'OpenAirspace::Airspace']]],
   ['scenemanager',['sceneManager',['../class_updraft_1_1_core_1_1_updraft.html#a215c82a51b3ee27c58d28787e3d0e620',1,'Updraft::Core::Updraft']]],
   ['sceneroot',['sceneRoot',['../class_updraft_1_1_core_1_1_scene_manager.html#a830f27a1fa45fb84cfc721237458c389',1,'Updraft::Core::SceneManager::sceneRoot()'],['../class_updraft_1_1_igc_viewer_1_1_opened_file.html#ac0e5cd7416ccc36752448c1a2c7a88e8',1,'Updraft::IgcViewer::OpenedFile::sceneRoot()']]],
@@ -13,7 +14,7 @@ var searchData=
   ['settingsdelegate',['settingsDelegate',['../class_updraft_1_1_core_1_1_settings_dialog.html#ac226e4321fbdcebeac0b8ef3aeeba774',1,'Updraft::Core::SettingsDialog']]],
   ['settingsfile',['settingsFile',['../class_updraft_1_1_core_1_1_settings_manager.html#aecff94c9288ec08a2db0e19de9fa39a9',1,'Updraft::Core::SettingsManager']]],
   ['settingsmanager',['settingsManager',['../class_updraft_1_1_core_1_1_basic_setting.html#a625091aea668f20fbfd4c2069e8ba558',1,'Updraft::Core::BasicSetting::settingsManager()'],['../class_updraft_1_1_core_1_1_settings_dialog.html#af599dc164ea721f24f1bce4cd6c61dd3',1,'Updraft::Core::SettingsDialog::settingsManager()'],['../class_updraft_1_1_core_1_1_updraft.html#a676f6d4760e66b8233bf3fb8371f1bb7',1,'Updraft::Core::Updraft::settingsManager()']]],
-  ['showhidden',['showHidden',['../class_updraft_1_1_core_1_1_settings_top_view.html#aeef8d91e4c8ec0784c202a2e6a988033',1,'Updraft::Core::SettingsTopView']]],
+  ['showadvanced',['showAdvanced',['../class_updraft_1_1_core_1_1_settings_top_view.html#abb4a92e48c0dddb82a49e6f17238a817',1,'Updraft::Core::SettingsTopView']]],
   ['side_5fcol_5fgradient',['SIDE_COL_GRADIENT',['../class_updraft_1_1_airspaces_1_1oa_engine.html#a0533fc715741bc2d8ffa98c6d43d752d',1,'Updraft::Airspaces::oaEngine']]],
   ['side_5fface',['SIDE_FACE',['../class_updraft_1_1_airspaces_1_1oa_engine.html#a5ed13a0b31a25d698f4aca356cb3fe0a',1,'Updraft::Airspaces::oaEngine']]],
   ['side_5fwireframe',['SIDE_WIREFRAME',['../class_updraft_1_1_airspaces_1_1oa_engine.html#af5102e3684953fe2e60211f3650111fa',1,'Updraft::Airspaces::oaEngine']]],

@@ -1,6 +1,5 @@
 var namespace_updraft =
 [
-    [ "MapMapObject", "class_updraft_1_1_map_map_object.html", null ],
     [ "CoreInterface", "class_updraft_1_1_core_interface.html", null ],
     [ "EventInfo", "class_updraft_1_1_event_info.html", null ],
     [ "FileRegistration", "struct_updraft_1_1_file_registration.html", null ],
@@ -32,6 +31,7 @@ var namespace_updraft =
     [ "TTPList", "namespace_updraft.html#ae2278ec996ba9c90687acad3b328cc48", null ],
     [ "EventType", "namespace_updraft.html#a8da3c4f90cde92eeea5ae670ae8e124e", null ],
     [ "FileCategory", "namespace_updraft.html#af93775fbb8e969b1e6f0e45abcc955c9", null ],
+    [ "SettingsGroupType", "namespace_updraft.html#afaea883949dd62fcbb5a3e863a268268", null ],
     [ "SystemMenu", "namespace_updraft.html#a62058b1ac3478d90b76952ba7982a2a2", null ],
     [ "WaypointStyle", "namespace_updraft.html#a7a2e5311daebda8c5906afd807e703be", null ],
     [ "g_core", "namespace_updraft.html#ad9a4ba9a4276fb9ddf39f0a05cbd1105", null ]

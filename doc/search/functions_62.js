@@ -5,6 +5,7 @@ var searchData=
   ['beginedit',['beginEdit',['../class_updraft_1_1_task_file.html#ab058e92fa2faaef0d223802fb51510b1',1,'Updraft::TaskFile']]],
   ['beginread',['beginRead',['../class_updraft_1_1_task_file.html#a659e35391683083f5a40faab0f2bfbc2',1,'Updraft::TaskFile']]],
   ['bindkeyboardevents',['bindKeyboardEvents',['../class_updraft_1_1_core_1_1_map_manipulator.html#a37fdef1c25b466cbc956ca99f5e6ef89',1,'Updraft::Core::MapManipulator']]],
+  ['bindmanipulator',['bindManipulator',['../class_updraft_1_1_core_1_1_map_manager.html#adc16a90e6d006b6dbf1df4ea6b699b4f',1,'Updraft::Core::MapManager']]],
   ['bindmouseevents',['bindMouseEvents',['../class_updraft_1_1_core_1_1_map_manipulator.html#a193e7af15408028c9ffe6dba246642d3',1,'Updraft::Core::MapManipulator']]],
   ['buttonboxclicked',['buttonBoxClicked',['../class_updraft_1_1_core_1_1_settings_dialog.html#a40a29bedbc774a3a3621b3272605547e',1,'Updraft::Core::SettingsDialog']]]
 ];

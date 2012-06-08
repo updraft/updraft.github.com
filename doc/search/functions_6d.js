@@ -11,7 +11,7 @@ var searchData=
   ['maplayeritemchanged',['mapLayerItemChanged',['../class_updraft_1_1_core_1_1_main_window.html#ac6ba51f535dd6bac9d0938c79ce3d60b',1,'Updraft::Core::MainWindow']]],
   ['mapmanager',['MapManager',['../class_updraft_1_1_core_1_1_map_manager.html#acd051267775b0b91ceb3009c2a4811bd',1,'Updraft::Core::MapManager::MapManager()'],['../class_updraft_1_1_core_1_1_map_manager.html#ac6f067c8090560073bb274eca0907cca',1,'Updraft::Core::MapManager::MapManager(QString earthFile, QString mapName)']]],
   ['mapmanipulator',['MapManipulator',['../class_updraft_1_1_core_1_1_map_manipulator.html#a68d3b7cfcde057ff87b822e2d17bf534',1,'Updraft::Core::MapManipulator']]],
-  ['mapmapobject',['MapMapObject',['../class_updraft_1_1_map_map_object.html#ac37ab58ff8ca4c2edaf1feabe92632bd',1,'Updraft::MapMapObject']]],
+  ['mapmapobject',['MapMapObject',['../class_updraft_1_1_core_1_1_map_map_object.html#a85cc039ff81c4ed4282968d847e7f001',1,'Updraft::Core::MapMapObject']]],
   ['mapobject',['MapObject',['../class_updraft_1_1_map_object.html#ae775e643942522f25d806d5475d2a0d9',1,'Updraft::MapObject::MapObject()'],['../class_updraft_1_1_map_object.html#a672f5edc9871df441ea46e34e6511ddf',1,'Updraft::MapObject::MapObject(QString objectName)']]],
   ['math',['Math',['../class_geographic_lib_1_1_math.html#a4fce4ec7aaf7d4ac10bf5302e295c499',1,'GeographicLib::Math']]],
   ['max',['max',['../class_updraft_1_1_igc_viewer_1_1_fix_info.html#aededd7a8d9d44dbe0feb19a5b0bf9f0e',1,'Updraft::IgcViewer::FixInfo']]],

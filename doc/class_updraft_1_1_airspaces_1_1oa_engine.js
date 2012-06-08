@@ -8,7 +8,7 @@ var class_updraft_1_1_airspaces_1_1oa_engine =
     [ "ComputeHeightData", "class_updraft_1_1_airspaces_1_1oa_engine.html#ad6729d61498e7cc48047c0d16da2a7c3", null ],
     [ "DistanceInMeters", "class_updraft_1_1_airspaces_1_1oa_engine.html#a6f2966c3e8acdfeadf76b63baf6550fe", null ],
     [ "DistToAngle", "class_updraft_1_1_airspaces_1_1oa_engine.html#a40348c906654d02d47a0cb8ceb97e99d", null ],
-    [ "Draw", "class_updraft_1_1_airspaces_1_1oa_engine.html#a27250261921274d1f2852a67cd408c6a", null ],
+    [ "Draw", "class_updraft_1_1_airspaces_1_1oa_engine.html#a92c2c8d46f4a016bde1b86c1b2c0a468", null ],
     [ "DrawII", "class_updraft_1_1_airspaces_1_1oa_engine.html#a4a169bfa2b8285480b447fa0c1225bb6", null ],
     [ "DrawPolygon", "class_updraft_1_1_airspaces_1_1oa_engine.html#a7c4ff69dcfa32c482c5ef1251b568bce", null ],
     [ "DrawPolygonSides", "class_updraft_1_1_airspaces_1_1oa_engine.html#a20c65a9df914bd6181abcc530b889f96", null ],

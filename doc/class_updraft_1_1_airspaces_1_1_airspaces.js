@@ -4,7 +4,7 @@ var class_updraft_1_1_airspaces_1_1_airspaces =
     [ "Airspaces", "class_updraft_1_1_airspaces_1_1_airspaces.html#a72c68422968f689765380e837e1eba33", null ],
     [ "contextMenuRequested", "class_updraft_1_1_airspaces_1_1_airspaces.html#ac527433ad8739636209125db538f3607", null ],
     [ "deinitialize", "class_updraft_1_1_airspaces_1_1_airspaces.html#a41207f70cb8f787f8a3a0b172908d211", null ],
-    [ "fileOpen", "class_updraft_1_1_airspaces_1_1_airspaces.html#aedc20f3e131764db74feed3e07bc5d05", null ],
+    [ "fileOpen", "class_updraft_1_1_airspaces_1_1_airspaces.html#a68c498cb6cfc4758b7a05fedc1e9dc0b", null ],
     [ "getName", "class_updraft_1_1_airspaces_1_1_airspaces.html#af4d9a9af3c0e5b5655b4273ec84cd585", null ],
     [ "initialize", "class_updraft_1_1_airspaces_1_1_airspaces.html#a3fd83f54acd61eaaa99cca4c9ba4771f", null ],
     [ "loadImportedFiles", "class_updraft_1_1_airspaces_1_1_airspaces.html#a0ceedf9684d062e70a80405bfbc26e72", null ],

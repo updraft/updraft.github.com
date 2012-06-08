@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r',['R',['../struct_open_airspace_1_1_airspace_1_1_s_p__str.html#afbd29a7b54dd7992c9ebaa6362db4af8',1,'OpenAirspace::Airspace::SP_str::R()'],['../struct_open_airspace_1_1_airspace_1_1_s_b__str.html#aac0b166ee38c97f5c84254aa203e2503',1,'OpenAirspace::Airspace::SB_str::R()'],['../class_open_airspace_1_1_arc_i.html#ab597ddaaf20e13a4e24d20930a8c33dc',1,'OpenAirspace::ArcI::r()'],['../class_open_airspace_1_1_circle.html#a278892375c0776ae2f1e48e01f2409c3',1,'OpenAirspace::Circle::r()']]],
+  ['r',['r',['../class_open_airspace_1_1_arc_i.html#ab597ddaaf20e13a4e24d20930a8c33dc',1,'OpenAirspace::ArcI::r()'],['../class_open_airspace_1_1_circle.html#a278892375c0776ae2f1e48e01f2409c3',1,'OpenAirspace::Circle::r()'],['../struct_open_airspace_1_1_airspace_1_1_s_p__str.html#afbd29a7b54dd7992c9ebaa6362db4af8',1,'OpenAirspace::Airspace::SP_str::R()'],['../struct_open_airspace_1_1_airspace_1_1_s_b__str.html#aac0b166ee38c97f5c84254aa203e2503',1,'OpenAirspace::Airspace::SB_str::R()']]],
   ['rad_5fto_5fdeg',['RAD_TO_DEG',['../namespace_updraft_1_1_airspaces.html#a0acad6a02f6fc6256411b321288b3f1c',1,'Updraft::Airspaces']]],
   ['rect',['rect',['../class_updraft_1_1_igc_viewer_1_1_label.html#a6bf895752bd58e3c72ada6963da5591b',1,'Updraft::IgcViewer::Label::rect()'],['../class_updraft_1_1_igc_viewer_1_1_plot_axes.html#a448acd2967be19b965c2424c7f2f63e1',1,'Updraft::IgcViewer::PlotAxes::rect()']]],
   ['registered',['registered',['../class_updraft_1_1_core_1_1_file_type_manager.html#a4e0c0d53a348fed6c9bd9b85d1980d4d',1,'Updraft::Core::FileTypeManager']]],
